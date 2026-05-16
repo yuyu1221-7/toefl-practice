@@ -8,27 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-
-        /* 控制面板的样式 */
-        #controls {
-            margin-bottom: 20px; 
-            padding: 15px; 
-            background-color: #f8f9fa; 
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: sans-serif;
-        }
-        #statusMessage {
-            margin-top: 10px; 
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-        /* 确保你的主容器也有基础样式 */
-        #quizContainer {
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-        
         body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #334155; -webkit-font-smoothing: antialiased; }
         .view-hidden { display: none !important; }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -61,20 +40,12 @@
 
         /* Loading Spinner */
         .spinner { border: 4px solid rgba(255,255,255,0.3); width: 40px; height: 40px; border-radius: 50%; border-left-color: #fff; animation: spin 1s linear infinite; }
+        .spinner-blue { border: 4px solid rgba(37, 99, 235, 0.2); width: 40px; height: 40px; border-radius: 50%; border-left-color: #2563eb; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="h-screen flex flex-col overflow-hidden relative selection:bg-blue-200">
 
-    <div id="controls">
-        <label for="fileInput" style="margin-right: 10px;">想要测试本地的 .md 题库？</label>
-        <input type="file" id="fileInput" accept=".md, .txt">
-        
-        <div id="statusMessage">⏳ 准备就绪...</div>
-    </div>
-
-    <div id="quizContainer"></div>
-    
     <!-- 全局顶部导航 -->
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 z-50 h-16 shrink-0 flex items-center justify-between px-6 transition-all shadow-sm" id="global-header">
         <div class="flex items-center gap-4">
@@ -93,7 +64,6 @@
         </div>
         <div class="flex items-center gap-3">
             <span id="header-status" class="text-xs font-bold bg-slate-100 text-slate-500 px-3 py-1.5 rounded-full hidden md:block border border-slate-200">等待导入题库</span>
-         <!-- 新增：设置按钮 -->
             <button onclick="openSettings()" class="p-2 text-slate-400 hover:text-slate-700 bg-slate-50 hover:bg-slate-200 rounded-full transition-colors" title="系统设置">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             </button>
@@ -102,7 +72,7 @@
 
     <main class="flex-1 w-full h-full relative overflow-hidden bg-[#f8fafc]">
 
-        <!-- 设置弹窗 (API Key 配置) -->
+        <!-- 设置弹窗 -->
         <div id="settings-modal" class="hidden fixed inset-0 z-[400] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity">
             <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md flex flex-col overflow-hidden transform transition-all">
                 <div class="p-5 border-b border-slate-200 flex justify-between items-center bg-slate-50">
@@ -120,7 +90,7 @@
             </div>
         </div>
 
-        <!-- 预览题目的模态框 (Modal) -->
+        <!-- 预览题目的模态框 -->
         <div id="preview-modal" class="hidden fixed inset-0 z-[300] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity">
             <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl flex flex-col max-h-[85vh] overflow-hidden transform transition-all">
                 <div class="p-5 border-b border-slate-200 flex justify-between items-center bg-slate-50">
@@ -143,17 +113,19 @@
             <p class="text-slate-300 font-medium" id="ai-loading-text">自动识别并命名缺失的文章分类，请稍候...</p>
         </div>
 
-        <!-- VIEW 0: 导入 -->
+        <!-- VIEW 0: 导入/加载页 -->
         <div id="view-upload" class="absolute inset-0 z-[100] bg-white flex items-center justify-center p-8">
             <div class="max-w-2xl w-full text-center">
-                <div class="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-8 text-blue-600 rotate-3 shadow-sm border border-blue-100">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <div id="auto-load-spinner" class="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-blue-100">
+                    <div class="spinner-blue"></div>
                 </div>
-                <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">开始你的备考</h1>
-                <p class="text-slate-500 mb-10 text-lg">请导入托福机经 <strong>.md / .txt</strong> 文件。内置 AI 引擎将为您智能梳理排版。</p>
-                <div id="drop-zone" class="border-2 border-dashed border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all rounded-3xl p-14 cursor-pointer flex flex-col items-center justify-center bg-slate-50/50">
+                <h1 id="upload-title" class="text-4xl font-black text-slate-900 mb-4 tracking-tight">正在同步云端题库...</h1>
+                <p id="upload-desc" class="text-slate-500 mb-10 text-lg">正在从 GitHub 获取最新数据，请稍候...</p>
+                
+                <!-- 备用手动上传区 (默认隐藏，拉取失败时显示) -->
+                <div id="drop-zone" class="hidden border-2 border-dashed border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all rounded-3xl p-14 cursor-pointer flex-col items-center justify-center bg-slate-50/50">
                     <svg class="w-10 h-10 text-slate-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                    <span class="text-slate-700 font-bold text-xl mb-1">点击选择文件，或将文件拖拽至此</span>
+                    <span class="text-slate-700 font-bold text-xl mb-1">自动拉取失败，请点击手动选择文件</span>
                     <input type="file" id="file-input" accept=".md,.txt" class="hidden">
                 </div>
             </div>
@@ -515,10 +487,10 @@
                             <input type="text" id="stats-date-search" placeholder="精准检索具体日期 (如 2026.1.21)" class="w-full px-4 py-2 border border-slate-300 bg-white rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition-all">
                         </div>
                     </div>
-                    <!-- 新增：导出最新字典按钮 -->
-                        <button onclick="exportUpdatedDictionary()" class="px-4 py-2 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 shadow-sm transition-colors flex items-center gap-2 whitespace-nowrap">
-                            🛠️ 导出最新字典
-                        </button>
+                    <!-- 导出最新字典按钮 -->
+                    <button onclick="exportUpdatedDictionary()" class="px-4 py-2 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 shadow-sm transition-colors flex items-center gap-2 whitespace-nowrap">
+                        🛠️ 导出最新字典
+                    </button>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -582,92 +554,56 @@
     </main>
 
     <script>
+        // ============================================================================
+        // ⚠️ 核心配置：你的 GitHub 题库地址
+        // 请确保这是 Raw 格式的链接 (通常以 raw.githubusercontent.com 开头)
+        // ============================================================================
+        const MD_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md"; 
 
-        // === 1. 配置云端题库地址 ===
-        // 替换为你仓库里实际的 .md 文件名，例如 "新托福填词_重排版.md"
-        // 注意 URL 编码，如果是中文文件名，建议在 GitHub 里改成纯英文，比如 "toefl_data.md"，避免奇怪的读取错误。
-        const defaultMdUrl = `https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md`;
+        // ================ 页面加载时自动拉取云端题库 ================
+        window.addEventListener('DOMContentLoaded', async () => {
+            const uploadTitle = document.getElementById('upload-title');
+            const uploadDesc = document.getElementById('upload-desc');
+            const dropZone = document.getElementById('drop-zone');
+            const spinner = document.getElementById('auto-load-spinner');
 
-        // === 2. 网页初始化 ===
-        window.onload = function() {
-            setupManualUpload(); // 绑定本地上传功能的监听器
-            loadDefaultData();   // 网页一打开，立刻去 GitHub 拉取最新数据
-        };
-
-        // === 3. 自动从 GitHub 获取数据 ===
-        function loadDefaultData() {
-            const statusMsg = document.getElementById('statusMessage');
-            statusMsg.innerText = "⏳ 正在从云端自动加载最新题库...";
-            statusMsg.style.color = "#666";
-
-            // 在 URL 末尾加上时间戳 (?t=...)，强制浏览器每次都获取最新版本，防止缓存死旧数据
-            fetch(`${defaultMdUrl}?t=${new Date().getTime()}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("网络响应错误，状态码：" + response.status);
-                    }
-                    return response.text();
-                })
-                .then(text => {
-                    statusMsg.innerText = "✅ 云端题库加载成功！(你也可以在上方上传本地文件进行覆盖)";
-                    statusMsg.style.color = "green";
-                    
-                    // 将获取到的 Markdown 文本交给你的处理函数
-                    processAndRenderData(text);
-                })
-                .catch(error => {
-                    console.error('自动获取题库失败:', error);
-                    statusMsg.innerText = "❌ 自动加载云端题库失败。请检查网络，或尝试手动上传。";
-                    statusMsg.style.color = "red";
-                });
-        }
-
-        // === 4. 处理用户本地上传的数据 ===
-        function setupManualUpload() {
-            const fileInput = document.getElementById('fileInput');
-            
-            fileInput.addEventListener('change', function(event) {
-                const file = event.target.files[0];
-                if (!file) return;
-
-                const statusMsg = document.getElementById('statusMessage');
-                statusMsg.innerText = `⏳ 正在读取本地文件: ${file.name}...`;
-                statusMsg.style.color = "#666";
-
-                const reader = new FileReader();
+            try {
+                // 加上时间戳防止浏览器缓存旧数据
+                const response = await fetch(`${MD_URL}?t=${new Date().getTime()}`);
                 
-                reader.onload = function(e) {
-                    statusMsg.innerText = `✅ 成功切换至本地题库: ${file.name}`;
-                    statusMsg.style.color = "blue"; // 用蓝色区分本地文件
-                    
-                    // 将本地读取到的文本同样交给处理函数
-                    processAndRenderData(e.target.result);
-                };
+                if (!response.ok) {
+                    throw new Error(`HTTP 错误! 状态码: ${response.status}`);
+                }
                 
-                reader.onerror = function() {
-                    statusMsg.innerText = "❌ 读取本地文件失败。";
-                    statusMsg.style.color = "red";
-                };
+                const mdText = await response.text();
+                
+                // 成功获取，开始解析
+                globalQuestions = parseMarkdownEngine(mdText);
+                
+                if(globalQuestions.length === 0) {
+                    throw new Error("文件内容为空或格式无法解析");
+                }
 
-                // 以文本格式读取文件
-                reader.readAsText(file);
-            });
-        }
+                const unknownQs = globalQuestions.filter(q => q.isUnknown);
+                if (unknownQs.length > 0) {
+                    runAIExtraction(unknownQs);
+                } else {
+                    finalizeInit();
+                }
 
-        // === 5. 核心：解析数据并生成题目 ===
-        function processAndRenderData(markdownText) {
-            // 这里放你之前写好的解析 .md 并生成 HTML 的逻辑
-            // 示例流程：
-            // 1. 切分 markdownText
-            // 2. 匹配出“第一篇”、“正确答案”等
-            // 3. 动态生成 input 框和 HTML 字符串
-            
-            console.log("成功拿到文本数据，长度为：", markdownText.length);
-            
-            // 假设你生成好的 HTML 存在 generatedHTML 变量里
-            // document.getElementById('quizContainer').innerHTML = generatedHTML;
-        }
-        
+            } catch (error) {
+                console.error("自动拉取云端题库失败:", error);
+                // 失败时，显示手动上传界面
+                spinner.classList.add('hidden');
+                uploadTitle.textContent = "云端同步失败";
+                uploadTitle.classList.add('text-red-600');
+                uploadDesc.innerHTML = `无法自动获取题库，请检查网络或 URL 配置。<br><span class="text-red-500 text-sm mt-2 block">${error.message}</span>`;
+                dropZone.classList.remove('hidden');
+                dropZone.classList.add('flex');
+            }
+        });
+
+
         // ================ 系统设置与 API Key 管理 ================
         function openSettings() {
             document.getElementById('input-api-key').value = localStorage.getItem('toefl_api_key') || '';
@@ -703,7 +639,6 @@
             for (let prefix in aiCache) {
                 let data = aiCache[prefix];
                 if (!existingEn.has(data.en.toLowerCase())) {
-                    // 智能提取 Key：剔除停用词，取最具代表性的第一个词作为正则匹配 Key
                     let words = data.en.replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/);
                     let validWords = words.filter(w => w.length > 2 && !stopWords.includes(w.toLowerCase()));
                     let newKey = validWords.length > 0 ? validWords[0] : words[0];
@@ -738,10 +673,6 @@
             showToast(`成功导出！共合并了 ${addedCount} 个 AI 新词条。`);
         };
 
-        /* ======================== Gemini AI API 引擎配置 ======================== */
-        // Canvas 环境自动注入，安全免费调用
-        const apiKey = ""; 
-
         /* ======================== 核心状态管理 ======================== */
         let globalQuestions = []; 
         let globalDates = [];
@@ -768,7 +699,7 @@
         let activeQuestionId = null; 
         let viewHistoryStack = ['view-dashboard']; 
 
-        // 内置高频考点分类字典 (兜底用)
+        // 内置高频考点分类字典
         const titleDictionary = [
             { key: "Tigers", zh: "老虎", en: "Tigers", cat: "生命科学" },
             { key: "Museum", zh: "博物馆", en: "Museums", cat: "艺术与文化" },
@@ -882,7 +813,6 @@
             { key: "Printing", zh: "3D打印技术", en: "3D Printing Impact", cat: "综合与其他" },
         ];
 
-        // 动态获取停用词表 (通过函数获取，杜绝 ReferenceError)
         function getStopWords() {
             return ['the','a','an','and','or','but','in','on','at','to','for','of','with','by','about','as','into','like','through','after','over','between','out','against','during','without','before','under','around','among','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','shall','should','can','could','may','might','must','it','its','they','their','this','that','these','those','we','our','you','your','he','his','she','her','from'];
         }
@@ -894,7 +824,7 @@
             return 0;
         }
 
-        // 解析器：核心更新！强制按正文前80字匹配合并，彻底去重。保留 ~127 篇真实独立篇目。
+        // 解析器
         function parseMarkdownEngine(mdText) {
             const cleanedText = mdText.replace(/[（(]\s*注[:：][^）)]*[）)]/g, '');
             let formattedText = cleanedText.replace(/(正确答案[:：])/g, '\n$1').replace(/(补全版本[:：])/g, '\n$1');
@@ -947,7 +877,6 @@
             rawEntries.forEach(entry => {
                 if (!entry.text.includes('[')) return; 
                 
-                // 去重核心：取前 80 字符作为全网唯一标识 (高度一致即合并)
                 const cleanText = entry.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ');
                 const prefix = cleanText.substring(0, 80).toLowerCase().replace(/[^a-z]/g, ''); 
                 
@@ -971,17 +900,14 @@
                         }
                     }
                     
-                    // 2. 查浏览器本地记忆 (AI 之前识别过的)
                     let aiCache = {};
                     try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
 
                     if(matchedTitle) {
                         grouped.push({ id: grouped.length + 1, titleZh: matchedTitle.zh, titleEn: matchedTitle.en, cat: matchedTitle.cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date) });
                     } else if (aiCache[prefix]) {
-                        // 记忆里有，直接用，跳过 AI
                         grouped.push({ id: grouped.length + 1, titleZh: aiCache[prefix].zh, titleEn: aiCache[prefix].en, cat: aiCache[prefix].cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date) });
                     } else {
-                        // 字典和记忆都没有，标记为待 AI 处理，并把 prefix 存下来备用
                         grouped.push({ id: grouped.length + 1, titleZh: "待智能识别", titleEn: "Pending AI", cat: "综合与其他", isUnknown: true, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
                     }
                 }
@@ -989,15 +915,15 @@
             return grouped;
         }
 
-        // ================ AI 大模型智能分析引擎 (Gemini API) ================
+        // ================ AI 大模型智能分析引擎 ================
         async function runAIExtraction(unknownQs) {
             const overlay = document.getElementById('ai-loading-overlay');
             const overlayText = document.getElementById('ai-loading-text');
             overlay.classList.remove('hidden');
 
             const stopWords = getStopWords();
-
             const savedKey = localStorage.getItem('toefl_api_key') || "";
+            
             if (!navigator.onLine || savedKey.trim() === "") {
                 overlayText.textContent = "未配置 API Key，正在使用本地降级算法...";
                 fallbackNaming(unknownQs, stopWords);
@@ -1005,9 +931,7 @@
                 return;
             }
 
-            // 【终极匀速防封版】：每次 10 篇，批次间隔 6 秒，绝对不触发 15次/分钟 的红线
             const chunkSize = 10; 
-            
             for (let i = 0; i < unknownQs.length; i += chunkSize) {
                 const chunk = unknownQs.slice(i, i + chunkSize);
                 overlayText.textContent = `AI 正在分析第 ${i + 1} 到 ${Math.min(i + chunkSize, unknownQs.length)} 篇 (共 ${unknownQs.length} 篇)...`;
@@ -1025,13 +949,10 @@
                 ${JSON.stringify(promptData)}`;
 
                 try {
-                    // 从浏览器本地存储读取用户填写的 Key
                     const cleanKey = localStorage.getItem('toefl_api_key') || "";
                     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${cleanKey}`;
                     
-                    const payload = {
-                        contents: [{ parts: [{ text: promptText }] }]
-                    };
+                    const payload = { contents: [{ parts: [{ text: promptText }] }] };
 
                     const res = await fetch(url, { 
                         method: 'POST', 
@@ -1044,7 +965,7 @@
                             console.warn("依然触发频率限制，进入深度休眠 65 秒...");
                             overlayText.textContent = "触发 Google 免费频率限制，系统正在休眠 65 秒后自动继续，请勿刷新页面...";
                             await new Promise(resolve => setTimeout(resolve, 65000));
-                            i -= chunkSize; // 倒退一步，重试当前批次
+                            i -= chunkSize; 
                             continue;
                         }
                         const errText = await res.text();
@@ -1081,7 +1002,6 @@
                     
                     localStorage.setItem('toefl_ai_titles_cache', JSON.stringify(aiCache));
 
-                    // 【核心修改】：每批次成功后，强制休息 6 秒，完美避开 15次/分钟 的限制
                     if (i + chunkSize < unknownQs.length) {
                         overlayText.textContent = `本批次成功！为保护免费额度，等待 6 秒后处理下一批...`;
                         await new Promise(resolve => setTimeout(resolve, 6000));
@@ -1097,7 +1017,6 @@
             finalizeInit();
         }
 
-        // 提取出来的本地降级命名函数
         function fallbackNaming(unknownQs, stopWords) {
             unknownQs.forEach((q, idx) => {
                 const rawWords = q.text.replace(/[^a-zA-Z\s]/g, ' ').split(/\s+/);
@@ -1109,7 +1028,7 @@
             });
         }
 
-        // ================ 文件拖拽上传交互 ================
+        // ================ 手动文件拖拽上传交互 (备用) ================
         const dropZone = document.getElementById('drop-zone');
         const fileInput = document.getElementById('file-input');
 
@@ -1127,7 +1046,7 @@
                 
                 const unknownQs = globalQuestions.filter(q => q.isUnknown);
                 if (unknownQs.length > 0) {
-                    runAIExtraction(unknownQs); // 异步启动 AI，成功后调用 finalizeInit
+                    runAIExtraction(unknownQs);
                 } else {
                     finalizeInit();
                 }
@@ -1141,7 +1060,7 @@
             globalDates = Array.from(dateSet).sort((a,b) => parseDateStr(b) - parseDateStr(a));
             
             const mockSelect = document.getElementById('setup-mock-strategy');
-            mockSelect.innerHTML = '<option value="random">🎲 全库随机抽取新题 (3篇)</option>'; // Reset
+            mockSelect.innerHTML = '<option value="random">🎲 全库随机抽取新题 (3篇)</option>'; 
             globalDates.forEach(d => { if (d !== '未知日期') mockSelect.innerHTML += `<option value="${d}">📄 抽取真题套卷: ${d}</option>`; });
 
             document.getElementById('header-status').innerHTML = `已精准去重筛出: <span class="font-black text-green-700">${globalQuestions.length}</span> 篇独立文章`;
@@ -1285,7 +1204,6 @@
                 groupedByMonth[monthKey].push(d);
             });
 
-            // 确保未知日期排在最后
             const sortedMonths = Object.keys(groupedByMonth).sort((a, b) => a.includes('未知') ? 1 : b.includes('未知') ? -1 : 0);
 
             sortedMonths.forEach(month => {
@@ -1418,7 +1336,7 @@
                 if(searchWord && !q.titleZh.includes(searchWord) && !q.titleEn.toLowerCase().includes(searchWord)) return;
                 
                 count++;
-                if(count > 100) return; // 截断性能保护
+                if(count > 100) return; 
 
                 const isAdded = paperBuilderCart.has(q.id);
                 const btn = isAdded ? 
@@ -1490,7 +1408,6 @@
             document.getElementById('preview-title').textContent = `${q.titleZh} (${q.titleEn})`;
             document.getElementById('preview-meta').textContent = `分类: ${q.cat} | 考查频次: ${q.frequency} | 出现日期: ${q.dates.join(', ')}`;
             
-            // 简单处理掉答案标记，还原成文本展示
             let cleanText = q.text.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, "$1<span class='text-blue-600 font-bold border-b border-blue-600'>$2</span>$3");
             document.getElementById('preview-content').innerHTML = cleanText;
             
@@ -1719,7 +1636,6 @@
         // ----- Practice Buttons -----
         document.getElementById('btn-reset').onclick = () => { workspaceState.answersMemory[activeQuestionId] = null; workspaceState.statusMemory[activeQuestionId] = null; loadQuestionIntoWorkspace(activeQuestionId); };
         
-        // 【关键修复】再做一遍 Redo 逻辑：清空当前题目的内存，切回 Doing 状态
         document.getElementById('btn-redo').onclick = () => { 
             workspaceState.answersMemory[activeQuestionId] = null; 
             workspaceState.statusMemory[activeQuestionId] = null; 
@@ -1784,7 +1700,7 @@
         document.getElementById('btn-mock-next').onclick = () => { workspaceState.currentIndex++; loadQuestionIntoWorkspace(workspaceState.queueIds[workspaceState.currentIndex]); };
         
         document.getElementById('btn-mock-submit').onclick = () => {
-            if (workspaceState.isSubmitting) return; // 绝对防御：连击拦截
+            if (workspaceState.isSubmitting) return; 
             workspaceState.isSubmitting = true;
             forceSubmitMock();
         };
@@ -1810,7 +1726,7 @@
                     passageDetails.lines.push({ expected: ans, actual: val, isCorrect: isC });
                 });
                 if(passageCorrect === blanks.length && blanks.length > 0) sessionRecords[id] = true;
-                mockLog.queueIds = workspaceState.queueIds; // 记录用于 review
+                mockLog.queueIds = workspaceState.queueIds; 
                 mockLog.details.push(passageDetails);
             });
             
@@ -1838,7 +1754,6 @@
             showToast("已透视标准答案", "success");
         };
 
-        // 模考复盘中途 Redo：直接将该题剥离转入 practice 模式
         document.getElementById('btn-mock-review-redo').onclick = () => {
              workspaceState.mode = 'practice'; 
              workspaceState.answersMemory[activeQuestionId] = null;
@@ -1934,7 +1849,7 @@
             });
         }
 
-        // ================ 导出逻辑 (题目与答案彻底分离双轨导出) ================
+        // ================ 导出逻辑 ================
         window.exportAllHistory = function() {
             if(practiceHistoryLog.length === 0) return showToast("暂无记录可导出");
             let content = `====== TOEFL 填词系统 - 全部做题记录 ======\n导出时间: ${new Date().toLocaleString()}\n================================\n\n`;
@@ -1954,7 +1869,6 @@
             triggerDownload(content, `All_History_${new Date().getTime()}.txt`, 'text/plain');
         };
 
-        // 核心双文件导出：下载 2 份 HTML（问题版 和 答案版）
         function generateDualFiles(idsArray) {
             let qHtmlContent = `
             <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Custom TOEFL Practice Paper</title>
@@ -1985,7 +1899,6 @@
                 const q = globalQuestions.find(x => x.id === id);
                 let paperText = q.text; let ansArray = [];
                 
-                // 完美根据字母留空：apple -> _ _ _ _ _
                 paperText = paperText.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => { 
                     ansArray.push(ans); 
                     let htmlSlots = '';
@@ -2006,7 +1919,6 @@
             qHtmlContent += `</body></html>`;
             aHtmlContent += `</body></html>`;
 
-            // 触发 2 次独立下载
             triggerDownload(qHtmlContent, `TOEFL_Paper_Questions_${new Date().getTime()}.html`, 'text/html');
             
             setTimeout(() => {
@@ -2063,10 +1975,8 @@
                 renderBarChart(validDatesToConsider, filteredQuestions);
             }
 
-            // 渲染单篇分析下拉框 (仅初始化一次)
             const singleSelect = document.getElementById('stat-single-select');
             if (singleSelect.options.length === 1) {
-                // 按频次排序填充
                 const sortedQs = [...globalQuestions].sort((a,b) => b.frequency - a.frequency);
                 sortedQs.forEach(q => {
                     singleSelect.innerHTML += `<option value="${q.id}">[频次:${q.frequency}] ${q.titleZh} (${q.titleEn})</option>`;
