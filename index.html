@@ -113,20 +113,43 @@
             <p class="text-slate-300 font-medium" id="ai-loading-text">自动识别并命名缺失的文章分类，请稍候...</p>
         </div>
 
-        <!-- VIEW 0: 导入/加载页 -->
+        <!-- VIEW 0: 导入/加载页 (全新选择界面) -->
         <div id="view-upload" class="absolute inset-0 z-[100] bg-white flex items-center justify-center p-8">
-            <div class="max-w-2xl w-full text-center">
-                <div id="auto-load-spinner" class="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-blue-100">
-                    <div class="spinner-blue"></div>
+            <div class="max-w-3xl w-full text-center">
+                <div class="w-20 h-20 bg-blue-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg rotate-3">
+                    <span class="text-4xl font-black">T</span>
                 </div>
-                <h1 id="upload-title" class="text-4xl font-black text-slate-900 mb-4 tracking-tight">正在同步云端题库...</h1>
-                <p id="upload-desc" class="text-slate-500 mb-10 text-lg">正在从 GitHub 获取最新数据，请稍候...</p>
+                <h1 class="text-4xl font-black text-slate-900 mb-3 tracking-tight">欢迎使用 TOEFL 填词系统</h1>
+                <p class="text-slate-500 mb-10 text-lg">请选择题库数据的加载方式</p>
                 
-                <!-- 备用手动上传区 (默认隐藏，拉取失败时显示) -->
-                <div id="drop-zone" class="hidden border-2 border-dashed border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all rounded-3xl p-14 cursor-pointer flex-col items-center justify-center bg-slate-50/50">
-                    <svg class="w-10 h-10 text-slate-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                    <span class="text-slate-700 font-bold text-xl mb-1">自动拉取失败，请点击手动选择文件</span>
-                    <input type="file" id="file-input" accept=".md,.txt" class="hidden">
+                <!-- 选择区 -->
+                <div id="upload-choices" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 云端拉取 -->
+                    <div onclick="loadFromCloud()" class="border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50 rounded-3xl p-10 cursor-pointer transition-all group shadow-sm">
+                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">同步云端题库</h3>
+                        <p class="text-sm text-slate-500">自动从 GitHub 获取最新更新的题库数据 (推荐)</p>
+                    </div>
+
+                    <!-- 本地上传 -->
+                    <div id="drop-zone" class="border-2 border-dashed border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 rounded-3xl p-10 cursor-pointer transition-all group shadow-sm relative">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">导入本地文件</h3>
+                        <p class="text-sm text-slate-500">点击或拖拽 .md / .txt 文件至此区域</p>
+                        <input type="file" id="file-input" accept=".md,.txt" class="hidden">
+                    </div>
+                </div>
+
+                <!-- 加载状态区 (默认隐藏) -->
+                <div id="upload-loading" class="hidden flex-col items-center justify-center py-10">
+                    <div class="spinner-blue mb-6" id="cloud-spinner"></div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2" id="cloud-status-title">正在拉取云端数据...</h3>
+                    <p id="upload-error-msg" class="text-red-500 text-sm mt-2 hidden"></p>
+                    <button id="btn-cancel-load" onclick="cancelCloudLoad()" class="mt-6 px-6 py-2 text-sm font-bold text-slate-500 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors hidden">返回重新选择</button>
                 </div>
             </div>
         </div>
@@ -560,12 +583,16 @@
         // ============================================================================
         const MD_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md"; 
 
-        // ================ 页面加载时自动拉取云端题库 ================
-        window.addEventListener('DOMContentLoaded', async () => {
-            const uploadTitle = document.getElementById('upload-title');
-            const uploadDesc = document.getElementById('upload-desc');
-            const dropZone = document.getElementById('drop-zone');
-            const spinner = document.getElementById('auto-load-spinner');
+        // ================ 云端拉取逻辑 ================
+        async function loadFromCloud() {
+            // 切换 UI 状态
+            document.getElementById('upload-choices').classList.add('hidden');
+            document.getElementById('upload-loading').classList.remove('hidden');
+            document.getElementById('upload-loading').classList.add('flex');
+            document.getElementById('upload-error-msg').classList.add('hidden');
+            document.getElementById('btn-cancel-load').classList.add('hidden');
+            document.getElementById('cloud-spinner').style.display = 'block';
+            document.getElementById('cloud-status-title').textContent = '正在拉取云端数据...';
 
             try {
                 // 加上时间戳防止浏览器缓存旧数据
@@ -593,15 +620,26 @@
 
             } catch (error) {
                 console.error("自动拉取云端题库失败:", error);
-                // 失败时，显示手动上传界面
-                spinner.classList.add('hidden');
-                uploadTitle.textContent = "云端同步失败";
-                uploadTitle.classList.add('text-red-600');
-                uploadDesc.innerHTML = `无法自动获取题库，请检查网络或 URL 配置。<br><span class="text-red-500 text-sm mt-2 block">${error.message}</span>`;
-                dropZone.classList.remove('hidden');
-                dropZone.classList.add('flex');
+                // 失败时，显示错误信息和返回按钮
+                document.getElementById('cloud-spinner').style.display = 'none';
+                document.getElementById('cloud-status-title').textContent = '云端同步失败';
+                document.getElementById('cloud-status-title').classList.add('text-red-600');
+                
+                const errMsg = document.getElementById('upload-error-msg');
+                errMsg.textContent = `失败原因: ${error.message}`;
+                errMsg.classList.remove('hidden');
+                
+                document.getElementById('btn-cancel-load').classList.remove('hidden');
             }
-        });
+        }
+
+        // 取消云端加载，返回选择界面
+        function cancelCloudLoad() {
+            document.getElementById('upload-loading').classList.add('hidden');
+            document.getElementById('upload-loading').classList.remove('flex');
+            document.getElementById('upload-choices').classList.remove('hidden');
+            document.getElementById('cloud-status-title').classList.remove('text-red-600');
+        }
 
 
         // ================ 系统设置与 API Key 管理 ================
@@ -1028,14 +1066,14 @@
             });
         }
 
-        // ================ 手动文件拖拽上传交互 (备用) ================
+        // ================ 手动文件拖拽上传交互 ================
         const dropZone = document.getElementById('drop-zone');
         const fileInput = document.getElementById('file-input');
 
         dropZone.addEventListener('click', () => fileInput.click());
-        dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-blue-500', 'bg-blue-50'); });
-        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-blue-500', 'bg-blue-50'));
-        dropZone.addEventListener('drop', (e) => { e.preventDefault(); dropZone.classList.remove('border-blue-500', 'bg-blue-50'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+        dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-emerald-500', 'bg-emerald-50'); });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-emerald-500', 'bg-emerald-50'));
+        dropZone.addEventListener('drop', (e) => { e.preventDefault(); dropZone.classList.remove('border-emerald-500', 'bg-emerald-50'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
         fileInput.addEventListener('change', (e) => { if (e.target.files.length) handleFile(e.target.files[0]); });
 
         function handleFile(file) {
