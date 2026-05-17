@@ -76,6 +76,8 @@ ________________________________________
 正确答案： 第1题: t, 第2题: mental, 第3题: out, 第4题: tity, 第5题: nd, 第6题: ience, 第7题: pline, 第8题: ow, 第9题: hy, 第10题: eive,
 第十篇 Language development in children is a complex process influenced by both genetics and environment. From bi_ _ , infants be _ _ to recognize sou_ _ _ _ and patt_ _ _ _ in spe_ _ . By o _ year o_ age, mo_ _ can s_ _ simple wo_ _ _ like “mama” or “dada.” As they grow, their vocabulary expands rapidly. Interacting with caregivers and peers plays a crucial role in this development. Reading to children and engaging in conversations are effective ways to support language acquisition.
 正确答案： 第1题: rth, 第2题: gin, 第3题: nds, 第4题: erns, 第5题: ech, 第6题: ne, 第7题: f, 第8题: st, 第9题: ay, 第10题: rds,
+第十一篇 Aquariums provide an opportunity to observe a variety of fish and other aquatic organisms in a controlled environment. These facil_ _ _ _ _ carefully repli_ _ _ _ natural habi_ _ _ _ , allowing visi_ _ _ _ to le_ _ _ about mar_ _ _ life with_ _ _ venturing in_ _ the oc_ _ _ . Exhibits of_ _ _ include coral reefs, kelp forests, and freshwater streams, showcasing the diversity of aquatic ecosystems. Educational programs and guided tours enhance the experience, offering insights into the behavior, diet, and conservation of these organisms. Maintaining an aquarium requires expertise in water chemistry, filtration systems, and species compatibility.
+正确答案： 第1题: ities, 第2题: cate, 第3题: tats, 第4题: tors, 第5题: arn, 第6题: ine, 第7题: out, 第8题: to, 第9题: ean, 第10题: ten,
 ________________________________________
 
 2026.2.2
@@ -852,6 +854,8 @@ ________________________________________
 
 第三篇 The unusual properties of spider silk—a remarkable combination of strength and elasticity—have long attracted the attention of many. Spider si_ _ has a brea_ _ _ _ point f_ _ greater th_ _ steel a_ _ may str_ _ _ _ its fu_ _ length bef_ _ _ breaking: a 0.01 centi_ _ _ _ _ thread c_ _ support eighty grams. Spider silk is also very durable, a feature well illustrated by the persistence of cobwebs. Throughout history, humans have adapted spider silk for many purposes. For a long period, thick webs were used in Europe as bandages.
 正确答案： 第1题: lk, 第2题: king, 第3题: ar, 第4题: an, 第5题: nd, 第6题: etch, 第7题: ll, 第8题: ore, 第9题: meter, 第10题: an,
+第四篇 In the prehistoric era, social organization was intricately linked to the prevailing environmental conditions, which dictated the migratory patterns and settlement choices of early human groups. These commu_ _ _ _ _ _ often deve_ _ _ _ _ cohesive un_ _ _ based o_ kinship ti_ _ , establishing a sim_ _ _ social stru_ _ _ _ _ that facil_ _ _ _ _ _ cooperative hun_ _ _ _ and gath_ _ _ _ _ of food. Leadership roles emerged naturally, typically assumed by individuals possessing superior survival skills or profound knowledge of the terrain. The distribution of resources, particularly food, was a critical factor, often determining the power dynamics within the group.
+正确答案： 第1题: nities, 第2题: loped, 第3题: its, 第4题: n, 第5题: es, 第6题: ple, 第7题: cture, 第8题: itated, 第9题: ting, 第10题: ering,
 ________________________________________
 
 未知日期
