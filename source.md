@@ -935,4 +935,7 @@ ________________________________________
 
 第十篇 Early civilizations emerged around river valleys, where fertile land and water resources supported agriculture. These commu_ _ _ _ _ _ developed com_ _ _ _ social struc_ _ _ _ _ that incl_ _ _ _ systems o_ governance a_ _ religious instit_ _ _ _ _ _ . The devel_ _ _ _ _ _ of wri_ _ _ _ marked a ma_ _ _ milestone, enabling record-keeping, communication, and the transmission of knowledge across generations. Artifacts such as pottery, tools, and writings offer glimpses into the daily lives and cultural practices of ancient peoples and the rise and fall of early societies.
 正确答案： 第1题: nities, 第2题: plex, 第3题: tures, 第4题: uded, 第5题: f, 第6题: nd, 第7题: utions, 第8题: opment, 第9题: ting, 第10题: jor,
+
+第十一篇 Music has long served as a powerful tool for cultural expression and social change. Comp_ _ _ _ _ and musi_ _ _ _ _ have us_ _ their wo_ _ _ to chal_ _ _ _ _ norms a_ _ reflect poli_ _ _ _ _ realities. Beethoven's symph_ _ _ _ _ , for exa_ _ _ _ , echoed t_ _ revolutionary spirit of his time. In the twentieth century, protest songs became anthems for civil rights and anti-war movements, helping to mobilize public sentiment. These examples show how music can influence thought and action. Studying these intersections reveals music's lasting role in shaping cultural and ideological shifts throughout history.
+正确答案： 第1题: osers, 第2题: cians, 第3题: ed, 第4题: rks, 第5题: lenge, 第6题: nd, 第7题: tical, 第8题: onies, 第9题: mple, 第10题: he,
 ________________________________________
