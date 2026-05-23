@@ -899,6 +899,11 @@
             { key: "Child", zh: "儿童语言发展", en: "Child Language Development", cat: "生命科学" },
             { key: "Aquarium", zh: "水族馆的生态模拟", en: "Aquarium Habitats", cat: "生命科学" },
             { key: "Early", zh: "早期人类起源", en: "Early Human Origins", cat: "历史与人类学" },
+            { key: "Industrialization", zh: "工业化与城市变迁", en: "Industrialization and Cities", cat: "历史与人类学" },
+            { key: "Color", zh: "艺术中的色彩", en: "Color in Art", cat: "艺术与文化" },
+            { key: "Water", zh: "水与地外生命", en: "Water and Alien Life", cat: "天文与地球" },
+            { key: "Mountains", zh: "山脉与气候", en: "Mountains and Climate", cat: "天文与地球" },
+            { key: "Earths", zh: "地球倾角与季节", en: "Earth's Tilt and Seasons", cat: "天文与地球" },
         ];
 
         function getStopWords() {
@@ -1145,11 +1150,20 @@
         function finalizeInit() {
             let dateSet = new Set();
             globalQuestions.forEach(q => { totalFrequencies += q.frequency; q.dates.forEach(d => dateSet.add(d)); });
-            globalDates = Array.from(dateSet).sort((a,b) => parseDateStr(b) - parseDateStr(a));
+            
+            // 优化：将未知日期置顶，其余日期按时间降序排列
+            globalDates = Array.from(dateSet).sort((a,b) => {
+                if (a === '未知日期') return -1;
+                if (b === '未知日期') return 1;
+                return parseDateStr(b) - parseDateStr(a);
+            });
             
             const mockSelect = document.getElementById('setup-mock-strategy');
-            mockSelect.innerHTML = '<option value="random">🎲 全库随机抽取新题 (3篇)</option>'; 
-            globalDates.forEach(d => { if (d !== '未知日期') mockSelect.innerHTML += `<option value="${d}">📄 抽取真题套卷: ${d}</option>`; });
+            mockSelect.innerHTML = '<option value="random">🎲 全库随机抽取新题 (3篇)</option>';
+            // 优化：移除 `d !== '未知日期'` 的限制，允许从未知日期中抽取真题
+            globalDates.forEach(d => { 
+                mockSelect.innerHTML += `<option value="${d}">📄 抽取真题套卷: ${d}</option>`; 
+            });
 
             document.getElementById('header-status').innerHTML = `已精准去重筛出: <span class="font-black text-green-700">${globalQuestions.length}</span> 篇独立文章`;
             navTo('view-dashboard');
@@ -1292,7 +1306,12 @@
                 groupedByMonth[monthKey].push(d);
             });
 
-            const sortedMonths = Object.keys(groupedByMonth).sort((a, b) => a.includes('未知') ? 1 : b.includes('未知') ? -1 : 0);
+            // 优化：修改排序逻辑，确保“未知日期”排在最前面 (-1)
+            const sortedMonths = Object.keys(groupedByMonth).sort((a, b) => {
+                if (a.includes('未知')) return -1;
+                if (b.includes('未知')) return 1;
+                return b.localeCompare(a); // 其他月份正常降序
+            });
 
             sortedMonths.forEach(month => {
                 const monthDates = groupedByMonth[month];
@@ -1356,7 +1375,7 @@
         const searchMode = document.getElementById('search-mode-select');
         const searchBtn = document.getElementById('btn-execute-search');
         
-        function executeDedicatedSearch() {
+        async function executeDedicatedSearch() {
             const keyword = searchInput.value.trim();
             const mode = searchMode.value;
             const resultContainer = document.getElementById('search-results-container');
@@ -1364,26 +1383,68 @@
             if (!keyword) { resultContainer.classList.add('hidden'); return; }
 
             resultContainer.classList.remove('hidden');
+            document.getElementById('search-result-count').textContent = '搜索中...';
+
+            // 1. 关键词预处理：去空格、小写化，并生成 a/e 容错的正则表达式
             const lowerKeyword = keyword.toLowerCase();
+            const noSpaceKeyword = lowerKeyword.replace(/\s+/g, '');
+            const tolerantKeyword = noSpaceKeyword.replace(/[ae]/g, '[ae]');
+            const typoRegex = new RegExp(tolerantKeyword, 'i');
             const searchTerms = lowerKeyword.split(/\s+/);
 
-            const filtered = globalQuestions.filter(q => {
-                const rawText = q.text.replace(/\[.*?\]/g, '').replace(/<br>/g, ' ').toLowerCase(); 
+            let filtered = globalQuestions.filter(q => {
+                const rawText = q.text.replace(/\[.*?\]/g, '').replace(/<br>/g, ' ').toLowerCase();
+                const noSpaceText = rawText.replace(/\s+/g, '');
                 const blanks = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)].map(m => m[1]+m[2]+m[3]); 
+                
                 let matchText = false, matchAnswer = false;
-                if (mode === 'text' || mode === 'hybrid') matchText = searchTerms.every(term => rawText.includes(term) || q.titleZh.includes(term) || q.titleEn.toLowerCase().includes(term));
-                if (mode === 'answer' || mode === 'hybrid') matchAnswer = searchTerms.every(term => blanks.some(b => fuzzyMatch(b, term)));
+
+                // 正文匹配：支持完整一句话无视空格精确匹配，以及 a/e 容错匹配
+                if (mode === 'text' || mode === 'hybrid') {
+                    if (noSpaceText.includes(noSpaceKeyword)) matchText = true;
+                    else if (typoRegex.test(noSpaceText)) matchText = true;
+                    else matchText = searchTerms.every(term => rawText.includes(term) || q.titleZh.includes(term) || q.titleEn.toLowerCase().includes(term));
+                }
+
+                // 答案匹配：支持模糊容错和纯粹去空格对比
+                if (mode === 'answer' || mode === 'hybrid') {
+                    matchAnswer = blanks.some(b => {
+                        const noSpaceB = b.toLowerCase().replace(/\s+/g, '');
+                        return noSpaceB === noSpaceKeyword || typoRegex.test(noSpaceB) || searchTerms.every(term => fuzzyMatch(b, term));
+                    });
+                }
                 return (mode === 'hybrid') ? (matchText || matchAnswer) : (mode === 'text' ? matchText : matchAnswer);
             });
 
+            // 2. API 联动逻辑 (如果本地没有搜到，自动触发)
+            if (filtered.length === 0 && keyword.length >= 2) {
+                const savedKey = localStorage.getItem('toefl_api_key');
+                if (savedKey) {
+                    listEl.innerHTML = '<div class="text-center py-10"><div class="spinner-blue mx-auto mb-4"></div><p class="text-slate-500 font-bold">本地未找到，正在使用 AI 进行云端语义检索...</p></div>';
+                    try {
+                        // 在此填入你的远程检索或 Gemini 向量检索逻辑
+                        // const response = await fetch('YOUR_API_ENDPOINT', {...});
+                        // filtered = await response.json();
+                    } catch (e) {
+                        console.error("API 联动搜索失败:", e);
+                    }
+                }
+            }
+
+            // 3. 渲染结果
             document.getElementById('search-result-count').textContent = `找到 ${filtered.length} 道题目`;
             listEl.innerHTML = '';
-            if (filtered.length === 0) { listEl.innerHTML = '<div class="text-center py-10 text-slate-400">未找到相关题目，换个词试试？</div>'; return; }
+            if (filtered.length === 0) { 
+                listEl.innerHTML = '<div class="text-center py-10 text-slate-400">未找到相关题目。如果题目有细微拼写错误，请尝试输入更短的词根。</div>'; 
+                return; 
+            }
 
             filtered.forEach(q => {
                 let snippetHtml = '';
                 const cleanText = q.text.replace(/\[|\]/g, '').replace(/<br>/g, ' '); 
-                const matchIdx = cleanText.toLowerCase().indexOf(searchTerms[0]);
+                let matchIdx = cleanText.toLowerCase().indexOf(searchTerms[0]);
+                if (matchIdx === -1 && noSpaceKeyword.length > 3) matchIdx = 0; // 容错降级定位
+
                 if (matchIdx !== -1) {
                     const start = Math.max(0, matchIdx - 60);
                     const end = Math.min(cleanText.length, matchIdx + 120);
