@@ -570,6 +570,8 @@ ________________________________________
 正确答案： 第1题: at, 第2题: ce, 第3题: ched, 第4题: an, 第5题: ain, 第6题: ergo, 第7题: nds, 第8题: nges, 第9题: id, 第10题: e,
 第六篇 The Middle Ages was a period in Europe that spanned roughly between the fifth and fifteenth centuries. This e_ _ saw signi_ _ _ _ _ _ changes, mo_ _ notably t_ _ spread o_ Christianity a_ _ the establ_ _ _ _ _ _ _ of powe_ _ _ _ kingdoms. Des_ _ _ _ being of_ _ _ referred to as the "Dark Ages," a name that suggests stagnation and decline, this period also witnessed remarkable achievements in art, architecture, and learning, laying the groundwork for Europe's transition into the Renaissance and the age of discovery.
 正确答案： 第1题: ra, 第2题: ficant, 第3题: st, 第4题: he, 第5题: f, 第6题: nd, 第7题: ishment, 第8题: rful, 第9题: pite, 第10题: ten,
+第七篇 The development of transcontinental railroads was a pivotal moment in North American history, fundamentally altering the landscape and economy. By linking the eastern and western coasts, these rail lines facilitated unprecedented movement of goods, people, and ideas. The railroad accel_ _ _ __ _ national integ_ _ _ _ _ _ , supported indus_ _ _ _ _ growth, a_ _ contributed t_ the expa_ _ _ _ _ of tr_ _ _ , transforming t_ _ United States in_ _ a mo_ _ interconnected and economically dynamic nation. Advances in engineering, such as the use of steel rails, standardized gauges, and telegraph communication, enabled efficient construction and coordination across vast distances.
+正确答案： 第1题: erated, 第2题: ration, 第3题: trial, 第4题: nd, 第5题: o, 第6题: nsion, 第7题: ade, 第8题: he, 第9题: to, 第10题: re,
 ________________________________________
 
 2026.4.7
@@ -653,8 +655,7 @@ ________________________________________
 正确答案： 第1题: erated, 第2题: ration, 第3题: trial, 第4题: nd, 第5题: o, 第6题: nsion, 第7题: ade, 第8题: he, 第9题: to, 第10题: re,
 第七篇 The circadian rhythm regulates sleep-wake cycles and other physiological processes, operating on a roughly 24-hour cycle influenced by external cues such as light and temperature. Disruptions to this rhythm, like irre_ _ _ _ _ sleep patt_ _ _ _ , can le_ _ to hea_ _ _ issues incl_ _ _ _ _ insomnia, exhau_ _ _ _ _ , and decr_ _ _ _ _ cognitive func_ _ _ _ . Some resea_ _ _ _ _ _ are expl_ _ _ _ _ the mechanisms of circadian rhythms, aiming to develop treatments for sleep disorders and improve overall health. Understanding these rhythms is crucial for addressing various health concerns.
 正确答案： 第1题: gular, 第2题: erns, 第3题: ad, 第4题: lth, 第5题: uding, 第6题: stion, 第7题: eased, 第8题: tion, 第9题: rchers, 第10题: oring,
-第八篇 Green chemistry is an innovative approach to chemical research and manufacturing that aims to reduce or eliminate hazardous substances. It focuses on designing environmentally friendly and energy-efficient processes that min_ _ _ _ _ waste and po_ _ _ _ _ _ _ . This ap_ _ _ _ _ _ is widely used in ind_ _ _ _ _ _ _ production and en_ _ _ _ _ _ _ _ _ the development of safer ma_ _ _ _ _ _ _ . In recent years, many com_ _ _ _ _ _ have ad_ _ _ _ _ these methods to improve ef_ _ _ _ _ _ _ _ and reduce en_ _ _ _ _ _ _ _ _ _ _ _ _ impact. These efforts show how science can support sustainable development.
-正确答案： 第1题: imize, 第2题: llution, 第3题: proach, 第4题: ustrial, 第5题: courages, 第6题: terials, 第7题: panies, 第8题: opted, 第9题: ficiency, 第10题: vironmental,
+
 ________________________________________
 
 2026.4.19
@@ -895,6 +896,13 @@ ________________________________________
 第三篇 Plants have evolved various structures to optimize photosynthesis (the capture and conversion of light energy) and survival. Roots anc_ _ _ the plant a_ _ absorb wa_ _ _ and mine_ _ _ _ from t_ _ soil. Leaves a_ _ the pri_ _ _ _ sites o_ photosynthesis. Their br_ _ _ , flat surf_ _ _ _ maximize light absorption. The stem supports the leaves and transports nutrients and water through the vascular system, which consists of xylem and phloem. Some plants, like succulents, store water in their thick leaves to endure arid conditions.
 正确答案： 第1题: hor, 第2题: nd, 第3题: ter, 第4题: rals, 第5题: he, 第6题: re, 第7题: mary, 第8题: f, 第9题: oad, 第10题: aces,
 ________________________________________
+5.23
+第一篇 Reggae music, originating in Jamaica in the late 1960s, has become a global cultural phenomenon. Rooted in earlier styles like ska and rocksteady, reggae evolved as a voice for the marginalized and against violence and war. Characterized by its distinctive rhy_ _ _ and soci_ _ _ _ conscious lyr_ _ _ , the ge_ _ _ addr_ _ _ _ _ themes o_ resistance, pe_ _ _ , and spir_ _ _ _ _ unity. Dee_ _ _ connected t_ Jamaican culture, reggae has impacted fashion, language, and political movements. Today, reggae continues to inspire new generations of musicians and activists, maintaining its relevance in a rapidly changing world.
+正确答案： 第1题: thm, 第2题: ally, 第3题: ics, 第4题: nre, 第5题: esses, 第6题: f, 第7题: ace, 第8题: itual, 第9题: ply, 第10题: o,
+
+第二篇 We know from drawings that have been preserved in caves for over 10,000 years that early humans performed dances as a group activity. We mi_ _ _ think th_ _ prehistoric peo_ _ _ concentrated on_ _ on t_ _ basic wo_ _ that w_ _ required f_ _ survival: hun_ _ _ _ , gathering fo_ _ , and making weapons and garments. However, it is clear from the record that group dancing was important to them. They made masks and costumes; they used much energy in the process of dancing; they recorded more drawings of dancing than of any other group activity.
+正确答案： 第1题: ght, 第2题: at, 第3题: ple, 第4题: ly, 第5题: he, 第6题: rk, 第7题: as, 第8题: or, 第9题: ting, 第10题: od,
+________________________________________
 
 未知日期
 第一篇 Craftsmanship has undergone a profound transformation over the centuries, shifting from a demonstration of manual skill to an expression of artistic vision and communal identity. In medieval Europe, skilled makers—known as artisans—were highly valued not only for their tech_ _ _ _ _ expertise b_ _ also f_ _ their abi_ _ _ _ to inf_ _ _ their crea_ _ _ _ _ with mea_ _ _ _ and repr _ _ _ _ _ deeper spir_ _ _ _ _ or cult_ _ _ _ themes. The intricate details in woodwork, textiles, and pottery served as a testament to the craftsman's mastery and the motifs prevalent during that era.
@@ -908,4 +916,22 @@ ________________________________________
 
 第四篇 At the dawn of civilization, humans relied heavily on their natural surroundings to meet basic needs. Early humans were primarily hunters and gatherers, foraging for edible plants and hunting wild animals. This required humans to move often to find food. Over ti_ _ , they obse_ _ _ _ natural patt_ _ _ _ and be_ _ _ planting se_ _ _ , sparking t_ _ agricultural revol_ _ _ _ _ . This cha_ _ _ allowed perm_ _ _ _ _ settlements a_ _ growing communities. With larger populations came complex social structures, trade, and specialized crafts.
 正确答案： 第1题: me, 第2题: rved, 第3题: erns, 第4题: gan, 第5题: eds, 第6题: he, 第7题: ution, 第8题: nge, 第9题: anent, 第10题: nd,
+
+第五篇 The advent of industrialization in the late eighteenth and nineteenth centuries dramatically reshaped city architecture across Europe and North America. As urban popu_ _ _ _ _ _ _ surged, cit_ _ _ expanded upw_ _ _ with t_ _ construction o_ multi-story buil_ _ _ _ _ and, event_ _ _ _ _ , steel-framed skysc_ _ _ _ _ _ that def_ _ _ modern skyli_ _ _ . These towering structures reflected new engineering capabilities and the growing demand for centralized workspaces. Within cities, transportation systems like streetcars made commuting more efficient, further fueling urban growth. This architectural transformation marked a shift toward dense, vertical living and working environments, emblematic of the industrial age.
+正确答案： 第1题: lations, 第2题: ies, 第3题: ard, 第4题: he, 第5题: f, 第6题: dings, 第7题: ually, 第8题: rapers, 第9题: ined, 第10题: nes,
+
+第六篇 Throughout history, color and pigment have played a central role in art, shaping how we perceive and interpret visual experiences. Artists ha_ _ long under_ _ _ _ _ the emot_ _ _ _ _ and psycho_ _ _ _ _ _ _ power o_ color, util_ _ _ _ _ it t_ convey mo_ _ _ , create emph_ _ _ _ , and ev_ _ _ responses. For example, red often symbolizes passion, while blue can elicit calmness. These symbolic associations can vary across cultures and time periods, allowing artists to communicate deeper layers of meaning through their color choices.
+正确答案： 第1题: ve, 第2题: stood, 第3题: ional, 第4题: logical, 第5题: f, 第6题: izing, 第7题: o, 第8题: ods, 第9题: asis, 第10题: oke,
+
+第七篇 In recent years, the search for extraterrestrial organisms has increasingly focused on water as an important clue. On Earth, water supports biological processes, and its detection on ice-covered moons such as Europa and Enceladus has attracted scien_ _ _ _ _ attention. Evid_ _ _ _ suggests th_ _ these i_ _ moons con_ _ _ _ oceans ke_ _ liquid b_ tidal hea_ _ _ _ , a pro_ _ _ _ in wh_ _ _ gravitational forces generated by nearby planets produce internal warmth. This energy source may create environments comparable to Earth's deep-sea hydrothermal regions, where biological activity occurs without sunlight.
+正确答案： 第1题: tific, 第2题: ence, 第3题: at, 第4题: cy, 第5题: tain, 第6题: pt, 第7题: y, 第8题: ting, 第9题: cess, 第10题: ich,
+
+第八篇 Geographical features such as mountains shape the landscape and climate of a region. Mountains c_ _ act a_ natural barr_ _ _ _ . The Himalayas, f_ _ example, bl_ _ _ cold wi_ _ _ coming fr_ _ Central Asia, kee_ _ _ _ the Indian subcontinent war_ _ _ . They al_ _ cause orographic rainfall, where moist air rises, cools, and precipitates on the windward side, creating lush forests, while the leeward side remains dry. Mountain ranges like the Andes and the Rockies host unique flora and fauna adapted to high altitudes.
+正确答案： 第1题: an, 第2题: s, 第3题: iers, 第4题: or, 第5题: ock, 第6题: nds, 第7题: om, 第8题: ping, 第9题: mer, 第10题: so,
+
+第九篇 Our planet’s axis is tilted at an angle of about 23.5 degrees as it orbits the Sun. A_ a res_ _ _ , the amo_ _ _ of sun_ _ _ _ _ that hi_ _ different pa_ _ _ of Ea_ _ _ is n_ _ all t_ _ same, crea_ _ _ _ seasons. When the Sun shines directly on a region, that region tends to have higher temperatures and longer days. The changing seasons affect many aspects of life, including agriculture, wildlife behavior, and human activities.
+正确答案： 第1题: s, 第2题: ult, 第3题: unt, 第4题: light, 第5题: ts, 第6题: rts, 第7题: rth, 第8题: ot, 第9题: he, 第10题: ting,
+
+第十篇 Early civilizations emerged around river valleys, where fertile land and water resources supported agriculture. These commu_ _ _ _ _ _ developed com_ _ _ _ social struc_ _ _ _ _ that incl_ _ _ _ systems o_ governance a_ _ religious instit_ _ _ _ _ _ . The devel_ _ _ _ _ _ of wri_ _ _ _ marked a ma_ _ _ milestone, enabling record-keeping, communication, and the transmission of knowledge across generations. Artifacts such as pottery, tools, and writings offer glimpses into the daily lives and cultural practices of ancient peoples and the rise and fall of early societies.
+正确答案： 第1题: nities, 第2题: plex, 第3题: tures, 第4题: uded, 第5题: f, 第6题: nd, 第7题: utions, 第8题: opment, 第9题: ting, 第10题: jor,
 ________________________________________
