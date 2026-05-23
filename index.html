@@ -1375,7 +1375,7 @@
         const searchMode = document.getElementById('search-mode-select');
         const searchBtn = document.getElementById('btn-execute-search');
         
-        async function executeDedicatedSearch() {
+        function executeDedicatedSearch() {
             const keyword = searchInput.value.trim();
             const mode = searchMode.value;
             const resultContainer = document.getElementById('search-results-container');
@@ -1392,7 +1392,7 @@
             const typoRegex = new RegExp(tolerantKeyword, 'i');
             const searchTerms = lowerKeyword.split(/\s+/);
 
-            let filtered = globalQuestions.filter(q => {
+            const filtered = globalQuestions.filter(q => {
                 const rawText = q.text.replace(/\[.*?\]/g, '').replace(/<br>/g, ' ').toLowerCase();
                 const noSpaceText = rawText.replace(/\s+/g, '');
                 const blanks = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)].map(m => m[1]+m[2]+m[3]); 
@@ -1416,22 +1416,7 @@
                 return (mode === 'hybrid') ? (matchText || matchAnswer) : (mode === 'text' ? matchText : matchAnswer);
             });
 
-            // 2. API 联动逻辑 (如果本地没有搜到，自动触发)
-            if (filtered.length === 0 && keyword.length >= 2) {
-                const savedKey = localStorage.getItem('toefl_api_key');
-                if (savedKey) {
-                    listEl.innerHTML = '<div class="text-center py-10"><div class="spinner-blue mx-auto mb-4"></div><p class="text-slate-500 font-bold">本地未找到，正在使用 AI 进行云端语义检索...</p></div>';
-                    try {
-                        // 在此填入你的远程检索或 Gemini 向量检索逻辑
-                        // const response = await fetch('YOUR_API_ENDPOINT', {...});
-                        // filtered = await response.json();
-                    } catch (e) {
-                        console.error("API 联动搜索失败:", e);
-                    }
-                }
-            }
-
-            // 3. 渲染结果
+            // 2. 渲染结果
             document.getElementById('search-result-count').textContent = `找到 ${filtered.length} 道题目`;
             listEl.innerHTML = '';
             if (filtered.length === 0) { 
