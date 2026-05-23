@@ -896,7 +896,8 @@ ________________________________________
 第三篇 Plants have evolved various structures to optimize photosynthesis (the capture and conversion of light energy) and survival. Roots anc_ _ _ the plant a_ _ absorb wa_ _ _ and mine_ _ _ _ from t_ _ soil. Leaves a_ _ the pri_ _ _ _ sites o_ photosynthesis. Their br_ _ _ , flat surf_ _ _ _ maximize light absorption. The stem supports the leaves and transports nutrients and water through the vascular system, which consists of xylem and phloem. Some plants, like succulents, store water in their thick leaves to endure arid conditions.
 正确答案： 第1题: hor, 第2题: nd, 第3题: ter, 第4题: rals, 第5题: he, 第6题: re, 第7题: mary, 第8题: f, 第9题: oad, 第10题: aces,
 ________________________________________
-5.23
+2026.5.23
+
 第一篇 Reggae music, originating in Jamaica in the late 1960s, has become a global cultural phenomenon. Rooted in earlier styles like ska and rocksteady, reggae evolved as a voice for the marginalized and against violence and war. Characterized by its distinctive rhy_ _ _ and soci_ _ _ _ conscious lyr_ _ _ , the ge_ _ _ addr_ _ _ _ _ themes o_ resistance, pe_ _ _ , and spir_ _ _ _ _ unity. Dee_ _ _ connected t_ Jamaican culture, reggae has impacted fashion, language, and political movements. Today, reggae continues to inspire new generations of musicians and activists, maintaining its relevance in a rapidly changing world.
 正确答案： 第1题: thm, 第2题: ally, 第3题: ics, 第4题: nre, 第5题: esses, 第6题: f, 第7题: ace, 第8题: itual, 第9题: ply, 第10题: o,
 
