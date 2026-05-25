@@ -1450,5 +1450,17 @@
         "zh": "艺术：色彩与颜料",
         "en": "Art: Color and Pigment",
         "cat": "艺术与文化"
+    },
+    {
+        "key": "Gutenbergs",
+        "zh": "古腾堡印刷革命",
+        "en": "Gutenberg's Printing Revolution",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Mammal",
+        "zh": "哺乳动物的适应",
+        "en": "Mammal Adaptations",
+        "cat": "生命科学"
     }
 ]
