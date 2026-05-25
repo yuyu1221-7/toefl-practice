@@ -939,6 +939,9 @@ ________________________________________
 
 第九篇 In analyzing global trade dynamics, the principle of comparative advantage plays a foundational role. It suggests that nations should specialize in producing goods they can create most efficiently, thereby enhancing ove_ _ _ _ economic produc_ _ _ _ _ _ _ and fost_ _ _ _ _ international interde_ _ _ _ _ _ _ _ . However, exce_ _ _ _ _ reliance o_ this mo_ _ _ can exp_ _ _ economies t_ significant ri_ _ _ . Countries that concentrate on a limited range of exports may become vulnerable to market volatility, such as shifts in global demand or price fluctuations. While comparative advantage can stimulate growth, it must be strategically managed to ensure long-term economic sustainability.
 正确答案： 第1题: rall, 第2题: tivity, 第3题: ering, 第4题: pendence, 第5题: ssive, 第6题: n, 第7题: del, 第8题: ose, 第9题: o, 第10题: sks,
+
+第十篇 In visual arts, the interplay between color and pigment is fundamental in shaping artistic expression. Pigments, the materials that give color to paint, are der_ _ _ _ from var_ _ _ _ sources, incl_ _ _ _ _ minerals, pla_ _ _ , and synt_ _ _ _ _ compounds. Art_ _ _ _ selected mate_ _ _ _ _ based o_ their abi_ _ _ _ to con_ _ _ _ underlying layers (opacity) and resist fading over time. The transformation of pigments into vibrant colors involves the complex interaction of light with the pigment's molecular structure. This interaction determines the color's intensity and luminosity.
+正确答案： 第1题: ived, 第2题: ious, 第3题: uding, 第4题: nts, 第5题: hetic, 第6题: ists, 第7题: rials, 第8题: n, 第9题: lity, 第10题: ceal,
 ________________________________________
 
 未知日期
