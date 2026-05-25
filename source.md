@@ -843,6 +843,17 @@ ________________________________________
 
 第三篇 Paleontology is the scientific study of life's history through the examination of fossil remains. Fossils, incl_ _ _ _ _ bones, she_ _ , and foot _ _ _ _ , provide crit _ _ _ evidence o_ past orga_ _ _ _ _ and th_ _ _ environments. B_ analyzing su_ _ remnants, paleont_ _ _ _ _ _ _ _ can reconstruct ancient ecosystems and track evolutionary changes over millions of years. This field offers valuable insights into the development and extinction of species. Advanced techniques like radiometric dating and CT scanning allow scientists to determine precise ages of specimens and examine internal structures without damaging delicate fossils.
 正确答案： 第1题: uding, 第2题: lls, 第3题: prints, 第4题: ical, 第5题: f, 第6题: nisms, 第7题: eir, 第8题: y, 第9题: ch, 第10题: ologists,
+
+第四篇 During the late nineteenth and early twentieth centuries, the landscape of North American urban centers underwent dramatic transformations as industrialization accelerated. Cities expanded rap_ _ _ _ , fueled b_ the arr_ _ _ _ of immig_ _ _ _ _ and ru_ _ _ populations see_ _ _ _ employment i_ factories. This dyn_ _ _ _ era witn_ _ _ _ _ the ri_ _ of skyscrapers, symbolizing progress and technological triumph. Architects and planners grappled with the challenges posed by such quick growth, including overcrowding and sanitation issues. Public transit systems, like streetcars, emerged as pivotal solutions to urban congestion, altering the rhythm of daily life.
+正确答案： 第1题: idly, 第2题: y, 第3题: ival, 第4题: rants, 第5题: ral, 第6题: king, 第7题: n, 第8题: amic, 第9题: essed, 第10题: se,
+
+第五篇 The Baroque period in music, spanning from the late sixteenth to the early eighteenth century, introduced dramatic changes in musical composition and performance. Composers su_ _ as Johann Sebastian Bach, George Frideric Handel, a_ _ Antonio Vivaldi cre_ _ _ _ intricate wo_ _ _ characterized b_ expressive melo_ _ _ _ . The inve_ _ _ _ _ of n_ _ musical instr_ _ _ _ _ _ like t_ _ harpsichord and early forms of the piano expanded the possibilities for composers and performers. With the use of basso continuo and polyphonic structures, Baroque music often featured contrasts in texture and dynamics.
+正确答案： 第1题: ch, 第2题: nd, 第3题: ated, 第4题: rks, 第5题: y, 第6题: dies, 第7题: ntion, 第8题: ew, 第9题: uments, 第10题: he,
+
+第六篇 Deserts, often characterized by aridity and extreme temperatures, have long been dismissed as barren wastelands. However, this perce_ _ _ _ _ overlooks th_ _ _ critical ecolo_ _ _ _ _ significance a_ _ the remar_ _ _ _ _ adaptations o_ the orga_ _ _ _ _ they ho_ _ . These sev_ _ _ environments req_ _ _ _ resilience and innovation, with plants and animals developing unique survival strategies. Moreover, deserts play a vital role in global carbon cycles, and their vast landscapes offer unparalleled opportunities for research into climate change impacts. Thus, recognizing the intrinsic value of deserts is essential for fostering a deeper appreciation and commitment to desert conservation.
+
+第七篇 Terrestrial mammals exhibit a fascinating array of adaptations that help them survive and thrive in diverse environments. From com_ _ _ _ social intera_ _ _ _ _ _ that imp_ _ _ _ group surv_ _ _ _ to ingen_ _ _ _ _ _ designed lu_ _ _ that enha_ _ _ oxygen absor_ _ _ _ _ , 后面未知... sharp senses and stealthy movements are often result of a high-stakes evolutionary arms race between predator and prey.
+正确答案： 第1题: plex, 第2题: ctions, 第3题: rove, 第4题: ival, 第5题: iously, 第6题: ngs, 第7题: nce, 第8题: ption, 
 ________________________________________
 
 2026.5.10
