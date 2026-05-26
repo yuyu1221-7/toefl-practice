@@ -1462,5 +1462,11 @@
         "zh": "哺乳动物的适应",
         "en": "Mammal Adaptations",
         "cat": "生命科学"
+    },
+    {
+        "key": "Geological",
+        "zh": "地质过程与岩石",
+        "en": "Geological Processes",
+        "cat": "天文与地球"
     }
 ]
