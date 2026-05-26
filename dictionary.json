@@ -1,5 +1,11 @@
 [
     {
+        "key": "Maps are tools that help us understand the world around us",
+        "zh": "地图的作用",
+        "en": "Map's Functions",
+        "cat": "综合与其他"
+    },
+    {
         "key": "Glaciers are massive",
         "zh": "冰川",
         "en": "Glaciers",
@@ -1468,11 +1474,5 @@
         "zh": "地质过程与岩石",
         "en": "Geological Processes",
         "cat": "天文与地球"
-    },
-    {
-        "key": "Maps are tools that help us understand the world around us",
-        "zh": "地图的作用",
-        "en": "Map's Functions",
-        "cat": "综合与其他"
     }
 ]
