@@ -987,6 +987,11 @@ ________________________________________
 第十三篇 The Mughal Empire, which ruled much of South Asia from 1526 to 1857, was a powerful Islamic dynasty known for its administrative sophistication and cultural patronage. Mughal paintings, particularly miniature illustrations, blended Persian, Indian, and Central Asian artistic traditions. These sm_ _ _ works, commis_ _ _ _ _ _ by Mughal empe_ _ _ _ , often depi_ _ _ _ royal li_ _ , historical eve_ _ _ , and sce_ _ _ from myth_ _ _ _ _ with remar_ _ _ _ _ detail a_ _ realism. As court-sponsored art, they reflected imperial wealth, political authority, and cross-cultural exchange, serving both aesthetic and documentary purposes within a thriving economy supported by trade, agriculture, and centralized governance.
 正确答案： 第1题: all, 第2题: sioned, 第3题: rors, 第4题: cted, 第5题: fe, 第6题: nts, 第7题: nes, 第8题: ology, 第9题: kable, 第10题: nd,
 ________________________________________
+2026.5.26
+
+第一篇 Maps are tools that help us understand the world around us. They sh_ _ the loca_ _ _ _ _ of pla_ _ _ like cit_ _ _ , rivers, a_ _ mountains. Th_ _ _ visual gu_ _ _ _ can al_ _ display different ty_ _ _ of infor_ _ _ _ _ _ , such as climate or population. There are many kinds, including physical, political, and thematic versions. The study of maps and cartography, the process by which they are made, can teach us about the geography of our planet and how people live in different regions.
+正确答案： 第1题: ow, 第2题: tions, 第3题: ces, 第4题: ies, 第5题: nd, 第6题: ese, 第7题: ides, 第8题: so, 第9题: pes, 第10题: mation,
+________________________________________
 
 未知日期
 第一篇 Craftsmanship has undergone a profound transformation over the centuries, shifting from a demonstration of manual skill to an expression of artistic vision and communal identity. In medieval Europe, skilled makers—known as artisans—were highly valued not only for their tech_ _ _ _ _ expertise b_ _ also f_ _ their abi_ _ _ _ to inf_ _ _ their crea_ _ _ _ _ with mea_ _ _ _ and repr _ _ _ _ _ deeper spir_ _ _ _ _ or cult_ _ _ _ themes. The intricate details in woodwork, textiles, and pottery served as a testament to the craftsman's mastery and the motifs prevalent during that era.
