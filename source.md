@@ -897,6 +897,15 @@ ________________________________________
 
 第三篇 Archaeological evidence suggests that Homo sapiens first emerged in Africa approximately 300,000 years ago. These early humans were adept at utilizing the resources available to them, including plants and animals that supplied materials for food, clothing, and shelter. They crafted to_ _ _ from st_ _ _ and ani_ _ _ bones a_ _ adapted th_ _ _ hunting techn_ _ _ _ _ to t_ _ changing clim_ _ _ _ and lands_ _ _ _ _ , thus ensu_ _ _ _ their survival. As they migrated out of Africa, they encountered diverse environments, leading to cultural and technological innovations.
 正确答案： 第1题: ols, 第2题: one, 第3题: mal, 第4题: nd, 第5题: eir, 第6题: iques, 第7题: he, 第8题: ates, 第9题: capes, 第10题: ring,
+
+第四篇 During the late nineteenth and early twentieth centuries, the landscape of North American urban centers underwent dramatic transformations as industrialization accelerated. Cities expanded rap_ _ _ _ , fueled b_ the arr_ _ _ _ of immig_ _ _ _ _ and ru_ _ _ populations see_ _ _ _ employment i_ factories. This dyn_ _ _ _ era witn_ _ _ _ _ the ri_ _ of skyscrapers, symbolizing progress and technological triumph. Architects and planners grappled with the challenges posed by such quick growth, including overcrowding and sanitation issues. Public transit systems, like streetcars, emerged as pivotal solutions to urban congestion, altering the rhythm of daily life.
+正确答案： 第1题: idly, 第2题: y, 第3题: ival, 第4题: rants, 第5题: ral, 第6题: king, 第7题: n, 第8题: amic, 第9题: essed, 第10题: se,
+
+第五篇 What are some foundational skills for academic success? Critical thin_ _ _ _ allows stud_ _ _ _ to appr_ _ _ _ problems systema_ _ _ _ _ _ _ _ , analyze infor_ _ _ _ _ _ , and ma_ _ connections bet_ _ _ _ ideas. Al_ _ important a_ _ soft skills li_ _ time management and social skills. Time management is helpful for balancing studies, extracurricular activities, and personal life in an efficient manner. Social skills are good predictors of academic success because those who communicate effectively can form positive relationships with their peers and professors.
+正确答案： 第1题: king, 第2题: ents, 第3题: oach, 第4题: tically, 第5题: mation, 第6题: ke, 第7题: ween, 第8题: so, 第9题: re, 第10题: ke,
+
+第六篇 The advent of industrialization in the late eighteenth and nineteenth centuries dramatically reshaped city architecture across Europe and North America. As urban popu_ _ _ _ _ _ _ surged, cit_ _ _ expanded upw_ _ _ with t_ _ construction o_ multi-story buil_ _ _ _ _ and, event_ _ _ _ _ , steel-framed skysc_ _ _ _ _ _ that def_ _ _ _ modern skyl_ _ _ _ . These towering structures reflected new engineering capabilities and the growing demand for centralized workspaces. Within cities, transportation systems like streetcars made commuting more efficient, further fueling urban growth. This architectural transformation marked a shift toward dense, vertical living and working environments, emblematic of the industrial age.
+正确答案： 第1题: lations, 第2题: ies, 第3题: ard, 第4题: he, 第5题: f, 第6题: dings, 第7题: ually, 第8题: rapers, 第9题: ined, 第10题: ines,
 ________________________________________
 2026.5.16
 
