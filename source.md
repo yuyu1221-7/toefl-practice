@@ -907,6 +907,18 @@ ________________________________________
 第六篇 The advent of industrialization in the late eighteenth and nineteenth centuries dramatically reshaped city architecture across Europe and North America. As urban popu_ _ _ _ _ _ _ surged, cit_ _ _ expanded upw_ _ _ with t_ _ construction o_ multi-story buil_ _ _ _ _ and, event_ _ _ _ _ , steel-framed skysc_ _ _ _ _ _ that def_ _ _ _ modern skyl_ _ _ _ . These towering structures reflected new engineering capabilities and the growing demand for centralized workspaces. Within cities, transportation systems like streetcars made commuting more efficient, further fueling urban growth. This architectural transformation marked a shift toward dense, vertical living and working environments, emblematic of the industrial age.
 正确答案： 第1题: lations, 第2题: ies, 第3题: ard, 第4题: he, 第5题: f, 第6题: dings, 第7题: ually, 第8题: rapers, 第9题: ined, 第10题: ines,
 ________________________________________
+2026.5.13
+
+第一篇 Mushrooms are made up of two main parts: the mycelium and the fruiting body. The mycelium i_ long-lived, wh_ _ _ the fruiting body app_ _ _ _ only wh_ _ conditions a_ _ ideal f_ _ reproduction (li_ _ after ra_ _ ). Usually under_ _ _ _ _ _ , the mycelium cons_ _ _ _ of a network of thread-like structures that absorb nutrients from the soil. The fruiting body is above ground and responsible for producing and spreading spores. These spores are released into the air to help the mushroom reproduce.
+正确答案： 第1题: s, 第2题: ile, 第3题: ears, 第4题: en, 第5题: re, 第6题: or, 第7题: ke, 第8题: in, 第9题: ground, 第10题: ists,
+
+第二篇 Archaeology is the study of past human cultures through the excavation and analysis of artifacts, structures, and other physical remains. This disci_ _ _ _ _ helps unc_ _ _ _ the da_ _ _ lives, bel_ _ _ _ , and techno_ _ _ _ of anc_ _ _ _ civilizations. Archaeo_ _ _ _ _ _ _ often wo_ _ at dig si_ _ _ , carefully unear_ _ _ _ _ and documenting finds. Techniques such as carbon dating and soil analysis provide information about the age and context of discoveries. Collaborative efforts with historians and anthropologists enrich our understanding of past civilizations, revealing information about their religious practices, the tools they used, and many other aspects of how they lived.
+正确答案： 第1题: pline, 第2题: over, 第3题: ily, 第4题: iefs, 第5题: logy, 第6题: ient, 第7题: logists, 第8题: rk, 第9题: tes, 第10题: thing,
+
+第三篇 Learning the controlled use of fire was a key development in human history that greatly improved the early humans' ability to survive. Coo_ _ _ _ food, partic_ _ _ _ _ _ meat a_ _ tubers, ma_ _ digesting nutr_ _ _ _ _ much eas_ _ _ . Fire al_ _ provided war_ _ _ in col_ _ _ climates, allo_ _ _ _ humans to expand their geographic range and survive in areas where they might not have otherwise. In addition, fire was used to harden wood for tools like spears and to shape stones for cutting and scraping, thus contributing to advances in toolmaking.
+正确答案： 第1题: king, 第2题: ularly, 第3题: nd, 第4题: de, 第5题: ients, 第6题: ier, 第7题: so, 第8题: mth, 第9题: der, 第10题: wing,
+
+________________________________________
 2026.5.16
 
 第一篇 Archaeologists typically study human history and prehistory through the excavation of artifacts buried underground. Sometimes, how_ _ _ _ , they disc_ _ _ _ artifacts subm_ _ _ _ _ underwater. A stone wall w_ _ found ben_ _ _ _ the Baltic Sea i_ 2012 th_ _ dates t_ over 10,000 ye_ _ _ ago. Resea_ _ _ _ _ _ believe it was used by hunter-gatherer societies to guide and trap reindeer. The wall consists of approximately 1,670 stones and is considered one of the oldest documented hunting structures made by humans.
