@@ -1,0 +1,14 @@
+name: Sync to Gitee
+on: [push] 
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Push to Gitee
+      run: |
+        git remote add gitee https://yuyu1221-7:${{ secrets.GITEE_TOKEN }}@gitee.com/yuyu1221-7/toefl-practice.git
+        git push gitee main --force
