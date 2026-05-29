@@ -623,12 +623,33 @@
 
     <script>
         // ============================================================================
-        // ⚠️ 核心配置：你的 GitHub 题库地址
-        // 请确保这是 Raw 格式的链接 (通常以 raw.githubusercontent.com 开头)
         // ============================================================================
-        const MD_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md"; 
-        const DICT_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/dictionary.json";
+        // ⚠️ 核心配置：配置多个题库节点 (国内优先加载 Gitee，失败自动切换 GitHub)
+        // ============================================================================
+        const MD_URLS = [
+            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/source.md",
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md"
+        ];
 
+        const DICT_URLS = [
+            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/dictionary.json",
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/dictionary.json"
+        ];
+
+        // ================ 多节点自动降级拉取函数 ================
+        async function fetchWithFallback(urlArray) {
+            for (let i = 0; i < urlArray.length; i++) {
+                try {
+                    const response = await fetch(`${urlArray[i]}?t=${new Date().getTime()}`);
+                    if (response.ok) {
+                        return response;
+                    }
+                } catch (e) {
+                    console.warn(`节点 ${urlArray[i]} 无法访问，准备尝试下一个备用节点...`);
+                }
+            }
+            throw new Error("所有云端数据节点均无法连接，请检查网络状态！");
+        }
         // ================ 云端拉取逻辑 ================
         async function loadFromCloud() {
             document.getElementById('upload-choices').classList.add('hidden');
@@ -640,10 +661,10 @@
             document.getElementById('cloud-status-title').textContent = '正在拉取云端最新数据...';
 
             try {
-                // 并发拉取 Markdown 和 字典 JSON
+                // 修改这里：并发拉取 Markdown 和 字典 JSON (使用 Fallback 函数)
                 const [mdRes, dictRes] = await Promise.all([
-                    fetch(`${MD_URL}?t=${new Date().getTime()}`),
-                    fetch(`${DICT_URL}?t=${new Date().getTime()}`)
+                    fetchWithFallback(MD_URLS),
+                    fetchWithFallback(DICT_URLS)
                 ]);
                 
                 if (!mdRes.ok) throw new Error(`MD文件读取失败: ${mdRes.status}`);
