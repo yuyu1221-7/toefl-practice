@@ -931,6 +931,15 @@ ________________________________________
 正确答案： 第1题: lk, 第2题: king, 第3题: ar, 第4题: an, 第5题: nd, 第6题: etch, 第7题: ll, 第8题: ore, 第9题: meter, 第10题: an,
 第四篇 In the prehistoric era, social organization was intricately linked to the prevailing environmental conditions, which dictated the migratory patterns and settlement choices of early human groups. These commu_ _ _ _ _ _ often deve_ _ _ _ _ cohesive un_ _ _ based o_ kinship ti_ _ , establishing a sim_ _ _ social stru_ _ _ _ _ that facil_ _ _ _ _ _ cooperative hun_ _ _ _ and gath_ _ _ _ _ of food. Leadership roles emerged naturally, typically assumed by individuals possessing superior survival skills or profound knowledge of the terrain. The distribution of resources, particularly food, was a critical factor, often determining the power dynamics within the group.
 正确答案： 第1题: nities, 第2题: loped, 第3题: its, 第4题: n, 第5题: es, 第6题: ple, 第7题: cture, 第8题: itated, 第9题: ting, 第10题: ering,
+
+第五篇 Rock formations offer valuable insights into Earth’s history. Sedimentary layers, for example, reveal past environments. By analyzing their composition and arrangement, geologists can determine if an area was once underwater or exposed. Over time, pressure trans_ _ _ _ _ sediments in_ _ solid ro_ _ _ , preserving evid_ _ _ _ of anc_ _ _ _ climates a_ _ geological eve_ _ _ . Fossils wit_ _ _ layers sh_ _ what orga_ _ _ _ _ once lived there. Through such studies, scientists reconstruct Earth’s past and gain a deeper understanding of the dynamic processes that continue to shape the planet’s surface.
+正确答案： 第1题: forms, 第2题: to, 第3题: cks, 第4题: ence, 第5题: ient, 第6题: nd, 第7题: nts, 第8题: hin, 第9题: ow, 第10题: nisms,
+
+第六篇 Weather patterns are influenced by a variety of factors, including atmospheric pressure, temperature, and humidity. Meteorologists st_ _ _ these fac_ _ _ _ to pre_ _ _ _ weather condi_ _ _ _ _ and under_ _ _ _ _ climate cha_ _ _ . Tools li_ _ satellites a_ _ radar al_ _ _ meteorologists t_ monitor weather systems in great detail. Accurate weather forecasting is crucial for agriculture, disaster preparedness, and daily planning. It should be noted, however, that despite technological advancements, weather is inherently unpredictable due to the numerous atmospheric variables that can change rapidly.
+正确答案： 第1题: udy, 第2题: tors, 第3题: dict, 第4题: tions, 第5题: stand, 第6题: nge, 第7题: ke, 第8题: nd, 第9题: low, 第10题: o,
+
+第七篇 The universe is a vast expanse, filled with mysteries that have intrigued humans for centuries. Black holes are reg_ _ _ _ in sp_ _ _ where gra_ _ _ _ is s_ strong th_ _ nothing, n_ _ even li_ _ _ , can esc_ _ _ . Even tho_ _ _ they a_ _ invisible, black holes can be detected by observing their effects on nearby matter. Black holes play a crucial role in astrophysics, influencing galaxy formation and offering insights into the nature of space, time, and gravity.
+正确答案： 第1题: ions, 第2题: ace, 第3题: vity, 第4题: o, 第5题: at, 第6题: ot, 第7题: ght, 第8题: ape, 第9题: ugh, 第10题: re,
 ________________________________________
 2026.5.18
 
