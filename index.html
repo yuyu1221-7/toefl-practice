@@ -626,13 +626,20 @@
         // ============================================================================
         // ⚠️ 核心配置：配置多个题库节点 (国内优先加载 Gitee，失败自动切换 GitHub)
         // ============================================================================
+        // ============================================================================
+        // ⚠️ 核心配置：航母级多节点容灾机制 (按国内访问速度和稳定性从高到低排列)
+        // ============================================================================
         const MD_URLS = [
-            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/source.md",
-            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md"
+            "./source.md", 
+            "https://cdn.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/source.md", 
+            "https://ghproxy.net/https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md", 
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md" 
         ];
 
         const DICT_URLS = [
-            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/dictionary.json",
+            "./dictionary.json",
+            "https://cdn.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/dictionary.json",
+            "https://ghproxy.net/https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/dictionary.json",
             "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/dictionary.json"
         ];
 
