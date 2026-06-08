@@ -1,4 +1,4 @@
-2026.1.21
+<img width="3240" height="1838" alt="image" src="https://github.com/user-attachments/assets/d0e0d9cc-5e16-4f84-ba05-fdfa3e00d3a7" />2026.1.21
 第一篇 Glaciers are massive, slow-moving bodies of ice that form in areas where snow accumulates over time and compresses into ice. Th_ _ can cha_ _ _ landscapes thr_ _ _ _ processes li_ _ erosion a_ _ deposition. A_ glaciers mo_ _, they ca _ _ out val_ _ _ _ and fjords, lea_ _ _ _ behind distinct geological features. Scientists study glaciers to understand past climate conditions and predict future changes. Glaciers are of particular concern today because their melting contributes to rising sea levels, impacting coastal communities worldwide.
 正确答案： 第1题: ey, 第2题: nge, 第3题: ough, 第4题: ke, 第5题: nd, 第6题: s, 第7题: ve, 第8题: rve, 第9题: leys, 第10题: ving,
 第二篇 The Spix's Macaw, native to Brazil and famously known as the inspiration for the animated movie Rio, is critically endangered, with fewer than a hundred individuals remaining. The popul_ _ _ _ _ of th_ _ vibrant bl_ _ bird decl_ _ _ _ because o_ habitat lo_ _ and ill_ _ _ _ trapping f_ _ sale abr_ _ , where pri _ _ _ collectors and pet stores spent large sums of money to obtain them. Conservationists have initiated captive breeding programs and habitat restoration efforts to reintroduce the Spix's Macaw into the wild, where it was officially declared extinct in 2019.
@@ -1062,6 +1062,9 @@ ________________________________________
 
 第九篇 Cities, with their diverse populations and large industrial and commercial sectors, offer unparalleled opportunities for innovation and cultural exchange. The concen_ _ _ _ _ _ _ of peo_ _ _ and reso_ _ _ _ _ in ur_ _ _ areas ma_ _ _ it eas_ _ _ for indiv_ _ _ _ _ _ and instit_ _ _ _ _ _ to con_ _ _ _ , share id_ _ _ , and work together, which in turn drives innovation and economic development. This constant interaction fuels creativity and problem-solving, making urban centers fertile ground for artistic expression, scientific breakthroughs, and the evolution of social norms.
 正确答案： 第1题: tration, 第2题: ple, 第3题: urces, 第4题: ban, 第5题: kes, 第6题: ier, 第7题: iduals, 第8题: utions, 第9题: nect, 第10题: eas,
+
+第十篇 Color usage in art is a powerful tool that conveys emotion, creates depth, and guides the viewer's attention. Artists use color theory to combine hues in ways that eli_ _ _ specific mo_ _ _ . By care_ _ _ _ _ selecting comple_ _ _ _ _ _ _ or contr_ _ _ _ _ _ colors, th_ _ can heig_ _ _ _ visual imp_ _ _ and cre_ _ _ dynamic compo_ _ _ _ _ _ _ . Warm colors, like red and orange, can suggest energy or passion. Cool tones, like blue and green, can evoke calm or melancholy. Through deliberate choices, artists shape the visual and emotional impact of their work.
+正确答案： 第1题: cit, 第2题: ods, 第3题: fully, 第4题: mentary, 第5题: asting, 第6题: ey, 第7题: hten, 第8题: act, 第9题: ate, 第10题: sitions,
 ________________________________________
 2026.6.1
 
@@ -1114,6 +1117,9 @@ ________________________________________
 
 第四篇 Cities, with their diverse populations and large industrial and commercial sectors, offer unparalleled opportunities for innovation and cultural exchange. The concen_ _ _ _ _ _ _ of peo_ _ _ and reso_ _ _ _ _ in ur_ _ _ areas ma_ _ _ it eas_ _ _ for indiv_ _ _ _ _ _ and instit_ _ _ _ _ _ to con_ _ _ _ , share id_ _ _ , and work together, which in turn drives innovation and economic development. This constant interaction fuels creativity and problem-solving, making urban centers fertile ground for artistic expression, scientific breakthroughs, and the evolution of social norms.
 正确答案： 第1题: tration, 第2题: ple, 第3题: urces, 第4题: ban, 第5题: kes, 第6题: ier, 第7题: iduals, 第8题: utions, 第9题: nect, 第10题: eas,
+
+第五篇 Color usage in art is a powerful tool that conveys emotion, creates depth, and guides the viewer's attention. Artists use color theory to combine hues in ways that eli_ _ _ specific mo_ _ _ . By care_ _ _ _ _ selecting comple_ _ _ _ _ _ _ or contr_ _ _ _ _ _ colors, th_ _ can heig_ _ _ _ visual imp_ _ _ and cre_ _ _ dynamic compo_ _ _ _ _ _ _ . Warm colors, like red and orange, can suggest energy or passion. Cool tones, like blue and green, can evoke calm or melancholy. Through deliberate choices, artists shape the visual and emotional impact of their work.
+正确答案： 第1题: cit, 第2题: ods, 第3题: fully, 第4题: mentary, 第5题: asting, 第6题: ey, 第7题: hten, 第8题: act, 第9题: ate, 第10题: sitions,
 ________________________________________
 
 未知日期
