@@ -1121,8 +1121,20 @@ ________________________________________
 第五篇 Color usage in art is a powerful tool that conveys emotion, creates depth, and guides the viewer's attention. Artists use color theory to combine hues in ways that eli_ _ _ specific mo_ _ _ . By care_ _ _ _ _ selecting comple_ _ _ _ _ _ _ or contr_ _ _ _ _ _ colors, th_ _ can heig_ _ _ _ visual imp_ _ _ and cre_ _ _ dynamic compo_ _ _ _ _ _ _ . Warm colors, like red and orange, can suggest energy or passion. Cool tones, like blue and green, can evoke calm or melancholy. Through deliberate choices, artists shape the visual and emotional impact of their work.
 正确答案： 第1题: cit, 第2题: ods, 第3题: fully, 第4题: mentary, 第5题: asting, 第6题: ey, 第7题: hten, 第8题: act, 第9题: ate, 第10题: sitions,
 ________________________________________
+2026.6.10
+第一篇Geology is the scientific study of our planet, including its composition, structure, and processes. Geolo_ _ _ _ _ analyze ro_ _ _ , minerals, a_ _ the nat_ _ _ _ forces th_ _ change t_ _ outer la_ _ _ _ of Ea_ _ _ over ti_ _ . This know_ _ _ _ _ helps scientists understand the planet's history and predict future changes. It is essential for natural resource management, hazard mitigation, and environmental protection. Advances in geologic research—such as satellite-based remote sensing, deep-Earth imaging, and isotopic dating—have greatly improved our ability to monitor earthquakes, track volcanic activity, and assess groundwater resources.
+正确答案： 第1题: gists, 第2题: cks, 第3题: nd, 第4题: ural, 第5题: at, 第6题: he, 第7题: yers, 第8题: rth, 第9题: me, 第10题: ledge,
 
-未知日期
+第二篇 Archaeological excavations often reveal artifacts such as pottery, tools, and architectural structures, which can suggest cultural practices and societal norms. Advanced methods, including DNA analysis, radiocarbon dating, a_ _ stratigraphy, al_ _ _ archaeologists t_ trace hu_ _ _ migration patt_ _ _ _ and cons_ _ _ _ _ chronologies. How_ _ _ _ , interpreting t_ _ _ findings requ_ _ _ _ careful consid_ _ _ _ _ _ _ of context and limitations, as the preservation and availability of artifacts can significantly influence conclusions. Thus, archaeology remains a vital discipline for understanding the complexities of human history and cultural development across millennia.
+正确答案： 第1题: nd, 第2题: low, 第3题: o, 第4题: man, 第5题: erns, 第6题: truct, 第7题: ever, 第8题: hese, 第9题: ires, 第10题: eration,
+
+第三篇Rock formations offer valuable insights into Earth's history. Sedimentary layers, for example, reveal past environments. By analyzing their composition and arrangement, geologists can determine if an area was once underwater or exposed. Over time, pressure trans_ _ _ _ _ sediments in_ _ solid ro_ _ _ , preserving evid_ _ _ _ of anc_ _ _ _ climates a_ _ geological eve_ _ _ . Fossils wit_ _ _ layers sh_ _ what orga_ _ _ _ _ once lived there. Through such studies, scientists reconstruct Earth's past and gain a deeper understanding of the dynamic processes that continue to shape the planet's surface.
+正确答案： 第1题: forms, 第2题: to, 第3题: cks, 第4题: ence, 第5题: ient, 第6题: nd, 第7题: nts, 第8题: hin, 第9题: ow, 第10题: nisms,
+
+第四篇Public health is a multidisciplinary field concerned with preventing disease, prolonging life, and promoting health through organized efforts and informed choices. It in_ _ _ _ _ _ strategies such a_ health edu_ _ _ _ _ _ , vaccination pro_ _ _ _ _ , and poli_ _ _ _ aimed a_ ensuring sa_ _ environ_ _ _ _ _ . Public health prof_ _ _ _ _ _ _ _ _ _ work to iden_ _ _ _ health disparities. They also manage outbreaks of infectious diseases, promote healthy lifestyles, and contribute to improved quality of life and reduce the burden on healthcare systems worldwide.
+正确答案： 第1题: cludes, 第2题: s, 第3题: cation, 第4题: grams, 第5题: cies, 第6题: t, 第7题: fe, 第8题: ments, 第9: essionals, 第10题: tify,
+________________________________________
+2026.5未知
 
 第一篇 The Mughal Empire, which ruled much of South Asia from 1526 to 1857, was a powerful Islamic dynasty known for its administrative sophistication and cultural patronage. Mughal paintings, particularly miniature illustrations, blended Persian, Indian, and Central Asian artistic traditions. These sm_ _ _ works, commis_ _ _ _ _ _ by Mughal empe_ _ _ _ , often depi_ _ _ _ royal li_ _ , historical eve_ _ _ , and sce_ _ _ from myth_ _ _ _ _ with remar_ _ _ _ _ detail a_ _ realism. As court-sponsored art, they reflected imperial wealth, political authority, and cross-cultural exchange, serving both aesthetic and documentary purposes within a thriving economy supported by trade, agriculture, and centralized governance.
 正确答案： 第1题: all, 第2题: sioned, 第3题: rors, 第4题: cted, 第5题: fe, 第6题: nts, 第7题: nes, 第8题: ology, 第9题: kable, 第10题: nd,
@@ -1147,13 +1159,50 @@ ________________________________________
 
 第八篇 Music has long served as a powerful tool for cultural expression and social change. Comp_ _ _ _ _ and musi_ _ _ _ _ have us_ _ their wo_ _ _ to chal_ _ _ _ _ norms a_ _ reflect poli_ _ _ _ _ realities. Beethoven's symph_ _ _ _ _ , for exa_ _ _ _ , echoed t_ _ revolutionary spirit of his time. In the twentieth century, protest songs became anthems for civil rights and anti-war movements, helping to mobilize public sentiment. These examples show how music can influence thought and action. Studying these intersections reveals music's lasting role in shaping cultural and ideological shifts throughout history.
 正确答案： 第1题: osers, 第2题: cians, 第3题: ed, 第4题: rks, 第5题: lenge, 第6题: nd, 第7题: tical, 第8题: onies, 第9题: mple, 第10题: he,
-
-第九篇 The discovery of water and volcanic activity on moons like Europa and Enceladus has sparked interest in the potential for extraterrestrial life. These moons, orbi_ _ _ _ the pla_ _ _ _ Jupiter a_ _ Saturn, ha_ _ ice-covered surf_ _ _ _ with oce_ _ _ lying under_ _ _ _ _ . Volcanic acti_ _ _ _ , in t_ _ form o_ hydrothermal vents, provides heat and nutrients, creating environments where microbial life could potentially thrive. Missions by spacecraft such as the Galileo and Cassini have gathered valuable data on these moons.
-正确答案： 第1题: ting, 第2题: nets, 第3题: nd, 第4题: ve, 第5题: aces, 第6题: ans, 第7题: neath, 第8题: vity, 第9题: he, 第10题: f,
-
-第十篇 Deserts, often characterized by aridity and extreme temperatures, have long been dismissed as barren wastelands. However, this perce_ _ _ _ _ _ overlooks th_ _ _ critical ecolo_ _ _ _ _ significance a_ _ the remar_ _ _ _ _ adaptations o_ the orga_ _ _ _ _ they ho_ _ . These sev_ _ _ environments req_ _ _ _ resilience and innovation, with plants and animals developing unique survival strategies. Moreover, deserts play a vital role in global carbon cycles, and their vast landscapes offer unparalleled opportunities for research into climate change impacts. Thus, recognizing the intrinsic value of deserts is essential for fostering a deeper appreciation and commitment to desert conservation.
-正确答案： 第1题: ption, 第2题: eir, 第3题: gical, 第4题: nd, 第5题: kable, 第6题: f, 第7题: nisms, 第8题: st, 第9题: ere, 第10题: uire,
-
-第十一篇 Camels live in the desert where the weather is hot and dry. Sometimes i_ the des_ _ _ , camels ha_ _ to tra_ _ _ for a lo_ _ time wit_ _ _ _ finding a_ _ food o_ water. S_ when cam_ _ _ do find food, they are able to eat and drink a lot. Camels turn extra food into fat and store this fat in a special hump on their back. Then they change this fat into energy to help them cross the desert.
-正确答案： 第1题: n, 第2题: ert, 第3题: ve, 第4题: vel, 第5题: ng, 第6题: hout, 第7题: ny, 第8题: r, 第9题: o, 第10题: els,
+________________________________________
+2026.6未知
+第一篇
+Logical reasoning is a cornerstone of academic methodology, providing a structured approach to analyzing arguments and evidence. Deductive reas_ _ _ _ _ starts wi_ _ general princ_ _ _ _ _ and der_ _ _ _ specific concl_ _ _ _ _ _ , while indu_ _ _ _ _ thinking invo_ _ _ _ drawing br_ _ _ generalizations fr_ _ specific observ_ _ _ _ _ _ . Critical thinking skills enable scholars to identify logical fallacies, assess the credibility of sources, and construct coherent arguments. The application of logic extends across disciplines, from mathematics to philosophy to the natural sciences. Developing proficiency in logical reasoning enhances the ability to solve complex problems and communicate effectively, fostering intellectual rigor and innovation.
+正确答案：
+第1题: oning, 第2题: th, 第3题: iples, 第4题: ives, 第5题: usions, 第6题: ctive, 第7题: lves, 第8题: oad, 第9题: om, 第10题: ations,
+第二篇
+Geology is the scientific study of our planet, including its composition, structure, and processes. Geolo_ _ _ _ _ analyze ro_ _ _ , minerals, a_ _ the nat_ _ _ _ forces th_ _ change t_ _ outer la_ _ _ of Ea_ _ _ over ti_ _ . This know_ _ _ _ _ helps scientists understand the planet's history and predict future changes. It is essential for natural resource management, hazard mitigation, and environmental protection. Advances in geologic research—such as satellite-based remote sensing, deep-Earth imaging, and isotopic dating—have greatly improved our ability to monitor earthquakes, track volcanic activity, and assess groundwater resources.
+正确答案：
+第1题: gists, 第2题: cks, 第3题: nd, 第4题: ural, 第5题: at, 第6题: he, 第7题: yer, 第8题: rth, 第9题: me, 第10题: ledge,
+第三篇
+Reggae music, originating in Jamaica in the late 1960s, has become a global cultural phenomenon. Rooted in earlier styles like ska and rocksteady, reggae evolved as a voice for the marginalized and against violence and war. Characterized by its distinctive rhy_ _ _ and soci_ _ _ _ conscious lyr_ _ _ , the ge_ _ _ addr_ _ _ _ _ themes o_ resistance, pe_ _ _ , and spir_ _ _ _ _ unity. Dee_ _ _ connected t_ Jamaican culture, reggae has impacted fashion, language, and political movements. Today, reggae continues to inspire new generations of musicians and activists, maintaining its relevance in a rapidly changing world.
+正确答案：
+第1题: thm, 第2题: ally, 第3题: ics, 第4题: nre, 第5题: esses, 第6题: f, 第7题: ace, 第8题: itual, 第9题: ply, 第10题: o,
+第四篇
+Ravens are highly intelligent birds known for their problem-solving abilities and complex social behaviors. They u_ _ tools, su_ _ as sti_ _ _ , to obt_ _ _ food a_ _ have be_ _ observed enga_ _ _ _ in pla_ _ _ _ behaviors li_ _ sliding o_ snow. Ravens communicate with a wide range of vocalizations, conveying different messages to their peers. Their adaptability allows them to thrive in various environments, from forests to urban areas. Studying raven behavior provides insights into avian intelligence and the evolutionary mechanisms that support cognitive development.
+正确答案：
+第1题: se, 第2题: ch, 第3题: cks, 第4题: ain, 第5题: nd, 第6题: en, 第7题: ging, 第8题: yful, 第9题: ke, 第10题: n,
+第五篇
+Initially, humans used naturally occurring objects as tools (for instance, a sharp stone or a forked stick). Later, peo_ _ _ began purpos_ _ _ _ _ _ to sh_ _ _ wood a_ _ stone in_ _ tools. Bec_ _ _ _ of t_ _ perishable nat_ _ _ of wo_ _ , modern know_ _ _ _ _ of how it was used in prehistoric times is largely a matter of inference. With tools of stone, however, archaeologists are on firmer ground; there are a vast number of surviving artifacts. Throughout the world, flint was a favored material because of its unusual physical properties.
+正确答案：
+第1题: ple, 第2题: efully, 第3题: ape, 第4题: nd, 第5题: to, 第6题: ause, 第7题: he, 第8题: ure, 第9题: od, 第10题: ledge,
+第六篇
+Using bone for the manufacture of tools and other objects has a long history. Many of the wea_ _ _ _ that prehi_ _ _ _ _ _ people us_ _ for hun_ _ _ _ were ma_ _ from t_ _ bones o_ the ani_ _ _ _ they hun_ _ _ . The phys_ _ _ _ properties of these materials varied greatly. For example, the strength and flexibility of antler were important to the way these tools were utilized. Many early bone tools show distinctive signs of wear and polishing, revealing how they were handled and over time.
+正确答案：
+第1题: pons, 第2题: storic, 第3题: ed, 第4题: ting, 第5题: de, 第6题: he, 第7题: f, 第8题: mals, 第9题: ted, 第10题: ical,
+第七篇
+Photosynthesis is a vital process for life on Earth that also has potential to address modern energy challenges. Through the conversion of sunlight into chemical energy, plants pro_ _ _ _ oxygen a_ _ organic comp_ _ _ _ _ , sustaining li_ _ and for_ _ _ _ the found_ _ _ _ _ of fo_ _ chains. Artif_ _ _ _ _ photosynthesis c_ _ theoretically pro_ _ _ _ clean and renewable energy, reducing our dependence on fossil fuels. By mimicking photosynthesis, scientists can produce carbon-neutral fuels, which can aid in developing sustainable energy solutions.
+正确答案：
+第1题: duce, 第2题: nd, 第3题: ounds, 第4题: fe, 第5题: ming, 第6题: ation, 第7题: od, 第8题: icial, 第9题: an, 第10题: vide,
+第八篇
+The human nervous system is responsible for coordinating actions and processing sensory information by transmitting signals between different parts of the body. This com_ _ _ _ network ena_ _ _ _ essential func_ _ _ _ _ such a_ sensation, move_ _ _ _ , and tho_ _ _ _ . The ce_ _ _ in t_ _ nervous sys_ _ _ (neurons) comm_ _ _ _ _ _ _ through electrical impulses and chemical signals. This system controls voluntary actions like movement by sending messages from the brain to muscles, and it also controls involuntary functions such as heart rate, breathing, and digestion.
+正确答案：
+第1题: plex, 第2题: bles, 第3题: tions, 第4题: s, 第5题: ment, 第6题: ught, 第7题: lls, 第8题: he, 第9题: tem, 第10题: unicate,
+第九篇
+Our planet's axis is tilted at an angle of about 23.5 degrees as it orbits the Sun. A_ a res_ _ _ , the amo_ _ _ of sun_ _ _ _ _ that hi_ _ different pa_ _ _ of Ea_ _ _ is n_ _ all t_ _ same, crea_ _ _ _ seasons. When the Sun shines directly on a region, that region tends to have higher temperatures and longer days. The changing seasons affect many aspects of life, including agriculture, wildlife behavior, and human activities.
+正确答案：
+第1题: s, 第2题: ult, 第3题: unt, 第4题: light, 第5题: ts, 第6题: rts, 第7题: rth, 第8题: ot, 第9题: he, 第10题: ting,
+第十篇
+The respiratory system is essential for delivering oxygen to the body's cells and removing carbon dioxide. In hum_ _ _ , air ent_ _ _ through t_ _ nose o_ mouth. Inco_ _ _ _ air ge_ _ warmed u_ and bec_ _ _ _ moist wh_ _ _ it tra_ _ _ _ in the nasal passages. Dust and other particles are also filtered out. Then the air goes down the trachea and reaches the lungs. Within the lungs, tiny air sacs shaped like balloons facilitate the exchange of gases with the bloodstream. This process is crucial for cellular respiration, which provides energy for bodily functions.
+正确答案：
+第1题: ans, 第2题: ers, 第3题: he, 第4题: r, 第5题: ming, 第6题: ts, 第7题: p, 第8题: omes, 第9题: ile, 第10题: vels,
+第十一篇
+Archaeological excavations often reveal artifacts such as pottery, tools, and architectural structures, which can suggest cultural practices and societal norms. Advanced methods, including DNA analysis, radiocarbon dating, a_ _ stratigraphy, al_ _ _ archaeologists t_ trace hu_ _ _ migration patt_ _ _ _ and cons_ _ _ _ _ chronologies. How_ _ _ _ , interpreting t_ _ findings requ_ _ _ _ careful consid_ _ _ _ _ _ _ of context and limitations, as the preservation and availability of artifacts can significantly influence conclusions. Thus, archaeology remains a vital discipline for understanding the complexities of human history and cultural development across millennia.
+正确答案：
+第1题: nd, 第2题: low, 第3题: o, 第4题: man, 第5题: erns, 第6题: truct, 第7题: ever, 第8题: he, 第9题: ires, 第10题: eration,
 ________________________________________
