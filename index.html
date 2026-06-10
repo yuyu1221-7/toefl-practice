@@ -139,7 +139,7 @@
                 
                 <!-- 动态列表区 (可滚动) -->
                 <div class="p-6 overflow-y-auto flex-1 bg-slate-50" id="changelog-container">
-                    <!-- JS将在这里动态插入按月分组的面板 -->
+                    <!-- JS将在这里动态插入按日期分组的面板 -->
                 </div>
 
                 <!-- 底部按钮 -->
@@ -175,7 +175,7 @@
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-2">同步云端题库</h3>
-                        <p class="text-sm text-slate-500">自动从 GitHub 获取最新更新的题库数据 (推荐)</p>
+                        <p class="text-sm text-slate-500">自动从 GitHub 获取最新更新 of 题库数据 (推荐)</p>
                     </div>
 
                     <!-- 本地上传 -->
@@ -623,11 +623,7 @@
 
     <script>
         // ============================================================================
-        // ============================================================================
         // ⚠️ 核心配置：配置多个题库节点 (国内优先加载 Gitee，失败自动切换 GitHub)
-        // ============================================================================
-        // ============================================================================
-        // ⚠️ 核心配置：航母级多节点容灾机制 (按国内访问速度和稳定性从高到低排列)
         // ============================================================================
         const MD_URLS = [
             "./source.md", 
@@ -668,7 +664,6 @@
             document.getElementById('cloud-status-title').textContent = '正在拉取云端最新数据...';
 
             try {
-                // 修改这里：并发拉取 Markdown 和 字典 JSON (使用 Fallback 函数)
                 const [mdRes, dictRes] = await Promise.all([
                     fetchWithFallback(MD_URLS),
                     fetchWithFallback(DICT_URLS)
@@ -776,7 +771,6 @@
                 return showToast("当前没有新增的 AI 词条，字典已是最新！", "error");
             }
 
-            // 直接导出为格式化好的 JSON
             let jsonString = JSON.stringify(newDict, null, 4);
 
             triggerDownload(jsonString, `dictionary.json`, 'application/json');
@@ -787,6 +781,7 @@
         let globalQuestions = []; 
         let globalDates = [];
         let totalFrequencies = 0;
+        let newlyAddedPrefixes = new Set(); // 新同步的新增题目 Key
 
         let starredIds = new Set();
         let sessionRecords = {}; 
@@ -809,21 +804,29 @@
         let activeQuestionId = null; 
         let viewHistoryStack = ['view-dashboard']; 
 
-        // 外部引入字典
         let titleDictionary = [];
 
         function getStopWords() {
             return ['the','a','an','and','or','but','in','on','at','to','for','of','with','by','about','as','into','like','through','after','over','between','out','against','during','without','before','under','around','among','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','shall','should','can','could','may','might','must','it','its','they','their','this','that','these','those','we','our','you','your','he','his','she','her','from'];
         }
 
+        // ================ 支持带未知的各种日期解析器 ================
         function parseDateStr(str) {
             if (str === '未知日期') return 0;
+            
+            // 校验是否为“XX月未知”形式，例如 "2026.5未知" 或 "2026.5.未知"
+            const unknownMonthMatch = str.match(/(\d+)\.(\d+)(?:\.?)未知/);
+            if (unknownMonthMatch) {
+                // 赋予 day 部分 99，使其作为该月第一优先级，排在该月最前面
+                return parseInt(unknownMonthMatch[1]) * 10000 + parseInt(unknownMonthMatch[2]) * 100 + 99;
+            }
+            
             const match = str.match(/(\d+)\.(\d+)\.(\d+)([a-zA-Z]*)/);
             if(match) return parseInt(match[1])*10000 + parseInt(match[2])*100 + parseInt(match[3]) + (match[4] ? match[4].charCodeAt(0)/1000 : 0);
             return 0;
         }
 
-        // 解析器
+        // 解析 Markdown Engine
         function parseMarkdownEngine(mdText) {
             const cleanedText = mdText.replace(/[（(]\s*注[:：][^）)]*[）)]/g, '');
             let formattedText = cleanedText.replace(/(正确答案[:：])/g, '\n$1').replace(/(补全版本[:：])/g, '\n$1');
@@ -838,10 +841,13 @@
                 currentRawPassage = ''; currentCompletedText = ''; state = 'PASSAGE';
             };
 
+            // 拓展正则支持形式如 2026.5未知 的日期前缀
+            const dateHeaderRegex = /^(?:202\d\.\d+\.\d+[A-Za-z]?|202\d\.\d+(?:\.?)未知)$/;
+
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i];
                 if (line.startsWith('___') || line.startsWith('新一篇')) { pushEntry(); currentDate = '未知日期'; continue; }
-                if (/^202\d\.\d+\.\d+[A-Za-z]?$/.test(line)) { pushEntry(); currentDate = line; continue; }
+                if (dateHeaderRegex.test(line)) { pushEntry(); currentDate = line; continue; }
                 
                 const isNewPassageHeader = /^(?:第[一二三四五六七八九十]+[篇段]\s*)/.test(line);
                 if (isNewPassageHeader && state !== 'PASSAGE') pushEntry();
@@ -1057,7 +1063,7 @@
             let dateSet = new Set();
             globalQuestions.forEach(q => { totalFrequencies += q.frequency; q.dates.forEach(d => dateSet.add(d)); });
             
-            // 优化：将未知日期置顶，其余日期按时间降序排列
+            // 优化：将未知日期置顶，其余日期按时间降序排列 (兼容处理XX月未知)
             globalDates = Array.from(dateSet).sort((a,b) => {
                 if (a === '未知日期') return -1;
                 if (b === '未知日期') return 1;
@@ -1066,7 +1072,6 @@
             
             const mockSelect = document.getElementById('setup-mock-strategy');
             mockSelect.innerHTML = '<option value="random">🎲 全库随机抽取新题 (3篇)</option>';
-            // 优化：移除 `d !== '未知日期'` 的限制，允许从未知日期中抽取真题
             globalDates.forEach(d => { 
                 mockSelect.innerHTML += `<option value="${d}">📄 抽取真题套卷: ${d}</option>`; 
             });
@@ -1074,7 +1079,7 @@
             document.getElementById('header-status').innerHTML = `已精准去重筛出: <span class="font-black text-green-700">${globalQuestions.length}</span> 篇独立文章`;
             navTo('view-dashboard');
             
-            // ================= 自动检测更新逻辑 =================
+            // ================= 自动检测更新并提示 =================
             checkAndShowUpdates(globalQuestions);
         }
 
@@ -1093,11 +1098,12 @@
             }
 
             const newKeys = currentKeys.filter(k => !storedKeys.includes(k));
+            newlyAddedPrefixes = new Set(newKeys);
             
             if (newKeys.length > 0) {
                 // 有更新：弹窗，并在小铃铛上打红点
                 document.getElementById('update-badge').classList.remove('hidden');
-                renderChangelog(newKeys.length); // 渲染内容
+                renderChangelog(newKeys.length); 
                 document.getElementById('changelog-modal').classList.remove('hidden');
                 localStorage.setItem('toefl_known_keys', JSON.stringify(currentKeys));
             } else {
@@ -1108,85 +1114,119 @@
 
         // 手动点击小铃铛打开日志
         window.openChangelog = function() {
-            renderChangelog(0); // 传0代表是手动查看历史，不是因为新更新触发的
+            renderChangelog(0); // 传0代表是手动查看最新快照
             document.getElementById('changelog-modal').classList.remove('hidden');
-            document.getElementById('update-badge').classList.add('hidden'); // 点开后消除红点
+            document.getElementById('update-badge').classList.add('hidden'); 
         }
 
         window.closeChangelog = function() {
             document.getElementById('changelog-modal').classList.add('hidden');
         }
 
-        // 渲染按月/周分类的折叠面板
+        // 重新构建：按日期为核心展示“最近10天”分组 (加了 7号算一天，6号算一天)
         function renderChangelog(newKeysCount) {
             const container = document.getElementById('changelog-container');
             const subtitle = document.getElementById('changelog-subtitle');
 
+            // 过滤并按大到小精细排序日期 (把完全未知的日期放最后)
+            const sortedDates = [...globalDates].sort((a, b) => {
+                if (a === '未知日期') return 1;
+                if (b === '未知日期') return -1;
+                return parseDateStr(b) - parseDateStr(a);
+            });
+
+            // 获取最新 10 个考试日 (每个独立的日期算一天，支持月未知)
+            const latest10Dates = sortedDates.slice(0, 10);
+
             if (newKeysCount > 0) {
-                subtitle.innerHTML = `<span class="bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full font-bold text-xs mr-1">NEW</span> 本次为您同步了 ${newKeysCount} 篇新内容`;
+                subtitle.innerHTML = `<span class="bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full font-bold text-xs mr-1">NEW</span> 检测到本地/云端有 ${newKeysCount} 篇新题目同步！`;
             } else {
-                subtitle.textContent = `当前题库已是最新，共收录 ${globalQuestions.length} 篇`;
+                subtitle.textContent = `当前题库已同步至最新，为您展示最近 10 个考试日的题库快照`;
             }
 
-            // 按年月对日期进行分组
-            let grouped = {};
-            globalDates.forEach(d => {
-                let monthGroup = '';
-                if (d === '未知日期') monthGroup = '📌 补充题库 (未知日期)';
-                else {
-                    const pts = d.split('.');
-                    monthGroup = `${pts[0]}年${pts[1]}月`; // 如 "2024年5月"
-                }
-                if(!grouped[monthGroup]) grouped[monthGroup] = [];
-                grouped[monthGroup].push(d);
-            });
-
-            // 给月份排个序（最新的月份在最上面，补充题库在最下面）
-            const sortedMonths = Object.keys(grouped).sort((a,b) => {
-                if(a.includes('补充')) return 1;
-                if(b.includes('补充')) return -1;
-                const m1 = a.match(/(\d+)年(\d+)月/);
-                const m2 = b.match(/(\d+)年(\d+)月/);
-                if(!m1 || !m2) return 0;
-                const valA = parseInt(m1[1])*100 + parseInt(m1[2]);
-                const valB = parseInt(m2[1])*100 + parseInt(m2[2]);
-                return valB - valA; // 倒序
-            });
-
             container.innerHTML = '';
-            
-            // 循环每个月份，生成折叠面板
-            sortedMonths.forEach((month, index) => {
-                const datesInMonth = grouped[month];
-                // 月份内部的日期也按时间倒序排
-                datesInMonth.sort((a,b) => parseDateStr(b) - parseDateStr(a));
 
-                // 默认只展开第一个（最新的月份），其他的折叠
-                const isExpanded = index === 0;
+            // 1. 特殊提醒：如果在本次新增的内容中含有“几月未知”的文章，给出贴心通告
+            let hasNewUnknownMonthQuestions = false;
+            globalQuestions.forEach(q => {
+                if (newlyAddedPrefixes.has(q.prefixKey)) {
+                    const hasUnknownMonth = q.dates.some(d => d.includes('未知') && d !== '未知日期');
+                    if (hasUnknownMonth) {
+                        hasNewUnknownMonthQuestions = true;
+                    }
+                }
+            });
 
-                let datesHtml = datesInMonth.map((d, dIdx) => {
-                    const qs = globalQuestions.filter(q => q.dates.includes(d));
-                    // 判断是不是整个题库里最新的一天
-                    const isVeryLatest = (index === 0 && dIdx === 0 && !month.includes('补充'));
-                    const badge = isVeryLatest ? `<span class="bg-red-500 text-white text-[10px] font-black px-1.5 py-0.5 rounded ml-2 shadow-sm">最新 (本周)</span>` : '';
-                    
+            if (hasNewUnknownMonthQuestions) {
+                container.innerHTML += `
+                    <div class="mb-4 bg-orange-50 border border-orange-200 text-orange-800 p-4 rounded-2xl text-xs font-semibold flex items-start gap-2 shadow-sm">
+                        <span class="text-base">⚠️</span>
+                        <div>
+                            <span class="font-bold">考点提示：</span>本次更新同步包含高度疑似对应月份的“XX月未知”题目，已在日历及下方更新组中进行特殊高亮呈现。
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 2. 按日分组渲染面板 (最近 10 个考试日)
+            latest10Dates.forEach((dateStr, index) => {
+                const qs = globalQuestions.filter(q => q.dates.includes(dateStr));
+                
+                // 判断此日期内是否含有本次新导入的文章
+                const containsNew = qs.some(q => newlyAddedPrefixes.has(q.prefixKey));
+                const isVeryLatest = index === 0 && dateStr !== '未知日期';
+                
+                let dateBadge = '';
+                if (containsNew) {
+                    dateBadge += `<span class="bg-emerald-500 text-white text-[10px] font-black px-1.5 py-0.5 rounded ml-2 shadow-sm">新增内容</span>`;
+                } else if (isVeryLatest) {
+                    dateBadge += `<span class="bg-blue-500 text-white text-[10px] font-black px-1.5 py-0.5 rounded ml-2 shadow-sm">最新考期</span>`;
+                }
+
+                // 转换人性化格式
+                let dateLabel = dateStr;
+                const unknownMonthMatch = dateStr.match(/(\d+)\.(\d+)(?:\.?)未知/);
+                if (unknownMonthMatch) {
+                    dateLabel = `${unknownMonthMatch[1]}年${unknownMonthMatch[2]}月未知 (高度疑似该月考题)`;
+                } else if (dateStr === '未知日期') {
+                    dateLabel = '📌 补充题库 (日期完全未知)';
+                } else {
+                    const pts = dateStr.split('.');
+                    dateLabel = `${pts[0]}年${pts[1]}月${pts[2]}日`;
+                }
+
+                // 面板子项列表
+                let passagesHtml = qs.map(q => {
+                    const isNewPassage = newlyAddedPrefixes.has(q.prefixKey);
+                    const newLabel = isNewPassage ? `<span class="bg-red-500 text-white text-[9px] font-bold px-1 py-0.5 rounded animate-pulse shrink-0">✨ NEW</span>` : '';
                     return `
-                    <div class="flex justify-between items-center py-3 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors px-2 rounded-lg">
-                        <div class="text-sm font-bold text-slate-700 flex items-center">🗓️ ${d} ${badge}</div>
-                        <div class="text-xs text-blue-600 font-bold bg-blue-100 border border-blue-200 px-2 py-1 rounded-md shadow-sm">${qs.length} 篇</div>
-                    </div>`;
+                        <div onclick="closeChangelog(); startWorkspace('practice', [${q.id}]);" class="flex justify-between items-center py-2.5 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors px-2 rounded-lg cursor-pointer group">
+                            <div class="text-xs font-bold text-slate-700 flex items-center gap-2 truncate pr-4">
+                                <span class="text-slate-400 group-hover:text-blue-600">📖</span>
+                                <span class="truncate group-hover:text-blue-600 transition-colors" title="${q.titleZh}">${q.titleZh}</span>
+                                ${newLabel}
+                            </div>
+                            <div class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded whitespace-nowrap">${q.cat}</div>
+                        </div>
+                    `;
                 }).join('');
 
+                // 若包含新添加题目或作为最新的一天，默认展开
+                const isExpanded = containsNew || index === 0;
+
                 container.innerHTML += `
-                <div class="mb-4 bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all">
-                    <button onclick="toggleChangelogGroup(this)" class="w-full flex justify-between items-center p-4 bg-white hover:bg-slate-50 transition-colors">
-                        <span class="font-black text-slate-800 text-lg">${month}</span>
-                        <svg class="w-6 h-6 text-slate-400 transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="px-3 py-1 bg-white border-t border-slate-100 transition-all duration-300 ${isExpanded ? 'block' : 'hidden'}">
-                        ${datesHtml}
-                    </div>
-                </div>`;
+                    <div class="mb-4 bg-white rounded-2xl border ${containsNew ? 'border-emerald-300 ring-2 ring-emerald-100' : 'border-slate-200'} overflow-hidden shadow-sm transition-all">
+                        <button onclick="toggleChangelogGroup(this)" class="w-full flex justify-between items-center p-4 bg-white hover:bg-slate-50 transition-colors">
+                            <span class="font-black text-slate-800 text-sm flex items-center flex-wrap gap-1">
+                                🗓️ ${dateLabel}
+                                ${dateBadge}
+                            </span>
+                            <svg class="w-5 h-5 text-slate-400 transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="px-3 py-1 bg-white border-t border-slate-100 transition-all duration-300 ${isExpanded ? 'block' : 'hidden'}">
+                            ${passagesHtml}
+                        </div>
+                    </div>`;
             });
         }
 
@@ -1302,6 +1342,7 @@
             startWorkspace('practice', pool.map(q => q.id), '');
         }
 
+        // ================ 日历视图渲染 (含特殊XX月未知卡片支持) ================
         function renderCalendarView() {
             const container = document.getElementById('calendar-container');
             const yearFilter = document.getElementById('cal-filter-year');
@@ -1311,7 +1352,17 @@
                 let years = new Set(), months = new Set();
                 globalDates.forEach(d => {
                     if(d !== '未知日期') {
-                        const pts = d.split('.'); years.add(pts[0]); months.add(pts[1]);
+                        const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
+                        let year = '', month = '';
+                        if (unknownMonthMatch) {
+                            year = unknownMonthMatch[1];
+                            month = unknownMonthMatch[2];
+                        } else {
+                            const pts = d.split('.');
+                            year = pts[0];
+                            month = pts[1];
+                        }
+                        years.add(year); months.add(month);
                     }
                 });
                 Array.from(years).sort().forEach(y => yearFilter.innerHTML += `<option value="${y}">${y}年</option>`);
@@ -1329,31 +1380,56 @@
                 if(d === '未知日期') {
                     monthKey = '📌 未知日期 / 补充题库';
                 } else {
-                    const pts = d.split('.');
-                    if(yearFilter.value !== 'all' && pts[0] !== yearFilter.value) return;
-                    if(monthFilter.value !== 'all' && pts[1] !== monthFilter.value) return;
-                    monthKey = `${pts[0]}年${pts[1]}月`;
+                    const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
+                    let year = '', month = '';
+                    if (unknownMonthMatch) {
+                        year = unknownMonthMatch[1];
+                        month = unknownMonthMatch[2];
+                    } else {
+                        const pts = d.split('.');
+                        year = pts[0];
+                        month = pts[1];
+                    }
+                    if(yearFilter.value !== 'all' && year !== yearFilter.value) return;
+                    if(monthFilter.value !== 'all' && month !== monthFilter.value) return;
+                    monthKey = `${year}年${month}月`;
                 }
 
                 if(!groupedByMonth[monthKey]) groupedByMonth[monthKey] = [];
                 groupedByMonth[monthKey].push(d);
             });
 
-            // 优化：修改排序逻辑，确保“未知日期”排在最前面 (-1)
             const sortedMonths = Object.keys(groupedByMonth).sort((a, b) => {
                 if (a.includes('未知')) return -1;
                 if (b.includes('未知')) return 1;
-                return b.localeCompare(a); // 其他月份正常降序
+                return b.localeCompare(a); 
             });
 
             sortedMonths.forEach(month => {
                 const monthDates = groupedByMonth[month];
+                
+                // 将每月的日期按时间排降序 (由 parseDateStr 排序。月未知的 day 权值为 99，将自动排到本月最前端)
+                monthDates.sort((a, b) => parseDateStr(b) - parseDateStr(a));
+
                 let daysHtml = monthDates.map(dateStr => {
                     const qCount = globalQuestions.filter(q => q.dates.includes(dateStr)).length;
-                    const dayLabel = dateStr === '未知日期' ? '未知' : `${dateStr.split('.')[2]}日`;
+                    
+                    let dayLabel = '';
+                    let subText = '';
+                    const unknownMonthMatch = dateStr.match(/(\d+)\.(\d+)(?:\.?)未知/);
+                    if (dateStr === '未知日期') {
+                        dayLabel = '未知';
+                    } else if (unknownMonthMatch) {
+                        dayLabel = `${unknownMonthMatch[2]}月未知`;
+                        subText = '<span class="text-[10px] text-orange-600 font-bold block mt-1 bg-orange-100/60 px-1 py-0.5 rounded leading-tight">高度疑似该月考题</span>';
+                    } else {
+                        dayLabel = `${dateStr.split('.')[2]}日`;
+                    }
+                    
                     return `
-                        <div onclick="startPracticeByDate('${dateStr}')" class="bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md cursor-pointer rounded-2xl p-4 text-center transition-all group shadow-sm">
-                            <h4 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600">${dayLabel}</h4>
+                        <div onclick="startPracticeByDate('${dateStr}')" class="bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md cursor-pointer rounded-2xl p-4 text-center transition-all group shadow-sm flex flex-col justify-center min-h-[95px]">
+                            <h4 class="text-xl font-bold text-slate-800 group-hover:text-blue-600">${dayLabel}</h4>
+                            ${subText}
                             <p class="text-sm font-semibold text-slate-400 mt-1">${qCount} 篇</p>
                         </div>
                     `;
@@ -1418,7 +1494,6 @@
             resultContainer.classList.remove('hidden');
             document.getElementById('search-result-count').textContent = '搜索中...';
 
-            // 1. 关键词预处理：去空格、小写化，并生成 a/e 容错的正则表达式
             const lowerKeyword = keyword.toLowerCase();
             const noSpaceKeyword = lowerKeyword.replace(/\s+/g, '');
             const tolerantKeyword = noSpaceKeyword.replace(/[ae]/g, '[ae]');
@@ -1432,14 +1507,12 @@
                 
                 let matchText = false, matchAnswer = false;
 
-                // 正文匹配：支持完整一句话无视空格精确匹配，以及 a/e 容错匹配
                 if (mode === 'text' || mode === 'hybrid') {
                     if (noSpaceText.includes(noSpaceKeyword)) matchText = true;
                     else if (typoRegex.test(noSpaceText)) matchText = true;
                     else matchText = searchTerms.every(term => rawText.includes(term) || q.titleZh.includes(term) || q.titleEn.toLowerCase().includes(term));
                 }
 
-                // 答案匹配：支持模糊容错和纯粹去空格对比
                 if (mode === 'answer' || mode === 'hybrid') {
                     matchAnswer = blanks.some(b => {
                         const noSpaceB = b.toLowerCase().replace(/\s+/g, '');
@@ -1449,7 +1522,6 @@
                 return (mode === 'hybrid') ? (matchText || matchAnswer) : (mode === 'text' ? matchText : matchAnswer);
             });
 
-            // 2. 渲染结果
             document.getElementById('search-result-count').textContent = `找到 ${filtered.length} 道题目`;
             listEl.innerHTML = '';
             if (filtered.length === 0) { 
@@ -1461,7 +1533,7 @@
                 let snippetHtml = '';
                 const cleanText = q.text.replace(/\[|\]/g, '').replace(/<br>/g, ' '); 
                 let matchIdx = cleanText.toLowerCase().indexOf(searchTerms[0]);
-                if (matchIdx === -1 && noSpaceKeyword.length > 3) matchIdx = 0; // 容错降级定位
+                if (matchIdx === -1 && noSpaceKeyword.length > 3) matchIdx = 0; 
 
                 if (matchIdx !== -1) {
                     const start = Math.max(0, matchIdx - 60);
@@ -2115,9 +2187,16 @@
                 const currentYear = 2026;
                 const currentMonth = 6; 
                 validDatesToConsider = validDatesToConsider.filter(d => {
-                    const pts = d.split('.');
-                    const y = parseInt(pts[0]);
-                    const m = parseInt(pts[1]);
+                    const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
+                    let y, m;
+                    if (unknownMonthMatch) {
+                        y = parseInt(unknownMonthMatch[1]);
+                        m = parseInt(unknownMonthMatch[2]);
+                    } else {
+                        const pts = d.split('.');
+                        y = parseInt(pts[0]);
+                        m = parseInt(pts[1]);
+                    }
                     if (timeFilter === '2026') return y === 2026;
                     const monthsDiff = (currentYear - y) * 12 + (currentMonth - m);
                     if (timeFilter === 'last6m') return monthsDiff >= 0 && monthsDiff <= 6;
@@ -2200,12 +2279,24 @@
             
             let monthCounts = {};
             validDates.forEach(d => {
-                const m = `${d.split('.')[0]}.${d.split('.')[1]}`;
-                monthCounts[m] = (monthCounts[m] || 0) + filteredQuestions.filter(q=>q.dates.includes(d)).length;
+                const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
+                let y = '', m = '';
+                if (unknownMonthMatch) {
+                    y = unknownMonthMatch[1];
+                    m = unknownMonthMatch[2];
+                } else {
+                    const pts = d.split('.');
+                    y = pts[0];
+                    m = pts[1];
+                }
+                const monthKey = `${y}.${m}`;
+                monthCounts[monthKey] = (monthCounts[monthKey] || 0) + filteredQuestions.filter(q=>q.dates.includes(d)).length;
             });
 
             const sortedMonths = Object.keys(monthCounts).sort((a,b) => {
-                return (parseInt(a.split('.')[0])*100+parseInt(a.split('.')[1])) - (parseInt(b.split('.')[0])*100+parseInt(b.split('.')[1]));
+                const ptsA = a.split('.');
+                const ptsB = b.split('.');
+                return (parseInt(ptsA[0])*100+parseInt(ptsA[1])) - (parseInt(ptsB[0])*100+parseInt(ptsB[1]));
             }).slice(-12);
 
             const data = sortedMonths.map(m => monthCounts[m]);
