@@ -728,6 +728,9 @@ ________________________________________
 正确答案： 第1题: ption, 第2题: eir, 第3题: gical, 第4题: nd, 第5题: kable, 第6题: f, 第7题: nisms, 第8题: st, 第9题: ere, 第10题: uire,
 第三篇 The evolution of abstract art in the early twentieth century marks a pivotal shift in the perception and purpose of artwork. Abstract artists often seek to repr_ _ _ _ _ the esse_ _ _ _ _ qualities o_ emotions assoc_ _ _ _ _ with t_ _ subject, focu_ _ _ _ on mo_ _ and move_ _ _ _ , as we_ _ as symb_ _ _ _ _ , rather than realistic detail. The abstract art movement broke away from traditional ideas about art, prompting viewers to think more deeply about what they saw. As artists explored new methods of expression, they revolutionized how people interact with art, creating a conversation between artist and audience.
 正确答案： 第1题: esent, 第2题: ntial, 第3题: r, 第4题: iated, 第5题: he, 第6题: sing, 第7题: od, 第8题: ment, 第9题: ll, 第10题: olism,
+
+第四篇 Understanding the potential and limitations of artificial intelligence (AI) is crucial for harnessing its benefits while mitigating associated risks. AI technologies enable computers to mi_ _ _ human cogn_ _ _ _ _ functions, allo_ _ _ _ them t_ analyze la_ _ _ datasets a_ _ make predi_ _ _ _ _ _ with sp_ _ _ and accu_ _ _ . These capabi _ _ _ _ _ have been particularly beneficial in fields like healthcare, where AI assists in diagnosing diseases by recognizing patterns in medical images. As AI continues to evolve, ethical considerations surrounding data privacy and employment displacement must be addressed.
+正确答案： 第1题: mic, 第2题: itive, 第3题: wing, 第4题: o, 第5题: rge, 第6题: nd, 第7题: ctions, 第8题: eed, 第9题: racy, 第10题: lities,
 ________________________________________
 
 2026.4.27
@@ -775,6 +778,8 @@ ________________________________________
 正确答案： 第1题: enced, 第2题: tors, 第3题: s, 第4题: erns, 第5题: tion, 第6题: cial, 第7题: n, 第8题: bal, 第9题: nce, 第10题: ribute,
 第十篇 The formation of river deltas is a geographical process that illustrates the dynamic interaction between land and water. When a river reaches a body of water, such as an oc_ _ _ or s_ , it sl _ _ down, depos_ _ _ _ _ the mate_ _ _ _ _ it has car_ _ _ _ from upst_ _ _ _ . Gradually, t_ _ sediments accum_ _ _ _ _ to cre_ _ _ deltas, which are fertile landforms that extend into the water. Deltas not only support diverse ecosystems but also provide rich agricultural land.
 正确答案： 第1题: ean, 第2题: ea, 第3题: ows, 第4题: iting, 第5题: rials, 第6题: ried, 第7题: ream, 第8题: he, 第9题: ulate, 第10题: ate,
+第十一篇 Realism in theater is a movement that emerged in the 19th century, aiming to portray everyday life with authenticity and truthfulness. It rejects exaggerated sentime_ _ _ _ _ _ _ and theat_ _ _ _ _ conventions, ins_ _ _ _ focusing o_ believable chara_ _ _ _ , natural conver _ _ _ _ , and sett _ _ _ that ref_ _ _ real soc_ _ _ environments. Rea_ _ _ _ plays often explore complex moral and social issues, emphasizing psychological depth and the influence of environment and circumstance on human behavior. Realism continues to influence contemporary theatre by encouraging honest, nuanced storytelling.
+正确答案： 第1题: ntality, 第2题: rical, 第3题: tead, 第4题: n, 第5题: cters, 第6题: sation, 第7题: ings, 第8题: lect, 第9题: ial, 第10题: list,
 ________________________________________
 
 2026.4.30
@@ -821,8 +826,8 @@ ________________________________________
 正确答案： 第1题: as, 第2题: o, 第3题: lux, 第4题: kers, 第5题: yment, 第6题: ories, 第7题: ed, 第8题: ficant, 第9题: n, 第10题: ial,
 ________________________________________
 2026.5.6
-第一篇 The atmosphere is a dynamic and complex system, shaped by countless interacting variables such as solar radiation, air pressure, and moisture levels. Meteorologists use advanced mod_ _ _ to simu_ _ _ _ these intera_ _ _ _ _ _ , but predi_ _ _ _ _ weather rem_ _ _ _ a chal_ _ _ _ _ due t_ the inher_ _ _ chaotic nat_ _ _ of atmos_ _ _ _ _ _ processes. Small changes in initial conditions can lead to vastly different outcomes, making long-term forecasts especially uncertain. Despite technological progress, the atmosphere's unpredictability continues to pose limits to accurate and consistent weather prediction.
-正确答案： 第1题: els, 第2题: late, 第3题: ctions, 第4题: cting, 第5题: ains, 第6题: lenge, 第7题: o, 第8题: ent, 第9题: ure, 第10题: pheric,
+第一篇 The atmosphere is a dynamic and complex system, shaped by countless interacting variables such as solar radiation, air pressure, and moisture levels. Meteorologists use advanced mod_ _ _ to simu_ _ _ _ these intera_ _ _ _ _ , but predi _ _ _ _ weather rem_ _ _ _ a chal_ _ _ _ _ due t_ the inher_ _ _ _ _ chaotic nat_ _ _ of atmos_ _ _ _ _ _ processes. Small changes in initial conditions can lead to vastly different outcomes, making long-term forecasts especially uncertain. Despite technological progress, the atmosphere's unpredictability continues to pose limits to accurate and consistent weather prediction.
+正确答案： 第1题: els, 第2题: late, 第3题: ctions, 第4题: cting, 第5题: ains, 第6题: lenge, 第7题: o, 第8题: ently, 第9题: ure, 第10题: pheric,
 
 第二篇 What are some foundational skills for academic success? Critical thin_ _ _ _ allows stud_ _ _ _ to appr_ _ _ _ problems systema_ _ _ _ _ _ _ , analyze infor_ _ _ _ _ _ , and ma_ _ connections bet_ _ _ _ ideas. Al_ _ important a_ _ soft skills li_ _ time management and social skills. Time management is helpful for balancing studies, extracurricular activities, and personal life in an efficient manner. Social skills are good predictors of academic success because those who communicate effectively can form positive relationships with their peers and professors.
 正确答案： 第1题: king, 第2题: ents, 第3题: oach, 第4题: tically, 第5题: mation, 第6题: ke, 第7题: ween, 第8题: so, 第9题: re, 第10题: ke,
@@ -868,6 +873,12 @@ ________________________________________
 
 第七篇 Terrestrial mammals exhibit a fascinating array of adaptations that help them survive and thrive in diverse environments. From com_ _ _ _ social intera_ _ _ _ _ _ that imp_ _ _ _ group surv_ _ _ _ to ingen_ _ _ _ _ _ designed lu_ _ _ that enha_ _ _ oxygen absor_ _ _ _ _ , 后面未知... sharp senses and stealthy movements are often result of a high-stakes evolutionary arms race between predator and prey.
 正确答案： 第1题: plex, 第2题: ctions, 第3题: rove, 第4题: ival, 第5题: iously, 第6题: ngs, 第7题: nce, 第8题: ption, 
+
+第八篇 Understanding the potential and limitations of artificial intelligence (AI) is crucial for harnessing its benefits while mitigating associated risks. AI technologies enable computers to mi_ _ _ human cogn_ _ _ _ _ functions, allo_ _ _ _ them t_ analyze la_ _ _ datasets a_ _ make predi_ _ _ _ _ _ with sp_ _ _ and accu_ _ _ . These capabi _ _ _ _ _ have been particularly beneficial in fields like healthcare, where AI assists in diagnosing diseases by recognizing patterns in medical images. As AI continues to evolve, ethical considerations surrounding data privacy and employment displacement must be addressed.
+正确答案： 第1题: mic, 第2题: itive, 第3题: wing, 第4题: o, 第5题: rge, 第6题: nd, 第7题: ctions, 第8题: eed, 第9题: racy, 第10题: lities,
+
+第九篇 Color usage in art is a powerful tool that conveys emotion, creates depth, and guides the viewer's attention. Artists use color theory to combine hues in ways that eli_ _ _ specific mo_ _ _ . By care_ _ _ _ _ selecting comple_ _ _ _ _ _ _ or contr_ _ _ _ _ _ colors, th_ _ can heig_ _ _ _ visual imp_ _ _ and cre_ _ _ dynamic compo_ _ _ _ _ _ _ . Warm colors, like red and orange, can suggest energy or passion. Cool tones, like blue and green, can evoke calm or melancholy. Through deliberate choices, artists shape the visual and emotional impact of their work.
+正确答案： 第1题: cit, 第2题: ods, 第3题: fully, 第4题: mentary, 第5题: asting, 第6题: ey, 第7题: hten, 第8题: act, 第9题: ate, 第10题: sitions,
 ________________________________________
 
 2026.5.10
@@ -891,6 +902,9 @@ ________________________________________
 
 第九篇 Observing the moon's phases has been important for many cultures throughout history, influencing calendars, navigation, and mythology. Lunar cycles formed the basis of early timekeeping systems, such as the Islamic Hijrī calendar and the traditional Chinese lunisolar calendar. Seafarers us_ _ the posi_ _ _ _ of t_ _ moon t_ make predi_ _ _ _ _ _ about oc_ _ _ levels a_ _ its illumi_ _ _ _ _ _ to gu_ _ _ their voy_ _ _ _ , especially during night travel. In mythology, the moon often embodied powerful deities or symbols, shaping rituals, stories, and seasonal festivals. Across continents, the waxing and waning of the moon has remained a universal clock and an inspiration for human imagination.
 正确答案： 第1题: ed, 第2题: tion, 第3题: he, 第4题: o, 第5题: ctions, 第6题: ean, 第7题: nd, 第8题: nation, 第9题: ide, 第10题: ages,
+
+第十篇 The role of kinship was central to the social structure of prehistoric communities. Kinship not only structured family relationships but also shaped how resources were shared, labor was organized, and social hierarchies were maintained within the group. Archaeo_ _ _ _ _ _ _ evidence sugg_ _ _ _ that indiv_ _ _ _ _ _ held spec_ _ _ _ roles ba_ _ _ on a_ _ and gen_ _ , contributing t a sophis_ _ _ _ _ _ _ division o_ labor. The intricacy of these social structures is further evidenced by the existence of ceremonial sites, which indicate collective activities and social gatherings.
+正确答案： 第1题: logical, 第2题: ests, 第3题: iduals, 第4题: ific, 第5题: sed, 第6题: ge, 第7题: der, 第8题: o, 第9题: ticated, 第10题: f,
 ________________________________________
 2026.5.11
 
@@ -1064,9 +1078,6 @@ ________________________________________
 
 第九篇 Cities, with their diverse populations and large industrial and commercial sectors, offer unparalleled opportunities for innovation and cultural exchange. The concen_ _ _ _ _ _ _ of peo_ _ _ and reso_ _ _ _ _ in ur_ _ _ areas ma_ _ _ it eas_ _ _ for indiv_ _ _ _ _ _ and instit_ _ _ _ _ _ to con_ _ _ _ , share id_ _ _ , and work together, which in turn drives innovation and economic development. This constant interaction fuels creativity and problem-solving, making urban centers fertile ground for artistic expression, scientific breakthroughs, and the evolution of social norms.
 正确答案： 第1题: tration, 第2题: ple, 第3题: urces, 第4题: ban, 第5题: kes, 第6题: ier, 第7题: iduals, 第8题: utions, 第9题: nect, 第10题: eas,
-
-第十篇 Color usage in art is a powerful tool that conveys emotion, creates depth, and guides the viewer's attention. Artists use color theory to combine hues in ways that eli_ _ _ specific mo_ _ _ . By care_ _ _ _ _ selecting comple_ _ _ _ _ _ _ or contr_ _ _ _ _ _ colors, th_ _ can heig_ _ _ _ visual imp_ _ _ and cre_ _ _ dynamic compo_ _ _ _ _ _ _ . Warm colors, like red and orange, can suggest energy or passion. Cool tones, like blue and green, can evoke calm or melancholy. Through deliberate choices, artists shape the visual and emotional impact of their work.
-正确答案： 第1题: cit, 第2题: ods, 第3题: fully, 第4题: mentary, 第5题: asting, 第6题: ey, 第7题: hten, 第8题: act, 第9题: ate, 第10题: sitions,
 ________________________________________
 2026.6.1
 
@@ -1100,8 +1111,8 @@ ________________________________________
 第三篇 The introduction of sanitation practices in urban areas during the nineteenth century significantly improved public health. Innovations such as sew_ _ _ systems a_ _ clean wa_ _ _ supplies deve_ _ _ _ _ from t_ _ growing awar_ _ _ _ _ of the conne_ _ _ _ _ between po_ _ hygiene and ill_ _ _ _ , and reduced the spr_ _ _ of infectious diseases like cholera and typhoid. Public health campaigns, supported by local governments and medical professionals, educated communities on the importance of hygiene. These efforts were instrumental in decreasing mortality rates and enhancing quality of life.
 正确答案： 第1题: age, 第2题: nd, 第3题: ter, 第4题: loped, 第5题: he, 第6题: eness, 第7题: ction, 第8题: or, 第9题: ness, 第10题: ead,
 
-第四篇 The atmosphere is a dynamic and complex system, shaped by countless interacting variables such as solar radiation, air pressure, and moisture levels. Meteorologists use advanced mod_ _ _ to simu_ _ _ _ these intera_ _ _ _ _ _ , but predi_ _ _ _ _ weather rem_ _ _ _ a chal_ _ _ _ _ due t_ the inher_ _ _ chaotic nat_ _ _ of atmos_ _ _ _ _ _ processes. Small changes in initial conditions can lead to vastly different outcomes, making long-term forecasts especially uncertain. Despite technological progress, the atmosphere's unpredictability continues to pose limits to accurate and consistent weather prediction.
-正确答案： 第1题: els, 第2题: late, 第3题: ctions, 第4题: cting, 第5题: ains, 第6题: lenge, 第7题: o, 第8题: ent, 第9题: ure, 第10题: pheric,
+第四篇 The atmosphere is a dynamic and complex system, shaped by countless interacting variables such as solar radiation, air pressure, and moisture levels. Meteorologists use advanced mod_ _ _ to simu_ _ _ _ these intera_ _ _ _ _ , but predi _ _ _ _ weather rem_ _ _ _ a chal_ _ _ _ _ due t_ the inher_ _ _ _ _ chaotic nat_ _ _ of atmos_ _ _ _ _ _ processes. Small changes in initial conditions can lead to vastly different outcomes, making long-term forecasts especially uncertain. Despite technological progress, the atmosphere's unpredictability continues to pose limits to accurate and consistent weather prediction.
+正确答案： 第1题: els, 第2题: late, 第3题: ctions, 第4题: cting, 第5题: ains, 第6题: lenge, 第7题: o, 第8题: ently, 第9题: ure, 第10题: pheric,
 
 第五篇 At the dawn of civilization, humans relied heavily on their natural surroundings to meet basic needs. Early humans were primarily hunters and gatherers, foraging for edible plants and hunting wild animals. This required humans to move often to find food. Over ti_ _ , they obse_ _ _ _ natural patt_ _ _ _ and be_ _ _ planting se_ _ _ , sparking t_ _ agricultural revol_ _ _ _ _ . This cha_ _ _ allowed perm_ _ _ _ _ settlements a_ _ growing communities. With larger populations came complex social structures, trade, and specialized crafts.
 正确答案： 第1题: me, 第2题: rved, 第3题: erns, 第4题: gan, 第5题: eds, 第6题: he, 第7题: ution, 第8题: nge, 第9题: anent, 第10题: nd,
@@ -1129,6 +1140,37 @@ ________________________________________
 
 第三篇Rock formations offer valuable insights into Earth's history. Sedimentary layers, for example, reveal past environments. By analyzing their composition and arrangement, geologists can determine if an area was once underwater or exposed. Over time, pressure trans_ _ _ _ _ sediments in_ _ solid ro_ _ _ , preserving evid_ _ _ _ of anc_ _ _ _ climates a_ _ geological eve_ _ _ . Fossils wit_ _ _ layers sh_ _ what orga_ _ _ _ _ once lived there. Through such studies, scientists reconstruct Earth's past and gain a deeper understanding of the dynamic processes that continue to shape the planet's surface.
 正确答案： 第1题: forms, 第2题: to, 第3题: cks, 第4题: ence, 第5题: ient, 第6题: nd, 第7题: nts, 第8题: hin, 第9题: ow, 第10题: nisms,
+________________________________________
+2026.6.13
+第一篇 The atmosphere is a dynamic and complex system, shaped by countless interacting variables such as solar radiation, air pressure, and moisture levels. Meteorologists use advanced mod_ _ _ to simu_ _ _ _ these intera_ _ _ _ _ _ , but predi_ _ _ _ _ weather rem_ _ _ _ a chal_ _ _ _ _ due t_ the inher_ _ _ _ _ chaotic nat_ _ _ of atmos_ _ _ _ _ _ processes. Small changes in initial conditions can lead to vastly different outcomes, making long-term forecasts especially uncertain. Despite technological progress, the atmosphere's unpredictability continues to pose limits to accurate and consistent weather prediction.
+正确答案： 第1题: els, 第2题: late, 第3题: ctions, 第4题: cting, 第5题: ains, 第6题: lenge, 第7题: o, 第8题: ently, 第9题: ure, 第10题: pheric,
+
+第二篇 Paleontology is the scientific study of life’s history through the examination of fossil remains. Fossils, incl_ _ _ _ _ bones, she_ _ _ , and foot_ _ _ _ _ _ , provide crit_ _ _ _ evidence o_ past orga_ _ _ _ _ and th_ _ _ environments. B_ analyzing su_ _ remnants, paleont_ _ _ _ _ _ _ _ can reconstruct ancient ecosystems and track evolutionary changes over millions of years. This field offers valuable insights into the development and extinction of species. Advanced techniques like radiometric dating and CT scanning allow scientists to determine precise ages of specimens and examine internal structures without damaging delicate fossils.
+正确答案： 第1题: uding, 第2题: lls, 第3题: prints, 第4题: ical, 第5题: f, 第6题: nisms, 第7题: eir, 第8题: y, 第9题: ch, 第10题: ologists,
+
+第三篇 Geology is the scientific study of our planet, including its composition, structure, and processes. Geolo_ _ _ _ _ analyze ro_ _ , minerals, a _ the nat_ _ _ _ forces th_ _ change t_ _ outer la_ _ _ of Ea_ _ _ over ti_ . This know _ _ _ _ helps scientists understand the planet’s history and predict future changes. It is essential for natural resource management, hazard mitigation, and environmental protection. Advances in geologic research—such as satellite-based remote sensing, deep-Earth imaging, and isotopic dating—have greatly improved our ability to monitor earthquakes, track volcanic activity, and assess groundwater resources.
+正确答案： 第1题: gists, 第2题: cks, 第3题: nd, 第4题: ural, 第5题: at, 第6题: he, 第7题: yer, 第8题: rth, 第9题: me, 第10题: ledge,
+
+第四篇 Understanding the potential and limitations of artificial intelligence (AI) is crucial for harnessing its benefits while mitigating associated risks. AI technologies enable computers to mi_ _ _ human cogn_ _ _ _ _ functions, allo_ _ _ _ them t_ analyze la_ _ _ datasets a_ _ make predi_ _ _ _ _ _ with sp_ _ _ and accu_ _ _ . These capabi _ _ _ _ _ have been particularly beneficial in fields like healthcare, where AI assists in diagnosing diseases by recognizing patterns in medical images. As AI continues to evolve, ethical considerations surrounding data privacy and employment displacement must be addressed.
+正确答案： 第1题: mic, 第2题: itive, 第3题: wing, 第4题: o, 第5题: rge, 第6题: nd, 第7题: ctions, 第8题: eed, 第9题: racy, 第10题: lities,
+
+第五篇 The unusual properties of spider silk-a remarkable combination of strength and elasticity-have long attracted the attention of many. Spider si_ _ has a brea_ _ _ _ point f_ _ greater th_ _ steel a_ _ may str_ _ _ _ its fu_ _ length bef_ _ _ breaking: a 0.01 centi_ _ _ _ _ thread c_ _ support eighty grams. Spider silk is also very durable, a feature well illustrated by the persistence of cobwebs. Throughout history, humans have adapted spider silk for many purposes. For a long period, thick webs were used in Europe as bandages.
+正确答案： 第1题: lk, 第2题: king, 第3题: ar, 第4题: an, 第5题: nd, 第6题: etch, 第7题: ll, 第8题: ore, 第9题: meter, 第10题: an,
+
+第六篇 The history of the South Pacific is marked by diverse cultures and significant events. Indigenous popul_ _ _ _ _ _ developed com_ _ _ _ societies wi_ _ rich tradi_ _ _ _ _ and soc_ _ _ structures. T_ _ region’s poli_ _ _ _ _ and econ_ _ _ _ landscapes exper_ _ _ _ _ _ profound cha_ _ _ _ following colonization by Europeans. Studying this history allows for a greater understanding of culture interactions and the ongoing effects of historical events on contemporary South Pacific societies. Traditional navigation techniques using stars and ocean swells enabled remarkable voyaging achievements, while contemporary movements focus on cultural preservation, language revitalization, and addressing climate change impacts on island nations.
+正确答案： 第1题: ations, 第2题: plex, 第3题: th, 第4题: tions, 第5题: ial, 第6题: he, 第7题: tical, 第8题: omic, 第9题: ienced, 第10题: nges,
+
+第七篇 Theater has long been a powerful medium for social change, offering the viewing public a space to reflect on societal norms and injustices. Like many ot_ _ _ art fo_ _ , theater cre _ _ _ a dyn_ _ _ _ and abso_ _ _ _ _ experience f_ _ the audi_ _ _ _ that c_ _ provoke de_ _ emotional resp_ _ _ _ _. Such engagement makes theater uniquely suited for persuasive storytelling, galvanizing viewers to consider new perspectives and ideas critically. When playwrights craft narratives that challenge prevailing attitudes, they can influence public discourse and inspire action.
+正确答案： 第1题: her, 第2题: rms, 第3题: ates, 第4题: amic, 第5题: rbing, 第6题: or, 第7题: ence, 第8题: an, 第9题: ep, 第10题: onses,
+
+第八篇 The role of kinship was central to the social structure of prehistoric communities. Kinship not only structured family relationships but also shaped how resources were shared, labor was organized, and social hierarchies were maintained within the group. Archaeo_ _ _ _ _ _ _ evidence sugg_ _ _ _ that indiv_ _ _ _ _ _ held spec_ _ _ _ roles ba_ _ _ on a_ _ and gen_ _ , contributing t a sophis_ _ _ _ _ _ _ division o_ labor. The intricacy of these social structures is further evidenced by the existence of ceremonial sites, which indicate collective activities and social gatherings.
+正确答案： 第1题: logical, 第2题: ests, 第3题: iduals, 第4题: ific, 第5题: sed, 第6题: ge, 第7题: der, 第8题: o, 第9题: ticated, 第10题: f,
+
+第九篇 Realism in theater is a movement that emerged in the 19th century, aiming to portray everyday life with authenticity and truthfulness. It rejects exaggerated sentime_ _ _ _ _ _ _ and theat_ _ _ _ _ conventions, ins_ _ _ _ focusing o_ believable chara_ _ _ _ , natural conver _ _ _ _ , and sett _ _ _ that ref_ _ _ real soc_ _ _ environments. Rea_ _ _ _ plays often explore complex moral and social issues, emphasizing psychological depth and the influence of environment and circumstance on human behavior. Realism continues to influence contemporary theatre by encouraging honest, nuanced storytelling.
+正确答案： 第1题: ntality, 第2题: rical, 第3题: tead, 第4题: n, 第5题: cters, 第6题: sation, 第7题: ings, 第8题: lect, 第9题: ial, 第10题: list,
+
+第十篇 Understanding the complex social structures and behaviors exhibited by terrestrial mammals is crucial for both conservation efforts and enhancing our comprehension of evolutionary processes. Many mammals, such as elephants and primates, display intri_ _ _ _ communication sys_ _ _ _ and soc_ _ _ hierarchies th_ _ facilitate cooper_ _ _ _ _ and survi_ _ . These acti _ _ are n_ _ merely insti_ _ _ _ ; they a _ dynamic responses to environmental pressures, showcasing adaptability and intelligence. By studying these animals, researchers can gain insights into the fundamental mechanisms behind social organization and behavioral adaptation.
+正确答案： 第1题: cate, 第2题: tems, 第3题: ial, 第4题: at, 第5题: ation, 第6: val, 第7题: ons, 第8题: ot, 第9题: ncts, 第10题: re,
 ________________________________________
 2026.5未知
 
@@ -1186,4 +1228,11 @@ ________________________________________
 
 第十四篇 The study of the classical world involves examining the cultural, political, and social structures of ancient civilizations such as Greece and Rome. These soci_ _ _ _ _ have gre_ _ _ _ influenced mod_ _ _ governance, philo_ _ _ _ _ , and a_ _. The con_ _ _ _ of demo_ _ _ _ _ originated i_ Athens, a_ _ Romans we_ _ superb engineers, building roads, aqueducts, and impressive buildings like the Pantheon. By understanding their advancements and contributions, we gain insight into the foundations of contemporary society. Archaeologists and historians employ various methods to uncover artifacts and interpret historical records from ancient times.
 正确答案： 第1题: eties, 第2题: atly, 第3题: ern, 第4题: sophy, 第5题: rt, 第6题: cept, 第7题: cracy, 第8题: n, 第9题: nd, 第10题: re,
+
+第十五篇 Agricultural practices have evolved to meet growing worldwide nutritional requirements. Sustainable farming offers a promising path, emphasizing ecological balance and resource conservation. Techniques like crop rotation, polyculture, and organic farming main_ _ _ _ soil hea_ _ _ and decr_ _ _ _ pesticide u_ . These met _ _ _ improve fo_ _ security a_ _ reduce environ_ _ _ _ _ _ harm. Far_ _ _ _ often ben_ _ _ _ from higher yields and lower long-term costs. Although traditional methods dominate due to short-term profits, the future of agriculture may depend on embracing sustainability.
+正确答案： 第1题: tain, 第2题: lth, 第3题: ease, 第4题: se, 第5题: hods, 第6题: od, 第7题: nd, 第8题: mental, 第9题: mers, 第10题: efit,
+
+第十六篇 The study of geological formations provides insights into Earth's dynamic processes. Metamorphic rocks are rocks that have been transformed by heat and pressure. Sedimentary rocks fo_ _ as lay_ _ _ of mate_ _ _ _ build u_ over ti_ _ and a_ _ eventually pre_ _ _ _ and fu_ _ _ together t_ create so_ _ _ rock. The strata inside these formations serve as historical records of environmental conditions, revealing changes in climate, sea levels, and biological evolution. Analyzing rocks allows geologists to reconstruct past geological events.
+正确答案： 第1题: rm, 第2题: ers, 第3题: rial, 第4题: p, 第5题: me, 第6题: re, 第7题: ssed, 第8题: sed, 第9题: o, 第10题: lid,
 ________________________________________
+
