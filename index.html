@@ -856,7 +856,7 @@
                 const passageMatch = line.match(/^(?:第[一二三四五六七八九十]+[篇段]\s*)?(.*)/);
                 if (line.match(/^正确答案[:：]/)) {
                     const ansLine = line.replace(/^正确答案[:：]/, '').trim();
-                    const ansRegex = /第\d+[题空][:：]\s*([a-zA-Z\-\']+)/g;
+                    const ansRegex = /第\d+[题空]?[:：]\s*([a-zA-Z\-\']+)/g;
                     let answers = []; let match;
                     while ((match = ansRegex.exec(ansLine)) !== null) answers.push(match[1]);
                     if (answers.length === 0) answers = ansLine.split(/[,，]/).map(s => s.replace(/[^a-zA-Z\-\']/g, '').trim()).filter(s => s);
