@@ -1492,5 +1492,23 @@
         "zh": "笈多帝国：黄金时代",
         "en": "Gupta: India's Golden Age",
         "cat": "历史与人类学"
+    },
+    {
+        "key": "Theater",
+        "zh": "戏剧现实主义定义",
+        "en": "Theater Realism Defined",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Theaters",
+        "zh": "戏剧社会功能",
+        "en": "Theater's Social Role",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Sustainable",
+        "zh": "可持续农业",
+        "en": "Sustainable Farming",
+        "cat": "生命科学"
     }
 ]
