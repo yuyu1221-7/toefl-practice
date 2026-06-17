@@ -1,1115 +1,1841 @@
 [
-{
-"id": "Glaciers are massive",
-"key": "Glaciers are massive",
-"en": "Glaciers Earth Impact",
-"zh": "冰川对地貌的影响",
-"cat": "天文与地球"
-},
-{
-"id": "The Spix's Macaw",
-"key": "The Spix's Macaw",
-"en": "Spix's Macaw",
-"zh": "斯皮克斯金刚鹦鹉",
-"cat": "生命科学"
-},
-{
-"id": "Pottery is an ancient",
-"key": "Pottery is an ancient",
-"en": "Ancient Pottery Craft",
-"zh": "古代陶器工艺",
-"cat": "历史与人类学"
-},
-{
-"id": "The history of the South Pacific",
-"key": "The history of the South Pacific",
-"en": "South Pacific History",
-"zh": "南太平洋历史",
-"cat": "历史与人类学"
-},
-{
-"id": "Tigers are solitary",
-"key": "Tigers are solitary",
-"en": "Tiger Territorial Behavior",
-"zh": "老虎的领地行为",
-"cat": "生命科学"
-},
-{
-"id": "Tectonic plates are large",
-"key": "Tectonic plates are large",
-"en": "Tectonic Plates",
-"zh": "板块构造与地质活动",
-"cat": "天文与地球"
-},
-{
-"id": "The reaction of plants",
-"key": "The reaction of plants",
-"en": "Photoperiodism",
-"zh": "动植物的光周期现象",
-"cat": "生命科学"
-},
-{
-"id": "Cosmology is the study",
-"key": "Cosmology is the study",
-"en": "Study of Cosmology",
-"zh": "宇宙学探究",
-"cat": "天文与地球"
-},
-{
-"id": "The piano has a rich",
-"key": "The piano has a rich",
-"en": "History of Piano",
-"zh": "钢琴发展史",
-"cat": "艺术与文化"
-},
-{
-"id": "Although there are many",
-"key": "Although there are many",
-"en": "Cloud Composition",
-"zh": "云的构成要素",
-"cat": "天文与地球"
-},
-{
-"id": "Space exploration has advanced",
-"key": "Space exploration has advanced",
-"en": "Reusable Rockets",
-"zh": "可重复使用火箭",
-"cat": "天文与地球"
-},
-{
-"id": "James Cook was a",
-"key": "James Cook was a",
-"en": "James Cook's Voyages",
-"zh": "库克船长航海探索",
-"cat": "历史与人类学"
-},
-{
-"id": "Supply and demand are",
-"key": "Supply and demand are",
-"en": "Supply and Demand",
-"zh": "供求关系基础",
-"cat": "综合与其他"
-},
-{
-"id": "Fossils provide invaluable evidence",
-"key": "Fossils provide invaluable evidence",
-"en": "Fossils and Evolution",
-"zh": "化石与物种进化",
-"cat": "生命科学"
-},
-{
-"id": "Human cognition refers to",
-"key": "Human cognition refers to",
-"en": "Human Cognition",
-"zh": "人类认知机制",
-"cat": "综合与其他"
-},
-{
-"id": "Extinctions are a natural",
-"key": "Extinctions are a natural",
-"en": "Earth's Mass Extinctions",
-"zh": "地球物种大灭绝",
-"cat": "生命科学"
-},
-{
-"id": "Throughout history, art and",
-"key": "Throughout history, art and",
-"en": "Art and Religion",
-"zh": "艺术与宗教的交织",
-"cat": "艺术与文化"
-},
-{
-"id": "Child development milestones are",
-"key": "Child development milestones are",
-"en": "Child Development Milestones",
-"zh": "儿童发展里程碑",
-"cat": "生命科学"
-},
-{
-"id": "Pigments are substances that",
-"key": "Pigments are substances that",
-"en": "Pigments in Art",
-"zh": "绘画颜料来源与运用",
-"cat": "艺术与文化"
-},
-{
-"id": "Archaeologists typically study human",
-"key": "Archaeologists typically study human",
-"en": "Underwater Archaeology",
-"zh": "水下考古新发现",
-"cat": "历史与人类学"
-},
-{
-"id": "The Pinta Island tortoise",
-"key": "The Pinta Island tortoise",
-"en": "Pinta Tortoise Extinction",
-"zh": "平塔岛象龟绝迹",
-"cat": "生命科学"
-},
-{
-"id": "Global temperatures and weather",
-"key": "Global temperatures and weather",
-"en": "Global Climate Shifts",
-"zh": "全球气候模式演变",
-"cat": "天文与地球"
-},
-{
-"id": "The development of jazz",
-"key": "The development of jazz",
-"en": "Origins of Jazz",
-"zh": "爵士乐起源与发展",
-"cat": "艺术与文化"
-},
-{
-"id": "Mushrooms are made up",
-"key": "Mushrooms are made up",
-"en": "Mushroom Anatomy",
-"zh": "真菌与蘑菇结构",
-"cat": "生命科学"
-},
-{
-"id": "The introduction of sanitation",
-"key": "The introduction of sanitation",
-"en": "Urban Sanitation Progress",
-"zh": "城市卫生设施发展",
-"cat": "历史与人类学"
-},
-{
-"id": "The Erie Canal, completed",
-"key": "The Erie Canal, completed",
-"en": "Erie Canal History",
-"zh": "伊利运河历史意义",
-"cat": "历史与人类学"
-},
-{
-"id": "Museums play a crucial",
-"key": "Museums play a crucial",
-"en": "Role of Museums",
-"zh": "博物馆的作用",
-"cat": "艺术与文化"
-},
-{
-"id": "Logic and reasoning are",
-"key": "Logic and reasoning are",
-"en": "Logic and Reasoning",
-"zh": "学术逻辑与推理",
-"cat": "综合与其他"
-},
-{
-"id": "The field of philosophy",
-"key": "The field of philosophy",
-"en": "Philosophy of Mind",
-"zh": "心灵哲学探究",
-"cat": "综合与其他"
-},
-{
-"id": "Language development in children",
-"key": "Language development in children",
-"en": "Child Language Acquisition",
-"zh": "儿童语言发展过程",
-"cat": "生命科学"
-},
-{
-"id": "Aquariums provide an opportunity",
-"key": "Aquariums provide an opportunity",
-"en": "Aquarium Ecosystems",
-"zh": "水族馆与海洋生态",
-"cat": "生命科学"
-},
-{
-"id": "The Odyssey is an",
-"key": "The Odyssey is an",
-"en": "The Odyssey Epic",
-"zh": "古希腊史诗《奥德赛》",
-"cat": "艺术与文化"
-},
-{
-"id": "What are some foundational",
-"key": "What are some foundational",
-"en": "Academic Success Skills",
-"zh": "学术基础技能",
-"cat": "综合与其他"
-},
-{
-"id": "Learning the controlled use",
-"key": "Learning the controlled use",
-"en": "Early Human Fire",
-"zh": "早期人类用火发展",
-"cat": "历史与人类学"
-},
-{
-"id": "One of the topics",
-"key": "One of the topics",
-"en": "Understanding Mental States",
-"zh": "心理学与他人心智",
-"cat": "生命科学"
-},
-{
-"id": "Climate change refers to",
-"key": "Climate change refers to",
-"en": "Climate Change Drivers",
-"zh": "气候变化成因与应对",
-"cat": "天文与地球"
-},
-{
-"id": "Museums often serve as",
-"key": "Museums often serve as",
-"en": "Museums as Cultural Hubs",
-"zh": "博物馆文化枢纽",
-"cat": "艺术与文化"
-},
-{
-"id": "The presence of water",
-"key": "The presence of water",
-"en": "Extraterrestrial Water Search",
-"zh": "外星水文与生命探索",
-"cat": "天文与地球"
-},
-{
-"id": "Reggae music, originating in",
-"key": "Reggae music, originating in",
-"en": "Reggae Music Origins",
-"zh": "雷鬼乐的起源与影响",
-"cat": "艺术与文化"
-},
-{
-"id": "Rooted in both biology",
-"key": "Rooted in both biology",
-"en": "Modern Biochemistry Foundations",
-"zh": "现代生物化学基础",
-"cat": "生命科学"
-},
-{
-"id": "Plants have tiny holes",
-"key": "Plants have tiny holes",
-"en": "Plant Stomata Adaptation",
-"zh": "植物气孔生存适应",
-"cat": "生命科学"
-},
-{
-"id": "Art colonies have historically",
-"key": "Art colonies have historically",
-"en": "History of Art Colonies",
-"zh": "艺术聚落历史演进",
-"cat": "艺术与文化"
-},
-{
-"id": "The stars we see",
-"key": "The stars we see",
-"en": "Stars and Galaxies",
-"zh": "恒星与星系概观",
-"cat": "天文与地球"
-},
-{
-"id": "Cognition encompasses mental processes",
-"key": "Cognition encompasses mental processes",
-"en": "Cognitive Processes Defined",
-"zh": "认知过程与神经科学",
-"cat": "综合与其他"
-},
-{
-"id": "Paleontology, the study of",
-"key": "Paleontology, the study of",
-"en": "Paleontology and Fossils",
-"zh": "古生物学与化石研究",
-"cat": "生命科学"
-},
-{
-"id": "Prehistoric art and religion",
-"key": "Prehistoric art and religion",
-"en": "Prehistoric Art Beliefs",
-"zh": "史前艺术与宗教精神",
-"cat": "历史与人类学"
-},
-{
-"id": "Mass extinctions have periodically",
-"key": "Mass extinctions have periodically",
-"en": "Mass Extinction Events",
-"zh": "物种大灭绝周期",
-"cat": "生命科学"
-},
-{
-"id": "Human anatomy is the",
-"key": "Human anatomy is the",
-"en": "Study of Human Anatomy",
-"zh": "人体解剖学基础",
-"cat": "生命科学"
-},
-{
-"id": "Conservation ecology focuses on",
-"key": "Conservation ecology focuses on",
-"en": "Conservation Ecology Goals",
-"zh": "生态保护学主旨",
-"cat": "生命科学"
-},
-{
-"id": "The Great Barrier Reef",
-"key": "The Great Barrier Reef",
-"en": "Great Barrier Reef",
-"zh": "大堡礁生物多样性",
-"cat": "生命科学"
-},
-{
-"id": "Medieval European history encompasses",
-"key": "Medieval European history encompasses",
-"en": "Medieval Europe Overview",
-"zh": "欧洲中世纪概貌",
-"cat": "历史与人类学"
-},
-{
-"id": "The advancement of 3D",
-"key": "The advancement of 3D",
-"en": "3D Printing Revolution",
-"zh": "3D打印制造变革",
-"cat": "综合与其他"
-},
-{
-"id": "Crop rotation is a",
-"key": "Crop rotation is a",
-"en": "Crop Rotation Technique",
-"zh": "传统农业轮作技术",
-"cat": "生命科学"
-},
-{
-"id": "The Ottoman Empire, which",
-"key": "The Ottoman Empire, which",
-"en": "The Ottoman Empire",
-"zh": "奥斯曼帝国历史轨迹",
-"cat": "历史与人类学"
-},
-{
-"id": "The study of sleep",
-"key": "The study of sleep",
-"en": "Sleep and Circadian Rhythms",
-"zh": "睡眠与人体昼夜节律",
-"cat": "生命科学"
-},
-{
-"id": "Weather patterns are influenced",
-"key": "Weather patterns are influenced",
-"en": "Predicting Weather Patterns",
-"zh": "天气模式成因与预测",
-"cat": "天文与地球"
-},
-{
-"id": "The Renaissance was a",
-"key": "The Renaissance was a",
-"en": "The Renaissance Period",
-"zh": "文艺复兴时期之影响",
-"cat": "历史与人类学"
-},
-{
-"id": "Rock formations offer valuable",
-"key": "Rock formations offer valuable",
-"en": "Rock Formations History",
-"zh": "岩层记录地球演化史",
-"cat": "天文与地球"
-},
-{
-"id": "The Middle Ages was",
-"key": "The Middle Ages was",
-"en": "The Middle Ages",
-"zh": "欧洲中世纪演进",
-"cat": "历史与人类学"
-},
-{
-"id": "Coral reefs are vibrant",
-"key": "Coral reefs are vibrant",
-"en": "Vibrant Coral Reefs",
-"zh": "珊瑚礁生态系统危机",
-"cat": "生命科学"
-},
-{
-"id": "The study of the",
-"key": "The study of the",
-"en": "Classical World Study",
-"zh": "古典世界文明研究",
-"cat": "历史与人类学"
-},
-{
-"id": "Deserts and extreme environments",
-"key": "Deserts and extreme environments",
-"en": "Desert Survival Adaptations",
-"zh": "极端环境适应性",
-"cat": "生命科学"
-},
-{
-"id": "Paleontology is the scientific",
-"key": "Paleontology is the scientific",
-"en": "Science of Paleontology",
-"zh": "古生物科学探索",
-"cat": "生命科学"
-},
-{
-"id": "The circadian rhythm regulates",
-"key": "The circadian rhythm regulates",
-"en": "Regulating Circadian Rhythms",
-"zh": "昼夜节律调节机制",
-"cat": "生命科学"
-},
-{
-"id": "Clouds are fascinating formations",
-"key": "Clouds are fascinating formations",
-"en": "Fascinating Cloud Formations",
-"zh": "云层形态形成要素",
-"cat": "天文与地球"
-},
-{
-"id": "Archaeology is the study",
-"key": "Archaeology is the study",
-"en": "Study of Archaeology",
-"zh": "考古学调查与研究",
-"cat": "历史与人类学"
-},
-{
-"id": "The extinction of the",
-"key": "The extinction of the",
-"en": "Baiji Dolphin Extinction",
-"zh": "白鱀豚灭绝事件",
-"cat": "生命科学"
-},
-{
-"id": "The earliest ancestor of",
-"key": "The earliest ancestor of",
-"en": "Early Bicycle Ancestors",
-"zh": "现代自行车的祖先",
-"cat": "综合与其他"
-},
-{
-"id": "Advancements in underwater robotics",
-"key": "Advancements in underwater robotics",
-"en": "Underwater Robotics Exploration",
-"zh": "水下机器人海洋探索",
-"cat": "综合与其他"
-},
-{
-"id": "The evolution of paint",
-"key": "The evolution of paint",
-"en": "Evolution of Paint",
-"zh": "颜料媒介的历史演变",
-"cat": "艺术与文化"
-},
-{
-"id": "Camels live in the",
-"key": "Camels live in the",
-"en": "Camel Desert Survival",
-"zh": "骆驼的沙漠生存机制",
-"cat": "生命科学"
-},
-{
-"id": "Honeybee social structure is",
-"key": "Honeybee social structure is",
-"en": "Honeybee Social Structure",
-"zh": "蜜蜂社会分工",
-"cat": "生命科学"
-},
-{
-"id": "Medieval European history, lasting",
-"key": "Medieval European history, lasting",
-"en": "Medieval History Overview",
-"zh": "中世纪欧洲社会风貌",
-"cat": "历史与人类学"
-},
-{
-"id": "Initially, humans used naturally",
-"key": "Initially, humans used naturally",
-"en": "Early Prehistoric Tools",
-"zh": "史前天然工具运用",
-"cat": "历史与人类学"
-},
-{
-"id": "Grasshoppers are insects commonly",
-"key": "Grasshoppers are insects commonly",
-"en": "Grasshopper Defense Mechanisms",
-"zh": "蝗虫生态与防卫机制",
-"cat": "生命科学"
-},
-{
-"id": "Ocean currents are critical",
-"key": "Ocean currents are critical",
-"en": "Ocean Currents System",
-"zh": "洋流系统及其影响",
-"cat": "天文与地球"
-},
-{
-"id": "Basket weaving is an",
-"key": "Basket weaving is an",
-"en": "Basket Weaving Craft",
-"zh": "传统编筐手工艺",
-"cat": "艺术与文化"
-},
-{
-"id": "Oceanography is the study",
-"key": "Oceanography is the study",
-"en": "Oceanography Defined",
-"zh": "海洋学研究概览",
-"cat": "天文与地球"
-},
-{
-"id": "The unusual properties of",
-"key": "The unusual properties of",
-"en": "Spider Silk Properties",
-"zh": "蜘蛛丝物理属性",
-"cat": "生命科学"
-},
-{
-"id": "The universe is a",
-"key": "The universe is a",
-"en": "Black Holes Mysteries",
-"zh": "宇宙中的黑洞奥秘",
-"cat": "天文与地球"
-},
-{
-"id": "Climate change has become",
-"key": "Climate change has become",
-"en": "Climate Versus Weather",
-"zh": "气候变迁与天气比较",
-"cat": "天文与地球"
-},
-{
-"id": "We know from drawings",
-"key": "We know from drawings",
-"en": "Early Group Dancing",
-"zh": "早期人类群舞活动",
-"cat": "历史与人类学"
-},
-{
-"id": "Crop rotation is an",
-"key": "Crop rotation is an",
-"en": "Sustainable Crop Rotation",
-"zh": "轮作与可持续农业",
-"cat": "生命科学"
-},
-{
-"id": "The Great Plains of",
-"key": "The Great Plains of",
-"en": "Bison in North America",
-"zh": "北美原住民与野牛",
-"cat": "历史与人类学"
-},
-{
-"id": "Agriculture refers to the",
-"key": "Agriculture refers to the",
-"en": "Agriculture Origins",
-"zh": "全球农业体系概论",
-"cat": "历史与人类学"
-},
-{
-"id": "The respiratory system is",
-"key": "The respiratory system is",
-"en": "The Respiratory System",
-"zh": "人体呼吸系统",
-"cat": "生命科学"
-},
-{
-"id": "Exoplanets are planets that",
-"key": "Exoplanets are planets that",
-"en": "Exoplanets Discovery",
-"zh": "系外行星天文探索",
-"cat": "天文与地球"
-},
-{
-"id": "Photosynthesis is the process",
-"key": "Photosynthesis is the process",
-"en": "Photosynthesis Basics",
-"zh": "光合作用基本过程",
-"cat": "生命科学"
-},
-{
-"id": "The Industrial Revolution marked",
-"key": "The Industrial Revolution marked",
-"en": "The Industrial Revolution",
-"zh": "工业革命时代进程",
-"cat": "历史与人类学"
-},
-{
-"id": "Observing the moon's phases",
-"key": "Observing the moon's phases",
-"en": "Cultural Moon Phases",
-"zh": "月相的历史与文化意义",
-"cat": "历史与人类学"
-},
-{
-"id": "Ravens are highly intelligent",
-"key": "Ravens are highly intelligent",
-"en": "Intelligent Ravens",
-"zh": "乌鸦智力水平研究",
-"cat": "生命科学"
-},
-{
-"id": "The concept of microfinance",
-"key": "The concept of microfinance",
-"en": "Microfinance Concept",
-"zh": "小额信贷影响",
-"cat": "综合与其他"
-},
-{
-"id": "Art has long reflected",
-"key": "Art has long reflected",
-"en": "Art Reflects Culture",
-"zh": "艺术文化映射",
-"cat": "艺术与文化"
-},
-{
-"id": "Plants have evolved various",
-"key": "Plants have evolved various",
-"en": "Plant Photosynthesis Structures",
-"zh": "植物优化光合系统结构",
-"cat": "生命科学"
-},
-{
-"id": "Using bone for the",
-"key": "Using bone for the",
-"en": "Early Bone Tools",
-"zh": "早期骨制工具应用",
-"cat": "历史与人类学"
-},
-{
-"id": "The human nervous system",
-"key": "The human nervous system",
-"en": "Human Nervous System",
-"zh": "人体神经系统调节",
-"cat": "生命科学"
-},
-{
-"id": "Astronomers recently made a",
-"key": "Astronomers recently made a",
-"en": "TWA 7b Exoplanet",
-"zh": "天文新发现：TWA 7b",
-"cat": "天文与地球"
-},
-{
-"id": "Lions, known as the",
-"key": "Lions, known as the",
-"en": "Lion Social Behavior",
-"zh": "草原狮群社会行为",
-"cat": "生命科学"
-},
-{
-"id": "Coral reefs are among",
-"key": "Coral reefs are among",
-"en": "Coral Reef Biodiversity",
-"zh": "珊瑚礁的多样生态",
-"cat": "生命科学"
-},
-{
-"id": "Glassblowing began in the",
-"key": "Glassblowing began in the",
-"en": "Roman Glassblowing Craft",
-"zh": "罗马帝国玻璃吹制",
-"cat": "艺术与文化"
-},
-{
-"id": "Shadow puppetry is an",
-"key": "Shadow puppetry is an",
-"en": "Shadow Puppetry Art",
-"zh": "皮影戏叙事艺术",
-"cat": "艺术与文化"
-},
-{
-"id": "Economics is the social",
-"key": "Economics is the social",
-"en": "Economics Fundamentals",
-"zh": "经济学基础科学",
-"cat": "综合与其他"
-},
-{
-"id": "Theater has been an",
-"key": "Theater has been an",
-"en": "History of Theater",
-"zh": "戏剧的文化地位",
-"cat": "艺术与文化"
-},
-{
-"id": "The discovery of water",
-"key": "The discovery of water",
-"en": "Moons Extraterrestrial Life",
-"zh": "系外地月系与生命",
-"cat": "天文与地球"
-},
-{
-"id": "Geology involves the study",
-"key": "Geology involves the study",
-"en": "Environmental Geology Field",
-"zh": "环境地质学概观",
-"cat": "天文与地球"
-},
-{
-"id": "We are exquisitely sensitive",
-"key": "We are exquisitely sensitive",
-"en": "Adult Brain Plasticity",
-"zh": "成年大脑的持续演变",
-"cat": "生命科学"
-},
-{
-"id": "The development of transcontinental",
-"key": "The development of transcontinental",
-"en": "Transcontinental Railroads Expansion",
-"zh": "北美跨大陆铁路",
-"cat": "历史与人类学"
-},
-{
-"id": "Artisans have played an",
-"key": "Artisans have played an",
-"en": "Role of Artisans",
-"zh": "工匠的社会影响",
-"cat": "历史与人类学"
-},
-{
-"id": "In the early days",
-"key": "In the early days",
-"en": "Urban Industrialization Challenges",
-"zh": "早期工业化带来的城市问题",
-"cat": "历史与人类学"
-},
-{
-"id": "Photosynthesis is a vital",
-"key": "Photosynthesis is a vital",
-"en": "Artificial Photosynthesis Solutions",
-"zh": "人造光合作用与能源",
-"cat": "生命科学"
-},
-{
-"id": "In the world of",
-"key": "In the world of",
-"en": "Chiaroscuro in Art History",
-"zh": "艺术史的明暗交错法",
-"cat": "艺术与文化"
-},
-{
-"id": "Geology is the scientific",
-"key": "Geology is the scientific",
-"en": "Geology Scientific Study",
-"zh": "地质学的科学研究",
-"cat": "天文与地球"
-},
-{
-"id": "Public health is a",
-"key": "Public health is a",
-"en": "Public Health Multidisciplinary",
-"zh": "多学科之公共卫生",
-"cat": "生命科学"
-},
-{
-"id": "Deserts, often characterized by",
-"key": "Deserts, often characterized by",
-"en": "Desert Ecological Significance",
-"zh": "沙漠极其重要的生态价值",
-"cat": "生命科学"
-},
-{
-"id": "The evolution of abstract",
-"key": "The evolution of abstract",
-"en": "Abstract Art Evolution",
-"zh": "抽象艺术的历史演进",
-"cat": "艺术与文化"
-},
-{
-"id": "Understanding the potential and",
-"key": "Understanding the potential and",
-"en": "Artificial Intelligence Impacts",
-"zh": "人工智能的影响评估",
-"cat": "综合与其他"
-},
-{
-"id": "Cities, with their diverse",
-"key": "Cities, with their diverse",
-"en": "Urban Cultural Exchange",
-"zh": "城市文化与创新交流",
-"cat": "综合与其他"
-},
-{
-"id": "In philosophy of mind",
-"key": "In philosophy of mind",
-"en": "Consciousness and Self-Awareness",
-"zh": "心灵哲学视角下的意识",
-"cat": "综合与其他"
-},
-{
-"id": "Fungi play an important",
-"key": "Fungi play an important",
-"en": "Fungi Ecosystem Role",
-"zh": "真菌的自然生态作用",
-"cat": "生命科学"
-},
-{
-"id": "Oceanography and hydrology are",
-"key": "Oceanography and hydrology are",
-"en": "Oceanography and Hydrology",
-"zh": "海洋学与水文动态",
-"cat": "天文与地球"
-},
-{
-"id": "The formation of river",
-"key": "The formation of river",
-"en": "River Delta Formation",
-"zh": "河流三角洲之形成",
-"cat": "天文与地球"
-},
-{
-"id": "Realism in theater is",
-"key": "Realism in theater is",
-"en": "Theatrical Realism Movement",
-"zh": "戏剧的现实主义运动",
-"cat": "艺术与文化"
-},
-{
-"id": "During the late nineteenth",
-"key": "During the late nineteenth",
-"en": "Urban Century Transformations",
-"zh": "北美城市的世纪转型",
-"cat": "历史与人类学"
-},
-{
-"id": "In recent decades, environmental",
-"key": "In recent decades, environmental",
-"en": "Surging Environmental Awareness",
-"zh": "环境意识与气候挑战",
-"cat": "天文与地球"
-},
-{
-"id": "The Baroque period in",
-"key": "The Baroque period in",
-"en": "Baroque Music Period",
-"zh": "巴洛克时期音乐特点",
-"cat": "艺术与文化"
-},
-{
-"id": "Archaeological excavations often reveal",
-"key": "Archaeological excavations often reveal",
-"en": "Archaeological Excavation Methods",
-"zh": "考古发掘及研究方法",
-"cat": "历史与人类学"
-},
-{
-"id": "The study of insect",
-"key": "The study of insect",
-"en": "Insect Survival Strategies",
-"zh": "昆虫的社会行为与演化",
-"cat": "生命科学"
-},
-{
-"id": "In the realm of",
-"key": "In the realm of",
-"en": "Keystone Species Conservation",
-"zh": "保护生态学之关键物种",
-"cat": "生命科学"
-},
-{
-"id": "The atmosphere is a",
-"key": "The atmosphere is a",
-"en": "Complex Atmosphere System",
-"zh": "复杂的大气层系统",
-"cat": "天文与地球"
-},
-{
-"id": "In the prehistoric era",
-"key": "In the prehistoric era",
-"en": "Prehistoric Social Organization",
-"zh": "史前社会结构起源",
-"cat": "历史与人类学"
-},
-{
-"id": "Music has long served",
-"key": "Music has long served",
-"en": "Music Drives Social Change",
-"zh": "音乐推动社会文化变革",
-"cat": "艺术与文化"
-},
-{
-"id": "The study of geological",
-"key": "The study of geological",
-"en": "Geological Formations Insights",
-"zh": "地质层位勘察探幽",
-"cat": "天文与地球"
-},
-{
-"id": "Terrestrial mammals exhibit a",
-"key": "Terrestrial mammals exhibit a",
-"en": "Mammalian Survival Adaptations",
-"zh": "陆生哺乳动物的生存适应",
-"cat": "生命科学"
-},
-{
-"id": "Color usage in art",
-"key": "Color usage in art",
-"en": "Color Theory in Art",
-"zh": "艺术创作中的色彩理论",
-"cat": "艺术与文化"
-},
-{
-"id": "In analyzing global trade",
-"key": "In analyzing global trade",
-"en": "Comparative Advantage Principle",
-"zh": "比较优势原则的应用",
-"cat": "综合与其他"
-},
-{
-"id": "In visual arts, the",
-"key": "In visual arts, the",
-"en": "Color and Pigment Interplay",
-"zh": "绘画材料之色彩及颜料",
-"cat": "艺术与文化"
-},
-{
-"id": "At the dawn of",
-"key": "At the dawn of",
-"en": "Dawn of Civilization",
-"zh": "农业与文明黎明时刻",
-"cat": "历史与人类学"
-},
-{
-"id": "The Mughal Empire, which",
-"key": "The Mughal Empire, which",
-"en": "Mughal Empire Legacy",
-"zh": "莫卧儿帝国细密画艺术",
-"cat": "历史与人类学"
-},
-{
-"id": "Maps are tools that",
-"key": "Maps are tools that",
-"en": "Cartography and Maps",
-"zh": "地图制图学功用",
-"cat": "天文与地球"
-},
-{
-"id": "The Gupta Empire, known",
-"key": "The Gupta Empire, known",
-"en": "Gupta Golden Age",
-"zh": "印度笈多王朝成就",
-"cat": "历史与人类学"
-},
-{
-"id": "In recent years, the",
-"key": "In recent years, the",
-"en": "Extraterrestrial Water Clues",
-"zh": "潮汐力与地外水文寻找",
-"cat": "天文与地球"
-},
-{
-"id": "Theater has long been",
-"key": "Theater has long been",
-"en": "Theater Driving Social Change",
-"zh": "戏剧推动社会意识觉醒",
-"cat": "艺术与文化"
-},
-{
-"id": "Understanding the complex social",
-"key": "Understanding the complex social",
-"en": "Mammal Social Behaviors",
-"zh": "陆生类哺乳动物社会结构",
-"cat": "生命科学"
-},
-{
-"id": "Agricultural practices have evolved",
-"key": "Agricultural practices have evolved",
-"en": "Sustainable Agricultural Evolution",
-"zh": "现代农业可持续转型",
-"cat": "生命科学"
-},
-{
-"id": "In academic research, reasoning",
-"key": "In academic research, reasoning",
-"en": "Academic Research Reasoning",
-"zh": "学术研究中的严谨推理",
-"cat": "综合与其他"
-},
-{
-"id": "In recent years, the development",
-"key": "In recent years, the development",
-"en": "AI Industry Revolution",
-"zh": "人工智能改变各行产业",
-"cat": "综合与其他"
-},
-{
-"id": "The search for extraterrestrial",
-"key": "The search for extraterrestrial",
-"en": "Extraterrestrial Habitable Conditions",
-"zh": "探索宇宙地外宜居带",
-"cat": "天文与地球"
-},
-{
-"id": "Attachment theory, developed by",
-"key": "Attachment theory, developed by",
-"en": "Bowlby's Attachment Theory",
-"zh": "鲍尔比人类依恋理论",
-"cat": "生命科学"
-},
-{
-"id": "Consciousness, the state of",
-"key": "Consciousness, the state of",
-"en": "Neural Basis of Consciousness",
-"zh": "核磁探测下的意识根源",
-"cat": "生命科学"
-},
-{
-"id": "Wind currents form due",
-"key": "Wind currents form due",
-"en": "Atmospheric Wind Currents",
-"zh": "大洋风流与气候系统",
-"cat": "天文与地球"
-},
-{
-"id": "The trajectory of modern",
-"key": "The trajectory of modern",
-"en": "Urbanization Trajectory",
-"zh": "现代社会城市化进程",
-"cat": "历史与人类学"
-},
-{
-"id": "The urban heat island",
-"key": "The urban heat island",
-"en": "Urban Heat Island Effect",
-"zh": "城市热岛效应分析",
-"cat": "天文与地球"
-},
-{
-"id": "Throughout history, color and",
-"key": "Throughout history, color and",
-"en": "Color Psychology in Art",
-"zh": "艺术颜色的心理反馈",
-"cat": "艺术与文化"
-},
-{
-"id": "Geographical features such as",
-"key": "Geographical features such as",
-"en": "Mountain Geographical Features",
-"zh": "地形环境与微气候塑造",
-"cat": "天文与地球"
-},
-{
-"id": "Our planet's axis is",
-"key": "Our planet's axis is",
-"en": "Earth's Axial Tilt",
-"zh": "地轴倾斜与四季轮换",
-"cat": "天文与地球"
-},
-{
-"id": "Early civilizations emerged around",
-"key": "Early civilizations emerged around",
-"en": "River Valley Civilizations",
-"zh": "大河流域农业文明建立",
-"cat": "历史与人类学"
-},
-{
-"id": "The last Ice Age",
-"key": "The last Ice Age",
-"en": "Glaciers Sculpting Earth",
-"zh": "冰河世纪重塑地貌环境",
-"cat": "天文与地球"
-},
-{
-"id": "Craftsmanship has undergone a",
-"key": "Craftsmanship has undergone a",
-"en": "Transformation of Craftsmanship",
-"zh": "手工作坊技术的历史转型",
-"cat": "艺术与文化"
-},
-{
-"id": "The advent of industrialization",
-"key": "The advent of industrialization",
-"en": "Industrialization Urban Architecture",
-"zh": "工业化造就城市建筑革命",
-"cat": "历史与人类学"
-}
+    {
+        "id": "Glaciers are massive",
+        "key": "Glaciers are massive",
+        "en": "Glaciers Earth Impact",
+        "zh": "冰川对地貌的影响",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The Spix's Macaw",
+        "key": "The Spix's Macaw",
+        "en": "Spix's Macaw",
+        "zh": "斯皮克斯金刚鹦鹉",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Pottery is an ancient",
+        "key": "Pottery is an ancient",
+        "en": "Ancient Pottery Craft",
+        "zh": "古代陶器工艺",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The history of the South Pacific",
+        "key": "The history of the South Pacific",
+        "en": "South Pacific History",
+        "zh": "南太平洋历史",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Tigers are solitary",
+        "key": "Tigers are solitary",
+        "en": "Tiger Territorial Behavior",
+        "zh": "老虎的领地行为",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Tectonic plates are large",
+        "key": "Tectonic plates are large",
+        "en": "Tectonic Plates",
+        "zh": "板块构造与地质活动",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The reaction of plants",
+        "key": "The reaction of plants",
+        "en": "Photoperiodism",
+        "zh": "动植物的光周期现象",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Cosmology is the study",
+        "key": "Cosmology is the study",
+        "en": "Study of Cosmology",
+        "zh": "宇宙学探究",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The piano has a rich",
+        "key": "The piano has a rich",
+        "en": "History of Piano",
+        "zh": "钢琴发展史",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Although there are many",
+        "key": "Although there are many",
+        "en": "Cloud Composition",
+        "zh": "云的构成要素",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Space exploration has advanced",
+        "key": "Space exploration has advanced",
+        "en": "Reusable Rockets",
+        "zh": "可重复使用火箭",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "James Cook was a",
+        "key": "James Cook was a",
+        "en": "James Cook's Voyages",
+        "zh": "库克船长航海探索",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Supply and demand are",
+        "key": "Supply and demand are",
+        "en": "Supply and Demand",
+        "zh": "供求关系基础",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Fossils provide invaluable evidence",
+        "key": "Fossils provide invaluable evidence",
+        "en": "Fossils and Evolution",
+        "zh": "化石与物种进化",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Human cognition refers to",
+        "key": "Human cognition refers to",
+        "en": "Human Cognition",
+        "zh": "人类认知机制",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Extinctions are a natural",
+        "key": "Extinctions are a natural",
+        "en": "Earth's Mass Extinctions",
+        "zh": "地球物种大灭绝",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Throughout history, art and",
+        "key": "Throughout history, art and",
+        "en": "Art and Religion",
+        "zh": "艺术与宗教的交织",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Child development milestones are",
+        "key": "Child development milestones are",
+        "en": "Child Development Milestones",
+        "zh": "儿童发展里程碑",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Pigments are substances that",
+        "key": "Pigments are substances that",
+        "en": "Pigments in Art",
+        "zh": "绘画颜料来源与运用",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Archaeologists typically study human",
+        "key": "Archaeologists typically study human",
+        "en": "Underwater Archaeology",
+        "zh": "水下考古新发现",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The Pinta Island tortoise",
+        "key": "The Pinta Island tortoise",
+        "en": "Pinta Tortoise Extinction",
+        "zh": "平塔岛象龟绝迹",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Global temperatures and weather",
+        "key": "Global temperatures and weather",
+        "en": "Global Climate Shifts",
+        "zh": "全球气候模式演变",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The development of jazz",
+        "key": "The development of jazz",
+        "en": "Origins of Jazz",
+        "zh": "爵士乐起源与发展",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Mushrooms are made up",
+        "key": "Mushrooms are made up",
+        "en": "Mushroom Anatomy",
+        "zh": "真菌与蘑菇结构",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The introduction of sanitation",
+        "key": "The introduction of sanitation",
+        "en": "Urban Sanitation Progress",
+        "zh": "城市卫生设施发展",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The Erie Canal, completed",
+        "key": "The Erie Canal, completed",
+        "en": "Erie Canal History",
+        "zh": "伊利运河历史意义",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Museums play a crucial",
+        "key": "Museums play a crucial",
+        "en": "Role of Museums",
+        "zh": "博物馆的作用",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Logic and reasoning are",
+        "key": "Logic and reasoning are",
+        "en": "Logic and Reasoning",
+        "zh": "学术逻辑与推理",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "The field of philosophy",
+        "key": "The field of philosophy",
+        "en": "Philosophy of Mind",
+        "zh": "心灵哲学探究",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Language development in children",
+        "key": "Language development in children",
+        "en": "Child Language Acquisition",
+        "zh": "儿童语言发展过程",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Aquariums provide an opportunity",
+        "key": "Aquariums provide an opportunity",
+        "en": "Aquarium Ecosystems",
+        "zh": "水族馆与海洋生态",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The Odyssey is an",
+        "key": "The Odyssey is an",
+        "en": "The Odyssey Epic",
+        "zh": "古希腊史诗《奥德赛》",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "What are some foundational",
+        "key": "What are some foundational",
+        "en": "Academic Success Skills",
+        "zh": "学术基础技能",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Learning the controlled use",
+        "key": "Learning the controlled use",
+        "en": "Early Human Fire",
+        "zh": "早期人类用火发展",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "One of the topics",
+        "key": "One of the topics",
+        "en": "Understanding Mental States",
+        "zh": "心理学与他人心智",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Climate change refers to",
+        "key": "Climate change refers to",
+        "en": "Climate Change Drivers",
+        "zh": "气候变化成因与应对",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Museums often serve as",
+        "key": "Museums often serve as",
+        "en": "Museums as Cultural Hubs",
+        "zh": "博物馆文化枢纽",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "The presence of water",
+        "key": "The presence of water",
+        "en": "Extraterrestrial Water Search",
+        "zh": "外星水文与生命探索",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Reggae music, originating in",
+        "key": "Reggae music, originating in",
+        "en": "Reggae Music Origins",
+        "zh": "雷鬼乐的起源与影响",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Rooted in both biology",
+        "key": "Rooted in both biology",
+        "en": "Modern Biochemistry Foundations",
+        "zh": "现代生物化学基础",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Plants have tiny holes",
+        "key": "Plants have tiny holes",
+        "en": "Plant Stomata Adaptation",
+        "zh": "植物气孔生存适应",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Art colonies have historically",
+        "key": "Art colonies have historically",
+        "en": "History of Art Colonies",
+        "zh": "艺术聚落历史演进",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "The stars we see",
+        "key": "The stars we see",
+        "en": "Stars and Galaxies",
+        "zh": "恒星与星系概观",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Cognition encompasses mental processes",
+        "key": "Cognition encompasses mental processes",
+        "en": "Cognitive Processes Defined",
+        "zh": "认知过程与神经科学",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Paleontology, the study of",
+        "key": "Paleontology, the study of",
+        "en": "Paleontology and Fossils",
+        "zh": "古生物学与化石研究",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Prehistoric art and religion",
+        "key": "Prehistoric art and religion",
+        "en": "Prehistoric Art Beliefs",
+        "zh": "史前艺术与宗教精神",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Mass extinctions have periodically",
+        "key": "Mass extinctions have periodically",
+        "en": "Mass Extinction Events",
+        "zh": "物种大灭绝周期",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Human anatomy is the",
+        "key": "Human anatomy is the",
+        "en": "Study of Human Anatomy",
+        "zh": "人体解剖学基础",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Conservation ecology focuses on",
+        "key": "Conservation ecology focuses on",
+        "en": "Conservation Ecology Goals",
+        "zh": "生态保护学主旨",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The Great Barrier Reef",
+        "key": "The Great Barrier Reef",
+        "en": "Great Barrier Reef",
+        "zh": "大堡礁生物多样性",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Medieval European history encompasses",
+        "key": "Medieval European history encompasses",
+        "en": "Medieval Europe Overview",
+        "zh": "欧洲中世纪概貌",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The advancement of 3D",
+        "key": "The advancement of 3D",
+        "en": "3D Printing Revolution",
+        "zh": "3D打印制造变革",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Crop rotation is a",
+        "key": "Crop rotation is a",
+        "en": "Crop Rotation Technique",
+        "zh": "传统农业轮作技术",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The Ottoman Empire, which",
+        "key": "The Ottoman Empire, which",
+        "en": "The Ottoman Empire",
+        "zh": "奥斯曼帝国历史轨迹",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The study of sleep",
+        "key": "The study of sleep",
+        "en": "Sleep and Circadian Rhythms",
+        "zh": "睡眠与人体昼夜节律",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Weather patterns are influenced",
+        "key": "Weather patterns are influenced",
+        "en": "Predicting Weather Patterns",
+        "zh": "天气模式成因与预测",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The Renaissance was a",
+        "key": "The Renaissance was a",
+        "en": "The Renaissance Period",
+        "zh": "文艺复兴时期之影响",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Rock formations offer valuable",
+        "key": "Rock formations offer valuable",
+        "en": "Rock Formations History",
+        "zh": "岩层记录地球演化史",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The Middle Ages was",
+        "key": "The Middle Ages was",
+        "en": "The Middle Ages",
+        "zh": "欧洲中世纪演进",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Coral reefs are vibrant",
+        "key": "Coral reefs are vibrant",
+        "en": "Vibrant Coral Reefs",
+        "zh": "珊瑚礁生态系统危机",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The study of the",
+        "key": "The study of the",
+        "en": "Classical World Study",
+        "zh": "古典世界文明研究",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Deserts and extreme environments",
+        "key": "Deserts and extreme environments",
+        "en": "Desert Survival Adaptations",
+        "zh": "极端环境适应性",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Paleontology is the scientific",
+        "key": "Paleontology is the scientific",
+        "en": "Science of Paleontology",
+        "zh": "古生物科学探索",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The circadian rhythm regulates",
+        "key": "The circadian rhythm regulates",
+        "en": "Regulating Circadian Rhythms",
+        "zh": "昼夜节律调节机制",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Clouds are fascinating formations",
+        "key": "Clouds are fascinating formations",
+        "en": "Fascinating Cloud Formations",
+        "zh": "云层形态形成要素",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Archaeology is the study",
+        "key": "Archaeology is the study",
+        "en": "Study of Archaeology",
+        "zh": "考古学调查与研究",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The extinction of the",
+        "key": "The extinction of the",
+        "en": "Baiji Dolphin Extinction",
+        "zh": "白鱀豚灭绝事件",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The earliest ancestor of",
+        "key": "The earliest ancestor of",
+        "en": "Early Bicycle Ancestors",
+        "zh": "现代自行车的祖先",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Advancements in underwater robotics",
+        "key": "Advancements in underwater robotics",
+        "en": "Underwater Robotics Exploration",
+        "zh": "水下机器人海洋探索",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "The evolution of paint",
+        "key": "The evolution of paint",
+        "en": "Evolution of Paint",
+        "zh": "颜料媒介的历史演变",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Camels live in the",
+        "key": "Camels live in the",
+        "en": "Camel Desert Survival",
+        "zh": "骆驼的沙漠生存机制",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Honeybee social structure is",
+        "key": "Honeybee social structure is",
+        "en": "Honeybee Social Structure",
+        "zh": "蜜蜂社会分工",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Medieval European history, lasting",
+        "key": "Medieval European history, lasting",
+        "en": "Medieval History Overview",
+        "zh": "中世纪欧洲社会风貌",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Initially, humans used naturally",
+        "key": "Initially, humans used naturally",
+        "en": "Early Prehistoric Tools",
+        "zh": "史前天然工具运用",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Grasshoppers are insects commonly",
+        "key": "Grasshoppers are insects commonly",
+        "en": "Grasshopper Defense Mechanisms",
+        "zh": "蝗虫生态与防卫机制",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Ocean currents are critical",
+        "key": "Ocean currents are critical",
+        "en": "Ocean Currents System",
+        "zh": "洋流系统及其影响",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Basket weaving is an",
+        "key": "Basket weaving is an",
+        "en": "Basket Weaving Craft",
+        "zh": "传统编筐手工艺",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Oceanography is the study",
+        "key": "Oceanography is the study",
+        "en": "Oceanography Defined",
+        "zh": "海洋学研究概览",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The unusual properties of",
+        "key": "The unusual properties of",
+        "en": "Spider Silk Properties",
+        "zh": "蜘蛛丝物理属性",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The universe is a",
+        "key": "The universe is a",
+        "en": "Black Holes Mysteries",
+        "zh": "宇宙中的黑洞奥秘",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Climate change has become",
+        "key": "Climate change has become",
+        "en": "Climate Versus Weather",
+        "zh": "气候变迁与天气比较",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "We know from drawings",
+        "key": "We know from drawings",
+        "en": "Early Group Dancing",
+        "zh": "早期人类群舞活动",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Crop rotation is an",
+        "key": "Crop rotation is an",
+        "en": "Sustainable Crop Rotation",
+        "zh": "轮作与可持续农业",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The Great Plains of",
+        "key": "The Great Plains of",
+        "en": "Bison in North America",
+        "zh": "北美原住民与野牛",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Agriculture refers to the",
+        "key": "Agriculture refers to the",
+        "en": "Agriculture Origins",
+        "zh": "全球农业体系概论",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The respiratory system is",
+        "key": "The respiratory system is",
+        "en": "The Respiratory System",
+        "zh": "人体呼吸系统",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Exoplanets are planets that",
+        "key": "Exoplanets are planets that",
+        "en": "Exoplanets Discovery",
+        "zh": "系外行星天文探索",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Photosynthesis is the process",
+        "key": "Photosynthesis is the process",
+        "en": "Photosynthesis Basics",
+        "zh": "光合作用基本过程",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The Industrial Revolution marked",
+        "key": "The Industrial Revolution marked",
+        "en": "The Industrial Revolution",
+        "zh": "工业革命时代进程",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Observing the moon's phases",
+        "key": "Observing the moon's phases",
+        "en": "Cultural Moon Phases",
+        "zh": "月相的历史与文化意义",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Ravens are highly intelligent",
+        "key": "Ravens are highly intelligent",
+        "en": "Intelligent Ravens",
+        "zh": "乌鸦智力水平研究",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The concept of microfinance",
+        "key": "The concept of microfinance",
+        "en": "Microfinance Concept",
+        "zh": "小额信贷影响",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Art has long reflected",
+        "key": "Art has long reflected",
+        "en": "Art Reflects Culture",
+        "zh": "艺术文化映射",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Plants have evolved various",
+        "key": "Plants have evolved various",
+        "en": "Plant Photosynthesis Structures",
+        "zh": "植物优化光合系统结构",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Using bone for the",
+        "key": "Using bone for the",
+        "en": "Early Bone Tools",
+        "zh": "早期骨制工具应用",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The human nervous system",
+        "key": "The human nervous system",
+        "en": "Human Nervous System",
+        "zh": "人体神经系统调节",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Astronomers recently made a",
+        "key": "Astronomers recently made a",
+        "en": "TWA 7b Exoplanet",
+        "zh": "天文新发现：TWA 7b",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Lions, known as the",
+        "key": "Lions, known as the",
+        "en": "Lion Social Behavior",
+        "zh": "草原狮群社会行为",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Coral reefs are among",
+        "key": "Coral reefs are among",
+        "en": "Coral Reef Biodiversity",
+        "zh": "珊瑚礁的多样生态",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Glassblowing began in the",
+        "key": "Glassblowing began in the",
+        "en": "Roman Glassblowing Craft",
+        "zh": "罗马帝国玻璃吹制",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Shadow puppetry is an",
+        "key": "Shadow puppetry is an",
+        "en": "Shadow Puppetry Art",
+        "zh": "皮影戏叙事艺术",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Economics is the social",
+        "key": "Economics is the social",
+        "en": "Economics Fundamentals",
+        "zh": "经济学基础科学",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Theater has been an",
+        "key": "Theater has been an",
+        "en": "History of Theater",
+        "zh": "戏剧的文化地位",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "The discovery of water",
+        "key": "The discovery of water",
+        "en": "Moons Extraterrestrial Life",
+        "zh": "系外地月系与生命",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Geology involves the study",
+        "key": "Geology involves the study",
+        "en": "Environmental Geology Field",
+        "zh": "环境地质学概观",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "We are exquisitely sensitive",
+        "key": "We are exquisitely sensitive",
+        "en": "Adult Brain Plasticity",
+        "zh": "成年大脑的持续演变",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The development of transcontinental",
+        "key": "The development of transcontinental",
+        "en": "Transcontinental Railroads Expansion",
+        "zh": "北美跨大陆铁路",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Artisans have played an",
+        "key": "Artisans have played an",
+        "en": "Role of Artisans",
+        "zh": "工匠的社会影响",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "In the early days",
+        "key": "In the early days",
+        "en": "Urban Industrialization Challenges",
+        "zh": "早期工业化带来的城市问题",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Photosynthesis is a vital",
+        "key": "Photosynthesis is a vital",
+        "en": "Artificial Photosynthesis Solutions",
+        "zh": "人造光合作用与能源",
+        "cat": "生命科学"
+    },
+    {
+        "id": "In the world of",
+        "key": "In the world of",
+        "en": "Chiaroscuro in Art History",
+        "zh": "艺术史的明暗交错法",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Geology is the scientific",
+        "key": "Geology is the scientific",
+        "en": "Geology Scientific Study",
+        "zh": "地质学的科学研究",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Public health is a",
+        "key": "Public health is a",
+        "en": "Public Health Multidisciplinary",
+        "zh": "多学科之公共卫生",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Deserts, often characterized by",
+        "key": "Deserts, often characterized by",
+        "en": "Desert Ecological Significance",
+        "zh": "沙漠极其重要的生态价值",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The evolution of abstract",
+        "key": "The evolution of abstract",
+        "en": "Abstract Art Evolution",
+        "zh": "抽象艺术的历史演进",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Understanding the potential and",
+        "key": "Understanding the potential and",
+        "en": "Artificial Intelligence Impacts",
+        "zh": "人工智能的影响评估",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Cities, with their diverse",
+        "key": "Cities, with their diverse",
+        "en": "Urban Cultural Exchange",
+        "zh": "城市文化与创新交流",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "In philosophy of mind",
+        "key": "In philosophy of mind",
+        "en": "Consciousness and Self-Awareness",
+        "zh": "心灵哲学视角下的意识",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "Fungi play an important",
+        "key": "Fungi play an important",
+        "en": "Fungi Ecosystem Role",
+        "zh": "真菌的自然生态作用",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Oceanography and hydrology are",
+        "key": "Oceanography and hydrology are",
+        "en": "Oceanography and Hydrology",
+        "zh": "海洋学与水文动态",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The formation of river",
+        "key": "The formation of river",
+        "en": "River Delta Formation",
+        "zh": "河流三角洲之形成",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Realism in theater is",
+        "key": "Realism in theater is",
+        "en": "Theatrical Realism Movement",
+        "zh": "戏剧的现实主义运动",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "During the late nineteenth",
+        "key": "During the late nineteenth",
+        "en": "Urban Century Transformations",
+        "zh": "北美城市的世纪转型",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "In recent decades, environmental",
+        "key": "In recent decades, environmental",
+        "en": "Surging Environmental Awareness",
+        "zh": "环境意识与气候挑战",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The Baroque period in",
+        "key": "The Baroque period in",
+        "en": "Baroque Music Period",
+        "zh": "巴洛克时期音乐特点",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Archaeological excavations often reveal",
+        "key": "Archaeological excavations often reveal",
+        "en": "Archaeological Excavation Methods",
+        "zh": "考古发掘及研究方法",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The study of insect",
+        "key": "The study of insect",
+        "en": "Insect Survival Strategies",
+        "zh": "昆虫的社会行为与演化",
+        "cat": "生命科学"
+    },
+    {
+        "id": "In the realm of",
+        "key": "In the realm of",
+        "en": "Keystone Species Conservation",
+        "zh": "保护生态学之关键物种",
+        "cat": "生命科学"
+    },
+    {
+        "id": "The atmosphere is a",
+        "key": "The atmosphere is a",
+        "en": "Complex Atmosphere System",
+        "zh": "复杂的大气层系统",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "In the prehistoric era",
+        "key": "In the prehistoric era",
+        "en": "Prehistoric Social Organization",
+        "zh": "史前社会结构起源",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Music has long served",
+        "key": "Music has long served",
+        "en": "Music Drives Social Change",
+        "zh": "音乐推动社会文化变革",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "The study of geological",
+        "key": "The study of geological",
+        "en": "Geological Formations Insights",
+        "zh": "地质层位勘察探幽",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Terrestrial mammals exhibit a",
+        "key": "Terrestrial mammals exhibit a",
+        "en": "Mammalian Survival Adaptations",
+        "zh": "陆生哺乳动物的生存适应",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Color usage in art",
+        "key": "Color usage in art",
+        "en": "Color Theory in Art",
+        "zh": "艺术创作中的色彩理论",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "In analyzing global trade",
+        "key": "In analyzing global trade",
+        "en": "Comparative Advantage Principle",
+        "zh": "比较优势原则的应用",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "In visual arts, the",
+        "key": "In visual arts, the",
+        "en": "Color and Pigment Interplay",
+        "zh": "绘画材料之色彩及颜料",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "At the dawn of",
+        "key": "At the dawn of",
+        "en": "Dawn of Civilization",
+        "zh": "农业与文明黎明时刻",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The Mughal Empire, which",
+        "key": "The Mughal Empire, which",
+        "en": "Mughal Empire Legacy",
+        "zh": "莫卧儿帝国细密画艺术",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "Maps are tools that",
+        "key": "Maps are tools that",
+        "en": "Cartography and Maps",
+        "zh": "地图制图学功用",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The Gupta Empire, known",
+        "key": "The Gupta Empire, known",
+        "en": "Gupta Golden Age",
+        "zh": "印度笈多王朝成就",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "In recent years, the",
+        "key": "In recent years, the",
+        "en": "Extraterrestrial Water Clues",
+        "zh": "潮汐力与地外水文寻找",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Theater has long been",
+        "key": "Theater has long been",
+        "en": "Theater Driving Social Change",
+        "zh": "戏剧推动社会意识觉醒",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Understanding the complex social",
+        "key": "Understanding the complex social",
+        "en": "Mammal Social Behaviors",
+        "zh": "陆生类哺乳动物社会结构",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Agricultural practices have evolved",
+        "key": "Agricultural practices have evolved",
+        "en": "Sustainable Agricultural Evolution",
+        "zh": "现代农业可持续转型",
+        "cat": "生命科学"
+    },
+    {
+        "id": "In academic research, reasoning",
+        "key": "In academic research, reasoning",
+        "en": "Academic Research Reasoning",
+        "zh": "学术研究中的严谨推理",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "In recent years, the development",
+        "key": "In recent years, the development",
+        "en": "AI Industry Revolution",
+        "zh": "人工智能改变各行产业",
+        "cat": "综合与其他"
+    },
+    {
+        "id": "The search for extraterrestrial",
+        "key": "The search for extraterrestrial",
+        "en": "Extraterrestrial Habitable Conditions",
+        "zh": "探索宇宙地外宜居带",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Attachment theory, developed by",
+        "key": "Attachment theory, developed by",
+        "en": "Bowlby's Attachment Theory",
+        "zh": "鲍尔比人类依恋理论",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Consciousness, the state of",
+        "key": "Consciousness, the state of",
+        "en": "Neural Basis of Consciousness",
+        "zh": "核磁探测下的意识根源",
+        "cat": "生命科学"
+    },
+    {
+        "id": "Wind currents form due",
+        "key": "Wind currents form due",
+        "en": "Atmospheric Wind Currents",
+        "zh": "大洋风流与气候系统",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "The trajectory of modern",
+        "key": "The trajectory of modern",
+        "en": "Urbanization Trajectory",
+        "zh": "现代社会城市化进程",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The urban heat island",
+        "key": "The urban heat island",
+        "en": "Urban Heat Island Effect",
+        "zh": "城市热岛效应分析",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Throughout history, color and",
+        "key": "Throughout history, color and",
+        "en": "Color Psychology in Art",
+        "zh": "艺术颜色的心理反馈",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "Geographical features such as",
+        "key": "Geographical features such as",
+        "en": "Mountain Geographical Features",
+        "zh": "地形环境与微气候塑造",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Our planet's axis is",
+        "key": "Our planet's axis is",
+        "en": "Earth's Axial Tilt",
+        "zh": "地轴倾斜与四季轮换",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Early civilizations emerged around",
+        "key": "Early civilizations emerged around",
+        "en": "River Valley Civilizations",
+        "zh": "大河流域农业文明建立",
+        "cat": "历史与人类学"
+    },
+    {
+        "id": "The last Ice Age",
+        "key": "The last Ice Age",
+        "en": "Glaciers Sculpting Earth",
+        "zh": "冰河世纪重塑地貌环境",
+        "cat": "天文与地球"
+    },
+    {
+        "id": "Craftsmanship has undergone a",
+        "key": "Craftsmanship has undergone a",
+        "en": "Transformation of Craftsmanship",
+        "zh": "手工作坊技术的历史转型",
+        "cat": "艺术与文化"
+    },
+    {
+        "id": "The advent of industrialization",
+        "key": "The advent of industrialization",
+        "en": "Industrialization Urban Architecture",
+        "zh": "工业化造就城市建筑革命",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Transforms",
+        "zh": "人工智能变革产业",
+        "en": "AI Transforms Industries",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Tectonic",
+        "zh": "板块构造运动",
+        "en": "Tectonic Plate Movement",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Universes",
+        "zh": "宇宙学探究",
+        "en": "The Universe's Study",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Pianos",
+        "zh": "钢琴发展史",
+        "en": "Piano's History",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Species",
+        "zh": "物种灭绝原因",
+        "en": "Species Extinction Causes",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Pigment",
+        "zh": "颜料来源",
+        "en": "Pigment Sources",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Archaeology",
+        "zh": "考古发现",
+        "en": "Archaeology Discoveries",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Global",
+        "zh": "全球气候变化",
+        "en": "Global Climate Change",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Jazz",
+        "zh": "爵士乐起源",
+        "en": "Jazz Music Origins",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Mushroom",
+        "zh": "真菌生物学",
+        "en": "Mushroom Biology",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Child",
+        "zh": "儿童语言发展",
+        "en": "Child Language Development",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Aquariums",
+        "zh": "水族馆",
+        "en": "Aquariums",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Odyssey",
+        "zh": "古希腊史诗《奥德赛》",
+        "en": "The Odyssey",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Academic",
+        "zh": "学术基础技能",
+        "en": "Academic Skills",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Museum",
+        "zh": "博物馆职能",
+        "en": "Museum Functions",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Extraterrestrial",
+        "zh": "外星生命探索",
+        "en": "Extraterrestrial Life Search",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Biochemistry",
+        "zh": "生物化学基础",
+        "en": "Biochemistry Foundations",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Plant",
+        "zh": "植物气孔功能",
+        "en": "Plant Stomata Function",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Art",
+        "zh": "艺术聚落作用",
+        "en": "Art Colony Role",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Stars",
+        "zh": "恒星与太阳",
+        "en": "Stars and Sun",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Defining",
+        "zh": "认知定义",
+        "en": "Defining Cognition",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Prehistoric",
+        "zh": "史前艺术与信仰",
+        "en": "Prehistoric Art & Beliefs",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Mass",
+        "zh": "大灭绝事件",
+        "en": "Mass Extinctions",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Human",
+        "zh": "人体解剖学",
+        "en": "Human Anatomy",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Conservation",
+        "zh": "保护生态学",
+        "en": "Conservation Ecology",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Medieval",
+        "zh": "欧洲中世纪史",
+        "en": "Medieval Europe",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Printing",
+        "zh": "3D打印技术",
+        "en": "3D Printing",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Crop",
+        "zh": "轮作制",
+        "en": "Crop Rotation",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Ottoman",
+        "zh": "奥斯曼帝国",
+        "en": "Ottoman Empire",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Sleep",
+        "zh": "睡眠与昼夜节律",
+        "en": "Sleep & Circadian Rhythms",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Weather",
+        "zh": "天气预测",
+        "en": "Weather Prediction",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Renaissance",
+        "zh": "文艺复兴",
+        "en": "The Renaissance",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Earths",
+        "zh": "岩石与地球史",
+        "en": "Earth's History Rocks",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Coral",
+        "zh": "珊瑚礁生态系统",
+        "en": "Coral Reef Ecosystems",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Classical",
+        "zh": "古典文明",
+        "en": "Classical Civilizations",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Desert",
+        "zh": "荒漠生物挑战",
+        "en": "Desert Life Challenges",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Paleontology",
+        "zh": "古生物学与化石",
+        "en": "Paleontology & Fossils",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Circadian",
+        "zh": "昼夜节律",
+        "en": "Circadian Rhythms",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Cloud",
+        "zh": "云的形成",
+        "en": "Cloud Formation",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Archaeology",
+        "zh": "考古学定义",
+        "en": "Archaeology Defined",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Baiji",
+        "zh": "白鱀豚灭绝",
+        "en": "Baiji Extinction",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Bicycle",
+        "zh": "自行车起源",
+        "en": "Bicycle Origins",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Underwater",
+        "zh": "水下机器人",
+        "en": "Underwater Robotics",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Paint",
+        "zh": "颜料演变",
+        "en": "Paint Evolution",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Camels",
+        "zh": "骆驼与沙漠",
+        "en": "Camels' Desert Life",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Honeybee",
+        "zh": "蜜蜂社会结构",
+        "en": "Honeybee Society",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Early",
+        "zh": "早期人类工具",
+        "en": "Early Human Tools",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Grasshopper",
+        "zh": "蝗虫防御",
+        "en": "Grasshopper Defenses",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Ocean",
+        "zh": "洋流",
+        "en": "Ocean Currents",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Oceanography",
+        "zh": "海洋学研究",
+        "en": "Oceanography Field",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Universe",
+        "zh": "宇宙黑洞",
+        "en": "Universe Black Holes",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Climate",
+        "zh": "气候与天气",
+        "en": "Climate vs. Weather",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Early",
+        "zh": "早期人类舞蹈",
+        "en": "Early Human Dance",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Bison",
+        "zh": "野牛与原住民",
+        "en": "Bison and Indigenous",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Agricultures",
+        "zh": "农业与人类社会",
+        "en": "Agriculture's Role",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Respiratory",
+        "zh": "呼吸系统",
+        "en": "Respiratory System",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Photosynthesis",
+        "zh": "光合作用",
+        "en": "Photosynthesis Process",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Industrial",
+        "zh": "工业革命",
+        "en": "Industrial Revolution",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Moon",
+        "zh": "月相的历史影响",
+        "en": "Moon Phases' Influence",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Logical",
+        "zh": "逻辑推理",
+        "en": "Logical Reasoning",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Raven",
+        "zh": "乌鸦智能",
+        "en": "Raven Intelligence",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Plant",
+        "zh": "植物适应性",
+        "en": "Plant Adaptations",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Bone",
+        "zh": "史前骨器",
+        "en": "Bone Tools History",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Exoplanet",
+        "zh": "系外行星突破",
+        "en": "Exoplanet Breakthrough",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Lion",
+        "zh": "狮群社会",
+        "en": "Lion Social Structure",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Roman",
+        "zh": "罗马吹玻璃术",
+        "en": "Roman Glassblowing",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Economics",
+        "zh": "经济学概述",
+        "en": "Economics Overview",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Theater",
+        "zh": "戏剧发展史",
+        "en": "Theater History",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Geology",
+        "zh": "地质学研究",
+        "en": "Geology: Earth Study",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Brain",
+        "zh": "环境与大脑发育",
+        "en": "Brain & Environment",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Railroads",
+        "zh": "铁路改变北美",
+        "en": "Railroads Transform America",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Artisans",
+        "zh": "工匠的历史作用",
+        "en": "Artisans' Historical Role",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Industrial",
+        "zh": "工业化与城市发展",
+        "en": "Industrial Urbanization",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Photosynthesis",
+        "zh": "光合作用：生命与能源",
+        "en": "Photosynthesis: Life & Energy",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Art",
+        "zh": "艺术史的解码",
+        "en": "Art History: Decoding",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Earths",
+        "zh": "地球地质学",
+        "en": "Earth's Geology",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Philosophy",
+        "zh": "哲学：现实与伦理",
+        "en": "Philosophy: Reality & Ethics",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Public",
+        "zh": "公共卫生",
+        "en": "Public Health",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Desert",
+        "zh": "荒漠生态价值",
+        "en": "Desert Ecology",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Understanding",
+        "zh": "人工智能探析",
+        "en": "Understanding AI",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Cities",
+        "zh": "城市功能与优势",
+        "en": "Cities' Role",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Early",
+        "zh": "早期人类饮食",
+        "en": "Early Human Diet",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "What",
+        "zh": "地质学概论",
+        "en": "What is Geology?",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Fungis",
+        "zh": "真菌生态作用",
+        "en": "Fungi's Ecosystem Role",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Oceanography",
+        "zh": "海洋与水文学",
+        "en": "Oceanography, Hydrology",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Theater",
+        "zh": "戏剧现实主义",
+        "en": "Theater Realism",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Urban",
+        "zh": "城市工业化进程",
+        "en": "Urban Industrialization",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Environmental",
+        "zh": "环境意识崛起",
+        "en": "Environmental Awareness",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Baroque",
+        "zh": "巴洛克音乐",
+        "en": "Baroque Music",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Archaeological",
+        "zh": "考古发现与文化",
+        "en": "Archaeological Findings",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Insect",
+        "zh": "昆虫行为研究",
+        "en": "Insect Behavior",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Keystone",
+        "zh": "关键物种作用",
+        "en": "Keystone Species",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Earths",
+        "zh": "地球大气系统",
+        "en": "Earth's Atmosphere",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Prehistoric",
+        "zh": "史前社会与环境",
+        "en": "Prehistoric Societies",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Music",
+        "zh": "音乐与社会变迁",
+        "en": "Music & Society",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Rock",
+        "zh": "岩石地质过程",
+        "en": "Rock Formation",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Mammal",
+        "zh": "哺乳动物适应性",
+        "en": "Mammal Adaptations",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Art",
+        "zh": "艺术色彩运用",
+        "en": "Art Color Usage",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Human",
+        "zh": "人脑结构与功能",
+        "en": "Human Brain Anatomy",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Classical",
+        "zh": "古典文明的影响",
+        "en": "Classical Civilizations' Influence",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Prehistoric",
+        "zh": "史前亲属关系",
+        "en": "Prehistoric Kinship",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Early",
+        "zh": "早期智人起源",
+        "en": "Early Human Emergence",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Industrial",
+        "zh": "工业化城市建筑",
+        "en": "Industrial City Architecture",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Craftsmanships",
+        "zh": "工艺的演变",
+        "en": "Craftsmanship's Transformation",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Water",
+        "zh": "水与外星生命",
+        "en": "Water for Alien Life",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Comparative",
+        "zh": "比较优势原则",
+        "en": "Comparative Advantage",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Color",
+        "zh": "色彩与颜料",
+        "en": "Color and Pigment",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Early",
+        "zh": "早期人类社会",
+        "en": "Early Human Societies",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Mughal",
+        "zh": "莫卧儿帝国",
+        "en": "The Mughal Empire",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Use",
+        "zh": "地图的功用",
+        "en": "The Use of Maps",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Theater",
+        "zh": "戏剧与社会",
+        "en": "Theater and Society",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Mammal",
+        "zh": "哺乳动物社群",
+        "en": "Mammal Social Structures",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Sustainable",
+        "zh": "可持续农业",
+        "en": "Sustainable Agriculture",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Academic",
+        "zh": "学术推理方法",
+        "en": "Academic Reasoning",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "Color",
+        "zh": "艺术中的色彩",
+        "en": "Color in Art",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "Mountains",
+        "zh": "山脉与气候",
+        "en": "Mountains and Climate",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Earths",
+        "zh": "地球倾角与季节",
+        "en": "Earth's Tilt and Seasons",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Urbanization",
+        "zh": "城市化与工业化",
+        "en": "Urbanization and Industry",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Consciousness",
+        "zh": "意识研究",
+        "en": "Consciousness Research",
+        "cat": "生命科学"
+    },
+    {
+        "key": "How",
+        "zh": "风的形成",
+        "en": "How Wind Forms",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Agricultural",
+        "zh": "农业起源",
+        "en": "Agricultural Origins",
+        "cat": "历史与人类学"
+    }
 ]
