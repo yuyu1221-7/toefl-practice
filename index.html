@@ -883,11 +883,12 @@
                 if (!entry.text.includes('[')) return; 
                 
                 const cleanText = entry.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ');
-                const prefix = cleanText.substring(0, 80).toLowerCase().replace(/[^a-z]/g, ''); 
+                // 将 80 扩大到 300，防止“开头极其相似但后续不同”的文章被错误合并
+                const prefix = cleanText.substring(0, 300).toLowerCase().replace(/[^a-z]/g, ''); 
                 
                 if (!prefix) return;
                 
-                let existing = grouped.find(g => g.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ').substring(0, 80).toLowerCase().replace(/[^a-z]/g, '') === prefix);
+                let existing = grouped.find(g => g.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ').substring(0, 300).toLowerCase().replace(/[^a-z]/g, '') === prefix);
 
                 if (existing) {
                     existing.frequency++;
@@ -895,15 +896,20 @@
                     existing.latestDateVal = Math.max(existing.latestDateVal || 0, parseDateStr(entry.date));
                 } else {
                     let matchedTitle = null;
-                    const searchArea = cleanText.substring(0, 150).toLowerCase();
+                    // 将字典匹配区域也扩大到 300
+                    const searchArea = cleanText.substring(0, 300).toLowerCase();
                     
                     for(let item of titleDictionary) {
-                        const regex = new RegExp('\\b' + item.key.toLowerCase() + '(s|es)?\\b', 'i');
-                        if(searchArea.match(regex)) { 
-                            matchedTitle = { zh: item.zh, en: item.en, cat: item.cat }; 
-                            break; 
-                        }
+                    // 过滤正则敏感字符，并添加更鲁棒的双重比对机制
+                    const safeKey = item.key.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); 
+                    const regex = new RegExp(safeKey + '(s|es)?\\b', 'i');
+                    
+                    // 如果正则匹配成功，或者原文本直接包含这个 key
+                    if(searchArea.match(regex) || searchArea.includes(item.key.toLowerCase())) { 
+                        matchedTitle = { zh: item.zh, en: item.en, cat: item.cat }; 
+                        break; 
                     }
+                }
                     
                     let aiCache = {};
                     try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
