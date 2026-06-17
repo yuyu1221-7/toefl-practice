@@ -829,19 +829,42 @@
         // 解析 Markdown Engine
         function parseMarkdownEngine(mdText) {
             const cleanedText = mdText.replace(/[（(]\s*注[:：][^）)]*[）)]/g, '');
+            // 预处理：确保正确答案和补全版本在解析时独占一行
             let formattedText = cleanedText.replace(/(正确答案[:：])/g, '\n$1').replace(/(补全版本[:：])/g, '\n$1');
             const lines = formattedText.split('\n').map(l => l.trim());
             
-            let grouped = []; let currentDate = '未知日期'; let currentRawPassage = ''; let currentCompletedText = '';
+            let grouped = []; let currentDate = '未知日期'; 
+            let currentRawPassage = ''; let currentCompletedText = ''; let currentAnswers = [];
             let state = 'PASSAGE'; let rawEntries = [];
 
+            // 🚀 核心状态机重构：确立完美的“优先级提取机制”
             const pushEntry = () => {
-                if (currentCompletedText) rawEntries.push({ date: currentDate, text: currentCompletedText });
-                else if (currentRawPassage && currentRawPassage.includes('[')) rawEntries.push({ date: currentDate, text: currentRawPassage });
-                currentRawPassage = ''; currentCompletedText = ''; state = 'PASSAGE';
+                let finalPassage = "";
+                
+                // 🏆 优先级 1：只要有“补全版本”且包含 []，无脑用它！（最高稳定性）
+                if (currentCompletedText && currentCompletedText.includes('[')) {
+                    finalPassage = currentCompletedText;
+                } 
+                // 🥈 优先级 2：如果没有补全版本，但有“正确答案”，才执行下划线替换
+                else if (currentRawPassage && currentAnswers.length > 0) {
+                    finalPassage = currentRawPassage;
+                    currentAnswers.forEach(ans => {
+                        finalPassage = finalPassage.replace(/((?:_\s*)*_)/, `[${ans}]`);
+                    });
+                } 
+                // 🥉 优先级 3：如果没有补全版本前缀，但原文本身就自带 []
+                else if (currentRawPassage && currentRawPassage.includes('[')) {
+                    finalPassage = currentRawPassage;
+                }
+
+                if (finalPassage) {
+                    rawEntries.push({ date: currentDate, text: finalPassage });
+                }
+                
+                // 清空状态，准备迎接下一篇
+                currentRawPassage = ''; currentCompletedText = ''; currentAnswers = []; state = 'PASSAGE';
             };
 
-            // 拓展正则支持形式如 2026.5未知 的日期前缀
             const dateHeaderRegex = /^(?:202\d\.\d+\.\d+[A-Za-z]?|202\d\.\d+(?:\.?)未知)$/;
 
             for (let i = 0; i < lines.length; i++) {
@@ -854,28 +877,25 @@
                 else if (isNewPassageHeader && state === 'PASSAGE' && (currentRawPassage || currentCompletedText)) pushEntry();
 
                 const passageMatch = line.match(/^(?:第[一二三四五六七八九十]+[篇段]\s*)?(.*)/);
-               if (line.match(/^正确答案[:：]/)) {
-                const ansLine = line.replace(/^正确答案[:：]/, '').trim();
-                let answers = [];
                 
-                // 🚀 修复点 1：大幅提升正则容错率，兼容漏打冒号、漏打“题”字、或者用 "1. xxx" 格式的手抖情况
-                const patternMatch = [...ansLine.matchAll(/(?:第\d+[题空]?\s*[:：]?|\d+[\.\:：])\s*([a-zA-Z\-\']+)/g)];
-                if (patternMatch.length > 0) {
-                    answers = patternMatch.map(m => m[1]);
-                } else {
-                    // 极端兜底：如果格式乱七八糟，直接按逗号或空格暴力提取所有纯英文单词
-                    answers = ansLine.split(/[,，\s]+/).map(s => s.replace(/[^a-zA-Z\-\']/g, '').trim()).filter(s => s);
+                if (line.match(/^正确答案[:：]/)) {
+                    const ansLine = line.replace(/^正确答案[:：]/, '').trim();
+                    // 支持 "第1题", "第一题", "第一空", "1.", "1：" 等你能想到的几乎所有编号格式！
+                    const patternMatch = [...ansLine.matchAll(/(?:第[\d一二三四五六七八九十]+[题空]?\s*[:：]?|\d+[\.\:：]?)\s*([a-zA-Z\-\']+)/g)];
+                    if (patternMatch.length > 0) {
+                        currentAnswers = patternMatch.map(m => m[1]);
+                    } else {
+                        currentAnswers = ansLine.split(/[,，\s]+/).map(s => s.replace(/[^a-zA-Z\-\']/g, '').trim()).filter(s => s);
+                    }
+                    continue; // 修复点：提取完答案后立刻跳过，绝不提前生成题目
                 }
-            
-                currentCompletedText = currentRawPassage;
                 
-                // 🚀 修复点 2：修复吞空格 Bug。使用 ((?:_\s*)*_) 只匹配下划线本身，绝不吃掉后方用于分隔单词的正常空格
-                answers.forEach(ans => currentCompletedText = currentCompletedText.replace(/((?:_\s*)*_)/, `[${ans}]`));
-                
-                pushEntry(); continue;
-            }
-                
-                if (line.match(/^补全版本[:：]/)) { state = 'COMPLETED'; const compLine = line.replace(/^补全版本[:：]/, '').trim(); if (compLine) currentCompletedText = compLine; continue; }
+                if (line.match(/^补全版本[:：]/)) { 
+                    state = 'COMPLETED'; 
+                    const compLine = line.replace(/^补全版本[:：]/, '').trim(); 
+                    if (compLine) currentCompletedText = compLine; 
+                    continue; 
+                }
 
                 if (state === 'PASSAGE') {
                     if (line === '') { if (currentRawPassage && !currentRawPassage.endsWith('<br><br>')) currentRawPassage += currentRawPassage.endsWith('<br>') ? '<br>' : '<br><br>'; }
@@ -886,6 +906,8 @@
                 }
             }
             pushEntry();
+            
+            // 下方保留原来的 let globalIndexCounter = 1; 及去重逻辑...
 
             let globalIndexCounter = 1;
             rawEntries.forEach(entry => {
