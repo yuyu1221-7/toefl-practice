@@ -261,8 +261,8 @@
 {
 "id": "The presence of water",
 "key": "The presence of water",
-"en": "Extraterrestrial Water Search",
-"zh": "外星水文与生命探索",
+"en": "Planetary Water Activity",
+"zh": "行星水文与火山活动",
 "cat": "天文与地球"
 },
 {
@@ -630,6 +630,13 @@
 "cat": "历史与人类学"
 },
 {
+"id": "Logical reasoning is a",
+"key": "Logical reasoning is a",
+"en": "Logical Reasoning Skills",
+"zh": "学术研究与逻辑推理",
+"cat": "综合与其他"
+},
+{
 "id": "Ravens are highly intelligent",
 "key": "Ravens are highly intelligent",
 "en": "Intelligent Ravens",
@@ -724,7 +731,7 @@
 "id": "The discovery of water",
 "key": "The discovery of water",
 "en": "Moons Extraterrestrial Life",
-"zh": "系外地月系与生命",
+"zh": "系外地月系生命探索",
 "cat": "天文与地球"
 },
 {
@@ -777,8 +784,8 @@
 "cat": "艺术与文化"
 },
 {
-"id": "Geology is the scientific",
-"key": "Geology is the scientific",
+"id": "Geology is the scientific study of our",
+"key": "Geology is the scientific study of our",
 "en": "Geology Scientific Study",
 "zh": "地质学的科学研究",
 "cat": "天文与地球"
@@ -794,7 +801,7 @@
 "id": "Deserts, often characterized by",
 "key": "Deserts, often characterized by",
 "en": "Desert Ecological Significance",
-"zh": "沙漠极其重要的生态价值",
+"zh": "沙漠的生态系统价值",
 "cat": "生命科学"
 },
 {
@@ -824,6 +831,20 @@
 "en": "Consciousness and Self-Awareness",
 "zh": "心灵哲学视角下的意识",
 "cat": "综合与其他"
+},
+{
+"id": "Animal bones and plant",
+"key": "Animal bones and plant",
+"en": "Early Human Diet Insights",
+"zh": "早期人类的饮食习惯",
+"cat": "历史与人类学"
+},
+{
+"id": "Geology is the scientific study of Earth's",
+"key": "Geology is the scientific study of Earth's",
+"en": "Earth's Geological Makeup",
+"zh": "地球构造的物理构成",
+"cat": "天文与地球"
 },
 {
 "id": "Fungi play an important",
@@ -906,7 +927,7 @@
 "id": "In the prehistoric era",
 "key": "In the prehistoric era",
 "en": "Prehistoric Social Organization",
-"zh": "史前社会结构起源",
+"zh": "史前社会结构与环境",
 "cat": "历史与人类学"
 },
 {
@@ -920,7 +941,7 @@
 "id": "The study of geological",
 "key": "The study of geological",
 "en": "Geological Formations Insights",
-"zh": "地质层位勘察探幽",
+"zh": "地质层位历史记录",
 "cat": "天文与地球"
 },
 {
@@ -941,7 +962,7 @@
 "id": "In analyzing global trade",
 "key": "In analyzing global trade",
 "en": "Comparative Advantage Principle",
-"zh": "比较优势原则的应用",
+"zh": "全球贸易中的比较优势",
 "cat": "综合与其他"
 },
 {
@@ -980,10 +1001,10 @@
 "cat": "历史与人类学"
 },
 {
-"id": "In recent years, the",
-"key": "In recent years, the",
-"en": "Extraterrestrial Water Clues",
-"zh": "潮汐力与地外水文寻找",
+"id": "In recent years, the search",
+"key": "In recent years, the search",
+"en": "Extraterrestrial Organisms Search",
+"zh": "地外生命体的搜寻",
 "cat": "天文与地球"
 },
 {
@@ -1111,5 +1132,40 @@
 "en": "Industrialization Urban Architecture",
 "zh": "工业化造就城市建筑革命",
 "cat": "历史与人类学"
+},
+{
+"id": "Archaeological evidence suggests that",
+"key": "Archaeological evidence suggests that",
+"en": "Homo Sapiens Emergence",
+"zh": "早期智人走出非洲",
+"cat": "历史与人类学"
+},
+{
+"id": "The role of kinship",
+"key": "The role of kinship",
+"en": "Prehistoric Kinship Structures",
+"zh": "史前群落亲属网络",
+"cat": "历史与人类学"
+},
+{
+"id": "The classical civilizations of",
+"key": "The classical civilizations of",
+"en": "Classical Civilizations Legacy",
+"zh": "古希腊罗马的现代影响",
+"cat": "历史与人类学"
+},
+{
+"id": "The human brain is",
+"key": "The human brain is",
+"en": "Human Brain Architecture",
+"zh": "极度复杂的大脑结构",
+"cat": "生命科学"
+},
+{
+"id": "Philosophy investigates the nature",
+"key": "Philosophy investigates the nature",
+"en": "Philosophy Investigation",
+"zh": "哲学探索与现代挑战",
+"cat": "综合与其他"
 }
 ]
