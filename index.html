@@ -892,41 +892,51 @@
                 if (!entry.text.includes('[')) return; 
                 
                 const cleanText = entry.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ');
-                // 将 80 扩大到 300，防止“开头极其相似但后续不同”的文章被错误合并
-                const prefix = cleanText.substring(0, 300).toLowerCase().replace(/[^a-z]/g, ''); 
                 
+                // 提取前 100 个字符作为未知题目的“备用文本指纹”
+                const prefix = cleanText.substring(0, 100).toLowerCase().replace(/[^a-z]/g, ''); 
                 if (!prefix) return;
-                
-                let existing = grouped.find(g => g.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ').substring(0, 300).toLowerCase().replace(/[^a-z]/g, '') === prefix);
 
-                if (existing) {
-                    existing.frequency++;
-                    if (!existing.dates.includes(entry.date)) existing.dates.push(entry.date);
-                    existing.latestDateVal = Math.max(existing.latestDateVal || 0, parseDateStr(entry.date));
-                } else {
-                    let matchedTitle = null;
-                    // 将字典匹配区域也扩大到 300
-                    const searchArea = cleanText.substring(0, 300).toLowerCase();
-                    
-                    for(let item of titleDictionary) {
-                    // 过滤正则敏感字符，并添加更鲁棒的双重比对机制
+                // 扩大搜索区到 300，保证能完整查到字典里的 Key
+                const searchArea = cleanText.substring(0, 300).toLowerCase();
+                
+                // 🚀 核心变革 1：先查字典和 AI 缓存，确认这篇文本的“真实身份”
+                let matchedTitle = null;
+                for(let item of titleDictionary) {
                     const safeKey = item.key.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); 
-                    const regex = new RegExp(safeKey + '(s|es)?\\b', 'i');
-                    
-                    // 如果正则匹配成功，或者原文本直接包含这个 key
+                    const regex = new RegExp('\\b' + safeKey + '(s|es)?\\b', 'i');
                     if(searchArea.match(regex) || searchArea.includes(item.key.toLowerCase())) { 
                         matchedTitle = { zh: item.zh, en: item.en, cat: item.cat }; 
                         break; 
                     }
                 }
-                    
+                
+                if (!matchedTitle) {
                     let aiCache = {};
                     try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
+                    if (aiCache[prefix]) {
+                        matchedTitle = { zh: aiCache[prefix].zh, en: aiCache[prefix].en, cat: aiCache[prefix].cat };
+                    }
+                }
 
-                    if(matchedTitle) {
+                // 🚀 核心变革 2：一旦确立身份（匹配到了标题），就按“标题”去重！
+                // 只有完全没匹配到的未知题目，才按容易因回忆偏差而错判的“文本指纹(prefix)”去重。
+                let existing = null;
+                if (matchedTitle) {
+                    existing = grouped.find(g => g.titleEn === matchedTitle.en);
+                } else {
+                    existing = grouped.find(g => g.prefixKey === prefix);
+                }
+
+                // 🚀 核心变革 3：执行精准合并
+                if (existing) {
+                    existing.frequency++; // 频次增加
+                    if (!existing.dates.includes(entry.date)) existing.dates.push(entry.date);
+                    existing.latestDateVal = Math.max(existing.latestDateVal || 0, parseDateStr(entry.date));
+                } else {
+                    // 如果是真正的新题，则加入库中
+                    if (matchedTitle) {
                         grouped.push({ id: grouped.length + 1, titleZh: matchedTitle.zh, titleEn: matchedTitle.en, cat: matchedTitle.cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
-                    } else if (aiCache[prefix]) {
-                        grouped.push({ id: grouped.length + 1, titleZh: aiCache[prefix].zh, titleEn: aiCache[prefix].en, cat: aiCache[prefix].cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
                     } else {
                         grouped.push({ id: grouped.length + 1, titleZh: "待智能识别", titleEn: "Pending AI", cat: "综合与其他", isUnknown: true, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
                     }
