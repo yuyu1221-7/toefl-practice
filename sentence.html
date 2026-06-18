@@ -370,13 +370,17 @@
             let timeForQ = record.timeSpentPerQ ? record.timeSpentPerQ[q.id] || 0 : 0;
             
             q.structure.forEach((slot, sIdx) => {
-                if(slot.type === 'static') {
-                    userStr += slot.text; correctStr += slot.text;
-                } else {
-                    const ansId = record.answers[q.id][slot.id];
-                    if(ansId !== q.correctAnswers[slot.id]) isCorrect = false;
-
-                    const opt = q.options.find(o => o.id === ansId);
+                 if(slot.type === 'static') {
+                   userStr += slot.text; correctStr += slot.text;
+                 } else {
+                   const ansId = record.answers[q.id][slot.id];
+                   const userOpt = q.options.find(o => o.id === ansId);
+                   const correctOpt = q.options.find(o => o.id === q.correctAnswers[slot.id]);
+                   if (!userOpt || !correctOpt || userOpt.text !== correctOpt.text) {
+                     isCorrect = false;
+                   }
+            
+                   const opt = userOpt;
                     let w = opt ? opt.text : "________";
                     if(sIdx === 0 && opt) w = w.charAt(0).toUpperCase() + w.slice(1);
                     userStr += `[${w}]`; 
@@ -510,11 +514,19 @@
         if (attemptedQs.length > 0) {
             let score = 0;
             attemptedQs.forEach(q => {
-                let correct = true;
-                q.structure.forEach(s => {
-                    if(s.type === 'blank' && state.answers[q.id][s.id] !== q.correctAnswers[s.id]) correct = false;
-                });
-                if(correct) score++;
+              let correct = true;
+              q.structure.forEach(s => {
+                if(s.type === 'blank') {
+                  const userAnsId = state.answers[q.id]?.[s.id];
+                  const correctAnsId = q.correctAnswers[s.id];
+                  const userOpt = q.options.find(o => o.id === userAnsId);
+                  const correctOpt = q.options.find(o => o.id === correctAnsId);
+                  if (!userOpt || !correctOpt || userOpt.text !== correctOpt.text) {
+                    correct = false;
+                  }
+                }
+              });
+              if(correct) score++;
             });
             const originalQs = state.questions;
             state.questions = attemptedQs;
@@ -535,7 +547,15 @@
         state.questions.forEach(q => {
             let correct = true;
             q.structure.forEach(s => {
-                if(s.type === 'blank' && state.answers[q.id][s.id] !== q.correctAnswers[s.id]) correct = false;
+              if(s.type === 'blank') {
+                const userAnsId = state.answers[q.id]?.[s.id];
+                const correctAnsId = q.correctAnswers[s.id];
+                const userOpt = q.options.find(o => o.id === userAnsId);
+                const correctOpt = q.options.find(o => o.id === correctAnsId);
+                if (!userOpt || !correctOpt || userOpt.text !== correctOpt.text) {
+                  correct = false;
+                }
+              }
             });
             if(correct) score++;
         });
@@ -1074,8 +1094,9 @@
                     
                     let colorStyle = "color: #000;";
                     if (state.checkActive && state.mode === 'practice') {
-                        const isCorrect = (q.correctAnswers[slot.id] === filledOpt.id);
-                        colorStyle = isCorrect ? "color: #10b981; font-weight: bold;" : "color: #ef4444; font-weight: bold; text-decoration: underline;";
+                       const correctOpt = q.options.find(o => o.id === q.correctAnswers[slot.id]);
+                       const isCorrect = filledOpt && correctOpt && (filledOpt.text === correctOpt.text);
+                       colorStyle = isCorrect ? "color: #10b981; font-weight: bold;" : "color: #ef4444; font-weight: bold; text-decoration: underline;";
                     }
 
                     // 完全去掉了换行与多余空格
@@ -1272,12 +1293,14 @@
                     userStr += `<span class="text-gray-700">${textToShow}</span>`; 
                     prevWasBlankForUser = false;
                 } else {
-                    prevWasBlankForUser = true;
-                    const ansId = record.answers[q.id][slot.id];
-                    const isSlotCorrect = (ansId === q.correctAnswers[slot.id]);
-                    if(!isSlotCorrect) isCorrect = false;
-
-                    const opt = q.options.find(o => o.id === ansId);
+                       prevWasBlankForUser = true;
+                       const ansId = record.answers[q.id][slot.id];
+                       const userOpt = q.options.find(o => o.id === ansId);
+                       const correctOpt = q.options.find(o => o.id === q.correctAnswers[slot.id]);
+                       const isSlotCorrect = userOpt && correctOpt && (userOpt.text === correctOpt.text);
+                       if(!isSlotCorrect) isCorrect = false;
+                
+                       const opt = userOpt;
                     let w = opt ? opt.text : "";
                     if(sIdx === 0 && w) w = w.charAt(0).toUpperCase() + w.slice(1);
                     
