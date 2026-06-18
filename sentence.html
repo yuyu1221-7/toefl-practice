@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOEFL Sentence Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-bg: #276b70; 
+            --btn-height: 46px; 
+        }
+        body {
+            font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            user-select: none; 
+            background-color: #f4f6f8;
+        }
+        
+        .exam-body { background-color: #7b7b7b !important; }
+        
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .top-bar {
+            background-color: var(--primary-bg);
+            height: 80px; 
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 32px;
+            gap: 16px;
+        }
+        .sub-bar {
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #d5d5d5;
+            height: 52px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+            font-weight: 600;
+            color: #333;
+            font-size: 16px; 
+        }
+        
+        .tpo-btn {
+            height: var(--btn-height);
+            border-radius: 23px;
+            padding: 0 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .btn-outline:hover { background-color: rgba(255,255,255,0.15); border-color: white; }
+        .btn-solid {
+            background-color: white;
+            color: var(--primary-bg);
+            border: 1px solid white;
+        }
+        .btn-solid:hover { background-color: #f0f0f0; }
+        
+        .question-area {
+            flex: 1;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .sentence-flow {
+            font-size: 20px;
+            line-height: 2.2;
+            color: #111;
+            display: inline;
+        }
+        .static-word { display: inline; }
+        
+        /* 彻底移除 margin，让填入的内容紧密贴合 */
+        .drop-slot {
+            display: inline-block;
+            min-width: 60px;
+            color: transparent;
+            border-bottom: 2px solid #334155;
+            cursor: pointer;
+            position: relative;
+            margin: 0; 
+            padding: 0;
+            top: -2px;
+        }
+        .drop-slot.drag-over { border-bottom: 2px solid var(--primary-bg); }
+        
+        /* 彻底移除 padding 和 margin，防止产生多余空格 */
+        .filled-word {
+            display: inline;
+            color: #000;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            border-radius: 2px;
+            transition: background-color 0.1s;
+        }
+        .filled-word:hover { background-color: #e5e7eb; }
+        
+        /* 默认透明，只在 hover 时显示阴影 */
+        .pool-option {
+            background-color: transparent;
+            color: #000;
+            padding: 8px 16px;
+            font-size: 19px;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+        .pool-option:hover { background-color: #e5e7eb; }
+        .pool-option.dragging { opacity: 0.3; }
+
+        .review-table-container {
+            width: 100%;
+            flex: 1;
+            overflow-y: auto;
+            background-color: #fff;
+            padding: 40px 100px;
+        }
+        .review-table { width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #ccc;}
+        .review-table th, .review-table td { border: 1px solid #ccc; padding: 14px 20px; text-align: left; }
+        .review-table th {
+            position: sticky; top: 0; background-color: #f9f9f9;
+            cursor: pointer; font-weight: bold; color: #111; z-index: 10;
+        }
+        .review-table th:hover { background-color: #f1f1f1; }
+        .review-table tr { cursor: pointer; transition: background 0.1s; }
+        .review-table tr:hover { background-color: #f4f4f4; }
+        .review-table tr.selected { background-color: #e6f7ff; }
+
+        .hidden-file-input { display: none; }
+        
+        .upload-overlay {
+            position: fixed; inset: 0; background: #f4f6f8; z-index: 100;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .drop-zone {
+            width: 600px; height: 300px; border: 2px dashed #a0aec0; border-radius: 12px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: white; cursor: pointer; transition: 0.3s;
+        }
+        .drop-zone:hover, .drop-zone.drag-over {
+            border-color: var(--primary-bg); background: #f0f7f8;
+        }
+
+        .calendar-month { font-size: 20px; font-weight: bold; color: #1e3a8a; margin: 30px 0 15px 0; border-left: 4px solid #3b82f6; padding-left: 10px;}
+        .calendar-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+        .calendar-card {
+            background: white; border: 1px solid #f3f4f6; border-radius: 16px; width: 125px; height: 105px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .calendar-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px rgba(0,0,0,0.05); border-color: #e5e7eb; }
+        .cal-day { font-size: 19px; font-weight: bold; color: #111; }
+        .cal-count { font-size: 12px; color: #6b7280; margin-top: 4px; font-weight: 500; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+    </style>
+</head>
+<body id="main-body">
+
+<div id="app"></div>
+
+<script>
+    const iconReview = `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right:2px"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>`;
+    const iconBack = `<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M15 18l-6-6 6-6"/></svg>`;
+    const iconNext = `<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M9 18l6-6-6-6"/></svg>`;
+    const iconEye = `<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+    const iconEyeOff = `<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
+
+    const avatars = {
+        m: ["https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/ZaO9/231X234/%E4%BA%BA%E5%83%8Fimage/m1.png/webp", "https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/VkD2/231X231/%E4%BA%BA%E5%83%8Fimage/m2.png/webp", "https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/3Nq2/228X234/%E4%BA%BA%E5%83%8Fimage/m3.png/webp", "https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/HJVm/237X252/%E4%BA%BA%E5%83%8Fimage/m4.png/webp"],
+        f: ["https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/Zyah/291X289/%E4%BA%BA%E5%83%8Fimage/f1.png/webp", "https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/X77O/285X294/%E4%BA%BA%E5%83%8Fimage/f2.png/webp", "https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/Eg9O/282X291/%E4%BA%BA%E5%83%8Fimage/f3.png/webp", "https://img.pagehost.cn/autoupload/en/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260616/QKh3/291X309/%E4%BA%BA%E5%83%8Fimage/f4.png/webp"]
+    };
+
+    let fullDatabase = []; 
+    let uniqueDatabase = []; 
+    let moduleNames = []; 
+
+    let state = {
+        screen: 'upload', 
+        mode: 'practice', 
+        questions: [],
+        currentQIndex: 0,
+        answers: {}, 
+        totalTime: 0, 
+        timeRemaining: 0,
+        timerInterval: null,
+        timeHidden: false,
+        testFinished: false,
+        showAnswerOverlay: false, 
+        checkActive: false,
+        sortConfig: { key: 'number', direction: 'asc' },
+        selectedReviewRow: null,
+        draggedOptId: null,
+        sourceSlotId: null,
+        currentHistoryRecord: null,
+        timeSpent: {},
+        lastScreenBeforeReview: null,
+        dataDashDate: '' 
+    };
+
+    const appEl = document.getElementById('app');
+    const mainBody = document.getElementById('main-body');
+
+    function parseMDData(mdText) {
+        fullDatabase = [];
+        uniqueDatabase = [];
+        moduleNames = [];
+        const uniqueMap = new Map();
+
+        const modules = mdText.split('——————————').map(s => s.trim()).filter(s => s);
+        modules.forEach(modText => {
+            const lines = modText.split('\n').map(s => s.trim()).filter(s => s);
+            const moduleDate = lines[0]; 
+            if(!moduleNames.includes(moduleDate)) moduleNames.push(moduleDate);
+            
+            let currentQ = null;
+            for(let i=1; i<lines.length; i++) {
+                const line = lines[i];
+                if(line.startsWith('q')) {
+                    if(currentQ) processQuestion(currentQ, uniqueMap);
+                    currentQ = { id: moduleDate + '_' + line, moduleId: moduleDate, qNum: line };
+                } else if (line.startsWith('sen1:')) {
+                    currentQ.topText = line.substring(5).trim();
+                } else if (line.startsWith('sen2:')) {
+                    currentQ.sen2Str = line.substring(5).trim();
+                } else if (line.startsWith('options:')) {
+                    currentQ.optionsRaw = line.substring(8).trim();
+                } else if (line.startsWith('ans:')) {
+                    currentQ.ans = line.substring(4).trim();
+                }
+            }
+            if(currentQ) processQuestion(currentQ, uniqueMap);
+        });
+        
+        uniqueDatabase = Array.from(uniqueMap.values());
+        state.dataDashDate = moduleNames[0] || '';
+        state.screen = 'dashboard';
+        render();
+    }
+
+    function processQuestion(q, uniqueMap) {
+        if (!q.optionsRaw || !q.ans) return;
+        const optsArr = q.optionsRaw.split('|').map(s => s.replace(/`/g, '').trim());
+        q.options = optsArr.map((text, idx) => ({ id: 'opt_' + idx, text: text }));
+        
+        q.structure = [];
+        let bIdx = 0;
+        const regex = /(_+)/g;
+        let lastIndex = 0;
+        let match;
+        while ((match = regex.exec(q.sen2Str)) !== null) {
+            const staticText = q.sen2Str.substring(lastIndex, match.index);
+            if (staticText) q.structure.push({ type: 'static', text: staticText });
+            q.structure.push({ type: 'blank', id: 'b' + bIdx++ });
+            lastIndex = regex.lastIndex;
+        }
+        const tail = q.sen2Str.substring(lastIndex);
+        if (tail) q.structure.push({ type: 'static', text: tail });
+
+        q.correctAnswers = {};
+        const blanks = q.structure.filter(s => s.type === 'blank');
+        const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const target = normalize(q.ans);
+        
+        let found = false, used = new Set(), currentFill = [];
+        function solve(index) {
+            if(found) return;
+            if(index === blanks.length) {
+                let built = '', fillIndex = 0;
+                q.structure.forEach(s => {
+                    if(s.type === 'static') built += s.text;
+                    else built += currentFill[fillIndex++].text;
+                });
+                if(normalize(built) === target) {
+                    found = true;
+                    currentFill.forEach((opt, i) => q.correctAnswers[blanks[i].id] = opt.id);
+                }
+                return;
+            }
+            for(let i=0; i<q.options.length; i++) {
+                if(!used.has(i)) {
+                    used.add(i); currentFill.push(q.options[i]);
+                    solve(index + 1);
+                    currentFill.pop(); used.delete(i);
+                }
+            }
+        }
+        solve(0);
+        if(!found) blanks.forEach((b, i) => q.correctAnswers[b.id] = q.options[i].id);
+
+        fullDatabase.push(q);
+
+        const hash = q.topText + '|||' + q.sen2Str;
+        if(uniqueMap.has(hash)) {
+            let eq = uniqueMap.get(hash);
+            eq.frequency++;
+            if(!eq.occurrences.includes(q.moduleId)) eq.occurrences.push(q.moduleId);
+        } else {
+            uniqueMap.set(hash, { ...q, frequency: 1, occurrences: [q.moduleId] });
+        }
+    }
+
+    function handleFile(file) {
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => parseMDData(e.target.result);
+        reader.readAsText(file);
+    }
+    function onFileDrop(e) {
+        e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+        if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+    }
+
+    function saveHistory(score, timeSpent) {
+        const history = JSON.parse(localStorage.getItem('toefl_history') || '[]');
+        const record = {
+            id: new Date().getTime(),
+            dateStr: new Date().toLocaleString(),
+            mode: state.mode,
+            total: state.questions.length,
+            score: score,
+            timeSpent: timeSpent,
+            questions: state.questions,
+            answers: state.answers,
+            timeSpentPerQ: state.timeSpent,
+            moduleId: state.mode === 'mock' ? state.questions[0].moduleId : 'Mixed Practice'
+        };
+        history.unshift(record);
+        localStorage.setItem('toefl_history', JSON.stringify(history));
+        state.currentHistoryRecord = record;
+    }
+    
+    function downloadTXT(recordObj) {
+        const record = recordObj || state.currentHistoryRecord;
+        let content = `TOEFL Build a Sentence - ${record.mode === 'mock' ? 'Mock Exam' : 'Practice'} Log\nDate: ${record.dateStr}\nScore: ${record.score}/${record.total}\n\n`;
+        
+        record.questions.forEach((q, idx) => {
+            let isCorrect = true;
+            let userStr = "", correctStr = "";
+            let timeForQ = record.timeSpentPerQ ? record.timeSpentPerQ[q.id] || 0 : 0;
+            
+            q.structure.forEach((slot, sIdx) => {
+                if(slot.type === 'static') {
+                    userStr += slot.text; correctStr += slot.text;
+                } else {
+                    const ansId = record.answers[q.id][slot.id];
+                    if(ansId !== q.correctAnswers[slot.id]) isCorrect = false;
+
+                    const opt = q.options.find(o => o.id === ansId);
+                    let w = opt ? opt.text : "________";
+                    if(sIdx === 0 && opt) w = w.charAt(0).toUpperCase() + w.slice(1);
+                    userStr += `[${w}]`; 
+                    
+                    const cOptId = q.correctAnswers[slot.id];
+                    const cOpt = q.options.find(o => o.id === cOptId);
+                    let cw = cOpt ? cOpt.text : "________";
+                    if(sIdx === 0 && cOpt) cw = cw.charAt(0).toUpperCase() + cw.slice(1);
+                    correctStr += `[${cw}]`; 
+                }
+            });
+            
+            let timeStr = record.mode === 'mock' ? ` - 耗时 ${formatTime(timeForQ)}` : '';
+            content += `Q${idx + 1}${timeStr} - 你的答案: ${userStr.trim().replace(/\s+/g, ' ')} - 正确答案: ${correctStr.trim().replace(/\s+/g, ' ')} - 结果: ${isCorrect ? '正确' : '错误'}\n`;
+        });
+
+        const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `TOEFL_Log_${record.id}.txt`;
+        a.click();
+    }
+
+    function viewHistoryDetail(id) {
+        const history = JSON.parse(localStorage.getItem('toefl_history') || '[]');
+        const record = history.find(r => String(r.id) === String(id));
+        if(record) {
+            state.currentHistoryRecord = record;
+            state.screen = 'history_detail';
+            render();
+        }
+    }
+
+    function redoQuestionFromHistory(recordId, qIdx) {
+        const history = JSON.parse(localStorage.getItem('toefl_history') || '[]');
+        const record = history.find(r => String(r.id) === String(recordId));
+        if (record && record.questions[qIdx]) {
+            state.mode = 'practice';
+            setupExamData([record.questions[qIdx]], 0);
+        }
+    }
+
+    function startPractice(sortType) {
+        state.mode = 'practice';
+        let qList = [];
+        if (sortType === 'asc' || sortType === 'random') {
+            qList = [...fullDatabase]; 
+        } else {
+            qList = [...uniqueDatabase]; 
+        }
+        
+        if (sortType === 'random') qList.sort(() => Math.random() - 0.5);
+        else if (sortType === 'freq_desc') qList.sort((a,b) => b.frequency - a.frequency);
+        else if (sortType === 'freq_asc') qList.sort((a,b) => a.frequency - b.frequency);
+        
+        setupExamData(qList, 0); 
+    }
+
+    function startMock(moduleId) {
+        state.mode = 'mock';
+        let qList = fullDatabase.filter(q => q.moduleId === moduleId);
+        setupExamData(qList, 6 * 60 + 50); 
+    }
+
+    function setupExamData(qList, time) {
+        state.questions = qList;
+        state.totalTime = time;
+        state.timeRemaining = time;
+        state.answers = {};
+        state.timeSpent = {};
+        state.questions.forEach(q => {
+            state.answers[q.id] = {};
+            state.timeSpent[q.id] = 0;
+            const all = [...avatars.m, ...avatars.f];
+            const i1 = Math.floor(Math.random() * all.length);
+            let i2 = Math.floor(Math.random() * all.length);
+            while(i2 === i1) i2 = Math.floor(Math.random() * all.length);
+            q.avatar1 = all[i1];
+            q.avatar2 = all[i2];
+        });
+        state.currentQIndex = 0;
+        state.testFinished = false;
+        state.showAnswerOverlay = false;
+        state.checkActive = false;
+        
+        if (state.mode === 'mock') {
+            state.screen = 'intro';
+        } else {
+            state.screen = 'testing';
+        }
+        startTimer();
+        render();
+    }
+
+    function startTimer() {
+        if(state.timerInterval) clearInterval(state.timerInterval);
+        state.timerInterval = setInterval(() => {
+            if (!state.testFinished) {
+                if (state.screen === 'testing' || state.screen === 'post_review') {
+                    const qId = state.questions[state.currentQIndex].id;
+                    state.timeSpent[qId] = (state.timeSpent[qId] || 0) + 1;
+                }
+
+                if (state.mode === 'mock') {
+                    if(state.timeRemaining > 0) {
+                        state.timeRemaining--;
+                        const el = document.getElementById('timer-txt');
+                        if(el && !state.timeHidden) el.innerText = formatTime(state.timeRemaining);
+                        const revEl = document.getElementById('review-timer-txt');
+                        if(revEl && !state.timeHidden) revEl.innerText = formatTime(state.timeRemaining);
+                    } else {
+                        finishExam();
+                    }
+                }
+            }
+        }, 1000);
+    }
+
+    function beginExam() {
+        state.screen = 'testing';
+        render();
+    }
+
+    function checkAnswer() {
+        state.checkActive = true;
+        render();
+    }
+
+    function exitPractice() {
+        const attemptedQs = state.questions.filter(q => Object.keys(state.answers[q.id]).length > 0 || state.timeSpent[q.id] > 0);
+        if (attemptedQs.length > 0) {
+            let score = 0;
+            attemptedQs.forEach(q => {
+                let correct = true;
+                q.structure.forEach(s => {
+                    if(s.type === 'blank' && state.answers[q.id][s.id] !== q.correctAnswers[s.id]) correct = false;
+                });
+                if(correct) score++;
+            });
+            const originalQs = state.questions;
+            state.questions = attemptedQs;
+            saveHistory(score, 0); 
+            state.questions = originalQs;
+        }
+        if(state.timerInterval) clearInterval(state.timerInterval);
+        state.screen = 'dashboard';
+        render();
+    }
+
+    function finishExam() {
+        if(state.timerInterval) clearInterval(state.timerInterval);
+        state.testFinished = true;
+        let score = 0;
+        
+        const attemptedQs = state.questions.filter(q => Object.keys(state.answers[q.id] || {}).length > 0 || state.timeSpent[q.id] > 0);
+        state.questions.forEach(q => {
+            let correct = true;
+            q.structure.forEach(s => {
+                if(s.type === 'blank' && state.answers[q.id][s.id] !== q.correctAnswers[s.id]) correct = false;
+            });
+            if(correct) score++;
+        });
+        
+        let timeSpent = state.mode === 'mock' ? (state.totalTime - state.timeRemaining) : 0;
+        
+        if (state.mode === 'practice' && attemptedQs.length === 0) {
+             state.screen = 'dashboard';
+             render();
+             return;
+        }
+        
+        saveHistory(score, timeSpent);
+        state.screen = 'history_detail';
+        render();
+    }
+
+    function goNext() {
+        if (state.currentQIndex < state.questions.length - 1) {
+            state.currentQIndex++;
+            state.showAnswerOverlay = false;
+            state.checkActive = false;
+            render();
+        } else {
+            state.screen = 'end';
+            render();
+        }
+    }
+
+    function goBack() {
+        if (state.currentQIndex > 0) {
+            state.currentQIndex--;
+            state.showAnswerOverlay = false;
+            state.checkActive = false;
+            render();
+        }
+    }
+
+    // ========== 完整恢复的 Review 界面核心逻辑 ==========
+    function goToReview() {
+        state.lastScreenBeforeReview = state.screen;
+        state.screen = 'review_grid';
+        render();
+    }
+
+    function handleReturnFromReview() {
+        if (state.testFinished) {
+            state.screen = 'history_detail';
+        } else {
+            state.screen = state.lastScreenBeforeReview || 'testing';
+        }
+        render();
+    }
+
+    function sortReview(key) {
+        if (state.sortConfig.key === key) {
+            state.sortConfig.direction = state.sortConfig.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+            state.sortConfig.key = key;
+            state.sortConfig.direction = 'asc';
+        }
+        render();
+    }
+    // ==================================================
+
+    function handleOptionClick(optId) {
+        if(state.testFinished) return;
+        const q = state.questions[state.currentQIndex];
+        const emptySlot = q.structure.find(s => s.type === 'blank' && !state.answers[q.id][s.id]);
+        if(emptySlot) {
+            state.answers[q.id][emptySlot.id] = optId;
+            state.checkActive = false;
+            render();
+        }
+    }
+    function handleSlotClick(slotId) {
+        if(state.testFinished) return;
+        const qId = state.questions[state.currentQIndex].id;
+        if(state.answers[qId][slotId]) {
+            delete state.answers[qId][slotId];
+            state.checkActive = false;
+            render();
+        }
+    }
+    function onDragStart(e, optId, sourceSlot) {
+        if(state.testFinished) return;
+        state.draggedOptId = optId; state.sourceSlotId = sourceSlot;
+        e.dataTransfer.setData('text/plain', optId);
+        setTimeout(() => e.target.classList.add('dragging'), 0);
+    }
+    function onDragEnd(e) {
+        e.target.classList.remove('dragging');
+        state.draggedOptId = null; state.sourceSlotId = null;
+        render();
+    }
+    function onDragOver(e) {
+        e.preventDefault();
+        if(state.testFinished) return;
+        if(e.currentTarget.classList.contains('drop-slot') || e.currentTarget.id === 'options-pool') {
+            e.currentTarget.classList.add('drag-over');
+        }
+    }
+    function onDragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
+    function onDropSlot(e, targetSlotId) {
+        e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+        if(state.testFinished) return;
+        const qId = state.questions[state.currentQIndex].id;
+        const existingId = state.answers[qId][targetSlotId];
+        if (existingId) {
+            if (state.sourceSlotId) {
+                state.answers[qId][state.sourceSlotId] = existingId;
+                state.answers[qId][targetSlotId] = state.draggedOptId;
+            } else state.answers[qId][targetSlotId] = state.draggedOptId;
+        } else {
+            if (state.sourceSlotId) delete state.answers[qId][state.sourceSlotId];
+            state.answers[qId][targetSlotId] = state.draggedOptId;
+        }
+        state.checkActive = false;
+        render();
+    }
+    function onDropPool(e) {
+        e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+        if(state.testFinished || !state.sourceSlotId) return;
+        const qId = state.questions[state.currentQIndex].id;
+        delete state.answers[qId][state.sourceSlotId];
+        state.checkActive = false;
+        render();
+    }
+
+    function formatTime(s) {
+        const m = Math.floor(s / 60).toString().padStart(2, '0');
+        const sec = (s % 60).toString().padStart(2, '0');
+        return `${m}:${sec}`;
+    }
+
+    function renderUpload() {
+            return `
+                <div class="w-full min-h-screen bg-[#fafbfc] flex flex-col font-sans selection:bg-blue-100">
+                    <header class="w-full h-16 bg-white flex justify-between items-center px-8 shadow-sm shrink-0">
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 bg-[#111827] text-white rounded-[6px] flex items-center justify-center text-sm font-bold tracking-tighter">T</div>
+                            <span class="font-black text-[17px] text-slate-800 tracking-tight">TOEFL 填词系统</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="bg-gray-100/80 text-gray-500 px-4 py-1.5 rounded-full text-[13px] font-bold tracking-wide">等待导入题库</span>
+                        </div>
+                    </header>
+
+                    <main class="flex-1 flex flex-col items-center justify-center pb-24">
+                        <div class="text-center mb-14">
+                            <div class="w-20 h-20 bg-[#3b82f6] text-white rounded-3xl flex items-center justify-center text-4xl font-bold mx-auto mb-8 shadow-lg shadow-blue-500/20">T</div>
+                            <h1 class="text-[34px] font-black text-slate-900 tracking-tight mb-4">欢迎使用 TOEFL 填词系统</h1>
+                            <p class="text-[#64748b] text-[15px] font-medium tracking-wide">请选择题库数据的加载方式</p>
+                        </div>
+
+                        <div class="flex items-stretch gap-6 w-full max-w-[800px] px-6">
+
+                            <button id="cloud-sync-btn" onclick="fetchDataFromCloud()" class="flex-1 bg-white border border-gray-200 hover:border-[#3b82f6] hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-[24px] p-12 flex flex-col items-center justify-center group outline-none">
+                                <div class="w-[72px] h-[72px] bg-[#eff6ff] text-[#3b82f6] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 15V8"/><path d="m9 11 3-3 3 3"/></svg>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">同步云端题库</h2>
+                                <p class="text-[#94a3b8] text-[13.5px] leading-relaxed text-center px-2 font-medium">自动从 GitHub 获取最新更新 of 题库数据 (推荐)</p>
+                            </button>
+
+                            <label class="flex-1 bg-white border border-gray-200 hover:border-[#10b981] hover:shadow-xl hover:shadow-emerald-500/10 border-dashed transition-all duration-300 rounded-[24px] p-12 flex flex-col items-center justify-center cursor-pointer group" ondrop="onFileDrop(event)" ondragover="event.preventDefault(); event.currentTarget.classList.add('border-[#10b981]', 'bg-[#ecfdf5]')" ondragleave="event.currentTarget.classList.remove('border-[#10b981]', 'bg-[#ecfdf5]')">
+                                <input type="file" accept=".md,.txt" class="hidden" onchange="handleFile(this.files[0])">
+                                <div class="w-[72px] h-[72px] bg-[#ecfdf5] text-[#10b981] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                </div>
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">导入本地文件</h2>
+                                <p class="text-[#94a3b8] text-[13.5px] leading-relaxed text-center px-2 font-medium">点击或拖拽 .md / .txt 文件至此区域</p>
+                            </label>
+
+                        </div>
+                    </main>
+                </div>
+            `;
+    }
+
+    function renderDashboard() {
+        return `
+            <header class="w-full bg-white border-b border-gray-100 py-4 px-10 shadow-sm flex justify-between items-center shrink-0 font-sans">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="state.screen='dashboard'; render()">
+                    <div class="text-gray-500 hover:text-gray-700 transition flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-black text-slate-800 tracking-tight ml-1">Build a Sentence</h1>
+                </div>
+                <div class="flex items-center gap-5">
+                    <span class="bg-slate-50 text-slate-600 px-5 py-2.5 rounded-2xl text-sm font-bold border border-gray-200 shadow-sm">
+                        题库：<strong class="text-emerald-500 text-lg px-1">${moduleNames.length}</strong> 套模考 / <strong class="text-[#276b70] text-lg px-1">${uniqueDatabase.length}</strong> 道去重题
+                    </span>
+                </div>
+            </header>
+
+            <div class="w-full flex-1 flex flex-col justify-center items-center py-12 px-8 font-sans bg-[#f8fafc]" style="zoom: 1.1;">
+                <div class="max-w-[1200px] w-full">
+                    <h1 class="text-3xl font-black text-slate-800 mb-8 tracking-tight">选择学习模式</h1>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <div class="bg-[#edf9f1] rounded-3xl p-8 cursor-pointer transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[260px]" onclick="state.screen='practice_setup'; render()">
+                            <div>
+                                <div class="flex items-center gap-3.5 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="#10b981" stroke-width="2.5" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-2xl font-black text-slate-800">练习模式</h2>
+                                        <p class="text-slate-400 text-xs font-bold tracking-wider uppercase mt-0.5">Practice Hub</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 text-[15px] leading-relaxed font-medium mt-4">支持正序、乱序以及根据大数据智能计算的高低频排序进行无压针对性练习，做题中可随时查看正确答案与解析。</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <span class="bg-white/80 backdrop-blur text-[#047857] px-4 py-2 rounded-2xl text-[13px] font-bold shadow-sm">共收录 ${uniqueDatabase.length} 道独立题目</span>
+                                <div class="w-10 h-10 bg-[#10b981] rounded-full flex items-center justify-center text-white shadow-md hover:bg-[#059669] transition"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#f0ebff] rounded-3xl p-8 cursor-pointer transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[260px]" onclick="state.screen='mock_calendar'; render()">
+                            <div>
+                                <div class="flex items-center gap-3.5 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="#4f46e5" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <h2 class="text-2xl font-black text-slate-800">英语模考</h2>
+                                        </div>
+                                        <p class="text-slate-400 text-xs font-bold tracking-wider uppercase mt-0.5">Mock Exam Mode</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 text-[15px] leading-relaxed font-medium mt-4">还原真实机考环境。按照考试日历分类，严格执行 6:50 倒计时锁屏机制，并在考后提供精细分析复盘。</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <span class="bg-white/80 backdrop-blur text-[#4338ca] px-4 py-2 rounded-2xl text-[13px] font-bold shadow-sm">总共 ${moduleNames.length} 套完整模考</span>
+                                <div class="w-10 h-10 bg-[#4f46e5] rounded-full flex items-center justify-center text-white shadow-md hover:bg-[#3f37c9] transition"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-8 cursor-pointer border border-gray-100 shadow-sm transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[260px]" onclick="state.screen='history'; render()">
+                            <div>
+                                <div class="flex items-center gap-3.5 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center shadow-sm">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="#ef4444" stroke-width="2.5" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-2xl font-black text-slate-800">历史记录</h2>
+                                        <p class="text-slate-400 text-xs font-bold tracking-wider uppercase mt-0.5">History Logs</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 text-[15px] leading-relaxed font-medium mt-4">查看每一次练习与模考历史详情。支持错题重做、精细化答题段落切分回顾，以及将错题本导出为本地 TXT 日志。</p>
+                            </div>
+                            <div class="flex justify-end items-center mt-6">
+                                <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white shadow-md hover:bg-red-600 transition"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-3xl p-8 cursor-pointer transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[260px]" onclick="state.screen='data_dashboard'; render()">
+                            <div>
+                                <div class="flex items-center gap-3.5 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shadow-sm">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="#eab308" stroke-width="2.5" fill="none"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-2xl font-black text-white">考情大盘</h2>
+                                        <p class="text-slate-400 text-xs font-bold tracking-wider uppercase mt-0.5">Global Data</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-400 text-[15px] leading-relaxed font-medium mt-4">查看全网考试大数据分析。自由选择任意考试日期查看考频分布，同时直观展示整个题库的全局 Top 15 高频考句。</p>
+                            </div>
+                            <div class="flex justify-end items-center mt-6">
+                                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white shadow-md hover:bg-yellow-600 transition"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderDataDashboard() {
+        if(!state.dataDashDate) state.dataDashDate = moduleNames[0] || '';
+        
+        let dateOptions = moduleNames.map(m => `<option value="${m}" ${state.dataDashDate === m ? 'selected' : ''}>${m}</option>`).join('');
+        
+        let dateQuestions = fullDatabase.filter(q => q.moduleId === state.dataDashDate);
+        let dateQsHtml = dateQuestions.map(q => {
+            let uq = uniqueDatabase.find(u => u.topText === q.topText && u.sen2Str === q.sen2Str);
+            let freq = uq ? uq.frequency : 1;
+            return `<div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md transition">
+                <div class="text-sm text-gray-500 mb-2 flex justify-between items-center">
+                    <span class="font-bold uppercase tracking-wider text-xs">${q.qNum.toUpperCase()}</span>
+                    <span class="bg-blue-50 text-[#276b70] px-2.5 py-1 rounded-md text-xs font-bold">全局考频: ${freq}次</span>
+                </div>
+                <div class="font-bold text-gray-800 mb-2 text-md">${q.topText}</div>
+                <div class="text-[#10b981] font-medium bg-[#f0fdf4] p-3 rounded-lg border border-[#bbf7d0] text-[15px]">${q.ans}</div>
+            </div>`;
+        }).join('');
+
+        let top15 = [...uniqueDatabase].sort((a, b) => b.frequency - a.frequency).slice(0, 15);
+        let top15Html = top15.map((q, i) => {
+            return `<div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-4 flex gap-5 items-start hover:shadow-md transition">
+                <div class="text-2xl font-black text-[#276b70] bg-[#f0f7f8] w-10 h-10 flex items-center justify-center rounded-lg mt-1 shrink-0">${i+1}</div>
+                <div class="flex-1">
+                    <div class="text-sm text-gray-500 mb-2 flex justify-between items-center">
+                        <span class="font-bold text-gray-500 text-xs">出处: ${q.moduleId} - ${q.qNum.toUpperCase()}</span>
+                        <span class="bg-orange-50 text-orange-600 px-2.5 py-1 rounded-md text-xs font-bold">考频: ${q.frequency}次</span>
+                    </div>
+                    <div class="font-bold text-gray-800 mb-2 text-md">${q.topText}</div>
+                    <div class="text-[#276b70] font-medium bg-[#f4fbfb] p-3 rounded-lg border border-[#c3ebec] text-[15px]">${q.ans}</div>
+                </div>
+            </div>`;
+        }).join('');
+
+        return `
+            <div class="w-full min-h-screen bg-[#f4f6f8] p-10 pb-20 font-sans">
+                <div class="max-w-[1400px] mx-auto">
+                    <div class="flex justify-between items-center mb-8">
+                        <div>
+                            <h2 class="text-3xl font-black text-[#111] mb-1">考情大盘</h2>
+                            <p class="text-gray-500 text-sm">全局大数据及每日细节查询</p>
+                        </div>
+                        <button onclick="state.screen='dashboard'; render()" class="bg-white border border-gray-300 px-6 py-2.5 rounded-full font-bold hover:bg-gray-50 shadow-sm transition text-sm">返回主界面</button>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-[78vh]">
+                            <h3 class="text-xl font-bold mb-6 flex items-center justify-between shrink-0">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-3.5 h-3.5 rounded-full bg-[#276b70]"></span>按考试日期查询
+                                </span>
+                                <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm font-bold bg-gray-50 cursor-pointer outline-none focus:border-[#276b70]" onchange="state.dataDashDate=this.value; render()">
+                                    ${dateOptions}
+                                </select>
+                            </h3>
+                            <div class="flex-1 overflow-y-auto pr-3 custom-scrollbar">
+                                ${dateQsHtml || '<div class="text-gray-400 text-center py-10">该日期下暂无数据</div>'}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-[78vh]">
+                            <h3 class="text-xl font-bold mb-6 flex items-center gap-2 shrink-0">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="#f59e0b" stroke-width="2.5" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                                Top 15 全局高频句子
+                            </h3>
+                            <div class="flex-1 overflow-y-auto pr-3 custom-scrollbar">
+                                ${top15Html}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // 修复 1：练习模式更新为 2x2 网格
+    function renderPracticeSetup() {
+        return `
+            <div class="w-full min-h-screen bg-[#f4f6f8] flex items-center justify-center font-sans">
+                <div class="bg-white p-10 rounded-3xl shadow-xl w-[700px] border border-gray-100">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 class="text-2xl font-black text-[#111]">练习模式设置</h2>
+                        <button onclick="state.screen='dashboard'; render()" class="text-gray-400 hover:text-gray-800 font-bold text-sm transition">取消</button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="cursor-pointer p-6 bg-gray-50 hover:bg-[#e6fcf5] hover:text-[#047857] rounded-2xl transition duration-200 shadow-sm border border-transparent hover:border-[#a3e635] flex flex-col justify-center items-center text-center h-32" onclick="startPractice('asc')">
+                            <span class="font-extrabold text-lg mb-1">正序练习</span>
+                            <span class="text-xs font-semibold text-gray-500">全库遍历</span>
+                        </div>
+                        <div class="cursor-pointer p-6 bg-gray-50 hover:bg-[#e6fcf5] hover:text-[#047857] rounded-2xl transition duration-200 shadow-sm border border-transparent hover:border-[#a3e635] flex flex-col justify-center items-center text-center h-32" onclick="startPractice('random')">
+                            <span class="font-extrabold text-lg mb-1">乱序练习</span>
+                            <span class="text-xs font-semibold text-gray-500">全库随机</span>
+                        </div>
+                        <div class="cursor-pointer p-6 bg-gray-50 hover:bg-[#e6fcf5] hover:text-[#047857] rounded-2xl transition duration-200 shadow-sm border border-transparent hover:border-[#a3e635] flex flex-col justify-center items-center text-center h-32" onclick="startPractice('freq_desc')">
+                            <span class="font-extrabold text-lg mb-1">考频降序</span>
+                            <span class="text-xs font-semibold text-gray-500">去重 - 高频优先</span>
+                        </div>
+                        <div class="cursor-pointer p-6 bg-gray-50 hover:bg-[#e6fcf5] hover:text-[#047857] rounded-2xl transition duration-200 shadow-sm border border-transparent hover:border-[#a3e635] flex flex-col justify-center items-center text-center h-32" onclick="startPractice('freq_asc')">
+                            <span class="font-extrabold text-lg mb-1">考频升序</span>
+                            <span class="text-xs font-semibold text-gray-500">去重 - 低频优先</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // 修复 2：模考日历去掉"卷"字
+    function renderMockCalendar() {
+        let monthsObj = {};
+        moduleNames.forEach(m => {
+            let parts = m.split('.');
+            if (parts.length >= 3) {
+                let y = parts[0];
+                let mon = parts[1];
+                let dStr = parts[2];
+                let dNum = dStr.match(/\d+/)[0]; 
+                
+                // 智能提取后缀字母 (如 A, B, C)，不加“卷”字
+                let letterMatch = dStr.match(/[A-Za-z]+/);
+                let letter = letterMatch ? ' ' + letterMatch[0].toUpperCase() : '';
+                
+                let mKey = `${y}年${mon}月`;
+                if(!monthsObj[mKey]) monthsObj[mKey] = [];
+                let count = fullDatabase.filter(q => q.moduleId === m).length;
+                
+                // 组装显示文本，例如 "1日 B"
+                monthsObj[mKey].push({ id: m, day: dNum + '日' + letter, count: count });
+            }
+        });
+
+        let html = `
+            <div class="w-full min-h-screen bg-[#f4f6f8] p-10 pb-20">
+                <div class="max-w-5xl mx-auto bg-white p-10 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center border-b pb-6 mb-4">
+                        <div>
+                            <h2 class="text-3xl font-bold text-[#111] mb-2">按考试日期模考</h2>
+                            <p class="text-gray-500">点击对应的考试日期即可开启该场的完整模考。</p>
+                        </div>
+                        <button onclick="state.screen='dashboard'; render()" class="bg-gray-100 text-gray-700 px-6 py-2 rounded-full font-bold hover:bg-gray-200 transition">返回主界面</button>
+                    </div>
+        `;
+        
+        for(let month in monthsObj) {
+            html += `<div class="calendar-month">${month}</div><div class="calendar-grid">`;
+            monthsObj[month].forEach(mod => {
+                let qCountText = mod.count === 10 ? '10题完整版' : `共 ${mod.count} 题`;
+                html += `<div class="calendar-card" onclick="startMock('${mod.id}')">
+                            <div class="cal-day text-slate-800 font-extrabold text-md">${mod.day}</div>
+                            <div class="cal-count text-emerald-600 font-semibold">${qCountText}</div>
+                         </div>`;
+            });
+            html += `</div>`;
+        }
+        
+        html += `</div></div>`;
+        return html;
+    }
+
+    function renderTopBar() {
+        let btns = '';
+        if (state.screen === 'intro') {
+            btns = `<button class="tpo-btn btn-solid" onclick="beginExam()">Begin ${iconNext}</button>`;
+        } else if (state.screen === 'end') {
+            btns = `
+                <button class="tpo-btn btn-outline" onclick="state.screen='testing'; state.currentQIndex=state.questions.length-1; render();">${iconBack} Back</button>
+                <button class="tpo-btn btn-solid" onclick="finishExam()">Next ${iconNext}</button>
+            `;
+        } else if (state.screen === 'testing') {
+            if(state.mode === 'practice') {
+                btns = `
+                    <button class="tpo-btn btn-outline" style="margin-right:auto" onclick="exitPractice()">${iconBack} Home</button>
+                    <button class="tpo-btn btn-outline" onclick="checkAnswer()">Check</button>
+                    <button class="tpo-btn btn-outline" onclick="state.showAnswerOverlay = !state.showAnswerOverlay; render();">${state.showAnswerOverlay ? 'Hide Answer' : 'Show Answer'}</button>
+                    ${state.currentQIndex > 0 ? `<button class="tpo-btn btn-outline" onclick="goBack()">${iconBack} Back</button>` : ''}
+                    <button class="tpo-btn btn-solid" onclick="goNext()">Next ${iconNext}</button>
+                `;
+            } else { 
+                btns = `
+                    <button class="tpo-btn btn-outline" onclick="goToReview()">${iconReview} Review</button>
+                    ${state.currentQIndex > 0 ? `<button class="tpo-btn btn-outline" onclick="goBack()">${iconBack} Back</button>` : ''}
+                    <button class="tpo-btn btn-solid" onclick="goNext()">Next ${iconNext}</button>
+                `;
+            }
+        }
+
+        const top = `<div class="top-bar">${btns}</div>`;
+        
+        let sub = '';
+        if (state.screen === 'testing') {
+            const q = state.questions[state.currentQIndex];
+            const qNumClean = q.qNum.toUpperCase();
+            
+            let qTitle = `Question ${state.currentQIndex + 1} of ${state.questions.length} (${q.moduleId} - ${qNumClean})`;
+            let infoStr = '';
+            
+            if (state.mode === 'practice') {
+                if (q.occurrences) {
+                    infoStr = `<span style="color:#666">Freq: ${q.frequency} / ${q.occurrences.join(' / ')}</span>`;
+                }
+            } else if (state.mode === 'mock') {
+                infoStr = `
+                    <div style="display:flex; align-items:center; gap: 10px;">
+                        <span id="timer-txt" style="width:45px; font-size:15px; text-align:right">${state.timeHidden ? '' : formatTime(state.timeRemaining)}</span>
+                        <div style="cursor:pointer; display:flex; align-items:center; gap:4px; color:#326b70" onclick="state.timeHidden = !state.timeHidden; render();">
+                            ${state.timeHidden ? iconEyeOff : iconEye} 
+                            ${state.timeHidden ? 'Show Time' : 'Hide Time'}
+                        </div>
+                    </div>`;
+            }
+
+            sub = `
+                <div class="sub-bar">
+                    <div>Writing | ${qTitle}</div>
+                    ${infoStr}
+                </div>
+            `;
+        } else if (state.screen === 'intro' || state.screen === 'end') {
+            sub = `<div class="sub-bar"><div>Writing</div></div>`;
+        }
+
+        return top + sub;
+    }
+
+    // 修复 3：做题界面空格消除，标点符号紧密贴合
+    function renderQuestion() {
+        const q = state.questions[state.currentQIndex];
+        const answers = state.answers[q.id];
+
+        let sentenceHtml = '';
+        let prevWasBlank = false;
+        q.structure.forEach((slot, sIdx) => {
+            if (slot.type === 'static') {
+                let textToShow = slot.text;
+                // 标点符号紧贴前面拖入的选项
+                if (prevWasBlank && /^[.,?!;:’”)\]]/.test(textToShow.trim())) {
+                    textToShow = textToShow.trimStart();
+                }
+                sentenceHtml += `<span class="static-word">${textToShow}</span>`;
+                prevWasBlank = false;
+            } else {
+                prevWasBlank = true;
+                const filledOptId = answers[slot.id];
+                const filledOpt = filledOptId ? q.options.find(o => o.id === filledOptId) : null;
+                
+                if (filledOpt) {
+                    let textToShow = filledOpt.text;
+                    if (sIdx === 0) textToShow = textToShow.charAt(0).toUpperCase() + textToShow.slice(1);
+                    
+                    let colorStyle = "color: #000;";
+                    if (state.checkActive && state.mode === 'practice') {
+                        const isCorrect = (q.correctAnswers[slot.id] === filledOpt.id);
+                        colorStyle = isCorrect ? "color: #10b981; font-weight: bold;" : "color: #ef4444; font-weight: bold; text-decoration: underline;";
+                    }
+
+                    // 完全去掉了换行与多余空格
+                    sentenceHtml += `<span class="filled-word" style="${colorStyle}" draggable="${!state.testFinished}" onclick="handleSlotClick('${slot.id}')" ondragstart="onDragStart(event, '${filledOpt.id}', '${slot.id}')" ondragend="onDragEnd(event)" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDropSlot(event, '${slot.id}')">${textToShow}</span>`;
+                } else {
+                    sentenceHtml += `<span class="drop-slot text-transparent" id="slot_${slot.id}" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDropSlot(event, '${slot.id}')">________</span>`;
+                }
+            }
+        });
+
+        const usedOptIds = Object.values(answers);
+        const availOpts = q.options.filter(o => !usedOptIds.includes(o.id));
+        
+        let poolHtml = '';
+        availOpts.forEach(opt => {
+            poolHtml += `<div class="pool-option" draggable="${!state.testFinished}" onclick="handleOptionClick('${opt.id}')" ondragstart="onDragStart(event, '${opt.id}')" ondragend="onDragEnd(event)">${opt.text}</div>`;
+        });
+
+        return `
+            <div class="app-container shadow-xl">
+                ${renderTopBar()}
+                <div class="question-area flex-1">
+                    <h2 style="font-size: 26px; font-weight: bold; margin-bottom: 70px; color:#111">Make an appropriate sentence.</h2>
+                    
+                    <div style="width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 50px;">
+                        <div style="display: flex; align-items: center; gap: 30px;">
+                            <img src="${q.avatar1}" style="width: 110px; height: 110px; object-fit: contain;">
+                            <div style="font-size: 20px; color: #111;">${q.topText}</div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; gap: 30px;">
+                            <img src="${q.avatar2}" style="width: 110px; height: 110px; object-fit: contain;">
+                            <div class="sentence-flow" style="flex:1; padding-top: 10px;">
+                                ${sentenceHtml}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="options-pool" style="margin-top: 80px; width: 100%; max-width: 900px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start; min-height:60px" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDropPool(event)">
+                        ${poolHtml}
+                    </div>
+                    
+                    ${(state.showAnswerOverlay || state.checkActive) && state.mode === 'practice' ? `
+                        <div style="margin-top: 40px; padding: 24px 32px; background: #fcfdfd; border: 1px solid #e2e8f0; border-radius: 12px; width: 100%; max-width: 900px; box-shadow: 0 4px 6px rgba(0,0,0,0.02)">
+                            <h3 style="font-weight:800; margin-bottom:12px; color:#64748b; font-size:13px; text-transform:uppercase; letter-spacing:0.5px">Correct Answer</h3>
+                            <p style="font-size:20px; line-height: 2.2; color:#111">
+                                ${(() => {
+                                    let correctStr = "";
+                                    let prevWasBlankForCorrect = false;
+                                    q.structure.forEach((s, sIdx) => {
+                                        if (s.type === 'static') {
+                                            let textToShow = s.text;
+                                            if (prevWasBlankForCorrect && /^[.,?!;:’”)\]]/.test(textToShow.trim())) {
+                                                textToShow = textToShow.trimStart();
+                                            }
+                                            correctStr += `<span style="color: #333; font-weight: normal;">${textToShow}</span>`;
+                                            prevWasBlankForCorrect = false;
+                                        } else {
+                                            prevWasBlankForCorrect = true;
+                                            let w = q.options.find(o => o.id === q.correctAnswers[s.id]).text;
+                                            if (sIdx === 0) w = w.charAt(0).toUpperCase() + w.slice(1);
+                                            correctStr += `<span style="color: #10b981; font-weight: bold;">${w}</span>`;
+                                        }
+                                    });
+                                    return correctStr;
+                                })()}
+                            </p>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }
+
+    function renderReviewGrid() {
+        let rows = state.questions.map((q, i) => {
+            const ansCount = Object.keys(state.answers[q.id]).length;
+            const blankCount = q.structure.filter(s => s.type === 'blank').length;
+            let status = "Not Answered";
+            if (ansCount === blankCount) status = "Answered";
+            else if (ansCount > 0 && state.mode === 'practice') status = "Partially Answered";
+            return { index: i, number: i + 1, status: status };
+        });
+
+        rows.sort((a, b) => {
+            let va = a[state.sortConfig.key], vb = b[state.sortConfig.key];
+            if(va < vb) return state.sortConfig.direction === 'asc' ? -1 : 1;
+            if(va > vb) return state.sortConfig.direction === 'asc' ? 1 : -1;
+            return 0;
+        });
+
+        const arr = state.sortConfig.direction === 'asc' ? '▲' : '▼';
+        const getTh = (k, label) => `<th onclick="sortReview('${k}')"><div style="display:flex; justify-content:space-between; align-items:center;"><span>${label}</span><span style="font-size:10px;color:#999">${state.sortConfig.key===k?arr:'↕'}</span></div></th>`;
+
+        return `
+            <div class="app-container w-full h-screen overflow-hidden shadow-xl flex flex-col">
+                <div class="top-bar flex justify-end items-center" style="background-color: var(--primary-bg); height: 80px;">
+                    <div class="flex gap-3">
+                        <button class="tpo-btn btn-outline" onclick="handleReturnFromReview()">‹ Return</button>
+                        ${state.selectedReviewRow !== null && !state.testFinished ? `<button class="tpo-btn btn-solid" style="color: var(--primary-bg);" onclick="state.screen='testing'; state.currentQIndex=${state.selectedReviewRow}; render();">Go To Question</button>` : ''}
+                    </div>
+                </div>
+                
+                <div class="review-table-container flex-1">
+                    <h2 style="font-size: 26px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; color: #111; font-weight: normal;">Review</h2>
+                    <p style="font-size: 15px; color: #444; margin-bottom: 15px; line-height: 1.6;">The following is a list of questions in this part of the test. When you enter Review, the question you were on is selected and highlighted. The Status column shows if a question has been Answered, Partially Answered, Not Answered, or Not Encountered.</p>
+                    <p style="font-size: 15px; color: #444; margin-bottom: 15px; line-height: 1.6;">To review a specific question from the list, select the question to highlight it, then select <strong>Go to question</strong>. To sort the list by number or status, select the column heading. When there are more questions than will fit on screen, you can use the scroll bar to access the others.</p>
+                    <p style="font-size: 15px; color: #444; margin-bottom: 25px; line-height: 1.6;">To leave Review and return to where you were in the test, select <strong>Return</strong>.</p>
+                    
+                    <table class="review-table">
+                        <thead>
+                            <tr>${getTh('number', 'Number')}${getTh('status', 'Status')}</tr>
+                        </thead>
+                        <tbody>
+                            ${rows.map(r => `
+                                <tr class="${state.selectedReviewRow === r.index ? 'selected' : ''}" onclick="state.selectedReviewRow=${r.index}; render();">
+                                    <td style="font-weight:bold; width: 30%; font-size:15px">${r.number}</td>
+                                    <td style="font-size:15px">${r.status}</td>
+                                </tr>`).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
+    }
+
+    function renderHistory() {
+        const history = JSON.parse(localStorage.getItem('toefl_history') || '[]');
+        let html = `
+            <div class="w-full min-h-screen bg-[#f4f6f8] p-10 font-sans">
+                <div class="max-w-[1200px] mx-auto bg-white p-10 rounded-2xl shadow-sm">
+                    <div class="flex justify-between items-center border-b pb-6 mb-4">
+                        <h2 class="text-3xl font-bold text-[#111]">做题历史记录</h2>
+                        <button onclick="state.screen='dashboard'; render()" class="bg-gray-100 text-gray-700 px-6 py-2.5 rounded-full font-bold hover:bg-gray-200 transition">返回主界面</button>
+                    </div>
+        `;
+        
+        if(history.length === 0) {
+            html += `<div class="p-10 text-center text-gray-500">暂无历史记录</div>`;
+        } else {
+            history.forEach(r => {
+                const isMock = r.mode === 'mock';
+                const timeStr = isMock ? `用时: ${formatTime(r.timeSpent)}` : '不计时';
+                html += `
+                    <div class="p-6 border-b border-gray-100 flex justify-between items-center hover:bg-gray-50 transition cursor-pointer" onclick="viewHistoryDetail('${r.id}')">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="px-2 py-1 text-xs rounded font-bold ${isMock ? 'bg-[#f0ebff] text-[#4f46e5]' : 'bg-[#ecfdf5] text-[#10b981]'}">${isMock ? '模考' : '练习'}</span>
+                                <span class="font-bold text-lg text-gray-800">${r.dateStr}</span>
+                                <span class="text-sm text-gray-500 ml-2">(${r.moduleId || 'Mixed'})</span>
+                            </div>
+                            <div class="text-sm text-gray-500">得分: <strong class="${r.score === r.total ? 'text-green-500' : 'text-red-500'}">${r.score}</strong> / ${r.total} &nbsp;&nbsp;|&nbsp;&nbsp; ${timeStr}</div>
+                        </div>
+                        <div class="text-[#276b70] font-bold text-sm flex items-center gap-1">查看详情 &rsaquo;</div>
+                    </div>
+                `;
+            });
+        }
+        html += `</div></div>`;
+        return html;
+    }
+
+    function renderHistoryDetail() {
+        const record = state.currentHistoryRecord;
+        if(!record) return renderHistory();
+
+        let html = `
+            <div class="w-full min-h-screen bg-[#f4f6f8] p-10 pb-20 font-sans">
+                <div class="max-w-[1200px] mx-auto">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm mb-6 flex justify-between items-center border border-gray-100">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#111] mb-2">${record.dateStr} (${record.mode === 'mock' ? '模考' : '练习'})</h2>
+                            <p class="text-gray-500 text-[15px]">得分: <strong class="text-[#276b70] text-lg">${record.score}</strong> / ${record.total} | 模块：${record.moduleId}</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-full font-bold hover:bg-gray-200 text-sm transition" onclick="state.screen='history'; render()">‹ Back</button>
+                            <button class="bg-white border border-gray-300 text-gray-700 px-5 py-2.5 rounded-full font-bold hover:bg-gray-50 text-sm transition" onclick="downloadTXT()">Download TXT</button>
+                            ${record.mode === 'mock' ? `<button class="bg-[#4f46e5] text-white px-5 py-2.5 rounded-full font-bold hover:bg-[#4338ca] text-sm transition" onclick="startMock('${record.moduleId}')">Redo Full Set</button>` : ''}
+                        </div>
+                    </div>
+        `;
+
+        record.questions.forEach((q, idx) => {
+            let isCorrect = true;
+            let userStr = "", correctStr = "";
+            let timeForQ = record.timeSpentPerQ ? record.timeSpentPerQ[q.id] || 0 : 0;
+            
+            let prevWasBlankForUser = false;
+            q.structure.forEach((slot, sIdx) => {
+                if(slot.type === 'static') {
+                    let textToShow = slot.text;
+                    if (prevWasBlankForUser && /^[.,?!;:’”)\]]/.test(textToShow.trim())) {
+                        textToShow = textToShow.trimStart();
+                    }
+                    userStr += `<span class="text-gray-700">${textToShow}</span>`; 
+                    prevWasBlankForUser = false;
+                } else {
+                    prevWasBlankForUser = true;
+                    const ansId = record.answers[q.id][slot.id];
+                    const isSlotCorrect = (ansId === q.correctAnswers[slot.id]);
+                    if(!isSlotCorrect) isCorrect = false;
+
+                    const opt = q.options.find(o => o.id === ansId);
+                    let w = opt ? opt.text : "";
+                    if(sIdx === 0 && w) w = w.charAt(0).toUpperCase() + w.slice(1);
+                    
+                    if (w) {
+                        if (isSlotCorrect) {
+                            userStr += `<span class="font-bold text-emerald-600 border-b-2 border-emerald-500 pb-0.5 inline-block">${w}</span>`;
+                        } else {
+                            userStr += `<span class="font-bold text-red-500 border-b-2 border-red-500 pb-0.5 inline-block">${w}</span>`;
+                        }
+                    } else {
+                        userStr += `<span class="inline-block w-16 border-b-2 border-dashed border-red-400 mx-1 align-middle pb-0.5" style="height: 1.2em;"></span>`;
+                    }
+                }
+            });
+
+            let prevWasBlankForCorrect = false;
+            q.structure.forEach((slot, sIdx) => {
+                if(slot.type === 'static') {
+                    let textToShow = slot.text;
+                    if (prevWasBlankForCorrect && /^[.,?!;:’”)\]]/.test(textToShow.trim())) {
+                        textToShow = textToShow.trimStart();
+                    }
+                    correctStr += `<span class="text-gray-700">${textToShow}</span>`;
+                    prevWasBlankForCorrect = false;
+                } else {
+                    prevWasBlankForCorrect = true;
+                    const cOptId = q.correctAnswers[slot.id];
+                    const cOpt = q.options.find(o => o.id === cOptId);
+                    let cw = cOpt ? cOpt.text : "________";
+                    if(sIdx === 0 && cOpt) cw = cw.charAt(0).toUpperCase() + cw.slice(1);
+                    correctStr += `<span class="font-bold text-emerald-600 border-b-2 border-emerald-500 pb-0.5 inline-block">${cw}</span>`;
+                }
+            });
+
+            let timeTag = record.mode === 'mock' ? `
+                <div class="text-xs text-gray-400 font-semibold flex items-center gap-1">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    耗时: ${formatTime(timeForQ)}
+                </div>` : '';
+
+            html += `
+                <div class="bg-white p-8 rounded-2xl shadow-sm mb-6 border-l-[6px] ${isCorrect ? 'border-emerald-500' : 'border-red-500'} relative border border-gray-100">
+                    <button class="absolute top-6 right-6 text-[#276b70] font-bold text-sm hover:underline" onclick="redoQuestionFromHistory('${record.id}', ${idx})">Redo Question</button>
+                    
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="text-sm text-gray-400 font-extrabold uppercase tracking-wider">${q.moduleId} - ${q.qNum.toUpperCase()} (Question ${idx + 1})</div>
+                        <div class="text-xs px-2.5 py-1 rounded-md font-bold ${isCorrect ? 'bg-[#ecfdf5] text-emerald-600' : 'bg-[#fef2f2] text-red-500'}">${isCorrect ? 'CORRECT' : 'INCORRECT'}</div>
+                        ${timeTag}
+                    </div>
+                    
+                    <div class="text-[17px] text-gray-800 mb-6 font-semibold">${q.topText}</div>
+                    
+                    <div class="mb-4 bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                        <span class="text-[11px] font-black text-gray-400 uppercase tracking-widest block mb-2">Your Answer:</span>
+                        <div class="text-[19px] leading-loose">${userStr}</div>
+                    </div>
+                    
+                    ${!isCorrect ? `
+                    <div class="mb-2 bg-[#f0fdf4] p-5 rounded-2xl border border-[#d1fae5]">
+                        <span class="text-[11px] font-black text-emerald-600 uppercase tracking-widest block mb-2">Correct Answer:</span>
+                        <div class="text-[19px] leading-loose">${correctStr}</div>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+        });
+
+        html += `</div></div>`;
+        return html;
+    }
+
+    function renderTextPage(title, lines) {
+        return `
+            <div class="app-container shadow-xl flex flex-col h-screen">
+                ${renderTopBar()}
+                <div style="padding: 100px 100px; flex:1">
+                    <h2 style="font-size: 30px; font-weight:normal; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; color:#111">${title}</h2>
+                    ${lines.map(l => `<p style="font-size: 16px; color: #333; margin-bottom: 25px;">${l}</p>`).join('')}
+                </div>
+            </div>`;
+    }
+
+    function render() {
+        mainBody.className = (state.screen === 'dashboard' || state.screen === 'practice_setup' || state.screen === 'mock_calendar' || state.screen === 'history' || state.screen === 'history_detail' || state.screen === 'upload' || state.screen === 'data_dashboard') ? '' : 'exam-body';
+
+        if (state.screen === 'upload') appEl.innerHTML = renderUpload();
+        else if (state.screen === 'dashboard') appEl.innerHTML = renderDashboard();
+        else if (state.screen === 'data_dashboard') appEl.innerHTML = renderDataDashboard();
+        else if (state.screen === 'practice_setup') appEl.innerHTML = renderPracticeSetup();
+        else if (state.screen === 'mock_calendar') appEl.innerHTML = renderMockCalendar();
+        else if (state.screen === 'history') appEl.innerHTML = renderHistory();
+        else if (state.screen === 'history_detail') appEl.innerHTML = renderHistoryDetail();
+        else if (state.screen === 'intro') appEl.innerHTML = renderTextPage("Build a Sentence", ["Move the words in the boxes to create grammatical sentences.", "In an actual test, a clock will show you how much time you have to complete this task."]);
+        else if (state.screen === 'end') appEl.innerHTML = renderTextPage("End of Writing Section", ["Thank you for completing the writing section."]);
+        else if (state.screen === 'testing' || state.screen === 'post_review') appEl.innerHTML = renderQuestion();
+        else if (state.screen === 'review_grid') appEl.innerHTML = renderReviewGrid();
+    }
+
+    window.onload = () => render();
+
+    window.startPractice = startPractice;
+    window.startMock = startMock;
+    window.beginExam = beginExam;
+    window.checkAnswer = checkAnswer;
+    window.finishExam = finishExam;
+    window.exitPractice = exitPractice;
+    window.goNext = goNext;
+    window.goBack = goBack;
+    window.goToReview = goToReview;
+    window.handleReturnFromReview = handleReturnFromReview;
+    window.sortReview = sortReview;
+    window.render = render;
+    window.handleOptionClick = handleOptionClick;
+    window.handleSlotClick = handleSlotClick;
+    window.onDragStart = onDragStart;
+    window.onDragEnd = onDragEnd;
+    window.onDragOver = onDragOver;
+    window.onDragLeave = onDragLeave;
+    window.onDropSlot = onDropSlot;
+    window.onDropPool = onDropPool;
+    window.handleFile = handleFile;
+    window.onFileDrop = onFileDrop;
+    window.downloadTXT = downloadTXT;
+    window.viewHistoryDetail = viewHistoryDetail;
+    window.redoQuestionFromHistory = redoQuestionFromHistory;
+    window.fetchDataFromCloud = fetchDataFromCloud;
+
+    function fetchDataFromCloud() {
+        const btn = document.getElementById('cloud-sync-btn');
+        const originalHtml = btn.innerHTML;
+        // 点击后展示动态加载状态
+        btn.innerHTML = `
+            <div class="text-[#3b82f6] font-bold text-lg animate-pulse flex flex-col items-center justify-center">
+                <svg class="animate-spin h-8 w-8 text-[#3b82f6] mb-3" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                正在同步云端题库数据...
+            </div>
+        `;
+
+        // 核心：请求同目录下的 output.md
+        fetch('./output.md')
+            .then(response => {
+                if (!response.ok) throw new Error('未能找到对应的文件');
+                return response.text();
+            })
+            .then(text => {
+                parseMDData(text); // 调用原有解析函数，直接进入系统
+            })
+            .catch(error => {
+                alert('【同步失败】\n请确保已将最新的 output.md 文件上传到 GitHub 仓库，且与本 HTML 文件处于同一文件夹目录下。');
+                btn.innerHTML = originalHtml; // 失败后恢复原状
+            });
+    }
+
+</script>
+</body>
+</html>
