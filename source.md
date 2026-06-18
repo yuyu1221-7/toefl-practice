@@ -1247,7 +1247,7 @@ ________________________________________
 第四篇 Throughout history, the Indian subcontinent has been a cultural crossroads that has facilitated the exchange of ideas, goods, and philosophies between East and West. The Mauryan Empire, established in 322 BCE, represented one of the earliest fo_ _ _ of consol_ _ _ _ _ _ rule i_ the reg_ _ _ and la_ _ the ground_ _ _ _ for fut_ _ _ administrative mod_ _ . A not _ _ _ achievement w_ _ the spread of Buddhism under the emperor Ashoka, who propagated its teachings beyond India into Central Asia. The Gupta period, often termed the golden age, witnessed advancements in sciences, mathematics, and art.
 正确答案： 第1题: rms, 第2题: idated, 第3题: n, 第4题: ion, 第5题: id, 第6题: work, 第7题: ure, 第8题: els, 第9题: able, 第10题: as,
 ________________________________________
-2026.5未知
+2026.5.未知
 第一篇 Throughout history, color and pigment have played a central role in art, shaping how we perceive and interpret visual experiences. Artists ha_ _ long under_ _ _ _ _ the emot_ _ _ _ _ and psycho_ _ _ _ _ _ _ power o_ color, util_ _ _ _ _ it t_ convey mo_ _ _ , create emph_ _ _ _ , and ev_ _ _ responses. For example, red often symbolizes passion, while blue can elicit calmness. These symbolic associations can vary across cultures and time periods, allowing artists to communicate deeper layers of meaning through their color choices.
 正确答案： 第1题: ve, 第2题: stood, 第3题: ional, 第4题: logical, 第5题: f, 第6题: izing, 第7题: o, 第8题: ods, 第9题: asis, 第10题: oke,
 
@@ -1260,7 +1260,7 @@ ________________________________________
 第四篇 Early civilizations emerged around river valleys, where fertile land and water resources supported agriculture. These commu_ _ _ _ _ _ developed com_ _ _ _ social struc_ _ _ _ _ that incl_ _ _ _ systems o_ governance a_ _ religious instit_ _ _ _ _ _ . The devel_ _ _ _ _ _ of wri_ _ _ _ marked a ma_ _ _ milestone, enabling record-keeping, communication, and the transmission of knowledge across generations. Artifacts such as pottery, tools, and writings offer glimpses into the daily lives and cultural practices of ancient peoples and the rise and fall of early societies.
 正确答案： 第1题: nities, 第2题: plex, 第3题: tures, 第4题: uded, 第5题: f, 第6题: nd, 第7题: utions, 第8题: opment, 第9题: ting, 第10题: jor,
 ________________________________________
-2026.6未知
+2026.6.未知
 第一篇 Rooted in both biology and chemistry, modern biochemistry has grown into a foundational science that explores the molecular basis of life. I_ emerged fr_ _ early investi_ _ _ _ _ _ _ into nat_ _ _ _ processes li_ _ fermentation a_ _ digestion and n_ _ encompasses t_ _ study o_ biomolecules su_ _ as proteins, carbohydrates, and nucleic acids. Biochemistry plays a vital role in diverse fields including agriculture, environmental science, and pharmacology, contributing to innovations in areas like crop improvement, pollution control, and drug design, for example. Its broad applications continue to shape our understanding of living systems and support solutions to global challenges.
 正确答案： 第1题: t, 第2题: om, 第3题: gations, 第4题: ural, 第5题: ke, 第6题: nd, 第7题: ow, 第8题: he, 第9题: f, 第10题: ch,
 
