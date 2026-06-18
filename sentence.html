@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOEFL Sentence Practice</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://fastly.jsdelivr.net/npm/tailwindcss-play-cdn@3.4.3/tailwindcss.js"></script>
     <style>
         :root {
             --primary-bg: #276b70; 
@@ -1408,7 +1408,8 @@
     function fetchDataFromCloud() {
         const btn = document.getElementById('cloud-sync-btn');
         const originalHtml = btn.innerHTML;
-        // 点击后展示动态加载状态
+        
+        // 变成加载状态
         btn.innerHTML = `
             <div class="text-[#3b82f6] font-bold text-lg animate-pulse flex flex-col items-center justify-center">
                 <svg class="animate-spin h-8 w-8 text-[#3b82f6] mb-3" fill="none" viewBox="0 0 24 24">
@@ -1419,18 +1420,38 @@
             </div>
         `;
 
-        // 核心：请求同目录下的 output.md
-        fetch('./output.md')
+        const timestamp = new Date().getTime();
+        const primaryUrl = `./output.md?t=${timestamp}`; // 优先：直连 GitHub Pages
+        const fallbackUrl = `https://fastly.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/output.md?t=${timestamp}`; // 备用：CDN 加速
+
+        // 第一次尝试：直连
+        fetch(primaryUrl)
             .then(response => {
-                if (!response.ok) throw new Error('未能找到对应的文件');
+                if (!response.ok) throw new Error('直连访问失败');
                 return response.text();
             })
             .then(text => {
-                parseMDData(text); // 调用原有解析函数，直接进入系统
+                console.log("使用直连线路加载成功");
+                parseMDData(text);
             })
-            .catch(error => {
-                alert('【同步失败】\n请确保已将最新的 output.md 文件上传到 GitHub 仓库，且与本 HTML 文件处于同一文件夹目录下。');
-                btn.innerHTML = originalHtml; // 失败后恢复原状
+            .catch(primaryError => {
+                console.warn("直连超时或被阻断，正在无缝切换至 CDN 加速节点...", primaryError);
+                
+                // 第二次尝试：如果直连失败，触发备用 CDN 线路
+                fetch(fallbackUrl)
+                    .then(response => {
+                        if (!response.ok) throw new Error('CDN 加速节点也访问失败');
+                        return response.text();
+                    })
+                    .then(text => {
+                        console.log("使用 CDN 加速线路加载成功");
+                        parseMDData(text);
+                    })
+                    .catch(fallbackError => {
+                        // 两条路都死胡同了，才向用户报错
+                        alert('【同步失败】\n网络状况不佳，直连与加速线路均无法获取数据。请确认 output.md 是否已上传至 GitHub 仓库。');
+                        btn.innerHTML = originalHtml; // 恢复按钮原状
+                    });
             });
     }
 
