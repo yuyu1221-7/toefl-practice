@@ -1849,5 +1849,23 @@
         "zh": "罗马社会等级",
         "en": "Roman Social Hierarchy",
         "cat": "历史与人类学"
+    },
+    {
+        "key": "GIS",
+        "zh": "GIS与现代地理",
+        "en": "GIS in Modern Geography",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "Louisiana",
+        "zh": "路易斯安那购地案",
+        "en": "Louisiana Purchase 1803",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "Rainforests are critical to global biodiversity",
+        "zh": "热带雨林生态",
+        "en": "Rainforest Ecosystems",
+        "cat": "天文与地球"
     }
 ]
