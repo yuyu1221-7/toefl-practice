@@ -1867,5 +1867,17 @@
         "zh": "热带雨林生态",
         "en": "Rainforest Ecosystems",
         "cat": "天文与地球"
+    },
+    {
+        "key": "Extinction",
+        "zh": "灭绝事件",
+        "en": "Extinction Events",
+        "cat": "生命科学"
+    },
+    {
+        "key": "Neolithic",
+        "zh": "新石器时代陶器",
+        "en": "Neolithic Pottery",
+        "cat": "历史与人类学"
     }
 ]
