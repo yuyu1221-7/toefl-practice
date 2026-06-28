@@ -476,6 +476,9 @@
                     <div class="w-full max-w-4xl mx-auto h-full"> 
                         <div class="mb-6 pb-6 border-b border-slate-100 flex justify-between items-start">
                             <div>
+
+                                <div id="passage-hash-tag" class="inline-block bg-slate-200 text-slate-500 text-xs font-mono font-bold px-2.5 py-1 rounded-md mb-2 shadow-sm border border-slate-300"></div>
+
                                 <h2 id="passage-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight"></h2>
                                 <div class="flex items-center gap-3 text-sm font-semibold text-slate-600">
                                     <span id="passage-cat" class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md border border-indigo-100 flex items-center gap-1 font-bold"></span>
@@ -741,40 +744,29 @@
 
         // ================ 开发者工具：导出合并后的最新字典 ================
         window.exportUpdatedDictionary = function() {
-            let aiCache = {};
-            try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
-
-            let newDict = [...titleDictionary];
-            let existingEn = new Set(newDict.map(item => item.en.toLowerCase()));
-            let stopWords = getStopWords();
+            let newDict = [];
             let addedCount = 0;
 
-            for (let prefix in aiCache) {
-                let data = aiCache[prefix];
-                if (!existingEn.has(data.en.toLowerCase())) {
-                    let words = data.en.replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/);
-                    let validWords = words.filter(w => w.length > 2 && !stopWords.includes(w.toLowerCase()));
-                    let newKey = validWords.length > 0 ? validWords[0] : words[0];
-                    
+            // 直接遍历当前已解析去重后的题库，生成纯 Hash 字典
+            globalQuestions.forEach(q => {
+                if (q.titleEn !== "Pending AI") {
                     newDict.push({
-                        key: newKey.trim(),
-                        zh: data.zh,
-                        en: data.en,
-                        cat: data.cat
+                        key: q.hashKey,
+                        en: q.titleEn,
+                        zh: q.titleZh,
+                        cat: q.cat
                     });
-                    existingEn.add(data.en.toLowerCase());
                     addedCount++;
                 }
-            }
+            });
 
             if (addedCount === 0) {
-                return showToast("当前没有新增的 AI 词条，字典已是最新！", "error");
+                return showToast("当前没有可导出的词条！", "error");
             }
 
             let jsonString = JSON.stringify(newDict, null, 4);
-
             triggerDownload(jsonString, `dictionary.json`, 'application/json');
-            showToast(`成功导出！共合并了 ${addedCount} 个 AI 新词条。`);
+            showToast(`成功导出！共生成了 ${addedCount} 个基于 Hash 的词条。`);
         };
 
         /* ======================== 核心状态管理 ======================== */
@@ -805,6 +797,16 @@
         let viewHistoryStack = ['view-dashboard']; 
 
         let titleDictionary = [];
+
+        // ================ 全文 Hash 生成算法 ================
+        function generateShortHash(str) {
+            let hash = 5381;
+            for (let i = 0; i < str.length; i++) {
+                hash = ((hash << 5) + hash) + str.charCodeAt(i);
+            }
+            // 转为正数并转为 16 进制，截取前 6 位大写字母
+            return Math.abs(hash).toString(16).padStart(6, '0').substring(0, 6).toUpperCase();
+        }
 
         function getStopWords() {
             return ['the','a','an','and','or','but','in','on','at','to','for','of','with','by','about','as','into','like','through','after','over','between','out','against','during','without','before','under','around','among','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','shall','should','can','could','may','might','must','it','its','they','their','this','that','these','those','we','our','you','your','he','his','she','her','from'];
@@ -882,12 +884,17 @@
             rawEntries.forEach(entry => {
                 if (!entry.text.includes('[')) return; 
                 
+                // 1. 提取纯正文计算全文 Hash (去除答案标记、换行、非字母字符)
                 const cleanText = entry.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ');
-                const prefix = cleanText.substring(0, 80).toLowerCase().replace(/[^a-z]/g, ''); 
+                const hashInput = cleanText.toLowerCase().replace(/[^a-z]/g, ''); 
                 
-                if (!prefix) return;
+                if (!hashInput) return;
                 
-                let existing = grouped.find(g => g.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ').substring(0, 80).toLowerCase().replace(/[^a-z]/g, '') === prefix);
+                // 2. 生成 6 位唯一哈希值
+                const hashKey = generateShortHash(hashInput);
+                
+                // 3. 精准去重：只看 Hash 是否一致
+                let existing = grouped.find(g => g.hashKey === hashKey);
 
                 if (existing) {
                     existing.frequency++;
@@ -895,13 +902,19 @@
                     existing.latestDateVal = Math.max(existing.latestDateVal || 0, parseDateStr(entry.date));
                 } else {
                     let matchedTitle = null;
-                    const searchArea = cleanText.substring(0, 150).toLowerCase();
                     
-                    for(let item of titleDictionary) {
-                        const regex = new RegExp('\\b' + item.key.toLowerCase() + '(s|es)?\\b', 'i');
-                        if(searchArea.match(regex)) { 
-                            matchedTitle = { zh: item.zh, en: item.en, cat: item.cat }; 
-                            break; 
+                    // 4. 字典匹配：优先匹配 Hash，如果没找到，降级使用旧版正则匹配（无缝兼容老字典）
+                    let dictItem = titleDictionary.find(item => item.key === hashKey);
+                    if (dictItem) {
+                        matchedTitle = { zh: dictItem.zh, en: dictItem.en, cat: dictItem.cat };
+                    } else {
+                        const searchArea = cleanText.substring(0, 150).toLowerCase();
+                        for(let item of titleDictionary) {
+                            const regex = new RegExp('\\b' + item.key.toLowerCase() + '(s|es)?\\b', 'i');
+                            if(searchArea.match(regex)) { 
+                                matchedTitle = { zh: item.zh, en: item.en, cat: item.cat }; 
+                                break; 
+                            }
                         }
                     }
                     
@@ -909,11 +922,11 @@
                     try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
 
                     if(matchedTitle) {
-                        grouped.push({ id: grouped.length + 1, titleZh: matchedTitle.zh, titleEn: matchedTitle.en, cat: matchedTitle.cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
-                    } else if (aiCache[prefix]) {
-                        grouped.push({ id: grouped.length + 1, titleZh: aiCache[prefix].zh, titleEn: aiCache[prefix].en, cat: aiCache[prefix].cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
+                        grouped.push({ id: grouped.length + 1, titleZh: matchedTitle.zh, titleEn: matchedTitle.en, cat: matchedTitle.cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), hashKey: hashKey });
+                    } else if (aiCache[hashKey]) {
+                        grouped.push({ id: grouped.length + 1, titleZh: aiCache[hashKey].zh, titleEn: aiCache[hashKey].en, cat: aiCache[hashKey].cat, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), hashKey: hashKey });
                     } else {
-                        grouped.push({ id: grouped.length + 1, titleZh: "待智能识别", titleEn: "Pending AI", cat: "综合与其他", isUnknown: true, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), prefixKey: prefix });
+                        grouped.push({ id: grouped.length + 1, titleZh: "待智能识别", titleEn: "Pending AI", cat: "综合与其他", isUnknown: true, frequency: 1, dates: [entry.date], text: entry.text, latestDateVal: parseDateStr(entry.date), hashKey: hashKey });
                     }
                 }
             });
@@ -999,8 +1012,8 @@
                             q.titleEn = aiRes.en || `Passage ${q.id}`;
                             q.cat = ["生命科学", "历史与人类学", "天文与地球", "艺术与文化", "综合与其他"].includes(aiRes.cat) ? aiRes.cat : "综合与其他";
                             
-                            if (q.prefixKey) {
-                                aiCache[q.prefixKey] = { zh: q.titleZh, en: q.titleEn, cat: q.cat };
+                            if (q.hashKey) {
+                                aiCache[q.hashKey] = { zh: q.titleZh, en: q.titleEn, cat: q.cat };
                             }
                         }
                     });
@@ -1088,7 +1101,7 @@
         function checkAndShowUpdates(questions) {
             let storedKeys = [];
             try { storedKeys = JSON.parse(localStorage.getItem('toefl_known_keys')) || []; } catch(e) {}
-            const currentKeys = questions.map(q => q.prefixKey).filter(k => k);
+            const currentKeys = questions.map(q => q.hashKey).filter(k => k);
             
             // 初次使用，直接存，不弹窗
             if (storedKeys.length === 0) {
@@ -1173,7 +1186,7 @@
                 const qs = globalQuestions.filter(q => q.dates.includes(dateStr));
                 
                 // 判断此日期内是否含有本次新导入的文章
-                const containsNew = qs.some(q => newlyAddedPrefixes.has(q.prefixKey));
+                const containsNew = qs.some(q => newlyAddedPrefixes.has(q.hashKey));
                 const isVeryLatest = index === 0 && dateStr !== '未知日期';
                 
                 let dateBadge = '';
@@ -1197,7 +1210,7 @@
 
                 // 面板子项列表
                 let passagesHtml = qs.map(q => {
-                    const isNewPassage = newlyAddedPrefixes.has(q.prefixKey);
+                    const isNewPassage = newlyAddedPrefixes.has(q.hashKey);
                     const newLabel = isNewPassage ? `<span class="bg-red-500 text-white text-[9px] font-bold px-1 py-0.5 rounded animate-pulse shrink-0">✨ NEW</span>` : '';
                     return `
                         <div onclick="closeChangelog(); startWorkspace('practice', [${q.id}]);" class="flex justify-between items-center py-2.5 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors px-2 rounded-lg cursor-pointer group">
@@ -1757,6 +1770,7 @@
             if (!q) return;
 
             document.getElementById('feedback-msg').innerHTML = ""; 
+            document.getElementById('passage-hash-tag').textContent = `🆔 编号: ${q.hashKey}`;
             document.getElementById('passage-title').textContent = `${q.titleZh} (${q.titleEn})`;
             document.getElementById('passage-cat').innerHTML = `🏷️ ${q.cat}`;
             document.getElementById('passage-freq').innerHTML = `🔥 考频: ${q.frequency}`;
