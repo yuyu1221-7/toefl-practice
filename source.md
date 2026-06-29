@@ -960,6 +960,12 @@ ________________________________________
 第三篇 Learning the controlled use of fire was a key development in human history that greatly improved the early humans' ability to survive. Coo_ _ _ _ food, partic_ _ _ _ _ _ meat a_ _ tubers, ma_ _ digesting nutr_ _ _ _ _ much eas_ _ _ . Fire al_ _ provided war_ _ _ in col_ _ _ climates, allo_ _ _ _ humans to expand their geographic range and survive in areas where they might not have otherwise. In addition, fire was used to harden wood for tools like spears and to shape stones for cutting and scraping, thus contributing to advances in toolmaking.
 正确答案： 第1题: king, 第2题: ularly, 第3题: nd, 第4题: de, 第5题: ients, 第6题: ier, 第7题: so, 第8题: mth, 第9题: der, 第10题: wing,
 
+第四篇 The atmosphere is a complex and dynamic system that plays a crucial role in regulating Earth’s climate. Composed of various ga_ _ , including nitr _ _ , oxygen, a _ trace amo_ _ _ _ of ot_ _ _ elements, t_ _ atmosphere ac_ _ as a prote_ _ _ _ _ shield aga_ _ _ _ harmful so_ _ _ radiation. Weather phenomena such as rain, thunderstorms, and hurricanes are the result of intricate interactions within this system. The movement of air masses, driven by temperature differences, leads to changes in pressure and the formation of weather patterns.
+正确答案： 第1题: ses, 第2题: ogen, 第3题: nd, 第4题: unts, 第5题: her, 第6题: he, 第7题: ts, 第8题: ctive, 第9题: inst, 第10题: lar,
+
+第五篇 Archaeologists investigate excavation sites to uncover and analyze physical remains of past human activity. Using tools like brushes and trowels, they carefully remove soil to reveal artifacts such as pottery, tools, and structures. These find_ _ _ _ help resea_ _ _ _ _ _ _ interpret cult_ _ _ _ practices, soc_ _ _ organization, a_ _ technological devel_ _ _ _ _ _ . Each disc _ _ _ _ contributes t_ a bet_ _ _ understanding o_ human behavior in the past. Fieldwork often involves collaboration among specialists to document, preserve, and study materials in context, ensuring accurate interpretation of ancient societies.
+正确答案： 第1题: ings, 第2题: rchers, 第3题: ural, 第4题: ial, 第5题: nd, 第6题: opments, 第7题: overy, 第8题: o, 第9题: ter, 第10题: f,
+
 ________________________________________
 2026.5.16
 
@@ -996,12 +1002,6 @@ ________________________________________
 
 第一篇 Unlike literature or visual arts, theater engages audiences through live performances, creating an immediate emotional connection. The collab_ _ _ _ _ _ _ nature o_ theater fos_ _ _ _ a dyn_ _ _ _ exchange am_ _ _ professionals th_ _ spurs creat_ _ _ _ . Theater c _ challenge precon_ _ _ _ _ _ notions a_ _ invite audiences to consider diverse perspectives. Its ephemeral quality—existing only in the moment of performance—heightens the impact, forcing both performers and viewers to engage with the present, ultimately transforming their understanding of human experiences.
 正确答案： 第1题: orative, 第2题: f, 第3题: ters, 第4题: amic, 第5题: ong, 第6题: at, 第7题: ivity, 第8题: an, 第9题: ceived, 第10题: nd,
-
-第二篇 The atmosphere is a complex and dynamic system that plays a crucial role in regulating Earth’s climate. Composed of various ga_ _ , including nitr _ _ , oxygen, a _ trace amo_ _ _ _ of ot_ _ _ elements, t_ _ atmosphere ac_ _ as a prote_ _ _ _ _ shield aga_ _ _ _ harmful so_ _ _ radiation. Weather phenomena such as rain, thunderstorms, and hurricanes are the result of intricate interactions within this system. The movement of air masses, driven by temperature differences, leads to changes in pressure and the formation of weather patterns.
-正确答案： 第1题: ses, 第2题: ogen, 第3题: nd, 第4题: unts, 第5题: her, 第6题: he, 第7题: ts, 第8题: ctive, 第9题: inst, 第10题: lar,
-
-第三篇 Archaeologists investigate excavation sites to uncover and analyze physical remains of past human activity. Using tools like brushes and trowels, they carefully remove soil to reveal artifacts such as pottery, tools, and structures. These find_ _ _ _ help resea_ _ _ _ _ _ _ interpret cult_ _ _ _ practices, soc_ _ _ organization, a_ _ technological devel_ _ _ _ _ _ . Each disc _ _ _ _ contributes t_ a bet_ _ _ understanding o_ human behavior in the past. Fieldwork often involves collaboration among specialists to document, preserve, and study materials in context, ensuring accurate interpretation of ancient societies.
-正确答案： 第1题: ings, 第2题: rchers, 第3题: ural, 第4题: ial, 第5题: nd, 第6题: opments, 第7题: overy, 第8题: o, 第9题: ter, 第10题: f,
 
 第四篇 Climate change is one of the biggest problems facing the world today. It results from changes in Earth's atmos_ _ _ _ , oceans, a _ human activ_ _ _ _ , especially bur _ _ _ fossil fu_ _ . These act _ _ _ _ _ release ga_ _ _ that tr_ _ heat, cau_ _ _ _ the pla_ _ _ to warm up. This warming disrupts weather patterns and ecosystems. To mitigate these changes, scientists advocate for strategies such as reducing carbon emissions and investing in renewable energy. Climate models help experts understand what might happen in the future.
 正确答案： 第1题: phere, 第2题: nd, 第3题: ities, 第4题: ning, 第5题: els, 第6题: ivities, 第7题: ses, 第8题: ap, 第9题: sing, 第10题: net,
