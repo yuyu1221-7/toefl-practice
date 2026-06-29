@@ -769,6 +769,12 @@ ________________________________________
 正确答案： 第1题: tice, 第2题: ained, 第3题: eties, 第4题: ennia, 第5题: loy, 第6题: iques, 第7题: s, 第8题: nd, 第9题: o, 第10题: nd,
 第三篇 Theater has been an integral part of human culture for centuries, providing a medium for storytelling and artistic expression. Many feat_ _ _ _ of Anc_ _ _ _ Greek theater a_ _ still fo_ _ _ in mod_ _ _ theater, such a_ wearing ma_ _ _ and us_ _ _ a chorus. Dur_ _ _ the Renaissance, theater flour_ _ _ _ _ as playwrights, like Shakespeare, created enduring works. Modern theater continues to evolve, incorporating technology and diverse narratives. The communal experience of live performance remains a powerful way to explore human emotions and societal issues.
 正确答案： 第1题: ures, 第2题: ient, 第3题: re, 第4题: und, 第5题: ern, 第6题: s, 第7题: sks, 第8题: ing, 第9题: ing, 第10题: ished,
+
+第五篇 In prehistoric societies, art and religion were intimately intertwined, serving as conduits for expressing spiritual beliefs and cultural narratives. Cave pain_ _ _ _ , for inst _ _ , are n _ merely arti_ _ _ _ endeavors b_ _ are beli_ _ _ _ to ho_ _ cultural signif_ _ _ _ _ , possibly us _ in cerem_ _ _ _ _ to ask for hunting success or favorable weather. These artworks, often found in remote and inaccessible areas, suggest a deliberate choice to separate sacred spaces from daily life. Archaeologists hypothesize that these depictions were part of a broader spiritual framework, reflecting the community's cosmology and societal structure.
+正确答案： 第1题: tings, 第2题: ance, 第3题: ot, 第4题: stic, 第5题: ut, 第6题: eved, 第7题: ld, 第8题: icance, 第9题: ed, 第10题: onies,
+
+第六篇 The human circulatory system plays a central role in maintaining physiological balance by transporting oxygen, nutrients, and waste products throughout the body. At its core is the heart, which propels blood through arteries and veins to reach tissues such as the brain, muscles, and skin. Blood flow adj_ _ _ _ in resp_ _ _ _ to fac_ _ _ _ like tempe_ _ _ _ _ , physical acti _ _ , and emot _ _ _ _ stress, ensu_ _ _ _ that ea_ _ organ rece_ _ _ _ appropriate sup_ _ _ _ _. Studying these patterns helps students understand how internal systems coordinate to sustain health and adapt to changing conditions.
+正确答案： 第1题: usts, 第2题: onse, 第3题: tors, 第4题: rature, 第5题: vity, 第6题: ional, 第7题: ring, 第8题: ch, 第9题: ives, 第10题: plies,
 ________________________________________
 
 2026.4.29
@@ -919,6 +925,9 @@ ________________________________________
 
 第十篇 The role of kinship was central to the social structure of prehistoric communities. Kinship not only structured family relationships but also shaped how resources were shared, labor was organized, and social hierarchies were maintained within the group. Archaeo_ _ _ _ _ _ _ evidence sugg_ _ _ _ that indiv_ _ _ _ _ _ held spec_ _ _ _ roles ba_ _ _ on a_ _ and gen_ _ , contributing t_ a sophis_ _ _ _ _ _ _ division o_ labor. The intricacy of these social structures is further evidenced by the existence of ceremonial sites, which indicate collective activities and social gatherings.
 正确答案： 第1题: logical, 第2题: ests, 第3题: iduals, 第4题: ific, 第5题: sed, 第6题: ge, 第7题: der, 第8题: o, 第9题: ticated, 第10题: f,
+
+第十一篇 Color perception has fascinated scientists and artists alike for centuries. The study of pigments, subst_ _ _ _ _ that gi_ _ color t_ materials, rev_ _ _ _ complex intera_ _ _ _ _ _ with li_ _ . Pigments abs_ _ _ certain wavel_ _ _ _ _ _ and ref_ _ _ _ others, wh_ _ _ is why objects appear to have color. Synthetic pigments have expanded the color palette available to artists and industries. The development of pigments requires knowledge of chemistry and physics, as their properties influence durability and appearance. Understanding how pigments behave is crucial in various fields, from art restoration to manufacturing.
+正确答案： 第1题: ances, 第2题: ve, 第3题: o, 第4题: eals, 第5题: ctions, 第6题: ght, 第7题: orb, 第8题: engths, 第9题: lect, 第10题: ich,
 ________________________________________
 2026.5.11
 
