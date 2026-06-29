@@ -884,9 +884,19 @@
             rawEntries.forEach(entry => {
                 if (!entry.text.includes('[')) return; 
                 
-                // 1. 提取纯正文计算全文 Hash (去除答案标记、换行、非字母字符)
-                const cleanText = entry.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ');
-                const hashInput = cleanText.toLowerCase().replace(/[^a-z]/g, ''); 
+                // 1. 提取纯正文 (去除答案标记、换行)
+                let cleanText = entry.text.replace(/\[|\]/g, '').replace(/<br>/g, ' ');
+
+                // --- 🌟 核心升级：基于“首句纯字母”的哈希算法 ---
+                // 找到第一个句号、问号或感叹号（支持中英文标点）
+                let firstSentenceEnd = cleanText.search(/[\.。!\?？！]/);
+                
+                // 截取第一句（如果极个别情况没找到标点，就取前150个字符作为保底）
+                let firstSentence = firstSentenceEnd !== -1 ? cleanText.substring(0, firstSentenceEnd) : cleanText.substring(0, 150);
+
+                // 全部转小写，并剔除所有非英文字母的字符（完美去除空格、标点、数字、括号等）
+                const hashInput = firstSentence.toLowerCase().replace(/[^a-z]/g, '');
+                // -----------------------------------
                 
                 if (!hashInput) return;
                 
