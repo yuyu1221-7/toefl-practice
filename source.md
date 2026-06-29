@@ -1095,6 +1095,10 @@ ________________________________________
 第十五篇 Shadow puppetry is an ancient form of storytelling that uses flat, articulated (movable) figures cast onto a screen by a light source. Shadow puppetry comb_ _ _ _ visual arti_ _ _ _ with dram_ _ _ _ narration, crea_ _ _ _ engaging perfor_ _ _ _ _ _ that con_ _ _ traditional ta_ _ _ and mo_ _ _ lessons. Th_ _ art fo_ _ originated in Asia and spread to various cultures around the world. The puppets are typically made of leather or paper and manipulated by sticks or strings. Performers narrate stories, often accompanied by music or sound effects.
 正确答案： 第1题: ines, 第2题: stry, 第3题: atic, 第4题: ting, 第5题: mances, 第6题: vey, 第7题: les, 第8题: ral, 第9题: is, 第10题: rm,
 ________________________________________
+2026.5.25
+第一篇 During the Neolithic period, craftspeople began producing pottery that served both practical and aesthetic purposes. Initially created f_ _ storing fo_ _ and wa_ _ _, these cl_ _ vessels event_ _ _ _ _ featured decor_ _ _ _ _ elements su_ _ as care_ _ _ _ _ incised patt_ _ _ _ and pai_ _ _ _ designs. This dual function—utility and beauty—marks one of the earliest examples of craftsmanship evolving into artistic expression. The refinement of pottery techniques, including firing and glazing, reflected growing technical skill and cultural values.
+正确答案： 第1题: or, 第2题: od, 第3题: ter, 第4题: ay, 第5题: ually, 第6题: ative, 第7题: ch, 第8题: fully, 第9题: erns, 第10题: nted,
+________________________________________
 2026.5.26
 
 第一篇 Maps are tools that help us understand the world around us. They sh_ _ the loca_ _ _ _ _ of pla_ _ _ like cit_ _ _ , rivers, a_ _ mountains. Th_ _ _ visual gu_ _ _ _ can al_ _ display different ty_ _ _ of infor_ _ _ _ _ _ , such as climate or population. There are many kinds, including physical, political, and thematic versions. The study of maps and cartography, the process by which they are made, can teach us about the geography of our planet and how people live in different regions.
