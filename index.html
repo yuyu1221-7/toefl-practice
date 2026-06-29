@@ -877,8 +877,95 @@
                     while ((match = ansRegex.exec(ansLine)) !== null) answers.push(match[1]);
                     if (answers.length === 0) answers = ansLine.split(/[,，]/).map(s => s.replace(/[^a-zA-Z\-\']/g, '').trim()).filter(s => s);
 
-                    currentCompletedText = currentRawPassage;
-                    answers.forEach(ans => currentCompletedText = currentCompletedText.replace(/(_[\s_]*)/, `[${ans}]`));
+                    // --- 🌟 核心升级：强力纠错与吸附算法 (Trim & Snap) + 白名单防御 ---
+                    let resultText = "";
+                    let cursor = 0;
+                    
+                    // 1. 允许合成的完整词典 (用于验证裸奔字母拼上答案后是不是个真词)
+                    const validCombinedWords = new Set(['the','to','of','and','a','in','that','is','was','he','for','it','with','as','his','on','be','at','by','i','this','had','not','are','but','from','or','have','an','they','which','one','you','were','all','her','she','there','would','their','we','him','been','has','when','who','will','no','more','if','out','so','up','its','about','into','than','them','can','only','other','new','some','could','time','these','two','may','then','do','first','any','my','now','such','like','our','over','man','me','even','most','made','after','also','did','many','before','must','through','back','years','where','much','your','way','well','down','should','because','each','just','those','people','how','too','little','state','good','very','make','world','still','own','see','men','work','long','get','here','between','both','life','being','under','never','day','same','another','know','while','last','might','us','great','old','year','off','come','since','against','go','came','right','used','take','three','upon','onto','within','without','among','amongst','beside','beyond','during','until','unless','throughout','above','below','beneath','underneath','behind','front','near','far','toward','towards','along','alongside','across','past','around','round','concerning','considering','despite','except','inside','outside','regarding','till','myself','yourself','himself','herself','itself','ourselves','themselves','whom','whose','what','whatever','whoever','whomever','whichever','anyone','everyone','someone','nobody','nothing','none','somebody','something','anybody','anything','everybody','everything','either','neither','few','several','instance']);
+
+                    // 2. 🛡️ 保护词白名单 (这些是正常的完整单词，绝对不允许被当成“裸奔前缀”抓走)
+                    const protectedWords = new Set(['a','i','in','on','at','to','is','it','of','or','as','be','by','do','go','he','me','my','no','so','up','us','we','an','the','and','but','for','not','you','all','any','are','can','did','get','had','has','her','him','his','how','let','may','new','now','off','old','one','out','put','run','saw','say','see','she','too','two','use','was','way','who','why','yes','yet']);
+
+                    for (let i = 0; i < answers.length; i++) {
+                        const ans = answers[i];
+                        
+                        // 1. 寻找下划线空位 (贪婪匹配：吃掉前缀后所有的空格和下划线)
+                        const underscoreRegex = /([a-zA-Z]+)(?:\s*_+)+/g;
+                        underscoreRegex.lastIndex = cursor;
+                        const underscoreMatch = underscoreRegex.exec(currentRawPassage);
+
+                        // 2. 寻找“裸奔”字母空位
+                        const nakedRegex = /\b([a-zA-Z]{1,5})\b/g;
+                        nakedRegex.lastIndex = cursor;
+                        let validNakedMatch = null;
+                        let nakedMatch;
+                        while ((nakedMatch = nakedRegex.exec(currentRawPassage)) !== null) {
+                            const prefixStr = nakedMatch[1].toLowerCase();
+                            
+                            // 🛡️ 核心防御：如果这个词本身就是个正常的完整单词，跳过！绝不误伤！
+                            if (protectedWords.has(prefixStr)) continue;
+
+                            const potentialWord = prefixStr + ans.toLowerCase();
+                            if (validCombinedWords.has(potentialWord)) {
+                                validNakedMatch = nakedMatch;
+                                break;
+                            }
+                        }
+
+                        // 3. 决定使用哪个匹配结果 (按图索骥：谁在前面用谁)
+                        let bestMatch = null;
+                        if (underscoreMatch && validNakedMatch) {
+                            bestMatch = (underscoreMatch.index <= validNakedMatch.index) ? underscoreMatch : validNakedMatch;
+                        } else if (underscoreMatch) {
+                            bestMatch = underscoreMatch;
+                        } else if (validNakedMatch) {
+                            bestMatch = validNakedMatch;
+                        }
+
+                        if (!bestMatch) break; // 容错：如果实在找不到，跳出循环保留剩余文本
+
+                        const prefix = bestMatch[1];
+                        const matchStart = bestMatch.index;
+                        const matchEnd = matchStart + bestMatch[0].length;
+
+                        // 拼接匹配点之前的文本
+                        resultText += currentRawPassage.substring(cursor, matchStart);
+
+                        // 4. 标点强力吸附 (Trim Right)
+                        let postPunct = "";
+                        let tempEnd = matchEnd;
+                        while (tempEnd < currentRawPassage.length) {
+                            const char = currentRawPassage[tempEnd];
+                            if (char === ' ') {
+                                tempEnd++; // 吃掉多余空格
+                            } else if (/^[.,:;!?'"\])]/.test(char)) {
+                                postPunct += char; // 吸附标点
+                                tempEnd++;
+                            } else {
+                                break;
+                            }
+                        }
+
+                        // 拼接填空部分
+                        resultText += `${prefix}[${ans}]${postPunct}`;
+
+                        // 5. 强制词边界隔离 (Force Space)
+                        if (tempEnd < currentRawPassage.length) {
+                            const nextChar = currentRawPassage[tempEnd];
+                            // 如果紧跟着的是英文字母，强制加一个空格，防止连体
+                            if (/^[a-zA-Z]$/.test(nextChar)) {
+                                resultText += " ";
+                            }
+                        }
+
+                        cursor = tempEnd;
+                    }
+                    
+                    // 拼接最后剩余的文本
+                    resultText += currentRawPassage.substring(cursor);
+                    currentCompletedText = resultText;
+                    
                     pushEntry(); continue;
                 }
                 
