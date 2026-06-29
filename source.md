@@ -972,7 +972,7 @@ ________________________________________
 正确答案： 第1题: oning, 第2题: th, 第3题: iples, 第4题: ives, 第5题: usions, 第6题: ctive, 第7题: lves, 第8题: oad, 第9题: om, 第10题: ations,
 
 ________________________________________
-2026.05.19
+2026.5.19
 第一篇 The last Ice Age sculpted the face of Earth, leaving behind majestic glaciers that continue to shape the landscape even today. These mas_ _ _ _ ice riv_ _ _ flow slo_ _ , grinding do _ mountains a_ _ carving val_ _ _ _ over mill_ _ _ _ . Compared t other geolo_ _ _ _ _ phenomena, t_ _ movement of glaciers is imperceptible on a human timescale, yet their impact is undeniably profound. Glaciers serve as natural archives of Earth's climatic history, preserving atmospheric data in layers of ice that have accumulated over thousands of years. Studying glaciers allows scientists to analyze past temperature patterns and environmental changes over time.
 正确答案： 第1题: sive, 第2题: ers, 第3题: wly, 第4题: wn, 第5题: nd, 第6题: leys, 第7题: ennia, 第8题: o, 第9题: gical, 第10题: he,
 ________________________________________
