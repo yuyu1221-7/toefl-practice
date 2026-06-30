@@ -590,7 +590,6 @@
         // ==========================================
         window.onload = () => {
             initDropzone("dropzone-md", "input-file-md", "md");
-            // 删除了 json 的 initDropzone
             try { historyRecords = JSON.parse(localStorage.getItem("toefl_history") || "[]"); } catch(e){}
             document.getElementById("ets-word-eye").innerHTML = EYE_OPEN_SVG;
             
@@ -598,12 +597,15 @@
             area.addEventListener("input", handleETSInput);
             area.addEventListener("mouseup", updateETSButtons);
             area.addEventListener("keyup", updateETSButtons);
-        
+
             const savedKey = localStorage.getItem("toefl_gemini_key");
             if (savedKey) {
                 document.getElementById("upload-api-key").value = savedKey;
                 document.getElementById("input-api-key").value = savedKey;
             }
+
+            // 新增：页面加载时检查最新更新日志
+            checkLatestUpdate();
         };
 
 function initDropzone(zoneId, inputId, type) {
@@ -619,57 +621,74 @@ function initDropzone(zoneId, inputId, type) {
         }
 
         // ==========================================
-        // GitHub 自动加载与本地文件处理逻辑
+        // GitHub / Gitee 双源自动加载与本地文件处理逻辑
         // ==========================================
 
-        // GitHub Raw 文件地址
-        const GITHUB_JSON_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/title.json";
-        const GITHUB_MD_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/db_qb.md";
+        // 数据源配置 (优先 GitHub，失败则用 Gitee)
+        const MD_URLS = [
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/db_qb.md",
+            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/db_qb.md"
+        ];
+        const JSON_URLS = [
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/title.json",
+            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/title.json"
+        ];
 
-        // 独立封装：从 GitHub 获取 JSON 字典
-        async function fetchDictionaryFromGitHub() {
+        // 带超时和重试机制的 Fetch (核心降级逻辑)
+        async function fetchWithFallback(urls, type = 'text') {
+            for (let i = 0; i < urls.length; i++) {
+                try {
+                    const controller = new AbortController();
+                    // 4秒超时自动打断，切换下一个源
+                    const timeoutId = setTimeout(() => controller.abort(), 4000); 
+                    const res = await fetch(urls[i], { signal: controller.signal });
+                    clearTimeout(timeoutId);
+                    
+                    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                    return type === 'json' ? await res.json() : await res.text();
+                } catch (e) {
+                    console.warn(`源 ${urls[i]} 获取失败，尝试备用源...`, e);
+                    if (i === urls.length - 1) throw new Error("所有数据源均获取失败");
+                }
+            }
+        }
+
+        // 独立封装：获取 JSON 字典
+        async function fetchDictionaryFromCloud() {
             if (Object.keys(dictData).length > 0) return true; 
             try {
-                const res = await fetch(GITHUB_JSON_URL);
-                if (!res.ok) throw new Error("Network response was not ok");
-                const arr = await res.json();
+                const arr = await fetchWithFallback(JSON_URLS, 'json');
                 dictData = {}; 
                 arr.forEach(item => { if (item.key) dictData[item.key] = item; });
                 return true;
             } catch (e) {
                 console.error("Failed to fetch JSON dictionary:", e);
-                alert("无法从 GitHub 获取 title.json，请检查网络环境。");
+                alert("无法从云端获取 title.json，请检查网络环境。");
                 return false;
             }
         }
 
-        // 左侧：一键从 GitHub 加载 MD 和 JSON，完成后自动进入系统
+        // 左侧：一键从云端加载 MD 和 JSON，完成后自动进入系统
         async function loadDataFromGitHub() {
             const statusLabel = document.getElementById("label-github-status");
-            statusLabel.textContent = "正在加载...";
+            statusLabel.textContent = "正在连接云端...";
             statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-blue-100 text-blue-700 rounded-full";
             
             try {
-                // 1. 获取 MD 题库
-                const resMd = await fetch(GITHUB_MD_URL);
-                if (!resMd.ok) throw new Error("MD fetch failed");
-                rawDmdText = await resMd.text();
+                // 1. 获取 MD 题库 (自动双源)
+                rawDmdText = await fetchWithFallback(MD_URLS, 'text');
                 
-                // 2. 获取 JSON 字典
-                await fetchDictionaryFromGitHub();
+                // 2. 获取 JSON 字典 (自动双源)
+                await fetchDictionaryFromCloud();
                 
                 statusLabel.textContent = "加载成功，正在进入...";
                 statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full";
                 
-                // 延迟 300 毫秒后自动进入系统 (给用户一个视觉反馈)
-                setTimeout(() => {
-                    processAndInitialize();
-                }, 300);
-
+                setTimeout(() => { processAndInitialize(); }, 300);
             } catch (e) {
                 statusLabel.textContent = "加载失败";
                 statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-red-100 text-red-700 rounded-full";
-                alert("从 GitHub 加载失败，请检查网络环境。");
+                alert("从 GitHub/Gitee 加载失败，请检查网络连接。");
             }
         }
 
@@ -683,17 +702,12 @@ function initDropzone(zoneId, inputId, type) {
                     statusLabel.textContent = "正在同步字典...";
                     statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-blue-100 text-blue-700 rounded-full";
                     
-                    // 自动从 GitHub 获取 JSON 字典
-                    const dictSuccess = await fetchDictionaryFromGitHub();
+                    const dictSuccess = await fetchDictionaryFromCloud();
                     
                     if (dictSuccess) {
                         statusLabel.textContent = "准备就绪，正在进入...";
                         statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full";
-                        
-                        // 延迟 300 毫秒后自动进入系统
-                        setTimeout(() => {
-                            processAndInitialize();
-                        }, 300);
+                        setTimeout(() => { processAndInitialize(); }, 300);
                     } else {
                         statusLabel.textContent = "字典同步失败";
                         statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-red-100 text-red-700 rounded-full";
@@ -701,6 +715,51 @@ function initDropzone(zoneId, inputId, type) {
                 }
             };
             reader.readAsText(file);
+        }
+
+        // ==========================================
+        // 检查云端最新更新日志 (Toast 提示)
+        // ==========================================
+        async function checkLatestUpdate() {
+            let msg = "";
+            let dateStr = "";
+            try {
+                // 优先查 GitHub API
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                const res = await fetch("https://api.github.com/repos/yuyu1221-7/toefl-practice/commits?per_page=1", { signal: controller.signal });
+                clearTimeout(timeoutId);
+                const data = await res.json();
+                msg = data[0].commit.message;
+                dateStr = data[0].commit.committer.date;
+            } catch (e) {
+                try {
+                    // 失败则查 Gitee API
+                    const res = await fetch("https://gitee.com/api/v5/repos/yuyu1221-7/toefl-practice/commits?page=1&per_page=1");
+                    const data = await res.json();
+                    msg = data[0].commit.message;
+                    dateStr = data[0].commit.committer.date;
+                } catch (err) {
+                    return; // 都失败就不弹窗了
+                }
+            }
+            
+            if (msg && dateStr) {
+                const date = new Date(dateStr).toLocaleString('zh-CN', {
+                    month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                });
+                document.getElementById('update-toast-msg').textContent = msg;
+                document.getElementById('update-toast-time').textContent = "更新于: " + date;
+                
+                // 弹出 Toast
+                const toast = document.getElementById('update-toast');
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                
+                // 6秒后自动滑出消失
+                setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 6000);
+            }
         }
 
         function computeHash(text) {
@@ -1569,5 +1628,18 @@ ${r.response}
             toggleSettingsModal(false);
         }
     </script>
+
+    <!-- 题库更新提示 Toast -->
+    <div id="update-toast" class="fixed bottom-6 right-6 z-[9999] transform translate-y-24 opacity-0 transition-all duration-500 bg-white border-l-4 border-blue-500 shadow-2xl rounded-r-xl p-4 max-w-sm flex items-start gap-3 pointer-events-none">
+        <div class="text-blue-500 mt-0.5 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div>
+            <h4 class="text-sm font-bold text-slate-800 mb-1">题库最新动态</h4>
+            <p id="update-toast-msg" class="text-xs text-slate-600 line-clamp-2 mb-1">获取中...</p>
+            <p id="update-toast-time" class="text-[10px] text-slate-400 font-mono">--</p>
+        </div>
+    </div>
+    
 </body>
 </html>
