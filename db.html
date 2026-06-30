@@ -120,17 +120,21 @@
                 <p class="text-slate-500 mb-8 text-base">请拖拽或选择对应格式的文件以初始化系统题库</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-6">
-                    <div id="dropzone-md" class="border-2 border-dashed border-slate-300 hover:border-teal-500 hover:bg-teal-50/50 rounded-2xl p-8 cursor-pointer transition-all flex flex-col items-center justify-center relative h-56">
-                        <input type="file" id="input-file-md" accept=".md,.txt" class="absolute inset-0 opacity-0 cursor-pointer">
-                        <h3 class="text-lg font-bold text-slate-800 mb-2">导入 DMD/TXT 题库</h3>
-                        <span id="label-md-status" class="mt-2 text-sm font-semibold px-3 py-1 bg-slate-100 text-slate-500 rounded-full">未导入</span>
-                    </div>
-                    <div id="dropzone-json" class="border-2 border-dashed border-slate-300 hover:border-blue-500 hover:bg-blue-50/50 rounded-2xl p-8 cursor-pointer transition-all flex flex-col items-center justify-center relative h-56">
-                        <input type="file" id="input-file-json" accept=".json" class="absolute inset-0 opacity-0 cursor-pointer">
-                        <h3 class="text-lg font-bold text-slate-800 mb-2">导入 JSON 字典 (可选)</h3>
-                        <span id="label-json-status" class="mt-2 text-sm font-semibold px-3 py-1 bg-slate-100 text-slate-500 rounded-full">未导入</span>
-                    </div>
+                <!-- 左侧：一键从 GitHub 加载 -->
+                <div id="github-load-zone" onclick="loadDataFromGitHub()" class="border-2 border-dashed border-slate-300 hover:border-purple-500 hover:bg-purple-50/50 rounded-2xl p-8 cursor-pointer transition-all flex flex-col items-center justify-center relative h-56">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">从 GitHub 一键加载</h3>
+                    <p class="text-xs text-slate-500 mb-4 text-center">自动获取 db_qb.md 与 title.json</p>
+                    <span id="label-github-status" class="mt-2 text-sm font-semibold px-3 py-1 bg-slate-100 text-slate-500 rounded-full">点击加载</span>
                 </div>
+                
+                <!-- 右侧：拖拽上传本地 MD -->
+                <div id="dropzone-md" class="border-2 border-dashed border-slate-300 hover:border-teal-500 hover:bg-teal-50/50 rounded-2xl p-8 cursor-pointer transition-all flex flex-col items-center justify-center relative h-56">
+                    <input type="file" id="input-file-md" accept=".md,.txt" class="absolute inset-0 opacity-0 cursor-pointer">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">导入本地 MD 题库</h3>
+                    <p class="text-xs text-slate-500 mb-4 text-center">将自动从 GitHub 同步 JSON 字典</p>
+                    <span id="label-md-status" class="mt-2 text-sm font-semibold px-3 py-1 bg-slate-100 text-slate-500 rounded-full">未导入</span>
+                </div>
+            </div>
 
                 <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-left mb-8">
                     <label class="block text-sm font-bold text-slate-700 mb-2">Google Gemini API Key (可选，用于自动提取缺失主题)</label>
@@ -590,7 +594,7 @@
         // ==========================================
         window.onload = () => {
             initDropzone("dropzone-md", "input-file-md", "md");
-            initDropzone("dropzone-json", "input-file-json", "json");
+            // 删除了 json 的 initDropzone
             try { historyRecords = JSON.parse(localStorage.getItem("toefl_history") || "[]"); } catch(e){}
             document.getElementById("ets-word-eye").innerHTML = EYE_OPEN_SVG;
             
@@ -598,7 +602,7 @@
             area.addEventListener("input", handleETSInput);
             area.addEventListener("mouseup", updateETSButtons);
             area.addEventListener("keyup", updateETSButtons);
-
+        
             const savedKey = localStorage.getItem("toefl_gemini_key");
             if (savedKey) {
                 document.getElementById("upload-api-key").value = savedKey;
@@ -618,25 +622,87 @@
             input.addEventListener("change", e => { if (e.target.files.length > 0) handleFile(e.target.files[0], type); });
         }
 
+        // ==========================================
+        // 下面是替换后的全新逻辑 (替代了原来的 handleFile)
+        // ==========================================
+
+        // GitHub Raw 文件地址
+        const GITHUB_JSON_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/title.json";
+        const GITHUB_MD_URL = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/db_qb.md";
+
+        // 独立封装：从 GitHub 获取 JSON 字典
+        async function fetchDictionaryFromGitHub() {
+            if (Object.keys(dictData).length > 0) return true; // 如果已经加载过就不再重复请求
+            try {
+                const res = await fetch(GITHUB_JSON_URL);
+                if (!res.ok) throw new Error("Network response was not ok");
+                const arr = await res.json();
+                dictData = {}; 
+                arr.forEach(item => { if (item.key) dictData[item.key] = item; });
+                return true;
+            } catch (e) {
+                console.error("Failed to fetch JSON dictionary:", e);
+                alert("无法从 GitHub 获取 title.json，请检查网络环境（国内可能需要代理）。");
+                return false;
+            }
+        }
+
+        // 激活“进入系统”按钮
+        function enableStartButton() {
+            if (rawDmdText) {
+                const btn = document.getElementById("btn-start-system");
+                btn.removeAttribute("disabled");
+                btn.className = "px-12 py-4 bg-slate-900 text-white font-extrabold rounded-xl hover:bg-slate-800 transition-all shadow-md cursor-pointer text-lg";
+            }
+        }
+
+        // 左侧：一键从 GitHub 加载 MD 和 JSON
+        async function loadDataFromGitHub() {
+            const statusLabel = document.getElementById("label-github-status");
+            statusLabel.textContent = "正在加载...";
+            statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-blue-100 text-blue-700 rounded-full";
+            
+            try {
+                // 1. 获取 MD 题库
+                const resMd = await fetch(GITHUB_MD_URL);
+                if (!resMd.ok) throw new Error("MD fetch failed");
+                rawDmdText = await resMd.text();
+                
+                // 2. 获取 JSON 字典
+                await fetchDictionaryFromGitHub();
+                
+                statusLabel.textContent = "加载成功";
+                statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full";
+                
+                enableStartButton();
+            } catch (e) {
+                statusLabel.textContent = "加载失败";
+                statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-red-100 text-red-700 rounded-full";
+                alert("从 GitHub 加载失败，请检查网络环境（国内访问 raw.githubusercontent.com 可能需要代理）。");
+            }
+        }
+
+        // 右侧：处理本地拖拽/上传的 MD 文件
         function handleFile(file, type) {
             const reader = new FileReader();
-            reader.onload = e => {
+            reader.onload = async e => {
                 if (type === "md") {
                     rawDmdText = e.target.result;
-                    document.getElementById("label-md-status").textContent = "已导入";
-                    document.getElementById("label-md-status").className = "mt-2 text-sm font-semibold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full";
-                } else {
-                    try {
-                        const arr = JSON.parse(e.target.result);
-                        dictData = {}; arr.forEach(item => { if (item.key) dictData[item.key] = item; });
-                        document.getElementById("label-json-status").textContent = "已导入";
-                        document.getElementById("label-json-status").className = "mt-2 text-sm font-semibold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full";
-                    } catch(err) { alert("JSON 格式错误！"); }
-                }
-                if (rawDmdText) {
-                    const btn = document.getElementById("btn-start-system");
-                    btn.removeAttribute("disabled");
-                    btn.className = "px-12 py-4 bg-slate-900 text-white font-extrabold rounded-xl hover:bg-slate-800 transition-all shadow-md cursor-pointer text-lg";
+                    const statusLabel = document.getElementById("label-md-status");
+                    statusLabel.textContent = "正在同步字典...";
+                    statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-blue-100 text-blue-700 rounded-full";
+                    
+                    // 自动从 GitHub 获取 JSON 字典
+                    const dictSuccess = await fetchDictionaryFromGitHub();
+                    
+                    if (dictSuccess) {
+                        statusLabel.textContent = "准备就绪";
+                        statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full";
+                        enableStartButton();
+                    } else {
+                        statusLabel.textContent = "字典同步失败";
+                        statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-red-100 text-red-700 rounded-full";
+                    }
                 }
             };
             reader.readAsText(file);
