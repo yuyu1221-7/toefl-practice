@@ -56,7 +56,7 @@ stu2_content: While public art can enhance a community's aesthetic appeal, its r
 2026.5.5
 新题
 prof: null
-question: null
+question: We've been discussing how different art forms affect people and communities. Consider these specific examples: protest songs that motivate people to join movements, murals that bring communities together, or movie that change how people think about important issues. Some people argue that art creates changeby making people aware of problems and motivating them to act. Others believe art simply shows what already exists in society without actually changing anything. Which view do you agree with? Why?
 stu1: null
 stu1_content: I believe art has the power to drive social change. At many times in history, protest songs helped unite people to support important causes, while political cartoons exposed corruption and motivated voters to demand better leadership. Art doesn't just show problems; it gives people emotional reasons to care and practical ways to take action for justice.
 stu2: null
@@ -118,9 +118,9 @@ stu2_content: I do not think VR should be widely used in schools yet. The techno
 prof: Dr. Gupta
 question: We've been exploring strategies to address climate change, especially the effects of carbon-based energy sources, which are causing global warming. Some experts emphasize the importance of individual actions, like reducing energy use and minimizing waste. Others argue that systemic change through government policy and corporate accountability is more impactful. Which approach do you believe is most effective in combating climate change, and why? Support your view with reasoning.
 stu1: null
-stu1_content: null
+stu1_content: Individual actions are essential because they foster environmental awareness and personal responsibility. When people adopt sustainable habits like conserving energy, reducing plastic use, and supporting green initiatives, they influence cultural norms and consumer demand. These shifts can pressure institutions to adopt eco-friendly policies. Personal choices, multiplied across populations, can drive meaningful environmental change.
 stu2: null
-stu2_content: null
+stu2_content: Policy reform and corporate accountability are more effective for addressing climate change at scale. Governments can enforce emissions limits, invest in renewable energy, and regulate industries. Corporations control vast resources and supply chains, so their sustainability efforts have global impact. While individual actions matter, systemic change is necessary to meet climate goals.
 
 第三套
 prof: Dr. Gupta
