@@ -608,7 +608,7 @@
             checkLatestUpdate();
         };
 
-function initDropzone(zoneId, inputId, type) {
+        function initDropzone(zoneId, inputId, type) {
             const zone = document.getElementById(zoneId);
             const input = document.getElementById(inputId);
             zone.addEventListener("dragover", e => { e.preventDefault(); zone.classList.add("border-teal-500", "bg-teal-50"); });
@@ -639,7 +639,6 @@ function initDropzone(zoneId, inputId, type) {
             for (let i = 0; i < urls.length; i++) {
                 try {
                     const controller = new AbortController();
-                    // 4秒超时自动打断，切换下一个源
                     const timeoutId = setTimeout(() => controller.abort(), 4000); 
                     const res = await fetch(urls[i], { signal: controller.signal });
                     clearTimeout(timeoutId);
@@ -675,10 +674,7 @@ function initDropzone(zoneId, inputId, type) {
             statusLabel.className = "mt-2 text-sm font-semibold px-3 py-1 bg-blue-100 text-blue-700 rounded-full";
             
             try {
-                // 1. 获取 MD 题库 (自动双源)
                 rawDmdText = await fetchWithFallback(MD_URLS, 'text');
-                
-                // 2. 获取 JSON 字典 (自动双源)
                 await fetchDictionaryFromCloud();
                 
                 statusLabel.textContent = "加载成功，正在进入...";
@@ -718,50 +714,65 @@ function initDropzone(zoneId, inputId, type) {
         }
 
         // ==========================================
-        // 检查云端最新更新日志 (Toast 提示)
+        // 智能解析题库最新动态 (Toast 提示)
         // ==========================================
         async function checkLatestUpdate() {
-            let msg = "";
-            let dateStr = "";
+            let commitTime = "";
+            
+            // 1. 获取 db_qb.md 的最后提交时间 (双源 API)
             try {
-                // 优先查 GitHub API
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 3000);
-                const res = await fetch("https://api.github.com/repos/yuyu1221-7/toefl-practice/commits?per_page=1", { signal: controller.signal });
+                const res = await fetch("https://api.github.com/repos/yuyu1221-7/toefl-practice/commits?path=db_qb.md&per_page=1", { signal: controller.signal });
                 clearTimeout(timeoutId);
                 const data = await res.json();
-                msg = data[0].commit.message;
-                dateStr = data[0].commit.committer.date;
+                commitTime = data[0].commit.committer.date;
             } catch (e) {
                 try {
-                    // 失败则查 Gitee API
-                    const res = await fetch("https://gitee.com/api/v5/repos/yuyu1221-7/toefl-practice/commits?page=1&per_page=1");
+                    const res = await fetch("https://gitee.com/api/v5/repos/yuyu1221-7/toefl-practice/commits?path=db_qb.md&page=1&per_page=1");
                     const data = await res.json();
-                    msg = data[0].commit.message;
-                    dateStr = data[0].commit.committer.date;
-                } catch (err) {
-                    return; // 都失败就不弹窗了
-                }
+                    commitTime = data[0].commit.committer.date;
+                } catch (err) {}
             }
-            
-            if (msg && dateStr) {
-                const date = new Date(dateStr).toLocaleString('zh-CN', {
-                    month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                });
-                document.getElementById('update-toast-msg').textContent = msg;
-                document.getElementById('update-toast-time').textContent = "更新于: " + date;
+
+            // 2. 获取 db_qb.md 内容，智能解析最新日期和篇目
+            try {
+                const text = await fetchWithFallback(MD_URLS, 'text');
                 
-                // 弹出 Toast
-                const toast = document.getElementById('update-toast');
-                toast.classList.remove('translate-y-24', 'opacity-0');
+                // 按分隔符拆分，找到最上面的第一个有效区块
+                const blocks = text.split(/----------------------/);
+                const firstBlock = blocks.find(b => b.trim().length > 10);
                 
-                // 6秒后自动滑出消失
-                setTimeout(() => {
-                    toast.classList.add('translate-y-24', 'opacity-0');
-                }, 6000);
+                if (firstBlock) {
+                    // 提取日期 (例如 2026.6.27)
+                    const dateMatch = firstBlock.match(/\d{4}\.\d{1,2}(?:\.\d{1,2})?/);
+                    const dateStr = dateMatch ? dateMatch[0] : "最新";
+                    
+                    // 提取该日期下的题目数量 (统计 "question:" 出现的次数)
+                    const qCount = (firstBlock.match(/question:/g) || []).length;
+                    
+                    // 格式化时间
+                    let timeStr = "";
+                    if (commitTime) {
+                        const d = new Date(commitTime);
+                        const formatted = d.toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                        timeStr = ` • 同步于 ${formatted}`;
+                    }
+
+                    // 注入到 HTML
+                    document.getElementById('update-toast-msg').textContent = `最新收录: ${dateStr} 考题`;
+                    document.getElementById('update-toast-time').textContent = `新增 ${qCount} 篇探讨${timeStr}`;
+                    
+                    // 弹出 Toast
+                    const toast = document.getElementById('update-toast');
+                    toast.classList.remove('translate-y-24', 'opacity-0');
+                    setTimeout(() => { toast.classList.add('translate-y-24', 'opacity-0'); }, 6000);
+                }
+            } catch (e) {
+                console.log("解析题库动态失败", e);
             }
         }
-
+        
         function computeHash(text) {
             let clean = (text.split(/[.!?]/)[0] || text).toLowerCase().replace(/[^a-z0-9]/g, "");
             let hash = 5381;
