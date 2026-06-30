@@ -1,0 +1,446 @@
+[
+    {
+        "key": "309763",
+        "zh": "消费者购买决策与环境影响",
+        "en": "Consumer Purchasing Decisions and Environmental Impact",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "369039",
+        "zh": "企业战略与员工发展",
+        "en": "Corporate Strategy and Employee Development",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "422662",
+        "zh": "国际组织在维护和平中的作用",
+        "en": "Role of International Organizations in Peacekeeping",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "429983",
+        "zh": "艺术的价值与作用",
+        "en": "The Value and Role of Arts",
+        "cat": "生活与娱乐"
+    },
+    {
+        "key": "521732",
+        "zh": "课堂学习方式：主动参与 vs. 被动听讲",
+        "en": "Classroom Learning Methods: Active Participation vs. Passive Listening",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "3E2CEA",
+        "zh": "社会流动性与教育",
+        "en": "Social Mobility and Education",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "245F68",
+        "zh": "家长参与对学生学业的影响",
+        "en": "Impact of Parental Involvement on Student Achievement",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "2BB95E",
+        "zh": "品牌忠诚度与消费者行为",
+        "en": "Brand Loyalty and Consumer Behavior",
+        "cat": "生活与娱乐"
+    },
+    {
+        "key": "1C7279",
+        "zh": "塑料垃圾对环境的影响",
+        "en": "Impact of Plastic Waste on the Environment",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "16C167",
+        "zh": "远程工作对生产力和员工福祉的影响",
+        "en": "Impact of Remote Work on Productivity and Employee Well-being",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "FC66A2",
+        "zh": "公共艺术与社区认同",
+        "en": "Public Art and Community Identity",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "7C9B61",
+        "zh": "(空问题)",
+        "en": "(Empty Question)",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "CFF62E",
+        "zh": "讲故事与有效沟通",
+        "en": "Storytelling and Effective Communication",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "37279B",
+        "zh": "保护原住民文化",
+        "en": "Preserving Indigenous Cultures",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "22771A",
+        "zh": "自动化对劳动力市场的影响",
+        "en": "Impact of Automation on the Labor Market",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "1EE2CE",
+        "zh": "体育与品格培养",
+        "en": "Sports and Character Building",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "7F17DC",
+        "zh": "最低工资法的影响",
+        "en": "Impact of Minimum Wage Laws",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "1AC00D",
+        "zh": "虚拟现实在教育中的应用",
+        "en": "Virtual Reality in Education",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "F040C0",
+        "zh": "应对气候变化的策略",
+        "en": "Strategies to Address Climate Change",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "6035B2",
+        "zh": "政府监管的角色",
+        "en": "The Role of Government Regulations",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "3DD8EC",
+        "zh": "商业道德与企业社会责任",
+        "en": "Business Ethics and Corporate Social Responsibility",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "3C383B",
+        "zh": "青年人的财商教育",
+        "en": "Financial Literacy for Young Adults",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "F1D2D6",
+        "zh": "社交媒体在教育中的应用",
+        "en": "Social Media in Education",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "D3F030",
+        "zh": "展望未来：环境与社会可持续发展",
+        "en": "Securing the Future: Environment and Social Well-being",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "BEF3E8",
+        "zh": "科技在现代教育中的作用",
+        "en": "The Role of Technology in Modern Education",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "6085AF",
+        "zh": "青少年行为影响因素",
+        "en": "Influences on Teen Behavior",
+        "cat": "生活与娱乐"
+    },
+    {
+        "key": "23C3FA",
+        "zh": "社交媒体算法与个性化内容",
+        "en": "Social Media Algorithms & Personalization",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "229E36",
+        "zh": "课程设置与未来职业准备",
+        "en": "Curriculum & Career Readiness",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "188A77",
+        "zh": "教学方法与学习效果",
+        "en": "Teaching Methods & Learning Effectiveness",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "B528A0",
+        "zh": "文学对社会价值观的影响",
+        "en": "Literature's Role in Societal Values",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "37AFC7",
+        "zh": "非语言沟通",
+        "en": "Nonverbal Communication",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "1CA131",
+        "zh": "快时尚的环境影响",
+        "en": "Environmental Impact of Fast Fashion",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "304F5B",
+        "zh": "艺术的社会角色",
+        "en": "The Role of Art in Society",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "32EE40",
+        "zh": "在线学习的优缺点",
+        "en": "Pros and Cons of Online Learning",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "188FF4",
+        "zh": "环境教育的重要性",
+        "en": "The Importance of Environmental Education",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "334A2F",
+        "zh": "工作与社交平衡",
+        "en": "Balancing Work and Social Life",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "57DBD2",
+        "zh": "互联网与信息过载",
+        "en": "Internet and Information Overload",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "672D9C",
+        "zh": "全球化对地方经济的影响",
+        "en": "Impact of Globalization on Local Economies",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "5AC0D1",
+        "zh": "影响教育成果的因素",
+        "en": "Factors Affecting Educational Outcomes",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "1E2BF3",
+        "zh": "科技安防与个人自由",
+        "en": "Technology, Security, and Personal Freedom",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "D9999D",
+        "zh": "教育与职业选择",
+        "en": "Education and Career Choices",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "19F273",
+        "zh": "从众行为的社会影响",
+        "en": "Social Impact of Conformity",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "379C2C",
+        "zh": "公司品牌策略",
+        "en": "Corporate Branding Strategies",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "16EA7F",
+        "zh": "社交媒体的利弊",
+        "en": "Pros and Cons of Social Media",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "8A2368",
+        "zh": "社交媒体与公共舆论",
+        "en": "Social Media and Public Opinion",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "CC0327",
+        "zh": "历史人物与社会发展",
+        "en": "Historical Figures and Societal Development",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "16CBCB",
+        "zh": "社交媒体营销与网红效应",
+        "en": "Social Media Marketing and Influencer Effect",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "3A5327",
+        "zh": "人类发展：先天与后天",
+        "en": "Human Development: Nature vs. Nurture",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "47CB58",
+        "zh": "客户反馈与产品创新",
+        "en": "Customer Feedback and Product Innovation",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "B055E9",
+        "zh": "企业透明度与运营管理",
+        "en": "Corporate Transparency and Operational Management",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "1BE0EC",
+        "zh": "品牌忠诚度与个性化服务",
+        "en": "Brand Loyalty and Personalized Services",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "1EB876",
+        "zh": "政府干预经济的利弊",
+        "en": "Pros and Cons of Government Intervention in the Economy",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "188C2E",
+        "zh": "情绪智能与职业技能",
+        "en": "Emotional Intelligence vs. Technical Skills",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "27EFE6",
+        "zh": "文化全球化对传统的影响",
+        "en": "Impact of Cultural Globalization on Traditions",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "1BB863",
+        "zh": "城市发展与环境策略",
+        "en": "Urban Development and Environmental Strategies",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "21F30D",
+        "zh": "学生评估方法",
+        "en": "Student Assessment Methods",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "27094D",
+        "zh": "社会规范及其影响",
+        "en": "Social Norms and Their Influence",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "17C26D",
+        "zh": "商业管理中的领导风格",
+        "en": "Leadership Styles in Business Management",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "1F1B0D",
+        "zh": "个人环保行动",
+        "en": "Individual Environmental Actions",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "97D5EE",
+        "zh": "减少碳排放的策略",
+        "en": "Strategies for Carbon Emission Reduction",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "3D3E1C",
+        "zh": "社交媒体对人际与自信的影响",
+        "en": "Impact of Social Media on Social Interaction and Self-Confidence",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "75D28D",
+        "zh": "职业选择的考量因素",
+        "en": "Factors in Career Choice",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "25FF4B",
+        "zh": "广告对消费行为的影响",
+        "en": "Influence of Advertising on Consumer Behavior",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "2C5091",
+        "zh": "环境问题与能源解决方案",
+        "en": "Environmental Problems and Energy Solutions",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "1BDD54",
+        "zh": "数字交流对人际关系的影响",
+        "en": "Impact of Digital Communication on Relationships",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "16A3EF",
+        "zh": "工作中的多任务处理",
+        "en": "Multitasking in the Workplace",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "45111C",
+        "zh": "公共艺术的角色",
+        "en": "The Role of Public Art",
+        "cat": "生活与娱乐"
+    },
+    {
+        "key": "3EB193",
+        "zh": "野生动物与环境保护策略",
+        "en": "Wildlife and Environmental Protection Strategies",
+        "cat": "环境与能源"
+    },
+    {
+        "key": "409F66",
+        "zh": "社区文化多样性的益处",
+        "en": "Benefits of Cultural Diversity in Communities",
+        "cat": "政府与社会"
+    },
+    {
+        "key": "1EA271",
+        "zh": "人工智能的伦理影响",
+        "en": "Ethical Implications of Artificial Intelligence",
+        "cat": "科技与媒体"
+    },
+    {
+        "key": "CCEE44",
+        "zh": "企业全球化与本地化策略",
+        "en": "Corporate Globalization vs. Localization Strategy",
+        "cat": "效率与工作"
+    },
+    {
+        "key": "1A95CF",
+        "zh": "科技融入教育的利弊",
+        "en": "Pros and Cons of Technology Integration in Education",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "3753DE",
+        "zh": "项目式学习的有效性",
+        "en": "Effectiveness of Project-Based Learning",
+        "cat": "教育与学习"
+    },
+    {
+        "key": "29FB4A",
+        "zh": "数字化交流对人际互动的影响",
+        "en": "Impact of Digital Communication on Face-to-Face Interaction",
+        "cat": "科技与媒体"
+    }
+]
