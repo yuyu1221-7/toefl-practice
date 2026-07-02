@@ -742,7 +742,16 @@
             return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
         }
 
+        let isProcessingAI = false; // 新增：全局状态锁
+
         async function processAndInitialize() {
+            // 新增：防抖拦截，彻底解决并发触发 429 的问题
+            if (isProcessingAI) {
+                console.warn("已有正在运行的题库初始化进程，拦截并发请求。");
+                return;
+            }
+            isProcessingAI = true; // 上锁
+
             const uploadKey = document.getElementById("upload-api-key").value.trim();
             if (uploadKey) {
                 localStorage.setItem("toefl_gemini_key", uploadKey);
@@ -912,6 +921,8 @@ Input: ${JSON.stringify(promptData)}`;
             document.getElementById("unique-q-count").textContent = globalQuestions.length;
             document.getElementById("view-upload").classList.add("hidden");
             document.getElementById("main-header").classList.remove("hidden");
+
+            isProcessingAI = false; // 新增：执行完毕后解锁
             navigateTo('home');
         }
 
