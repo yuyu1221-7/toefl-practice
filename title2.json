@@ -1,0 +1,639 @@
+[
+    {
+        "key": "134346",
+        "zh": "公寓问题报告",
+        "en": "Apartment Issues Report",
+        "subject": "Reporting Apartment Issues",
+        "cat": "物品维修"
+    },
+    {
+        "key": "184650",
+        "zh": "电影之夜小吃饮品建议",
+        "en": "Movie Night Snack & Drink Suggestions",
+        "subject": "Movie Night: Snack and Drink Recommendations",
+        "cat": "活动策划"
+    },
+    {
+        "key": "189891",
+        "zh": "感谢小组项目贡献",
+        "en": "Thanking for Group Project Contribution",
+        "subject": "Appreciation for Your Excellent Work on the Group Project",
+        "cat": "校园学习"
+    },
+    {
+        "key": "373764",
+        "zh": "餐厅服务反馈",
+        "en": "Restaurant Service Feedback",
+        "subject": "Feedback Regarding Your Service at Cozy Corner",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "417597",
+        "zh": "假期租房信息咨询",
+        "en": "Vacation Rental Inquiry",
+        "subject": "Inquiry Regarding Vacation Rental Booking Details",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "578407",
+        "zh": "烘焙产品质量反馈",
+        "en": "Bakery Product Feedback",
+        "subject": "Feedback and Suggestions for Bakery Product",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "589565",
+        "zh": "讲座反馈与资源请求",
+        "en": "Seminar Feedback and Resource Request",
+        "subject": "Follow-up and Feedback on the Job Search Seminar",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "148F1C",
+        "zh": "化学实验课调课申请",
+        "en": "Chemistry Lab Schedule Change Request",
+        "subject": "Request for Chemistry Lab Schedule Change",
+        "cat": "校园学习"
+    },
+    {
+        "key": "EF9030",
+        "zh": "小组项目首次会议安排",
+        "en": "Group Project First Meeting Arrangement",
+        "subject": "Group Project: Scheduling Our First Meeting",
+        "cat": "校园学习"
+    },
+    {
+        "key": "31D425",
+        "zh": "景区改进建议",
+        "en": "Park Improvement Suggestions",
+        "subject": "Suggestions for Improvements at Mountain View Park",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "144D69",
+        "zh": "慈善活动志愿者邀请",
+        "en": "Charity Event Volunteer Invitation",
+        "subject": "Invitation to Volunteer for Charity Event",
+        "cat": "活动策划"
+    },
+    {
+        "key": "6308E7",
+        "zh": "烹饪课感谢信",
+        "en": "Cooking Class Thank You Note",
+        "subject": "Thank You for an Enjoyable Cooking Class",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "770D35",
+        "zh": "职业讲习班反馈",
+        "en": "Career Workshop Feedback",
+        "subject": "Appreciation and Feedback on the Career Workshop",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "CD5BFB",
+        "zh": "春假旅行计划",
+        "en": "Spring Break Travel Plan Suggestion",
+        "subject": "Spring Break Travel Idea: Fantastic City Getaway!",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "286B4F",
+        "zh": "在线课程平台问题报告",
+        "en": "Online Course Platform Issue",
+        "subject": "Issue With Online Language Course Platform",
+        "cat": "校园学习"
+    },
+    {
+        "key": "27806E",
+        "zh": "学生俱乐部派对场地咨询",
+        "en": "Student Club Party Venue Inquiry",
+        "subject": "Inquiry: Venue for Student Club Holiday Party",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "3E9B9B",
+        "zh": "感谢项目合作与改进建议",
+        "en": "Project Collaboration Thanks & Improvement Suggestions",
+        "subject": "Thanks for Project Collaboration and Improvement Ideas",
+        "cat": "校园学习"
+    },
+    {
+        "key": "1E0F3B",
+        "zh": "网购连衣裙问题报告",
+        "en": "Online Dress Purchase Issue",
+        "subject": "Issue With Online Dress Order - University Gala",
+        "cat": "物品维修"
+    },
+    {
+        "key": "15A33F",
+        "zh": "科技会议后续交流",
+        "en": "Technology Conference Follow-up",
+        "subject": "Follow-up Regarding Your Presentation at the Technology Conference",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "BAC216",
+        "zh": "网购学习用品问题报告",
+        "en": "Online School Supplies Issue",
+        "subject": "Issue With Online School Supplies Order",
+        "cat": "物品维修"
+    },
+    {
+        "key": "1D6CC7",
+        "zh": "网购衬衫问题报告",
+        "en": "Online Shirt Purchase Issue",
+        "subject": "Issue With Online Shirt Order - University Gala",
+        "cat": "物品维修"
+    },
+    {
+        "key": "668E86",
+        "zh": "讲座感谢与延伸阅读请求",
+        "en": "Lecture Appreciation and Further Reading Request",
+        "subject": "Appreciation and Resource Request After Environmental Sustainability Lecture",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "2B73BD",
+        "zh": "咖啡馆体验反馈",
+        "en": "Cafe Experience Feedback",
+        "subject": "Feedback Regarding Your New Cafe, Sunny Café",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "1FA186",
+        "zh": "欢送派对安排咨询",
+        "en": "Farewell Party Arrangement Inquiry",
+        "subject": "Inquiry Regarding Farewell Party Arrangements",
+        "cat": "活动策划"
+    },
+    {
+        "key": "116B90",
+        "zh": "实习申请补充材料",
+        "en": "Internship Application Additional Documents",
+        "subject": "Additional Documents for Summer Internship Application",
+        "cat": "校园学习"
+    },
+    {
+        "key": "3B31B1",
+        "zh": "兼职时间调整申请",
+        "en": "Part-time Work Schedule Adjustment",
+        "subject": "Request to Discuss Work Schedule Adjustment",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "159A9E",
+        "zh": "组织化学期末复习",
+        "en": "Chemistry Final Exam Study Session",
+        "subject": "Invitation to Chemistry Final Exam Study Session",
+        "cat": "活动策划"
+    },
+    {
+        "key": "10EA7D",
+        "zh": "欧洲旅行计划讨论",
+        "en": "Europe Trip Planning Discussion",
+        "subject": "Ideas for Our Europe Trip Itinerary",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "CCA18A",
+        "zh": "烹饪俱乐部会议时间调整请求",
+        "en": "Cooking Club Meeting Schedule Change Request",
+        "subject": "Request Regarding Cooking Club Meeting Schedule",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "4575C0",
+        "zh": "讲座后续及资料咨询",
+        "en": "Lecture Follow-up and Resource Inquiry",
+        "subject": "Inquiry Regarding Environmental Sustainability Lecture",
+        "cat": "校园学习"
+    },
+    {
+        "key": "14A543",
+        "zh": "度假村入住体验反馈",
+        "en": "Resort Stay Experience Feedback",
+        "subject": "Feedback Regarding My Recent Stay at Your Resort",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "CAE2C8",
+        "zh": "餐厅用餐体验及问题反馈",
+        "en": "Restaurant Dining Experience and Issue Feedback",
+        "subject": "Feedback Regarding My Recent Dining Experience",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "A8FB60",
+        "zh": "酒店预订信息更正",
+        "en": "Hotel Booking Correction",
+        "subject": "Correction Needed for Hotel Booking Confirmation",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "7E524B",
+        "zh": "世界历史课程反馈与建议",
+        "en": "World History Course Feedback and Suggestions",
+        "subject": "Feedback and Suggestions for the World History Course",
+        "cat": "校园学习"
+    },
+    {
+        "key": "25B433",
+        "zh": "社区活动策划经验分享",
+        "en": "Sharing Community Event Planning Insights",
+        "subject": "Insights from the Community Event Planning Workshop",
+        "cat": "活动策划"
+    },
+    {
+        "key": "168A08",
+        "zh": "健身房设备维护与改进建议",
+        "en": "Gym Equipment Maintenance and Improvement Suggestion",
+        "subject": "Report on Gym Equipment Maintenance and Improvement Suggestions",
+        "cat": "物品维修"
+    },
+    {
+        "key": "1BA147",
+        "zh": "课堂笔记与重要信息请求",
+        "en": "Class Notes and Important Details Request",
+        "subject": "Request for Class Notes and Information",
+        "cat": "校园学习"
+    },
+    {
+        "key": "2A5979",
+        "zh": "餐厅用餐体验与菜单改进建议",
+        "en": "Restaurant Dining Experience and Menu Improvement Suggestion",
+        "subject": "Feedback on The Garden Bistro Dining Experience and Menu Suggestion",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "1FD900",
+        "zh": "感谢信与推荐信请求",
+        "en": "Thank You and Letter of Recommendation Request",
+        "subject": "Thank You and Request for Letter of Recommendation",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "1371A9",
+        "zh": "期末论文成绩讨论",
+        "en": "Term Paper Grade Discussion",
+        "subject": "Inquiry Regarding Term Paper Grade",
+        "cat": "校园学习"
+    },
+    {
+        "key": "57916F",
+        "zh": "航班取消后续安排咨询",
+        "en": "Flight Cancellation Follow-up and Alternative Arrangements",
+        "subject": "Inquiry Regarding Canceled Flight and Alternative Arrangements",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "27B859",
+        "zh": "邀请一起去公园散步",
+        "en": "Invitation for a Park Walk",
+        "subject": "Invitation to Discover a Beautiful Park This Weekend",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "129EAE",
+        "zh": "宿舍网络故障报告与维修请求",
+        "en": "Dormitory Internet Issue Report and Solution Request",
+        "subject": "Report: Slow and Disconnecting Internet in Dormitory",
+        "cat": "物品维修"
+    },
+    {
+        "key": "3A9DB9",
+        "zh": "新公寓问题报告与解决方案请求",
+        "en": "New Apartment Issues Report and Resolution Request",
+        "subject": "Urgent: Issues Experienced in New Apartment",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "93A9C1",
+        "zh": "公寓供暖系统故障报告",
+        "en": "Apartment Heating System Malfunction Report",
+        "subject": "Urgent: Heating System Malfunction in Apartment",
+        "cat": "物品维修"
+    },
+    {
+        "key": "314AF9",
+        "zh": "宿舍家具问题报告与售后咨询",
+        "en": "Dorm Furniture Issues Report and Customer Service Inquiry",
+        "subject": "Inquiry Regarding Issues with Recently Purchased Dorm Furniture",
+        "cat": "物品维修"
+    },
+    {
+        "key": "392F97",
+        "zh": "职业发展研讨会后续咨询与感谢",
+        "en": "Professional Development Seminar Follow-up and Appreciation",
+        "subject": "Follow-up and Appreciation for the Communication Skills Seminar",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "28FDFD",
+        "zh": "校园新工作入职问题与反馈",
+        "en": "Campus Job Onboarding Issues and Feedback",
+        "subject": "Onboarding Issues and Excitement for New Campus Position",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "3DF684",
+        "zh": "健身课程练习建议与感谢",
+        "en": "Fitness Class Exercise Advice and Appreciation",
+        "subject": "Inquiry and Appreciation for Fitness Class Guidance",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "45A600",
+        "zh": "网上商店订单商品质量问题",
+        "en": "Online Store Order Item Quality Issue",
+        "subject": "Quality Issue with Recent Online Store Order",
+        "cat": "物品维修"
+    },
+    {
+        "key": "605C98",
+        "zh": "会议后续采访请求",
+        "en": "Conference Follow-Up Interview Request",
+        "subject": "Interview Request for Class Article - Following Your Keynote Speech",
+        "cat": "校园学习"
+    },
+    {
+        "key": "8308F6",
+        "zh": "戏剧服装租赁咨询",
+        "en": "Theater Costume Rental Inquiry",
+        "subject": "Inquiry Regarding Costume Rental for University Theater Production",
+        "cat": "活动策划"
+    },
+    {
+        "key": "98267F",
+        "zh": "语言学习研讨会感谢信",
+        "en": "Language Workshop Thank You",
+        "subject": "Thank You for the Helpful Language Learning Workshop",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "35C44A",
+        "zh": "宿舍洗衣房问题报告",
+        "en": "Dorm Laundry Room Issues Report",
+        "subject": "Report on Issues in Dormitory Communal Laundry Room",
+        "cat": "物品维修"
+    },
+    {
+        "key": "E63717",
+        "zh": "办公室打印机故障报告",
+        "en": "Office Printer Malfunction Report",
+        "subject": "Urgent: Office of Admissions Printer Malfunction and Suggested Solution",
+        "cat": "物品维修"
+    },
+    {
+        "key": "309E01",
+        "zh": "气候变化讲座采访请求",
+        "en": "Climate Change Lecture Interview Request",
+        "subject": "Interview Request for University Newspaper Article - Following Your Climate Change Lecture",
+        "cat": "校园学习"
+    },
+    {
+        "key": "49CEBD",
+        "zh": "健身房器械问题反馈",
+        "en": "Gym Equipment Issues Feedback",
+        "subject": "Feedback Regarding Problematic Exercise Equipment at Fitness Zone",
+        "cat": "物品维修"
+    },
+    {
+        "key": "17DB2B",
+        "zh": "度假村环境问题改进建议",
+        "en": "Resort Environmental Improvement Suggestions",
+        "subject": "Suggestions for Environmental Improvements at Sunny Beach Resort",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "18E337",
+        "zh": "参观画廊反馈意见",
+        "en": "Art Gallery Visit Feedback",
+        "subject": "Feedback Regarding My Recent Visit to Art Haven Gallery",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "299A2B",
+        "zh": "环保可持续性讲座后续资源请求",
+        "en": "Environmental Sustainability Lecture Resource Request",
+        "subject": "Request for Additional Resources - Following Environmental Sustainability Lecture",
+        "cat": "校园学习"
+    },
+    {
+        "key": "1E60F9",
+        "zh": "环保组织活动建议",
+        "en": "Environmental Group Event Suggestions",
+        "subject": "Ideas for Upcoming Environmental Awareness Event",
+        "cat": "活动策划"
+    },
+    {
+        "key": "A3B0B3",
+        "zh": "班级团建活动预订咨询",
+        "en": "Class Team-Building Retreat Reservation Inquiry",
+        "subject": "Inquiry Regarding Reservation Details for Class Team-Building Retreat",
+        "cat": "活动策划"
+    },
+    {
+        "key": "13CCC8",
+        "zh": "惊喜生日派对餐厅安排",
+        "en": "Surprise Birthday Party Restaurant Arrangement",
+        "subject": "Inquiry for Surprise Birthday Party Arrangement",
+        "cat": "活动策划"
+    },
+    {
+        "key": "26EE03",
+        "zh": "租车服务体验反馈",
+        "en": "Car Rental Service Feedback",
+        "subject": "Feedback Regarding Recent Car Rental Experience - Customer Service",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "4C2B77",
+        "zh": "学生团体旅游住宿咨询",
+        "en": "Student Group Trip Accommodation Inquiry",
+        "subject": "Inquiry Regarding Accommodation for Student Group Trip",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "1B2074",
+        "zh": "智能手机问题报告与咨询",
+        "en": "Smartphone Issue Report and Inquiry",
+        "subject": "Issue with Recently Purchased Smartphone - Order #[Your Order Number]",
+        "cat": "物品维修"
+    },
+    {
+        "key": "251B92",
+        "zh": "市场调研报告反馈",
+        "en": "Market Research Presentation Feedback",
+        "subject": "Feedback on Your Market Research Presentation",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "753A24",
+        "zh": "班级实地考察旅行社咨询",
+        "en": "Class Field Trip Travel Agency Inquiry",
+        "subject": "Inquiry Regarding Travel Packages for Class Field Trip",
+        "cat": "活动策划"
+    },
+    {
+        "key": "428E49",
+        "zh": "戏剧宣传材料印刷咨询",
+        "en": "Play Promotional Material Printing Inquiry",
+        "subject": "Inquiry Regarding Printing Services for Drama Club Play Promotional Materials",
+        "cat": "活动策划"
+    },
+    {
+        "key": "AE497E",
+        "zh": "笔记本电脑性能问题咨询",
+        "en": "Laptop Performance Issue Inquiry",
+        "subject": "Inquiry Regarding Performance Issues with Recently Purchased Laptop",
+        "cat": "物品维修"
+    },
+    {
+        "key": "6067F0",
+        "zh": "慈善募捐活动策划讨论",
+        "en": "Charity Fundraising Event Planning Discussion",
+        "subject": "Discussing Ideas and Planning for Our Fundraising Event",
+        "cat": "活动策划"
+    },
+    {
+        "key": "39A13A",
+        "zh": "小组项目贡献不均问题",
+        "en": "Group Project Unequal Contribution Issue",
+        "subject": "Concern Regarding Group Project Contribution - [Your Course Name/Project Name]",
+        "cat": "校园学习"
+    },
+    {
+        "key": "AA61A1",
+        "zh": "宿舍家具损坏报告",
+        "en": "Dorm Furniture Damage Report",
+        "subject": "Damaged Furniture Upon Arrival - Order #[Your Order Number]",
+        "cat": "物品维修"
+    },
+    {
+        "key": "112BF3",
+        "zh": "职业招聘会实习项目跟进",
+        "en": "Career Fair Internship Program Follow-Up",
+        "subject": "Following Up on Internship Program - Career Fair [Date]",
+        "cat": "校园学习"
+    },
+    {
+        "key": "F1151C",
+        "zh": "酒店住宿体验反馈与建议",
+        "en": "Hotel Stay Feedback and Suggestions",
+        "subject": "Feedback and Suggestions Regarding My Recent Hotel Stay",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "172B5B",
+        "zh": "遗失物品询问",
+        "en": "Lost Item Inquiry",
+        "subject": "Inquiry About a Lost Jacket After Choir Concert",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "2904C1",
+        "zh": "借阅生物课笔记",
+        "en": "Requesting Biology Lecture Notes",
+        "subject": "Request for Biology Lecture Notes - [Your Name]",
+        "cat": "校园学习"
+    },
+    {
+        "key": "26C6D7",
+        "zh": "提醒参加自然徒步活动",
+        "en": "Reminder for Nature Hike",
+        "subject": "Reminder: Team Building Nature Hike - Don't Miss Out!",
+        "cat": "活动策划"
+    },
+    {
+        "key": "13F92E",
+        "zh": "社区中心体验反馈",
+        "en": "Community Center Feedback",
+        "subject": "Feedback Regarding Your Community Center Visit",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "179F4D",
+        "zh": "酒店客房问题反馈",
+        "en": "Hotel Room Issues Feedback",
+        "subject": "Feedback Regarding Room Condition During My Stay",
+        "cat": "物品维修"
+    },
+    {
+        "key": "15C9DE",
+        "zh": "厨房电器问题报告",
+        "en": "Kitchen Appliance Issue Report",
+        "subject": "Issue With Recently Purchased Kitchen Appliance",
+        "cat": "物品维修"
+    },
+    {
+        "key": "11B143",
+        "zh": "生物课学习求助",
+        "en": "Biology Course Study Assistance Request",
+        "subject": "Request for Assistance Regarding Biology Course Assignments",
+        "cat": "校园学习"
+    },
+    {
+        "key": "4C1225",
+        "zh": "给朋友提供学习和健康建议",
+        "en": "Offering Study and Health Advice to a Friend",
+        "subject": "Checking In and Offering Support - University Workload",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "143E28",
+        "zh": "学习与工作平衡咨询",
+        "en": "Work-Study Balance Consultation",
+        "subject": "Consultation Regarding Balancing Work and Academic Commitments",
+        "cat": "校园学习"
+    },
+    {
+        "key": "30C3CF",
+        "zh": "欧洲旅行计划讨论",
+        "en": "Europe Trip Planning Discussion",
+        "subject": "Europe Trip Ideas - Let's Plan!",
+        "cat": "活动策划"
+    },
+    {
+        "key": "22B975",
+        "zh": "瑜伽课时间调整建议",
+        "en": "Yoga Class Schedule Suggestion",
+        "subject": "Suggestion for Yoga Class Schedule Adjustment",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "491C19",
+        "zh": "慈善活动餐饮服务问题反馈",
+        "en": "Feedback on Charity Event Catering Issues",
+        "subject": "Feedback Regarding Catering Service at Recent Charity Event",
+        "cat": "体验反馈"
+    },
+    {
+        "key": "110C29",
+        "zh": "瑜伽练习调整建议咨询",
+        "en": "Yoga Practice Modification Advice",
+        "subject": "Inquiry Regarding Yoga Practice Modification for Back Pain",
+        "cat": "服务咨询"
+    },
+    {
+        "key": "13578F",
+        "zh": "表彰研究团队成员并分享经验",
+        "en": "Acknowledging Team Member's Contribution and Suggesting Strategy Sharing",
+        "subject": "Appreciation for Your Outstanding Contribution and Strategy Sharing",
+        "cat": "其他与综合"
+    },
+    {
+        "key": "30487F",
+        "zh": "借阅图书损坏事宜",
+        "en": "Damaged Library Book Inquiry",
+        "subject": "Inquiry Regarding Damaged University Library Book",
+        "cat": "物品维修"
+    },
+    {
+        "key": "5BC71C",
+        "zh": "音乐会音质反馈",
+        "en": "Orchestra Concert Sound Quality Feedback",
+        "subject": "Feedback on Sound Quality at University Orchestra Concert",
+        "cat": "体验反馈"
+    }
+]
