@@ -736,21 +736,30 @@
             return Math.abs(hash).toString(16).toUpperCase().padStart(6, '0').substring(0, 6);
         }
         
-        // 核心修复：To 字段首字母大写转换函数
+// 核心修复：To 字段首字母大写转换函数
         function toTitleCase(str) {
             if (!str) return "";
             return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
         }
 
-        let isProcessingAI = false; // 新增：全局状态锁
+        // ==========================================
+        // 🔍 DEBUG 探针区域开始
+        // ==========================================
+        let isProcessingAI = false; 
+        let debugThreadCounter = 0; // 用于给每个并发请求编号
 
         async function processAndInitialize() {
-            // 新增：防抖拦截，彻底解决并发触发 429 的问题
+            let currentThreadId = ++debugThreadCounter; // 分配线程 ID
+            console.log(`🟡 [线程 ${currentThreadId}] 尝试启动！当前全局锁状态: isProcessingAI = ${isProcessingAI}`);
+
+            // 严密防抖拦截
             if (isProcessingAI) {
-                console.warn("已有正在运行的题库初始化进程，拦截并发请求。");
+                console.error(`🛑 [线程 ${currentThreadId}] 拦截成功！已被挡在门外，因为前面有线程正在运行。`);
                 return;
             }
-            isProcessingAI = true; // 上锁
+            
+            isProcessingAI = true; // 强制上锁
+            console.log(`🟢 [线程 ${currentThreadId}] 成功获取锁！开始执行解析任务...`);
 
             const uploadKey = document.getElementById("upload-api-key").value.trim();
             if (uploadKey) {
@@ -769,21 +778,15 @@
 
                 for (let i = 0; i < lines.length; i++) {
                     const line = lines[i];
-                    if (line.startsWith("新题") || line.endsWith("套") || /^\d+$/.test(line) || (line.startsWith("第") && line.endsWith("套"))) {
-                        continue;
-                    }
+                    if (line.startsWith("新题") || line.endsWith("套") || /^\d+$/.test(line) || (line.startsWith("第") && line.endsWith("套"))) continue;
                     
-                    // 核心修复：完美兼容 data: 和 date:
                     if (line.startsWith("data:") || line.startsWith("date:")) {
                         if (currentQ && currentQ.question) parsed.push(currentQ);
                         currentQ = { date: line.replace(/^(data|date):/, "").trim(), question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
                         lastField = null;
                         continue;
                     }
-                    
-                    if (!currentQ) {
-                        currentQ = { date: "未知日期", question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
-                    }
+                    if (!currentQ) currentQ = { date: "未知日期", question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
                     
                     if (line.startsWith("question:")) { currentQ.question = line.replace("question:", "").trim(); lastField = "question"; }
                     else if (line.startsWith("instruction:")) { currentQ.instruction = line.replace("instruction:", "").trim(); lastField = "instruction"; }
@@ -791,9 +794,7 @@
                     else if (line.startsWith("p2:")) { currentQ.p2 = line.replace("p2:", "").trim(); lastField = "p2"; }
                     else if (line.startsWith("p3:")) { currentQ.p3 = line.replace("p3:", "").trim(); lastField = "p3"; }
                     else if (line.startsWith("to:")) { currentQ.to = line.replace("to:", "").trim(); lastField = "to"; }
-                    else if (lastField) {
-                        currentQ[lastField] += " " + line;
-                    }
+                    else if (lastField) currentQ[lastField] += " " + line;
                 }
                 if (currentQ && currentQ.question) parsed.push(currentQ);
             });
@@ -812,19 +813,10 @@
                 let list = hashGroups[hash];
                 let dates = Array.from(new Set(list.map(item => item.date))).sort();
                 let base = list[list.length - 1];
-                
-                let qObj = {
-                    id: index++, hashKey: hash, dates: dates,
-                    question: base.question,
-                    instruction: base.instruction,
-                    p1: base.p1, p2: base.p2, p3: base.p3, to: base.to,
-                    frequency: dates.length
-                };
+                let qObj = { id: index++, hashKey: hash, dates: dates, question: base.question, instruction: base.instruction, p1: base.p1, p2: base.p2, p3: base.p3, to: base.to, frequency: dates.length };
 
                 if (dictData[hash]) {
-                    qObj.titleZh = dictData[hash].zh;
-                    qObj.titleEn = dictData[hash].en;
-                    qObj.subject = dictData[hash].subject || "";
+                    qObj.titleZh = dictData[hash].zh; qObj.titleEn = dictData[hash].en; qObj.subject = dictData[hash].subject || "";
                     qObj.cat = FIXED_CATEGORIES.some(c => c.name === dictData[hash].cat) ? dictData[hash].cat : "其他与综合";
                     globalQuestions.push(qObj);
                 } else {
@@ -833,31 +825,30 @@
             }
 
             const apiKey = localStorage.getItem("toefl_gemini_key");
-            
-            // 核心修复：无论有没有 API Key，先给所有缺失题目分配默认值，保证系统能瞬间进入
             let counter = 1;
             missingQs.forEach(q => {
-                q.titleZh = `Email 综合练习 ${counter++}`;
-                q.titleEn = "Email Writing Task";
-                q.subject = "";
-                q.cat = "其他与综合";
-                globalQuestions.push(q); // 先塞进全局数组
+                q.titleZh = `Email 综合练习 ${counter++}`; q.titleEn = "Email Writing Task"; q.subject = ""; q.cat = "其他与综合";
+                globalQuestions.push(q);
             });
 
-            // 核心修复：只有在用户明确保存了 API Key 的情况下，才触发 AI 提取
             if (missingQs.length > 0 && apiKey) {
                 document.getElementById('ai-loading').classList.remove('hidden');
-                const batchSize = 10; // 核心修复：顶格跑满，每批 10 个
+                const batchSize = 10;
                 
+                console.log(`🚀 [线程 ${currentThreadId}] 准备发送 API 请求，总计缺失 ${missingQs.length} 题，分为 ${Math.ceil(missingQs.length/batchSize)} 批次。`);
+
                 for (let i = 0; i < missingQs.length; i += batchSize) {
                     let success = false;
                     let retryCount = 0;
                     
                     while (!success && retryCount < 2) {
-                        document.getElementById('ai-loading-text').textContent = `正在调用 Gemini API 处理第 ${Math.floor(i/batchSize)+1} 批，共 ${Math.ceil(missingQs.length/batchSize)} 批...`;
+                        console.log(`➡️ [线程 ${currentThreadId}] 正在发送第 ${i/batchSize + 1} 批次请求 (索引 ${i} - ${i + batchSize})...`);
+                        
+                        document.getElementById('ai-loading-text').textContent = `正在调用 Gemini API 处理第 ${Math.floor(i/batchSize)+1} 批...`;
                         const batch = missingQs.slice(i, i + batchSize);
                         const promptData = batch.map(q => ({ id: q.hashKey, question: q.question, instruction: q.instruction }));
                         
+                        // 原封不动使用你的 prompt
                         const prompt = `You are an expert English test designer. I will provide you with a list of email writing tasks. 
 For each task, based on the 'question' and 'instruction', you need to generate FOUR things:
 1. titleZh: A concise Chinese title for the task card (e.g., "健身房设备更新建议").
@@ -871,22 +862,22 @@ Input: ${JSON.stringify(promptData)}`;
                             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ 
-                                    contents: [{ parts: [{ text: prompt }] }],
-                                    generationConfig: { responseMimeType: "application/json" }
-                                })
+                                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { responseMimeType: "application/json" } })
                             });
                             
-                            // 核心修复：429 智能重试机制
+                            console.log(`📨 [线程 ${currentThreadId}] 第 ${i/batchSize + 1} 批次收到响应，HTTP 状态码: ${response.status}`);
+
                             if (!response.ok) {
                                 if (response.status === 429) {
-                                    document.getElementById('ai-loading-text').textContent = `触发频率限制 (429)，等待 60 秒后自动重试 (第 ${retryCount + 1} 次)...`;
+                                    console.warn(`⚠️ [线程 ${currentThreadId}] 遭遇 429 报错！准备休眠 60 秒...`);
+                                    document.getElementById('ai-loading-text').textContent = `触发频率限制 (429)，等待 60 秒后自动重试...`;
                                     await new Promise(r => setTimeout(r, 60000));
                                     retryCount++;
-                                    continue; // 重新进入 while 循环
+                                    console.log(`⏰ [线程 ${currentThreadId}] 休眠结束，发起重试...`);
+                                    continue;
                                 } else {
-                                    console.error(`API Error: ${response.status}`);
-                                    break; // 其他错误直接跳过该批次
+                                    console.error(`❌ [线程 ${currentThreadId}] API Error: ${response.status}`);
+                                    break;
                                 }
                             }
                             
@@ -898,22 +889,23 @@ Input: ${JSON.stringify(promptData)}`;
                             results.forEach(res => {
                                 let q = globalQuestions.find(x => x.hashKey === res.id);
                                 if (q) {
-                                    q.titleZh = res.titleZh;
-                                    q.titleEn = res.titleEn;
-                                    q.subject = res.subject || "";
+                                    q.titleZh = res.titleZh; q.titleEn = res.titleEn; q.subject = res.subject || "";
                                     q.cat = FIXED_CATEGORIES.some(c => c.name === res.cat) ? res.cat : "其他与综合";
                                     dictData[q.hashKey] = { key: q.hashKey, zh: q.titleZh, en: q.titleEn, subject: q.subject, cat: q.cat };
                                     newDictEntriesCount++;
                                 }
                             });
-                            success = true; // 成功解析，跳出 while 循环
+                            success = true;
+                            console.log(`✅ [线程 ${currentThreadId}] 第 ${i/batchSize + 1} 批次解析成功！`);
                         } catch (e) {
-                            console.error("AI Generation Error:", e);
-                            break; // JSON 解析失败等小问题，跳过该批次
+                            console.error(`❌ [线程 ${currentThreadId}] JSON 解析或网络错误:`, e);
+                            break; 
                         }
                     }
-                    // 核心修复：批次间隔 4 秒，完美符合 15 RPM 限制
-                    if (i + batchSize < missingQs.length) await new Promise(r => setTimeout(r, 6000));
+                    if (i + batchSize < missingQs.length) {
+                        console.log(`⏳ [线程 ${currentThreadId}] 批次完成，按规定休眠 8 秒...`);
+                        await new Promise(r => setTimeout(r, 8000));
+                    }
                 }
                 document.getElementById('ai-loading').classList.add('hidden');
             }
@@ -921,8 +913,10 @@ Input: ${JSON.stringify(promptData)}`;
             document.getElementById("unique-q-count").textContent = globalQuestions.length;
             document.getElementById("view-upload").classList.add("hidden");
             document.getElementById("main-header").classList.remove("hidden");
-
-            isProcessingAI = false; // 新增：执行完毕后解锁
+            
+            // 彻底结束，释放锁
+            isProcessingAI = false; 
+            console.log(`🔓 [线程 ${currentThreadId}] 任务全部结束，全局锁已释放。`);
             navigateTo('home');
         }
 
