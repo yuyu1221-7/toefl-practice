@@ -743,113 +743,114 @@
         }
 
         // ==========================================
-        // 🔍 DEBUG 探针区域开始
+        // 🔒 全局状态锁与防抖探针
         // ==========================================
         let isProcessingAI = false; 
-        let debugThreadCounter = 0; // 用于给每个并发请求编号
 
         async function processAndInitialize() {
-            let currentThreadId = ++debugThreadCounter; // 分配线程 ID
-            console.log(`🟡 [线程 ${currentThreadId}] 尝试启动！当前全局锁状态: isProcessingAI = ${isProcessingAI}`);
+            console.log("🚀 [探针] ENTER processAndInitialize - 尝试进入初始化流程");
 
-            // 严密防抖拦截
             if (isProcessingAI) {
-                console.error(`🛑 [线程 ${currentThreadId}] 拦截成功！已被挡在门外，因为前面有线程正在运行。`);
+                console.warn("🛑 [探针] 拦截：检测到已有未结束的初始化进程在运行，拒绝重复进入！");
                 return;
             }
             
-            isProcessingAI = true; // 强制上锁
-            console.log(`🟢 [线程 ${currentThreadId}] 成功获取锁！开始执行解析任务...`);
+            isProcessingAI = true; // 上锁
+            console.log("🟢 [探针] 成功获取全局锁，开始执行解析...");
 
-            const uploadKey = document.getElementById("upload-api-key").value.trim();
-            if (uploadKey) {
-                localStorage.setItem("toefl_gemini_key", uploadKey);
-                document.getElementById("input-api-key").value = uploadKey;
-            }
+            try {
+                const uploadKey = document.getElementById("upload-api-key").value.trim();
+                if (uploadKey) {
+                    localStorage.setItem("toefl_gemini_key", uploadKey);
+                    document.getElementById("input-api-key").value = uploadKey;
+                }
 
-            const blocks = rawDmdText.split(/----------------------/);
-            let parsed = [];
-            blocks.forEach(block => {
-                const lines = block.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-                if (lines.length === 0) return;
-                
-                let currentQ = null;
-                let lastField = null;
-
-                for (let i = 0; i < lines.length; i++) {
-                    const line = lines[i];
-                    if (line.startsWith("新题") || line.endsWith("套") || /^\d+$/.test(line) || (line.startsWith("第") && line.endsWith("套"))) continue;
+                const blocks = rawDmdText.split(/----------------------/);
+                let parsed = [];
+                blocks.forEach(block => {
+                    const lines = block.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+                    if (lines.length === 0) return;
                     
-                    if (line.startsWith("data:") || line.startsWith("date:")) {
-                        if (currentQ && currentQ.question) parsed.push(currentQ);
-                        currentQ = { date: line.replace(/^(data|date):/, "").trim(), question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
-                        lastField = null;
-                        continue;
+                    let currentQ = null;
+                    let lastField = null;
+
+                    for (let i = 0; i < lines.length; i++) {
+                        const line = lines[i];
+                        if (line.startsWith("新题") || line.endsWith("套") || /^\d+$/.test(line) || (line.startsWith("第") && line.endsWith("套"))) continue;
+                        
+                        if (line.startsWith("data:") || line.startsWith("date:")) {
+                            if (currentQ && currentQ.question) parsed.push(currentQ);
+                            currentQ = { date: line.replace(/^(data|date):/, "").trim(), question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
+                            lastField = null;
+                            continue;
+                        }
+                        if (!currentQ) currentQ = { date: "未知日期", question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
+                        
+                        if (line.startsWith("question:")) { currentQ.question = line.replace("question:", "").trim(); lastField = "question"; }
+                        else if (line.startsWith("instruction:")) { currentQ.instruction = line.replace("instruction:", "").trim(); lastField = "instruction"; }
+                        else if (line.startsWith("p1:")) { currentQ.p1 = line.replace("p1:", "").trim(); lastField = "p1"; }
+                        else if (line.startsWith("p2:")) { currentQ.p2 = line.replace("p2:", "").trim(); lastField = "p2"; }
+                        else if (line.startsWith("p3:")) { currentQ.p3 = line.replace("p3:", "").trim(); lastField = "p3"; }
+                        else if (line.startsWith("to:")) { currentQ.to = line.replace("to:", "").trim(); lastField = "to"; }
+                        else if (lastField) currentQ[lastField] += " " + line;
                     }
-                    if (!currentQ) currentQ = { date: "未知日期", question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
-                    
-                    if (line.startsWith("question:")) { currentQ.question = line.replace("question:", "").trim(); lastField = "question"; }
-                    else if (line.startsWith("instruction:")) { currentQ.instruction = line.replace("instruction:", "").trim(); lastField = "instruction"; }
-                    else if (line.startsWith("p1:")) { currentQ.p1 = line.replace("p1:", "").trim(); lastField = "p1"; }
-                    else if (line.startsWith("p2:")) { currentQ.p2 = line.replace("p2:", "").trim(); lastField = "p2"; }
-                    else if (line.startsWith("p3:")) { currentQ.p3 = line.replace("p3:", "").trim(); lastField = "p3"; }
-                    else if (line.startsWith("to:")) { currentQ.to = line.replace("to:", "").trim(); lastField = "to"; }
-                    else if (lastField) currentQ[lastField] += " " + line;
+                    if (currentQ && currentQ.question) parsed.push(currentQ);
+                });
+
+                let hashGroups = {};
+                parsed.forEach(q => {
+                    let hash = computeHash(q.question);
+                    if (!hashGroups[hash]) hashGroups[hash] = [];
+                    hashGroups[hash].push(q);
+                });
+
+                let index = 1;
+                let missingQs = [];
+
+                for (let hash in hashGroups) {
+                    let list = hashGroups[hash];
+                    let dates = Array.from(new Set(list.map(item => item.date))).sort();
+                    let base = list[list.length - 1];
+                    let qObj = { id: index++, hashKey: hash, dates: dates, question: base.question, instruction: base.instruction, p1: base.p1, p2: base.p2, p3: base.p3, to: base.to, frequency: dates.length };
+
+                    if (dictData[hash]) {
+                        qObj.titleZh = dictData[hash].zh; qObj.titleEn = dictData[hash].en; qObj.subject = dictData[hash].subject || "";
+                        qObj.cat = FIXED_CATEGORIES.some(c => c.name === dictData[hash].cat) ? dictData[hash].cat : "其他与综合";
+                        globalQuestions.push(qObj);
+                    } else {
+                        missingQs.push(qObj);
+                    }
                 }
-                if (currentQ && currentQ.question) parsed.push(currentQ);
-            });
 
-            let hashGroups = {};
-            parsed.forEach(q => {
-                let hash = computeHash(q.question);
-                if (!hashGroups[hash]) hashGroups[hash] = [];
-                hashGroups[hash].push(q);
-            });
+                const apiKey = localStorage.getItem("toefl_gemini_key");
+                let counter = 1;
+                missingQs.forEach(q => {
+                    q.titleZh = `Email 综合练习 ${counter++}`; q.titleEn = "Email Writing Task"; q.subject = ""; q.cat = "其他与综合";
+                    globalQuestions.push(q);
+                });
 
-            let index = 1;
-            let missingQs = [];
-
-            for (let hash in hashGroups) {
-                let list = hashGroups[hash];
-                let dates = Array.from(new Set(list.map(item => item.date))).sort();
-                let base = list[list.length - 1];
-                let qObj = { id: index++, hashKey: hash, dates: dates, question: base.question, instruction: base.instruction, p1: base.p1, p2: base.p2, p3: base.p3, to: base.to, frequency: dates.length };
-
-                if (dictData[hash]) {
-                    qObj.titleZh = dictData[hash].zh; qObj.titleEn = dictData[hash].en; qObj.subject = dictData[hash].subject || "";
-                    qObj.cat = FIXED_CATEGORIES.some(c => c.name === dictData[hash].cat) ? dictData[hash].cat : "其他与综合";
-                    globalQuestions.push(qObj);
-                } else {
-                    missingQs.push(qObj);
-                }
-            }
-
-            const apiKey = localStorage.getItem("toefl_gemini_key");
-            let counter = 1;
-            missingQs.forEach(q => {
-                q.titleZh = `Email 综合练习 ${counter++}`; q.titleEn = "Email Writing Task"; q.subject = ""; q.cat = "其他与综合";
-                globalQuestions.push(q);
-            });
-
-            if (missingQs.length > 0 && apiKey) {
-                document.getElementById('ai-loading').classList.remove('hidden');
-                const batchSize = 8;
-                
-                console.log(`🚀 [线程 ${currentThreadId}] 准备发送 API 请求，总计缺失 ${missingQs.length} 题，分为 ${Math.ceil(missingQs.length/batchSize)} 批次。`);
-
-                for (let i = 0; i < missingQs.length; i += batchSize) {
-                    let success = false;
-                    let retryCount = 0;
+                // ==========================================
+                // 🤖 AI 智能自愈提取核心块
+                // ==========================================
+                if (missingQs.length > 0 && apiKey) {
+                    document.getElementById('ai-loading').classList.remove('hidden');
                     
-                    while (!success && retryCount < 2) {
-                        console.log(`➡️ [线程 ${currentThreadId}] 正在发送第 ${i/batchSize + 1} 批次请求 (索引 ${i} - ${i + batchSize})...`);
+                    // 💡 核心调整：设置 batchSize 为 25，总计 91 题只需 4 次请求，轻松绕过 20次/日 的限制！
+                    const batchSize = 25; 
+                    console.log(`📊 [大盘] 共有 ${missingQs.length} 道新题待处理，切分为 ${Math.ceil(missingQs.length / batchSize)} 个大批次进行低频请求。`);
+
+                    for (let i = 0; i < missingQs.length; i += batchSize) {
+                        let success = false;
+                        let retryCount = 0;
                         
-                        document.getElementById('ai-loading-text').textContent = `正在调用 Gemini API 处理第 ${Math.floor(i/batchSize)+1} 批...`;
-                        const batch = missingQs.slice(i, i + batchSize);
-                        const promptData = batch.map(q => ({ id: q.hashKey, question: q.question, instruction: q.instruction }));
-                        
-                        // 原封不动使用你的 prompt
-                        const prompt = `You are an expert English test designer. I will provide you with a list of email writing tasks. 
+                        while (!success) {
+                            let currentBatchIndex = Math.floor(i / batchSize) + 1;
+                            document.getElementById('ai-loading-text').textContent = `AI 正在处理第 ${currentBatchIndex} / ${Math.ceil(missingQs.length / batchSize)} 批任务...`;
+                            
+                            const batch = missingQs.slice(i, i + batchSize);
+                            const promptData = batch.map(q => ({ id: q.hashKey, question: q.question, instruction: q.instruction }));
+                            
+                            const prompt = `You are an expert English test designer. I will provide you with a list of email writing tasks. 
 For each task, based on the 'question' and 'instruction', you need to generate FOUR things:
 1. titleZh: A concise Chinese title for the task card (e.g., "健身房设备更新建议").
 2. titleEn: A concise English title for the task card (e.g., "Gym Equipment Suggestion").
@@ -858,77 +859,92 @@ For each task, based on the 'question' and 'instruction', you need to generate F
 Return ONLY a valid JSON array matching the input order. Format: [{"id": "hash", "titleZh": "...", "titleEn": "...", "subject": "...", "cat": "..."}]
 Input: ${JSON.stringify(promptData)}`;
 
-                        try {
-                            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { responseMimeType: "application/json" } })
-                            });
-                            
-                            console.log(`📨 [线程 ${currentThreadId}] 第 ${i/batchSize + 1} 批次收到响应，HTTP 状态码: ${response.status}`);
+                            console.log(`🔤 [批次 ${currentBatchIndex}] 发送请求，包含 ${batch.length} 道题。`);
 
-                            // 🔍 智能报错全量透传探针
-                            if (!response.ok) {
-                                const errorText = await response.text(); // 一次性取出全量原始返回体
+                            try {
+                                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ 
+                                        contents: [{ parts: [{ text: prompt }] }],
+                                        generationConfig: { responseMimeType: "application/json" }
+                                    })
+                                });
                                 
-                                console.error(`❌ [API 响应异常] HTTP 状态码: ${response.status}`);
-                                console.error("📋 [Google AI Studio 返回体原文]:\n", errorText);
-                                
-                                // 尝试将其格式化为标准的 JSON 对象输出，方便在控制台里展开查看层级
-                                try {
-                                    const errorJson = JSON.parse(errorText);
-                                    console.dir(errorJson);
-                                } catch (jsonErr) {
-                                    console.warn("返回体非标准 JSON 格式，已在上方打印原文。");
+                                // 🔍 429 智能读取延迟自愈
+                                if (!response.ok) {
+                                    if (response.status === 429) {
+                                        const errorText = await response.text();
+                                        let delaySeconds = 60; // 默认休眠兜底时间
+                                        
+                                        try {
+                                            const errorJson = JSON.parse(errorText);
+                                            // 精准提取 Google 吐出来的 retryDelay (例如 "54s")
+                                            const retryInfo = errorJson.error.details.find(d => d['@type'] === 'type.googleapis.com/google.rpc.RetryInfo');
+                                            if (retryInfo && retryInfo.retryDelay) {
+                                                delaySeconds = parseInt(retryInfo.retryDelay) || 60;
+                                            }
+                                        } catch(e) {}
+                                        
+                                        console.warn(`⚠️ [配额熔断] 遇到 429 限制。Google 要求休眠 ${delaySeconds} 秒。程序进入自动挂起...`);
+                                        
+                                        // 倒计时提示
+                                        for (let s = delaySeconds; s > 0; s--) {
+                                            document.getElementById('ai-loading-text').textContent = `触发额度限制，系统正在防洪避让，将在 ${s} 秒后自动重试...`;
+                                            await new Promise(r => setTimeout(r, 1000));
+                                        }
+                                        
+                                        retryCount++;
+                                        continue; // 睡醒了，重新尝试当前批次
+                                    } else {
+                                        console.error(`❌ Non-429 Error: ${response.status}`);
+                                        break; 
+                                    }
                                 }
+                                
+                                const data = await response.json();
+                                let text = data.candidates[0].content.parts[0].text;
+                                text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+                                const results = JSON.parse(text);
+                                
+                                results.forEach(res => {
+                                    let q = globalQuestions.find(x => x.hashKey === res.id);
+                                    if (q) {
+                                        q.titleZh = res.titleZh; q.titleEn = res.titleEn; q.subject = res.subject || "";
+                                        q.cat = FIXED_CATEGORIES.some(c => c.name === res.cat) ? res.cat : "其他与综合";
+                                        dictData[q.hashKey] = { key: q.hashKey, zh: q.titleZh, en: q.titleEn, subject: q.subject, cat: q.cat };
+                                        newDictEntriesCount++;
+                                    }
+                                });
 
-                                if (response.status === 429) {
-                                    document.getElementById('ai-loading-text').textContent = `已捕获 429 原始细节，请查看 F12 控制台 Log...`;
-                                    
-                                    // 抛出带有完整原文的错误，直接震荡中断循环，防止盲目进行下一次无效重试
-                                    throw new Error(`[Google API 429 熔断断点] 详细原文: ${errorText}`);
-                                } else {
-                                    break; // 其他非 429 错误直接跳出
-                                }
+                                console.log(`✨ [成功] 批次 ${currentBatchIndex} 提取并同步成功。`);
+                                success = true; 
+                                
+                            } catch (e) {
+                                console.error(`❌ [解析异常] 批次 ${currentBatchIndex} 失败:`, e);
+                                break; 
                             }
-                            
-                            const data = await response.json();
-                            let text = data.candidates[0].content.parts[0].text;
-                            text = text.replace(/```json/g, '').replace(/```/g, '').trim();
-                            const results = JSON.parse(text);
-                            
-                            results.forEach(res => {
-                                let q = globalQuestions.find(x => x.hashKey === res.id);
-                                if (q) {
-                                    q.titleZh = res.titleZh; q.titleEn = res.titleEn; q.subject = res.subject || "";
-                                    q.cat = FIXED_CATEGORIES.some(c => c.name === res.cat) ? res.cat : "其他与综合";
-                                    dictData[q.hashKey] = { key: q.hashKey, zh: q.titleZh, en: q.titleEn, subject: q.subject, cat: q.cat };
-                                    newDictEntriesCount++;
-                                }
-                            });
-                            success = true;
-                            console.log(`✅ [线程 ${currentThreadId}] 第 ${i/batchSize + 1} 批次解析成功！`);
-                        } catch (e) {
-                            console.error(`❌ [线程 ${currentThreadId}] JSON 解析或网络错误:`, e);
-                            break; 
+                        }
+
+                        if (i + batchSize < missingQs.length) {
+                            console.log(`⏳ 强制高稳冷却 6 秒...`);
+                            await new Promise(r => setTimeout(r, 61000));
                         }
                     }
-                    if (i + batchSize < missingQs.length) {
-                        console.log(`⏳ [线程 ${currentThreadId}] 批次完成，按规定休眠 8 秒...`);
-                        await new Promise(r => setTimeout(r, 8000));
-                    }
+                    document.getElementById('ai-loading').classList.add('hidden');
                 }
-                document.getElementById('ai-loading').classList.add('hidden');
-            }
 
-            document.getElementById("unique-q-count").textContent = globalQuestions.length;
-            document.getElementById("view-upload").classList.add("hidden");
-            document.getElementById("main-header").classList.remove("hidden");
-            
-            // 彻底结束，释放锁
-            isProcessingAI = false; 
-            console.log(`🔓 [线程 ${currentThreadId}] 任务全部结束，全局锁已释放。`);
-            navigateTo('home');
+                document.getElementById("unique-q-count").textContent = globalQuestions.length;
+                document.getElementById("view-upload").classList.add("hidden");
+                document.getElementById("main-header").classList.remove("hidden");
+                navigateTo('home');
+
+            } catch (globalError) {
+                console.error("🚨 全局崩溃", globalError);
+            } finally {
+                isProcessingAI = false; 
+                console.log("🔓 全局锁在 finally 中安全释放。");
+            }
         }
 
         // ==========================================
