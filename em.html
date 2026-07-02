@@ -867,17 +867,28 @@ Input: ${JSON.stringify(promptData)}`;
                             
                             console.log(`📨 [线程 ${currentThreadId}] 第 ${i/batchSize + 1} 批次收到响应，HTTP 状态码: ${response.status}`);
 
+                            // 🔍 智能报错全量透传探针
                             if (!response.ok) {
+                                const errorText = await response.text(); // 一次性取出全量原始返回体
+                                
+                                console.error(`❌ [API 响应异常] HTTP 状态码: ${response.status}`);
+                                console.error("📋 [Google AI Studio 返回体原文]:\n", errorText);
+                                
+                                // 尝试将其格式化为标准的 JSON 对象输出，方便在控制台里展开查看层级
+                                try {
+                                    const errorJson = JSON.parse(errorText);
+                                    console.dir(errorJson);
+                                } catch (jsonErr) {
+                                    console.warn("返回体非标准 JSON 格式，已在上方打印原文。");
+                                }
+
                                 if (response.status === 429) {
-                                    console.warn(`⚠️ [线程 ${currentThreadId}] 遭遇 429 报错！准备休眠 60 秒...`);
-                                    document.getElementById('ai-loading-text').textContent = `触发频率限制 (429)，等待 60 秒后自动重试...`;
-                                    await new Promise(r => setTimeout(r, 60000));
-                                    retryCount++;
-                                    console.log(`⏰ [线程 ${currentThreadId}] 休眠结束，发起重试...`);
-                                    continue;
+                                    document.getElementById('ai-loading-text').textContent = `已捕获 429 原始细节，请查看 F12 控制台 Log...`;
+                                    
+                                    // 抛出带有完整原文的错误，直接震荡中断循环，防止盲目进行下一次无效重试
+                                    throw new Error(`[Google API 429 熔断断点] 详细原文: ${errorText}`);
                                 } else {
-                                    console.error(`❌ [线程 ${currentThreadId}] API Error: ${response.status}`);
-                                    break;
+                                    break; // 其他非 429 错误直接跳出
                                 }
                             }
                             
