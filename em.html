@@ -928,7 +928,7 @@ Input: ${JSON.stringify(promptData)}`;
 
                         if (i + batchSize < missingQs.length) {
                             console.log(`⏳ 强制高稳冷却 6 秒...`);
-                            await new Promise(r => setTimeout(r, 61000));
+                            await new Promise(r => setTimeout(r, 6000));
                         }
                     }
                     document.getElementById('ai-loading').classList.add('hidden');
