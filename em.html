@@ -1637,7 +1637,7 @@ ${r.response}
             const blob = new Blob([JSON.stringify(arr, null, 4)], { type: "application/json" });
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
-            link.download = `title.json`;
+            link.download = `title2.json`;
             link.click();
             alert(`本次新加了 ${newDictEntriesCount} 个词条，导出成功！`);
             newDictEntriesCount = 0; 
