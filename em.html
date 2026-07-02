@@ -833,7 +833,7 @@
 
             if (missingQs.length > 0 && apiKey) {
                 document.getElementById('ai-loading').classList.remove('hidden');
-                const batchSize = 100;
+                const batchSize = 8;
                 
                 console.log(`🚀 [线程 ${currentThreadId}] 准备发送 API 请求，总计缺失 ${missingQs.length} 题，分为 ${Math.ceil(missingQs.length/batchSize)} 批次。`);
 
