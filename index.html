@@ -808,7 +808,9 @@
             mockTimerInterval: null,
             mockSeconds: 0,
             isSubmitting: false,
-            reviewMockData: null 
+            reviewMockData: null,
+            highlightKeyword: '',  // 新增：保存当前搜索词
+            searchMode: 'hybrid'   // 新增：保存当前搜索模式
         };
 
         let activeQuestionId = null; 
@@ -1762,49 +1764,46 @@
                 return; 
             }
 
-            // 如果是 AI 模式，拦截并走 AI 逻辑
             if (mode === 'ai') {
                 executeAISearch(keyword);
                 return;
             }
 
-            // --- 以下为优化的本地搜索逻辑 ---
             aiContainer.classList.add('hidden');
             resultContainer.classList.remove('hidden');
             document.getElementById('search-result-count').textContent = '搜索中...';
 
             const lowerKeyword = keyword.toLowerCase();
-            const noSpaceKeyword = lowerKeyword.replace(/\s+/g, '');
-            const tolerantKeyword = noSpaceKeyword.replace(/[ae]/g, '[ae]');
-            const typoRegex = new RegExp(tolerantKeyword, 'i');
-            const searchTerms = lowerKeyword.split(/\s+/);
 
-            // 智能识别：是否为 Hash (6位十六进制) 或 日期 (包含点或数字)
-            const isHashSearch = /^[a-f0-9]{6}$/i.test(noSpaceKeyword);
-            const isDateSearch = /^\d{4}\.\d{1,2}/.test(noSpaceKeyword) || keyword.includes('未知');
+            // 智能识别：是否为 Hash (6位十六进制) 或 日期
+            const isHashSearch = /^[a-f0-9]{6}$/i.test(keyword.replace(/\s+/g, ''));
+            const isDateSearch = /^\d{4}\.\d{1,2}/.test(keyword) || keyword.includes('未知');
 
             const filtered = globalQuestions.filter(q => {
-                // 1. Hash 绝对匹配优先
-                if (isHashSearch && q.hashKey && q.hashKey.toLowerCase() === noSpaceKeyword) return true;
-                // 2. 日期匹配优先
-                if (isDateSearch && q.dates.some(d => d.includes(noSpaceKeyword))) return true;
+                if (isHashSearch && q.hashKey && q.hashKey.toLowerCase() === keyword.replace(/\s+/g, '').toLowerCase()) return true;
+                if (isDateSearch && q.dates.some(d => d.includes(keyword.replace(/\s+/g, '')))) return true;
 
+                // 还原 Ctrl+F 体验：保留空格的纯文本进行精确子串匹配
                 const rawText = q.text.replace(/\[.*?\]/g, '').replace(/<br>/g, ' ').toLowerCase();
-                const noSpaceText = rawText.replace(/\s+/g, '');
-                const blanks = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)].map(m => m[1]+m[2]+m[3]); 
+                const blanks = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)]; 
                 
                 let matchText = false, matchAnswer = false;
 
                 if (mode === 'text' || mode === 'hybrid') {
-                    if (noSpaceText.includes(noSpaceKeyword)) matchText = true;
-                    else if (typoRegex.test(noSpaceText)) matchText = true;
-                    else matchText = searchTerms.every(term => rawText.includes(term) || q.titleZh.includes(term) || q.titleEn.toLowerCase().includes(term));
+                    // 像 Ctrl+F 一样直接进行连续字符串匹配
+                    if (rawText.includes(lowerKeyword) || 
+                        q.titleZh.includes(keyword) || 
+                        q.titleEn.toLowerCase().includes(lowerKeyword)) {
+                        matchText = true;
+                    }
                 }
 
                 if (mode === 'answer' || mode === 'hybrid') {
-                    matchAnswer = blanks.some(b => {
-                        const noSpaceB = b.toLowerCase().replace(/\s+/g, '');
-                        return noSpaceB === noSpaceKeyword || typoRegex.test(noSpaceB) || searchTerms.every(term => fuzzyMatch(b, term));
+                    matchAnswer = blanks.some(m => {
+                        const ans = m[2].toLowerCase();
+                        const fullWord = (m[1] + m[2] + m[3]).toLowerCase();
+                        // 答案模式：精确匹配填入的字母，或者匹配包含该字母的完整单词
+                        return ans === lowerKeyword || fullWord.includes(lowerKeyword);
                     });
                 }
                 return (mode === 'hybrid') ? (matchText || matchAnswer) : (mode === 'text' ? matchText : matchAnswer);
@@ -1813,25 +1812,24 @@
             document.getElementById('search-result-count').textContent = `找到 ${filtered.length} 道题目`;
             listEl.innerHTML = '';
             if (filtered.length === 0) { 
-                listEl.innerHTML = '<div class="text-center py-10 text-slate-400">未找到相关题目。如果题目有细微拼写错误，请尝试输入更短的词根，或切换到 AI 助手模式提问。</div>'; 
+                listEl.innerHTML = '<div class="text-center py-10 text-slate-400">未找到相关题目。请尝试缩短关键词，或切换到 AI 助手模式提问。</div>'; 
                 return; 
             }
 
             filtered.forEach(q => {
                 let snippetHtml = '';
                 const cleanText = q.text.replace(/\[|\]/g, '').replace(/<br>/g, ' '); 
-                let matchIdx = cleanText.toLowerCase().indexOf(searchTerms[0]);
-                if (matchIdx === -1 && noSpaceKeyword.length > 3) matchIdx = 0; 
+                let matchIdx = cleanText.toLowerCase().indexOf(lowerKeyword);
+                if (matchIdx === -1) matchIdx = 0; 
 
-                if (matchIdx !== -1) {
-                    const start = Math.max(0, matchIdx - 60);
-                    const end = Math.min(cleanText.length, matchIdx + 120);
-                    snippetHtml = highlightTextContent((start > 0 ? '...' : '') + cleanText.substring(start, end) + (end < cleanText.length ? '...' : ''), searchTerms[0]);
-                }
+                const start = Math.max(0, matchIdx - 60);
+                const end = Math.min(cleanText.length, matchIdx + 120);
+                snippetHtml = highlightTextContent((start > 0 ? '...' : '') + cleanText.substring(start, end) + (end < cleanText.length ? '...' : ''), keyword);
+                
                 const card = document.createElement('div');
                 card.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all cursor-pointer group";
-                // 透传 keyword，实现类似 Ctrl+F 的高亮
-                card.onclick = () => { startWorkspace('practice', [q.id], searchTerms[0]); };
+                // ⚠️ 核心修复：把当前的 searchMode 传给工作区，防止答案高亮穿透到正文
+                card.onclick = () => { startWorkspace('practice', [q.id], keyword, null, mode); };
                 card.innerHTML = `<div class="flex justify-between items-start mb-3"><h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">${q.titleZh} <span class="text-slate-400 text-base font-normal">(${q.titleEn})</span></h3><div class="flex gap-2"><span class="text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded font-mono">ID:${q.hashKey}</span><span class="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">频次: ${q.frequency}</span></div></div><p class="text-sm text-slate-600 leading-relaxed">${snippetHtml}</p>`;
                 listEl.appendChild(card);
             });
@@ -2077,12 +2075,14 @@
         const sidebarEl = document.getElementById('workspace-sidebar');
         const queueListEl = document.getElementById('workspace-queue-list');
         
-        function startWorkspace(mode, queueIds, highlightKeyword = '', reviewLogData = null) {
+        function startWorkspace(mode, queueIds, highlightKeyword = '', reviewLogData = null, searchMode = 'hybrid') {
             workspaceState.mode = mode;
             workspaceState.queueIds = queueIds;
             workspaceState.currentIndex = 0;
             workspaceState.isSubmitting = false;
             workspaceState.reviewMockData = reviewLogData;
+            workspaceState.highlightKeyword = highlightKeyword; // 记录高亮词
+            workspaceState.searchMode = searchMode;             // 记录搜索模式
             
             navTo('view-workspace');
 
@@ -2119,7 +2119,7 @@
                 renderWorkspaceSidebar();
             }
 
-            loadQuestionIntoWorkspace(queueIds[0], highlightKeyword);
+            loadQuestionIntoWorkspace(queueIds[0]);
         }
 
         function renderWorkspaceSidebar() {
@@ -2144,10 +2144,13 @@
             document.getElementById('mock-timer-display').textContent = `${m}:${s}`;
         }
 
-        function loadQuestionIntoWorkspace(id, highlightKeyword = '') {
+        function loadQuestionIntoWorkspace(id) {
             activeQuestionId = id;
             const q = globalQuestions.find(x => x.id === id);
             if (!q) return;
+
+            const highlightKeyword = workspaceState.highlightKeyword;
+            const searchMode = workspaceState.searchMode;
 
             document.getElementById('feedback-msg').innerHTML = ""; 
             document.getElementById('passage-hash-tag').textContent = `🆔 编号: ${q.hashKey}`;
@@ -2193,61 +2196,30 @@
             tempText = tempText.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => {
                 const len = ans.length;
                 let isSearchTarget = false;
-                if(highlightKeyword && (fuzzyMatch(prefix+ans+suffix, highlightKeyword) || fuzzyMatch(ans, highlightKeyword))) isSearchTarget = true;
+                
+                // 像 Ctrl+F 一样精确匹配答案框
+                if(highlightKeyword) {
+                    const fullWord = (prefix + ans + suffix).toLowerCase();
+                    const lowerKey = highlightKeyword.toLowerCase();
+                    if (fullWord.includes(lowerKey) || ans.toLowerCase() === lowerKey) {
+                        isSearchTarget = true;
+                    }
+                }
+                
                 blanksData.push({ prefix, ans, suffix, len, isSearchTarget });
                 return `\u200B__BLANK_${blanksData.length - 1}__\u200B`;
             });
 
             if (!workspaceState.answersMemory[id]) workspaceState.answersMemory[id] = new Array(blanksData.length).fill('');
-            if (highlightKeyword) tempText = highlightTextContent(tempText, highlightKeyword);
-
-// --- 🌟 核心升级：连同前后的标点符号一起捕获并包裹 ---
-            // 正则增加了对前置标点 ([("') 和后置标点 (.,:;!?'")] 的捕获
-            tempText = tempText.replace(/([(\["']?)\u200B__BLANK_(\d+)__\u200B([.,:;!?'")\]]*)/g, (match, prePunct, idx, postPunct) => {
-                const data = blanksData[idx];
-                const inputWidth = `calc(${data.len} * 1.3ch - 0.1ch)`;
-                const highlightClass = data.isSearchTarget ? 'answer-highlighted' : '';
-                
-                let resultHtml = `<span class="inline-block whitespace-nowrap">`;
-                
-                // 1. 放入前置标点（如左括号）
-                if (prePunct) resultHtml += prePunct;
-                
-                // 2. 放入单词前缀
-                resultHtml += data.prefix || '';
-                
-                // 3. 放入输入框
-                let savedValue = '';
-                if(workspaceState.mode === 'review_mock' && workspaceState.reviewMockData) {
-                    savedValue = workspaceState.reviewMockData.details[workspaceState.currentIndex].lines[idx].actual || '';
-                } else {
-                    savedValue = workspaceState.statusMemory[id] === 'revealed' ? data.ans : (workspaceState.answersMemory[id][idx] || '');
-                }
-                const safeValue = savedValue.replace(/"/g, '&quot;');
-                const isReadonly = (workspaceState.mode === 'review_mock') ? 'readonly' : '';
-                resultHtml += `<input type="text" maxlength="${data.len}" data-answer="${data.ans}" value="${safeValue}" class="fill-blank-input ${highlightClass}" style="width: ${inputWidth}" autocomplete="off" spellcheck="false" ${isReadonly} />`;
-                
-                // 4. 放入单词后缀
-                if (data.suffix) resultHtml += data.suffix;
-                
-                // 5. 放入后置标点（如逗号、句号、右括号），让它和单词死死绑定！
-                if (postPunct) resultHtml += postPunct;
-                
-                resultHtml += `</span>`; 
-                return resultHtml;
-            });
-
-            document.getElementById('passage-content').innerHTML = tempText;
-
-            if (workspaceState.mode !== 'review_mock') bindInputEvents();
-            else renderVisualCheckResult(); 
-
-            if (workspaceState.statusMemory[id] === 'checked' && workspaceState.mode === 'practice') {
-                renderVisualCheckResult(); 
-            } else if (workspaceState.statusMemory[id] === 'revealed') {
-                document.getElementById('passage-content').querySelectorAll('input').forEach(i => i.classList.add('revealed'));
+            
+            // ⚠️ 核心修复：如果用户选了“仅搜答案”，绝对不要高亮正文！
+            if (highlightKeyword && searchMode !== 'answer') {
+                tempText = highlightTextContent(tempText, highlightKeyword);
             }
-        }
+
+            // --- 🌟 核心升级：连同前后的标点符号一起捕获并包裹 ---
+            // (以下保留你原本的 replace 逻辑不变)
+            tempText = tempText.replace(/([(\["']?)\u200B__BLANK_(\d+)__\u200B([.,:;!?'")\]]*)/g, (match, prePunct, idx, postPunct) => {
 
         function bindInputEvents() {
             const inputs = document.getElementById('passage-content').querySelectorAll('input');
