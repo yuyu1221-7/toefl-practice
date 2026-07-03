@@ -52,7 +52,6 @@
         
         .write-view { display: flex; overflow: hidden; height: 100%; }
         
-        /* 核心修复：左侧宽度增加到 490px，字体改为 Arial */
         .font-arial { font-family: Arial, Helvetica, sans-serif; }
         .write-left { width: 490px; border-right: 1px solid #dcdcdc; padding: 24px 24px; overflow-y: auto; display: flex; flex-direction: column; }
         
@@ -64,6 +63,8 @@
         .write-btn { display: inline-flex; align-items: center; justify-content: center; height: 35px; font-size: 13px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: all 0.15s; }
         .write-btn:not(.disabled) { background-color: #276b70; color: #ffffff; padding: 0 16px; }
         .write-btn.disabled { background-color: #e2e8f0; color: #94a3b8; padding: 0 14px; cursor: not-allowed; }
+        
+        .ets-text-content { font-size: 15px; line-height: 1.6; color: #111111; text-align: justify; }
         
         .write-input-textarea { flex: 1; width: 100%; border: 1px solid #276b70; border-radius: 0 0 8px 8px; padding: 16px; font-size: 15px; line-height: 1.8; resize: none; overflow-y: auto; font-family: 'Open Sans', sans-serif; color: #111111; }
         .write-input-textarea:focus { outline: none; box-shadow: inset 0 0 0 1px #276b70; }
@@ -80,7 +81,7 @@
             <div class="absolute inset-0 border-4 border-t-emerald-500 rounded-full animate-spin"></div>
         </div>
         <h2 class="text-2xl font-black mb-2">正在进行 AI 智能主题抽取</h2>
-        <p id="ai-loading-text" class="text-slate-300 text-sm">请稍候，正在调用 Gemini API 为缺失主题的题目分配学科与邮件 Subject...</p>
+        <p id="ai-loading-text" class="text-slate-300 text-sm">请稍候，正在调用 AI 为缺失主题的题目分配学科与邮件 Subject...</p>
     </div>
 
     <!-- 顶部导航栏 -->
@@ -130,11 +131,6 @@
                     <span id="label-md-status" class="mt-2 text-sm font-semibold px-3 py-1 bg-slate-100 text-slate-500 rounded-full">未导入</span>
                 </div>
             </div>
-
-                <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-left mb-8">
-                    <label class="block text-sm font-bold text-slate-700 mb-2">API</label>
-                    <input type="password" id="upload-api-key" placeholder="AIzaSy... (选填，不填则跳过 AI 提取直接预览)" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
-                </div>
             </div>
         </div>
 
@@ -262,17 +258,21 @@
         <div id="view-search" class="hidden absolute inset-0 p-8 md:p-12 overflow-y-auto fade-in">
             <div class="max-w-[1000px] mx-auto text-center">
                 <h2 class="text-xl font-bold text-slate-800 mb-8">题库深度检索</h2>
-                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm mb-12 flex items-center gap-4">
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm mb-6 flex items-center gap-4">
                     <select id="search-mode" onchange="updateSearchPlaceholder()" class="bg-slate-50 border border-slate-200 text-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 font-bold text-sm outline-none w-40 shrink-0">
                         <option value="mixed">混合检索</option>
                         <option value="title">标题检索</option>
                         <option value="hash">Hash检索</option>
                         <option value="date">日期检索</option>
-                        <option value="ai">AI检索(需配置api)</option>
+                        <option value="ai">AI检索(需配置智谱API)</option>
                     </select>
                     <input type="text" id="search-input" onkeydown="if(event.key === 'Enter') executeSearch()" placeholder="输入关键字、日期前缀、Hash (如: 1252C6) ..." class="flex-1 px-4 py-3 outline-none text-base">
                     <button onclick="executeSearch()" class="p-3 text-slate-400 hover:text-blue-600 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
                 </div>
+                
+                <!-- 核心新增：AI 辅导老师回复展示区 -->
+                <div id="ai-search-response" class="hidden bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6 text-sm text-blue-800 leading-relaxed text-left shadow-sm"></div>
+                
                 <div id="search-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
                     <div class="col-span-full text-center text-slate-400 mt-10">请输入任意关键词，按回车键或点击搜索按钮开始精准定位。</div>
                 </div>
@@ -333,8 +333,13 @@
             </div>
             <div class="p-6 space-y-4">
                 <div>
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-2">Google Gemini API Key (用于 AI 提取与搜索)</label>
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-2">Google Gemini API Key (首选)</label>
                     <input type="password" id="input-api-key" placeholder="AIzaSy..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
+                </div>
+                <!-- 核心新增：智谱 API Key 输入框 -->
+                <div>
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-2 mt-2">智谱 AI API Key (GLM-4-Flash 备用/搜索)</label>
+                    <input type="password" id="input-zhipu-key" placeholder="填写智谱 API Key..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
                 </div>
             </div>
             <div class="p-4 bg-slate-50 border-t border-slate-100 flex gap-3 justify-end">
@@ -451,13 +456,10 @@
             <!-- Writing -->
             <div id="ets-body-writing" class="ets-body-view ets-view-hidden">
                 <div class="write-view">
-                    <!-- 核心修复：左侧宽度 490px，字体 Arial -->
                     <section class="write-left font-arial">
-                        <!-- 核心修复：行间距 1.6 -->
                         <div id="ets-question" class="text-[15px] leading-[1.6] text-[#111111] text-left"></div>
                         <div id="ets-instruction" class="font-bold text-black mt-4 text-[15px] leading-[1.6]"></div>
                         
-                        <!-- 核心修复：大号实心黑点 Bullet Points，完美对齐 -->
                         <ul class="space-y-3 text-black mt-4 text-[15px] leading-[1.6]">
                             <li class="flex items-start gap-3">
                                 <span class="text-[25px] leading-none mt-[-5px] text-black shrink-0">&#9679;</span>
@@ -477,7 +479,6 @@
                     </section>
                     <section class="write-right">
                         <div class="email-header-area">
-                            <!-- 核心修复：三个标题字体大小完全一致 (16px) -->
                             <div class="font-bold text-[16px] text-black mb-4">Your Response:</div>
                             <div class="font-bold text-[16px] text-black mb-2" id="ets-to"></div>
                             <div class="font-bold text-[16px] text-black mb-4" id="ets-subject"></div>
@@ -589,6 +590,11 @@
                 document.getElementById("upload-api-key").value = savedKey;
                 document.getElementById("input-api-key").value = savedKey;
             }
+            
+            const savedZhipuKey = localStorage.getItem("toefl_zhipu_key");
+            if (savedZhipuKey) {
+                document.getElementById("input-zhipu-key").value = savedZhipuKey;
+            }
 
             checkLatestUpdate();
         };
@@ -606,12 +612,12 @@
         }
 
         const MD_URLS = [
-            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/email.md",
-            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/email.md"
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/db_qb.md",
+            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/db_qb.md"
         ];
         const JSON_URLS = [
-            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/title2.json",
-            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/title2.json"
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/title.json",
+            "https://gitee.com/yuyu1221-7/toefl-practice/raw/main/title.json"
         ];
 
         async function fetchWithFallback(urls, type = 'text') {
@@ -736,121 +742,122 @@
             return Math.abs(hash).toString(16).toUpperCase().padStart(6, '0').substring(0, 6);
         }
         
-// 核心修复：To 字段首字母大写转换函数
         function toTitleCase(str) {
             if (!str) return "";
             return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
         }
 
-        // ==========================================
-        // 🔒 全局状态锁与防抖探针
-        // ==========================================
-        let isProcessingAI = false; 
-
         async function processAndInitialize() {
-            console.log("🚀 [探针] ENTER processAndInitialize - 尝试进入初始化流程");
-
-            if (isProcessingAI) {
-                console.warn("🛑 [探针] 拦截：检测到已有未结束的初始化进程在运行，拒绝重复进入！");
-                return;
+            const uploadKey = document.getElementById("upload-api-key").value.trim();
+            if (uploadKey) {
+                localStorage.setItem("toefl_gemini_key", uploadKey);
+                document.getElementById("input-api-key").value = uploadKey;
             }
             
-            isProcessingAI = true; // 上锁
-            console.log("🟢 [探针] 成功获取全局锁，开始执行解析...");
+            const geminiKey = localStorage.getItem("toefl_gemini_key");
+            const zhipuKey = localStorage.getItem("toefl_zhipu_key");
 
-            try {
-                const uploadKey = document.getElementById("upload-api-key").value.trim();
-                if (uploadKey) {
-                    localStorage.setItem("toefl_gemini_key", uploadKey);
-                    document.getElementById("input-api-key").value = uploadKey;
-                }
+            const blocks = rawDmdText.split(/----------------------/);
+            let parsed = [];
+            blocks.forEach(block => {
+                const lines = block.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+                if (lines.length === 0) return;
+                
+                let currentQ = null;
+                let lastField = null;
 
-                const blocks = rawDmdText.split(/----------------------/);
-                let parsed = [];
-                blocks.forEach(block => {
-                    const lines = block.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-                    if (lines.length === 0) return;
-                    
-                    let currentQ = null;
-                    let lastField = null;
-
-                    for (let i = 0; i < lines.length; i++) {
-                        const line = lines[i];
-                        if (line.startsWith("新题") || line.endsWith("套") || /^\d+$/.test(line) || (line.startsWith("第") && line.endsWith("套"))) continue;
-                        
-                        if (line.startsWith("data:") || line.startsWith("date:")) {
-                            if (currentQ && currentQ.question) parsed.push(currentQ);
-                            currentQ = { date: line.replace(/^(data|date):/, "").trim(), question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
-                            lastField = null;
-                            continue;
-                        }
-                        if (!currentQ) currentQ = { date: "未知日期", question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
-                        
-                        if (line.startsWith("question:")) { currentQ.question = line.replace("question:", "").trim(); lastField = "question"; }
-                        else if (line.startsWith("instruction:")) { currentQ.instruction = line.replace("instruction:", "").trim(); lastField = "instruction"; }
-                        else if (line.startsWith("p1:")) { currentQ.p1 = line.replace("p1:", "").trim(); lastField = "p1"; }
-                        else if (line.startsWith("p2:")) { currentQ.p2 = line.replace("p2:", "").trim(); lastField = "p2"; }
-                        else if (line.startsWith("p3:")) { currentQ.p3 = line.replace("p3:", "").trim(); lastField = "p3"; }
-                        else if (line.startsWith("to:")) { currentQ.to = line.replace("to:", "").trim(); lastField = "to"; }
-                        else if (lastField) currentQ[lastField] += " " + line;
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    if (line.startsWith("新题") || line.endsWith("套") || /^\d+$/.test(line) || (line.startsWith("第") && line.endsWith("套"))) {
+                        continue;
                     }
-                    if (currentQ && currentQ.question) parsed.push(currentQ);
-                });
-
-                let hashGroups = {};
-                parsed.forEach(q => {
-                    let hash = computeHash(q.question);
-                    if (!hashGroups[hash]) hashGroups[hash] = [];
-                    hashGroups[hash].push(q);
-                });
-
-                let index = 1;
-                let missingQs = [];
-
-                for (let hash in hashGroups) {
-                    let list = hashGroups[hash];
-                    let dates = Array.from(new Set(list.map(item => item.date))).sort();
-                    let base = list[list.length - 1];
-                    let qObj = { id: index++, hashKey: hash, dates: dates, question: base.question, instruction: base.instruction, p1: base.p1, p2: base.p2, p3: base.p3, to: base.to, frequency: dates.length };
-
-                    if (dictData[hash]) {
-                        qObj.titleZh = dictData[hash].zh; qObj.titleEn = dictData[hash].en; qObj.subject = dictData[hash].subject || "";
-                        qObj.cat = FIXED_CATEGORIES.some(c => c.name === dictData[hash].cat) ? dictData[hash].cat : "其他与综合";
-                        globalQuestions.push(qObj);
-                    } else {
-                        missingQs.push(qObj);
+                    
+                    if (line.startsWith("data:") || line.startsWith("date:")) {
+                        if (currentQ && currentQ.question) parsed.push(currentQ);
+                        currentQ = { date: line.replace(/^(data|date):/, "").trim(), question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
+                        lastField = null;
+                        continue;
+                    }
+                    
+                    if (!currentQ) {
+                        currentQ = { date: "未知日期", question: "", instruction: "", p1: "", p2: "", p3: "", to: "" };
+                    }
+                    
+                    if (line.startsWith("question:")) { currentQ.question = line.replace("question:", "").trim(); lastField = "question"; }
+                    else if (line.startsWith("instruction:")) { currentQ.instruction = line.replace("instruction:", "").trim(); lastField = "instruction"; }
+                    else if (line.startsWith("p1:")) { currentQ.p1 = line.replace("p1:", "").trim(); lastField = "p1"; }
+                    else if (line.startsWith("p2:")) { currentQ.p2 = line.replace("p2:", "").trim(); lastField = "p2"; }
+                    else if (line.startsWith("p3:")) { currentQ.p3 = line.replace("p3:", "").trim(); lastField = "p3"; }
+                    else if (line.startsWith("to:")) { currentQ.to = line.replace("to:", "").trim(); lastField = "to"; }
+                    else if (lastField) {
+                        currentQ[lastField] += " " + line;
                     }
                 }
+                if (currentQ && currentQ.question) parsed.push(currentQ);
+            });
 
-                const apiKey = localStorage.getItem("toefl_gemini_key");
-                let counter = 1;
-                missingQs.forEach(q => {
-                    q.titleZh = `Email 综合练习 ${counter++}`; q.titleEn = "Email Writing Task"; q.subject = ""; q.cat = "其他与综合";
-                    globalQuestions.push(q);
-                });
+            let hashGroups = {};
+            parsed.forEach(q => {
+                let hash = computeHash(q.question);
+                if (!hashGroups[hash]) hashGroups[hash] = [];
+                hashGroups[hash].push(q);
+            });
 
-                // ==========================================
-                // 🤖 AI 智能自愈提取核心块
-                // ==========================================
-                if (missingQs.length > 0 && apiKey) {
-                    document.getElementById('ai-loading').classList.remove('hidden');
+            let index = 1;
+            let missingQs = [];
+
+            for (let hash in hashGroups) {
+                let list = hashGroups[hash];
+                let dates = Array.from(new Set(list.map(item => item.date))).sort();
+                let base = list[list.length - 1];
+                
+                let qObj = {
+                    id: index++, hashKey: hash, dates: dates,
+                    question: base.question,
+                    instruction: base.instruction,
+                    p1: base.p1, p2: base.p2, p3: base.p3, to: base.to,
+                    frequency: dates.length
+                };
+
+                if (dictData[hash]) {
+                    qObj.titleZh = dictData[hash].zh;
+                    qObj.titleEn = dictData[hash].en;
+                    qObj.subject = dictData[hash].subject || "";
+                    qObj.cat = FIXED_CATEGORIES.some(c => c.name === dictData[hash].cat) ? dictData[hash].cat : "其他与综合";
+                    globalQuestions.push(qObj);
+                } else {
+                    missingQs.push(qObj);
+                }
+            }
+
+            let counter = 1;
+            missingQs.forEach(q => {
+                q.titleZh = `Email 综合练习 ${counter++}`;
+                q.titleEn = "Email Writing Task";
+                q.subject = "";
+                q.cat = "其他与综合";
+                globalQuestions.push(q); 
+            });
+
+            // 核心修复：双引擎智能切换 (Gemini 优先，智谱备用)
+            let currentProvider = geminiKey ? 'gemini' : (zhipuKey ? 'zhipu' : null);
+
+            if (missingQs.length > 0 && currentProvider) {
+                document.getElementById('ai-loading').classList.remove('hidden');
+                const batchSize = 10; 
+                
+                for (let i = 0; i < missingQs.length; i += batchSize) {
+                    let success = false;
+                    let retryCount = 0;
                     
-                    // 💡 核心调整：设置 batchSize 为 25，总计 91 题只需 4 次请求，轻松绕过 20次/日 的限制！
-                    const batchSize = 25; 
-                    console.log(`📊 [大盘] 共有 ${missingQs.length} 道新题待处理，切分为 ${Math.ceil(missingQs.length / batchSize)} 个大批次进行低频请求。`);
-
-                    for (let i = 0; i < missingQs.length; i += batchSize) {
-                        let success = false;
-                        let retryCount = 0;
+                    while (!success && retryCount < 2) {
+                        let providerName = currentProvider === 'gemini' ? 'Gemini 1.5 Flash' : '智谱 GLM-4-Flash';
+                        document.getElementById('ai-loading-text').textContent = `正在调用 ${providerName} 处理第 ${Math.floor(i/batchSize)+1} 批，共 ${Math.ceil(missingQs.length/batchSize)} 批...`;
                         
-                        while (!success) {
-                            let currentBatchIndex = Math.floor(i / batchSize) + 1;
-                            document.getElementById('ai-loading-text').textContent = `AI 正在处理第 ${currentBatchIndex} / ${Math.ceil(missingQs.length / batchSize)} 批任务...`;
-                            
-                            const batch = missingQs.slice(i, i + batchSize);
-                            const promptData = batch.map(q => ({ id: q.hashKey, question: q.question, instruction: q.instruction }));
-                            
-                            const prompt = `You are an expert English test designer. I will provide you with a list of email writing tasks. 
+                        const batch = missingQs.slice(i, i + batchSize);
+                        const promptData = batch.map(q => ({ id: q.hashKey, question: q.question, instruction: q.instruction }));
+                        
+                        const prompt = `You are an expert English test designer. I will provide you with a list of email writing tasks. 
 For each task, based on the 'question' and 'instruction', you need to generate FOUR things:
 1. titleZh: A concise Chinese title for the task card (e.g., "健身房设备更新建议").
 2. titleEn: A concise English title for the task card (e.g., "Gym Equipment Suggestion").
@@ -859,10 +866,11 @@ For each task, based on the 'question' and 'instruction', you need to generate F
 Return ONLY a valid JSON array matching the input order. Format: [{"id": "hash", "titleZh": "...", "titleEn": "...", "subject": "...", "cat": "..."}]
 Input: ${JSON.stringify(promptData)}`;
 
-                            console.log(`🔤 [批次 ${currentBatchIndex}] 发送请求，包含 ${batch.length} 道题。`);
-
-                            try {
-                                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                        try {
+                            let text = "";
+                            
+                            if (currentProvider === 'gemini') {
+                                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify({ 
@@ -871,80 +879,80 @@ Input: ${JSON.stringify(promptData)}`;
                                     })
                                 });
                                 
-                                // 🔍 429 智能读取延迟自愈
                                 if (!response.ok) {
-                                    if (response.status === 429) {
-                                        const errorText = await response.text();
-                                        let delaySeconds = 60; // 默认休眠兜底时间
-                                        
-                                        try {
-                                            const errorJson = JSON.parse(errorText);
-                                            // 精准提取 Google 吐出来的 retryDelay (例如 "54s")
-                                            const retryInfo = errorJson.error.details.find(d => d['@type'] === 'type.googleapis.com/google.rpc.RetryInfo');
-                                            if (retryInfo && retryInfo.retryDelay) {
-                                                delaySeconds = parseInt(retryInfo.retryDelay) || 60;
-                                            }
-                                        } catch(e) {}
-                                        
-                                        console.warn(`⚠️ [配额熔断] 遇到 429 限制。Google 要求休眠 ${delaySeconds} 秒。程序进入自动挂起...`);
-                                        
-                                        // 倒计时提示
-                                        for (let s = delaySeconds; s > 0; s--) {
-                                            document.getElementById('ai-loading-text').textContent = `触发额度限制，系统正在防洪避让，将在 ${s} 秒后自动重试...`;
-                                            await new Promise(r => setTimeout(r, 1000));
-                                        }
-                                        
+                                    if (response.status === 429 && zhipuKey) {
+                                        // 核心修复：Gemini 429 且有智谱 Key 时，无缝切换！
+                                        currentProvider = 'zhipu';
+                                        document.getElementById('ai-loading-text').textContent = `Gemini 触发限流，自动切换至智谱 GLM-4-Flash...`;
+                                        continue; 
+                                    } else if (response.status === 429) {
+                                        document.getElementById('ai-loading-text').textContent = `触发频率限制 (429)，等待 60 秒后自动重试 (第 ${retryCount + 1} 次)...`;
+                                        await new Promise(r => setTimeout(r, 60000));
                                         retryCount++;
-                                        continue; // 睡醒了，重新尝试当前批次
+                                        continue; 
                                     } else {
-                                        console.error(`❌ Non-429 Error: ${response.status}`);
+                                        console.error(`Gemini API Error: ${response.status}`);
                                         break; 
                                     }
                                 }
-                                
                                 const data = await response.json();
-                                let text = data.candidates[0].content.parts[0].text;
-                                text = text.replace(/```json/g, '').replace(/```/g, '').trim();
-                                const results = JSON.parse(text);
+                                text = data.candidates[0].content.parts[0].text;
                                 
-                                results.forEach(res => {
-                                    let q = globalQuestions.find(x => x.hashKey === res.id);
-                                    if (q) {
-                                        q.titleZh = res.titleZh; q.titleEn = res.titleEn; q.subject = res.subject || "";
-                                        q.cat = FIXED_CATEGORIES.some(c => c.name === res.cat) ? res.cat : "其他与综合";
-                                        dictData[q.hashKey] = { key: q.hashKey, zh: q.titleZh, en: q.titleEn, subject: q.subject, cat: q.cat };
-                                        newDictEntriesCount++;
-                                    }
+                            } else if (currentProvider === 'zhipu') {
+                                const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Authorization': `Bearer ${zhipuKey}`
+                                    },
+                                    body: JSON.stringify({
+                                        model: "glm-4-flash",
+                                        messages: [{ role: "user", content: prompt }]
+                                    })
                                 });
-
-                                console.log(`✨ [成功] 批次 ${currentBatchIndex} 提取并同步成功。`);
-                                success = true; 
                                 
-                            } catch (e) {
-                                console.error(`❌ [解析异常] 批次 ${currentBatchIndex} 失败:`, e);
-                                break; 
+                                if (!response.ok) {
+                                    console.error(`Zhipu API Error: ${response.status}`);
+                                    break;
+                                }
+                                const data = await response.json();
+                                text = data.choices[0].message.content;
                             }
-                        }
-
-                        if (i + batchSize < missingQs.length) {
-                            console.log(`⏳ 强制高稳冷却 6 秒...`);
-                            await new Promise(r => setTimeout(r, 6000));
+                            
+                            text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+                            const results = JSON.parse(text);
+                            
+                            results.forEach(res => {
+                                let q = globalQuestions.find(x => x.hashKey === res.id);
+                                if (q) {
+                                    q.titleZh = res.titleZh;
+                                    q.titleEn = res.titleEn;
+                                    q.subject = res.subject || "";
+                                    q.cat = FIXED_CATEGORIES.some(c => c.name === res.cat) ? res.cat : "其他与综合";
+                                    dictData[q.hashKey] = { key: q.hashKey, zh: q.titleZh, en: q.titleEn, subject: q.subject, cat: q.cat };
+                                    newDictEntriesCount++;
+                                }
+                            });
+                            success = true; 
+                        } catch (e) {
+                            console.error("AI Generation Error:", e);
+                            retryCount++;
+                            await new Promise(r => setTimeout(r, 2000));
                         }
                     }
-                    document.getElementById('ai-loading').classList.add('hidden');
+                    
+                    if (i + batchSize < missingQs.length) {
+                        // Gemini 间隔 4 秒，智谱速度快间隔 1 秒即可
+                        await new Promise(r => setTimeout(r, currentProvider === 'gemini' ? 4000 : 1000));
+                    }
                 }
-
-                document.getElementById("unique-q-count").textContent = globalQuestions.length;
-                document.getElementById("view-upload").classList.add("hidden");
-                document.getElementById("main-header").classList.remove("hidden");
-                navigateTo('home');
-
-            } catch (globalError) {
-                console.error("🚨 全局崩溃", globalError);
-            } finally {
-                isProcessingAI = false; 
-                console.log("🔓 全局锁在 finally 中安全释放。");
+                document.getElementById('ai-loading').classList.add('hidden');
             }
+
+            document.getElementById("unique-q-count").textContent = globalQuestions.length;
+            document.getElementById("view-upload").classList.add("hidden");
+            document.getElementById("main-header").classList.remove("hidden");
+            navigateTo('home');
         }
 
         // ==========================================
@@ -1036,15 +1044,14 @@ Input: ${JSON.stringify(promptData)}`;
                 let grid = document.createElement('div');
                 grid.className = "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4";
 
-                // 核心修复：日期排序逻辑重构
                 let days = Object.keys(monthGroups[month]).sort((a, b) => {
                     function getWeight(str) {
-                        if (str.includes('未知')) return 99999; // 未知日期绝对置顶
-                        if (str.includes('期间') || str.includes('-')) return -1; // 区间绝对沉底
+                        if (str.includes('未知')) return 99999; 
+                        if (str.includes('期间') || str.includes('-')) return -1; 
                         let num = parseInt(str);
-                        return isNaN(num) ? 0 : num; // 正常日期按数字大小
+                        return isNaN(num) ? 0 : num; 
                     }
-                    return getWeight(b) - getWeight(a); // 降序排列
+                    return getWeight(b) - getWeight(a); 
                 });
 
                 days.forEach(day => {
@@ -1138,49 +1145,84 @@ Input: ${JSON.stringify(promptData)}`;
             else if (mode === 'title') input.placeholder = "输入中英文标题关键字...";
             else if (mode === 'hash') input.placeholder = "输入 6 位 Hash 码...";
             else if (mode === 'date') input.placeholder = "输入日期，如 2026.6 ...";
-            else if (mode === 'ai') input.placeholder = "输入自然语言，如 '关于环保和经济的题' (需配置 API Key)...";
+            else if (mode === 'ai') input.placeholder = "输入自然语言，如 '关于环保和经济的题' (需配置智谱 API)...";
         }
 
         async function executeSearch() {
             const keyword = document.getElementById('search-input').value.trim().toLowerCase();
             const mode = document.getElementById('search-mode').value;
             const container = document.getElementById('search-results');
+            const aiResponseDiv = document.getElementById('ai-search-response');
             
-            if (!keyword) { container.innerHTML = '<div class="col-span-full text-center text-slate-400 mt-10">请输入任意关键词，按回车键或点击搜索按钮开始精准定位。</div>'; return; }
+            if (!keyword) { 
+                container.innerHTML = '<div class="col-span-full text-center text-slate-400 mt-10">请输入任意关键词，按回车键或点击搜索按钮开始精准定位。</div>'; 
+                aiResponseDiv.classList.add('hidden');
+                return; 
+            }
 
             let filtered = [];
 
             if (mode === 'ai') {
-                const apiKey = localStorage.getItem("toefl_gemini_key");
-                if (!apiKey) { container.innerHTML = '<div class="col-span-full text-center text-red-500 mt-10">请先在右上角设置中配置 Gemini API Key。</div>'; return; }
-                container.innerHTML = '<div class="col-span-full text-center text-blue-500 mt-10">AI 正在深度语义检索中，请稍候...</div>';
+                const zhipuKey = localStorage.getItem("toefl_zhipu_key");
+                if (!zhipuKey) { 
+                    container.innerHTML = '<div class="col-span-full text-center text-red-500 mt-10">请先在右上角设置中配置智谱 API Key (GLM-4-Flash)。</div>'; 
+                    aiResponseDiv.classList.add('hidden');
+                    return; 
+                }
+                
+                aiResponseDiv.classList.remove('hidden');
+                aiResponseDiv.innerHTML = '<div class="flex items-center gap-2"><div class="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div> AI 辅导老师正在思考并检索题库，请稍候...</div>';
+                container.innerHTML = '';
                 
                 const qSummary = globalQuestions.map(q => ({ hash: q.hashKey, text: q.titleZh + " " + q.question.substring(0, 100) }));
-                const prompt = `You are a semantic search engine. The user is searching for: "${keyword}".
-Here is a list of documents: ${JSON.stringify(qSummary)}.
-Find the most relevant documents based on semantic meaning. Return ONLY a JSON array of the matching 'hash' strings. Example: ["HASH1", "HASH2"]. If none match, return []. Do not include markdown formatting.`;
+                
+                // 核心修复：全新 AI 辅导老师 Prompt
+                const prompt = `你是一个专业的托福写作辅导老师。用户正在题库中搜索相关的邮件写作题目。
+用户的搜索词是："${keyword}"。
+题库列表：${JSON.stringify(qSummary)}。
+请按以下严格格式回复：
+第一部分：用亲切的口吻告诉用户你对他搜索词的理解，以及你为他挑选了哪些方向的题目（100字以内）。
+第二部分：一个严格的JSON数组，包含匹配题目的hash值。如果没有匹配的，返回[]。
+请务必用 '===' 分隔这两部分。`;
 
                 try {
-                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                    const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ 
-                            contents: [{ parts: [{ text: prompt }] }],
-                            generationConfig: { responseMimeType: "application/json" }
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${zhipuKey}`
+                        },
+                        body: JSON.stringify({
+                            model: "glm-4-flash",
+                            messages: [{ role: "user", content: prompt }]
                         })
                     });
+
+                    if (!response.ok) throw new Error(`API Error: ${response.status}`);
+
                     const data = await response.json();
-                    let text = data.candidates[0].content.parts[0].text;
-                    text = text.replace(/```json/g, '').replace(/```/g, '').trim();
-                    const matchedHashes = JSON.parse(text);
+                    let text = data.choices[0].message.content;
+
+                    let parts = text.split('===');
+                    if (parts.length < 2) throw new Error("AI 返回格式不正确");
+
+                    let aiMessage = parts[0].trim();
+                    let hashArrayStr = parts[1].replace(/```json/g, '').replace(/```/g, '').trim();
+                    const matchedHashes = JSON.parse(hashArrayStr);
+
+                    // 核心修复：展示 AI 老师的回复
+                    aiResponseDiv.innerHTML = `<strong class="text-blue-900 text-base">👩‍🏫 AI 辅导老师：</strong><br><span class="mt-1 block">${aiMessage}</span>`;
+
                     filtered = globalQuestions.filter(q => matchedHashes.includes(q.hashKey));
                     renderSearchResults(filtered, container);
                 } catch (e) {
-                    container.innerHTML = '<div class="col-span-full text-center text-red-500 mt-10">AI 检索失败，请检查 API Key 或网络连接。</div>';
+                    aiResponseDiv.classList.add('hidden');
+                    container.innerHTML = '<div class="col-span-full text-center text-red-500 mt-10">AI 检索失败，请检查智谱 API Key 或网络连接。</div>';
                 }
                 return;
             }
 
+            aiResponseDiv.classList.add('hidden');
             filtered = globalQuestions.filter(q => {
                 if (mode === 'mixed') return q.titleZh.toLowerCase().includes(keyword) || q.titleEn.toLowerCase().includes(keyword) || q.hashKey.toLowerCase().includes(keyword) || q.dates.some(d => d.includes(keyword)) || q.question.toLowerCase().includes(keyword);
                 if (mode === 'title') return q.titleZh.toLowerCase().includes(keyword) || q.titleEn.toLowerCase().includes(keyword);
@@ -1273,14 +1315,12 @@ Find the most relevant documents based on semantic meaning. Return ONLY a JSON a
             etsMode = mode;
             document.getElementById("view-ets").classList.remove("hidden");
             
-            // 注入 Email 专属数据
             document.getElementById("ets-question").textContent = activeQuestion.question;
             document.getElementById("ets-instruction").textContent = activeQuestion.instruction;
             document.getElementById("ets-p1").textContent = activeQuestion.p1;
             document.getElementById("ets-p2").textContent = activeQuestion.p2;
             document.getElementById("ets-p3").textContent = activeQuestion.p3;
             
-            // 核心修复：To 字段首字母大写
             document.getElementById("ets-to").textContent = `To: ${toTitleCase(activeQuestion.to)}`;
             let displaySubject = activeQuestion.subject ? activeQuestion.subject : "";
             document.getElementById("ets-subject").textContent = `Subject: ${displaySubject}`;
@@ -1637,7 +1677,7 @@ ${r.response}
             const blob = new Blob([JSON.stringify(arr, null, 4)], { type: "application/json" });
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
-            link.download = `title2.json`;
+            link.download = `title.json`;
             link.click();
             alert(`本次新加了 ${newDictEntriesCount} 个词条，导出成功！`);
             newDictEntriesCount = 0; 
@@ -1654,6 +1694,11 @@ ${r.response}
             const key = document.getElementById('input-api-key').value.trim();
             if (key) localStorage.setItem("toefl_gemini_key", key);
             else localStorage.removeItem("toefl_gemini_key");
+            
+            const zhipuKey = document.getElementById('input-zhipu-key').value.trim();
+            if (zhipuKey) localStorage.setItem("toefl_zhipu_key", zhipuKey);
+            else localStorage.removeItem("toefl_zhipu_key");
+            
             toggleSettingsModal(false);
         }
     </script>
