@@ -1,4 +1,24 @@
 ------------------------
+data: 2026.6.30
+第一套
+question: You recently dined at a local restaurant near campus and were impressed overall. However, you experienced some issues with the dining experience. You want to contact the restaurant manager, Ms. Miller, to address these issues.
+instruction: Write an email to Ms. Miller. In your email, do the following:
+p1: Describe what you enjoyed about your visit.
+p2: Explain the issues with the dining experience.
+p3: Suggest a solution for the issues you faced.
+to: Ms. Miller
+
+------------------------
+data: 2026.6.16
+第一套
+question: You have been selected to represent your university at an international conference. You need to inform your professor, Dr. Lee, about this opportunity and request permission to miss class during the conference.
+instruction: Write an email to Dr. Lee. In your email, do the following:
+p1: Inform Dr. Lee about the opportunity, including conference topic and location.
+p2: Request permission to miss class and suggest ways to make up for missed classes.
+p3: Ask for suggestions on how to prepare for the conference.
+to: Dr. Lee
+------------------------
+------------------------
 data: 2026.6.13
 第一套
 question: You and your friend Jasmine are planning to host a fundraising event for your university's tennis team. You have thought about some activities for the event, but you need Jasmine's input to finalize the plans. You also want to discuss the best time to meet and work out the details.
