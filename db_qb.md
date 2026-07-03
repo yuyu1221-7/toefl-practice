@@ -1,4 +1,23 @@
 ----------------------
+2026.6.30
+新题1
+prof: Dr. Gupta
+question: Balancing work and social life is challenging. On one hand, working full-time is important for financial stability and career growth. On the other, maintaining a healthy social life is crucial for emotional well-being and stress relief. How can people best manage a demanding job while still enjoying meaningful relationships and activities outside work? I'm curious to learn your thoughts. Is it possible to maintain a healthy social life while working full-time?
+stu1: Andrew
+stu1_content: Yes, but you have to set limits on work and prioritize your health and well-being. Focusing exclusively on work causes stress and burnout, which is bad for your career in the long run. Enjoying social activities is vital for your health. By setting the right boundaries, you can balance work with a healthy social life.
+stu2: Claire
+stu2_content: In my opinion, using technology to plan social activities can significantly enhance our social life. Tools like digital calendars and reminder apps help optimize free time, ensuring we don't miss out on valuable social interactions. This strategic planning can make maintaining a social life feasible, even with a full-time job.
+----------------------
+2026.6.16
+新题1
+prof: Dr. Gupta
+question: Let's talk about what should be done to secure the future. Some people point to conserving natural resources and protecting ecosystems as crucial for the health of our planet and maintaining a sustainable future. Others focus on social well-being, addressing inequality, improving education, and ensuring access to health care as key drivers of progress. Which do you believe should lead in shaping our future, and why?
+stu1: Claire
+stu1_content: I think environmental conservation is most important for the long-term health of our planet and thus securing the future. Environmental conservation is essential for preserving biodiversity. For example, protecting wetlands where diverse plant and animal species live will support ecosystem stability.
+stu2: Paul
+stu2_content: I disagree with Claire. Social well-being should take priority. For instance, improving access to education would help to create a more informed citizenry and produce more individuals capable of innovating and helping humankind to progress.
+----------------------
+----------------------
 2026.6.27
 新题1
 prof: null
