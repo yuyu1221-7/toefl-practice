@@ -1,4 +1,24 @@
 ------------------------
+data: 2026.6.13
+第一套
+question: You and your friend Jasmine are planning to host a fundraising event for your university's tennis team. You have thought about some activities for the event, but you need Jasmine's input to finalize the plans. You also want to discuss the best time to meet and work out the details.
+instruction: Write an email to Jasmine. In your email, do the following:
+p1: Describe the activities you propose for the fundraising event.
+p2: Explain why you think these activities will be successful.
+p3: Suggest a meeting to discuss the plans in more detail.
+to: Jasmine
+------------------------
+------------------------
+data: 2026.6.30
+第一套
+question: You and your friend Jasmine are planning to host a fundraising event for your university's tennis team. You have thought about some activities for the event, but you need Jasmine's input to finalize the plans. You also want to discuss the best time to meet and work out the details.
+instruction: Write an email to Jasmine. In your email, do the following:
+p1: Describe the activities you propose for the fundraising event.
+p2: Explain why you think these activities will be successful.
+p3: Suggest a meeting to discuss the plans in more detail.
+to: Jasmine
+------------------------
+------------------------
 data: 2026.6.24
 第一套
 question: You are having a scheduling conflict with your chemistry laboratory. There are many laboratory sessions, but the one you are assigned to meets on Wednesday afternoons. Unfortunately, your favorite student club's weekly meeting is also on Wednesdays. You need to ask your chemistry professor, Dr. Nguyen, for a schedule change.
