@@ -1493,7 +1493,7 @@ ________________________________________
 第六篇 Geese undertake seasonal migrations between breeding and wintering grounds, often covering thousands of miles. This move_ _ _ _ is gui_ _ _ by th_ _ _ ability t_ recognize enviro_ _ _ _ _ _ _ cues su_ _ as dayl_ _ _ _ duration a_ _ geographic feat_ _ _ _, supported b_ strong spatial memory. Most species, including the Canada goose, follow established flyways and use landmarks like rivers and mountain ranges for navigation. Migration is also a social activity; geese typically travel in family groups, reinforcing cohesion and increasing survival rates through coordinated actions and shared knowledge of migratory routes.
 正确答案： 第1题: ment, 第2题: ded, 第3题: eir, 第4题: o, 第5题: nmental, 第6题: ch, 第7题: ight, 第8题: nd, 第9题: ures, 第10题: y,
 ________________________________________
-2026.6.29-7.1
+2026.6.29-2026.7.1
 第一篇 Understanding the relationship between cognition and consciousness is pivotal for unraveling the complexities of human thinking and behavior, as both are fundamental activities of the brain. Cognition is the men_ _ _ process b_ which indiv_ _ _ _ _ _ _ acquire know_ _ _ _ _ and unders_ _ _ _ _ _ _ through tho_ _ _ , experience, a _ the sen_ _ . Consciousness ref _ _ to t_ _ state of being aware of and responsive to one's surroundings. The advancements of neuroimaging technologies have provided insights into how consciousness arises from neural networks and how cognitive processes can occur both with and without conscious awareness.
 正确答案： 第1题: tal, 第2题: y, 第3题: iduals, 第4题: ledge, 第5题: tanding, 第6题: ught, 第7题: nd, 第8题: ses, 第9题: ers, 第10题: he,
 
