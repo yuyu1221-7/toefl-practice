@@ -1,5 +1,12 @@
 [
     {
+        "key": "102319",
+        "zh": "国际会议请假申请",
+        "en": "International Conference Class Absence Request",
+        "subject": "Request for Class Absence: International Conference Participation",
+        "cat": "校园学习"
+    },
+    {
         "key": "134346",
         "zh": "公寓问题报告",
         "en": "Apartment Issues Report",
@@ -635,5 +642,12 @@
         "en": "Orchestra Concert Sound Quality Feedback",
         "subject": "Feedback on Sound Quality at University Orchestra Concert",
         "cat": "体验反馈"
+    },
+    {
+        "key": "2EB318",
+        "zh": "网球队筹款活动方案讨论",
+        "en": "Tennis Team Fundraising Event Planning",
+        "subject": "Planning Our Tennis Team Fundraising Event",
+        "cat": "活动策划"
     }
 ]
