@@ -1236,6 +1236,24 @@
         "cat": "天文与地球"
     },
     {
+        "key": "18AD77",
+        "en": "Cognition and Consciousness",
+        "zh": "认知与意识",
+        "cat": "生命科学"
+    },
+    {
+        "key": "5CF569",
+        "en": "Nomads to Agriculture",
+        "zh": "农耕文明起源",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "DCE853",
+        "en": "Sustainable Agriculture Need",
+        "zh": "可持续农业必要性",
+        "cat": "综合与其他"
+    },
+    {
         "key": "34DC89",
         "en": "Color in Art",
         "zh": "艺术中的色彩",
