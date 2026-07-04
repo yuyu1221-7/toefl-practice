@@ -343,7 +343,7 @@
                 </div>
                 <!-- 核心新增：智谱 API Key 输入框 -->
                 <div>
-                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-2 mt-2">智谱 AI API Key (GLM-4.7-Flash 备用/搜索)</label>
+                    <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-2 mt-2">智谱 AI API Key</label>
                     <input type="password" id="input-zhipu-key" placeholder="填写智谱 API Key..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
                 </div>
             </div>
@@ -855,7 +855,7 @@
                     let retryCount = 0;
                     
                     while (!success && retryCount < 2) {
-                        let providerName = currentProvider === 'gemini' ? 'Gemini 2.5 Flash' : '智谱 GLM-4.7-Flash';
+                        let providerName = currentProvider === 'gemini' ? 'Gemini 2.5 Flash' : '智谱 GLM';
                         document.getElementById('ai-loading-text').textContent = `正在调用 ${providerName} 处理第 ${Math.floor(i/batchSize)+1} 批，共 ${Math.ceil(missingQs.length/batchSize)} 批...`;
                         
                         const batch = missingQs.slice(i, i + batchSize);
@@ -886,7 +886,7 @@ Input: ${JSON.stringify(promptData)}`;
                                 if (!response.ok) {
                                     if (response.status === 429 && zhipuKey) {
                                         currentProvider = 'zhipu';
-                                        document.getElementById('ai-loading-text').textContent = `Gemini 触发限流，自动切换至智谱 GLM-4.7-Flash...`;
+                                        document.getElementById('ai-loading-text').textContent = `Gemini 触发限流，自动切换至智谱 GLM...`;
                                         continue; 
                                     } else if (response.status === 429) {
                                         document.getElementById('ai-loading-text').textContent = `触发频率限制 (429)，等待 60 秒后自动重试 (第 ${retryCount + 1} 次)...`;
@@ -909,7 +909,7 @@ Input: ${JSON.stringify(promptData)}`;
                                         'Authorization': `Bearer ${zhipuKey}`
                                     },
                                     body: JSON.stringify({
-                                        model: "glm-4.7-flash",
+                                        model: "glm-4.6v-flash",
                                         messages: [{ role: "user", content: prompt }]
                                     })
                                 });
@@ -1167,7 +1167,7 @@ Input: ${JSON.stringify(promptData)}`;
             if (mode === 'ai') {
                 const zhipuKey = localStorage.getItem("toefl_zhipu_key");
                 if (!zhipuKey) { 
-                    container.innerHTML = '<div class="col-span-full text-center text-red-500 mt-10">请先在右上角设置中配置智谱 API Key (GLM-4.7-Flash)。</div>'; 
+                    container.innerHTML = '<div class="col-span-full text-center text-red-500 mt-10">请先在右上角设置中配置智谱 API Key。</div>'; 
                     aiResponseDiv.classList.add('hidden');
                     return; 
                 }
@@ -1194,7 +1194,7 @@ Input: ${JSON.stringify(promptData)}`;
                             'Authorization': `Bearer ${zhipuKey}`
                         },
                         body: JSON.stringify({
-                            model: "glm-4.7-flash",
+                            model: "glm-4.6v-flash",
                             messages: [{ role: "user", content: prompt }]
                         })
                     });
