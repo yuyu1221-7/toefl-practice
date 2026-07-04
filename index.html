@@ -100,9 +100,13 @@
                 </div>
                 <div class="p-6 space-y-4">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Google Gemini API Key (可选)</label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Google Gemini API Key (首选)</label>
                         <input type="password" id="input-api-key" placeholder="AIzaSy..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
-                        <p class="text-xs text-slate-500 mt-2">配置后可自动识别新题库标题。密钥仅保存在您的浏览器本地，绝对安全。</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2 mt-4">智谱 AI API Key (GLM-4.7-Flash 备用/搜索)</label>
+                        <input type="password" id="input-zhipu-key" placeholder="填写智谱 API Key..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
+                        <p class="text-xs text-slate-500 mt-2">配置后可自动识别新题库标题及使用AI搜索。密钥仅保存在您的浏览器本地，绝对安全。</p>
                     </div>
                     <button onclick="saveSettings()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition-colors">保存设置</button>
                 </div>
@@ -741,6 +745,7 @@
         // ================ 系统设置与 API Key 管理 ================
         function openSettings() {
             document.getElementById('input-api-key').value = localStorage.getItem('toefl_api_key') || '';
+            document.getElementById('input-zhipu-key').value = localStorage.getItem('toefl_zhipu_key') || '';
             document.getElementById('settings-modal').classList.remove('hidden');
         }
 
@@ -752,11 +757,18 @@
             const key = document.getElementById('input-api-key').value.trim();
             if (key) {
                 localStorage.setItem('toefl_api_key', key);
-                showToast("API Key 已保存至本地！");
             } else {
                 localStorage.removeItem('toefl_api_key');
-                showToast("API Key 已清除。");
             }
+            
+            const zhipuKey = document.getElementById('input-zhipu-key').value.trim();
+            if (zhipuKey) {
+                localStorage.setItem('toefl_zhipu_key', zhipuKey);
+            } else {
+                localStorage.removeItem('toefl_zhipu_key');
+            }
+            
+            showToast("设置已保存至本地！");
             closeSettings();
         }
 
@@ -1176,9 +1188,12 @@
             overlay.classList.remove('hidden');
 
             const stopWords = getStopWords();
-            const savedKey = localStorage.getItem('toefl_api_key') || "";
+            const geminiKey = localStorage.getItem('toefl_api_key') || "";
+            const zhipuKey = localStorage.getItem('toefl_zhipu_key') || "";
             
-            if (!navigator.onLine || savedKey.trim() === "") {
+            let currentProvider = geminiKey ? 'gemini' : (zhipuKey ? 'zhipu' : null);
+
+            if (!navigator.onLine || !currentProvider) {
                 overlayText.textContent = "未配置 API Key，正在使用本地降级算法...";
                 fallbackNaming(unknownQs, stopWords);
                 setTimeout(() => { overlay.classList.add('hidden'); finalizeInit(); }, 1000);
@@ -1187,83 +1202,119 @@
 
             const chunkSize = 10; 
             for (let i = 0; i < unknownQs.length; i += chunkSize) {
-                const chunk = unknownQs.slice(i, i + chunkSize);
-                overlayText.textContent = `AI 正在分析第 ${i + 1} 到 ${Math.min(i + chunkSize, unknownQs.length)} 篇 (共 ${unknownQs.length} 篇)...`;
+                let success = false;
+                let retryCount = 0;
+                
+                while (!success && retryCount < 2) {
+                    let providerName = currentProvider === 'gemini' ? 'Gemini 1.5 Flash' : '智谱 GLM-4.7-Flash';
+                    overlayText.textContent = `正在调用 ${providerName} 分析第 ${i + 1} 到 ${Math.min(i + chunkSize, unknownQs.length)} 篇 (共 ${unknownQs.length} 篇)...`;
 
-                const promptData = chunk.map(q => ({
-                    id: q.id,
-                    text: q.text.replace(/<[^>]+>/g, '').substring(0, 200)
-                }));
+                    const chunk = unknownQs.slice(i, i + chunkSize);
+                    const promptData = chunk.map(q => ({
+                        id: q.id,
+                        text: q.text.replace(/<[^>]+>/g, '').substring(0, 200)
+                    }));
 
-                const promptText = `作为专业的托福阅读教研专家，请分析以下多篇托福阅读文章片段，为每篇生成独立且专业的中英文标题。
-                要求：
-                1. 必须且只能返回纯 JSON 数组格式，不要包含任何其他文字说明。
-                2. 每个对象包含 id (原样返回), en (英文标题, 1-4个词), zh (中文标题, 精炼), cat (必须从以下五项中严格选一："生命科学", "历史与人类学", "天文与地球", "艺术与文化", "综合与其他")。
-                输入数据:
-                ${JSON.stringify(promptData)}`;
+                    const promptText = `作为专业的托福阅读教研专家，请分析以下多篇托福阅读文章片段，为每篇生成独立且专业的中英文标题。
+                    要求：
+                    1. 必须且只能返回纯 JSON 数组格式，不要包含任何其他文字说明。
+                    2. 每个对象包含 id (原样返回), en (英文标题, 1-4个词), zh (中文标题, 精炼), cat (必须从以下五项中严格选一："生命科学", "历史与人类学", "天文与地球", "艺术与文化", "综合与其他")。
+                    输入数据:
+                    ${JSON.stringify(promptData)}`;
 
-                try {
-                    const cleanKey = localStorage.getItem('toefl_api_key') || "";
-                    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${cleanKey}`;
-                    
-                    const payload = { contents: [{ parts: [{ text: promptText }] }] };
+                    try {
+                        let rawText = "";
+                        
+                        if (currentProvider === 'gemini') {
+                            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`;
+                            const payload = { 
+                                contents: [{ parts: [{ text: promptText }] }],
+                                generationConfig: { responseMimeType: "application/json" }
+                            };
 
-                    const res = await fetch(url, { 
-                        method: 'POST', 
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload) 
-                    });
-                    
-                    if(!res.ok) {
-                        if(res.status === 429) {
-                            console.warn("依然触发频率限制，进入深度休眠 65 秒...");
-                            overlayText.textContent = "触发 Google 免费频率限制，系统正在休眠 65 秒后自动继续，请勿刷新页面...";
-                            await new Promise(resolve => setTimeout(resolve, 65000));
-                            i -= chunkSize; 
-                            continue;
-                        }
-                        const errText = await res.text();
-                        throw new Error(`API 报错 ${res.status}: ${errText}`);
-                    }
-                    
-                    const json = await res.json();
-                    let rawText = json.candidates[0].content.parts[0].text;
-                    
-                    rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
-                    const jsonStart = rawText.indexOf('[');
-                    const jsonEnd = rawText.lastIndexOf(']');
-                    
-                    if (jsonStart === -1 || jsonEnd === -1) throw new Error("AI 没有返回有效的 JSON 数组");
-                    
-                    const cleanJsonString = rawText.substring(jsonStart, jsonEnd + 1);
-                    const resultArr = JSON.parse(cleanJsonString);
-                    
-                    let aiCache = {};
-                    try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
-
-                    resultArr.forEach(aiRes => {
-                        const q = globalQuestions.find(x => x.id === aiRes.id);
-                        if(q) {
-                            q.titleZh = aiRes.zh || `综合话题 - 第 ${q.id} 篇`;
-                            q.titleEn = aiRes.en || `Passage ${q.id}`;
-                            q.cat = ["生命科学", "历史与人类学", "天文与地球", "艺术与文化", "综合与其他"].includes(aiRes.cat) ? aiRes.cat : "综合与其他";
+                            const res = await fetch(url, { 
+                                method: 'POST', 
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload) 
+                            });
                             
-                            if (q.hashKey) {
-                                aiCache[q.hashKey] = { zh: q.titleZh, en: q.titleEn, cat: q.cat };
+                            if(!res.ok) {
+                                if(res.status === 429 && zhipuKey) {
+                                    currentProvider = 'zhipu';
+                                    overlayText.textContent = `Gemini 触发限流，自动切换至智谱 GLM-4.7-Flash...`;
+                                    continue;
+                                } else if(res.status === 429) {
+                                    overlayText.textContent = `触发频率限制 (429)，等待 60 秒后自动重试 (第 ${retryCount + 1} 次)...`;
+                                    await new Promise(resolve => setTimeout(resolve, 60000));
+                                    retryCount++;
+                                    continue;
+                                } else {
+                                    throw new Error(`API 报错 ${res.status}`);
+                                }
                             }
+                            
+                            const json = await res.json();
+                            rawText = json.candidates[0].content.parts[0].text;
+                            
+                        } else if (currentProvider === 'zhipu') {
+                            const res = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${zhipuKey}`
+                                },
+                                body: JSON.stringify({
+                                    model: "glm-4.7-flash",
+                                    messages: [{ role: "user", content: promptText }]
+                                })
+                            });
+                            
+                            if (!res.ok) throw new Error(`Zhipu API Error: ${res.status}`);
+                            const json = await res.json();
+                            rawText = json.choices[0].message.content;
                         }
-                    });
-                    
-                    localStorage.setItem('toefl_ai_titles_cache', JSON.stringify(aiCache));
+                        
+                        rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
+                        const jsonStart = rawText.indexOf('[');
+                        const jsonEnd = rawText.lastIndexOf(']');
+                        
+                        if (jsonStart === -1 || jsonEnd === -1) throw new Error("AI 没有返回有效的 JSON 数组");
+                        
+                        const cleanJsonString = rawText.substring(jsonStart, jsonEnd + 1);
+                        const resultArr = JSON.parse(cleanJsonString);
+                        
+                        let aiCache = {};
+                        try { aiCache = JSON.parse(localStorage.getItem('toefl_ai_titles_cache')) || {}; } catch(e) {}
 
-                    if (i + chunkSize < unknownQs.length) {
-                        overlayText.textContent = `本批次成功！为保护免费额度，等待 6 秒后处理下一批...`;
-                        await new Promise(resolve => setTimeout(resolve, 6000));
+                        resultArr.forEach(aiRes => {
+                            const q = globalQuestions.find(x => x.id === aiRes.id);
+                            if(q) {
+                                q.titleZh = aiRes.zh || `综合话题 - 第 ${q.id} 篇`;
+                                q.titleEn = aiRes.en || `Passage ${q.id}`;
+                                q.cat = ["生命科学", "历史与人类学", "天文与地球", "艺术与文化", "综合与其他"].includes(aiRes.cat) ? aiRes.cat : "综合与其他";
+                                
+                                if (q.hashKey) {
+                                    aiCache[q.hashKey] = { zh: q.titleZh, en: q.titleEn, cat: q.cat };
+                                }
+                            }
+                        });
+                        
+                        localStorage.setItem('toefl_ai_titles_cache', JSON.stringify(aiCache));
+                        success = true;
+                        
+                    } catch(e) {
+                        console.error(`❌ 第 ${i+1} 批次 AI 提取失败：`, e);
+                        retryCount++;
+                        await new Promise(r => setTimeout(r, 2000));
                     }
-                    
-                } catch(e) {
-                    console.error(`❌ 第 ${i+1} 批次 AI 提取失败：`, e);
-                    fallbackNaming(chunk, stopWords); 
+                }
+                
+                if (!success) {
+                    fallbackNaming(unknownQs.slice(i, i + chunkSize), stopWords); 
+                }
+
+                if (i + chunkSize < unknownQs.length) {
+                    await new Promise(resolve => setTimeout(resolve, currentProvider === 'gemini' ? 4000 : 1000));
                 }
             }
 
@@ -1837,10 +1888,12 @@
 
         // --- AI 辅助搜索核心逻辑 ---
         async function executeAISearch(keyword) {
-            const apiKey = localStorage.getItem('toefl_api_key');
-            if (!apiKey) {
-                showToast("请先在右上角设置中配置 Google Gemini API Key", "error");
-                document.getElementById('search-mode-select').value = 'hybrid'; // 自动切回混合模式
+            const zhipuKey = localStorage.getItem('toefl_zhipu_key');
+            const searchModeSelect = document.getElementById('search-mode-select');
+            
+            if (!zhipuKey) {
+                showToast("请先在右上角设置中配置智谱 API Key (GLM-4.7-Flash)", "error");
+                searchModeSelect.value = 'hybrid'; // 自动切回混合模式
                 return;
             }
 
@@ -1884,19 +1937,22 @@
             `;
 
             try {
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-                const payload = { contents: [{ parts: [{ text: promptText }] }] };
-
-                const res = await fetch(url, {
+                const res = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${zhipuKey}`
+                    },
+                    body: JSON.stringify({
+                        model: "glm-4.7-flash",
+                        messages: [{ role: "user", content: promptText }]
+                    })
                 });
 
                 if (!res.ok) throw new Error(`API 请求失败: ${res.status}`);
 
                 const json = await res.json();
-                let rawText = json.candidates[0].content.parts[0].text;
+                let rawText = json.choices[0].message.content;
                 rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
                 
                 const resultData = JSON.parse(rawText);
