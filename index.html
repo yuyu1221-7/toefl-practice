@@ -1968,7 +1968,7 @@
             });
         }
 
-        // --- AI 辅助搜索核心逻辑 (防 500 崩溃优化版) ---
+        // --- AI 辅助搜索核心逻辑 (带熔断保护) ---
         async function executeAISearch(keyword) {
             const apiKey = localStorage.getItem('toefl_api_key');
             const searchModeSelect = document.getElementById('search-mode-select');
@@ -1999,27 +1999,37 @@
             resultContainer.classList.add('hidden');
             listEl.innerHTML = '';
 
-            // 🌟 核心修复 1：极度压缩题库目录，剔除英文标题和分类，只保留 ID 和中文标题
+            // 极度压缩目录，防止 Payload 过大
             const catalog = globalQuestions.map(q => ({
                 id: q.id,
                 title: q.titleZh
             }));
 
-            // 🌟 核心修复 2：采用标准的 System + User 双角色 Prompt 结构
-            const systemPrompt = `你是一个专业的托福备考AI助手。以下是当前系统内的题库目录：\n${JSON.stringify(catalog)}\n\n请根据用户的提问，挑选出最相关的 1 到 5 篇题目的 ID。`;
+            const promptText = `你是一个专业的托福备考AI助手。以下是当前系统内的题库目录：\n${JSON.stringify(catalog)}\n\n用户的搜索/提问是：“${keyword}”\n\n请按以下严格格式返回（必须是合法的 JSON，不要 markdown 标记）：\n{\n  "answer": "你的详细解答和拓展分析（使用HTML标签如 <br>, <b> 排版）",\n  "recommendedIds": [1, 5]\n}`;
             
-            const userPrompt = `用户的搜索/提问是：“${keyword}”\n\n请按以下严格格式返回（必须是合法的 JSON，不要 markdown 标记）：\n{\n  "answer": "你的详细解答和拓展分析（使用HTML标签如 <br>, <b> 排版）",\n  "recommendedIds": [1, 5]\n}`;
+            const estimatedTokens = APIRateLimiter.estimateTokens(promptText);
+
+            // 🌟 搜索前进行熔断检查
+            const limitStatus = APIRateLimiter.checkLimits(estimatedTokens);
+            if (limitStatus === 'RPD') {
+                showToast("⚠️ 今日 API 免费额度已耗尽，请明天再试。", "error");
+                searchModeSelect.value = 'hybrid';
+                return;
+            } else if (limitStatus !== 'OK') {
+                const waitTime = APIRateLimiter.getWaitTime() + 1;
+                showToast(`API 请求过于频繁，已触发熔断保护。请等待 ${waitTime} 秒后再试。`, "error");
+                searchModeSelect.value = 'hybrid';
+                return;
+            }
 
             try {
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
                 const payload = { 
-                    contents: [
-                        { role: "user", parts: [{ text: systemPrompt + "\n\n" + userPrompt }] }
-                    ],
+                    contents: [{ parts: [{ text: promptText }] }],
                     generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
                 };
 
-                APIRateLimiter.addRecord(APIRateLimiter.estimateTokens(systemPrompt + userPrompt)); 
+                APIRateLimiter.addRecord(estimatedTokens); // 记录一次请求
                 
                 const res = await fetch(url, {
                     method: 'POST',
@@ -2027,22 +2037,17 @@
                     body: JSON.stringify(payload)
                 });
 
-                if (!res.ok) {
-                    const errText = await res.text();
-                    throw new Error(`API Error ${res.status}: ${errText}`);
-                }
+                if (!res.ok) throw new Error(`API 请求失败: ${res.status}`);
 
                 const json = await res.json();
                 let rawText = json.candidates[0].content.parts[0].text;
-                
-                // 清理可能存在的 markdown 标记
                 rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
+                
                 const resultData = JSON.parse(rawText);
 
                 aiLoading.classList.add('hidden');
                 aiText.innerHTML = resultData.answer;
 
-                // 渲染 AI 推荐的题目卡片
                 if (resultData.recommendedIds && resultData.recommendedIds.length > 0) {
                     resultContainer.classList.remove('hidden');
                     document.getElementById('search-result-count').textContent = `🤖 AI 为您精准推荐了 ${resultData.recommendedIds.length} 道相关题目`;
@@ -2071,8 +2076,7 @@
             } catch (error) {
                 console.error(error);
                 aiLoading.classList.add('hidden');
-                // 捕获并显示具体错误，方便排查
-                aiText.innerHTML = `<span class="text-red-500 font-bold">❌ AI 请求出错 (${error.message})。请稍后再试。</span>`;
+                aiText.innerHTML = `<span class="text-red-500 font-bold">❌ AI 请求出错，请检查网络环境或 API Key 是否有效。</span>`;
             }
         }
 
@@ -2902,7 +2906,7 @@
             loadingText.textContent = "正在扫描题库，提取答案与真题例句...";
 
             // 1. 提取与聚合词汇
-            let vocabMap = {};
+            let rawVocab = {};
             globalQuestions.forEach(q => {
                 // 还原完整版正文 (去掉括号和答案标记)
                 const completedText = q.text.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, "$1$2$3").replace(/<br>/g, ' ');
@@ -2912,136 +2916,194 @@
                 const matches = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)];
                 
                 matches.forEach(m => {
-                    const prefix = m[1];
+                    const rawPrefix = m[1];
                     const ans = m[2].toLowerCase();
-                    const fullWord = prefix + m[2] + m[3];
+                    const fullWord = rawPrefix + m[2] + m[3];
+                    
+                    // 核心修复：智能清洗前缀乱码 (只保留纯字母)
+                    const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
                     
                     // 生成考法样式 (前缀 + 下划线)
-                    const blankCount = Math.max(0, ans.length - prefix.length);
-                    const prefixStyle = prefix + (blankCount > 0 ? " " + Array(blankCount).fill('_').join(' ') : "");
+                    const blankCount = Math.max(0, ans.length - cleanPrefix.length);
+                    const prefixStyle = cleanPrefix + (blankCount > 0 ? " " + Array(blankCount).fill('_').join(' ') : "");
 
                     // 寻找包含该词的完整例句
                     let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord.toLowerCase())) || completedText.substring(0, 200) + "...";
                     targetSentence = targetSentence.trim();
 
-                    if (!vocabMap[ans]) {
-                        vocabMap[ans] = {
+                    if (!rawVocab[ans]) {
+                        rawVocab[ans] = {
                             word: ans,
                             prefixStyle: prefixStyle,
                             count: 0,
                             dates: new Set(),
-                            sentences: new Set(),
-                            translation: ""
+                            sentences: new Set()
                         };
                     }
-                    vocabMap[ans].count++;
-                    q.dates.forEach(d => { if(d !== '未知日期') vocabMap[ans].dates.add(d); });
-                    vocabMap[ans].sentences.add(targetSentence);
+                    rawVocab[ans].count++;
+                    q.dates.forEach(d => { if(d !== '未知日期') rawVocab[ans].dates.add(d); });
+                    rawVocab[ans].sentences.add(targetSentence);
                 });
             });
 
-            // 转换为数组并按频次降序
-            vocabDataList = Object.values(vocabMap).sort((a, b) => b.count - a.count);
+            // 2. 预分组：按首字母排序，确保同源词被分在同一个批次
+            let sortedWords = Object.keys(rawVocab).sort();
+            let batches = [];
+            let currentBatch = [];
+            let currentBatchWordsCount = 0;
+            let currentPrefix = "";
+            let tempFamily = [];
 
-            // 2. 动态攒批调用 AI 翻译
-            const wordsToTranslate = vocabDataList.filter(v => !v.translation);
-            
-            if (wordsToTranslate.length > 0) {
-                const basePrompt = `你是一个专业的托福词汇老师。请根据以下托福阅读真题的单词和对应的真题例句，给出该单词在语境中最精准的【中文释义】（仅需词性+中文，如：n. 种群；人口）。
-                要求：必须返回纯 JSON 数组格式：[{"word": "...", "translation": "..."}]
-                输入数据：\n`;
-
-                let i = 0;
-                while (i < wordsToTranslate.length) {
-                    let currentBatch = [];
-                    let currentTokens = APIRateLimiter.estimateTokens(basePrompt);
-                    
-                    // 动态攒批，最高 60 个词一批
-                    while (i < wordsToTranslate.length && currentBatch.length < 60) {
-                        let item = wordsToTranslate[i];
-                        // 只取第一个例句给 AI 参考，节省 Token
-                        let sampleSentence = Array.from(item.sentences)[0];
-                        let itemData = { word: item.word, sentence: sampleSentence };
-                        let itemTokens = APIRateLimiter.estimateTokens(JSON.stringify(itemData));
-                        
-                        if (currentTokens + itemTokens > 150000) break;
-                        
-                        currentBatch.push(itemData);
-                        currentTokens += itemTokens;
-                        i++;
+            sortedWords.forEach(w => {
+                let pfx = w.substring(0, 3);
+                if (pfx !== currentPrefix && tempFamily.length > 0) {
+                    if (currentBatchWordsCount + tempFamily.length > 80) {
+                        batches.push(currentBatch);
+                        currentBatch = [];
+                        currentBatchWordsCount = 0;
                     }
-
-                    let success = false;
-                    let retryCount = 0;
-
-                    while (!success && retryCount < 3) {
-                        const limitStatus = APIRateLimiter.checkLimits(currentTokens);
-                        if (limitStatus === 'RPD') {
-                            alert("⚠️ 今日 API 免费额度已耗尽，翻译中止。已翻译的部分可正常导出。");
-                            loadingArea.classList.add('hidden');
-                            renderVocabTable();
-                            return;
-                        }
-                        if (limitStatus === 'RPM' || limitStatus === 'TPM') {
-                            const waitSecs = APIRateLimiter.getWaitTime() + 1;
-                            loadingText.textContent = `触发熔断保护，等待 ${waitSecs} 秒后继续翻译...`;
-                            await new Promise(r => setTimeout(r, waitSecs * 1000));
-                            continue;
-                        }
-
-                        loadingText.textContent = `正在调用 Gemini 翻译第 ${i - currentBatch.length + 1} 到 ${i} 个词 (共 ${wordsToTranslate.length} 个)...`;
-
-                        try {
-                            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-                            APIRateLimiter.addRecord(currentTokens);
-                            
-                            const res = await fetch(url, {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({
-                                    contents: [{ parts: [{ text: basePrompt + JSON.stringify(currentBatch) }] }],
-                                    generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
-                                })
-                            });
-
-                            if (!res.ok) {
-                                if (res.status === 429) {
-                                    const backoff = Math.pow(2, retryCount) * 5000;
-                                    loadingText.textContent = `触发 429 限流，退避休眠 ${backoff/1000} 秒...`;
-                                    await new Promise(r => setTimeout(r, backoff));
-                                    retryCount++;
-                                    continue;
-                                }
-                                throw new Error(`API 报错 ${res.status}`);
-                            }
-
-                            const json = await res.json();
-                            let rawText = json.candidates[0].content.parts[0].text.replace(/```json/gi, '').replace(/```/g, '').trim();
-                            const resultArr = JSON.parse(rawText);
-
-                            resultArr.forEach(resItem => {
-                                let target = vocabDataList.find(v => v.word === resItem.word);
-                                if (target) target.translation = resItem.translation;
-                            });
-                            success = true;
-
-                        } catch (e) {
-                            console.error("翻译失败:", e);
-                            retryCount++;
-                            await new Promise(r => setTimeout(r, 2000));
-                        }
-                    }
-                    
-                    if (!success) {
-                        currentBatch.forEach(item => {
-                            let target = vocabDataList.find(v => v.word === item.word);
-                            if (target) target.translation = "翻译失败";
-                        });
-                    }
-                    
-                    if (i < wordsToTranslate.length) await new Promise(r => setTimeout(r, 1500));
+                    currentBatch.push(tempFamily);
+                    currentBatchWordsCount += tempFamily.length;
+                    tempFamily = [];
                 }
+                currentPrefix = pfx;
+                tempFamily.push(w);
+            });
+            if (tempFamily.length > 0) currentBatch.push(tempFamily);
+            if (currentBatch.length > 0) batches.push(currentBatch);
+
+            vocabDataList = [];
+
+            // 3. 动态攒批调用 AI 翻译与合并
+            const basePrompt = `你是一个专业的托福词汇老师。以下是提取自托福阅读真题的单词及其所在的真题例句。
+            请执行以下任务：
+            1. 智能合并同源词：将属于同一个词根/家族的单词（如单复数 area/areas，动词时态 require/requires/required）合并为一组。如果某个词没有同源词，则单独为一组。
+            2. 结合例句语境，为每一组词提供最精准的【中文释义】（格式：词性. 中文意思，例如：v. 需要；要求）。不要解释例句。
+
+            必须严格返回纯 JSON 数组格式，格式如下：
+            [
+              {
+                "forms": ["require", "requires", "required"],
+                "translation": "v. 需要；要求"
+              }
+            ]
+
+            输入数据：\n`;
+
+            for (let i = 0; i < batches.length; i++) {
+                let batchData = [];
+                batches[i].forEach(family => {
+                    family.forEach(w => {
+                        batchData.push({ word: w, sentence: Array.from(rawVocab[w].sentences)[0] });
+                    });
+                });
+
+                let currentTokens = APIRateLimiter.estimateTokens(basePrompt + JSON.stringify(batchData));
+                let success = false;
+                let retryCount = 0;
+
+                while (!success && retryCount < 3) {
+                    const limitStatus = APIRateLimiter.checkLimits(currentTokens);
+                    if (limitStatus === 'RPD') {
+                        alert("⚠️ 今日 API 免费额度已耗尽，翻译中止。已翻译的部分可正常导出。");
+                        loadingArea.classList.add('hidden');
+                        renderVocabTable();
+                        return;
+                    }
+                    if (limitStatus === 'RPM' || limitStatus === 'TPM') {
+                        const waitSecs = APIRateLimiter.getWaitTime() + 1;
+                        loadingText.textContent = `触发熔断保护，等待 ${waitSecs} 秒后继续翻译...`;
+                        await new Promise(r => setTimeout(r, waitSecs * 1000));
+                        continue;
+                    }
+
+                    loadingText.textContent = `正在调用 Gemini 智能合并并翻译第 ${i + 1} 批词汇 (共 ${batches.length} 批)...`;
+
+                    try {
+                        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
+                        APIRateLimiter.addRecord(currentTokens);
+                        
+                        const res = await fetch(url, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                contents: [{ parts: [{ text: basePrompt + JSON.stringify(batchData) }] }],
+                                generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
+                            })
+                        });
+
+                        if (!res.ok) {
+                            if (res.status === 429) {
+                                const backoff = Math.pow(2, retryCount) * 5000;
+                                loadingText.textContent = `触发 429 限流，退避休眠 ${backoff/1000} 秒...`;
+                                await new Promise(r => setTimeout(r, backoff));
+                                retryCount++;
+                                continue;
+                            }
+                            throw new Error(`API 报错 ${res.status}`);
+                        }
+
+                        const json = await res.json();
+                        let rawText = json.candidates[0].content.parts[0].text.replace(/```json/gi, '').replace(/```/g, '').trim();
+                        const resultArr = JSON.parse(rawText);
+
+                        // 4. 聚合 AI 返回的数据
+                        resultArr.forEach(item => {
+                            let mergedCount = 0;
+                            let mergedDates = new Set();
+                            let mergedSentences = new Set();
+                            let mergedStyles = new Set();
+                            let validForms = [];
+
+                            item.forms.forEach(w => {
+                                if (rawVocab[w]) {
+                                    validForms.push(w);
+                                    mergedCount += rawVocab[w].count;
+                                    rawVocab[w].dates.forEach(d => mergedDates.add(d));
+                                    rawVocab[w].sentences.forEach(s => mergedSentences.add(s));
+                                    mergedStyles.add(rawVocab[w].prefixStyle);
+                                }
+                            });
+
+                            if (validForms.length > 0) {
+                                vocabDataList.push({
+                                    forms: validForms,
+                                    styles: Array.from(mergedStyles),
+                                    count: mergedCount,
+                                    dates: Array.from(mergedDates).sort((a,b) => parseDateStr(b) - parseDateStr(a)),
+                                    sentences: Array.from(mergedSentences),
+                                    translation: item.translation
+                                });
+                            }
+                        });
+                        success = true;
+
+                    } catch (e) {
+                        console.error("翻译失败:", e);
+                        retryCount++;
+                        await new Promise(r => setTimeout(r, 2000));
+                    }
+                }
+                
+                if (!success) {
+                    // 降级处理：如果不成功，就不合并，直接塞进去
+                    batchData.forEach(item => {
+                        vocabDataList.push({
+                            forms: [item.word],
+                            styles: [rawVocab[item.word].prefixStyle],
+                            count: rawVocab[item.word].count,
+                            dates: Array.from(rawVocab[item.word].dates).sort((a,b) => parseDateStr(b) - parseDateStr(a)),
+                            sentences: Array.from(rawVocab[item.word].sentences),
+                            translation: "翻译失败"
+                        });
+                    });
+                }
+                
+                if (i < batches.length - 1) await new Promise(r => setTimeout(r, 1500));
             }
+
+            // 最终按频次降序排序
+            vocabDataList.sort((a, b) => b.count - a.count);
 
             loadingArea.classList.add('hidden');
             showToast("词表提取与翻译完成！");
@@ -3054,23 +3116,64 @@
             
             vocabDataList.forEach((item, index) => {
                 // 渲染例句，将目标词加粗高亮
-                let sentencesHtml = Array.from(item.sentences).map(s => {
-                    const regex = new RegExp(`\\b(${item.word})\\b`, 'gi');
-                    return `<div class="mb-2 last:mb-0 text-slate-600 leading-relaxed">` + s.replace(regex, `<strong class="text-blue-600 bg-blue-50 px-1 rounded">$1</strong>`) + `</div>`;
+                let visibleSents = item.sentences.slice(0, 2);
+                let hiddenSents = item.sentences.slice(2);
+
+                let sentsHtml = visibleSents.map(s => {
+                    let highlighted = s;
+                    item.forms.forEach(f => {
+                        const regex = new RegExp(`\\b(${f})\\b`, 'gi');
+                        highlighted = highlighted.replace(regex, `<strong class="text-blue-600 bg-blue-50 px-1 rounded">$1</strong>`);
+                    });
+                    return `<div class="mb-2 text-slate-600 leading-relaxed">${highlighted}</div>`;
                 }).join('');
+
+                if (hiddenSents.length > 0) {
+                    let hiddenHtml = hiddenSents.map(s => {
+                        let highlighted = s;
+                        item.forms.forEach(f => {
+                            const regex = new RegExp(`\\b(${f})\\b`, 'gi');
+                            highlighted = highlighted.replace(regex, `<strong class="text-blue-600 bg-blue-50 px-1 rounded">$1</strong>`);
+                        });
+                        return `<div class="mb-2 text-slate-600 leading-relaxed">${highlighted}</div>`;
+                    }).join('');
+                    
+                    sentsHtml += `
+                        <div class="hidden mt-2 pt-2 border-t border-slate-100">${hiddenHtml}</div>
+                        <button onclick="toggleSents(this)" class="text-blue-500 hover:text-blue-700 text-xs font-bold mt-1 flex items-center gap-1">
+                            ▶ 展开剩余 ${hiddenSents.length} 条例句
+                        </button>
+                    `;
+                }
+
+                let formsHtml = item.forms.join('<br>');
+                let stylesHtml = item.styles.join('<br>');
+                let datesHtml = item.dates.join(', ');
 
                 tbody.innerHTML += `
                     <tr class="hover:bg-slate-50 transition-colors">
                         <td class="p-4 border-b border-slate-100 text-center font-bold text-slate-400">${index + 1}</td>
-                        <td class="p-4 border-b border-slate-100 font-black text-slate-800 text-base">${item.word}</td>
-                        <td class="p-4 border-b border-slate-100 font-mono text-blue-600 font-bold tracking-widest">${item.prefixStyle}</td>
+                        <td class="p-4 border-b border-slate-100 font-black text-slate-800 text-base">${formsHtml}</td>
+                        <td class="p-4 border-b border-slate-100 font-mono text-blue-600 font-bold tracking-widest">${stylesHtml}</td>
                         <td class="p-4 border-b border-slate-100 text-center"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold text-xs">${item.count}</span></td>
+                        <td class="p-4 border-b border-slate-100 text-xs text-slate-500">${datesHtml}</td>
                         <td class="p-4 border-b border-slate-100 font-bold text-emerald-700">${item.translation || '-'}</td>
-                        <td class="p-4 border-b border-slate-100 text-xs">${sentencesHtml}</td>
+                        <td class="p-4 border-b border-slate-100 text-xs">${sentsHtml}</td>
                     </tr>
                 `;
             });
         }
+
+        window.toggleSents = function(btn) {
+            const hiddenDiv = btn.previousElementSibling;
+            if (hiddenDiv.classList.contains('hidden')) {
+                hiddenDiv.classList.remove('hidden');
+                btn.innerHTML = '▼ 收起例句';
+            } else {
+                hiddenDiv.classList.add('hidden');
+                btn.innerHTML = `▶ 展开剩余例句`;
+            }
+        };
 
         window.exportVocab = function(type) {
             if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
@@ -3082,17 +3185,17 @@
                 
                 const exportData = vocabDataList.map((item, idx) => ({
                     "排名": idx + 1,
-                    "答案原词": item.word,
-                    "考法样式": item.prefixStyle,
+                    "答案原词": item.forms.join('\n'),
+                    "考法样式": item.styles.join('\n'),
                     "频次": item.count,
-                    "出现日期": Array.from(item.dates).join(', '),
+                    "出现日期": item.dates.join(', '),
                     "中文释义": item.translation,
-                    "真题例句": Array.from(item.sentences).join('\n\n')
+                    "真题例句": item.sentences.join('\n\n')
                 }));
 
                 const ws = XLSX.utils.json_to_sheet(exportData);
                 // 设置列宽
-                ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 20}, {wch: 8}, {wch: 20}, {wch: 30}, {wch: 80}];
+                ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 20}, {wch: 8}, {wch: 20}, {wch: 20}, {wch: 80}];
                 const wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, "高频词表");
                 XLSX.writeFile(wb, `TOEFL_Vocab_${dateStr}.xlsx`);
@@ -3112,8 +3215,9 @@
                     .col-word { width: 12%; font-weight: bold; font-size: 14px; }
                     .col-style { width: 15%; font-family: monospace; letter-spacing: 2px; }
                     .col-freq { width: 5%; text-align: center; }
-                    .col-trans { width: 18%; font-weight: bold; }
-                    .col-sent { width: 45%; }
+                    .col-date { width: 10%; }
+                    .col-trans { width: 15%; font-weight: bold; }
+                    .col-sent { width: 38%; }
                     .highlight { font-weight: bold; text-decoration: underline; }
                     .sentence { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed #ccc; }
                     .sentence:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
@@ -3122,28 +3226,32 @@
                 <table>
                     <thead><tr>
                         <th class="col-rank">排名</th><th class="col-word">答案原词</th><th class="col-style">考法样式</th>
-                        <th class="col-freq">频次</th><th class="col-trans">中文释义</th><th class="col-sent">真题例句</th>
+                        <th class="col-freq">频次</th><th class="col-date">出现日期</th><th class="col-trans">中文释义</th><th class="col-sent">真题例句</th>
                     </tr></thead><tbody>`;
 
                 vocabDataList.forEach((item, idx) => {
-                    let sents = Array.from(item.sentences).map(s => {
-                        const regex = new RegExp(`\\b(${item.word})\\b`, 'gi');
-                        return `<div class="sentence">` + s.replace(regex, `<span class="highlight">$1</span>`) + `</div>`;
+                    let sents = item.sentences.map(s => {
+                        let highlighted = s;
+                        item.forms.forEach(f => {
+                            const regex = new RegExp(`\\b(${f})\\b`, 'gi');
+                            highlighted = highlighted.replace(regex, `<span class="highlight">$1</span>`);
+                        });
+                        return `<div class="sentence">${highlighted}</div>`;
                     }).join('');
                     
                     htmlContent += `<tr>
-                        <td class="col-rank">${idx+1}</td><td class="col-word">${item.word}</td><td class="col-style">${item.prefixStyle}</td>
-                        <td class="col-freq">${item.count}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
+                        <td class="col-rank">${idx+1}</td><td class="col-word">${item.forms.join('<br>')}</td><td class="col-style">${item.styles.join('<br>')}</td>
+                        <td class="col-freq">${item.count}</td><td class="col-date">${item.dates.join(', ')}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
                     </tr>`;
                 });
                 htmlContent += `</tbody></table></body></html>`;
                 triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
             }
             else if (type === 'md') {
-                let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 考法样式 | 频次 | 中文释义 | 真题例句 |\n|---|---|---|---|---|---|\n`;
+                let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 考法样式 | 频次 | 出现日期 | 中文释义 | 真题例句 |\n|---|---|---|---|---|---|---|\n`;
                 vocabDataList.forEach((item, idx) => {
-                    let sents = Array.from(item.sentences).map(s => s.replace(/\n/g, ' ')).join('<br><br>');
-                    mdContent += `| ${idx+1} | **${item.word}** | \`${item.prefixStyle}\` | ${item.count} | ${item.translation} | ${sents} |\n`;
+                    let sents = item.sentences.map(s => s.replace(/\n/g, ' ')).join('<br><br>');
+                    mdContent += `| ${idx+1} | **${item.forms.join('<br>')}** | \`${item.styles.join('<br>')}\` | ${item.count} | ${item.dates.join(', ')} | ${item.translation} | ${sents} |\n`;
                 });
                 triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
             }
