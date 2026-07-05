@@ -2907,11 +2907,8 @@
             // 1. 提取与聚合词汇
             let rawVocab = {};
             globalQuestions.forEach(q => {
-                // 还原完整版正文 (去掉括号和答案标记)
                 const completedText = q.text.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, "$1$2$3").replace(/<br>/g, ' ');
-                // 按句号、问号、感叹号分割句子
                 const sentences = completedText.match(/[^.!?]+[.!?]+/g) || [completedText];
-
                 const matches = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)];
                 
                 matches.forEach(m => {
@@ -2919,21 +2916,21 @@
                     const ans = m[2];
                     const rawSuffix = m[3];
                     
-                    // 🌟 修复核心 Bug：词典的 Key 必须是完整的单词，而不是括号里的答案残骸！
+                    // 🌟 修复核心 Bug：把前缀、答案、后缀拼成完整的单词！(a + nd + 空白 = and)
                     const fullWord = (rawPrefix + ans + rawSuffix).toLowerCase();
                     
                     // 提取前缀的纯字母长度，用于后续精准加粗
                     const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
                     const prefixLen = cleanPrefix.length;
 
-                    // 寻找包含该词的完整例句
                     let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord)) || completedText.substring(0, 200) + "...";
                     targetSentence = targetSentence.trim();
 
+                    // 🌟 修复核心 Bug：用完整的单词作为 key，绝不能用残缺的答案！
                     if (!rawVocab[fullWord]) {
                         rawVocab[fullWord] = {
                             word: fullWord,
-                            prefixLen: prefixLen, // 记录前缀长度
+                            prefixLen: prefixLen,
                             count: 0,
                             sentences: new Set()
                         };
@@ -2943,7 +2940,7 @@
                 });
             });
 
-            // 2. 预分组：按首字母排序，确保同源词被分在同一个批次
+            // 2. 预分组
             let sortedWords = Object.keys(rawVocab).sort();
             let batches = [];
             let currentBatch = [];
@@ -2971,7 +2968,7 @@
 
             vocabDataList = [];
 
-            // 3. 动态攒批调用 AI 翻译与合并
+            // 3. AI 翻译
             const basePrompt = `你是一个权威的牛津词典编纂者和托福教研专家。以下是提取自托福阅读真题的单词及其所在的真题例句。
             请执行以下任务：
             1. 智能合并同源词：将属于同一个词根/家族的单词（如单复数 area/areas，动词时态 require/requires/required）合并为一组。如果某个词没有同源词，则单独为一组。
@@ -2991,7 +2988,6 @@
                 let batchData = [];
                 batches[i].forEach(family => {
                     family.forEach(w => {
-                        // 传给 AI 最多 3 句，帮助它判断语境
                         let sents = Array.from(rawVocab[w].sentences).slice(0, 3);
                         batchData.push({ word: w, sentences: sents });
                     });
@@ -3046,7 +3042,6 @@
                         let rawText = json.candidates[0].content.parts[0].text.replace(/```json/gi, '').replace(/```/g, '').trim();
                         const resultArr = JSON.parse(rawText);
 
-                        // 4. 聚合 AI 返回的数据
                         resultArr.forEach(item => {
                             let mergedCount = 0;
                             let mergedSentences = new Set();
@@ -3063,7 +3058,6 @@
                             });
 
                             if (validForms.length > 0) {
-                                // 最多只保留 3 条例句
                                 let selectedSentences = Array.from(mergedSentences).slice(0, 3);
                                 vocabDataList.push({
                                     forms: validForms,
@@ -3084,7 +3078,6 @@
                 }
                 
                 if (!success) {
-                    // 降级处理：如果不成功，就不合并，直接塞进去
                     batchData.forEach(item => {
                         let w = item.word;
                         let formPrefixLens = {};
@@ -3102,20 +3095,20 @@
                 if (i < batches.length - 1) await new Promise(r => setTimeout(r, 1500));
             }
 
-            // 最终按频次降序排序
             vocabDataList.sort((a, b) => b.count - a.count);
-
             loadingArea.classList.add('hidden');
             showToast("词表提取与翻译完成！");
             renderVocabTable();
         }
+
+        
 
         function renderVocabTable() {
             const tbody = document.getElementById('vocab-table-body');
             tbody.innerHTML = '';
             
             vocabDataList.forEach((item, index) => {
-                // 🌟 修复渲染 Bug：根据前缀长度截取完整单词
+                // 🌟 修复渲染 Bug：根据前缀长度截取完整单词，精准加粗前缀
                 let formsHtml = item.forms.map(f => {
                     let pfxLen = item.formPrefixLens[f] || 0;
                     let pfx = f.substring(0, pfxLen);
@@ -3146,6 +3139,7 @@
                 `;
             });
         }
+        
 
         window.exportVocab = function(type) {
             if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
@@ -3217,7 +3211,6 @@
                         return `<b>${pfx}</b><span style="color:#666;">${rest}</span>`;
                     }).join('<br>');
 
-                    // 🌟 修复 HTML 导出的高亮 Bug
                     let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
                         if (item.forms.length > 0) {
@@ -3246,7 +3239,6 @@
                         return `**${pfx}**${rest}`;
                     }).join('<br>');
 
-                    // 🌟 修复 MD 导出的高亮 Bug
                     let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
                         if (item.forms.length > 0) {
@@ -3262,6 +3254,7 @@
                 triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
             }
         };
+        
         // ============================================================================
     </script>
 </body>
