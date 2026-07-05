@@ -18,6 +18,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 引入 SheetJS 用于导出原生 Excel -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <style>
         body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #334155; -webkit-font-smoothing: antialiased; }
         .view-hidden { display: none !important; }
@@ -102,7 +104,7 @@
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Google Gemini API Key (Gemini 3.1 Flash Lite)</label>
                         <input type="password" id="input-api-key" placeholder="AIzaSy..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm">
-                        <p class="text-xs text-slate-500 mt-2">配置后可启用智能题库解析及 AI 搜索。内置三维熔断保护机制，密钥仅保存在本地，绝对安全。</p>
+                        <p class="text-xs text-slate-500 mt-2">配置后可启用智能题库解析、AI 搜索及词表翻译。内置三维熔断保护机制，密钥仅保存在本地，绝对安全。</p>
                     </div>
                     <button onclick="saveSettings()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition-colors">保存设置</button>
                 </div>
@@ -637,6 +639,56 @@
                     </div>
                 </div>
 
+                <!-- 真题高频答案词表 -->
+                <div class="bg-white p-8 border border-slate-200 rounded-2xl shadow-sm mb-10 mt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                        <div>
+                            <h3 class="text-xl font-extrabold text-slate-800 flex items-center gap-2">
+                                📚 真题高频答案词表
+                            </h3>
+                            <p class="text-sm text-slate-500 mt-1">自动提取题库中所有考过的答案，按频次排序，并结合真题语境进行 AI 翻译。</p>
+                        </div>
+                        <div class="flex gap-3 flex-wrap">
+                            <button onclick="generateVocabTranslations()" id="btn-generate-vocab" class="px-5 py-2.5 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 shadow-sm transition-colors flex items-center gap-2">
+                                🤖 AI 提取并翻译词表
+                            </button>
+                            <div class="relative group">
+                                <button class="px-5 py-2.5 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-900 shadow-sm transition-colors flex items-center gap-2">
+                                    📥 导出词表 ▾
+                                </button>
+                                <div class="absolute right-0 mt-2 w-40 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
+                                    <button onclick="exportVocab('excel')" class="w-full text-left px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 border-b border-slate-100">📊 导出 Excel</button>
+                                    <button onclick="exportVocab('html')" class="w-full text-left px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 border-b border-slate-100">🌐 导出 HTML (A4)</button>
+                                    <button onclick="exportVocab('md')" class="w-full text-left px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600">📝 导出 Markdown</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI 翻译进度提示 -->
+                    <div id="vocab-loading-area" class="hidden mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl flex items-center gap-3 text-blue-800 text-sm font-bold">
+                        <div class="spinner-blue w-5 h-5 border-2 border-blue-600 border-l-transparent"></div>
+                        <span id="vocab-loading-text">正在准备提取词汇...</span>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-xl border border-slate-200">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 text-slate-600 text-sm uppercase tracking-wider">
+                                    <th class="p-4 border-b border-slate-200 font-black w-16 text-center">排名</th>
+                                    <th class="p-4 border-b border-slate-200 font-black w-32">答案原词</th>
+                                    <th class="p-4 border-b border-slate-200 font-black w-40">考法样式</th>
+                                    <th class="p-4 border-b border-slate-200 font-black w-20 text-center">频次</th>
+                                    <th class="p-4 border-b border-slate-200 font-black w-48">中文释义</th>
+                                    <th class="p-4 border-b border-slate-200 font-black min-w-[300px]">真题例句</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vocab-table-body" class="divide-y divide-slate-100 text-sm">
+                                <tr><td colspan="6" class="p-8 text-center text-slate-400">点击上方按钮生成词表</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1916,7 +1968,7 @@
             });
         }
 
-        // --- AI 辅助搜索核心逻辑 (带熔断保护) ---
+        // --- AI 辅助搜索核心逻辑 (防 500 崩溃优化版) ---
         async function executeAISearch(keyword) {
             const apiKey = localStorage.getItem('toefl_api_key');
             const searchModeSelect = document.getElementById('search-mode-select');
@@ -1927,25 +1979,10 @@
                 return;
             }
 
-            // 极度压缩目录，防止 Payload 过大
-            const catalog = globalQuestions.map(q => ({
-                id: q.id,
-                title: q.titleZh
-            }));
-
-            const promptText = `你是一个专业的托福备考AI助手。以下是当前系统内的题库目录：\n${JSON.stringify(catalog)}\n\n用户的搜索/提问是：“${keyword}”\n\n请按以下严格格式返回（必须是合法的 JSON，不要 markdown 标记）：\n{\n  "answer": "你的详细解答和拓展分析（使用HTML标签如 <br>, <b> 排版）",\n  "recommendedIds": [1, 5]\n}`;
-            
-            const estimatedTokens = APIRateLimiter.estimateTokens(promptText);
-
             // 🌟 搜索前进行熔断检查
-            const limitStatus = APIRateLimiter.checkLimits(estimatedTokens);
-            if (limitStatus === 'RPD') {
-                showToast("⚠️ 今日 API 免费额度已耗尽，请明天再试。", "error");
-                searchModeSelect.value = 'hybrid';
-                return;
-            } else if (limitStatus !== 'OK') {
+            if (!APIRateLimiter.canMakeRequest()) {
                 const waitTime = APIRateLimiter.getWaitTime() + 1;
-                showToast(`API 请求过于频繁，已触发熔断保护。请等待 ${waitTime} 秒后再试。`, "error");
+                showToast(`API 请求即将超限 (15次/分)，已触发熔断保护。请等待 ${waitTime} 秒后再试。`, "error");
                 searchModeSelect.value = 'hybrid';
                 return;
             }
@@ -1962,14 +1999,27 @@
             resultContainer.classList.add('hidden');
             listEl.innerHTML = '';
 
+            // 🌟 核心修复 1：极度压缩题库目录，剔除英文标题和分类，只保留 ID 和中文标题
+            const catalog = globalQuestions.map(q => ({
+                id: q.id,
+                title: q.titleZh
+            }));
+
+            // 🌟 核心修复 2：采用标准的 System + User 双角色 Prompt 结构
+            const systemPrompt = `你是一个专业的托福备考AI助手。以下是当前系统内的题库目录：\n${JSON.stringify(catalog)}\n\n请根据用户的提问，挑选出最相关的 1 到 5 篇题目的 ID。`;
+            
+            const userPrompt = `用户的搜索/提问是：“${keyword}”\n\n请按以下严格格式返回（必须是合法的 JSON，不要 markdown 标记）：\n{\n  "answer": "你的详细解答和拓展分析（使用HTML标签如 <br>, <b> 排版）",\n  "recommendedIds": [1, 5]\n}`;
+
             try {
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
                 const payload = { 
-                    contents: [{ parts: [{ text: promptText }] }],
+                    contents: [
+                        { role: "user", parts: [{ text: systemPrompt + "\n\n" + userPrompt }] }
+                    ],
                     generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
                 };
 
-                APIRateLimiter.addRecord(estimatedTokens); // 记录一次请求
+                APIRateLimiter.addRecord(APIRateLimiter.estimateTokens(systemPrompt + userPrompt)); 
                 
                 const res = await fetch(url, {
                     method: 'POST',
@@ -1977,17 +2027,22 @@
                     body: JSON.stringify(payload)
                 });
 
-                if (!res.ok) throw new Error(`API 请求失败: ${res.status}`);
+                if (!res.ok) {
+                    const errText = await res.text();
+                    throw new Error(`API Error ${res.status}: ${errText}`);
+                }
 
                 const json = await res.json();
                 let rawText = json.candidates[0].content.parts[0].text;
-                rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
                 
+                // 清理可能存在的 markdown 标记
+                rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
                 const resultData = JSON.parse(rawText);
 
                 aiLoading.classList.add('hidden');
                 aiText.innerHTML = resultData.answer;
 
+                // 渲染 AI 推荐的题目卡片
                 if (resultData.recommendedIds && resultData.recommendedIds.length > 0) {
                     resultContainer.classList.remove('hidden');
                     document.getElementById('search-result-count').textContent = `🤖 AI 为您精准推荐了 ${resultData.recommendedIds.length} 道相关题目`;
@@ -2016,7 +2071,8 @@
             } catch (error) {
                 console.error(error);
                 aiLoading.classList.add('hidden');
-                aiText.innerHTML = `<span class="text-red-500 font-bold">❌ AI 请求出错，请检查网络环境或 API Key 是否有效。</span>`;
+                // 捕获并显示具体错误，方便排查
+                aiText.innerHTML = `<span class="text-red-500 font-bold">❌ AI 请求出错 (${error.message})。请稍后再试。</span>`;
             }
         }
 
@@ -2828,6 +2884,271 @@
                 options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid:{display:false} }, x: {grid:{display:false}} } }
             });
         }
+
+        // ============================================================================
+        // 🌟 新增：真题高频答案词表提取、AI 翻译与导出引擎
+        // ============================================================================
+        let vocabDataList = [];
+
+        async function generateVocabTranslations() {
+            const apiKey = localStorage.getItem('toefl_api_key');
+            if (!apiKey) return showToast("请先在右上角设置中配置 Gemini API Key", "error");
+
+            const loadingArea = document.getElementById('vocab-loading-area');
+            const loadingText = document.getElementById('vocab-loading-text');
+            const tbody = document.getElementById('vocab-table-body');
+            
+            loadingArea.classList.remove('hidden');
+            loadingText.textContent = "正在扫描题库，提取答案与真题例句...";
+
+            // 1. 提取与聚合词汇
+            let vocabMap = {};
+            globalQuestions.forEach(q => {
+                // 还原完整版正文 (去掉括号和答案标记)
+                const completedText = q.text.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, "$1$2$3").replace(/<br>/g, ' ');
+                // 按句号、问号、感叹号分割句子
+                const sentences = completedText.match(/[^.!?]+[.!?]+/g) || [completedText];
+
+                const matches = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)];
+                
+                matches.forEach(m => {
+                    const prefix = m[1];
+                    const ans = m[2].toLowerCase();
+                    const fullWord = prefix + m[2] + m[3];
+                    
+                    // 生成考法样式 (前缀 + 下划线)
+                    const blankCount = Math.max(0, ans.length - prefix.length);
+                    const prefixStyle = prefix + (blankCount > 0 ? " " + Array(blankCount).fill('_').join(' ') : "");
+
+                    // 寻找包含该词的完整例句
+                    let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord.toLowerCase())) || completedText.substring(0, 200) + "...";
+                    targetSentence = targetSentence.trim();
+
+                    if (!vocabMap[ans]) {
+                        vocabMap[ans] = {
+                            word: ans,
+                            prefixStyle: prefixStyle,
+                            count: 0,
+                            dates: new Set(),
+                            sentences: new Set(),
+                            translation: ""
+                        };
+                    }
+                    vocabMap[ans].count++;
+                    q.dates.forEach(d => { if(d !== '未知日期') vocabMap[ans].dates.add(d); });
+                    vocabMap[ans].sentences.add(targetSentence);
+                });
+            });
+
+            // 转换为数组并按频次降序
+            vocabDataList = Object.values(vocabMap).sort((a, b) => b.count - a.count);
+
+            // 2. 动态攒批调用 AI 翻译
+            const wordsToTranslate = vocabDataList.filter(v => !v.translation);
+            
+            if (wordsToTranslate.length > 0) {
+                const basePrompt = `你是一个专业的托福词汇老师。请根据以下托福阅读真题的单词和对应的真题例句，给出该单词在语境中最精准的【中文释义】（仅需词性+中文，如：n. 种群；人口）。
+                要求：必须返回纯 JSON 数组格式：[{"word": "...", "translation": "..."}]
+                输入数据：\n`;
+
+                let i = 0;
+                while (i < wordsToTranslate.length) {
+                    let currentBatch = [];
+                    let currentTokens = APIRateLimiter.estimateTokens(basePrompt);
+                    
+                    // 动态攒批，最高 60 个词一批
+                    while (i < wordsToTranslate.length && currentBatch.length < 60) {
+                        let item = wordsToTranslate[i];
+                        // 只取第一个例句给 AI 参考，节省 Token
+                        let sampleSentence = Array.from(item.sentences)[0];
+                        let itemData = { word: item.word, sentence: sampleSentence };
+                        let itemTokens = APIRateLimiter.estimateTokens(JSON.stringify(itemData));
+                        
+                        if (currentTokens + itemTokens > 150000) break;
+                        
+                        currentBatch.push(itemData);
+                        currentTokens += itemTokens;
+                        i++;
+                    }
+
+                    let success = false;
+                    let retryCount = 0;
+
+                    while (!success && retryCount < 3) {
+                        const limitStatus = APIRateLimiter.checkLimits(currentTokens);
+                        if (limitStatus === 'RPD') {
+                            alert("⚠️ 今日 API 免费额度已耗尽，翻译中止。已翻译的部分可正常导出。");
+                            loadingArea.classList.add('hidden');
+                            renderVocabTable();
+                            return;
+                        }
+                        if (limitStatus === 'RPM' || limitStatus === 'TPM') {
+                            const waitSecs = APIRateLimiter.getWaitTime() + 1;
+                            loadingText.textContent = `触发熔断保护，等待 ${waitSecs} 秒后继续翻译...`;
+                            await new Promise(r => setTimeout(r, waitSecs * 1000));
+                            continue;
+                        }
+
+                        loadingText.textContent = `正在调用 Gemini 翻译第 ${i - currentBatch.length + 1} 到 ${i} 个词 (共 ${wordsToTranslate.length} 个)...`;
+
+                        try {
+                            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
+                            APIRateLimiter.addRecord(currentTokens);
+                            
+                            const res = await fetch(url, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    contents: [{ parts: [{ text: basePrompt + JSON.stringify(currentBatch) }] }],
+                                    generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
+                                })
+                            });
+
+                            if (!res.ok) {
+                                if (res.status === 429) {
+                                    const backoff = Math.pow(2, retryCount) * 5000;
+                                    loadingText.textContent = `触发 429 限流，退避休眠 ${backoff/1000} 秒...`;
+                                    await new Promise(r => setTimeout(r, backoff));
+                                    retryCount++;
+                                    continue;
+                                }
+                                throw new Error(`API 报错 ${res.status}`);
+                            }
+
+                            const json = await res.json();
+                            let rawText = json.candidates[0].content.parts[0].text.replace(/```json/gi, '').replace(/```/g, '').trim();
+                            const resultArr = JSON.parse(rawText);
+
+                            resultArr.forEach(resItem => {
+                                let target = vocabDataList.find(v => v.word === resItem.word);
+                                if (target) target.translation = resItem.translation;
+                            });
+                            success = true;
+
+                        } catch (e) {
+                            console.error("翻译失败:", e);
+                            retryCount++;
+                            await new Promise(r => setTimeout(r, 2000));
+                        }
+                    }
+                    
+                    if (!success) {
+                        currentBatch.forEach(item => {
+                            let target = vocabDataList.find(v => v.word === item.word);
+                            if (target) target.translation = "翻译失败";
+                        });
+                    }
+                    
+                    if (i < wordsToTranslate.length) await new Promise(r => setTimeout(r, 1500));
+                }
+            }
+
+            loadingArea.classList.add('hidden');
+            showToast("词表提取与翻译完成！");
+            renderVocabTable();
+        }
+
+        function renderVocabTable() {
+            const tbody = document.getElementById('vocab-table-body');
+            tbody.innerHTML = '';
+            
+            vocabDataList.forEach((item, index) => {
+                // 渲染例句，将目标词加粗高亮
+                let sentencesHtml = Array.from(item.sentences).map(s => {
+                    const regex = new RegExp(`\\b(${item.word})\\b`, 'gi');
+                    return `<div class="mb-2 last:mb-0 text-slate-600 leading-relaxed">` + s.replace(regex, `<strong class="text-blue-600 bg-blue-50 px-1 rounded">$1</strong>`) + `</div>`;
+                }).join('');
+
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="p-4 border-b border-slate-100 text-center font-bold text-slate-400">${index + 1}</td>
+                        <td class="p-4 border-b border-slate-100 font-black text-slate-800 text-base">${item.word}</td>
+                        <td class="p-4 border-b border-slate-100 font-mono text-blue-600 font-bold tracking-widest">${item.prefixStyle}</td>
+                        <td class="p-4 border-b border-slate-100 text-center"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold text-xs">${item.count}</span></td>
+                        <td class="p-4 border-b border-slate-100 font-bold text-emerald-700">${item.translation || '-'}</td>
+                        <td class="p-4 border-b border-slate-100 text-xs">${sentencesHtml}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        window.exportVocab = function(type) {
+            if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
+
+            const dateStr = new Date().toISOString().slice(0,10);
+            
+            if (type === 'excel') {
+                if (typeof XLSX === 'undefined') return showToast("Excel 库未加载完成，请稍后再试", "error");
+                
+                const exportData = vocabDataList.map((item, idx) => ({
+                    "排名": idx + 1,
+                    "答案原词": item.word,
+                    "考法样式": item.prefixStyle,
+                    "频次": item.count,
+                    "出现日期": Array.from(item.dates).join(', '),
+                    "中文释义": item.translation,
+                    "真题例句": Array.from(item.sentences).join('\n\n')
+                }));
+
+                const ws = XLSX.utils.json_to_sheet(exportData);
+                // 设置列宽
+                ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 20}, {wch: 8}, {wch: 20}, {wch: 30}, {wch: 80}];
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "高频词表");
+                XLSX.writeFile(wb, `TOEFL_Vocab_${dateStr}.xlsx`);
+                showToast("Excel 导出成功！");
+            } 
+            else if (type === 'html') {
+                let htmlContent = `
+                <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>TOEFL 真题高频词表</title>
+                <style>
+                    @page { size: A4; margin: 15mm; }
+                    body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6; font-size: 12px; }
+                    h1 { text-align: center; font-size: 24px; margin-bottom: 20px; }
+                    table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+                    th, td { border: 1px solid #000; padding: 8px; vertical-align: top; word-wrap: break-word; }
+                    th { background-color: #f0f0f0; font-weight: bold; text-align: left; }
+                    .col-rank { width: 5%; text-align: center; }
+                    .col-word { width: 12%; font-weight: bold; font-size: 14px; }
+                    .col-style { width: 15%; font-family: monospace; letter-spacing: 2px; }
+                    .col-freq { width: 5%; text-align: center; }
+                    .col-trans { width: 18%; font-weight: bold; }
+                    .col-sent { width: 45%; }
+                    .highlight { font-weight: bold; text-decoration: underline; }
+                    .sentence { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed #ccc; }
+                    .sentence:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+                </style></head><body>
+                <h1>TOEFL 填词 - 真题高频答案词表</h1>
+                <table>
+                    <thead><tr>
+                        <th class="col-rank">排名</th><th class="col-word">答案原词</th><th class="col-style">考法样式</th>
+                        <th class="col-freq">频次</th><th class="col-trans">中文释义</th><th class="col-sent">真题例句</th>
+                    </tr></thead><tbody>`;
+
+                vocabDataList.forEach((item, idx) => {
+                    let sents = Array.from(item.sentences).map(s => {
+                        const regex = new RegExp(`\\b(${item.word})\\b`, 'gi');
+                        return `<div class="sentence">` + s.replace(regex, `<span class="highlight">$1</span>`) + `</div>`;
+                    }).join('');
+                    
+                    htmlContent += `<tr>
+                        <td class="col-rank">${idx+1}</td><td class="col-word">${item.word}</td><td class="col-style">${item.prefixStyle}</td>
+                        <td class="col-freq">${item.count}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
+                    </tr>`;
+                });
+                htmlContent += `</tbody></table></body></html>`;
+                triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
+            }
+            else if (type === 'md') {
+                let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 考法样式 | 频次 | 中文释义 | 真题例句 |\n|---|---|---|---|---|---|\n`;
+                vocabDataList.forEach((item, idx) => {
+                    let sents = Array.from(item.sentences).map(s => s.replace(/\n/g, ' ')).join('<br><br>');
+                    mdContent += `| ${idx+1} | **${item.word}** | \`${item.prefixStyle}\` | ${item.count} | ${item.translation} | ${sents} |\n`;
+                });
+                triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
+            }
+        };
+        // ============================================================================
     </script>
 </body>
 </html>
