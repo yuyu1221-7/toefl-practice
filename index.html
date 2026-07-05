@@ -677,14 +677,13 @@
                                 <tr class="bg-slate-50 text-slate-600 text-sm uppercase tracking-wider">
                                     <th class="p-4 border-b border-slate-200 font-black w-16 text-center">排名</th>
                                     <th class="p-4 border-b border-slate-200 font-black w-32">答案原词</th>
-                                    <th class="p-4 border-b border-slate-200 font-black w-40">考法样式</th>
                                     <th class="p-4 border-b border-slate-200 font-black w-20 text-center">频次</th>
-                                    <th class="p-4 border-b border-slate-200 font-black w-48">中文释义</th>
+                                    <th class="p-4 border-b border-slate-200 font-black w-48">权威释义</th>
                                     <th class="p-4 border-b border-slate-200 font-black min-w-[300px]">真题例句</th>
                                 </tr>
                             </thead>
                             <tbody id="vocab-table-body" class="divide-y divide-slate-100 text-sm">
-                                <tr><td colspan="6" class="p-8 text-center text-slate-400">点击上方按钮生成词表</td></tr>
+                                <tr><td colspan="5" class="p-8 text-center text-slate-400">点击上方按钮生成词表</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -2920,12 +2919,8 @@
                     const ans = m[2].toLowerCase();
                     const fullWord = rawPrefix + m[2] + m[3];
                     
-                    // 核心修复：智能清洗前缀乱码 (只保留纯字母)
-                    const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
-                    
-                    // 生成考法样式 (前缀 + 下划线)
-                    const blankCount = Math.max(0, ans.length - cleanPrefix.length);
-                    const prefixStyle = cleanPrefix + (blankCount > 0 ? " " + Array(blankCount).fill('_').join(' ') : "");
+                    // 核心修复：智能清洗前缀乱码 (只保留纯字母，转小写以便后续匹配)
+                    const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '').toLowerCase();
 
                     // 寻找包含该词的完整例句
                     let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord.toLowerCase())) || completedText.substring(0, 200) + "...";
@@ -2934,14 +2929,12 @@
                     if (!rawVocab[ans]) {
                         rawVocab[ans] = {
                             word: ans,
-                            prefixStyle: prefixStyle,
+                            prefix: cleanPrefix,
                             count: 0,
-                            dates: new Set(),
                             sentences: new Set()
                         };
                     }
                     rawVocab[ans].count++;
-                    q.dates.forEach(d => { if(d !== '未知日期') rawVocab[ans].dates.add(d); });
                     rawVocab[ans].sentences.add(targetSentence);
                 });
             });
@@ -2975,10 +2968,10 @@
             vocabDataList = [];
 
             // 3. 动态攒批调用 AI 翻译与合并
-            const basePrompt = `你是一个专业的托福词汇老师。以下是提取自托福阅读真题的单词及其所在的真题例句。
+            const basePrompt = `你是一个权威的牛津词典编纂者和托福教研专家。以下是提取自托福阅读真题的单词及其所在的真题例句。
             请执行以下任务：
             1. 智能合并同源词：将属于同一个词根/家族的单词（如单复数 area/areas，动词时态 require/requires/required）合并为一组。如果某个词没有同源词，则单独为一组。
-            2. 结合例句语境，为每一组词提供最精准的【中文释义】（格式：词性. 中文意思，例如：v. 需要；要求）。不要解释例句。
+            2. 结合例句语境，为每一组词提供最精准的【中文释义】。注意：必须严格根据例句中的语境给出释义！例如 "check" 在例句中如果是"抑制"的意思，就绝不能写"检查"。如果该词在不同例句中有不同的词性或词义，请分别列出（格式：词性. 中文意思，例如：n. 影响；v. 影响；支配）。
 
             必须严格返回纯 JSON 数组格式，格式如下：
             [
@@ -2994,7 +2987,9 @@
                 let batchData = [];
                 batches[i].forEach(family => {
                     family.forEach(w => {
-                        batchData.push({ word: w, sentence: Array.from(rawVocab[w].sentences)[0] });
+                        // 传给 AI 最多 3 句，帮助它判断语境
+                        let sents = Array.from(rawVocab[w].sentences).slice(0, 3);
+                        batchData.push({ word: w, sentences: sents });
                     });
                 });
 
@@ -3050,28 +3045,27 @@
                         // 4. 聚合 AI 返回的数据
                         resultArr.forEach(item => {
                             let mergedCount = 0;
-                            let mergedDates = new Set();
                             let mergedSentences = new Set();
-                            let mergedStyles = new Set();
                             let validForms = [];
+                            let formPrefixes = {};
 
                             item.forms.forEach(w => {
                                 if (rawVocab[w]) {
                                     validForms.push(w);
                                     mergedCount += rawVocab[w].count;
-                                    rawVocab[w].dates.forEach(d => mergedDates.add(d));
                                     rawVocab[w].sentences.forEach(s => mergedSentences.add(s));
-                                    mergedStyles.add(rawVocab[w].prefixStyle);
+                                    formPrefixes[w] = rawVocab[w].prefix;
                                 }
                             });
 
                             if (validForms.length > 0) {
+                                // 最多只保留 3 条例句
+                                let selectedSentences = Array.from(mergedSentences).slice(0, 3);
                                 vocabDataList.push({
                                     forms: validForms,
-                                    styles: Array.from(mergedStyles),
+                                    formPrefixes: formPrefixes,
                                     count: mergedCount,
-                                    dates: Array.from(mergedDates).sort((a,b) => parseDateStr(b) - parseDateStr(a)),
-                                    sentences: Array.from(mergedSentences),
+                                    sentences: selectedSentences,
                                     translation: item.translation
                                 });
                             }
@@ -3088,12 +3082,14 @@
                 if (!success) {
                     // 降级处理：如果不成功，就不合并，直接塞进去
                     batchData.forEach(item => {
+                        let w = item.word;
+                        let formPrefixes = {};
+                        formPrefixes[w] = rawVocab[w].prefix;
                         vocabDataList.push({
-                            forms: [item.word],
-                            styles: [rawVocab[item.word].prefixStyle],
-                            count: rawVocab[item.word].count,
-                            dates: Array.from(rawVocab[item.word].dates).sort((a,b) => parseDateStr(b) - parseDateStr(a)),
-                            sentences: Array.from(rawVocab[item.word].sentences),
+                            forms: [w],
+                            formPrefixes: formPrefixes,
+                            count: rawVocab[w].count,
+                            sentences: Array.from(rawVocab[w].sentences).slice(0, 3),
                             translation: "翻译失败"
                         });
                     });
@@ -3115,65 +3111,37 @@
             tbody.innerHTML = '';
             
             vocabDataList.forEach((item, index) => {
-                // 渲染例句，将目标词加粗高亮
-                let visibleSents = item.sentences.slice(0, 2);
-                let hiddenSents = item.sentences.slice(2);
+                // 渲染答案原词 (精准前缀加粗)
+                let formsHtml = item.forms.map(f => {
+                    let pfx = item.formPrefixes[f] || '';
+                    // 确保前缀匹配时忽略大小写，提取剩余部分
+                    let rest = f.substring(pfx.length);
+                    return `<span class="text-base"><b class="text-slate-900">${pfx}</b><span class="text-slate-500">${rest}</span></span>`;
+                }).join('<br>');
 
-                let sentsHtml = visibleSents.map(s => {
+                // 渲染例句 (最多3句，完整加粗目标词)
+                let sentsHtml = item.sentences.map((s, i) => {
                     let highlighted = s;
                     item.forms.forEach(f => {
+                        // 匹配完整的单词并加粗
                         const regex = new RegExp(`\\b(${f})\\b`, 'gi');
-                        highlighted = highlighted.replace(regex, `<strong class="text-blue-600 bg-blue-50 px-1 rounded">$1</strong>`);
+                        highlighted = highlighted.replace(regex, `<b class="text-blue-700 bg-blue-50 px-1 rounded">$1</b>`);
                     });
-                    return `<div class="mb-2 text-slate-600 leading-relaxed">${highlighted}</div>`;
+                    let borderClass = i < item.sentences.length - 1 ? 'border-b border-slate-100' : '';
+                    return `<div class="mb-3 pb-3 ${borderClass} text-slate-600 leading-relaxed">${i + 1}. ${highlighted}</div>`;
                 }).join('');
-
-                if (hiddenSents.length > 0) {
-                    let hiddenHtml = hiddenSents.map(s => {
-                        let highlighted = s;
-                        item.forms.forEach(f => {
-                            const regex = new RegExp(`\\b(${f})\\b`, 'gi');
-                            highlighted = highlighted.replace(regex, `<strong class="text-blue-600 bg-blue-50 px-1 rounded">$1</strong>`);
-                        });
-                        return `<div class="mb-2 text-slate-600 leading-relaxed">${highlighted}</div>`;
-                    }).join('');
-                    
-                    sentsHtml += `
-                        <div class="hidden mt-2 pt-2 border-t border-slate-100">${hiddenHtml}</div>
-                        <button onclick="toggleSents(this)" class="text-blue-500 hover:text-blue-700 text-xs font-bold mt-1 flex items-center gap-1">
-                            ▶ 展开剩余 ${hiddenSents.length} 条例句
-                        </button>
-                    `;
-                }
-
-                let formsHtml = item.forms.join('<br>');
-                let stylesHtml = item.styles.join('<br>');
-                let datesHtml = item.dates.join(', ');
 
                 tbody.innerHTML += `
                     <tr class="hover:bg-slate-50 transition-colors">
                         <td class="p-4 border-b border-slate-100 text-center font-bold text-slate-400">${index + 1}</td>
-                        <td class="p-4 border-b border-slate-100 font-black text-slate-800 text-base">${formsHtml}</td>
-                        <td class="p-4 border-b border-slate-100 font-mono text-blue-600 font-bold tracking-widest">${stylesHtml}</td>
+                        <td class="p-4 border-b border-slate-100 font-mono tracking-wide">${formsHtml}</td>
                         <td class="p-4 border-b border-slate-100 text-center"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold text-xs">${item.count}</span></td>
-                        <td class="p-4 border-b border-slate-100 text-xs text-slate-500">${datesHtml}</td>
-                        <td class="p-4 border-b border-slate-100 font-bold text-emerald-700">${item.translation || '-'}</td>
-                        <td class="p-4 border-b border-slate-100 text-xs">${sentsHtml}</td>
+                        <td class="p-4 border-b border-slate-100 font-bold text-emerald-700 leading-relaxed">${item.translation || '-'}</td>
+                        <td class="p-4 border-b border-slate-100 text-sm">${sentsHtml}</td>
                     </tr>
                 `;
             });
         }
-
-        window.toggleSents = function(btn) {
-            const hiddenDiv = btn.previousElementSibling;
-            if (hiddenDiv.classList.contains('hidden')) {
-                hiddenDiv.classList.remove('hidden');
-                btn.innerHTML = '▼ 收起例句';
-            } else {
-                hiddenDiv.classList.add('hidden');
-                btn.innerHTML = `▶ 展开剩余例句`;
-            }
-        };
 
         window.exportVocab = function(type) {
             if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
@@ -3183,19 +3151,31 @@
             if (type === 'excel') {
                 if (typeof XLSX === 'undefined') return showToast("Excel 库未加载完成，请稍后再试", "error");
                 
-                const exportData = vocabDataList.map((item, idx) => ({
-                    "排名": idx + 1,
-                    "答案原词": item.forms.join('\n'),
-                    "考法样式": item.styles.join('\n'),
-                    "频次": item.count,
-                    "出现日期": item.dates.join(', '),
-                    "中文释义": item.translation,
-                    "真题例句": item.sentences.join('\n\n')
-                }));
+                const exportData = vocabDataList.map((item, idx) => {
+                    // 纯文本导出，不带 HTML 标签
+                    let formsText = item.forms.join('\n');
+                    let sentsText = item.sentences.map((s, i) => `${i + 1}. ${s}`).join('\n\n');
+                    
+                    return {
+                        "排名": idx + 1,
+                        "答案原词": formsText,
+                        "频次": item.count,
+                        "权威释义": item.translation,
+                        "真题例句": sentsText
+                    };
+                });
 
                 const ws = XLSX.utils.json_to_sheet(exportData);
+                
+                // 强制所有单元格自动换行 (wrapText)
+                for (let cell in ws) {
+                    if (cell[0] === '!') continue;
+                    if (!ws[cell].s) ws[cell].s = {};
+                    ws[cell].s.alignment = { wrapText: true, vertical: 'top' };
+                }
+
                 // 设置列宽
-                ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 20}, {wch: 8}, {wch: 20}, {wch: 20}, {wch: 80}];
+                ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 8}, {wch: 25}, {wch: 80}];
                 const wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, "高频词表");
                 XLSX.writeFile(wb, `TOEFL_Vocab_${dateStr}.xlsx`);
@@ -3212,46 +3192,64 @@
                     th, td { border: 1px solid #000; padding: 8px; vertical-align: top; word-wrap: break-word; }
                     th { background-color: #f0f0f0; font-weight: bold; text-align: left; }
                     .col-rank { width: 5%; text-align: center; }
-                    .col-word { width: 12%; font-weight: bold; font-size: 14px; }
-                    .col-style { width: 15%; font-family: monospace; letter-spacing: 2px; }
+                    .col-word { width: 15%; font-family: monospace; font-size: 14px; }
                     .col-freq { width: 5%; text-align: center; }
-                    .col-date { width: 10%; }
-                    .col-trans { width: 15%; font-weight: bold; }
-                    .col-sent { width: 38%; }
-                    .highlight { font-weight: bold; text-decoration: underline; }
+                    .col-trans { width: 20%; font-weight: bold; color: #047857; }
+                    .col-sent { width: 55%; }
+                    .highlight { font-weight: bold; color: #1d4ed8; background-color: #eff6ff; padding: 0 2px; border-radius: 2px; }
                     .sentence { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed #ccc; }
                     .sentence:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
                 </style></head><body>
                 <h1>TOEFL 填词 - 真题高频答案词表</h1>
                 <table>
                     <thead><tr>
-                        <th class="col-rank">排名</th><th class="col-word">答案原词</th><th class="col-style">考法样式</th>
-                        <th class="col-freq">频次</th><th class="col-date">出现日期</th><th class="col-trans">中文释义</th><th class="col-sent">真题例句</th>
+                        <th class="col-rank">排名</th><th class="col-word">答案原词</th>
+                        <th class="col-freq">频次</th><th class="col-trans">权威释义</th><th class="col-sent">真题例句</th>
                     </tr></thead><tbody>`;
 
                 vocabDataList.forEach((item, idx) => {
-                    let sents = item.sentences.map(s => {
+                    let formsHtml = item.forms.map(f => {
+                        let pfx = item.formPrefixes[f] || '';
+                        let rest = f.substring(pfx.length);
+                        return `<b>${pfx}</b><span style="color:#666;">${rest}</span>`;
+                    }).join('<br>');
+
+                    let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
                         item.forms.forEach(f => {
                             const regex = new RegExp(`\\b(${f})\\b`, 'gi');
                             highlighted = highlighted.replace(regex, `<span class="highlight">$1</span>`);
                         });
-                        return `<div class="sentence">${highlighted}</div>`;
+                        return `<div class="sentence">${i + 1}. ${highlighted}</div>`;
                     }).join('');
                     
                     htmlContent += `<tr>
-                        <td class="col-rank">${idx+1}</td><td class="col-word">${item.forms.join('<br>')}</td><td class="col-style">${item.styles.join('<br>')}</td>
-                        <td class="col-freq">${item.count}</td><td class="col-date">${item.dates.join(', ')}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
+                        <td class="col-rank">${idx+1}</td><td class="col-word">${formsHtml}</td>
+                        <td class="col-freq">${item.count}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
                     </tr>`;
                 });
                 htmlContent += `</tbody></table></body></html>`;
                 triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
             }
             else if (type === 'md') {
-                let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 考法样式 | 频次 | 出现日期 | 中文释义 | 真题例句 |\n|---|---|---|---|---|---|---|\n`;
+                let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 频次 | 权威释义 | 真题例句 |\n|---|---|---|---|---|\n`;
                 vocabDataList.forEach((item, idx) => {
-                    let sents = item.sentences.map(s => s.replace(/\n/g, ' ')).join('<br><br>');
-                    mdContent += `| ${idx+1} | **${item.forms.join('<br>')}** | \`${item.styles.join('<br>')}\` | ${item.count} | ${item.dates.join(', ')} | ${item.translation} | ${sents} |\n`;
+                    let formsText = item.forms.map(f => {
+                        let pfx = item.formPrefixes[f] || '';
+                        let rest = f.substring(pfx.length);
+                        return `**${pfx}**${rest}`;
+                    }).join('<br>');
+
+                    let sents = item.sentences.map((s, i) => {
+                        let highlighted = s;
+                        item.forms.forEach(f => {
+                            const regex = new RegExp(`\\b(${f})\\b`, 'gi');
+                            highlighted = highlighted.replace(regex, `**${f}**`);
+                        });
+                        return `${i + 1}. ${highlighted}`;
+                    }).join('<br><br>');
+
+                    mdContent += `| ${idx+1} | ${formsText} | ${item.count} | ${item.translation} | ${sents} |\n`;
                 });
                 triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
             }
