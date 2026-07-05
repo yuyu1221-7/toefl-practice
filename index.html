@@ -2916,26 +2916,30 @@
                 
                 matches.forEach(m => {
                     const rawPrefix = m[1];
-                    const ans = m[2].toLowerCase();
-                    const fullWord = rawPrefix + m[2] + m[3];
+                    const ans = m[2];
+                    const rawSuffix = m[3];
                     
-                    // 核心修复：智能清洗前缀乱码 (只保留纯字母，转小写以便后续匹配)
-                    const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '').toLowerCase();
+                    // 🌟 修复核心 Bug：词典的 Key 必须是完整的单词，而不是括号里的答案残骸！
+                    const fullWord = (rawPrefix + ans + rawSuffix).toLowerCase();
+                    
+                    // 提取前缀的纯字母长度，用于后续精准加粗
+                    const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
+                    const prefixLen = cleanPrefix.length;
 
                     // 寻找包含该词的完整例句
-                    let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord.toLowerCase())) || completedText.substring(0, 200) + "...";
+                    let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord)) || completedText.substring(0, 200) + "...";
                     targetSentence = targetSentence.trim();
 
-                    if (!rawVocab[ans]) {
-                        rawVocab[ans] = {
-                            word: ans,
-                            prefix: cleanPrefix,
+                    if (!rawVocab[fullWord]) {
+                        rawVocab[fullWord] = {
+                            word: fullWord,
+                            prefixLen: prefixLen, // 记录前缀长度
                             count: 0,
                             sentences: new Set()
                         };
                     }
-                    rawVocab[ans].count++;
-                    rawVocab[ans].sentences.add(targetSentence);
+                    rawVocab[fullWord].count++;
+                    rawVocab[fullWord].sentences.add(targetSentence);
                 });
             });
 
@@ -3047,14 +3051,14 @@
                             let mergedCount = 0;
                             let mergedSentences = new Set();
                             let validForms = [];
-                            let formPrefixes = {};
+                            let formPrefixLens = {};
 
                             item.forms.forEach(w => {
                                 if (rawVocab[w]) {
                                     validForms.push(w);
                                     mergedCount += rawVocab[w].count;
                                     rawVocab[w].sentences.forEach(s => mergedSentences.add(s));
-                                    formPrefixes[w] = rawVocab[w].prefix;
+                                    formPrefixLens[w] = rawVocab[w].prefixLen;
                                 }
                             });
 
@@ -3063,7 +3067,7 @@
                                 let selectedSentences = Array.from(mergedSentences).slice(0, 3);
                                 vocabDataList.push({
                                     forms: validForms,
-                                    formPrefixes: formPrefixes,
+                                    formPrefixLens: formPrefixLens,
                                     count: mergedCount,
                                     sentences: selectedSentences,
                                     translation: item.translation
@@ -3083,11 +3087,11 @@
                     // 降级处理：如果不成功，就不合并，直接塞进去
                     batchData.forEach(item => {
                         let w = item.word;
-                        let formPrefixes = {};
-                        formPrefixes[w] = rawVocab[w].prefix;
+                        let formPrefixLens = {};
+                        formPrefixLens[w] = rawVocab[w].prefixLen;
                         vocabDataList.push({
                             forms: [w],
-                            formPrefixes: formPrefixes,
+                            formPrefixLens: formPrefixLens,
                             count: rawVocab[w].count,
                             sentences: Array.from(rawVocab[w].sentences).slice(0, 3),
                             translation: "翻译失败"
@@ -3111,22 +3115,22 @@
             tbody.innerHTML = '';
             
             vocabDataList.forEach((item, index) => {
-                // 渲染答案原词 (精准前缀加粗)
+                // 🌟 修复渲染 Bug：根据前缀长度截取完整单词
                 let formsHtml = item.forms.map(f => {
-                    let pfx = item.formPrefixes[f] || '';
-                    // 确保前缀匹配时忽略大小写，提取剩余部分
-                    let rest = f.substring(pfx.length);
+                    let pfxLen = item.formPrefixLens[f] || 0;
+                    let pfx = f.substring(0, pfxLen);
+                    let rest = f.substring(pfxLen);
                     return `<span class="text-base"><b class="text-slate-900">${pfx}</b><span class="text-slate-500">${rest}</span></span>`;
                 }).join('<br>');
 
-                // 渲染例句 (最多3句，完整加粗目标词)
+                // 🌟 修复高亮 Bug：按长度降序排序，并合并为一个正则，防止 "area" 破坏 "areas" 的高亮
                 let sentsHtml = item.sentences.map((s, i) => {
                     let highlighted = s;
-                    item.forms.forEach(f => {
-                        // 匹配完整的单词并加粗
-                        const regex = new RegExp(`\\b(${f})\\b`, 'gi');
+                    if (item.forms.length > 0) {
+                        const sortedForms = [...item.forms].sort((a, b) => b.length - a.length);
+                        const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
                         highlighted = highlighted.replace(regex, `<b class="text-blue-700 bg-blue-50 px-1 rounded">$1</b>`);
-                    });
+                    }
                     let borderClass = i < item.sentences.length - 1 ? 'border-b border-slate-100' : '';
                     return `<div class="mb-3 pb-3 ${borderClass} text-slate-600 leading-relaxed">${i + 1}. ${highlighted}</div>`;
                 }).join('');
@@ -3152,7 +3156,6 @@
                 if (typeof XLSX === 'undefined') return showToast("Excel 库未加载完成，请稍后再试", "error");
                 
                 const exportData = vocabDataList.map((item, idx) => {
-                    // 纯文本导出，不带 HTML 标签
                     let formsText = item.forms.join('\n');
                     let sentsText = item.sentences.map((s, i) => `${i + 1}. ${s}`).join('\n\n');
                     
@@ -3174,7 +3177,6 @@
                     ws[cell].s.alignment = { wrapText: true, vertical: 'top' };
                 }
 
-                // 设置列宽
                 ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 8}, {wch: 25}, {wch: 80}];
                 const wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, "高频词表");
@@ -3209,17 +3211,20 @@
 
                 vocabDataList.forEach((item, idx) => {
                     let formsHtml = item.forms.map(f => {
-                        let pfx = item.formPrefixes[f] || '';
-                        let rest = f.substring(pfx.length);
+                        let pfxLen = item.formPrefixLens[f] || 0;
+                        let pfx = f.substring(0, pfxLen);
+                        let rest = f.substring(pfxLen);
                         return `<b>${pfx}</b><span style="color:#666;">${rest}</span>`;
                     }).join('<br>');
 
+                    // 🌟 修复 HTML 导出的高亮 Bug
                     let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
-                        item.forms.forEach(f => {
-                            const regex = new RegExp(`\\b(${f})\\b`, 'gi');
+                        if (item.forms.length > 0) {
+                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length);
+                            const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
                             highlighted = highlighted.replace(regex, `<span class="highlight">$1</span>`);
-                        });
+                        }
                         return `<div class="sentence">${i + 1}. ${highlighted}</div>`;
                     }).join('');
                     
@@ -3235,17 +3240,20 @@
                 let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 频次 | 权威释义 | 真题例句 |\n|---|---|---|---|---|\n`;
                 vocabDataList.forEach((item, idx) => {
                     let formsText = item.forms.map(f => {
-                        let pfx = item.formPrefixes[f] || '';
-                        let rest = f.substring(pfx.length);
+                        let pfxLen = item.formPrefixLens[f] || 0;
+                        let pfx = f.substring(0, pfxLen);
+                        let rest = f.substring(pfxLen);
                         return `**${pfx}**${rest}`;
                     }).join('<br>');
 
+                    // 🌟 修复 MD 导出的高亮 Bug
                     let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
-                        item.forms.forEach(f => {
-                            const regex = new RegExp(`\\b(${f})\\b`, 'gi');
-                            highlighted = highlighted.replace(regex, `**${f}**`);
-                        });
+                        if (item.forms.length > 0) {
+                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length);
+                            const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
+                            highlighted = highlighted.replace(regex, `**$1**`);
+                        }
                         return `${i + 1}. ${highlighted}`;
                     }).join('<br><br>');
 
