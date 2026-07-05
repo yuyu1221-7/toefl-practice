@@ -972,6 +972,12 @@
         "cat": "艺术与文化"
     },
     {
+        "key": "3DDC79",
+        "en": "Fossils and Ancient Climates",
+        "zh": "化石与古气候",
+        "cat": "天文与地球"
+    },
+    {
         "key": "7B0671",
         "en": "Plate Tectonics",
         "zh": "板块构造",
@@ -1140,9 +1146,9 @@
         "cat": "历史与人类学"
     },
     {
-        "key": "EA4E74",
-        "en": "Hominid Tool Development",
-        "zh": "人科动物工具发展",
+        "key": "48AD39",
+        "en": "Hominid Tool Use",
+        "zh": "原始人工具使用",
         "cat": "历史与人类学"
     },
     {
