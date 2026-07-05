@@ -2889,11 +2889,16 @@
         }
 
         // ============================================================================
-        // 🌟 新增：真题高频答案词表提取、AI 翻译与导出引擎
+        // 🌟 终极版：真题高频答案词表提取、AI 翻译与导出引擎 (含完美 Excel 与横向打印)
         // ============================================================================
         let vocabDataList = [];
 
-        async function generateVocabTranslations() {
+        // 正则安全转义函数
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        window.generateVocabTranslations = async function() {
             const apiKey = localStorage.getItem('toefl_api_key');
             if (!apiKey) return showToast("请先在右上角设置中配置 Gemini API Key", "error");
 
@@ -2901,8 +2906,8 @@
             const loadingText = document.getElementById('vocab-loading-text');
             const tbody = document.getElementById('vocab-table-body');
             
-            loadingArea.classList.remove('hidden');
-            loadingText.textContent = "正在扫描题库，提取答案与真题例句...";
+            if(loadingArea) loadingArea.classList.remove('hidden');
+            if(loadingText) loadingText.textContent = "正在扫描题库，提取答案与真题例句...";
 
             // 1. 提取与聚合词汇
             let rawVocab = {};
@@ -2916,17 +2921,13 @@
                     const ans = m[2];
                     const rawSuffix = m[3];
                     
-                    // 🌟 修复核心 Bug：把前缀、答案、后缀拼成完整的单词！(a + nd + 空白 = and)
                     const fullWord = (rawPrefix + ans + rawSuffix).toLowerCase();
-                    
-                    // 提取前缀的纯字母长度，用于后续精准加粗
                     const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
                     const prefixLen = cleanPrefix.length;
 
                     let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord)) || completedText.substring(0, 200) + "...";
                     targetSentence = targetSentence.trim();
 
-                    // 🌟 修复核心 Bug：用完整的单词作为 key，绝不能用残缺的答案！
                     if (!rawVocab[fullWord]) {
                         rawVocab[fullWord] = {
                             word: fullWord,
@@ -3001,18 +3002,18 @@
                     const limitStatus = APIRateLimiter.checkLimits(currentTokens);
                     if (limitStatus === 'RPD') {
                         alert("⚠️ 今日 API 免费额度已耗尽，翻译中止。已翻译的部分可正常导出。");
-                        loadingArea.classList.add('hidden');
+                        if(loadingArea) loadingArea.classList.add('hidden');
                         renderVocabTable();
                         return;
                     }
                     if (limitStatus === 'RPM' || limitStatus === 'TPM') {
                         const waitSecs = APIRateLimiter.getWaitTime() + 1;
-                        loadingText.textContent = `触发熔断保护，等待 ${waitSecs} 秒后继续翻译...`;
+                        if(loadingText) loadingText.textContent = `触发熔断保护，等待 ${waitSecs} 秒后继续翻译...`;
                         await new Promise(r => setTimeout(r, waitSecs * 1000));
                         continue;
                     }
 
-                    loadingText.textContent = `正在调用 Gemini 智能合并并翻译第 ${i + 1} 批词汇 (共 ${batches.length} 批)...`;
+                    if(loadingText) loadingText.textContent = `正在调用 Gemini 智能合并并翻译第 ${i + 1} 批词汇 (共 ${batches.length} 批)...`;
 
                     try {
                         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
@@ -3030,7 +3031,7 @@
                         if (!res.ok) {
                             if (res.status === 429) {
                                 const backoff = Math.pow(2, retryCount) * 5000;
-                                loadingText.textContent = `触发 429 限流，退避休眠 ${backoff/1000} 秒...`;
+                                if(loadingText) loadingText.textContent = `触发 429 限流，退避休眠 ${backoff/1000} 秒...`;
                                 await new Promise(r => setTimeout(r, backoff));
                                 retryCount++;
                                 continue;
@@ -3096,19 +3097,17 @@
             }
 
             vocabDataList.sort((a, b) => b.count - a.count);
-            loadingArea.classList.add('hidden');
+            if(loadingArea) loadingArea.classList.add('hidden');
             showToast("词表提取与翻译完成！");
             renderVocabTable();
-        }
+        };
 
-        
-
-        function renderVocabTable() {
+        window.renderVocabTable = function() {
             const tbody = document.getElementById('vocab-table-body');
+            if(!tbody) return;
             tbody.innerHTML = '';
             
             vocabDataList.forEach((item, index) => {
-                // 🌟 修复渲染 Bug：根据前缀长度截取完整单词，精准加粗前缀
                 let formsHtml = item.forms.map(f => {
                     let pfxLen = item.formPrefixLens[f] || 0;
                     let pfx = f.substring(0, pfxLen);
@@ -3116,17 +3115,16 @@
                     return `<span class="text-base"><b class="text-slate-900">${pfx}</b><span class="text-slate-500">${rest}</span></span>`;
                 }).join('<br>');
 
-                // 🌟 修复高亮 Bug：按长度降序排序，并合并为一个正则，防止 "area" 破坏 "areas" 的高亮
+                // 🌟 网页端：去掉虚线和多余空格，直接使用 <br> 换行
                 let sentsHtml = item.sentences.map((s, i) => {
                     let highlighted = s;
                     if (item.forms.length > 0) {
-                        const sortedForms = [...item.forms].sort((a, b) => b.length - a.length);
+                        const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
                         const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
                         highlighted = highlighted.replace(regex, `<b class="text-blue-700 bg-blue-50 px-1 rounded">$1</b>`);
                     }
-                    let borderClass = i < item.sentences.length - 1 ? 'border-b border-slate-100' : '';
-                    return `<div class="mb-3 pb-3 ${borderClass} text-slate-600 leading-relaxed">${i + 1}. ${highlighted}</div>`;
-                }).join('');
+                    return `${i + 1}. ${highlighted}`;
+                }).join('<br>');
 
                 tbody.innerHTML += `
                     <tr class="hover:bg-slate-50 transition-colors">
@@ -3134,67 +3132,93 @@
                         <td class="p-4 border-b border-slate-100 font-mono tracking-wide">${formsHtml}</td>
                         <td class="p-4 border-b border-slate-100 text-center"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold text-xs">${item.count}</span></td>
                         <td class="p-4 border-b border-slate-100 font-bold text-emerald-700 leading-relaxed">${item.translation || '-'}</td>
-                        <td class="p-4 border-b border-slate-100 text-sm">${sentsHtml}</td>
+                        <td class="p-4 border-b border-slate-100 text-sm leading-relaxed">${sentsHtml}</td>
                     </tr>
                 `;
             });
-        }
-        
+        };
 
         window.exportVocab = function(type) {
             if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
-
             const dateStr = new Date().toISOString().slice(0,10);
             
+            // 🌟 完美 Excel 导出 (保留加粗、自动换行)
             if (type === 'excel') {
-                if (typeof XLSX === 'undefined') return showToast("Excel 库未加载完成，请稍后再试", "error");
+                let excelTable = `<table><thead><tr><th>排名</th><th>答案原词</th><th>频次</th><th>权威释义</th><th>真题例句</th></tr></thead><tbody>`;
                 
-                const exportData = vocabDataList.map((item, idx) => {
-                    let formsText = item.forms.join('\n');
-                    let sentsText = item.sentences.map((s, i) => `${i + 1}. ${s}`).join('\n\n');
-                    
-                    return {
-                        "排名": idx + 1,
-                        "答案原词": formsText,
-                        "频次": item.count,
-                        "权威释义": item.translation,
-                        "真题例句": sentsText
-                    };
+                vocabDataList.forEach((item, idx) => {
+                    let formsHtml = item.forms.map(f => {
+                        let pfxLen = item.formPrefixLens[f] || 0;
+                        let pfx = f.substring(0, pfxLen);
+                        let rest = f.substring(pfxLen);
+                        return `<b>${pfx}</b>${rest}`;
+                    }).join('<br>');
+
+                    let sentsHtml = item.sentences.map((s, i) => {
+                        let highlighted = s;
+                        if (item.forms.length > 0) {
+                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
+                            const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
+                            highlighted = highlighted.replace(regex, `<b>$1</b>`);
+                        }
+                        return `${i + 1}. ${highlighted}`;
+                    }).join('<br>');
+
+                    excelTable += `<tr><td>${idx+1}</td><td>${formsHtml}</td><td>${item.count}</td><td>${item.translation || '-'}</td><td>${sentsHtml}</td></tr>`;
                 });
+                excelTable += `</tbody></table>`;
 
-                const ws = XLSX.utils.json_to_sheet(exportData);
+                const excelHtml = `
+                    <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+                    <head>
+                        <meta charset="utf-8">
+                        <!--[if gte mso 9]>
+                        <xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>高频词表</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml>
+                        <![endif]-->
+                        <style>
+                            table { border-collapse: collapse; width: 100%; }
+                            th, td { border: 1px solid black; vertical-align: top; font-size: 12px; padding: 8px; }
+                            th { background-color: #f0f0f0; font-weight: bold; text-align: left; }
+                            th:nth-child(1) { width: 60px; }
+                            th:nth-child(2) { width: 150px; }
+                            th:nth-child(3) { width: 60px; }
+                            th:nth-child(4) { width: 300px; }
+                            th:nth-child(5) { width: 800px; }
+                            br { mso-data-placement: same-cell; } /* 强制单元格内换行 */
+                        </style>
+                    </head>
+                    <body>${excelTable}</body>
+                    </html>
+                `;
                 
-                // 强制所有单元格自动换行 (wrapText)
-                for (let cell in ws) {
-                    if (cell[0] === '!') continue;
-                    if (!ws[cell].s) ws[cell].s = {};
-                    ws[cell].s.alignment = { wrapText: true, vertical: 'top' };
-                }
-
-                ws['!cols'] = [{wch: 5}, {wch: 15}, {wch: 8}, {wch: 25}, {wch: 80}];
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, "高频词表");
-                XLSX.writeFile(wb, `TOEFL_Vocab_${dateStr}.xlsx`);
+                const blob = new Blob(['\uFEFF' + excelHtml], { type: 'application/vnd.ms-excel;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `TOEFL_Vocab_Perfect_${dateStr}.xls`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
                 showToast("Excel 导出成功！");
             } 
+            // 🌟 完美 HTML 导出 (横向打印、纯净黑白)
             else if (type === 'html') {
                 let htmlContent = `
                 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>TOEFL 真题高频词表</title>
                 <style>
-                    @page { size: A4; margin: 15mm; }
+                    @page { size: A4 landscape; margin: 15mm; }
                     body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6; font-size: 12px; }
                     h1 { text-align: center; font-size: 24px; margin-bottom: 20px; }
-                    table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+                    table { width: 100%; border-collapse: collapse; }
                     th, td { border: 1px solid #000; padding: 8px; vertical-align: top; word-wrap: break-word; }
                     th { background-color: #f0f0f0; font-weight: bold; text-align: left; }
                     .col-rank { width: 5%; text-align: center; }
                     .col-word { width: 15%; font-family: monospace; font-size: 14px; }
                     .col-freq { width: 5%; text-align: center; }
-                    .col-trans { width: 20%; font-weight: bold; color: #047857; }
+                    .col-trans { width: 20%; font-weight: bold; }
                     .col-sent { width: 55%; }
-                    .highlight { font-weight: bold; color: #1d4ed8; background-color: #eff6ff; padding: 0 2px; border-radius: 2px; }
-                    .sentence { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed #ccc; }
-                    .sentence:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+                    b { font-weight: bold; }
                 </style></head><body>
                 <h1>TOEFL 填词 - 真题高频答案词表</h1>
                 <table>
@@ -3208,18 +3232,18 @@
                         let pfxLen = item.formPrefixLens[f] || 0;
                         let pfx = f.substring(0, pfxLen);
                         let rest = f.substring(pfxLen);
-                        return `<b>${pfx}</b><span style="color:#666;">${rest}</span>`;
+                        return `<b>${pfx}</b>${rest}`;
                     }).join('<br>');
 
                     let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
                         if (item.forms.length > 0) {
-                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length);
+                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
                             const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
-                            highlighted = highlighted.replace(regex, `<span class="highlight">$1</span>`);
+                            highlighted = highlighted.replace(regex, `<b>$1</b>`);
                         }
-                        return `<div class="sentence">${i + 1}. ${highlighted}</div>`;
-                    }).join('');
+                        return `${i + 1}. ${highlighted}`;
+                    }).join('<br>');
                     
                     htmlContent += `<tr>
                         <td class="col-rank">${idx+1}</td><td class="col-word">${formsHtml}</td>
@@ -3229,6 +3253,7 @@
                 htmlContent += `</tbody></table></body></html>`;
                 triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
             }
+            // Markdown 导出
             else if (type === 'md') {
                 let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 频次 | 权威释义 | 真题例句 |\n|---|---|---|---|---|\n`;
                 vocabDataList.forEach((item, idx) => {
@@ -3242,7 +3267,7 @@
                     let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
                         if (item.forms.length > 0) {
-                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length);
+                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
                             const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
                             highlighted = highlighted.replace(regex, `**$1**`);
                         }
@@ -3254,7 +3279,6 @@
                 triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
             }
         };
-        
         // ============================================================================
     </script>
 </body>
