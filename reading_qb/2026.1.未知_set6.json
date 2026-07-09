@@ -1,0 +1,360 @@
+{
+  "set": "2026.1.未知_set6",
+  "date_edition": "2026.1.未知",
+  "set_name": "第9套 (1月真题)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m10_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/iSlk/1461X741/015.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "For whom is the notice most likely intended?",
+          "options": {
+            "A": "Students at a high school",
+            "B": "Tourists at a beach resort",
+            "C": "Patients in a hospital",
+            "D": "Residents of an apartment building"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What are readers of the notice NOT asked to do?",
+          "options": {
+            "A": "Avoid certain areas",
+            "B": "Look out for signs",
+            "C": "Stay away from a location until 4:00 p.m.",
+            "D": "Contact an office if they have questions"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m10_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Nql4/1223X1269/016.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main topic of the article?",
+          "options": {
+            "A": "The discovery of artifacts left by previous students",
+            "B": "The renovation of a student residence hall",
+            "C": "The ending of a beloved campus tradition",
+            "D": "The nostalgia over past hopes and dreams"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is indicated about the time capsule itself?",
+          "options": {
+            "A": "It relied on twentieth-century technology.",
+            "B": "It was buried more than a century ago.",
+            "C": "It was empty when it was opened.",
+            "D": "Its contents were damaged."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "How did current students react to the discovery of the capsule?",
+          "options": {
+            "A": "They showed little interest in the discovery.",
+            "B": "They criticized the plan for the exhibition.",
+            "C": "They were inspired to imitate the students of 1896.",
+            "D": "They insisted that it be reburied."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Twin Stars",
+      "id": "m10_p3",
+      "left_content": {
+        "paragraphs": [
+          "Stars form in the relatively dense, egg-shaped cores of molecular clouds made of dust and gases. Scientists mapping these dense cores must use radio waves to penetrate the dust and gases that prevent light from escaping molecular clouds; satellite images of these regions show nothing but large, black areas of space.",
+          "Recent observations of the Perseus molecular cloud may have surprising implications for previously accepted conclusions about the Sun. A radio wave sweep of the Perseus cloud's dense cores revealed that the youngest stars existing in the cloud all occurred in pairs, or binary twins, orbiting a common point. Stars of older binary systems, of which there were fewer, appeared closer together than stars of younger binary systems.",
+          "Scientists used current knowledge about stellar growth, decay, and destruction to predict the paths along which binary stars traveled throughout the molecular cloud. Their estimates would align with current understandings only if all stars approximately the same size as the Sun had begun as members of a binary system that first moved closer to each other and later separated. This rule would also apply to the Sun, whose twin likely separated following approximately one million years of coexistence."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "Which of the following best summarizes the main point of the passage?",
+          "options": {
+            "A": "Binary stars alternate between separating and getting closer over time.",
+            "B": "Star development takes place in the dense cores of molecular clouds.",
+            "C": "The Sun formed in the same way that the Perseus molecular cloud did.",
+            "D": "Stars the size of the Sun begin their development with a binary twin."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "The word \"penetrate\" in the passage is closest in meaning to",
+          "options": {
+            "A": "push aside",
+            "B": "break apart",
+            "C": "pass through",
+            "D": "travel around"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Stars form in the relatively dense, egg-shaped cores of molecular clouds made of dust and gases. Scientists mapping these dense cores must use radio waves to <mark>penetrate</mark> the dust and gases that prevent light from escaping molecular clouds; satellite images of these regions show nothing but large, black areas of space.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "Which of the following was most likely one of the \"previously accepted conclusions\" about the Sun?",
+          "options": {
+            "A": "It did not have a binary twin.",
+            "B": "It is larger than most other stars.",
+            "C": "It did not form in a molecular cloud.",
+            "D": "It developed faster than most other stars did."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What do the \"estimates\" discussed in the passage refer to?",
+          "options": {
+            "A": "The rate at which stars grow in the molecular cloud",
+            "B": "The course that stars move along within the molecular cloud",
+            "C": "The number of binary star systems found in the molecular cloud",
+            "D": "The number of stars that have formed within the molecular cloud"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred from the passage about the Sun?",
+          "options": {
+            "A": "It is following a unique development pattern.",
+            "B": "It moved closer to a binary twin early in its development.",
+            "C": "It was too far from its twin to maintain the binary system.",
+            "D": "Its twin decayed before separating from the binary system."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Libertarianism and Personal Freedom",
+      "id": "m10_p4",
+      "left_content": {
+        "paragraphs": [
+          "Libertarianism is a political philosophy emphasizing individual liberty, minimal government intervention, and free markets. It advocates personal freedom, arguing that individuals should make choices without undue state interference. This ideology has gained traction in recent years among those who value economic freedom.",
+          "A central tenet of libertarianism is self-ownership, which asserts that individuals own their bodies and labor. Libertarians argue that people should control their lives and property and be free from coercive forces. For instance, libertarians often oppose taxation, viewing it as involuntary servitude that infringes on autonomy.",
+          "Libertarianism champions free markets as the most efficient means of allocating resources. By allowing supply and demand to dictate prices, free markets encourage innovation and competition, leading to better products and services. Government regulations are seen as impediments that stifle economic growth and limit freedom. Libertarians believe that a laissez-faire approach creates an environment where businesses can thrive and individuals can pursue their economic interests without constraints.",
+          "Critics of libertarianism argue that a lack of regulation can lead to social inequality and exploitation. Some contend that public goods, like education and healthcare, require government involvement to ensure equitable access. Balancing personal freedom with the need for social welfare remains contentious within libertarian thought."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "All of the following are true about libertarianism EXCEPT:",
+          "options": {
+            "A": "It emphasizes free markets.",
+            "B": "It champions personal freedom.",
+            "C": "It supports state involvement in people's lives.",
+            "D": "It has recently grown in popularity."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "Libertarians might consider taxation immoral because it violates",
+          "options": {
+            "A": "the principle of self-ownership",
+            "B": "laws against use of coercive force",
+            "C": "legal standards about bodily autonomy",
+            "D": "conventions of liberal society"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"impediments\" in the passage is closest in meaning to",
+          "options": {
+            "A": "rules",
+            "B": "barriers",
+            "C": "measures",
+            "D": "costs"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Libertarianism champions free markets as the most efficient means of allocating resources. By allowing supply and demand to dictate prices, free markets encourage innovation and competition, leading to better products and services. Government regulations are seen as <mark>impediments</mark> that stifle economic growth and limit freedom. Libertarians believe that a laissez-faire approach creates an environment where businesses can thrive and individuals can pursue their economic interests without constraints.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Libertarians themselves do not agree with one another about whether",
+          "options": {
+            "A": "the libertarian approach creates educational opportunities",
+            "B": "a laissez-faire approach is good for businesses",
+            "C": "healthcare requires more government involvement than education",
+            "D": "personal freedom should be balanced against the need for social welfare"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nSuch intervention constrains innovation and can lead to unintended outcomes.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "Libertarianism champions free markets as the most efficient means of allocating resources. [■] By allowing supply and demand to dictate prices, free markets encourage innovation and competition, leading to better products and services. [■] Government regulations are seen as impediments that stifle economic growth and limit freedom. [■] Libertarians believe that a laissez-faire approach creates an environment where businesses can thrive and individuals can pursue their economic interests without constraints. [■]",
+          "inserted_sentence": "Such intervention constrains innovation and can lead to unintended outcomes."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Quantum Dots",
+      "id": "m10_p5",
+      "left_content": {
+        "paragraphs": [
+          "Quantum dots are tiny semiconductor particles with unique optical properties, making them valuable in display technology. When exposed to light, these nanoparticles emit bright, pure colors that can be finely tuned by varying their size. This allows for more vibrant and accurate colors in screens, surpassing traditional display technologies. Their application in displays has revolutionized the consumer electronics industry. For example, quantum dot-enhanced televisions offer a broader color spectrum and energy conservation compared to conventional light-emitting diode (LED) displays because they require less backlighting.",
+          "Environmental benefits are another advantage. Traditional displays often use harmful heavy metals like cadmium and lead. Quantum dots can be made from less toxic materials, and researchers are working on cadmium-free quantum dots to further reduce environmental impact.",
+          "The manufacture of quantum dots requires extreme precision. As a result, challenges remain in scaling up production. However, this is a worthwhile endeavor because quantum dots potentially have many applications outside of electronics, such as in biological research. Their small size and bright emission are ideal for tagging and tracking molecules in living organisms. This allows for long-term observation of dynamic biological processes."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The color of quantum dots can be controlled by changing",
+          "options": {
+            "A": "their size after exposure to light",
+            "B": "the direction in which they are displayed",
+            "C": "the amount of light they are exposed to",
+            "D": "the color of the light they are exposed to"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What makes quantum dot technology in televisions efficient?",
+          "options": {
+            "A": "The vibrancy of the colors",
+            "B": "The reduced need for backlighting",
+            "C": "The larger color spectrum",
+            "D": "The size of the particles"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "What is identified as an environmental benefit of quantum dots?",
+          "options": {
+            "A": "The ability to make cadmium more pure",
+            "B": "The ability to remove lead from living organisms",
+            "C": "Limiting environmental impacts to small areas",
+            "D": "Less use of some poisonous substances"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "Why does the passage state that the “manufacture of quantum dots requires extreme precision”?",
+          "options": {
+            "A": "To imply that quantum dots' environmental impact might increase",
+            "B": "To praise the hard work of quantum dot manufacturers",
+            "C": "To challenge the claim that using quantum dots is worthwhile",
+            "D": "To explain why the production of quantum dots is difficult to increase"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "The <mark>manufacture of quantum dots requires extreme precision</mark>. As a result, challenges remain in scaling up production. However, this is a worthwhile endeavor because quantum dots potentially have many applications outside of electronics, such as in biological research. Their small size and bright emission are ideal for tagging and tracking molecules in living organisms. This allows for long-term observation of dynamic biological processes.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "How can biologists use quantum dots?",
+          "options": {
+            "A": "For studying very small living organisms",
+            "B": "For observing the movement of molecules",
+            "C": "For including electronic tools in research",
+            "D": "For making some biological processes more dynamic"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

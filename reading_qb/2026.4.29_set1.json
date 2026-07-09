@@ -1,0 +1,366 @@
+{
+  "set": "2026.4.29_set1",
+  "date_edition": "2026.4.29",
+  "set_name": "第27套 (4月29日)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a poster.",
+      "id": "m27_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Ghuq/1239X777/065.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What can be inferred about the university?",
+          "options": {
+            "A": "It has indoor drop boxes in dormitories.",
+            "B": "It has more than one library building.",
+            "C": "It offers a degree in library science.",
+            "D": "It charges a book-rental fee each semester."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is indicated about the university's drop-box system?",
+          "options": {
+            "A": "It is only available for use during library hours.",
+            "B": "It is not recommended for overdue books.",
+            "C": "It cannot be used for certain types of books.",
+            "D": "It is intended only for students living on campus."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read some instructions.",
+      "id": "m27_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/1Ao7/1269X777/066.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main purpose of the instructions?",
+          "options": {
+            "A": "To explain how to replace an ink cartridge",
+            "B": "To explain how to prepare a new printer for use",
+            "C": "To explain how to repair a printer",
+            "D": "To explain how to connect a printer to a power source"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is the next step after turning on the printer?",
+          "options": {
+            "A": "Print a test page to ensure it is working properly",
+            "B": "Add paper and begin using the printer",
+            "C": "Follow more instructions on the printer screen",
+            "D": "Install the ink cartridges as shown"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a text-message chain.",
+      "id": "m27_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/sQA3/1500X1335/067.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What can be concluded about Eli?",
+          "options": {
+            "A": "He works at an appliance repair shop.",
+            "B": "He has repaired refrigerators in the past.",
+            "C": "He is studying to be a mechanical engineer.",
+            "D": "He meets with his math study group every week."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "At 4:48 p.m., what does Elena imply when she writes, \"My economics class starts at noon\"?",
+          "options": {
+            "A": "She has to arrive early to her economics class.",
+            "B": "Eli can work on the problem while she is in class.",
+            "C": "She cannot meet Eli at the time he has suggested.",
+            "D": "Her economics professor has changed the class start time."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What does Eli suggest about Elena's refrigerator?",
+          "options": {
+            "A": "It needs a new part.",
+            "B": "It cannot be repaired.",
+            "C": "It is a low-quality model.",
+            "D": "It must be brought to a shop."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a social media post",
+      "id": "m27_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/D7Ci/1218X1251/068.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "The post mentions that the gardening workshop will",
+          "options": {
+            "A": "provide free seedlings",
+            "B": "take place on a weekend",
+            "C": "feature multiple speakers",
+            "D": "require registration by phone"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is implied about Dr. Elena Tan's role in the workshop?",
+          "options": {
+            "A": "She will help participants design a public garden.",
+            "B": "She will choose the location for a new community garden.",
+            "C": "She will provide expert advice on sustainable gardening.",
+            "D": "She will be a judge for a campus-wide gardening competition."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "It can be inferred that the workshop will highlight vertical-gardening techniques to",
+          "options": {
+            "A": "encourage students to grow plants outdoors",
+            "B": "show that this technique is easier than any other",
+            "C": "promote traditional gardening methods",
+            "D": "provide a space-saving solution for dorm rooms"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Free Will and Determinism",
+      "id": "m27_p5",
+      "left_content": {
+        "paragraphs": [
+          "The debate over free will asks whether our decisions come from independent thought or are shaped by factors beyond our control. Although we may feel like we choose freely, influences such as genetics, upbringing, and unconscious habits suggest our freedom may be limited. The key question is whether these influences simply guide our choices or actually determine them. If they determine them, then our sense of control may be more of a story we tell ourselves after the fact than something that drives our actions.",
+          "Some philosophers maintain that even within a causally determined world, we can still act freely—so long as our choices reflect our own reasoning and desires. Yet this view raises questions about whether those desires are truly ours or merely the result of prior conditions. Others push further, suggesting that even our capacity to reflect on our actions is shaped by forces beyond our control, leaving little room for genuine autonomy. These tensions are not just theoretical; they shape how we think about responsibility in law, education, and relationships. If the assumption that someone might have acted differently begins to unravel, then our notions of accountability may need to be reimagined."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "Why does the author mention genetics and upbringing in paragraph 1?",
+          "options": {
+            "A": "To name the factors that contribute to the unconscious habits people form",
+            "B": "To list factors we may be unaware of that shape our decision-making",
+            "C": "To argue that some people have more freedom to act than others do",
+            "D": "To note two factors that contribute to the formation of people's personalities"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "What does the author suggest may be true of \"our sense of control\" over our choices?",
+          "options": {
+            "A": "It can drive our actions if we train ourselves to think independently.",
+            "B": "It helps us develop narratives that shape our choices.",
+            "C": "It is the product of unconscious habits.",
+            "D": "It is nothing more than an illusion."
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "If they determine them, then <mark>our sense of control</mark> may be more of a story we tell ourselves after the fact than something that drives our actions.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "In the second paragraph, what is the relationship between sentence 1 and sentence 2?",
+          "options": {
+            "A": "Sentence 1 presents an argument, and sentence 2 restates it in simpler terms.",
+            "B": "Sentence 1 makes a claim, and sentence 2 supports it with evidence.",
+            "C": "Sentence 1 presents an idea, and sentence 2 challenges an assumption behind the idea.",
+            "D": "Sentence 1 introduces a viewpoint, and sentence 2 considers its implications."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "The word \"unravel\" in the passage is closest in meaning to",
+          "options": {
+            "A": "fall apart",
+            "B": "gather strength",
+            "C": "form",
+            "D": "evolve"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "If the assumption that someone might have acted differently begins to <mark>unravel</mark>, then our notions of accountability may need to be reimagined.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "According to the author, why is it important to consider questions about the meaning of free will?",
+          "options": {
+            "A": "Ideas about free will affect how we hold each other responsible for our actions.",
+            "B": "Free will is an important part of what it means to be a modern human being.",
+            "C": "The debate over free will and determinism is one of the fundamental questions of our time.",
+            "D": "Without genuine autonomy, there is little value in institutions such as law and education."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Biofertilizer Dynamics in Agrochemistry",
+      "id": "m27_p6",
+      "left_content": {
+        "paragraphs": [
+          "One of the latest inventions in agrochemistry is biofertilizers. This innovation aims to provide an environmentally friendly alternative to traditional fertilizers, which are infamous for causing soil and water pollution. Biofertilizers use living microorganisms to improve soil fertility by fixing nutrients such as nitrogen, ensuring that these nutrients remain available for plant uptake. Unlike conventional fertilizers that simply release nutrients into the soil, biofertilizers enhance the soil's own biological activity, creating a more sustainable agricultural practice.",
+          "Increased bioactivity results in improved soil structure. Microorganisms in biofertilizers produce substances that bind soil particles together, enhancing aeration and water retention. This mechanism is particularly vital in arid regions, where soil degradation poses a significant challenge. Yet, this ability makes the effectiveness of biofertilizers depend on specific soil types and crops, introducing complexities into their use.",
+          "Despite their potential, biofertilizers face hurdles, including skepticism from farmers accustomed to chemical fertilizers. Concerns about cost, availability, and the need for new agricultural knowledge contribute to their slow adoption. Moreover, the regulatory landscape for biofertilizers is still developing, affecting their market presence. Still, some regions have started to implement subsidies and educational programs to encourage the transition to these sustainable options, hinting at a shift in agricultural practices."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The word \"uptake\" in the passage is closest in meaning to",
+          "options": {
+            "A": "evolution",
+            "B": "harvest",
+            "C": "absorption",
+            "D": "diversity"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Biofertilizers use living microorganisms to improve soil fertility by fixing nutrients such as nitrogen, ensuring that these nutrients remain available for plant <mark>uptake</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What is one difference between biofertilizers and traditional fertilizers?",
+          "options": {
+            "A": "Biofertilizers are less expensive to produce.",
+            "B": "Biofertilizers contain living microorganisms.",
+            "C": "Biofertilizers require synthetic chemicals to work.",
+            "D": "Biofertilizers are used only in arid regions."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "According to the passage, what makes biofertilizers particularly effective?",
+          "options": {
+            "A": "They are compatible with multiple soil types.",
+            "B": "They prevent soil particles from binding together.",
+            "C": "They improve the movement of air through soil.",
+            "D": "They begin to release nutrients immediately."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What does the author suggest about biofertilizers in the last paragraph?",
+          "options": {
+            "A": "Many farmers are already familiar with them.",
+            "B": "Governmental rules affect their use in some areas.",
+            "C": "They are readily available to farmers.",
+            "D": "They do not work as well as chemical fertilizers."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "What is the main focus of the last paragraph?",
+          "options": {
+            "A": "It describes new scientific research supporting biofertilizers.",
+            "B": "It compares the effectiveness of different types of fertilizers.",
+            "C": "It discusses barriers to adoption of biofertilizers by farmers.",
+            "D": "It offers advice to farmers on best agricultural practices."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

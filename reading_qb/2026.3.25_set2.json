@@ -1,0 +1,368 @@
+{
+  "set": "2026.3.25_set2",
+  "date_edition": "2026.3.25",
+  "set_name": "第20套 (3月25日北美B卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m17_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Y8oR/1596X711/043.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What will Mr. Brown receive for free?",
+          "options": {
+            "A": "A bookmark",
+            "B": "A newsletter",
+            "C": "A book",
+            "D": "A catalog"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "On what basis did GoodBooks make a decision?",
+          "options": {
+            "A": "A purchasing history",
+            "B": "A limited budget",
+            "C": "A reduced inventory",
+            "D": "A completed survey"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m17_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/8bSi/1323X702/044.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main purpose of the notice?",
+          "options": {
+            "A": "To provide directions to a facility",
+            "B": "To announce the temporary closure of a facility",
+            "C": "To explain improvements to a facility",
+            "D": "To announce the relocation of a facility"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What happens to events that are scheduled during the renovations?",
+          "options": {
+            "A": "They will be rescheduled for earlier dates.",
+            "B": "They will be rescheduled for later dates.",
+            "C": "They will no longer take place.",
+            "D": "They will be moved to a different location."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read an advertisement.",
+      "id": "m17_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/bFDL/1316X1101/045.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is the main purpose of the advertisement?",
+          "options": {
+            "A": "To advertise improvements to products",
+            "B": "To announce an event",
+            "C": "To promote live music",
+            "D": "To introduce a new menu"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "The word \"complimentary\" in the first paragraph is closest in meaning to",
+          "options": {
+            "A": "pleasing",
+            "B": "discounted",
+            "C": "free",
+            "D": "limited"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What is necessary for an extra 20 percent off one's first service?",
+          "options": {
+            "A": "Cash for payment",
+            "B": "Proof of being a student",
+            "C": "A reservation",
+            "D": "A consultation"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m17_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/eiB5/1065X879/046.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the main topic of the article?",
+          "options": {
+            "A": "A student-launched tech innovation",
+            "B": "A tech conference on campus",
+            "C": "Techniques for coping with exam stress",
+            "D": "Apps that help students find housing"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is indicated about PlanForge?",
+          "options": {
+            "A": "It was created by some professors.",
+            "B": "It quickly reached thousands of downloads.",
+            "C": "It is available only to university alumni.",
+            "D": "It helps students who are looking for jobs."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred about the app creators' future plans?",
+          "options": {
+            "A": "They intend to pause their studies and focus on marketing the app.",
+            "B": "They would like to increase the functionality of the app to include more tools.",
+            "C": "They will ask other students to help develop the app.",
+            "D": "They want to limit the app's release to their own campus."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Plant Communication",
+      "id": "m17_p5",
+      "left_content": {
+        "paragraphs": [
+          "The discovery that plants use communication has changed our understanding of plant behavior and ecology. Traditionally, plants were considered passive organisms, reacting to environmental changes rather than actively engaging with their surroundings. However, studies have shown that plants can send chemical signals through the soil.",
+          "These signals, often carried by root exudates (substances released by the plants' roots into the soil), can inform neighboring plants about threats like plant-eating animals or disease-causing agents. For instance, when a corn plant is attacked by caterpillars, it can release specific chemicals that warn nearby corn plants. In response, the neighboring corn plants may release a chemical known as MBOA into their tissues, which makes them less palatable to the caterpillars.",
+          "Plants also use electrical signals to respond rapidly to environmental changes. These signals travel through the plant, allowing it to adjust resource allocation. Some plants can even detect the presence of other plants through their roots. This allows them to alter their growth patterns to avoid direct competition.",
+          "Despite these discoveries, the study of plant communication is still in its infancy. Researchers are continuously uncovering new ways that plants interact with each other and their environment."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "According to the passage, there used to be a mistaken view that plants",
+          "options": {
+            "A": "often changed their behavior",
+            "B": "released root exudates only in small amounts",
+            "C": "were not significantly affected by ecological factors",
+            "D": "did not actively interact with other plants"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "According to the passage, corn plants may release MBOA into their tissues in response to",
+          "options": {
+            "A": "harmful chemicals released by caterpillars",
+            "B": "electrical signals in the soil",
+            "C": "human activities that affect the environment",
+            "D": "root exudates produced by other corn plants"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "What can be inferred to be the purpose of electrical signals that plants release?",
+          "options": {
+            "A": "To attract beneficial animals to the plants",
+            "B": "To prevent attack by caterpillars on the plants",
+            "C": "To help the plants make the best use of available resources",
+            "D": "To communicate with other plants across long distances"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Knowledge about the presence of other plants can help a plant to",
+          "options": {
+            "A": "change its growth in a way that reduces competition",
+            "B": "prevent major damage to its roots",
+            "C": "identify additional resources",
+            "D": "determine which chemicals to release into the soil"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "The phrase \"still in its infancy\" in the passage is closest in meaning to",
+          "options": {
+            "A": "highly controversial",
+            "B": "in a difficult period",
+            "C": "looking for funding",
+            "D": "at an early stage"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Despite these discoveries, the study of plant communication is <mark>still in its infancy</mark>. Researchers are continuously uncovering new ways that plants interact with each other and their environment.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "The Power of Placebos",
+      "id": "m17_p6",
+      "left_content": {
+        "paragraphs": [
+          "The placebo effect challenges conventional ideas about medical treatment efficacy. What is a placebo? A patient's condition sometimes improves if they believe that they are receiving an effective treatment, even if they are in fact receiving a sugar pill. In this example, the sugar pill, which has no active ingredient, is a placebo. Surprisingly, this effect can sometimes rival real medications in clinical trials.",
+          "Recent studies suggest that the placebo effect might be rooted in the brain's complex chemistry. When a patient anticipates positive effects, their brain can release chemicals like endorphins, which may cause genuine physiological changes. In one study, patients receiving placebo \"painkillers\" reported pain relief comparable to the one produced by actual painkillers, highlighting the brain's powerful role. Some researchers propose using the placebo effect deliberately to enhance therapy outcomes, arguing that the mind-body connection should be tapped into more.",
+          "However, ethical considerations arise: deceiving patients could undermine trust in healthcare. For example, even when a placebo leads to measurable improvement, knowingly administering it without full disclosure may violate principles of informed consent, raising questions about autonomy and transparency in patient care. This delicate balance between harnessing the placebo effect and maintaining ethical standards continues to be a topic of debate."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "How does the placebo effect challenge traditional views on treatment?",
+          "options": {
+            "A": "By showing that patients should have more say in selecting their medications",
+            "B": "By suggesting that a patient's belief can be as powerful as a medicine",
+            "C": "By questioning existing measurements of the effectiveness of a treatment",
+            "D": "By pointing out a possible way to reduce the costs of clinical trials"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What does paragraph 2 indicate about the placebo effect?",
+          "options": {
+            "A": "It affects patients much more powerfully than actual painkillers do.",
+            "B": "It may be related to the release of endorphins in the brain.",
+            "C": "It has not been connected by researchers to any physiological changes.",
+            "D": "It is enhanced when it is accompanied by actual painkillers."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"deliberately\" in the passage is closest in meaning to",
+          "options": {
+            "A": "on purpose",
+            "B": "with caution",
+            "C": "efficiently",
+            "D": "regularly"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Some researchers propose using the placebo effect <mark>deliberately</mark> to enhance therapy outcomes, arguing that the mind-body connection should be tapped into more.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "Why does the author mention \"autonomy and transparency in patient care\"?",
+          "options": {
+            "A": "To argue for the use of the placebo effect",
+            "B": "To highlight an ethical challenge in using the placebo effect",
+            "C": "To suggest that trust is less important than other considerations in healthcare",
+            "D": "To explain how the placebo effect is misunderstood"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "However, ethical considerations arise: deceiving patients could undermine trust in healthcare. For example, even when a placebo leads to measurable improvement, knowingly administering it without full disclosure may violate principles of informed consent, raising questions about <mark>autonomy and transparency in patient care</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nResearchers have long been puzzled by the mechanisms behind this phenomenon.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "The placebo effect challenges conventional ideas about medical treatment efficacy. What is a placebo? [■] A patient's condition sometimes improves if they believe that they are receiving an effective treatment, even if they are in fact receiving a sugar pill. [■] In this example, the sugar pill, which has no active ingredient, is a placebo. [■] Surprisingly, this effect can sometimes rival real medications in clinical trials. [■]",
+          "inserted_sentence": "Researchers have long been puzzled by the mechanisms behind this phenomenon."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

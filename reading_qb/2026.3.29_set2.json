@@ -1,0 +1,361 @@
+{
+  "set": "2026.3.29_set2",
+  "date_edition": "2026.3.29",
+  "set_name": "第22套 (3月29日B卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an agenda.",
+      "id": "m19_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/siur/1857X881/049.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the main purpose of the meeting?",
+          "options": {
+            "A": "To introduce new task force members",
+            "B": "To plan future meetings of the task force",
+            "C": "To review newly submitted proposals",
+            "D": "To announce student fitness prizes"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is indicated about the task force?",
+          "options": {
+            "A": "Members must be students.",
+            "B": "Some members have joined recently.",
+            "C": "Some members will leave the task force soon.",
+            "D": "Members are paid to participate in the task force."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a schedule.",
+      "id": "m19_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/QTLY/1716X825/050.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "When is the Writing Workshop?",
+          "options": {
+            "A": "10:00 a.m.",
+            "B": "12:00 p.m.",
+            "C": "2:00 p.m.",
+            "D": "4:00 p.m."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Who will be signing books?",
+          "options": {
+            "A": "John Martinez",
+            "B": "Panel members",
+            "C": "A workshop instructor",
+            "D": "Lydia Smith"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a text chain.",
+      "id": "m19_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/j62t/1617X1335/051.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What can be concluded about James Kim?",
+          "options": {
+            "A": "He will be able to attend the beginners' class at the yoga studio.",
+            "B": "He finds it easier to attend classes in the evening.",
+            "C": "He will cancel his dentist appointment.",
+            "D": "He is mostly interested in advanced yoga classes."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "At 1:32 p.m., what does James Kim most likely mean when he writes, \"I will check it out tonight.\"?",
+          "options": {
+            "A": "He will visit the yoga studio tonight.",
+            "B": "He will take a look at the yoga studio's website tonight.",
+            "C": "He is trying to find the website address.",
+            "D": "He will go to the library tonight to get a yoga book."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What does Maya promise to do?",
+          "options": {
+            "A": "Save a place for Jim at the class",
+            "B": "Bring Jim a class schedule",
+            "C": "Report back to Jim about the class",
+            "D": "Find Jim a yoga mat"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m19_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/rj9O/1425X1125/052.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "One reason the article mentions \"the engineering building\" is to",
+          "options": {
+            "A": "imply that the makerspace is in a well-designed setting",
+            "B": "provide a landmark for visitors less familiar with the campus layout",
+            "C": "explain that the makerspace is not just for engineering students",
+            "D": "suggest that the makerspace primarily focuses on the sciences"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "The article mentions each of the following resources as available at the new makerspace EXCEPT",
+          "options": {
+            "A": "coding classes",
+            "B": "design software",
+            "C": "free workshops",
+            "D": "fabrication tools"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "According to the article, a local business did which of the following?",
+          "options": {
+            "A": "Designed the makerspace facility",
+            "B": "Marketed student work on social media",
+            "C": "Donated money to the university",
+            "D": "Ran tech workshops for students"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Veganism in the United States",
+      "id": "m19_p5",
+      "left_content": {
+        "paragraphs": [
+          "Veganism, a dietary approach that excludes all animal-based foods, has experienced notable shifts in popularity in the United States. A study conducted in 2020 showed a dramatic increase in the number of Americans adopting a plant-based diet between 2004 and 2019. This growth was fueled by expanding awareness of animal welfare, environmental concerns linked to industrial agriculture, and increased emphasis on healthy eating. During the 2010s, companies began to market plant-based meat alternatives that became highly popular with both restaurants and home cooks.",
+          "By the mid-2020s, however, momentum began to level off. Surveys in 2025 indicated that only about three to four percent of Americans identified as vegan. Several factors contributed to this plateau. Preparing vegan meals can be more involved than preparing meat-based meals. For example, a vegan cheese substitute can be made with nuts, but the process is time-consuming. And while home cooks can buy commercially manufactured vegan foods, those foods are highly processed, raising concerns about their healthfulness. Additionally, some social media influencers have begun to promote increased protein consumption, sparking increased consumer demand for meat. American food trends come and go, but while some consumers adopt extreme diets, Americans overall seem to be favoring more flexibility in their eating habits."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The main purpose of this passage is to",
+          "options": {
+            "A": "describe the birth of veganism in the United States",
+            "B": "list the benefits of a vegan diet",
+            "C": "analyze some changes in Americans' attitudes toward veganism",
+            "D": "identify trends in American consumer preferences"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The author notes all of the following as factors driving the popularity of veganism EXCEPT",
+          "options": {
+            "A": "concern for animals",
+            "B": "considerations about health",
+            "C": "the high cost of consuming meat",
+            "D": "a desire to protect the environment"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"involved\" in the passage is closest in meaning to",
+          "options": {
+            "A": "unsatisfying",
+            "B": "expensive",
+            "C": "unpleasant",
+            "D": "complicated"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Preparing vegan meals can be more <mark>involved</mark> than preparing meat-based meals.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "The author mentions \"a vegan cheese substitute\" primarily in order to",
+          "options": {
+            "A": "note a challenge inherent in preparing vegan meals",
+            "B": "identify a popular item used in many vegan recipes",
+            "C": "contrast the healthfulness of vegan and animal-based foods",
+            "D": "describe a cooking process popularized by vegans"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Preparing vegan meals can be more involved than preparing meat-based meals. For example, <mark>a vegan cheese substitute</mark> can be made with nuts, but the process is time-consuming.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "The passage suggests which of the following about commercial meat-alternative products?",
+          "options": {
+            "A": "They became increasingly popular with home cooks during the mid-2020s.",
+            "B": "They are produced in a way that causes some people to doubt their healthfulness.",
+            "C": "They are not popular with Americans concerned about food allergies.",
+            "D": "They have greatly improved in flavor since their introduction."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Person-Centered Therapy: A Shift in Focus",
+      "id": "m19_p6",
+      "left_content": {
+        "paragraphs": [
+          "When American psychologist Carl Rogers first introduced person-centered therapy in the mid-twentieth century, the prevailing view was that therapists should be experts in diagnosis and treatment. Instead, in his new approach, Rogers centered the patient as an individual who is able to discover and take steps toward personal growth. Counseling was viewed as a collaborative interaction between the professional and the patient, with the latter playing a key role in effecting change.",
+          "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery. The therapist acts as an empathetic facilitator, listening actively and using reflection—paraphrasing, summarizing, and clarifying the client's words—to elicit the client's feelings. Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues. Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy.",
+          "Unlike Rogers' model, earlier clinical approaches foregrounded issues and behaviors of concern, with the therapist diagnosing them and specifying treatment courses. Critics question the effectiveness of Rogers' approach for patients seeking expert guidance, especially those with severe mental-health challenges who need structured intervention. However, Rogers' theories remain influential: The person-centered approach continues to shape contemporary counseling practices."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The word \"prevailing\" in the passage is closest in meaning to",
+          "options": {
+            "A": "dominant",
+            "B": "successful",
+            "C": "traditional",
+            "D": "scientific"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "When American psychologist Carl Rogers first introduced person-centered therapy in the mid-twentieth century, the <mark>prevailing</mark> view was that therapists should be experts in diagnosis and treatment.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "According to the passage, all of the following were characteristics of Rogers' patient-centered approach EXCEPT",
+          "options": {
+            "A": "relying on each patient's own diagnostic expertise",
+            "B": "creating a supportive context for treatment",
+            "C": "listening carefully to the patient",
+            "D": "promoting self-development by patients"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Why does the author of the passage mention \"paraphrasing, summarizing, and clarifying\"?",
+          "options": {
+            "A": "To specify the note-taking that therapists do during patient sessions",
+            "B": "To clarify the concept of reflection in patient-centered therapy",
+            "C": "To illustrate some tools patients use to promote personal growth",
+            "D": "To explain how Rogers conducted research on therapeutic models"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "The therapist acts as an empathetic facilitator, listening actively and using reflection—<mark>paraphrasing, summarizing, and clarifying</mark> the client's words—to elicit the client's feelings.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The passage suggests which of the following about therapeutic approaches in the United States before the mid-twentieth century?",
+          "options": {
+            "A": "They were abandoned after Rogers became influential.",
+            "B": "They were not effective for patients with severe mental-health challenges.",
+            "C": "They were not backed by sufficient clinical research.",
+            "D": "They did not view empathy as a key therapeutic methodology."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "Identify the sentence in paragraph 2 that best explains the intended outcomes for a patient receiving person-centered therapy. Select the sentence to make your choice.",
+          "options": {},
+          "answer": "Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues.",
+          "question_type": "sentence_identification",
+          "special_content": "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery. The therapist acts as an empathetic facilitator, listening actively and using reflection—paraphrasing, summarizing, and clarifying the client's words—to elicit the client's feelings. Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues. Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

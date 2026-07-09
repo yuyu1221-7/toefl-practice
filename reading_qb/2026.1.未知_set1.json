@@ -1,0 +1,367 @@
+{
+  "set": "2026.1.未知_set1",
+  "date_edition": "2026.1.未知",
+  "paper_type": "M1",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an advertisement.",
+      "id": "m1_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/jVnl/1167X1197/001.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What can be inferred about the tour package?",
+          "options": {
+            "A": "It is inexpensive.",
+            "B": "It is popular.",
+            "C": "It includes transportation to and from Rome.",
+            "D": "It is intended only for large groups."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is NOT included in the cost of the package?",
+          "options": {
+            "A": "Hotel accommodations",
+            "B": "Breakfast",
+            "C": "Entrance fees",
+            "D": "Day trips"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a label.",
+      "id": "m1_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Rx3W/1134X1188/002.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the weight of the product?",
+          "options": {
+            "A": "100 g",
+            "B": "250 g",
+            "C": "500 g",
+            "D": "1000 g"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is indicated about calories?",
+          "options": {
+            "A": "There are 220 calories per 32 grams.",
+            "B": "There are 250 calories per 32 grams.",
+            "C": "There are 32 calories per 220 grams.",
+            "D": "There are 32 calories per 250 grams."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m1_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/OK8E/1131X1167/003.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "The phrase \"what's in store\" in the post is closest in meaning to",
+          "options": {
+            "A": "what will be for sale",
+            "B": "what will be happening",
+            "C": "what will be new this year",
+            "D": "what will be very exciting"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What is NOT indicated about participating artists?",
+          "options": {
+            "A": "Many of them are local.",
+            "B": "Some of them make sculptures.",
+            "C": "Many of them are also musicians.",
+            "D": "Some of them will create work in real time."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What will attendees need to pay for?",
+          "options": {
+            "A": "Admission",
+            "B": "Supplies",
+            "C": "Refreshments",
+            "D": "Entertainment"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a receipt.",
+      "id": "m1_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/FpAb/1031X882/004.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the most expensive item?",
+          "options": {
+            "A": "A scarf",
+            "B": "A handbag",
+            "C": "A pair of sunglasses",
+            "D": "A t-shirt"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "How much tax was charged?",
+          "options": {
+            "A": "€ 5.00",
+            "B": "€ 15",
+            "C": "€ 23",
+            "D": "€ 40.25"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be found on Trendie Boutique's social media accounts?",
+          "options": {
+            "A": "Some travel tips for Dublin, Ireland",
+            "B": "Additional information about returns and exchanges",
+            "C": "Information about special discounts",
+            "D": "Shopper comments and reviews"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "The Flynn Effect",
+      "id": "m1_p5",
+      "left_content": {
+        "paragraphs": [
+          "Researchers have observed a phenomenon known as the Flynn Effect: a consistent increase in Intelligence Quotient (IQ) scores from one generation to the next. This trend, named after intelligence researcher James Flynn, shows that average IQ scores have risen by about three points per decade in many parts of the world.",
+          "Various theories have been proposed to explain this trend. One hypothesis is that improvements in nutrition and healthcare have enhanced brain development, leading to higher IQ scores. Another theory suggests that the complexity of modern life, with its increased cognitive demands, has driven this rise. The widespread use of technology and a more stimulating environment could also be contributing factors.",
+          "However, the Flynn Effect does not necessarily indicate that people are becoming more intelligent. Some researchers argue that the rise in IQ scores reflects better test-taking skills or familiarity with the types of tasks presented in IQ tests, rather than a genuine increase in cognitive abilities. Recent studies have shown that the Flynn Effect may be slowing down or even reversing in some countries, challenging the notion of a universal and perpetual increase in intelligence."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"consistent\" in the passage is closest in meaning to",
+          "options": {
+            "A": "rapid",
+            "B": "steady",
+            "C": "large",
+            "D": "impressive"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Researchers have observed a phenomenon known as the Flynn Effect: a <mark>consistent</mark> increase in Intelligence Quotient (IQ) scores from one generation to the next. This trend, named after intelligence researcher James Flynn, shows that average IQ scores have risen by about three points per decade in many parts of the world.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "All of the following are mentioned in the passage as possible contributors to the trend of IQ scores EXCEPT",
+          "options": {
+            "A": "better eating habits and medical care",
+            "B": "improvements in parental care",
+            "C": "the cognitive demands of contemporary life",
+            "D": "the extensive use of technology"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "According to some researchers, the Flynn Effect may be a sign that",
+          "options": {
+            "A": "people are becoming better at taking tests",
+            "B": "IQ tests have become easier over time",
+            "C": "test-takers thrive in stimulating environments",
+            "D": "school systems have developed better examinations"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author mention that the Flynn Effect may be slowing down or reversing in some countries?",
+          "options": {
+            "A": "To suggest that there may not be a global increase in intelligence",
+            "B": "To argue that cognitive abilities are declining around the world",
+            "C": "To show that the Flynn Effect requires further research",
+            "D": "To argue that the challenges of modern life can have negative effects on intelligence"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nChanges in educational practices or shifts in societal values could account for the downturn.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "D",
+          "question_type": "insertion",
+          "special_content": "[■] However, the Flynn Effect does not necessarily indicate that people are becoming more intelligent. [■] Some researchers argue that the rise in IQ scores reflects better test-taking skills or familiarity with the types of tasks presented in IQ tests, rather than a genuine increase in cognitive abilities. [■] Recent studies have shown that the Flynn Effect may be slowing down or even reversing in some countries, challenging the notion of a universal and perpetual increase in intelligence. [■]",
+          "inserted_sentence": "Changes in educational practices or shifts in societal values could account for the downturn."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Coral Reef Restoration",
+      "id": "m2_p1",
+      "left_content": {
+        "paragraphs": [
+          "Coral reefs are defined as an underwater ecosystem formed by colonies of tiny marine animals called coral polyps. They are among the most diverse ecosystems on Earth; however, they are facing severe threats from climate change, pollution, and overfishing. These threats have led to widespread coral bleaching, where corals lose their vibrant colors and turn white. Bleaching weakens corals, making them more susceptible to disease and ultimately leading to their death.",
+          "Scientists and environmentalists are working on various restoration techniques to combat this decline. These efforts highlight the urgency of finding effective solutions to protect these vital ecosystems. One promising method is coral gardening, where fragments of healthy coral are grown in underwater nurseries and then transplanted onto damaged reefs. This technique has shown significant success in certain areas, helping to rebuild reef structures and promote biodiversity. Another innovative approach involves using electricity to stimulate coral growth. This method, known as Biorock™ technology, creates an electric field that encourages the deposition of minerals found in seawater, accelerating coral growth.",
+          "Despite these efforts, challenges remain. Restoration projects are often expensive and labor-intensive, and the long-term success of these techniques is still uncertain. Continuous research and adaptive management strategies are crucial for ensuring the resilience of coral reefs in the face of ongoing environmental changes."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "What can be inferred about coral bleaching in the first paragraph?",
+          "options": {
+            "A": "It makes corals more colorful.",
+            "B": "It is caused by underwater nurseries.",
+            "C": "It is a sign that corals are unhealthy.",
+            "D": "It helps coral growth."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Which of the following is NOT mentioned as a threat to coral reefs in the passage?",
+          "options": {
+            "A": "Climate change",
+            "B": "Pollution",
+            "C": "Overfishing",
+            "D": "Tourism"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Why does the author mention Biorock™ technology in the second paragraph?",
+          "options": {
+            "A": "To describe one cause behind coral bleaching",
+            "B": "To introduce an innovative method for coral restoration",
+            "C": "To explain how electricity affects coral health",
+            "D": "To criticize traditional restoration methods"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What is one challenge associated with coral reef restoration mentioned in the last paragraph?",
+          "options": {
+            "A": "It requires a lot of water.",
+            "B": "It is costly and requires a lot of work.",
+            "C": "It damages healthy corals.",
+            "D": "It reduces biodiversity."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "What can be inferred about the long-term success of coral restoration techniques?",
+          "options": {
+            "A": "It is guaranteed with current methods.",
+            "B": "It depends on reducing tourism.",
+            "C": "It is unaffected by environmental changes.",
+            "D": "It is still not guaranteed."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

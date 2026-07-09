@@ -1,0 +1,359 @@
+{
+  "set": "2026.1.未知_set3",
+  "date_edition": "2026.1.未知",
+  "set_name": "第6套 (1月真题)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m7_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/7OSI/1014X531/007.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the main purpose of the notice?",
+          "options": {
+            "A": "To announce a safety procedure",
+            "B": "To request feedback",
+            "C": "To advertise a new service",
+            "D": "To explain renovations"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "How can dorm staff be recognized?",
+          "options": {
+            "A": "They will be wearing vests.",
+            "B": "They will have name tags on.",
+            "C": "They will be waiting outside.",
+            "D": "They will be wearing red hats."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m7_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Puwu/1095X978/008.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What can be inferred about the renovation?",
+          "options": {
+            "A": "It will take more than six weeks.",
+            "B": "It is necessary for expansion.",
+            "C": "It will enhance the digital resources.",
+            "D": "It is funded by the community center."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Where should patrons bring back their borrowed books during the renovation?",
+          "options": {
+            "A": "The community center",
+            "B": "The special meeting rooms",
+            "C": "The library staff desk",
+            "D": "The regular drop-off location"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "What will happen to the programs and events?",
+          "options": {
+            "A": "They will be canceled.",
+            "B": "They will continue at another location.",
+            "C": "They will be rescheduled after reopening.",
+            "D": "They will be moved online."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Engineering Earth's Climate",
+      "id": "m7_p3",
+      "left_content": {
+        "paragraphs": [
+          "Earth systems engineering and management (ESEM) focuses on manipulating Earth's processes to address environmental challenges. This field combines engineering, environmental science, and policy-making to devise solutions for climate change and other issues. One method of ESEM is geoengineering, which involves deliberate intervention in Earth's climate system to counteract global warming.",
+          "Geoengineering techniques fall into two categories: solar radiation management (SRM) and carbon dioxide removal (CDR). SRM aims to reflect sunlight into space to cool the planet. Techniques include injecting aerosols into the stratosphere and deploying reflective mirrors. CDR focuses on reducing greenhouse gas concentrations through methods like afforestation, ocean fertilization, and direct air capture of CO2.",
+          "Implementing geoengineering presents challenges. Technological feasibility is a concern, as many techniques are experimental. There are ethical and governance issues, such as who controls these interventions and how impacts are monitored. Additionally, unintended consequences may arise, causing more harm than good. Despite these challenges, ESEM offers solutions to mitigate climate change. Integrating engineering with environmental management can lead to innovative approaches for sustainability. Collaborative efforts between scientists, engineers, and policymakers are crucial to developing safe strategies."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "Which of the following is true of Earth systems engineering and management (ESEM)?",
+          "options": {
+            "A": "It finds solutions for problems by allowing natural processes to work themselves out.",
+            "B": "It uses the resources of multiple disciplines to accomplish its goals.",
+            "C": "It focuses exclusively on counteracting global warming.",
+            "D": "It is also known as geoengineering."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What is the basic difference between the two categories of geoengineering techniques?",
+          "options": {
+            "A": "SRM merely manages solar radiation, while CDR removes it altogether.",
+            "B": "SRM injects aerosols into the stratosphere, while CDR deploys reflective mirrors.",
+            "C": "SRM lowers greenhouse gas concentrations, while CDR directly captures CO2.",
+            "D": "SRM reduces the effects of global warming, while CDR reduces its causes."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "The word \"feasibility\" in the passage is closest in meaning to",
+          "options": {
+            "A": "cost",
+            "B": "workability",
+            "C": "specialty",
+            "D": "risk"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Implementing geoengineering presents challenges. Technological <mark>feasibility</mark> is a concern, as many techniques are experimental. There are ethical and governance issues, such as who controls these interventions and how impacts are monitored. Additionally, unintended consequences may arise, causing more harm than good. Despite these challenges, ESEM offers solutions to mitigate climate change. Integrating engineering with environmental management can lead to innovative approaches for sustainability. Collaborative efforts between scientists, engineers, and policymakers are crucial to developing safe strategies.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is one ongoing question raised by geoengineering?",
+          "options": {
+            "A": "What types of collaboration are required in order to develop safe strategies",
+            "B": "Whether existing experimental techniques can be sustained",
+            "C": "Who bears responsibility for implementing changes",
+            "D": "Whether it can be integrated with environmental management"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nCareful consideration is needed to assess the long-term impacts.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "Implementing geoengineering presents challenges. [■] Technological feasibility is a concern, as many techniques are experimental. [■] There are ethical and governance issues, such as who controls these interventions and how impacts are monitored. [■] Additionally, unintended consequences may arise, causing more harm than good. [■] Despite these challenges, ESEM offers solutions to mitigate climate change. Integrating engineering with environmental management can lead to innovative approaches for sustainability. Collaborative efforts between scientists, engineers, and policymakers are crucial to developing safe strategies.",
+          "inserted_sentence": "Careful consideration is needed to assess the long-term impacts."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Harmonic Analysis: Unveiling the Hidden Structures",
+      "id": "m7_p4",
+      "left_content": {
+        "paragraphs": [
+          "Harmonic analysis studies how functions or signals can be represented as combinations of basic waves, typically sine and cosine functions. This field has applications in signal processing, quantum mechanics, and data compression. One intriguing aspect is its ability to reveal hidden structures within complex signals, such as identifying the fundamental frequencies in a musical piece or detecting anomalies in financial data.",
+          "The Fourier transform is a key tool in harmonic analysis, breaking down functions into their constituent frequencies. For example, in signal processing, it isolates different frequency components, making it easier to filter out noise and enhance signal clarity. This decomposition is also crucial in quantum mechanics, where wave functions are expressed as combinations of base states, allowing for the analysis and prediction of quantum systems.",
+          "Wavelet transforms offer precise localization of signals in both time and frequency domains, making them highly effective for analyzing transient or non-stationary signals. Their ability to adapt to various signal characteristics makes them versatile tools in numerous applications. These methods are particularly useful in data compression. In image processing, wavelet transforms facilitate efficient encoding of information, allowing for enhanced image reconstruction and feature extraction."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"anomalies\" in the passage is closest in meaning to",
+          "options": {
+            "A": "falsehoods",
+            "B": "gaps",
+            "C": "inconsistencies",
+            "D": "patterns"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Harmonic analysis studies how functions or signals can be represented as combinations of basic waves, typically sine and cosine functions. This field has applications in signal processing, quantum mechanics, and data compression. One intriguing aspect is its ability to reveal hidden structures within complex signals, such as identifying the fundamental frequencies in a musical piece or detecting <mark>anomalies</mark> in financial data.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "All of the following are mentioned about harmonic analysis EXCEPT:",
+          "options": {
+            "A": "It involves the way functions and signals are represented.",
+            "B": "It has practical uses in several areas.",
+            "C": "It can reveal unseen structures in complex signals.",
+            "D": "It is more effective in music than in finance."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "In which of the following ways does the Fourier transform benefit signal processing?",
+          "options": {
+            "A": "By making signals travel far",
+            "B": "By making signals clearer",
+            "C": "By protecting signals from noise",
+            "D": "By increasing the frequency of signals"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author discuss \"quantum mechanics\" in paragraph 2?",
+          "options": {
+            "A": "To explain why the Fourier transform is a key tool of harmonic analysis",
+            "B": "To illustrate an application of breaking down functions into their constituent frequencies",
+            "C": "To highlight an important difference between signal processing and quantum mechanics",
+            "D": "To demonstrate the challenge of analyzing and predicting quantum systems"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nThey enable the reduction of file sizes without significant loss of quality.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "Wavelet transforms offer precise localization of signals in both time and frequency domains, making them highly effective for analyzing transient or non-stationary signals. [■] Their ability to adapt to various signal characteristics makes them versatile tools in numerous applications. [■] These methods are particularly useful in data compression. [■] In image processing, wavelet transforms facilitate efficient encoding of information, allowing for enhanced image reconstruction and feature extraction. [■]",
+          "inserted_sentence": "They enable the reduction of file sizes without significant loss of quality."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Bird Migration",
+      "id": "m7_p5",
+      "left_content": {
+        "paragraphs": [
+          "Every year, millions of birds travel huge distances to wintering grounds, and then back to breeding grounds when warmer weather returns there. Bird migration evolved in response to climatic changes. During the Ice Age, when average temperatures were frigid, migrating birds had a survival advantage, and the behavior became widespread.",
+          "Migration is also linked to resource availability. Arctic terns, which undertake the longest migrations of any animal by flying from their summer breeding grounds in Earth's north polar (Arctic) regions to their wintering grounds in Earth's south polar regions, feed primarily on small fish and other small marine animals. This prey is most abundant when increased sunlight results in the increased availability of algae, the microscopic marine plantlike organisms that are food for the tiny marine animals known as zooplankton, which are in turn consumed by terns' prey.",
+          "Not all birds migrate. Rock ptarmigans also live in Arctic and sub-Arctic regions. Instead of flying to warmer climes in winter, they shelter in snow burrows and reduce activity to conserve energy. They feed on plants like birch and willow trees, which are available in their habitat year-round. The divergence between migratory and sedentary species represents different adaptations to environmental pressures."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage implies that bird migration began when",
+          "options": {
+            "A": "wintering grounds were closer to breeding grounds than they are now",
+            "B": "areas suitable for breeding were smaller than they are now",
+            "C": "there were many more birds than there are now",
+            "D": "climates were generally much colder than they are now"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What is the passage explaining when it mentions that \"increased sunlight results in the increased availability of algae\"?",
+          "options": {
+            "A": "Why terns' migrations result in increased food availability for them",
+            "B": "Why some tiny marine organisms migrate for long distances",
+            "C": "Why terns depend on sunlight while traveling long distances",
+            "D": "Why terns benefit from the migration of zooplankton"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The passage supports all of the following statements about Arctic terns EXCEPT:",
+          "options": {
+            "A": "They take different migration routes depending on resource availability.",
+            "B": "They migrate over longer distances than all other birds do.",
+            "C": "They spend much of their lives in regions around Earth's poles.",
+            "D": "They eat mostly small animals living in sea water."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "Why does the passage provide information about rock ptarmigans?",
+          "options": {
+            "A": "To emphasize the usefulness of snow burrows in their habitat",
+            "B": "To contrast their behavior to that of Arctic terns",
+            "C": "To show that birch and willow trees provide food to both migratory and sedentary birds",
+            "D": "To provide another example of migratory birds"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "The word \"shelter\" in the passage is closest in meaning to",
+          "options": {
+            "A": "move",
+            "B": "land",
+            "C": "seek food",
+            "D": "take protection"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Not all birds migrate. Rock ptarmigans also live in Arctic and sub-Arctic regions. Instead of flying to warmer climes in winter, they <mark>shelter</mark> in snow burrows and reduce activity to conserve energy. They feed on plants like birch and willow trees, which are available in their habitat year-round. The divergence between migratory and sedentary species represents different adaptations to environmental pressures.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

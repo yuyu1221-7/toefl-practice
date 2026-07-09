@@ -1,0 +1,366 @@
+{
+  "set": "2026.3.10_set1",
+  "date_edition": "2026.3.10",
+  "set_name": "第16套 (3月10日)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a label.",
+      "id": "m13_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/lUCl/840X624/033.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "How many items are in one case?",
+          "options": {
+            "A": "1",
+            "B": "12",
+            "C": "150",
+            "D": "1,000"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is the brand name of the product?",
+          "options": {
+            "A": "Ella",
+            "B": "Natural",
+            "C": "Lagos",
+            "D": "Mainland"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m13_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/hhrg/960X1134/034.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is suggested about the film's cinematography?",
+          "options": {
+            "A": "It compensates for the film's mediocre plot.",
+            "B": "It has been nominated for an award.",
+            "C": "It does not fully reflect the film's emotional depth.",
+            "D": "It overshadows the actors' performances."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Which of the following people may most likely attend the film without paying?",
+          "options": {
+            "A": "A business owner catering an event on campus",
+            "B": "An instructor who teaches at the university",
+            "C": "The parent of a student at the university",
+            "D": "A local member of the public"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a page from a website.",
+      "id": "m13_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/BHfz/1317X1176/035.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is Health Geek?",
+          "options": {
+            "A": "An online fitness class",
+            "B": "A blog for posting sleeping tips",
+            "C": "A device that goes on the wrist",
+            "D": "A health and wellness app"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "How is the amount of time in each sleep stage estimated?",
+          "options": {
+            "A": "By observing eye and face motions",
+            "B": "By measuring changes in body temperature",
+            "C": "By following a person's breathing patterns",
+            "D": "By monitoring heart rate and body movements"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What percentage of time is usually spent in light sleep?",
+          "options": {
+            "A": "50 percent",
+            "B": "25 percent",
+            "C": "15 percent",
+            "D": "10 percent"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m13_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Nx1V/1065X879/036.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the main topic of the article?",
+          "options": {
+            "A": "A student-launched tech innovation",
+            "B": "A tech conference on campus",
+            "C": "Techniques for coping with exam stress",
+            "D": "Apps that help students find housing"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is indicated about PlanForge?",
+          "options": {
+            "A": "It was created by some professors.",
+            "B": "It quickly reached thousands of downloads.",
+            "C": "It is available only to university alumni.",
+            "D": "It helps students who are looking for jobs."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred about the app creators' future plans?",
+          "options": {
+            "A": "They intend to pause their studies and focus on marketing the app.",
+            "B": "They would like to increase the functionality of the app to include more tools.",
+            "C": "They will ask other students to help develop the app.",
+            "D": "They want to limit the app's release to their own campus."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Urban Resilience",
+      "id": "m13_p5",
+      "left_content": {
+        "paragraphs": [
+          "Urban resilience refers to the ability of cities to absorb, recover from, and prepare for shocks such as natural disasters, economic crises, and social upheavals. This concept is becoming increasingly important as more people move into urban areas and face the challenges that come with densely populated areas. Cities are implementing various strategies to enhance resilience. For instance, green infrastructure, like parks and green roofs, can help manage stormwater and reduce flooding. Renewable energy sources, such as solar and wind, reduce dependence on non-renewable resources and improve energy security.",
+          "Community engagement is another critical component of urban resilience. Local governments are involving residents in planning and decision-making processes to ensure that the needs of the community are met. This participatory approach fosters a sense of ownership and accountability among citizens, improving the effectiveness of resilience strategies. Technology also plays a role, with smart city initiatives using data and sensors to monitor infrastructure and predict potential problems.",
+          "Nonetheless, building urban resilience is not without obstacles. Budget constraints and political disagreements can hinder the implementation of necessary measures. Additionally, the integration of new technologies requires substantial investment and training. Despite these obstacles, the pursuit of urban resilience is essential for the sustainable development of cities worldwide."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "What is the purpose of green infrastructure like parks and green roofs?",
+          "options": {
+            "A": "To increase urban density",
+            "B": "To prevent flooding",
+            "C": "To foster community engagement",
+            "D": "To generate renewable energy"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The word \"fosters\" in the passage is closest in meaning to",
+          "options": {
+            "A": "describes",
+            "B": "neglects",
+            "C": "encourages",
+            "D": "replaces"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Community engagement is another critical component of urban resilience. Local governments are involving residents in planning and decision-making processes to ensure that the needs of the community are met. This participatory approach <mark>fosters</mark> a sense of ownership and accountability among citizens, improving the effectiveness of resilience strategies. Technology also plays a role, with smart city initiatives using data and sensors to monitor infrastructure and predict potential problems.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "What does the passage suggest is essential for resilience strategies to be fully effective?",
+          "options": {
+            "A": "Discouraging the uncontrolled growth of urban populations",
+            "B": "The involvement of local government and citizens",
+            "C": "Less reliance on smart technology",
+            "D": "Limiting the number of structures in urban areas"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Which of the following is NOT mentioned as a challenge for urban resilience?",
+          "options": {
+            "A": "Financial limitations",
+            "B": "Political disagreements",
+            "C": "Integration of new technologies",
+            "D": "Community participation"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nFor example, Singapore's Intelligent Transport System incorporates artificial intelligence (AI) to predict real-time traffic conditions, effectively manage road congestion, and optimize routes.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "Community engagement is another critical component of urban resilience. Local governments are involving residents in planning and decision-making processes to ensure that the needs of the community are met. This participatory approach fosters a sense of ownership and accountability among citizens, improving the effectiveness of resilience strategies. Technology also plays a role, with smart city initiatives using data and sensors to monitor infrastructure and predict potential problems. [■]\n\nNonetheless, building urban resilience is not without obstacles. [■] Budget constraints and political disagreements can hinder the implementation of necessary measures. [■] Additionally, the integration of new technologies requires substantial investment and training. [■] Despite these obstacles, the pursuit of urban resilience is essential for the sustainable development of cities worldwide.",
+          "inserted_sentence": "For example, Singapore's Intelligent Transport System incorporates artificial intelligence (AI) to predict real-time traffic conditions, effectively manage road congestion, and optimize routes."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Medieval European Philosophy",
+      "id": "m13_p6",
+      "left_content": {
+        "paragraphs": [
+          "In the European medieval period (between the fifth and fifteenth centuries), philosophy was a major field of study. Scholars like Peter Abelard and Thomas Aquinas were influenced by ancient Greek philosophy but also had their own ideas. A key focus was the nature of universals—whether abstract concepts like \"beauty\" or \"justice\" exist independently of the mind. Abelard, a twelfth-century philosopher, argued that universals are merely linguistic constructs, existing only in our language and thoughts. This nominalist perspective contrasted sharply with the realism of ancient Greek scholars like Plato, who believed that universals exist in an independent realm.",
+          "Abelard's views sparked intense debates among his contemporaries. Thomas Aquinas, influenced by the ancient Greek philosopher Aristotle, offered a different approach. He suggested that universals exist both in the mind and in reality. For Aquinas, the human mind perceives universals through experiences of particular things. Seeing a beautiful flower, for example, helps us grasp the idea of beauty itself. This theory, known as moderate realism, bridged the gap between nominalism and classical realism. Aquinas' synthesis of Aristotelian philosophy and nominalism had an enduring impact on medieval thought, and the debate over universals shaped the entire medieval intellectual landscape."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "What is the passage mainly about?",
+          "options": {
+            "A": "A major historical event in medieval Europe",
+            "B": "An argument about the nature of abstract concepts",
+            "C": "A similarity between ancient Greek and medieval philosophies",
+            "D": "A legacy of two major medieval European thinkers"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "According to the passage, which philosopher was a proponent of pure nominalism?",
+          "options": {
+            "A": "Abelard",
+            "B": "Aquinas",
+            "C": "Plato",
+            "D": "Aristotle"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Moderate realism claimed which of the following?",
+          "options": {
+            "A": "People can perceive universals by seeing particular objects.",
+            "B": "The idea of beauty is too abstract for the human mind to grasp.",
+            "C": "Nominalism focuses too much on people's personal experience.",
+            "D": "Even particular things like flowers exist only in the human mind."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The word \"synthesis\" in the passage is closest in meaning to",
+          "options": {
+            "A": "teaching",
+            "B": "improvement",
+            "C": "understanding",
+            "D": "combination"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Abelard's views sparked intense debates among his contemporaries. Thomas Aquinas, influenced by the ancient Greek philosopher Aristotle, offered a different approach. He suggested that universals exist both in the mind and in reality. For Aquinas, the human mind perceives universals through experiences of particular things. Seeing a beautiful flower, for example, helps us grasp the idea of beauty itself. This theory, known as moderate realism, bridged the gap between nominalism and classical realism. Aquinas' <mark>synthesis</mark> of Aristotelian philosophy and nominalism had an enduring impact on medieval thought, and the debate over universals shaped the entire medieval intellectual landscape.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nDid universals exist in reality or only in the language and mind?\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "In the European medieval period (between the fifth and fifteenth centuries), philosophy was a major field of study. Scholars like Peter Abelard and Thomas Aquinas were influenced by ancient Greek philosophy but also had their own ideas. [■] A key focus was the nature of universals—whether abstract concepts like \"beauty\" or \"justice\" exist independently of the mind. Abelard, a twelfth-century philosopher, argued that universals are merely linguistic constructs, existing only in our language and thoughts. [■] This nominalist perspective contrasted sharply with the realism of ancient Greek scholars like Plato, who believed that universals exist in an independent realm.\n\nAbelard's views sparked intense debates among his contemporaries. [■] Thomas Aquinas, influenced by the ancient Greek philosopher Aristotle, offered a different approach. He suggested that universals exist both in the mind and in reality. [■] For Aquinas, the human mind perceives universals through experiences of particular things. Seeing a beautiful flower, for example, helps us grasp the idea of beauty itself. This theory, known as moderate realism, bridged the gap between nominalism and classical realism. Aquinas' synthesis of Aristotelian philosophy and nominalism had an enduring impact on medieval thought, and the debate over universals shaped the entire medieval intellectual landscape.",
+          "inserted_sentence": "Did universals exist in reality or only in the language and mind?"
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

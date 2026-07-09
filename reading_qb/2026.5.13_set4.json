@@ -1,0 +1,367 @@
+{
+  "set": "2026.5.13_set4",
+  "date_edition": "2026.5.13",
+  "set_name": "第31套 (5月13日D卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a course description.",
+      "id": "m31_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/u2zZ/1157X657/077.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "Students enrolled in this course must do all of the following EXCEPT",
+          "options": {
+            "A": "attend lectures twice a week",
+            "B": "participate in laboratory sessions",
+            "C": "write a final lab report",
+            "D": "take part in class discussions"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "Which of the following would be a typical BIOL 101 student?",
+          "options": {
+            "A": "Someone who has commitments in the afternoons",
+            "B": "Someone who has already completed a first-year biology course",
+            "C": "Someone who has previously studied university-level physiology",
+            "D": "Someone who is interested in studying living organisms"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a webpage.",
+      "id": "m31_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/YWG0/1290X693/078.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main purpose of the webpage?",
+          "options": {
+            "A": "To sell movie tickets",
+            "B": "To advertise films",
+            "C": "To provide information about movies",
+            "D": "To host film competitions"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Where can visitors go to talk about their favorite movies?",
+          "options": {
+            "A": "In the trailers section",
+            "B": "In the community section",
+            "C": "In the reviews section",
+            "D": "In the news section"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m31_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/oiFt/1236X1155/079.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is the main purpose of the social media post?",
+          "options": {
+            "A": "To announce an upcoming fitness competition",
+            "B": "To introduce a newly hired fitness trainer",
+            "C": "To promote online workout classes",
+            "D": "To advertise the opening of a new fitness studio"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What is NOT mentioned as a feature of the event?",
+          "options": {
+            "A": "Free workout classes",
+            "B": "A presentation about nutrition and health",
+            "C": "Special guest trainers",
+            "D": "Free food"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "Who is the social media post intended for?",
+          "options": {
+            "A": "Local restaurant owners",
+            "B": "People who want to be fit",
+            "C": "Healthcare professionals",
+            "D": "Sports equipment vendors"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a course description.",
+      "id": "m31_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/yh8J/1221X888/080.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "The course description mentions the sonnet's \"strict formal rules\" primarily to",
+          "options": {
+            "A": "suggest that sonnets are more difficult to write than other kinds of poems",
+            "B": "identify a way in which form itself can convey meaning",
+            "C": "explain how the sonnet has evolved since the early sixteenth century",
+            "D": "challenge a myth about the kinds of subjects that poets have addressed in sonnets"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "The course description suggests that students will",
+          "options": {
+            "A": "read poems other than sonnets",
+            "B": "submit multiple papers during the course",
+            "C": "take quizzes on each week's assigned reading",
+            "D": "do both creative and academic writing"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "The course description mentions each of the following EXCEPT",
+          "options": {
+            "A": "the origins of the English sonnet",
+            "B": "structural features of the sonnet",
+            "C": "aspects of the sonnet to be discussed in the term paper",
+            "D": "subject matter that poets have explored in sonnets"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Data Science and the Buildings of Tomorrow",
+      "id": "m31_p5",
+      "left_content": {
+        "paragraphs": [
+          "Once static structures, buildings increasingly function as dynamic systems thanks to applications of data science to the built environment. Building data science uses sensors and Internet of Things (IoT) devices, such as smart thermostats, to collect and interpret data from buildings. This approach enables architects and planners to make informed decisions throughout a building's design, operation, and renovation phases.",
+          "Sensors embedded in modern buildings track variables such as energy consumption, temperature, air quality, and occupancy patterns. These insights help optimize energy use, reduce operational costs, and enhance comfort. Smart HVAC (heating, ventilation, and air-conditioning) systems can adjust airflow based on real-time occupancy, improving efficiency. Monitoring space usage may conflict, however, with occupants' privacy concerns and dislike of being tracked without their consent.",
+          "Despite high initial costs, building data science offers long-term benefits. Studies show that buildings using these systems can reduce energy consumption by up to 30 percent, making them attractive for sustainable development. As urban populations grow, building data science will be key to creating adaptable spaces. A skyscraper that adjusts its internal climate based on external weather conditions exemplifies this potential. Other applications include optimizing the layouts of hospitals for better patient flow or using occupancy data to redesign underutilized office spaces."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"static\" in the passage is closest in meaning to",
+          "options": {
+            "A": "impractical",
+            "B": "unchanging",
+            "C": "wasteful",
+            "D": "simple"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Once <mark>static</mark> structures, buildings increasingly function as dynamic systems thanks to applications of data science to the built environment.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The passage indicates all of the following about building data science EXCEPT:",
+          "options": {
+            "A": "It uses data collected from Internet of Things devices.",
+            "B": "It requires special training in data analysis for architects who use it.",
+            "C": "It has an impact on how architects design new buildings.",
+            "D": "It can be used as a basis for decisions about a building's operations."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "According to the passage, what is one drawback of the use of sensors?",
+          "options": {
+            "A": "Sensors lead to greater energy use.",
+            "B": "Sensors are known for supplying inaccurate data.",
+            "C": "The data collected is frequently hard to interpret.",
+            "D": "Some building occupants may not approve of their use."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author mention \"hospitals\" and \"office spaces\"?",
+          "options": {
+            "A": "To give examples of city structures that are often poorly designed",
+            "B": "To demonstrate how building data science can improve urban infrastructure",
+            "C": "To show the limitations of building data science",
+            "D": "To contradict the claim that building data science will be key to creating adaptable spaces"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Other applications include optimizing the layouts of <mark>hospitals</mark> for better patient flow or using occupancy data to redesign underutilized <mark>office spaces</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "Based on the passage, building data science can help most with which of the following?",
+          "options": {
+            "A": "Increasing a building's office space",
+            "B": "Limiting a building's construction costs",
+            "C": "Reducing a building's environmental impact",
+            "D": "Enhancing a building's visual appeal"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Linguistic Structural Diversity",
+      "id": "m31_p6",
+      "left_content": {
+        "paragraphs": [
+          "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order—the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: Placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
+          "Beyond syntax, languages differ in morphological complexity—the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
+          "This trade-off reflects deeper functional pressures. Languages evolve not randomly but in response to cognitive constraints and social factors, including contact with other languages and cultural shifts. Studying this evolution helps linguists understand not only how languages differ but why certain grammatical strategies emerge and persist across communities."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "Which of the following is NOT mentioned in the passage as an aspect of the study of linguistic typology?",
+          "options": {
+            "A": "It has revealed both diversity and universality among structural linguistic features.",
+            "B": "It includes the study of word order as a means of aiding comprehension.",
+            "C": "It identifies three basic structural patterns across all languages.",
+            "D": "It examines differences in morphological complexity among languages."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Why does the author note that placing the subject first in a sentence aids comprehension?",
+          "options": {
+            "A": "To provide an example of a structural feature that follows a universal pattern",
+            "B": "To suggest that a larger set of available word orders increases cognitive efficiency",
+            "C": "To help explain why there is only a small set of dominant word orders across languages",
+            "D": "To suggest that languages that follow a different pattern are harder to learn"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Placing the subject first helps listeners quickly identify the sentence's main actor, aiding <mark>comprehension</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "What is suggested about the morphological complexity of Turkish?",
+          "options": {
+            "A": "It is greater than the morphological complexity of Mandarin Chinese.",
+            "B": "It is balanced by a relatively simple inflection system.",
+            "C": "It developed independently of other elements of Turkish.",
+            "D": "It requires Turkish to adhere to a relatively rigid word order."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The word \"pressures\" in the passage is closest in meaning to",
+          "options": {
+            "A": "difficulties",
+            "B": "conflicts",
+            "C": "features",
+            "D": "influences"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "This trade-off reflects deeper functional <mark>pressures</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nSuch changes can alter the communicative priorities of a speech community, affecting which features are emphasized or simplified over time.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "[■] This trade-off reflects deeper functional pressures. [■] Languages evolve not randomly but in response to cognitive constraints and social factors, including contact with other languages and cultural shifts. [■] Studying this evolution helps linguists understand not only how languages differ but why certain grammatical strategies emerge and persist across [■] communities.",
+          "inserted_sentence": "Such changes can alter the communicative priorities of a speech community, affecting which features are emphasized or simplified over time."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

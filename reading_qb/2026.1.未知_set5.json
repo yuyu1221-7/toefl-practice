@@ -1,0 +1,360 @@
+{
+  "set": "2026.1.未知_set5",
+  "date_edition": "2026.1.未知",
+  "set_name": "第8套 (1月真题)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a book blurb.",
+      "id": "m9_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/D84z/1038X524/013.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the primary focus of Professor Carter's monograph?",
+          "options": {
+            "A": "A new history of the movement to stop climate change",
+            "B": "How colleges and universities can fight climate change",
+            "C": "Student activism within the environmental movement",
+            "D": "Government policies to address climate change"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "According to the text, how can readers obtain a copy of the book?",
+          "options": {
+            "A": "By purchasing it directly from the publisher",
+            "B": "By borrowing it from a university library",
+            "C": "By downloading a free copy to an e-reader",
+            "D": "By finding it in a university bookstore"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m9_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/4RtB/1017X962/014.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main topic of the article?",
+          "options": {
+            "A": "An upcoming food festival on campus",
+            "B": "The intrigue surrounding a popular dining-hall offering",
+            "C": "The opening of a new dining hall on campus",
+            "D": "Promotional stunts orchestrated by dining services"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is suggested about Chef Martin in the article?",
+          "options": {
+            "A": "He has a sense of humor.",
+            "B": "He posts regularly on social media.",
+            "C": "He has won awards for his cooking.",
+            "D": "He was recently hired at the dining hall."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "When Liam Price says that \"Everyone wants to crack the code,\" he means that everyone wants to",
+          "options": {
+            "A": "play a game",
+            "B": "post a meme",
+            "C": "prepare a dish",
+            "D": "solve a mystery"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Artificial Photosynthesis",
+      "id": "m9_p3",
+      "left_content": {
+        "paragraphs": [
+          "Artificial photosynthesis is a developing technology designed to replicate the natural process plants use to convert sunlight into energy. Scientists believe that this innovation could address multiple global challenges, such as energy sustainability and climate change.",
+          "Unlike traditional solar panels, which convert sunlight directly into electricity, artificial photosynthesis uses sunlight to produce chemical fuels that can be stored and used later. The process involves mimicking plants' ability to absorb sunlight and split water molecules into hydrogen and oxygen. The hydrogen can then be combined with carbon dioxide to produce hydrocarbons, which are combustible fuels. This approach has some advantages, since chemical fuels generated through artificial photosynthesis can be stored for longer periods than electricity from solar panels, which requires immediate use or expensive battery storage.",
+          "But despite its promise, the technology faces significant hurdles. One major challenge is developing efficient and durable catalysts that can sustain the reactions required for artificial photosynthesis; many degrade quickly. Additionally, researchers must find ways to scale the technology for widespread use, which involves addressing economic and infrastructure barriers. Nonetheless, ongoing advances in materials science and nanotechnology provide hope that artificial photosynthesis could become a viable solution for future energy needs."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "Why does the author mention traditional solar panels?",
+          "options": {
+            "A": "To highlight the limitations of artificial photosynthesis",
+            "B": "To discuss their role in climate change",
+            "C": "To explain why they are more popular",
+            "D": "To compare their energy conversion methods with artificial photosynthesis"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What advantage of artificial photosynthesis over solar panels does the writer emphasize?",
+          "options": {
+            "A": "It can immediately convert sunlight into electricity.",
+            "B": "It generates fuels that can be stored for longer periods.",
+            "C": "It requires less sunlight to operate.",
+            "D": "It produces cheaper energy."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "The word \"viable\" in the passage is closest in meaning to",
+          "options": {
+            "A": "inexpensive",
+            "B": "workable",
+            "C": "renewable",
+            "D": "easy"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "But despite its promise, the technology faces significant hurdles. One major challenge is developing efficient and durable catalysts that can sustain the reactions required for artificial photosynthesis; many degrade quickly. Additionally, researchers must find ways to scale the technology for widespread use, which involves addressing economic and infrastructure barriers. Nonetheless, ongoing advances in materials science and nanotechnology provide hope that artificial photosynthesis could become a <mark>viable</mark> solution for future energy needs.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is the relationship between paragraphs 2 and 3?",
+          "options": {
+            "A": "Paragraph 3 explains a concept introduced in paragraph 2.",
+            "B": "Paragraph 3 provides extended details of a technological process described in paragraph 2.",
+            "C": "Paragraph 3 introduces the challenges of the technology covered in paragraph 2.",
+            "D": "Paragraph 3 provides examples of successful implementations of the technology discussed in paragraph 2."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "Why does the author mention catalysts in the passage?",
+          "options": {
+            "A": "To illustrate a difficulty with developing artificial photosynthesis",
+            "B": "To explain the role of hydrogen in the process",
+            "C": "To highlight the cost of artificial photosynthesis",
+            "D": "To discuss the environmental impact of the technology"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Twin Stars",
+      "id": "m9_p4",
+      "left_content": {
+        "paragraphs": [
+          "Stars form in the relatively dense, egg-shaped cores of molecular clouds made of dust and gases. Scientists mapping these dense cores must use radio waves to penetrate the dust and gases that prevent light from escaping molecular clouds; satellite images of these regions show nothing but large, black areas of space.",
+          "Recent observations of the Perseus molecular cloud may have surprising implications for previously accepted conclusions about the Sun. A radio wave sweep of the Perseus cloud's dense cores revealed that the youngest stars existing in the cloud all occurred in pairs, or binary twins, orbiting a common point. Stars of older binary systems, of which there were fewer, appeared closer together than stars of younger binary systems.",
+          "Scientists used current knowledge about stellar growth, decay, and destruction to predict the paths along which binary stars traveled throughout the molecular cloud. Their estimates would align with current understandings only if all stars approximately the same size as the Sun had begun as members of a binary system that first moved closer to each other and later separated. This rule would also apply to the Sun, whose twin likely separated following approximately one million years of coexistence."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "Which of the following best summarizes the main point of the passage?",
+          "options": {
+            "A": "Binary stars alternate between separating and getting closer over time.",
+            "B": "Star development takes place in the dense cores of molecular clouds.",
+            "C": "The Sun formed in the same way that the Perseus molecular cloud did.",
+            "D": "Stars the size of the Sun begin their development with a binary twin."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The word \"penetrate\" in the passage is closest in meaning to",
+          "options": {
+            "A": "push aside",
+            "B": "break apart",
+            "C": "pass through",
+            "D": "travel around"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Stars form in the relatively dense, egg-shaped cores of molecular clouds made of dust and gases. Scientists mapping these dense cores must use radio waves to <mark>penetrate</mark> the dust and gases that prevent light from escaping molecular clouds; satellite images of these regions show nothing but large, black areas of space.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Which of the following was most likely one of the \"previously accepted conclusions\" about the Sun?",
+          "options": {
+            "A": "It did not have a binary twin.",
+            "B": "It is larger than most other stars.",
+            "C": "It did not form in a molecular cloud.",
+            "D": "It developed faster than most other stars did."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What do the \"estimates\" discussed in the passage refer to?",
+          "options": {
+            "A": "The rate at which stars grow in the molecular cloud",
+            "B": "The course that stars move along within the molecular cloud",
+            "C": "The number of binary star systems found in the molecular cloud",
+            "D": "The number of stars that have formed within the molecular cloud"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "What can be inferred from the passage about the Sun?",
+          "options": {
+            "A": "It is following a unique development pattern.",
+            "B": "It moved closer to a binary twin early in its development.",
+            "C": "It was too far from its twin to maintain the binary system.",
+            "D": "Its twin decayed before separating from the binary system."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "The Role of AI in Diagnosing Diseases",
+      "id": "m9_p5",
+      "left_content": {
+        "paragraphs": [
+          "Artificial Intelligence (AI) is transforming health informatics, particularly in diagnosing diseases. AI algorithms can analyze medical images, detecting abnormalities in X-rays, MRIs, and CT scans with accuracy comparable to trained radiologists. By processing vast amounts of data quickly, AI helps radiologists identify conditions that might be missed during routine examinations.",
+          "AI predicts disease outbreaks by analyzing data from social media, search engines, and health records. AI systems track the spread of infectious diseases by identifying patterns and trends human analysts might overlook. This predictive capability allows for faster responses and better allocation of medical resources.",
+          "Moreover, AI personalizes treatment plans. By considering an individual's genetic makeup, lifestyle, and medical history, AI can recommend tailored treatments that improve patient outcomes. This approach is beneficial in managing chronic diseases like diabetes and hypertension.",
+          "Despite these advancements, integrating AI into healthcare presents challenges. Concerns about data privacy, the need for large datasets to train algorithms, and the potential for algorithmic bias need to be addressed. Algorithmic bias happens when AI systems learn from data that doesn't fully represent all groups of people, which can lead to unfair or inaccurate results for some patients. Ensuring the ethical use of AI, particularly in maintaining patient confidentiality and mitigating bias, is crucial."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "What is one advantage of using AI in medical diagnostics?",
+          "options": {
+            "A": "AI eliminates the need for radiologists.",
+            "B": "AI reduces the number of medical images needed for diagnosis.",
+            "C": "AI is capable of analyzing large datasets efficiently.",
+            "D": "AI can predict patient outcomes based solely on diagnoses."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Why does the author mention social media and search engines?",
+          "options": {
+            "A": "To suggest that they are more effective sources of information for AI than health records are",
+            "B": "To help explain how AI gathers the data it needs to predict disease outbreaks",
+            "C": "To show how human analysts identify the patterns that AI systems need to function effectively",
+            "D": "To highlight the growing popularity of AI technologies among users of social media"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"tailored\" in the passage is closest in meaning to",
+          "options": {
+            "A": "personalized",
+            "B": "advanced",
+            "C": "reliable",
+            "D": "precise"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Moreover, AI personalizes treatment plans. By considering an individual's genetic makeup, lifestyle, and medical history, AI can recommend <mark>tailored</mark> treatments that improve patient outcomes. This approach is beneficial in managing chronic diseases like diabetes and hypertension.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What does the passage suggest is a potential problem with the datasets used to train algorithms?",
+          "options": {
+            "A": "The datasets are extremely expensive to build.",
+            "B": "The datasets may not represent all people equally.",
+            "C": "The datasets are often procured through unethical means.",
+            "D": "The datasets must be manipulated to protect privacy."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nAI's capabilities extend beyond image analysis.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "[■] AI predicts disease outbreaks by analyzing data from social media, search engines, and health records. [■] AI systems track the spread of infectious diseases by identifying patterns and trends human analysts might overlook. [■] This predictive capability allows for faster responses and better allocation of medical resources. [■]",
+          "inserted_sentence": "AI's capabilities extend beyond image analysis."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

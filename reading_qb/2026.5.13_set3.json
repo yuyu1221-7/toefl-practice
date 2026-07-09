@@ -1,0 +1,367 @@
+{
+  "set": "2026.5.13_set3",
+  "date_edition": "2026.5.13",
+  "set_name": "第30套 (5月13日C卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m30_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/E583/1425X495/073.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "Based on the notice, what event is the LEAST likely to be planned by the club?",
+          "options": {
+            "A": "The Art of Making Pizza Dough",
+            "B": "Traditional Songs from around the Globe",
+            "C": "How to Apply for Study Abroad",
+            "D": "Scottish Knitting Techniques"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What does the notice most clearly suggest about the World Cultures Club's planned activities?",
+          "options": {
+            "A": "They focus mainly on academic discussions led by faculty members.",
+            "B": "They introduce students to cultural traditions through direct experiences.",
+            "C": "They aim to promote local businesses and community organizations.",
+            "D": "They help students prepare for formal academic research projects."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a webpage.",
+      "id": "m30_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/1GjZ/1386X858/074.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main purpose of the webpage?",
+          "options": {
+            "A": "To sell movie tickets",
+            "B": "To advertise films",
+            "C": "To provide information about movies",
+            "D": "To host film competitions"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Where can visitors go to talk about their favorite movies?",
+          "options": {
+            "A": "In the trailers section",
+            "B": "In the community section",
+            "C": "In the reviews section",
+            "D": "In the news section"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m30_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Agcv/1236X1155/075.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is the main purpose of the social media post?",
+          "options": {
+            "A": "To announce an upcoming fitness competition",
+            "B": "To introduce a newly hired fitness trainer",
+            "C": "To promote online workout classes",
+            "D": "To advertise the opening of a new fitness studio"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What is NOT mentioned as a feature of the event?",
+          "options": {
+            "A": "Free workout classes",
+            "B": "A presentation about nutrition and health",
+            "C": "Special guest trainers",
+            "D": "Free food"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "Who is the social media post intended for?",
+          "options": {
+            "A": "Local restaurant owners",
+            "B": "People who want to be fit",
+            "C": "Healthcare professionals",
+            "D": "Sports equipment vendors"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a webpage.",
+      "id": "m30_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/E4aN/1152X1229/076.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the main purpose of the webpage?",
+          "options": {
+            "A": "To critique existing public transit services available on campuses",
+            "B": "To provide historical background on campus transportation systems",
+            "C": "To introduce a new mobile app designed to simplify campus commuting",
+            "D": "To advertise rideshare companies to university students"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "Who would benefit most from using the CampusConnect app?",
+          "options": {
+            "A": "International tourists visiting large metropolitan areas",
+            "B": "University students, faculty, and staff who do not own a car",
+            "C": "Professional city planners designing campus transit systems",
+            "D": "Students employed part-time as rideshare drivers"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred about CampusConnect's notification settings?",
+          "options": {
+            "A": "They are identical for all users in order to maintain consistency.",
+            "B": "They are set to a predetermined default profile that cannot be altered by users.",
+            "C": "They are designed to minimize user interaction with unnecessary alerts.",
+            "D": "They prioritize public transit notifications over rideshare notifications."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Sleep and Memory",
+      "id": "m30_p5",
+      "left_content": {
+        "paragraphs": [
+          "Sleep is not merely a passive period of rest; it plays an active role in the consolidation of memory, a process that has been extensively examined by neuroscientists over several decades. During sleep, distinct stages—most notably rapid-eye-movement (REM) sleep and deep sleep—contribute in different ways to how memories are stored and organized. Experimental research suggests that while REM sleep strengthens emotionally charged memories, deep sleep supports the retention of factual knowledge and the acquisition of skills.",
+          "Some researchers further propose that sleep functions as a kind of neural \"data management\" system. While awake, the brain continuously forms new connections as it processes incoming information, creating a dense and potentially inefficient network. During sleep, however, unnecessary connections are trimmed, whereas essential ones are reinforced, a reorganization that enhances the brain's ability to retrieve information accurately.",
+          "Not surprisingly, sleep deprivation has been shown to impair memory retention and conceptual integration. Even a single night of lost sleep can reduce recall and interfere with learning. Nevertheless, studies also indicate that recovery sleep—particularly when it is deep and uninterrupted—can partially reverse these effects, suggesting that although sleep is critical for memory, the brain retains a limited capacity to adapt to disruption."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"retention\" in the passage is closest in meaning to",
+          "options": {
+            "A": "creation",
+            "B": "replacement",
+            "C": "transfer",
+            "D": "preservation"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Experimental research suggests that while REM sleep strengthens emotionally charged memories, deep sleep supports the <mark>retention</mark> of factual knowledge and the acquisition of skills.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "REM sleep and deep sleep differ in which of the following ways?",
+          "options": {
+            "A": "Deep sleep is limited to the early stages of the sleep cycle, while REM sleep is not.",
+            "B": "REM sleep is more important for skill development than deep sleep.",
+            "C": "REM sleep involves less brain activity than deep sleep.",
+            "D": "REM sleep and deep sleep are each linked to separate types of memory."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The passage suggests which of the following about the effect of sleep on memory?",
+          "options": {
+            "A": "Sleep improves memory primarily by increasing the total number of neural connections.",
+            "B": "Sleep improves memory by selectively eliminating some neural connections.",
+            "C": "Sleep affects the strength of memories only during the rapid eye movement (REM) stage.",
+            "D": "Sleep strengthens the memory of emotionally charged events but not of factual information."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author use the phrase \"Not surprisingly\" to begin paragraph 3?",
+          "options": {
+            "A": "To suggest that the effects of sleep deprivation follow logically from earlier claims",
+            "B": "To emphasize that people are often conscious of memory lapses after a period of poor sleep",
+            "C": "To point out a reason for scientists' interest in establishing a link between sleep and memory",
+            "D": "To acknowledge that sleep quality is as essential to memory retention as sleep quantity"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "<mark>Not surprisingly</mark>, sleep deprivation has been shown to impair memory retention and conceptual integration.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nThis interpretation focuses on the vital role sleep plays in helping the brain function in an optimal way.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "B",
+          "question_type": "insertion",
+          "special_content": "...factual knowledge and the acquisition of skills. [■]\nSome researchers further propose that sleep functions as a kind of neural \"data management\" system. [■] While awake, the brain continuously forms new connections as it processes incoming information, creating a dense and potentially inefficient network. [■] During sleep, however, unnecessary connections are trimmed, whereas essential ones are reinforced, a reorganization that enhances the brain's ability to retrieve information accurately. [■]",
+          "inserted_sentence": "This interpretation focuses on the vital role sleep plays in helping the brain function in an optimal way."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Circadian Rhythm Disruption",
+      "id": "m30_p6",
+      "left_content": {
+        "paragraphs": [
+          "Circadian rhythms, the internal clocks regulating organisms' physiological processes, are primarily driven by light exposure. These rhythms may be disrupted by the increased artificial light of urban environments, leading to what scientists call \"circadian misalignment.\" This misalignment not only affects sleep patterns but is linked to a higher prevalence of metabolic disorders. Interestingly, research on nocturnal animals reveals that these creatures have evolved mechanisms, such as unique melatonin production cycles, for thriving in conditions that disrupt human circadian rhythms. Such adaptations could inform potential human therapies.",
+          "Recent studies suggest that manipulating light exposure can help reset circadian clocks. Experiments demonstrated that disrupted rhythms can be realigned by the simulation of natural light cycles. However, this approach is not universally effective. Some individuals experience persistent misalignment, suggesting that other environmental or genetic factors may play significant roles.",
+          "Moreover, the factors affecting circadian regulation extend beyond light: temperature, diet, and social interactions all influence these rhythms. This complex causal web requires a multidisciplinary approach to develop comprehensive solutions. Cutting-edge research is now exploring therapeutic drugs that can rectify disruptions to the natural circadian rhythmic cycles. Whether these efforts will yield sustainable treatment options remains to be seen."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "Why does the author mention the \"higher prevalence of metabolic disorders\"?",
+          "options": {
+            "A": "To explain why circadian misalignment is increasing in urban environments",
+            "B": "To suggest a causal relationship between metabolic illness and sleep disturbances",
+            "C": "To support the claim that circadian misalignment affects sleep patterns",
+            "D": "To describe one effect of the disruption of circadian rhythms by artificial light"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "This misalignment not only affects sleep patterns but is linked to a <mark>higher prevalence of metabolic disorders</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Why might some nocturnal animal adaptations be important for human therapies?",
+          "options": {
+            "A": "They provide evidence that light exposure is the greatest driver of circadian rhythms.",
+            "B": "They offer clues about thriving in conditions that cause circadian misalignment in people.",
+            "C": "They show that melatonin is not always effective in regulating sleep patterns.",
+            "D": "They prove that animals' melatonin production cycles closely resemble those of humans."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "What does the author suggest about simulating natural light cycles as a way of resetting circadian clocks?",
+          "options": {
+            "A": "Most people experiencing circadian misalignment have seen no benefit from the treatment.",
+            "B": "Most researchers agree that this treatment is currently the only effective approach.",
+            "C": "The approach is most effective for people with a genetic predisposition for sleep disorders.",
+            "D": "This approach has been successfully used to help many individuals restore their sleep patterns."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What is the relationship between paragraph 2 and paragraph 3?",
+          "options": {
+            "A": "Paragraph 2 defines a concept; paragraph 3 provides more detail by discussing specific examples.",
+            "B": "Paragraph 2 evaluates a focused approach; paragraph 3 points to broader challenges and solutions.",
+            "C": "Paragraph 2 proposes a theory; paragraph 3 notes potential objections to it and suggests responses.",
+            "D": "Paragraph 2 outlines a methodology; paragraph 3 reports the results of applying it to a problem."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "The word \"rectify\" in the passage is closest in meaning to",
+          "options": {
+            "A": "disclose",
+            "B": "approve",
+            "C": "relieve",
+            "D": "document"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Cutting-edge research is now exploring therapeutic drugs that can <mark>rectify</mark> disruptions to the natural circadian rhythmic cycles.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "set": "2026.2.11_set1",
+  "date_edition": "2026.2.11",
+  "set_name": "第14套 (2月11日)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a webpage.",
+      "id": "m11_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Rnjr/1047X591/027.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What can be inferred about the fitness center?",
+          "options": {
+            "A": "It is associated with a local hospital.",
+            "B": "It offers swimming lessons.",
+            "C": "It has personal trainers on staff.",
+            "D": "It offers a family membership plan."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What information does the webpage NOT provide?",
+          "options": {
+            "A": "The center's goals",
+            "B": "Services offered by the center",
+            "C": "Membership options",
+            "D": "The center's physical location"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a label.",
+      "id": "m11_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Krtd/855X783/028.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "How many items are in one case?",
+          "options": {
+            "A": "1",
+            "B": "12",
+            "C": "150",
+            "D": "1,000"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is the brand name of the product?",
+          "options": {
+            "A": "Ella",
+            "B": "Natural",
+            "C": "Lagos",
+            "D": "Mainland"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a page from a website.",
+      "id": "m11_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/lTTF/1317X1176/029.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is Health Geek?",
+          "options": {
+            "A": "An online fitness class",
+            "B": "A blog for posting sleeping tips",
+            "C": "A device that goes on the wrist",
+            "D": "A health and wellness app"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "How is the amount of time in each sleep stage estimated?",
+          "options": {
+            "A": "By observing eye and face motions",
+            "B": "By measuring changes in body temperature",
+            "C": "By following a person's breathing patterns",
+            "D": "By monitoring heart rate and body movements"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What percentage of time is usually spent in light sleep?",
+          "options": {
+            "A": "50 percent",
+            "B": "25 percent",
+            "C": "15 percent",
+            "D": "10 percent"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a sign.",
+      "id": "m11_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/XNaW/1071X1077/030.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "Where would this sign most likely appear?",
+          "options": {
+            "A": "A sports equipment shop",
+            "B": "A school",
+            "C": "A fitness club",
+            "D": "A hospital"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "All of the following can be done at the front desk EXCEPT",
+          "options": {
+            "A": "presenting membership cards",
+            "B": "notifying class instructors of injuries",
+            "C": "signing up for classes",
+            "D": "notifying staff of equipment problems"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "Who is most likely to obtain a locker?",
+          "options": {
+            "A": "People with membership cards",
+            "B": "People using cardio machines",
+            "C": "People with the most personal belongings",
+            "D": "People who arrive the earliest"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Harmonic Analysis: Unveiling the Hidden Structures",
+      "id": "m11_p5",
+      "left_content": {
+        "paragraphs": [
+          "Harmonic analysis studies how functions or signals can be represented as combinations of basic waves, typically sine and cosine functions. This field has applications in signal processing, quantum mechanics, and data compression. One intriguing aspect is its ability to reveal hidden structures within complex signals, such as identifying the fundamental frequencies in a musical piece or detecting anomalies in financial data.",
+          "The Fourier transform is a key tool in harmonic analysis, breaking down functions into their constituent frequencies. For example, in signal processing, it isolates different frequency components, making it easier to filter out noise and enhance signal clarity. This decomposition is also crucial in quantum mechanics, where wave functions are expressed as combinations of base states, allowing for the analysis and prediction of quantum systems.",
+          "Wavelet transforms offer precise localization of signals in both time and frequency domains, making them highly effective for analyzing transient or non-stationary signals. Their ability to adapt to various signal characteristics makes them versatile tools in numerous applications. These methods are particularly useful in data compression. In image processing, wavelet transforms facilitate efficient encoding of information, allowing for enhanced image reconstruction and feature extraction."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"anomalies\" in the passage is closest in meaning to",
+          "options": {
+            "A": "falsehoods",
+            "B": "gaps",
+            "C": "inconsistencies",
+            "D": "patterns"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Harmonic analysis studies how functions or signals can be represented as combinations of basic waves, typically sine and cosine functions. This field has applications in signal processing, quantum mechanics, and data compression. One intriguing aspect is its ability to reveal hidden structures within complex signals, such as identifying the fundamental frequencies in a musical piece or detecting <mark>anomalies</mark> in financial data.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "All of the following are mentioned about harmonic analysis EXCEPT:",
+          "options": {
+            "A": "It involves the way functions and signals are represented.",
+            "B": "It has practical uses in several areas.",
+            "C": "It can reveal unseen structures in complex signals.",
+            "D": "It is more effective in music than in finance."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "In which of the following ways does the Fourier transform benefit signal processing?",
+          "options": {
+            "A": "By making signals travel far",
+            "B": "By making signals clearer",
+            "C": "By protecting signals from noise",
+            "D": "By increasing the frequency of signals"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author discuss \"quantum mechanics\" in paragraph 2 ?",
+          "options": {
+            "A": "To explain why the Fourier transform is a key tool of harmonic analysis",
+            "B": "To illustrate an application of breaking down functions into their constituent frequencies",
+            "C": "To highlight an important difference between signal processing and quantum mechanics",
+            "D": "To demonstrate the challenge of analyzing and predicting quantum systems"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "The Fourier transform is a key tool in harmonic analysis, breaking down functions into their constituent frequencies. For example, in signal processing, it isolates different frequency components, making it easier to filter out noise and enhance signal clarity. This decomposition is also crucial in <mark>quantum mechanics</mark>, where wave functions are expressed as combinations of base states, allowing for the analysis and prediction of quantum systems.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nThey enable the reduction of file sizes without significant loss of quality.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "Wavelet transforms offer precise localization of signals in both time and frequency domains, making them highly effective for analyzing transient or non-stationary signals. [■] Their ability to adapt to various signal characteristics makes them versatile tools in numerous applications. [■] These methods are particularly useful in data compression. [■] In image processing, wavelet transforms facilitate efficient encoding of information, allowing for enhanced image reconstruction and feature extraction. [■]",
+          "inserted_sentence": "They enable the reduction of file sizes without significant loss of quality."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "The Art of Conducting",
+      "id": "m11_p6",
+      "left_content": {
+        "paragraphs": [
+          "Orchestral conducting is often seen as a magical art form. With a baton and their hands, conductors shape an orchestra's performance. Their role is not just to keep time; they guide the interpretation and emotional delivery of a piece. This requires a deep understanding of music and the ability to inspire musicians.",
+          "One key aspect of conducting is communication. Conductors convey their intentions through gestures, facial expressions, and body language. This nonverbal communication is crucial during live performances. A slight baton movement can signal different tempo, dynamics, or mood. For example, a quick upward flick might indicate a sudden crescendo (gradual increase in volume), while a gentle circular motion could suggest a more legato (smooth and connected) passage.",
+          "Rehearsal technique is another important element. Conductors spend significant time with orchestras to fine-tune performances. This involves breaking down music, addressing challenges, and experimenting with interpretations. Rehearsals allow conductors to build a cohesive sound and align musicians with their vision.",
+          "While the conductor's role during performances might appear spontaneous, it is grounded in meticulous preparation. Conductors study scores in detail, learning every part of the orchestra's contribution. This understanding allows them to anticipate issues and react swiftly during concerts. Conductors often spend years refining their technique and adapting their style."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "All of the following are mentioned as aspects of the conductor's role EXCEPT",
+          "options": {
+            "A": "making sure that the musicians keep time",
+            "B": "communicating a composer's intentions",
+            "C": "guiding the way an orchestra interprets music",
+            "D": "inspiring musicians to convey emotions through music"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "All of the following are mentioned about communication in orchestral conducting EXCEPT:",
+          "options": {
+            "A": "It is an important part of conducting.",
+            "B": "It allows conductors to give instructions to musicians.",
+            "C": "It typically takes the form of body movements.",
+            "D": "It sometimes takes the form of spoken instructions."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "What does the passage suggest about conductors during rehearsals?",
+          "options": {
+            "A": "They have difficulty addressing problems identified by orchestra members.",
+            "B": "They rely heavily on musicians' interpretations of the music.",
+            "C": "They ensure that musicians follow the conductors' musical interpretation.",
+            "D": "They often play instruments to show musicians how to raise their performance levels."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The word \"anticipate\" in the passage is closest in meaning to",
+          "options": {
+            "A": "understand",
+            "B": "expect",
+            "C": "avoid",
+            "D": "solve"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "While the conductor's role during performances might appear spontaneous, it is grounded in meticulous preparation. Conductors study scores in detail, learning every part of the orchestra's contribution. This understanding allows them to <mark>anticipate</mark> issues and react swiftly during concerts. Conductors often spend years refining their technique and adapting their style.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "Why does the author state that \"Conductors often spend years refining their technique and adapting their style\"?",
+          "options": {
+            "A": "To emphasize that conductors' performance is based firmly on careful preparation",
+            "B": "To suggest that conductors should be more spontaneous during performances",
+            "C": "To explain how quickly conductors react to issues during concerts",
+            "D": "To highlight the physical challenges that conductors face"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "While the conductor's role during performances might appear spontaneous, it is grounded in meticulous preparation. Conductors study scores in detail, learning every part of the orchestra's contribution. This understanding allows them to anticipate issues and react swiftly during concerts. <mark>Conductors often spend years refining their technique and adapting their style.</mark>",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

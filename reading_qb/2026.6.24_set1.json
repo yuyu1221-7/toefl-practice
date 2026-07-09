@@ -1,0 +1,367 @@
+{
+  "set": "2026.6.24_set1",
+  "date_edition": "2026.6.24",
+  "set_name": "第36套 (6月24日A卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a review.",
+      "id": "m36_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/GThO/1044X585/097.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What aspect of La Taberna does the reviewer praise?",
+          "options": {
+            "A": "Its late hours of operation",
+            "B": "Its tasty food",
+            "C": "Its convenient location on campus",
+            "D": "Its plentiful seating"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is suggested about La Taberna?",
+          "options": {
+            "A": "It will soon add new tapas dishes to its menu.",
+            "B": "Its servers are quick.",
+            "C": "It has long wait times during certain periods.",
+            "D": "Its prices are too high."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m36_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/SGBQ/1479X651/098.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What will Mr. Brown receive for free?",
+          "options": {
+            "A": "A bookmark",
+            "B": "A newsletter",
+            "C": "A book",
+            "D": "A catalog"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "On what basis did GoodBooks make a decision?",
+          "options": {
+            "A": "A purchasing history",
+            "B": "A limited budget",
+            "C": "A reduced inventory",
+            "D": "A completed survey"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m36_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/76jb/828X1146/099.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "The notice suggests that",
+          "options": {
+            "A": "people new to photography can benefit from the workshop",
+            "B": "participants must pay an entrance fee",
+            "C": "participants will leave campus to take pictures",
+            "D": "students can learn fashion photography"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What would most likely be a part of the event on Sunday from 3:00 p.m. to 4:30 p.m.?",
+          "options": {
+            "A": "An exhibition of participants' photography",
+            "B": "A sale of used photo equipment",
+            "C": "A lecture by a university visual arts professor",
+            "D": "An opportunity to learn more photography techniques"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "Which of the following is NOT true about the photography workshop?",
+          "options": {
+            "A": "There will be a photography competition.",
+            "B": "Photo editing methods will be presented.",
+            "C": "Multiple photography genres will be featured.",
+            "D": "Participants must pay for lunch."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m36_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/knua/858X836/100.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "The purpose of the notice is to",
+          "options": {
+            "A": "offer recommendations",
+            "B": "describe a treatment",
+            "C": "advertise a product",
+            "D": "explain a process"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What can be inferred from the notice?",
+          "options": {
+            "A": "The Campus Health Services office is open 24 hours a day to provide medical care.",
+            "B": "There have been more cases of flu on campus during the current year than in the previous year.",
+            "C": "Campus Health Services doctors do not prescribe antiviral medication to all flu patients.",
+            "D": "The symptoms of the flu are quite different from those of other respiratory infections."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "The notice mentions all of the following EXCEPT",
+          "options": {
+            "A": "symptoms that are common to both colds and flu",
+            "B": "measures people can take to protect their health",
+            "C": "where students can get a flu vaccination",
+            "D": "how to make an appointment at Campus Health Services"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Polarized Light's Surprising Applications",
+      "id": "m36_p5",
+      "left_content": {
+        "paragraphs": [
+          "Polarized light, characterized by waves vibrating in a single plane, offers applications beyond its familiar use in sunglasses, where it reduces glare from reflective surfaces like water and roads. In certain scientific fields, it is invaluable for revealing hidden properties of materials. For instance, when researchers study the internal structure of crystals, polarized light provides insights that normal light cannot, by interacting differently with the distinct optical paths within the crystal lattice.",
+          "In biology, polarized light uncovers structural details of cells and tissues, facilitating breakthroughs in understanding cellular organization and disease mechanisms. This is true for birefringent materials, which alter the polarization of light in ways that reveal microstructural patterns such as fiber alignment and intracellular organization, helping scientists assess variations in cell density and composition. Such techniques have been instrumental in identifying amyloid plaques in brain tissue, an indication of Alzheimer's disease.",
+          "However, the use of polarized light is not universally beneficial. In aviation, pilots may avoid polarized lenses because they can obscure critical visual cues, such as instrument readings, that are essential for navigation. Thus, while polarized light can solve certain visibility issues by reducing glare, it may also interfere with necessary visual information, prompting careful consideration of context before implementation."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"invaluable\" in the passage is closest in meaning to",
+          "options": {
+            "A": "recommended",
+            "B": "convenient",
+            "C": "extremely useful",
+            "D": "very expensive"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "In certain scientific fields, it is <mark>invaluable</mark> for revealing hidden properties of materials.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "All of the following are mentioned as applications of polarized light EXCEPT:",
+          "options": {
+            "A": "It is used in sunglasses to reduce glare.",
+            "B": "It can reveal hidden properties in crystals.",
+            "C": "It can be used to alter cell structure.",
+            "D": "It aids in analyzing cellular composition."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "What can be inferred about the use of polarized light in medicine?",
+          "options": {
+            "A": "It can help doctors diagnose diseases.",
+            "B": "It is still in its early stages of implementation.",
+            "C": "It offers new ways to treat Alzheimer's disease.",
+            "D": "Its use is somewhat controversial."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Polarized lenses are potentially dangerous in aviation because they can",
+          "options": {
+            "A": "give pilots a false sense of confidence",
+            "B": "increase glare in the cockpit",
+            "C": "become foggy at high altitudes",
+            "D": "make it difficult to see aircraft instruments"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nApplications are not limited to the inorganic world.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "[■] In biology, polarized light uncovers structural details of cells and tissues, facilitating breakthroughs in understanding cellular organization and disease mechanisms. [■] This is true for birefringent materials, which alter the polarization of light in ways that reveal microstructural patterns such as fiber alignment and intracellular organization, helping scientists assess variations in cell density and composition. [■] Such techniques have been instrumental in identifying amyloid plaques in brain tissue, an indication of Alzheimer's disease. [■]",
+          "inserted_sentence": "Applications are not limited to the inorganic world."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "The Getty Kouros",
+      "id": "m36_p6",
+      "left_content": {
+        "paragraphs": [
+          "In 1985, the J. Paul Getty Museum acquired what it believed to be a Greek kouros (a statue of a naked youth) dating from the Archaic period (650–480 B.C.E.), estimating the date of origin as approximately 530 B.C.E. The Getty Kouros's authenticity soon came into question, however. Supporters cited scientific analyses suggesting that the statue's marble is consistent with marble known to have come from ancient Greek quarries and that its surface shows chemical changes consistent with long-term burial. Some scholars also argue that peculiar inconsistencies in the statue's style—it incorporates features from different regions and periods—could reflect a transitional moment in Greek sculpture.",
+          "Skeptics contend that these inconsistencies undermine the case for authenticity. The Kouros combines traits from several other known sixth-century B.C.E. kouroi in a way that appears too eclectic to be genuine. To these observers, the statue looks like a modern forger's creation—a confused imitation of Greek Archaic elements rather than the genuine product of a coherent sculptural tradition. Furthermore, scientists recognize that modern forgers can artificially age marble.",
+          "Because neither scientific analysis nor stylistic evaluation yields decisive results, the question of the Kouros's authenticity remains unresolved."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "What does the passage indicate about the \"chemical changes\" in the marble of the Getty Kouros?",
+          "options": {
+            "A": "They could not have occurred naturally.",
+            "B": "They were caused by scientists testing the marble's age.",
+            "C": "They explain some inconsistencies in features of the Getty Kouros.",
+            "D": "They may suggest an ancient origin for the marble of the Getty Kouros."
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Supporters cited scientific analyses suggesting that the statue's marble is consistent with marble known to have come from ancient Greek quarries and that its surface shows <mark>chemical changes</mark> consistent with long-term burial.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "The author mentions \"a transitional moment in Greek sculpture\" primarily in order to",
+          "options": {
+            "A": "question a claim about sixth-century B.C.E. kouroi",
+            "B": "point out how some people explain the style of the Getty Kouros",
+            "C": "characterize sculptures typical of the Greek Archaic period",
+            "D": "support the view that artistic styles evolve over time"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Some scholars also argue that peculiar inconsistencies in the statue's style—it incorporates features from different regions and periods—could reflect <mark>a transitional moment in Greek sculpture</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "What is the main reason that the authenticity of the Getty Kouros is in doubt?",
+          "options": {
+            "A": "The Greeks did not create many sculptures during the sixth century B.C.E.",
+            "B": "Modern forgers are known to have created similar sculptures.",
+            "C": "Observers may have misunderstood Greek Archaic elements.",
+            "D": "The Getty Kouros combines styles that are too diverse."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "According to the passage, what is known about marble?",
+          "options": {
+            "A": "It can be quickly produced by forgers in large amounts.",
+            "B": "It is difficult for forgers to imitate.",
+            "C": "It can be made to appear older than it actually is.",
+            "D": "Its traits could affect the style of Greek sculptures."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "Which of the following best expresses the main idea of the passage?",
+          "options": {
+            "A": "The Getty Kouros is likely genuine, but scientific testing is needed to confirm its age.",
+            "B": "The Getty Kouros is composed of marble that has probably been artificially aged.",
+            "C": "The Getty Kouros is probably of Greek origin but unlikely to be from the Archaic period.",
+            "D": "Whether the Getty Kouros is authentic is still a matter of debate among scientists and art historians."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "set": "2026.2.8_set1",
+  "date_edition": "2026.2.8",
+  "set_name": "第15套 (2月8日)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a sign.",
+      "id": "m12_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/v5W7/1086X555/031.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the main purpose of the sign?",
+          "options": {
+            "A": "To provide rules for library use",
+            "B": "To promote library memberships",
+            "C": "To announce recent library acquisitions",
+            "D": "To advertise library events"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is indicated about the library?",
+          "options": {
+            "A": "It encourages patrons to reshelve books.",
+            "B": "It has meeting rooms.",
+            "C": "It is closed on Sundays.",
+            "D": "It has a place to buy and eat food."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m12_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/KbgN/987X996/032.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "The notice suggests that",
+          "options": {
+            "A": "people new to photography can benefit from the workshop",
+            "B": "participants must pay an entrance fee",
+            "C": "participants will leave campus to take pictures",
+            "D": "students can learn fashion photography"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What would most likely be a part of the event on Sunday from 3:00 p.m. to 4:30 p.m.?",
+          "options": {
+            "A": "An exhibition of participants' photography",
+            "B": "A sale of used photo equipment",
+            "C": "A lecture by a university visual arts professor",
+            "D": "An opportunity to learn more photography techniques"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "Which of the following is NOT true about the photography workshop?",
+          "options": {
+            "A": "There will be a photography competition.",
+            "B": "Photo editing methods will be presented.",
+            "C": "Multiple photography genres will be featured.",
+            "D": "Participants must pay for lunch."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Smart Textiles",
+      "id": "m12_p3",
+      "left_content": {
+        "paragraphs": [
+          "Smart textiles are revolutionizing the fashion industry by integrating advanced digital technology into fabrics. These textiles can respond to environmental changes, monitor physical activity, and even generate energy. One example is phase-change materials that adapt to temperature fluctuations, providing warmth when it's cold and cooling when it's hot. Another innovation is textiles embedded with sensors that track health metrics, such as heart rate and body temperature. These developments offer promising applications for athletes and medical patients.",
+          "Researchers are also exploring textiles that harvest energy from movement. These fabrics utilize piezoelectric materials that generate electricity when subjected to mechanical stress. Envision clothing that can charge your smartphone simply through your daily activities. Moreover, smart textiles can be designed to change color or pattern based on electrical stimuli, opening up new possibilities for both fashion and interior design.",
+          "Yet, integrating technology into textiles presents challenges. Durability, washability, and cost are significant concerns. Since their initial cost will be higher than traditional fabrics, ensuring that smart textiles can withstand regular use without degrading is essential for their widespread adoption. Protecting privacy is another concern of many; smart textiles could collect vast amounts of user data that must be properly secured."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "What are phase-change materials designed to do?",
+          "options": {
+            "A": "Generate electricity from movement",
+            "B": "Adapt to changes in temperature",
+            "C": "Monitor heart rate and body temperature",
+            "D": "Change color based on electrical stimuli"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "Which of the following is NOT mentioned as a challenge for smart textiles?",
+          "options": {
+            "A": "Washability",
+            "B": "Cost",
+            "C": "Durability",
+            "D": "Availability"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "The word \"harvest\" in the passage is closest in meaning to",
+          "options": {
+            "A": "grow",
+            "B": "collect",
+            "C": "spin",
+            "D": "discover"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Researchers are also exploring textiles that <mark>harvest</mark> energy from movement. These fabrics utilize piezoelectric materials that generate electricity when subjected to mechanical stress. Envision clothing that can charge your smartphone simply through your daily activities. Moreover, smart textiles can be designed to change color or pattern based on electrical stimuli, opening up new possibilities for both fashion and interior design.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is the main purpose of paragraph 3?",
+          "options": {
+            "A": "To present obstacles to the ideas previously introduced",
+            "B": "To expand on the benefits mentioned in paragraph 2",
+            "C": "To provide information on the future applications of smart textiles",
+            "D": "To summarize the main points of the reading"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nImagine being able to change the appearance of your furnishings depending on your mood or the season.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "Researchers are also exploring textiles that harvest energy from movement. These fabrics utilize piezoelectric materials that generate electricity when subjected to mechanical stress. [■] Envision clothing that can charge your smartphone simply through your daily activities. [■] Moreover, smart textiles can be designed to change color or pattern based on electrical stimuli, opening up new possibilities for both fashion and interior design. [■]\n\n[■] Yet, integrating technology into textiles presents challenges. Durability, washability, and cost are significant concerns. Since their initial cost will be higher than traditional fabrics, ensuring that smart textiles can withstand regular use without degrading is essential for their widespread adoption. Protecting privacy is another concern of many; smart textiles could collect vast amounts of user data that must be properly secured.",
+          "inserted_sentence": "Imagine being able to change the appearance of your furnishings depending on your mood or the season."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "The Impact of Climate Change on Coral Reefs",
+      "id": "m12_p4",
+      "left_content": {
+        "paragraphs": [
+          "Coral reefs are among the most diverse and valuable ecosystems on Earth, providing habitat for countless marine species. However, climate change poses a severe threat to these vibrant underwater communities. Rising sea temperatures lead to coral bleaching, a phenomenon where corals lose their color and essential symbiotic algae, resulting in weakened corals that are more susceptible to disease.",
+          "In addition to temperature changes, climate change contributes to ocean acidification through increased atmospheric CO2 levels. Ocean acidification reduces the availability of calcium carbonate, a crucial component of coral skeletons. As the acidity of seawater increases, corals struggle to maintain their structures, leading to diminished reef growth and stability.",
+          "Efforts to mitigate these impacts include developing coral species that are more resilient to temperature fluctuations and acidification. Scientists are exploring selective breeding and genetic modification as potential solutions. Furthermore, initiatives to reduce CO2 emissions globally aim to alleviate the stress on coral reefs. The survival of coral reefs depends largely on addressing climate change comprehensively."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "What is coral bleaching?",
+          "options": {
+            "A": "An increase in coral growth",
+            "B": "An effect of high temperatures that harms coral",
+            "C": "A method of coral reproduction",
+            "D": "A protective mechanism used by corals"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "What is the effect of ocean acidification on coral reefs?",
+          "options": {
+            "A": "It leads to temperature changes in the surrounding waters.",
+            "B": "It can increase atmospheric CO2 levels, resulting in coral bleaching.",
+            "C": "It reduces the availability of the calcium carbonate needed for coral structures.",
+            "D": "It leads to more stability within existing reefs."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"mitigate\" in the passage is closest in meaning to",
+          "options": {
+            "A": "research",
+            "B": "alleviate",
+            "C": "measure",
+            "D": "predict"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Efforts to <mark>mitigate</mark> these impacts include developing coral species that are more resilient to temperature fluctuations and acidification. Scientists are exploring selective breeding and genetic modification as potential solutions. Furthermore, initiatives to reduce CO2 emissions globally aim to alleviate the stress on coral reefs. The survival of coral reefs depends largely on addressing climate change comprehensively.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What is suggested in the passage about selective breeding and genetic modification?",
+          "options": {
+            "A": "They are the only solutions to coral bleaching.",
+            "B": "They are potential methods to develop resilient coral species.",
+            "C": "They are proven to reverse ocean acidification.",
+            "D": "They help reduce CO2 emissions."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nThe absence of calcium carbonate also reduces the ability of corals to support diverse marine life and protect coastal ecosystems.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "B",
+          "question_type": "insertion",
+          "special_content": "In addition to temperature changes, climate change contributes to ocean acidification through increased atmospheric CO2 levels. Ocean acidification reduces the availability of calcium carbonate, a crucial component of coral skeletons. [■] As the acidity of seawater increases, corals struggle to maintain their structures, leading to diminished reef growth and stability. [■]\n\nEfforts to mitigate these impacts include developing coral species that are more resilient to temperature fluctuations and acidification. [■] Scientists are exploring selective breeding and genetic modification as potential solutions. Furthermore, initiatives to reduce CO2 emissions globally aim to alleviate the stress on coral reefs. [■] The survival of coral reefs depends largely on addressing climate change comprehensively.",
+          "inserted_sentence": "The absence of calcium carbonate also reduces the ability of corals to support diverse marine life and protect coastal ecosystems."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Approximation Theory",
+      "id": "m12_p5",
+      "left_content": {
+        "paragraphs": [
+          "Approximation theory is a part of mathematics that helps us simplify complex problems. Instead of working with difficult functions directly, scientists use simpler ones that are \"close enough\" to get useful results. These simplified functions are often used to build algorithms—step-by-step procedures that solve problems efficiently. This is especially helpful in fields like computer science, where exact calculations can take too much time or power.",
+          "One common method is polynomial approximation, which uses basic math expressions (polynomials) to stand in for more complicated functions. A special type, called the Taylor series, breaks a function into an infinite sum based on its behavior at a single point. This helps us work with functions that are otherwise hard to handle.",
+          "Another key tool is the Fourier series, which decomposes repeating patterns—like sound waves—into a mix of sine and cosine waves. This is widely used in signal processing; engineers use Fourier series to filter out noise and enhance data quality.",
+          "While these methods are powerful, they are not perfect. Accuracy remains a challenge. The difference between the original and the simplified version—called the error—needs to be as small as possible. New techniques, like adaptive approximation, adjust the level of detail based on how accurate the result needs to be."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "According to the passage, simpler functions help scientists",
+          "options": {
+            "A": "achieve exact calculations",
+            "B": "avoid relying on algorithms",
+            "C": "tackle difficult functions more effectively over time",
+            "D": "develop steps for solving problems relatively quickly"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What is indicated about polynomial approximation in the passage?",
+          "options": {
+            "A": "It varies in behavior from one point to another.",
+            "B": "It is less accurate than the Fourier series.",
+            "C": "It cannot handle infinite sums of terms as well as the Taylor series can.",
+            "D": "It uses simple math expressions to make complex functions easier to work with."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"decomposes\" in the passage is closest in meaning to",
+          "options": {
+            "A": "runs",
+            "B": "breaks down",
+            "C": "mixes",
+            "D": "enters"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Another key tool is the Fourier series, which <mark>decomposes</mark> repeating patterns—like sound waves—into a mix of sine and cosine waves. This is widely used in signal processing; engineers use Fourier series to filter out noise and enhance data quality.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What is one application of Fourier series mentioned in the passage?",
+          "options": {
+            "A": "Simplifying sine and cosine waves",
+            "B": "Removing unwanted noise from signals",
+            "C": "Compressing images",
+            "D": "Modeling heat distribution"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "Why does the author mention \"the error\"?",
+          "options": {
+            "A": "To help illustrate the issue of accuracy as it relates to approximation theory",
+            "B": "To add another explanation of how polynomial approximation works",
+            "C": "To demonstrate an additional benefit of the Fourier series",
+            "D": "To suggest that new approximation techniques have so far been inadequate"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "While these methods are powerful, they are not perfect. Accuracy remains a challenge. The difference between the original and the simplified version—called <mark>the error</mark>—needs to be as small as possible. New techniques, like adaptive approximation, adjust the level of detail based on how accurate the result needs to be.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

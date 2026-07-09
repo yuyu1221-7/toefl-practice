@@ -1,0 +1,358 @@
+{
+  "set": "2026.3.8_set2",
+  "date_edition": "2026.3.8",
+  "set_name": "第11套 (3月8日B卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an excerpt from a syllabus.",
+      "id": "m11_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/t86y/1278X486/021.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the most likely subject of the course?",
+          "options": {
+            "A": "Biology",
+            "B": "Calculus",
+            "C": "Physics",
+            "D": "Sociology"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What is NOT mentioned as an assessment method?",
+          "options": {
+            "A": "Weekly exercises",
+            "B": "Lab reports",
+            "C": "Tests",
+            "D": "Essays"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read an article",
+      "id": "m11_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Pf8f/1224X972/022.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main topic of the article?",
+          "options": {
+            "A": "A graduating student is given a role in a Hollywood film.",
+            "B": "A college campus is the backdrop of a Hollywood film.",
+            "C": "A film screening on campus draws a large crowd.",
+            "D": "A celebrated alumnus reconnects with his college."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What did Daniel Rivero do at Ashburn?",
+          "options": {
+            "A": "He gave an interview to the student newspaper.",
+            "B": "He held auditions for his latest film.",
+            "C": "He taught an unscheduled acting class.",
+            "D": "He announced his role in an upcoming film."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "What is the meaning of Daniel Rivero's advice to students?",
+          "options": {
+            "A": "Creative thinking begins when things go wrong.",
+            "B": "It is good to leave home, but come back often.",
+            "C": "Poor choices can stifle innovation if you are not careful.",
+            "D": "Dream big and do not let anyone stand in your way."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "A Unique Advantage of Spicy Cuisine",
+      "id": "m11_p3",
+      "left_content": {
+        "paragraphs": [
+          "Are you fond of spicy food? Spices have been used for thousands of years to enhance the flavor of food, originally in cultures where spice plants were native to the area. Today, spice use is widespread across cultures, though certain spices are more prevalent in some cuisines. Indeed, scientists have suggested that hot-climate cuisines feature a greater amount and variety of spices. For example, a recent study found that the number of different spices was much greater in traditional recipes from Southeast Asian countries than in those from northern Europe.",
+          "Why do hot-climate cuisines feature more spices? Some believe that spice consumption is related to cultural preferences. While culture certainly plays a part, scientists have recently suggested that the antimicrobial properties of spices, which prevent the growth of dangerous foodborne microorganisms, ensured their widespread use in hot climates. In such climates, food spoilage was a concern before the availability of refrigeration. Spices with greater antimicrobial or antibacterial properties, such as allspice, cinnamon, cumin, garlic, and onions, were frequently featured in the traditional recipes of hot-climate cuisines and in different combinations. Scientists concluded that food safety precipitated the use of many and multiple spices in hot regions."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "What is the purpose of the passage?",
+          "options": {
+            "A": "To share research findings related to spice use",
+            "B": "To promote the widespread use of specific spices",
+            "C": "To describe an outdated theory about spice use",
+            "D": "To contrast traditional and contemporary spice consumption"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What data were likely collected for the study?",
+          "options": {
+            "A": "The number of spices used in a variety of countries",
+            "B": "The types of microorganisms on different spices",
+            "C": "The food preferences of customers at traditional restaurants",
+            "D": "The number of traditional Southeast Asian recipes used in Europe"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "According to the passage, what is suggested about spice usage in food?",
+          "options": {
+            "A": "It can conceal the odor of spoiled food.",
+            "B": "It has caused a rise in demand for native plants.",
+            "C": "It may prevent bacteria on food from developing.",
+            "D": "It has decreased substantially in Southeast Asia."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "All of the following are mentioned about spices EXCEPT:",
+          "options": {
+            "A": "Spices are derived from plant products.",
+            "B": "Spices require refrigeration to maintain their function.",
+            "C": "Spice usage is associated with cultural practices.",
+            "D": "Spice usage varies considerably by cuisine."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "The word \"precipitated\" in the passage is closest in meaning to",
+          "options": {
+            "A": "threw",
+            "B": "separated",
+            "C": "caused",
+            "D": "rained"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Why do hot-climate cuisines feature more spices? Some believe that spice consumption is related to cultural preferences. While culture certainly plays a part, scientists have recently suggested that the antimicrobial properties of spices, which prevent the growth of dangerous foodborne microorganisms, ensured their widespread use in hot climates. In such climates, food spoilage was a concern before the availability of refrigeration. Spices with greater antimicrobial or antibacterial properties, such as allspice, cinnamon, cumin, garlic, and onions, were frequently featured in the traditional recipes of hot-climate cuisines and in different combinations. Scientists concluded that food safety <mark>precipitated</mark> the use of many and multiple spices in hot regions.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "The Dynamics of Hollywood’s Golden Age",
+      "id": "m11_p4",
+      "left_content": {
+        "paragraphs": [
+          "Hollywood's Golden Age, from the 1920s to the 1960s, was a transformative period in cinema history. Under the studio system, major companies like RKO controlled film production, creating an efficient assembly-line process that produced stars such as Humphrey Bogart and Katharine Hepburn. While this system ensured a steady output of films, it often limited creative freedom for directors and actors tied to restrictive contracts. Yet this very constraint led to unexpected innovation as filmmakers sought new ways to tell compelling stories within set boundaries.",
+          "A pivotal change during this era was the introduction of sound, forever altering cinematic storytelling. Silent film stars had to adapt or risk obsolescence, while new genres like musicals capitalized on sound technology's possibilities. This shift pushed directors to experiment with narrative structures, often blurring the lines between genres to captivate audiences.",
+          "The decline of the studio system began with a 1948 Supreme Court ruling that dismantled studios' monopolies over theaters. This ruling opened the door for independent filmmakers, whose diverse and unconventional stories began gaining traction in theaters. However, the legacy of the studio system's efficiency and star-making machinery still influences Hollywood's operations today."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "Which aspect of the studio system encouraged filmmakers to innovate?",
+          "options": {
+            "A": "The demand for more silent films",
+            "B": "The freedom to create experimental films",
+            "C": "The inefficiency of film production",
+            "D": "The boundaries imposed by restrictive contracts"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The word \"compelling\" in the passage is closest in meaning to",
+          "options": {
+            "A": "modern",
+            "B": "astonishing",
+            "C": "fascinating",
+            "D": "complex"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Hollywood's Golden Age, from the 1920s to the 1960s, was a transformative period in cinema history. Under the studio system, major companies like RKO controlled film production, creating an efficient assembly-line process that produced stars such as Humphrey Bogart and Katharine Hepburn. While this system ensured a steady output of films, it often limited creative freedom for directors and actors tied to restrictive contracts. Yet this very constraint led to unexpected innovation as filmmakers sought new ways to tell <mark>compelling</mark> stories within set boundaries.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Why does the author mention the introduction of sound in films?",
+          "options": {
+            "A": "To highlight a development that led to new, creative narrative techniques",
+            "B": "To emphasize the former popularity of silent films",
+            "C": "To discuss how sound renewed the careers of silent film stars",
+            "D": "To identify the event that started the decline of the studio system"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What inference can be made about the 1948 Supreme Court ruling?",
+          "options": {
+            "A": "It led to a temporary increase in studio profits.",
+            "B": "It allowed independent films to be seen and become popular.",
+            "C": "It caused studios to develop more large-scale musical productions.",
+            "D": "It had no effect on Hollywood's operations."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "What does the passage imply about the Hollywood film industry today?",
+          "options": {
+            "A": "Modern studios have completely abandoned all practices from the Golden Age period.",
+            "B": "Contemporary films commonly use the storytelling techniques developed during the 1920s-1960s.",
+            "C": "Independent filmmakers have entirely replaced the studio system's influence on cinema.",
+            "D": "The assembly-line process of the studio system still impacts current Hollywood operations."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Biochemical Systems Theory: Challenges and Implications",
+      "id": "m11_p5",
+      "left_content": {
+        "paragraphs": [
+          "Biochemical systems theory, a potent framework for simulating biochemical processes, hinges on mathematical models for predicting the interactions of molecules within cells. The theory's ability to predict metabolic pathways regulated by enzymes (proteins facilitating and managing chemical reactions) offers significant potential for advancements in biotechnology. However, constructing accurate models demands a profound grasp of biology and mathematics, posing significant challenges to researchers.",
+          "While the theory enables simulations of complex cellular behavior, it is reliant on precise data inputs. Erroneous data can skew predictions, underscoring the delicate balance between mathematical precision and biological variability. That interplay raises questions about the theory's reliability, particularly in drug development, where predicting compounds' effects on metabolic pathways is crucial yet fraught with uncertainty.",
+          "Furthermore, biochemical systems theory has sparked debates over its ethical implications. By scrutinizing biological systems, researchers identify processes ripe for intervention. Yet this provokes concerns about the manipulation of life at a granular level, including the possibility that interventions could have unintended consequences or adversely affect future generations. As the field evolves, ethical discussions are as dynamic as the biochemical networks themselves."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The word \"hinges\" in the passage is closest in meaning to",
+          "options": {
+            "A": "focuses",
+            "B": "builds",
+            "C": "acts",
+            "D": "depends"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Biochemical systems theory, a potent framework for simulating biochemical processes, <mark>hinges</mark> on mathematical models for predicting the interactions of molecules within cells. The theory's ability to predict metabolic pathways regulated by enzymes (proteins facilitating and managing chemical reactions) offers significant potential for advancements in biotechnology. However, constructing accurate models demands a profound grasp of biology and mathematics, posing significant challenges to researchers.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Which statement best summarizes the relationship between paragraphs 1 and 2?",
+          "options": {
+            "A": "Paragraph 2 describes a shortcoming of the concept introduced in paragraph 1.",
+            "B": "Paragraph 2 proposes a solution to a problem discussed in paragraph 1.",
+            "C": "Paragraph 2 proposes an alternative to the theory presented in paragraph 1.",
+            "D": "Paragraph 2 illustrates the successful application of the theory described in paragraph 1."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Why does the author discuss drug development?",
+          "options": {
+            "A": "To emphasize the importance of using accurate data when constructing models",
+            "B": "To give an example of an industry that has been transformed by biochemical systems theory",
+            "C": "To demonstrate that questions about the theory's reliability have been largely resolved",
+            "D": "To suggest that the theory's reliability is less important than discovering industrial applications that work"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What does the passage imply about the ethical concerns raised by biochemical systems theory?",
+          "options": {
+            "A": "They have been dismissed by most ethicists as unjustified.",
+            "B": "They are far from being completely resolved as of today.",
+            "C": "They have been eased thanks to more precise modeling.",
+            "D": "They are causing researchers to abandon the theory."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nEthicists worry that these actions may blur the line between healing and redesigning biological systems.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "B",
+          "question_type": "insertion",
+          "special_content": "Furthermore, biochemical systems theory has sparked debates over its ethical implications. [■] By scrutinizing biological systems, researchers identify processes ripe for intervention. [■] Yet this provokes concerns about the manipulation of life at a granular level, including the possibility that interventions could have unintended consequences or adversely affect future generations. [■] As the field evolves, ethical discussions are as dynamic as the biochemical networks themselves. [■]",
+          "inserted_sentence": "Ethicists worry that these actions may blur the line between healing and redesigning biological systems."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

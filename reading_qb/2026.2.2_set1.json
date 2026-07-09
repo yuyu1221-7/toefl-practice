@@ -1,0 +1,93 @@
+{
+  "set": "2026.2.2_set1",
+  "date_edition": "2026.2.2",
+  "set_name": "第18套 (2月2日)",
+  "passages": [
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Microseisms: The Earth's Subtle Vibrations",
+      "id": "m15_p1",
+      "left_content": {
+        "paragraphs": [
+          "The Earth is constantly vibrating, even when there are no earthquakes. These subtle vibrations, known as microseisms, are typically caused by ocean waves. When waves collide, they create pressure variations that travel through the water and into the sea floor. This energy transfer generates seismic waves detectable by seismometers worldwide. Interestingly, microseisms are strongest during storms when ocean waves are more powerful.",
+          "Researchers have found these vibrations can provide important information about the Earth's interior. Microseisms travel through the Earth's crust and mantle, revealing details about the geological structures they pass through, including variations in rock density and the presence of faults or fractures. Another compelling use of microseisms is in climate studies. Scientists analyze historical data on these vibrations to reconstruct past ocean conditions and storm activities. This helps improve climate models and understand long-term weather patterns. Additionally, microseisms are used in oil and gas exploration. They identify potential drilling sites by highlighting subsurface structures without more invasive techniques.",
+          "Studying microseisms is challenging. The mild signals are easily masked by other seismic noises. Advanced data analysis techniques and state-of-the-art equipment are essential for accurately interpreting microseisms. Researchers often employ filtering methods and cross-referencing data from multiple seismometers."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The word \"subtle\" in the passage is closest in meaning to",
+          "options": {
+            "A": "faint",
+            "B": "quick",
+            "C": "strong",
+            "D": "constant"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "The Earth is constantly vibrating, even when there are no earthquakes. These <mark>subtle</mark> vibrations, known as microseisms, are typically caused by ocean waves. When waves collide, they create pressure variations that travel through the water and into the sea floor. This energy transfer generates seismic waves detectable by seismometers worldwide. Interestingly, microseisms are strongest during storms when ocean waves are more powerful.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "It can be inferred that microseisms are strongest during ocean storms because",
+          "options": {
+            "A": "the Earth's crust and mantle are more active during such storms",
+            "B": "ocean waves are larger and collide more vigorously during such storms",
+            "C": "seismometers are designed to work most effectively during such storms",
+            "D": "the details of geological structures become more apparent during such storms"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Why does the author mention \"variations in rock density and the presence of faults or fractures\"?",
+          "options": {
+            "A": "To suggest that more research is needed to understand the relationship between microseisms and earthquakes",
+            "B": "To identify the most important features of Earth's crust and mantle",
+            "C": "To help explain how microseisms can alter the geological structures that they pass through",
+            "D": "To highlight the kinds of information microseisms can provide about Earth's interior"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Researchers have found these vibrations can provide important information about the Earth's interior. Microseisms travel through the Earth's crust and mantle, revealing details about the geological structures they pass through, including <mark>variations in rock density and the presence of faults or fractures</mark>. Another compelling use of microseisms is in climate studies. Scientists analyze historical data on these vibrations to reconstruct past ocean conditions and storm activities. This helps improve climate models and understand long-term weather patterns. Additionally, microseisms are used in oil and gas exploration. They identify potential drilling sites by highlighting subsurface structures without more invasive techniques.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "According to the passage, how can microseisms help in oil and gas exploration?",
+          "options": {
+            "A": "By providing historical data on ocean conditions",
+            "B": "By pinpointing potential drilling sites",
+            "C": "By measuring the strength of seismic waves",
+            "D": "By reducing the need for seismometers"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "What does the author suggest about \"filtering methods and cross-referencing data from multiple seismometers\"?",
+          "options": {
+            "A": "They are techniques used to study microseisms.",
+            "B": "They demonstrate the outdatedness of seismometers.",
+            "C": "They are popular ways of studying various types of seismic noises.",
+            "D": "They highlight a flaw in current research methods."
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Studying microseisms is challenging. The mild signals are easily masked by other seismic noises. Advanced data analysis techniques and state-of-the-art equipment are essential for accurately interpreting microseisms. Researchers often employ <mark>filtering methods and cross-referencing data from multiple seismometers</mark>.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

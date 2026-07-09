@@ -1,0 +1,368 @@
+{
+  "set": "2026.3.11_set1",
+  "date_edition": "2026.3.11",
+  "set_name": "第17套 (3月11日)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a receipt.",
+      "id": "m14_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/EXYI/1017X810/037.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What did the customer buy?",
+          "options": {
+            "A": "One lab notebook",
+            "B": "Three T-shirts",
+            "C": "One T-shirt and two lab notebooks",
+            "D": "Two T-shirts and one lab notebook"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "How much did the lab notebooks cost in total?",
+          "options": {
+            "A": "$15.00",
+            "B": "$20.00",
+            "C": "$40.00",
+            "D": "$55.00"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a sign.",
+      "id": "m14_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/mY53/1407X1011/038.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "Which activity is not permitted at the library?",
+          "options": {
+            "A": "Making online purchases using a library computer",
+            "B": "Studying for exams",
+            "C": "Bringing personal belongings",
+            "D": "Drinking water in designated zones"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What can be inferred about the library?",
+          "options": {
+            "A": "It has a designated room for cell phone use.",
+            "B": "It has printers available for the public.",
+            "C": "It hosts special events on Saturdays.",
+            "D": "It allows food and drinks."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read an article in a student magazine.",
+      "id": "m14_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Pca7/1434X1143/039.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "According to the article, what philosophical perspective does kintsugi promote?",
+          "options": {
+            "A": "Minimalism, emphasizing simplicity and the elimination of excess",
+            "B": "Ethics, focusing on honor and discipline in craftsmanship",
+            "C": "Humility, valuing imperfection and the transient nature of life",
+            "D": "Purity, highlighting spiritual cleanliness and ritual renewal"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What does the article suggest about the symbolic meaning of repairing pottery with precious metals?",
+          "options": {
+            "A": "Wealth and luxury are essential for authentic art.",
+            "B": "Flaws can be turned into sources of value and beauty.",
+            "C": "Artisans prioritize aesthetics over philosophical significance.",
+            "D": "Objects lose their cultural value when restored with cheap materials."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "Why does the author of the article mention \"a perfection-driven world\"?",
+          "options": {
+            "A": "To argue that modern society has completely abandoned traditional art forms",
+            "B": "To suggest that flawless craftsmanship is the goal of contemporary design",
+            "C": "To contrast kintsugi's philosophical message with a common present-day attitude",
+            "D": "To explain why kintsugi techniques are rarely used in professional pottery today"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m14_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/MarH/1425X1098/040.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the main purpose of the email?",
+          "options": {
+            "A": "To provide notification of software improvements",
+            "B": "To offer technical support",
+            "C": "To request enhanced security protocols",
+            "D": "To ask for updates on a project"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What does the writer imply about browser bookmarks?",
+          "options": {
+            "A": "They must be disconnected from external devices.",
+            "B": "They must be installed again after an update.",
+            "C": "It is unlikely they will be lost during an update.",
+            "D": "They can be accessed during an update."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be concluded about the computer system during the process?",
+          "options": {
+            "A": "It will be faster.",
+            "B": "It will restart several times.",
+            "C": "It will be available for remote work.",
+            "D": "It will lose data."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Approximation Theory",
+      "id": "m14_p5",
+      "left_content": {
+        "paragraphs": [
+          "Approximation theory is a part of mathematics that helps us simplify complex problems. Instead of working with difficult functions directly, scientists use simpler ones that are \"close enough\" to get useful results. These simplified functions are often used to build algorithms—step-by-step procedures that solve problems efficiently. This is especially helpful in fields like computer science, where exact calculations can take too much time or power.",
+          "One common method is polynomial approximation, which uses basic math expressions (polynomials) to stand in for more complicated functions. A special type, called the Taylor series, breaks a function into an infinite sum based on its behavior at a single point. This helps us work with functions that are otherwise hard to handle.",
+          "Another key tool is the Fourier series, which decomposes repeating patterns—like sound waves—into a mix of sine and cosine waves. This is widely used in signal processing; engineers use Fourier series to filter out noise and enhance data quality.",
+          "While these methods are powerful, they are not perfect. Accuracy remains a challenge. The difference between the original and the simplified version—called the error—needs to be as small as possible. New techniques, like adaptive approximation, adjust the level of detail based on how accurate the result needs to be."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "According to the passage, simpler functions help scientists",
+          "options": {
+            "A": "achieve exact calculations",
+            "B": "avoid relying on algorithms",
+            "C": "tackle difficult functions more effectively over time",
+            "D": "develop steps for solving problems relatively quickly"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "What is indicated about polynomial approximation in the passage?",
+          "options": {
+            "A": "It varies in behavior from one point to another.",
+            "B": "It is less accurate than the Fourier series.",
+            "C": "It cannot handle infinite sums of terms as well as the Taylor series can.",
+            "D": "It uses simple math expressions to make complex functions easier to work with."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"decomposes\" in the passage is closest in meaning to",
+          "options": {
+            "A": "runs",
+            "B": "breaks down",
+            "C": "mixes",
+            "D": "enters"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Another key tool is the Fourier series, which <mark>decomposes</mark> repeating patterns—like sound waves—into a mix of sine and cosine waves. This is widely used in signal processing; engineers use Fourier series to filter out noise and enhance data quality.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What is one application of Fourier series mentioned in the passage?",
+          "options": {
+            "A": "Simplifying sine and cosine waves",
+            "B": "Removing unwanted noise from signals",
+            "C": "Compressing images",
+            "D": "Modeling heat distribution"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "Why does the author mention \"the error\"?",
+          "options": {
+            "A": "To help illustrate the issue of accuracy as it relates to approximation theory",
+            "B": "To add another explanation of how polynomial approximation works",
+            "C": "To demonstrate an additional benefit of the Fourier series",
+            "D": "To suggest that new approximation techniques have so far been inadequate"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "While these methods are powerful, they are not perfect. Accuracy remains a challenge. The difference between the original and the simplified version—called <mark>the error</mark>—needs to be as small as possible. New techniques, like adaptive approximation, adjust the level of detail based on how accurate the result needs to be.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Developmental Systems Theory",
+      "id": "m14_p6",
+      "left_content": {
+        "paragraphs": [
+          "Developmental Systems Theory (DST) is an approach within developmental biology that emphasizes the complex interactions between genetic, environmental, and epigenetic factors in shaping an organism's development. It challenges traditional views that either prioritize genes or environment in isolation. Instead, DST posits that development results from dynamic, reciprocal interactions among all these factors. Therefore, understanding an organism's development requires examining the full system rather than focusing on any single factor alone.",
+          "A key example highlighting DST involves the development of beak shapes in finches. Research indicates that while genetic factors play a significant role, environmental influences such as diet and climate are equally important. These interactions can lead to epigenetic changes—modifications in gene expression that do not alter the DNA sequence itself. For instance, finches consuming different diets may exhibit variations in beak shape due to changes in gene expression triggered by dietary components.",
+          "DST also introduces the concept of developmental plasticity, which refers to the ability of an organism to alter its development in response to varying environmental conditions. This adaptability is crucial for survival, especially in rapidly changing environments. Certain amphibians, for example, can modify their growth patterns based on resource availability."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The word \"reciprocal\" in the passage is closest in meaning to",
+          "options": {
+            "A": "mutual",
+            "B": "active",
+            "C": "important",
+            "D": "necessary"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Developmental Systems Theory (DST) is an approach within developmental biology that emphasizes the complex interactions between genetic, environmental, and epigenetic factors in shaping an organism's development. It challenges traditional views that either prioritize genes or environment in isolation. Instead, DST posits that development results from dynamic, <mark>reciprocal</mark> interactions among all these factors. Therefore, understanding an organism's development requires examining the full system rather than focusing on any single factor alone.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Unlike the DST approach, traditional views of an organism's development",
+          "options": {
+            "A": "focus on single factors alone",
+            "B": "study the full system of development",
+            "C": "maintain the superiority of genetic factors",
+            "D": "deny the role of epigenetic factors"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "According to the passage, the development of beak shapes in finches is influenced by all of the following EXCEPT",
+          "options": {
+            "A": "changes in the genes of the finches",
+            "B": "the kind of food that the finches eat",
+            "C": "the climate in which the finches live",
+            "D": "changes in the DNA sequence of the finches"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "Why does the author discuss \"developmental plasticity\"?",
+          "options": {
+            "A": "To demonstrate that DST has its limitations",
+            "B": "To explain an important aspect of DST",
+            "C": "To argue that environmental conditions play little role in an organism's survival",
+            "D": "To challenge the influence of resource availability on the growth patterns of amphibians"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "DST also introduces the concept of <mark>developmental plasticity</mark>, which refers to the ability of an organism to alter its development in response to varying environmental conditions. This adaptability is crucial for survival, especially in rapidly changing environments. Certain amphibians, for example, can modify their growth patterns based on resource availability.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nTadpoles of the Mexican spadefoot toad develop into omnivore morphs in nutrient-rich ponds with abundant plant material and into carnivore morphs in temporary ponds with plenty of animal prey.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "[■] DST also introduces the concept of developmental plasticity, which refers to the ability of an organism to alter its development in response to varying environmental conditions. [■] This adaptability is crucial for survival, especially in rapidly changing environments. [■] Certain amphibians, for example, can modify their growth patterns based on resource availability. [■]",
+          "inserted_sentence": "Tadpoles of the Mexican spadefoot toad develop into omnivore morphs in nutrient-rich ponds with abundant plant material and into carnivore morphs in temporary ponds with plenty of animal prey."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

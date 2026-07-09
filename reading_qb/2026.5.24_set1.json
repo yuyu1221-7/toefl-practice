@@ -1,0 +1,368 @@
+{
+  "set": "2026.5.24_set1",
+  "date_edition": "2026.5.24",
+  "set_name": "第32套 (5月24日卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m32_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/qX4c/1137X630/081.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the primary purpose of the newspaper article?",
+          "options": {
+            "A": "To announce the opening of a new college art museum building",
+            "B": "To remind senior art majors to submit their senior projects for judging",
+            "C": "To announce a student art show at Springvale College",
+            "D": "To ask for donations to support cultural programs at Springvale College"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What does the article suggest about entrance fees for the exhibition?",
+          "options": {
+            "A": "They will be different for students as compared to alumni.",
+            "B": "They will include free refreshments at the event.",
+            "C": "They will be waived for students and alumni.",
+            "D": "They will go toward buying new artwork for the museum."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read some instructions.",
+      "id": "m32_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/dM2o/1056X806/082.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What should be done first to reset the router?",
+          "options": {
+            "A": "Disconnect the router from electrical power",
+            "B": "Wait for the router to restart automatically",
+            "C": "Plug the router back in and push the start button",
+            "D": "Wait for 30 seconds for the router to cool"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is the final step to resetting the router?",
+          "options": {
+            "A": "Unplug the router from the power source",
+            "B": "Wait until the router has completely started again",
+            "C": "Wait for 30 seconds or until the light flashes",
+            "D": "Plug the router into a different power source"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a course syllabus.",
+      "id": "m32_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/eTWA/1196X1011/083.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "Which of the following best describes how the course approaches literary theory?",
+          "options": {
+            "A": "It focuses on applying a single theoretical framework to all literary texts.",
+            "B": "It introduces multiple schools of thought and encourages comparative analysis.",
+            "C": "It emphasizes the historical context of various theories of literary interpretation.",
+            "D": "It approaches theory only through abstract concepts without practical application."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "Which of the following literary theories is NOT mentioned in the description?",
+          "options": {
+            "A": "New Historicism",
+            "B": "Structuralism",
+            "C": "Psychoanalytic theory",
+            "D": "Reader-response theory"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "By the end of the course, students are expected to",
+          "options": {
+            "A": "master the history of how the study of literature emerged as an academic discipline",
+            "B": "write short stories and poems that apply fundamental concepts in literary theory",
+            "C": "develop the skills needed for sophisticated literary analysis and academic writing",
+            "D": "understand the drawbacks of applying specific theories to different genres"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m32_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/m1ry/1236X1155/084.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the main purpose of the social media post?",
+          "options": {
+            "A": "To announce an upcoming fitness competition",
+            "B": "To introduce a newly hired fitness trainer",
+            "C": "To promote online workout classes",
+            "D": "To advertise the opening of a new fitness studio"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What is NOT mentioned as a feature of the event?",
+          "options": {
+            "A": "Free workout classes",
+            "B": "A presentation about nutrition and health",
+            "C": "Special guest trainers",
+            "D": "Free food"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "Who is the social media post intended for?",
+          "options": {
+            "A": "Local restaurant owners",
+            "B": "People who want to be fit",
+            "C": "Healthcare professionals",
+            "D": "Sports equipment vendors"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "The Great Smog of London",
+      "id": "m32_p5",
+      "left_content": {
+        "paragraphs": [
+          "The Great Smog of London in 1952 was a pivotal event in environmental history. For five days in December, a thick layer of smog blanketed the city, caused by cold weather, windless conditions, and pollutants. The primary sources were coal-burning fires for heating homes and factories, releasing sulfur dioxide and other toxic chemicals.",
+          "As the smog settled, it became a health crisis. Visibility was reduced to a few meters, and transportation was disrupted. Many people abandoned their cars, and the ambulance service was severely impacted. Thousands developed respiratory problems, and the death rate surged. The Great Smog caused up to 12,000 premature deaths and countless illnesses. Hospitals were overwhelmed with patients, and morgues quickly reached capacity.",
+          "In response, the British government took action. New regulations aimed at reducing air pollution were established. The most significant was the Clean Air Act of 1956, which restricted coal burning in urban areas and promoted cleaner energy sources.",
+          "Despite progress, air pollution remains a global challenge. Many cities still struggle with poor air quality due to industrial activities, vehicle emissions, and other sources. The Great Smog of London serves as a stark reminder of the need to address environmental issues to protect public health."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "What can be inferred about the 1952 Great Smog of London?",
+          "options": {
+            "A": "It affected several other European cities.",
+            "B": "It resulted from multiple factors that occurred simultaneously.",
+            "C": "It disrupted the normal activities of factories for five days.",
+            "D": "It made residents switch to coal to heat their homes."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The word \"premature\" in the passage is closest in meaning to",
+          "options": {
+            "A": "early",
+            "B": "recorded",
+            "C": "preventable",
+            "D": "likely"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "The Great Smog caused up to 12,000 <mark>premature</mark> deaths and countless illnesses.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Why was the Great Smog of London considered a pivotal event?",
+          "options": {
+            "A": "It lasted longer than usual.",
+            "B": "It occurred at an unlikely time of the year.",
+            "C": "It led to significant environmental regulations.",
+            "D": "It caused the immediate closure of all factories."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author bring up the impact on the ambulance service?",
+          "options": {
+            "A": "To highlight one of the results of low visibility",
+            "B": "To explain the main cause of the surging death rate",
+            "C": "To suggest a reason why hospitals were overwhelmed",
+            "D": "To indicate that authorities closed London roads for travel"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Many people abandoned their cars, and the <mark>ambulance service</mark> was severely impacted.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nLocal authorities created \"smoke control areas\" where only smokeless fuels could be burned.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "...restricted coal burning in urban areas and promoted cleaner energy sources. [■]\nDespite progress, air pollution remains a global challenge. [■] Many cities still struggle with poor air quality due to industrial activities, vehicle emissions, and other sources. [■] The Great Smog of London serves as a stark reminder of the need to address environmental issues to protect public health. [■]",
+          "inserted_sentence": "Local authorities created \"smoke control areas\" where only smokeless fuels could be burned."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Decision-Making in Groups",
+      "id": "m32_p6",
+      "left_content": {
+        "paragraphs": [
+          "Group decision-making is often praised for its potential to foster creativity and innovation through diverse perspectives. However, this collaborative strength can paradoxically become a liability when the pursuit of consensus suppresses critical thinking. A well-known example is the phenomenon of \"groupthink,\" whereby individuals, fearing conflict or exclusion, withhold dissenting opinions. This can result in decisions that are not only irrational but also poorly aligned with the group's original goals.",
+          "One might argue that groupthink is simply a failure of leadership or facilitation, yet even in well-structured environments, the pressure to conform can subtly influence behavior. Interestingly, some studies suggest that groups composed of individuals with varied backgrounds and viewpoints are less prone to groupthink, though this diversity can also introduce friction that slows decision-making. Alternatively, some theorists propose that the issue lies not in consensus-seeking itself, but in the lack of mechanisms to encourage constructive disagreement. For instance, assigning a \"devil's advocate\" role or using anonymous feedback tools can help surface hidden concerns.",
+          "Ultimately, while collaboration holds immense promise, its success depends on deliberate strategies to balance unity with intellectual rigor. Without such safeguards, the very process meant to enhance group cohesion may inadvertently undermine it."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage mentions \"well-structured environments\" primarily to",
+          "options": {
+            "A": "highlight the role of leadership in fostering good organization",
+            "B": "emphasize the difference between leadership and facilitation",
+            "C": "describe groups in which there will be the least pressure to conform",
+            "D": "show that good leadership does not eliminate social pressures"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "One might argue that groupthink is simply a failure of leadership or facilitation, yet even in <mark>well-structured environments</mark>, the pressure to conform can subtly influence behavior.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "The passage suggests which of the following about \"individuals with varied backgrounds and viewpoints\"?",
+          "options": {
+            "A": "They may help reduce the tendency to suppress dissenting opinions.",
+            "B": "They are more likely to agree quickly on important decisions.",
+            "C": "They tend to avoid conflict by deliberately seeking consensus.",
+            "D": "They often struggle to be heard in structured environments."
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Interestingly, some studies suggest that groups composed of <mark>individuals with varied backgrounds and viewpoints</mark> are less prone to groupthink, though this diversity can also introduce friction that slows decision-making.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"surface\" in the passage is closest in meaning to",
+          "options": {
+            "A": "promote",
+            "B": "eliminate",
+            "C": "question",
+            "D": "identify"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "For instance, assigning a \"devil's advocate\" role or using anonymous feedback tools can help <mark>surface</mark> hidden concerns.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The passage suggests which of the following about \"intellectual rigor\"?",
+          "options": {
+            "A": "It emerges naturally in diverse groups without intervention.",
+            "B": "It is less important than achieving consensus in decision-making.",
+            "C": "It can be promoted by avoiding disagreement within the group.",
+            "D": "It requires intentional strategies to be attained in collaborative settings."
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Ultimately, while collaboration holds immense promise, its success depends on deliberate strategies to balance unity with <mark>intellectual rigor</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "Which of the following is NOT mentioned in the passage as a possible cause of groupthink?",
+          "options": {
+            "A": "Group members' fear of conflict or exclusion",
+            "B": "Group members' pressure on each other to conform",
+            "C": "Group members' lack of experience in decision-making",
+            "D": "Group members' inability to promote constructive disagreement"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "set": "2026.6.27_set1",
+  "date_edition": "2026.6.27",
+  "set_name": "第38套 (6月27日A卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m38_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/GIm1/1641X921/105.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "According to the email, what did Sara do on March 5?",
+          "options": {
+            "A": "She revised the thesis of her essay draft.",
+            "B": "She submitted an essay draft for review.",
+            "C": "She fixed the formatting of her citations.",
+            "D": "She had a discussion with her professor."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "Why did Sara write to Professor Mercer?",
+          "options": {
+            "A": "To get help understanding Professor Mercer's feedback",
+            "B": "To ask for information about the timeline for finishing her work",
+            "C": "To find out Professor Mercer's expectations for the final version",
+            "D": "To request permission to use a non-standard citation style"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read an excerpt from a syllabus.",
+      "id": "m38_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/8IY2/1872X795/106.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the most likely subject of the course?",
+          "options": {
+            "A": "Biology",
+            "B": "Calculus",
+            "C": "Physics",
+            "D": "Sociology"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is NOT mentioned as an assessment method?",
+          "options": {
+            "A": "Weekly exercises",
+            "B": "Lab reports",
+            "C": "Tests",
+            "D": "Essays"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read an article.",
+      "id": "m38_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/6Tjr/1173X1146/107.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is the main topic of the article?",
+          "options": {
+            "A": "A sudden rise in interest in literature",
+            "B": "A professor's unexpected popularity",
+            "C": "A new method for delivering online courses",
+            "D": "A university's plan to expand its humanities program"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What is indicated about a social media clip?",
+          "options": {
+            "A": "It was posted by a poetry professor.",
+            "B": "It was removed because of copyright issues.",
+            "C": "It was watched by a large number of viewers.",
+            "D": "It was accompanied by a musical soundtrack"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What is the English Department's response to the situation?",
+          "options": {
+            "A": "It is choosing to ignore the attention.",
+            "B": "It is planning to stream lectures on social media.",
+            "C": "It is restricting the use of social media in some classes.",
+            "D": "It is increasing the number of literature classes it offers."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a travel flyer.",
+      "id": "m38_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Vm6S/1146X1074/108.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What makes Tallinn's Old Town a significant attraction in Estonia?",
+          "options": {
+            "A": "It is recognized by UNESCO for its old architecture.",
+            "B": "It features the largest central square in northern Europe.",
+            "C": "It is famous for its art museums.",
+            "D": "It is an area where locals wear traditional attire."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "Which kind of tourist would most likely be attracted to Lahemaa National Park?",
+          "options": {
+            "A": "One who enjoys meeting local people",
+            "B": "One who likes to hike in nature",
+            "C": "One who wants to learn about Estonian history",
+            "D": "One who is interested in Estonian folk customs"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "According to the article, you can make your travel experience more rewarding by",
+          "options": {
+            "A": "attending a service at St. Olaf's Church",
+            "B": "making friends with town residents",
+            "C": "learning to speak some words in the local language",
+            "D": "sampling the local cuisine at one of the markets"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Science of Bridges",
+      "id": "m38_p5",
+      "left_content": {
+        "paragraphs": [
+          "Solid mechanics, crucial in the design of bridges, examines the forces acting on materials to ensure structures withstand traffic and environmental stressors. Effective load distribution is essential, not only to balance static loads, such as the weight of the bridge itself and of any stationary objects on it, but also to manage dynamic loads caused by wind, earthquakes, and moving traffic. Truss bridges demonstrate this principle through triangular frameworks that efficiently channel forces across the structure.",
+          "Over time, material selection has evolved to meet increasing demands. Stone and wood, once common, are limited by low tensile and compressive strength, making them unsuitable for long spans or heavy loads. Modern bridges rely on steel and reinforced concrete: Steel resists stretching forces (tensile loads), while concrete is a durable composite capable of withstanding compression and handling complex stress patterns.",
+          "Suspension bridges integrate these materials and use these concepts to achieve unprecedented spans. High-strength steel cables transfer loads to vertical towers and anchorages, allowing the deck to remain flexible yet stable. The Golden Gate Bridge in San Francisco, California, completed in 1937, exemplifies this innovation with its 1,280-meter main span. Suspension bridges are particularly effective in regions prone to dynamic forces, as their design allows movement while maintaining structural integrity."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The passage mentions all of the following as important considerations for bridge designers EXCEPT",
+          "options": {
+            "A": "the bridge's own weight",
+            "B": "the weight of vehicles that will cross the bridge",
+            "C": "the type of vehicles moving across the bridge",
+            "D": "environmental stressors such as wind and earthquakes"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "What does the passage suggest about bridges made of stone or wood?",
+          "options": {
+            "A": "They are more difficult to build because the materials are so heavy.",
+            "B": "They are limited to shorter lengths than steel and concrete bridges are.",
+            "C": "They continue to be built in regions not prone to strong dynamic forces.",
+            "D": "They do not require as much maintenance as steel and concrete bridges do."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"composite\" in the passage is closest in meaning to",
+          "options": {
+            "A": "ingredient",
+            "B": "mixture",
+            "C": "structure",
+            "D": "solid"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Steel resists stretching forces (tensile loads), while concrete is a durable <mark>composite</mark> capable of withstanding compression and handling complex stress patterns.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Identify the sentence in paragraph 3 that describes the structure of a suspension bridge.",
+          "options": {},
+          "answer": "High-strength steel cables transfer loads to vertical towers and anchorages, allowing the deck to remain flexible yet stable.",
+          "question_type": "free_response",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "Why does the author describe the Golden Gate Bridge?",
+          "options": {
+            "A": "To illustrate the effectiveness of a specific engineering approach",
+            "B": "To give historical background on bridge construction in California",
+            "C": "To suggest that California is a difficult place to construct bridges",
+            "D": "To provide an example of a suspension bridge that is overly flexible"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "The <mark>Golden Gate Bridge</mark> in San Francisco, California, completed in 1937, exemplifies this innovation with its 1,280-meter main span.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "The Effects of Class Size",
+      "id": "m38_p6",
+      "left_content": {
+        "paragraphs": [
+          "Class size remains one of the most debated variables in education. Studies consistently show that smaller classes can enhance student learning by enabling more individualized attention and reducing classroom disruptions. For example, a 2025 study found that reduced student-to-teacher ratios tend to improve academic performance. However, the magnitude of these gains is often modest and accompanied by substantial financial costs.",
+          "Of course, academic performance is not the only factor affected by class size. Classroom dynamics, student engagement, and students' satisfaction with their experience are also affected. Researchers Wang and Calvano argue that evidence about the effects of class size remains incomplete because many investigations focus narrowly on academic outcomes rather than broader educational experiences.",
+          "Many regions have implemented class-size reduction initiatives, but fiscal pressures have forced reconsideration of these policies. Given the financial constraints on schools, a nuanced approach seems advisable. Research has shown that reducing student-to-teacher ratios in the early years of education, such as in preschool and primary levels, and in higher poverty areas, as well as implementing strategies like small-group tutoring, offer a preferable cost-benefit ratio compared to general class size reduction."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage indicates which of the following about \"classroom disruptions\"?",
+          "options": {
+            "A": "They tend to have a greater impact on less experienced teachers.",
+            "B": "They have less impact on academic outcomes than does class size.",
+            "C": "They sometimes increase in frequency when class sizes are reduced.",
+            "D": "They can be decreased by having fewer students in a class."
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Studies consistently show that smaller classes can enhance student learning by enabling more individualized attention and reducing <mark>classroom disruptions</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "The author mentions \"the magnitude of these gains\" primarily to",
+          "options": {
+            "A": "support an approach to improve academic outcomes",
+            "B": "point out limitations to a statement about the effect of class size",
+            "C": "cite a factor that a research study failed to measure",
+            "D": "acknowledge that a study's findings appear contradictory"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "However, <mark>the magnitude of these gains</mark> is often modest and accompanied by substantial financial costs.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Which of the following best describes the relationship between paragraph 1 and paragraph 2?",
+          "options": {
+            "A": "Paragraph 2 summarizes competing arguments on the topic introduced in paragraph 1.",
+            "B": "Paragraph 2 confirms a widely held view mentioned in paragraph 1.",
+            "C": "Paragraph 2 presents evidence that contradicts the findings discussed in paragraph 1.",
+            "D": "Paragraph 2 points out that the findings presented in paragraph 1 are not complete."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The passage identifies each of the following as an effect of reducing class sizes EXCEPT:",
+          "options": {
+            "A": "The costs to schools increase.",
+            "B": "Students can receive more individualized attention.",
+            "C": "Teachers' job satisfaction increases.",
+            "D": "Students' academic performance improves."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "The word \"nuanced\" in the passage is closest in meaning to",
+          "options": {
+            "A": "refined",
+            "B": "good",
+            "C": "traditional",
+            "D": "ambitious"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Given the financial constraints on schools, a <mark>nuanced</mark> approach seems advisable.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

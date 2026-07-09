@@ -1,0 +1,351 @@
+{
+  "set": "2026.5.13_set2",
+  "date_edition": "2026.5.13",
+  "set_name": "第29套 (5月13日B卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a review.",
+      "id": "m29_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/BhZe/2022X797/071.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is suggested about the StudyEase Task Manager app?",
+          "options": {
+            "A": "It performs better on tablets than on phones.",
+            "B": "It lets users set reminders for important deadlines.",
+            "C": "Its price has been recently reduced.",
+            "D": "Its graphics are visually appealing."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "According to the review, what makes the StudyEase Task Manager app less attractive for students?",
+          "options": {
+            "A": "Its high cost",
+            "B": "Its limited range of features",
+            "C": "Its negative reviews",
+            "D": "Its lack of platform integration"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m29_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/GROi/1506X1263/072.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the purpose of the email?",
+          "options": {
+            "A": "To submit a completed paper",
+            "B": "To ask for feedback on a draft of a report",
+            "C": "To confirm understanding of grading criteria",
+            "D": "To request additional time for an assignment"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is suggested about Liam in the email?",
+          "options": {
+            "A": "He is recovering from surgery.",
+            "B": "He recently spent time in the hospital.",
+            "C": "He has been unable to concentrate on work.",
+            "D": "He will not be back in class until next Wednesday."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "What does Liam mention about his literature review?",
+          "options": {
+            "A": "Part of it has been completed.",
+            "B": "It took longer than expected.",
+            "C": "He will have the list of sources compiled by Friday.",
+            "D": "He would like some help with the analysis section."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Noise Control in Urban Areas",
+      "id": "m29_p3",
+      "left_content": {
+        "paragraphs": [
+          "Urban areas across the globe are grappling with the challenge of noise pollution. This type of pollution can severely impact health, leading to sleep disturbances and cardiovascular problems. It has many causes.",
+          "Innovative solutions to control noise pollution, from traffic or other sources, are emerging. One such solution is green walls, vertical gardens installed on building facades. Green walls can absorb, reflect, or deflect sound waves, reducing the noise that enters a building. Additionally, they offer benefits like air purification and temperature regulation—thus not only improving the outdoor environment around buildings but also enhancing indoor air quality and helping regulate interior temperatures by acting as natural insulation.",
+          "Another approach involves quiet zones. These zones are designated areas where noisy activities are restricted, often including parks, residential neighborhoods, and hospital areas. By reducing noise levels in these zones, cities create pockets of tranquility. Some European cities have seen a decrease in stress-related health issues among residents in quiet zones.",
+          "Advancements in technology have also led to the creation of noise-canceling materials. Such materials are often used in buildings or road surfaces. They work by actively reducing sound vibrations. Urban planners can use these materials to design acoustic panels and noise barriers, strategically placing these structures to combat the noise problem."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "The word \"grappling\" in the passage is closest in meaning to",
+          "options": {
+            "A": "identifying",
+            "B": "interfering",
+            "C": "struggling",
+            "D": "experimenting"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Urban areas across the globe are <mark>grappling</mark> with the challenge of noise pollution.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "How do green walls help control noise pollution?",
+          "options": {
+            "A": "By purifying the air around buildings",
+            "B": "By disrupting the path of sound waves",
+            "C": "By making building facades more attractive",
+            "D": "By reducing temperatures inside buildings"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "What can be inferred about noise pollution in the European cities mentioned in the passage?",
+          "options": {
+            "A": "It was likely a factor in causing stress-related health issues among residents.",
+            "B": "It has not been as effectively managed there as it has been in other places.",
+            "C": "It has been controlled most successfully by adding green walls to buildings.",
+            "D": "It has been funded primarily through the efforts of urban planners."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "Identify the sentence in paragraph 4 that names specific architectural elements built with noise-canceling materials.",
+          "options": {},
+          "answer": "Urban planners can use these materials to design acoustic panels and noise barriers, strategically placing these structures to combat the noise problem.",
+          "question_type": "select_sentence",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nOne common source is traffic, which includes cars, buses, motorcycles, and trucks.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "D",
+          "question_type": "insertion",
+          "special_content": "Urban areas across the globe are grappling [■] with the challenge of noise pollution. [■] This type of pollution can severely impact health, leading to sleep disturbances and cardiovascular problems. [■] It has many causes. [■]",
+          "inserted_sentence": "One common source is traffic, which includes cars, buses, motorcycles, and trucks."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Carthage's Trade Network",
+      "id": "m29_p4",
+      "left_content": {
+        "paragraphs": [
+          "Carthage, founded by Phoenician merchants around 814 B.C.E., became a powerful city-state due to its strategic location on the Mediterranean. This position allowed Carthage to establish a vast trade network that extended across the Mediterranean and into Africa, Europe, and Asia. Carthaginian traders dealt in goods such as silver, gold, tin, and textiles.",
+          "The Carthaginians excelled in maritime technology, constructing advanced ships for long-distance journeys and bulky cargo transport. They developed efficient trade routes and set up colonies, expanding their economic reach. Their prowess in navigation and trade transformed Carthage into one of the wealthiest cities in the ancient world. Carthage's wealth was also built on innovations in agriculture. Carthaginian farmers employed advanced irrigation techniques and crop rotation, leading to abundant harvests that supported both local consumption and export.",
+          "However, Carthage's rise did not come without challenges. Its growing wealth and dominance in trade led to rivalry with Rome. The Punic Wars, a series of three wars fought against Rome from 264 to 146 B.C.E., were rooted in competition for control of Mediterranean trade routes. Despite initial successes, Carthage was ultimately defeated. The final blow came when the Romans launched a brutal siege on Carthage, culminating in the city's destruction."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "All of the following contributed to the status of Carthage as a wealthy and powerful city-state EXCEPT",
+          "options": {
+            "A": "its geographic position",
+            "B": "its trade network across three continents",
+            "C": "its large fishing industry",
+            "D": "its ship-building technology"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The passage indicates which of the following about Carthage's maritime technology?",
+          "options": {
+            "A": "Carthage's ships were designed primarily for the transport of small items of high value, such as silver and gold.",
+            "B": "Carthage's ships were not as advanced as Roman ships.",
+            "C": "Carthaginians developed a system of switching ships at colonial ports to go longer distances.",
+            "D": "Carthaginians were skilled at navigating over long distances."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "What can be concluded from the passage about Carthaginian agriculture?",
+          "options": {
+            "A": "It was far inferior to Carthaginian maritime technology.",
+            "B": "It produced more than enough food to feed the Carthaginians.",
+            "C": "Its innovations borrowed much from Roman technical knowledge.",
+            "D": "It was transformed by farmers from Africa, Europe, and Asia."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What can be inferred about the consequences of Carthage's success?",
+          "options": {
+            "A": "It led to mutually beneficial relations with Rome.",
+            "B": "It caused internal strife among Carthaginian traders.",
+            "C": "It led to a neglect of the military.",
+            "D": "It contributed to external conflicts."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "The phrase \"culminating in\" in the final sentence is closest in meaning to",
+          "options": {
+            "A": "revealing",
+            "B": "ending with",
+            "C": "coinciding with",
+            "D": "following"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "The final blow came when the Romans launched a brutal siege on Carthage, <mark>culminating in</mark> the city's destruction.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Hidden Structures in Discrete Geometry",
+      "id": "m29_p5",
+      "left_content": {
+        "paragraphs": [
+          "Discrete geometry is a fascinating branch of mathematics that explores the hidden patterns formed by distinct geometric objects. Unlike continuous geometry—which deals with shapes and structures that are smooth and unbroken, like curves and surfaces—discrete geometry focuses on objects that are finite or countable like points, lines, and polygons. These distinct components reveal unexpected structures and relationships. Such revelations occur particularly in packing and tiling problems.",
+          "Packing problems involve finding the most efficient arrangement of objects in a given space. While this might sound like a simple exercise—such as fitting oranges into boxes—it has far-reaching applications in fields like computer-chip design, where components must be arranged to maximize performance and minimize space, and in data storage, where digital information is packed efficiently to save memory and speed up access. Researchers have discovered intriguing connections between the arrangement of shapes and space utilization, challenging assumptions about efficiency.",
+          "Tiling problems further illustrate the depth of discrete geometry. Penrose tiling, for instance, creates a pattern with non-repeating shapes that fill a plane, revealing underlying symmetrical properties. The insights gained from such tiling patterns have influenced architectural designs and artworks.",
+          "The challenging, abstract nature of discrete geometry can all too easily belie its practical value. Mathematicians continue to show how these hidden structures drive innovation across fields."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "Identify the sentence in paragraph 1 that contrasts two branches of mathematics.",
+          "options": {},
+          "answer": "Unlike continuous geometry—which deals with shapes and structures that are smooth and unbroken, like curves and surfaces—discrete geometry focuses on objects that are finite or countable like points, lines, and polygons.",
+          "question_type": "select_sentence",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Why does the author mention \"fitting oranges into boxes\"?",
+          "options": {
+            "A": "To help describe the historical development of packing problems",
+            "B": "To help communicate the idea that packing problems are not as simple as they sound",
+            "C": "To explain the basic principles of discrete geometry to nonspecialists",
+            "D": "To highlight one of the challenges faced by researchers in discrete geometry"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "While this might sound like a simple exercise—such as <mark>fitting oranges into boxes</mark>—it has far-reaching applications in fields like computer-chip design, where components must be arranged to maximize performance and minimize space, and in data storage, where digital information is packed efficiently to save memory and speed up access.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The study of computer chip design and data storage has revealed that",
+          "options": {
+            "A": "traditional assumptions about efficiency are still valid",
+            "B": "the principles of continuous geometry are surprisingly relevant",
+            "C": "there are interesting connections between how shapes are arranged and how spaces are used",
+            "D": "there are new ways of enhancing the security of digital information"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The word \"belie\" in the passage is closest in meaning to",
+          "options": {
+            "A": "hide",
+            "B": "confirm",
+            "C": "enhance",
+            "D": "undermine"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "The challenging, abstract nature of discrete geometry can all too easily <mark>belie</mark> its practical value.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nFor example, Penrose-inspired patterns have been used in mosaic art and floor designs to create visually striking compositions that evoke mathematical harmony.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "[■] Tiling problems further illustrate the depth of discrete geometry. [■] Penrose tiling, for instance, creates a pattern with non-repeating shapes that fill a plane, revealing underlying symmetrical properties. [■] The insights gained from such tiling patterns have influenced architectural designs and artworks. [■]",
+          "inserted_sentence": "For example, Penrose-inspired patterns have been used in mosaic art and floor designs to create visually striking compositions that evoke mathematical harmony."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

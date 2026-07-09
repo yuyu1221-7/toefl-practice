@@ -1,0 +1,350 @@
+{
+  "set": "2026.4.19_set1",
+  "date_edition": "2026.4.19",
+  "set_name": "第23套 (4月19日)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an advertisement.",
+      "id": "m20_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/zYKC/1440X750/053.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "Which of the following is indicated about the childcare center?",
+          "options": {
+            "A": "It is not open to children of part-time students.",
+            "B": "It does not accept children under the age of 2.",
+            "C": "It is not open during the summer months.",
+            "D": "It does not provide meals or art supplies."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "The advertisement suggests that caregivers at the childcare center",
+          "options": {
+            "A": "are licensed as caregivers by the state",
+            "B": "include students of music and visual arts",
+            "C": "are required to obtain a first aid certificate",
+            "D": "gain experience they may use in their professional careers"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m20_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/6L4w/1373X1110/054.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main purpose of the social media post?",
+          "options": {
+            "A": "To advertise a documentary-film screening",
+            "B": "To promote enrollment in a media-studies program",
+            "C": "To announce the publication of a new research article",
+            "D": "To invite scholars to join a panel at an academic conference"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Who is the intended audience for this post?",
+          "options": {
+            "A": "Students and other scholars of media studies",
+            "B": "Social media users interested in media news",
+            "C": "Undergraduate students seeking film internships",
+            "D": "Documentary filmmakers seeking funding opportunities"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "What problem is the session meant to address?",
+          "options": {
+            "A": "The shortage of funding for independent documentaries",
+            "B": "The lack of participant involvement in shaping documentary narratives",
+            "C": "Low levels of trust between documentary filmmakers and audiences",
+            "D": "Concerns over group representation among filmmakers"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Data Visualization in Action",
+      "id": "m20_p3",
+      "left_content": {
+        "paragraphs": [
+          "Data visualization is transforming how we interpret complex datasets, moving beyond traditional charts, such as static charts and graphs, to dynamic graphical representations, such as heat maps, time-lapse animations, and network graphs. This shift allows for the discovery of patterns and anomalies otherwise hidden in raw data. For example, when studying climate change impacts, a time-lapse heat map might reveal unexpected temperature shifts over decades that spreadsheets alone could not capture.",
+          "A significant development in this field is the use of interactive dashboards. These tools not only display data but also allow users to manipulate variables to explore different scenarios. In the business sector, decision-makers use dashboards to simulate market conditions, adjusting factors like demand and supply to forecast outcomes. However, the effectiveness of these dashboards often hinges on the user's ability to interpret complex visual cues, which can be overwhelming.",
+          "In the realm of public health, data visualization has proven invaluable in tracking disease spread. The combination of geographical maps and timelines helps analysts predict outbreak hot spots. Nonetheless, this predictive power depends heavily on the quality of data inputs. Still, data visualization tools help public health officials to act before a situation becomes unmanageable."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "The word \"anomalies\" in the passage is closest in meaning to",
+          "options": {
+            "A": "irregularities",
+            "B": "indications",
+            "C": "solutions",
+            "D": "links"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "This shift allows for the discovery of patterns and <mark>anomalies</mark> otherwise hidden in raw data.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What does the passage suggest about traditional data charts?",
+          "options": {
+            "A": "They reveal some important features hidden in raw data.",
+            "B": "They are limited in how effectively they convey complex information.",
+            "C": "They are especially helpful in capturing data related to climate change.",
+            "D": "They include heat maps, time-lapse animations, and network graphs."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "Identify the sentence in paragraph 2 that highlights a limitation of interactive dashboards. Select the sentence to make your choice.",
+          "options": {},
+          "answer": "However, the effectiveness of these dashboards often hinges on the user's ability to interpret complex visual cues, which can be overwhelming.",
+          "question_type": "sentence_identification",
+          "special_content": "A significant development in this field is the use of interactive dashboards. These tools not only display data but also allow users to manipulate variables to explore different scenarios. In the business sector, decision-makers use dashboards to simulate market conditions, adjusting factors like demand and supply to forecast outcomes. However, the effectiveness of these dashboards often hinges on the user's ability to interpret complex visual cues, which can be overwhelming.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "The passage mentions all the following about interactive dashboards EXCEPT:",
+          "options": {
+            "A": "They represent an important development in data analysis tools.",
+            "B": "They let users change variables to see different outcomes.",
+            "C": "They can be used to explore how markets might behave.",
+            "D": "They help business leaders interact more effectively with one another."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nIncomplete or biased data can lead to misleading conclusions, potentially hampering response efforts.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "In the realm of public health, data visualization has proven invaluable in tracking disease spread. [■] The combination of geographical maps and timelines helps analysts predict outbreak hot spots. [■] Nonetheless, this predictive power depends heavily on the quality of data inputs. [■] Still, data visualization tools help public health officials to act before a situation becomes unmanageable. [■]",
+          "inserted_sentence": "Incomplete or biased data can lead to misleading conclusions, potentially hampering response efforts."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Parallel Algorithms: From Challenges to Opportunities",
+      "id": "m20_p4",
+      "left_content": {
+        "paragraphs": [
+          "Parallel algorithms, a computing method common in modern computers, solve problems faster by dividing a task into smaller parts that run at the same time. Instead of checking every item in a huge database one by one as in a sequential algorithm, a parallel algorithm might split the job across multiple processor cores, each checking a portion of the data simultaneously.",
+          "In healthcare, parallel algorithms play a crucial role in analyzing large datasets quickly. When researchers simulate how a virus spreads through a population, they need to process millions of data points—like infection rates and demographics. Using parallel processing, these simulations can run in minutes instead of hours, helping public health officials make faster decisions during outbreaks. However, if too much data is sent to the processors at once without proper management, the system slows down.",
+          "One of the strengths of parallel algorithms is their versatility. Developers can tailor them to work efficiently on different types of hardware, such as graphics processing units (GPUs), which are especially good at handling many tasks at once. This is a big reason why deep learning—used in things like facial recognition—has advanced so quickly. Training a deep learning model would be nearly impossible without parallel computing."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "What does the passage indicate about sequential algorithms?",
+          "options": {
+            "A": "They are less efficient than parallel algorithms are.",
+            "B": "They handle computational tasks in the same way that parallel algorithms do.",
+            "C": "They can solve problems that parallel algorithms cannot.",
+            "D": "They use more advanced hardware than parallel algorithms do."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "Why does the author discuss the simulation of the spread of a virus?",
+          "options": {
+            "A": "To illustrate the challenges that public health officials face during disease outbreaks",
+            "B": "To demonstrate the significance of parallel algorithms in healthcare",
+            "C": "To highlight the data points that researchers focus on when a virus spreads through a population",
+            "D": "To emphasize the risk of using small datasets for analysis during disease outbreaks"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Identify the sentence in paragraph 2 that indicates that parallel algorithms have challenges. Select the sentence to make your choice.",
+          "options": {},
+          "answer": "However, if too much data is sent to the processors at once without proper management, the system slows down.",
+          "question_type": "sentence_identification",
+          "special_content": "In healthcare, parallel algorithms play a crucial role in analyzing large datasets quickly. When researchers simulate how a virus spreads through a population, they need to process millions of data points—like infection rates and demographics. Using parallel processing, these simulations can run in minutes instead of hours, helping public health officials make faster decisions during outbreaks. However, if too much data is sent to the processors at once without proper management, the system slows down.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "The word \"tailor\" in the passage is closest in meaning to",
+          "options": {
+            "A": "direct",
+            "B": "explore",
+            "C": "adapt",
+            "D": "prepare"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Developers can <mark>tailor</mark> them to work efficiently on different types of hardware, such as graphics processing units (GPUs), which are especially good at handling many tasks at once.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nIn light of their many advantages, parallel algorithms will surely continue to drive innovation in diverse areas like climate modeling and financial analysis.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "D",
+          "question_type": "insertion",
+          "special_content": "One of the strengths of parallel algorithms is their versatility. [■] Developers can tailor them to work efficiently on different types of hardware, such as graphics processing units (GPUs), which are especially good at handling many tasks at once. [■] This is a big reason why deep learning—used in things like facial recognition—has advanced so quickly. [■] Training a deep learning model would be nearly impossible without parallel computing. [■]",
+          "inserted_sentence": "In light of their many advantages, parallel algorithms will surely continue to drive innovation in diverse areas like climate modeling and financial analysis."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Theater Lighting Innovations",
+      "id": "m20_p5",
+      "left_content": {
+        "paragraphs": [
+          "Theater lighting has evolved significantly over the centuries. Initially reliant on sunlight, performances were limited to daylight hours. Candles and oil lamps enabled evening shows but posed fire risks and offered limited control over illumination.",
+          "The introduction of gas lighting in the nineteenth century provided safer lighting that was brighter and more consistent. This advancement improved visibility on stage and allowed for more expressive acting. Lights that illuminated actors from below and the sides helped direct audience attention.",
+          "The emergence of electric lighting in the late nineteenth century was transformative. Designers began using gels and filters to create a wide range of colors of varying intensity. These and other innovations, including focused spotlights and dimming systems, fundamentally reshaped the visual and emotional stage landscape. For example, the angled light beams and shadows in Toller's 1919 play Transformation evoked the chaos and psychological unrest of post-war Germany.",
+          "Today's theaters leverage LED technology for energy efficiency and versatility, as it offers rapid color changes and programmable effects to create varied settings. Designers must now carefully balance technological prowess with artistic intent, ensuring that lighting supports rather than distracts from the narrative. Moreover, as lighting systems become increasingly complex, collaboration between lighting designers, directors, and technicians has become essential."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "Which of the following is the most accurate description of the passage's organization?",
+          "options": {
+            "A": "An introduction followed by a summary of the disadvantages of older theater lighting systems",
+            "B": "A discussion of the theory of theater lighting followed by paragraphs detailing the different effects it can achieve",
+            "C": "An introduction followed by a series of paragraphs on successive developments in theater lighting",
+            "D": "A discussion of different theaters followed by a description of lighting technologies that complement each building"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "According to the passage, gas lighting was an improvement on candles and oil lamps in all of the following ways EXCEPT:",
+          "options": {
+            "A": "It was less likely to cause fires.",
+            "B": "It produced a more constant light.",
+            "C": "It could be directed at individual actors.",
+            "D": "It produced a softer light."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"fundamentally\" in the passage is closest in meaning to",
+          "options": {
+            "A": "simply",
+            "B": "thoroughly",
+            "C": "surprisingly",
+            "D": "permanently"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "These and other innovations, including focused spotlights and dimming systems, <mark>fundamentally</mark> reshaped the visual and emotional stage landscape.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "Why does the author discuss Transformation?",
+          "options": {
+            "A": "To illustrate how skillful lighting can communicate a mood to the audience",
+            "B": "To provide an example of a play that could have benefited from LED technology",
+            "C": "To explain why electric lighting was not as powerful for creating moods as gas lighting",
+            "D": "To argue that some plays relied too heavily on lighting effects"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "For example, the angled light beams and shadows in Toller's 1919 play <mark>Transformation</mark> evoked the chaos and psychological unrest of post-war Germany.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "What does the passage imply about modern lighting technology?",
+          "options": {
+            "A": "It can sometimes shift the focus from the play to the lighting.",
+            "B": "It requires directors who are skilled in computer programming.",
+            "C": "Theaters must now allocate more money to technicians and less to actors.",
+            "D": "Theaters must be redesigned to incorporate new lighting technology."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

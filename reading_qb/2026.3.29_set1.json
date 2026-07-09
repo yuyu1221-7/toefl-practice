@@ -1,0 +1,360 @@
+{
+  "set": "2026.3.29_set1",
+  "date_edition": "2026.3.29",
+  "set_name": "第21套 (3月29日A卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an advertisement.",
+      "id": "m18_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/1ist/1269X1191/047.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is suggested about the screening?",
+          "options": {
+            "A": "It is part of an educational film series.",
+            "B": "It is a required student activity.",
+            "C": "It will feature two movies in a row.",
+            "D": "It is a special event that occurs once a year."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What incentive is offered to some attendees?",
+          "options": {
+            "A": "Discounted tickets",
+            "B": "Free popcorn",
+            "C": "A signed poster",
+            "D": "Priority seating"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read a review.",
+      "id": "m18_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/DW2u/992X1299/048.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What can be inferred about the scientists' experiment in The Enigma of Echoes?",
+          "options": {
+            "A": "It attempts to find a treatment for hearing loss.",
+            "B": "It explores whether human consciousness can be artificially enhanced.",
+            "C": "It seeks to understand the influence of the environment on consciousness.",
+            "D": "It puts the researchers' mental well-being at risk."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What explanation is given for how minimalist staging makes the production successful?",
+          "options": {
+            "A": "It is more visually appealing than elaborate staging.",
+            "B": "It focuses audience attention on the actors' performances.",
+            "C": "It helps audiences process challenging philosophical themes.",
+            "D": "It facilitates the actors' focus on audience reactions."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "What aspect of the production is highlighted throughout the last paragraph of the review?",
+          "options": {
+            "A": "The high quality of all the actors' work",
+            "B": "The overwhelming importance of certain actors",
+            "C": "The centrality of the theme of human weakness",
+            "D": "The difficulty of working with student actors"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Libertarianism and Personal Freedom",
+      "id": "m18_p3",
+      "left_content": {
+        "paragraphs": [
+          "Libertarianism is a political philosophy emphasizing individual liberty, minimal government intervention, and free markets. It advocates personal freedom, arguing that individuals should make choices without undue state interference. This ideology has gained traction in recent years among those who value economic freedom.",
+          "A central tenet of libertarianism is self-ownership, which asserts that individuals own their bodies and labor. Libertarians argue that people should control their lives and property and be free from coercive forces. For instance, libertarians often oppose taxation, viewing it as involuntary servitude that infringes on autonomy.",
+          "Libertarianism champions free markets as the most efficient means of allocating resources. By allowing supply and demand to dictate prices, free markets encourage innovation and competition, leading to better products and services. Government regulations are seen as impediments that stifle economic growth and limit freedom. Libertarians believe that a laissez-faire approach creates an environment where businesses can thrive and individuals can pursue their economic interests without constraints.",
+          "Critics of libertarianism argue that a lack of regulation can lead to social inequality and exploitation. Some contend that public goods, like education and healthcare, require government involvement to ensure equitable access. Balancing personal freedom with the need for social welfare remains contentious within libertarian thought."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "All of the following are true about libertarianism EXCEPT:",
+          "options": {
+            "A": "It emphasizes free markets.",
+            "B": "It champions personal freedom.",
+            "C": "It supports state involvement in people's lives.",
+            "D": "It has recently grown in popularity."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "Libertarians might consider taxation immoral because it violates",
+          "options": {
+            "A": "the principle of self-ownership",
+            "B": "laws against use of coercive force",
+            "C": "legal standards about bodily autonomy",
+            "D": "conventions of liberal society"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "The word \"impediments\" in the passage is closest in meaning to",
+          "options": {
+            "A": "rules",
+            "B": "barriers",
+            "C": "measures",
+            "D": "costs"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Libertarianism champions free markets as the most efficient means of allocating resources. By allowing supply and demand to dictate prices, free markets encourage innovation and competition, leading to better products and services. Government regulations are seen as <mark>impediments</mark> that stifle economic growth and limit freedom. Libertarians believe that a laissez-faire approach creates an environment where businesses can thrive and individuals can pursue their economic interests without constraints.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "Libertarians themselves do not agree with one another about whether",
+          "options": {
+            "A": "the libertarian approach creates educational opportunities",
+            "B": "a laissez-faire approach is good for businesses",
+            "C": "healthcare requires more government involvement than education",
+            "D": "personal freedom should be balanced against the need for social welfare"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nSuch intervention constrains innovation and can lead to unintended outcomes.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "Libertarianism champions free markets as the most efficient means of allocating resources. [■] By allowing supply and demand to dictate prices, free markets encourage innovation and competition, leading to better products and services. [■] Government regulations are seen as impediments that stifle economic growth and limit freedom. [■] Libertarians believe that a laissez-faire approach creates an environment where businesses can thrive and individuals can pursue their economic interests without constraints. [■]",
+          "inserted_sentence": "Such intervention constrains innovation and can lead to unintended outcomes."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "The Mysteries of Opal",
+      "id": "m18_p4",
+      "left_content": {
+        "paragraphs": [
+          "Opal is a unique gemstone, known for its vibrant colors that shift as the stone moves. Unlike most gemstones, which form rigid, repeating crystalline structures, opals are amorphous, meaning they lack a fixed internal shape. This is due to the formation process, where silica-rich water seeps into cracks in rocks deep underground, leaving silica deposits when it evaporates. Tiny silica spheres create the internal structure of opals, and these spheres diffract light, separating it into colors, much like a prism does.",
+          "The color and brilliance of opals depends on the size and spacing of the silica spheres. Larger spheres produce reds and oranges, while smaller spheres result in blues and greens. Because of Australia's unique geological conditions, it is home to over 90 percent of the world's opals. Opals are also fragile. Their high water content and noncrystalline structure make them prone to cracking when exposed to sudden temperature changes. Modern jewelers use techniques such as laser cutting and humidity-controlled storage to better protect opals.",
+          "Ancient cultures believed opals had mystical properties and brought good luck. The Romans saw them as a symbol of hope and purity, while the Greeks thought they gave the gift of prophecy."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "All of the following are mentioned as part of the formation process of opals EXCEPT:",
+          "options": {
+            "A": "Water flows into cracks in rocks.",
+            "B": "The water dries up, leaving silica deposits behind.",
+            "C": "Small spheres of silica create the structure of the gemstones.",
+            "D": "The structure formed is rigid and non-varying."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "Why does the author mention \"a prism\"?",
+          "options": {
+            "A": "To illustrate how an opal affects light",
+            "B": "To explain how the internal structure of opals is created",
+            "C": "To give an example of how scientists study opals",
+            "D": "To argue that opals do not truly diffract light"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Tiny silica spheres create the internal structure of opals, and these spheres diffract light, separating it into colors, much like <mark>a prism</mark> does.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "What is one consequence of the internal structure of opals?",
+          "options": {
+            "A": "90 percent of them are red or orange.",
+            "B": "Relatively little ancient opal jewelry has survived.",
+            "C": "They are easily damaged by water.",
+            "D": "Jewelers must use special care to prevent opals from cracking."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What does the passage suggest about ancient cultures' view of opals?",
+          "options": {
+            "A": "They understood how opals were formed.",
+            "B": "They found opals difficult to work with.",
+            "C": "They believed opals had special qualities that benefited their owners.",
+            "D": "They considered opals to be very durable."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "The word \"prophecy\" in the passage is closest in meaning to",
+          "options": {
+            "A": "long life",
+            "B": "the ability to predict the future",
+            "C": "happiness",
+            "D": "high status"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Ancient cultures believed opals had mystical properties and brought good luck. The Romans saw them as a symbol of hope and purity, while the Greeks thought they gave the gift of <mark>prophecy</mark>.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Genetically Modified Foods",
+      "id": "m18_p5",
+      "left_content": {
+        "paragraphs": [
+          "The use of genetically modified organisms (GMOs) in foods has raised a number of concerns, yet genetic modification (GM) technology can provide solutions to many persistent problems facing humanity.",
+          "For instance, by engineering crops to resist pests, tolerate drought, or grow in nutrient-poor soil, farmers can produce more food with fewer resources. This can be especially valuable in regions facing food insecurity or harsh environmental conditions. GM technology can also enhance nutritional content. Rice, for example, can be enriched with vitamin A to combat malnutrition. Furthermore, reduced reliance on chemical pesticides benefits both the environment and farm workers.",
+          "Yet some critics anticipate harm from GMOs. One major issue is ecological impact. Genetically modified plants may crossbreed with wild species, potentially disrupting ecosystems or reducing biodiversity. GM critics also worry about long-term health effects, even though current scientific consensus finds GM foods safe to eat. Additionally, GM technology has economic effects: Patented GM seeds can increase farmers' dependence on large biotech companies, raising questions about fairness and control within the food system. Public skepticism remains strong, fueled by limited transparency and the rapid pace of technological change. If GM foods are to serve the public good, thoughtful regulation, candid communication, and ongoing research will be essential."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The primary purpose of the passage is to",
+          "options": {
+            "A": "outline some benefits of GM technology and advocate for its adoption",
+            "B": "argue that GM technology is too dangerous and should be discontinued",
+            "C": "summarize some potential benefits and drawbacks related to the use of GM technology",
+            "D": "propose a set of steps toward resolving the debate over the use of GM technology"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "The word \"persistent\" in the passage is closest in meaning to",
+          "options": {
+            "A": "disastrous",
+            "B": "long-lasting",
+            "C": "inconvenient",
+            "D": "technical"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "The use of genetically modified organisms (GMOs) in foods has raised a number of concerns, yet genetic modification (GM) technology can provide solutions to many <mark>persistent</mark> problems facing humanity.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "According to the author, GM technology can do all of the following EXCEPT",
+          "options": {
+            "A": "improve the fertility of soil",
+            "B": "boost agricultural productivity",
+            "C": "improve human nutrition",
+            "D": "protect the health of agricultural workers"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The passage suggests which of the following about \"Patented GM seeds\"?",
+          "options": {
+            "A": "They can sometimes alter the nutrients in crops in ways that harm human health.",
+            "B": "Their use can benefit farmers when profits are shared by biotech companies.",
+            "C": "Their adoption could potentially subject farmers to unfair control by businesses.",
+            "D": "Their widespread use in agriculture could help to expand and protect biodiversity."
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Additionally, GM technology has economic effects: <mark>Patented GM seeds</mark> can increase farmers' dependence on large biotech companies, raising questions about fairness and control within the food system.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "The author mentions \"the rapid pace of technological change\" in order to",
+          "options": {
+            "A": "acknowledge the promise that GM technology holds for farmers",
+            "B": "suggest why research on the health effects of GM technology has lagged",
+            "C": "question one argument used to advocate for expanded use of GM technology",
+            "D": "explain some of the resistance to implementation of GM technology"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Public skepticism remains strong, fueled by limited transparency and <mark>the rapid pace of technological change</mark>.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

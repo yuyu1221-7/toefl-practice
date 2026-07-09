@@ -1,0 +1,359 @@
+{
+  "set": "2026.1.未知_set2",
+  "date_edition": "2026.1.未知",
+  "set_name": "第5套 (1月真题)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an e-mail.",
+      "id": "m5_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/qihI/1425X492/005.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What has prompted Ms. Anderson's stay at Sunset Resort?",
+          "options": {
+            "A": "Her family has invited her to visit them.",
+            "B": "Her university will be closed for vacation.",
+            "C": "She wants to pursue professional training there.",
+            "D": "She plans to conduct research on tourist resorts."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What can Ms. Anderson expect from the staff during her stay?",
+          "options": {
+            "A": "Assistance with transportation to nearby cities",
+            "B": "Help planning local activities and outings",
+            "C": "Guidance on exclusive dining options",
+            "D": "Information about local customs"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read a sign.",
+      "id": "m5_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/4Vpv/1071X1077/006.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "Where would this sign most likely appear?",
+          "options": {
+            "A": "A sports equipment shop",
+            "B": "A school",
+            "C": "A fitness club",
+            "D": "A hospital"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "All of the following can be done at the front desk EXCEPT",
+          "options": {
+            "A": "presenting membership cards",
+            "B": "notifying class instructors of injuries",
+            "C": "signing up for classes",
+            "D": "notifying staff of equipment problems"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "Who is most likely to obtain a locker?",
+          "options": {
+            "A": "People with membership cards",
+            "B": "People using cardio machines",
+            "C": "People with the most personal belongings",
+            "D": "People who arrive the earliest"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Noise Control in Urban Areas",
+      "id": "m5_p3",
+      "left_content": {
+        "paragraphs": [
+          "Urban areas across the globe are grappling with the challenge of noise pollution. This type of pollution can severely impact health, leading to sleep disturbances and cardiovascular problems. It has many causes.",
+          "Innovative solutions to control noise pollution, from traffic or other sources, are emerging. One such solution is green walls, vertical gardens installed on building facades. Green walls can absorb, reflect, or deflect sound waves, reducing the noise that enters a building. Additionally, they offer benefits like air purification and temperature regulation—thus not only improving the outdoor environment around buildings but also enhancing indoor air quality and helping regulate interior temperatures by acting as natural insulation.",
+          "Another approach involves quiet zones. These zones are designated areas where noisy activities are restricted, often including parks, residential neighborhoods, and hospital areas. By reducing noise levels in these zones, cities create pockets of tranquility. Some European cities have seen a decrease in stress-related health issues among residents in quiet zones.",
+          "Advancements in technology have also led to the creation of noise-canceling materials. Such materials are often used in buildings or road surfaces. They work by actively reducing sound vibrations. Urban planners can use these materials to design acoustic panels and noise barriers, strategically placing these structures to combat the noise problem."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "The word \"grappling\" in the passage is closest in meaning to",
+          "options": {
+            "A": "identifying",
+            "B": "interfering",
+            "C": "struggling",
+            "D": "experimenting"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "How do green walls help control noise pollution?",
+          "options": {
+            "A": "By purifying the air around buildings",
+            "B": "By disrupting the path of sound waves",
+            "C": "By making building facades more attractive",
+            "D": "By reducing temperatures inside buildings"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "What can be inferred about noise pollution in the European cities mentioned in the passage?",
+          "options": {
+            "A": "It was likely a factor in causing stress-related health issues among residents.",
+            "B": "It has not been as effectively managed there as it has been in other places.",
+            "C": "It has been controlled most successfully by adding green walls to buildings.",
+            "D": "It has been funded primarily through the efforts of urban planners."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "Identify the sentence in paragraph 4 that names specific architectural elements built with noise-canceling materials. Select the sentence to make your choice.",
+          "options": {
+            "A": "Advancements in technology have also led to the creation of noise-canceling materials.",
+            "B": "Such materials are often used in buildings or road surfaces.",
+            "C": "They work by actively reducing sound vibrations.",
+            "D": "Urban planners can use these materials to design acoustic panels and noise barriers, strategically placing these structures to combat the noise problem."
+          },
+          "answer": "Such materials are often used in buildings or road surfaces.",
+          "question_type": "sentence_selection",
+          "special_content": "Advancements in technology have also led to the creation of noise-canceling materials. Such materials are often used in buildings or road surfaces. They work by actively reducing sound vibrations. Urban planners can use these materials to design acoustic panels and noise barriers, strategically placing these structures to combat the noise problem.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nOne common source is traffic, which includes cars, buses, motorcycles, and trucks.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "[■] Urban areas across the globe are grappling with the challenge of noise pollution. [■] This type of pollution can severely impact health, leading to sleep disturbances and cardiovascular problems. [■] It has many causes. [■]",
+          "inserted_sentence": "One common source is traffic, which includes cars, buses, motorcycles, and trucks."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Stoicism in Ancient Philosophy",
+      "id": "m5_p4",
+      "left_content": {
+        "paragraphs": [
+          "Stoicism, an ancient philosophical school founded in Athens by Zeno of Citium in the early third century B.C.E., emphasizes rationality and self-control as the path to a virtuous life. Stoics believe that the universe is governed by reason, and understanding this helps individuals align with nature, achieving inner tranquility. Central to Stoic philosophy is the dichotomy of control. Some things are within our control while others are not. Stoics argue that focusing on what can be controlled, such as actions and thoughts, leads to a peaceful and content life. Events outside one's control should be accepted with equanimity.",
+          "A phrase that is commonly used today is \"Stoic pause.\" It refers to the internal deliberation to insert a moment of reflection before reacting emotionally, a handy trick employed by business leaders in high-stake negotiations. Stoic principles are also incorporated into cognitive-behavioral therapy, where patients are encouraged to learn to identify and challenge irrational thoughts so that they can change their emotional responses. For example, those who are anxious about public speaking can learn to reframe their fear by focusing on preparing for their speech and to expect realistic outcomes. They are taught to approach their fear rationally and ignore what is outside their control."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "What does Stoicism encourage?",
+          "options": {
+            "A": "Focusing on the root cause of external events",
+            "B": "Determuring what factors leads to discontent",
+            "C": "Concentrating only on what one is able to control",
+            "D": "Recognizing that nothing can be truly controlled"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The word \"equanimity\" in the passage is closest in meaning to",
+          "options": {
+            "A": "concern",
+            "B": "calmness",
+            "C": "exceptions",
+            "D": "flexibility"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Stoicism, an ancient philosophical school founded in Athens by Zeno of Citium in the early third century B.C.E., emphasizes rationality and self-control as the path to a virtuous life. Stoics believe that the universe is governed by reason, and understanding this helps individuals align with nature, achieving inner tranquility. Central to Stoic philosophy is the dichotomy of control. Some things are within our control while others are not. Stoics argue that focusing on what can be controlled, such as actions and thoughts, leads to a peaceful and content life. Events outside one's control should be accepted with <mark>equanimity</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Why does the author mention public speaking?",
+          "options": {
+            "A": "To provide an example of taking a \"Stoic pause\" in high-stake situations",
+            "B": "To show how cognitive-behavioral therapy incorporates Stoic ideas",
+            "C": "To illustrate the contrast between rational and irrational thoughts from the Stoic point of view",
+            "D": "To suggest that Stoics believe certain emotions can be beneficial"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What is the relationship between paragraphs 2 and 1?",
+          "options": {
+            "A": "Paragraph 2 discusses an alternative theory to the one presented in paragraph 1.",
+            "B": "Paragraph 2 explains a concept introduced in paragraph 1.",
+            "C": "Paragraph 2 describes solutions to an issue presented in paragraph 1.",
+            "D": "Paragraph 2 discusses the modern applications of the principles discussed in paragraph 1."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nTaking a step back to analyze the situation helps you react in a more measured and mindful way.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "A phrase that is commonly used today is \"Stoic pause.\" [■] It refers to the internal deliberation to insert a moment of reflection before reacting emotionally, a handy trick employed by business leaders in high-stake negotiations. [■] Stoic principles are also incorporated into cognitive-behavioral therapy, where patients are encouraged to learn to identify and challenge irrational thoughts so that they can change their emotional responses. [■] For example, those who are anxious about public speaking can learn to reframe their fear by focusing on preparing for their speech and to expect realistic outcomes. [■] They are taught to approach their fear rationally and ignore what is outside their control.",
+          "inserted_sentence": "Taking a step back to analyze the situation helps you react in a more measured and mindful way."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Coral Reef Restoration",
+      "id": "m6_p1",
+      "left_content": {
+        "paragraphs": [
+          "Coral reefs are defined as an underwater ecosystem formed by colonies of tiny marine animals called coral polyps. They are among the most diverse ecosystems on Earth; however, they are facing severe threats from climate change, pollution, and overfishing. These threats have led to widespread coral bleaching, where corals lose their vibrant colors and turn white. Bleaching weakens corals, making them more susceptible to disease and ultimately leading to their death.",
+          "Scientists and environmentalists are working on various restoration techniques to combat this decline. These efforts highlight the urgency of finding effective solutions to protect these vital ecosystems. One promising method is coral gardening, where fragments of healthy coral are grown in underwater nurseries and then transplanted onto damaged reefs. This technique has shown significant success in certain areas, helping to rebuild reef structures and promote biodiversity. Another innovative approach involves using electricity to stimulate coral growth. This method, known as Biorock™ technology, creates an electric field that encourages the deposition of minerals found in seawater, accelerating coral growth.",
+          "Despite these efforts, challenges remain. Restoration projects are often expensive and labor-intensive, and the long-term success of these techniques is still uncertain. Continuous research and adaptive management strategies are crucial for ensuring the resilience of coral reefs in the face of ongoing environmental changes."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "What can be inferred about coral bleaching in the first paragraph?",
+          "options": {
+            "A": "It makes corals more colorful.",
+            "B": "It is caused by underwater nurseries.",
+            "C": "It is a sign that corals are unhealthy.",
+            "D": "It helps coral growth."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Which of the following is NOT mentioned as a threat to coral reefs in the passage?",
+          "options": {
+            "A": "Climate change",
+            "B": "Pollution",
+            "C": "Overfishing",
+            "D": "Tourism"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "Why does the author mention Biorock™ technology in the second paragraph?",
+          "options": {
+            "A": "To describe one cause behind coral bleaching",
+            "B": "To introduce an innovative method for coral restoration",
+            "C": "To explain how electricity affects coral health",
+            "D": "To criticize traditional restoration methods"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What is one challenge associated with coral reef restoration mentioned in the last paragraph?",
+          "options": {
+            "A": "It requires a lot of water.",
+            "B": "It is costly and requires a lot of work.",
+            "C": "It damages healthy corals.",
+            "D": "It reduces biodiversity."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "What can be inferred about the long-term success of coral restoration techniques?",
+          "options": {
+            "A": "It is guaranteed with current methods.",
+            "B": "It depends on reducing tourism.",
+            "C": "It is unaffected by environmental changes.",
+            "D": "It is still not guaranteed."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

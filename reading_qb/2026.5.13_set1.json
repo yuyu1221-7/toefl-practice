@@ -1,0 +1,359 @@
+{
+  "set": "2026.5.13_set1",
+  "date_edition": "2026.5.13",
+  "set_name": "第28套 (5月13日A卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an advertisement.",
+      "id": "m28_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/TnKy/834X1038/069.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What does the advertisement suggest about the craft fair?",
+          "options": {
+            "A": "The vendors are not primarily university students.",
+            "B": "The items on sale are not all made by the vendors selling them.",
+            "C": "Some vendors do not accept checks or credit cards.",
+            "D": "Some booths will sell homemade baked goods as well as crafts."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "The advertisement indicates each of the following EXCEPT",
+          "options": {
+            "A": "the types of craft items for sale",
+            "B": "the venue where the craft fair is held",
+            "C": "the cost of renting a booth",
+            "D": "how to get more information"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read an online discussion.",
+      "id": "m28_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/gOoT/1119X1329/070.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the discussion mainly about?",
+          "options": {
+            "A": "Understanding a difficult concept in literary analysis",
+            "B": "Deciding which ancient Greek plays are the most powerful ones",
+            "C": "Strategizing how to answer an anticipated essay question on an exam",
+            "D": "Figuring out how best to respond to Professor Lane's questions during class"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "At 4:51 p.m., why does Dong-woo mention Oedipus?",
+          "options": {
+            "A": "To introduce a counterexample to a point made by Anita",
+            "B": "To further explore an example introduced by Anita",
+            "C": "To point out an exception to Aristotle's idea of the tragic hero",
+            "D": "To suggest that Professor Lane is mistaken about Aristotle"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "At 4:52 p.m., what does Wally imply when he writes, \"Wow, this is so different from what I learned about the tragic flaw when I studied it in high school!\"?",
+          "options": {
+            "A": "He did not study ancient Greek drama in high school.",
+            "B": "He was taught to interpret the tragic flaw as a moral failing.",
+            "C": "He did not enjoy his literature classes in high school.",
+            "D": "He forgot how his high school teachers interpreted Aristotle."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Carthage's Trade Network",
+      "id": "m28_p3",
+      "left_content": {
+        "paragraphs": [
+          "Carthage, founded by Phoenician merchants around 814 B.C.E., became a powerful city-state due to its strategic location on the Mediterranean. This position allowed Carthage to establish a vast trade network that extended across the Mediterranean and into Africa, Europe, and Asia. Carthaginian traders dealt in goods such as silver, gold, tin, and textiles.",
+          "The Carthaginians excelled in maritime technology, constructing advanced ships for long-distance journeys and bulky cargo transport. They developed efficient trade routes and set up colonies, expanding their economic reach. Their prowess in navigation and trade transformed Carthage into one of the wealthiest cities in the ancient world. Carthage's wealth was also built on innovations in agriculture. Carthaginian farmers employed advanced irrigation techniques and crop rotation, leading to abundant harvests that supported both local consumption and export.",
+          "However, Carthage's rise did not come without challenges. Its growing wealth and dominance in trade led to rivalry with Rome. The Punic Wars, a series of three wars fought against Rome from 264 to 146 B.C.E., were rooted in competition for control of Mediterranean trade routes. Despite initial successes, Carthage was ultimately defeated. The final blow came when the Romans launched a brutal siege on Carthage, culminating in the city's destruction."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "All of the following contributed to the status of Carthage as a wealthy and powerful city-state EXCEPT",
+          "options": {
+            "A": "its geographic position",
+            "B": "its trade network across three continents",
+            "C": "its large fishing industry",
+            "D": "its ship-building technology"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "The passage indicates which of the following about Carthage's maritime technology?",
+          "options": {
+            "A": "Carthage's ships were designed primarily for the transport of small items of high value, such as silver and gold.",
+            "B": "Carthage's ships were not as advanced as Roman ships.",
+            "C": "Carthaginians developed a system of switching ships at colonial ports to go longer distances.",
+            "D": "Carthaginians were skilled at navigating over long distances."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "What can be concluded from the passage about Carthaginian agriculture?",
+          "options": {
+            "A": "It was far inferior to Carthaginian maritime technology.",
+            "B": "It produced more than enough food to feed the Carthaginians.",
+            "C": "Its innovations borrowed much from Roman technical knowledge.",
+            "D": "It was transformed by farmers from Africa, Europe, and Asia."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What can be inferred about the consequences of Carthage's success?",
+          "options": {
+            "A": "It led to mutually beneficial relations with Rome.",
+            "B": "It caused internal strife among Carthaginian traders.",
+            "C": "It led to a neglect of the military.",
+            "D": "It contributed to external conflicts."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "The phrase \"culminating in\" in the final sentence is closest in meaning to",
+          "options": {
+            "A": "revealing",
+            "B": "ending with",
+            "C": "coinciding with",
+            "D": "following"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "The final blow came when the Romans launched a brutal siege on Carthage, <mark>culminating in</mark> the city's destruction.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Whale Strandings",
+      "id": "m28_p4",
+      "left_content": {
+        "paragraphs": [
+          "Few wildlife phenomena are as perplexing as mass strandings of whales. Sometimes, hundreds of whales or dolphins beach themselves on shores, often with fatal results. Scientists have sought explanations for decades, but as of yet, little is understood. Several theories suggest possible reasons for the strandings. Some researchers believe that disruptions to Earth's magnetic field may interfere with marine mammals' navigational abilities, while others point to changes in oceanic environments, such as temperature fluctuations or pollution, as factors that might drive the animals off course.",
+          "Humans may play a more direct role, too. In recent years, there has been growing evidence linking naval sonar systems to whale strandings. The powerful sound waves emitted by these systems can cause disorientation, making it difficult for whales to navigate underwater. Startled by the noise, whales may panic and rapidly ascend to the surface, causing serious injuries. Because whales travel in pods, disorientation in one whale can draw others toward shore, increasing the risk of a mass stranding.",
+          "Efforts to prevent strandings have yielded mixed results. While some countries now regulate naval sonar near whale habitats, requiring ships to lower sound levels or avoid critical areas, strandings continue to occur, reminding us that the reasons behind such events are complex."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"perplexing\" in the passage is closest in meaning to",
+          "options": {
+            "A": "rare",
+            "B": "puzzling",
+            "C": "disturbing",
+            "D": "predictable"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Few wildlife phenomena are as <mark>perplexing</mark> as mass strandings of whales.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The passage suggests which of the following about scientists' research into whale strandings?",
+          "options": {
+            "A": "It has produced explanations for strandings that point primarily to changing environmental conditions.",
+            "B": "It has revealed that causes for strandings vary based on whale species and habitats.",
+            "C": "It has proposed several explanations for strandings but has not found a conclusive understanding of the phenomenon.",
+            "D": "It has been able to provide a clearer picture of whale navigation by utilizing naval sonar."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The passage suggests that whales' ability to navigate",
+          "options": {
+            "A": "has declined over the last few decades",
+            "B": "is enhanced when whales travel in large pods",
+            "C": "is partly dependent on their proximity to familiar coastal regions",
+            "D": "may be sensitive to fluctuations in the planet's magnetic field"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "The passage indicates all of the following about naval sonar EXCEPT:",
+          "options": {
+            "A": "It can prevent whales from forming pods.",
+            "B": "It can produce reactions in whales that lead to physical harm.",
+            "C": "It has been identified as a factor that may contribute to strandings.",
+            "D": "It has been subject to governmental restrictions in certain locations."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "The author mentions \"critical areas\" in order to",
+          "options": {
+            "A": "identify reasons that some countries have resisted the regulation of naval sonar",
+            "B": "provide a specific example of how regulations aim to reduce threats to whales",
+            "C": "explain why whale strandings are particularly common in some regions",
+            "D": "suggest that certain marine habitats are more important than others"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "While some countries now regulate naval sonar near whale habitats, requiring ships to lower sound levels or avoid <mark>critical areas</mark>, strandings continue to occur, reminding us that the reasons behind such events are complex.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "The Benefits of Music Education",
+      "id": "m28_p5",
+      "left_content": {
+        "paragraphs": [
+          "In the United States, music education has been consistently linked to enhanced cognitive development. Studies such as those by the National Association for Music Education (NAfME) and research published in Frontiers in Psychology have shown that children who study music often demonstrate improvements in memory, language acquisition, and spatial-temporal reasoning. These cognitive gains are attributed to the discipline and structured practice inherent in learning music, which strengthens neural pathways associated with attention and processing.",
+          "Beyond cognition, music education contributes meaningfully to social development. Participation in an ensemble—a group of musicians performing together—requires active collaboration, listening, and nonverbal communication, fostering empathy and cooperative behavior. This group dynamic differs from traditional classroom settings and can support the development of interpersonal skills. Moreover, music provides a safe space for emotional exploration. Students engage with complex emotions, both their own and those conveyed by others, through the expressive nature of music itself. This experience can enhance emotional intelligence and serve as a constructive outlet for stress.",
+          "Despite these documented benefits, music programs in U.S. schools are often viewed as nonessential compared to core academic subjects and thus vulnerable to budget cuts. This reduction may disproportionately affect students who could benefit most from music's holistic contributions, potentially limiting their cognitive, social, and emotional growth."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "Why does the author mention \"neural pathways associated with attention and processing\"?",
+          "options": {
+            "A": "To explain one way in which music might improve certain mental skills",
+            "B": "To highlight the parts of the brain used when listening to music",
+            "C": "To contradict the results of a study in Frontiers in Psychology",
+            "D": "To suggest that music education has little effect on cognitive development"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "These cognitive gains are attributed to the discipline and structured practice inherent in learning music, which strengthens <mark>neural pathways associated with attention and processing</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Based on the discussion in the passage, what type of musical activity would be least likely to support social development?",
+          "options": {
+            "A": "Playing in an orchestra",
+            "B": "Singing in a choir",
+            "C": "Calming oneself with peaceful music",
+            "D": "Being a band member"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "According to the passage, music education promotes social development in all of the following ways EXCEPT",
+          "options": {
+            "A": "by developing listening skills",
+            "B": "by teaching students to communicate non-verbally",
+            "C": "by encouraging cooperative behavior",
+            "D": "by setting high standards for performance quality"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What does the passage suggest about music education in the United States?",
+          "options": {
+            "A": "It is acknowledged to be a necessary part of the school curriculum.",
+            "B": "It is at greater risk of losing its funding than other school subjects are.",
+            "C": "Some parents fear that time and money spent on music programs will limit their children's academic growth.",
+            "D": "Some parents want to see further studies done on the benefits of music education."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "The word \"holistic\" in the passage is closest in meaning to",
+          "options": {
+            "A": "documented",
+            "B": "celebrated",
+            "C": "comprehensive",
+            "D": "well-known"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "This reduction may disproportionately affect students who could benefit most from music's <mark>holistic</mark> contributions, potentially limiting their cognitive, social, and emotional growth.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

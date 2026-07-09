@@ -1,0 +1,359 @@
+{
+  "set": "2026.3.8_set3",
+  "date_edition": "2026.3.8",
+  "set_name": "第12套 (3月8日C卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a poster.",
+      "id": "m11_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/1f02/1070X441/023.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the main purpose of the poster?",
+          "options": {
+            "A": "To announce the reopening of Town Hall Plaza",
+            "B": "To recruit volunteers for a community event in Mechanicsburg",
+            "C": "To promote a gardening workshop in Mechanicsburg",
+            "D": "To advertise an opportunity for paid employment with a cleaning service"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "According to the poster, what will be provided?",
+          "options": {
+            "A": "Gardening tools",
+            "B": "Cleaning supplies",
+            "C": "Food and drinks",
+            "D": "Trash bags"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-25",
+      "type": "Lifestyle",
+      "title": "Read a social media post.",
+      "id": "m11_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/jwjk/1373X1110/024.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is the main purpose of the social media post?",
+          "options": {
+            "A": "To advertise a documentary-film screening",
+            "B": "To promote enrollment in a media-studies program",
+            "C": "To announce the publication of a new research article",
+            "D": "To invite scholars to join a panel at an academic conference"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Who is the intended audience for this post?",
+          "options": {
+            "A": "Students and other scholars of media studies",
+            "B": "Social media users interested in media news",
+            "C": "Undergraduate students seeking film internships",
+            "D": "Documentary filmmakers seeking funding opportunities"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "25",
+          "question": "What problem is the session meant to address?",
+          "options": {
+            "A": "The shortage of funding for independent documentaries",
+            "B": "The lack of participant involvement in shaping documentary narratives",
+            "C": "Low levels of trust between documentary filmmakers and audiences",
+            "D": "Concerns over group representation among filmmakers"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q26-30",
+      "type": "Academic",
+      "title": "Evolutionary Trends in Graphic Design",
+      "id": "m11_p3",
+      "left_content": {
+        "paragraphs": [
+          "Graphic design has transformed repeatedly throughout history, influenced by both cultural shifts and technological advancements. In Europe, during the Middle Ages (the fifth to fifteenth centuries), the creation of intricate manuscripts was predominant. The advent of the printing press in the fifteenth century altered these dynamics, facilitating mass production and broadening public access to designed materials. Such technological shifts not only changed the way art was produced but also how it was perceived.",
+          "By the mid-twentieth century, Swiss design emerged as a response to the chaotic visual landscape, introducing principles of minimalism and functionality. Heavily influenced by the Bauhaus movement, designers like Josef Müller-Brockmann advocated for simplicity and rationality. Their grid-based approach brought order and readability to what often seemed to be overwhelming visuals. Some critics argue that the rigid structure, while effective, limited expressive possibilities and emotional resonance in design.",
+          "Today, graphic design stands at the intersection of tradition and innovation. While digital tools democratize access and encourage experimentation, designers grapple with preserving artistic integrity. The challenge lies in blending the precision of technology with the warmth of human creativity. Thus, graphic design continues to evolve, reflecting broader cultural debates about art and technology."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "26",
+          "question": "What can be inferred about intricate manuscripts during the Middle Ages?",
+          "options": {
+            "A": "They were individually made.",
+            "B": "They were produced using the printing press.",
+            "C": "They were widely available to the general public.",
+            "D": "They depicted mostly landscapes."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "The phrase \"advocated for\" in the passage is closest in meaning to",
+          "options": {
+            "A": "mentioned",
+            "B": "promoted",
+            "C": "debated",
+            "D": "inspired"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "By the mid-twentieth century, Swiss design emerged as a response to the chaotic visual landscape, introducing principles of minimalism and functionality. Heavily influenced by the Bauhaus movement, designers like Josef Müller-Brockmann <mark>advocated for</mark> simplicity and rationality. Their grid-based approach brought order and readability to what often seemed to be overwhelming visuals. Some critics argue that the rigid structure, while effective, limited expressive possibilities and emotional resonance in design.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "28",
+          "question": "Why does the author discuss the “grid-based approach”?",
+          "options": {
+            "A": "To argue that the approach should be adopted more widely",
+            "B": "To question the relevance of the approach in modern design",
+            "C": "To show how the principles of minimalism and functionality were used by Swiss designers",
+            "D": "To indicate how Swiss designers differed from the majority of Bauhaus designers"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "It can be inferred that many of today's graphic designers are concerned that digital tools",
+          "options": {
+            "A": "undermine the democratization of the arts",
+            "B": "are not responsive to public debates in the arts",
+            "C": "are not precise enough to be useful in the design process",
+            "D": "do not always reflect the warmth of human creativity"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nHowever, this clarity sometimes came at the cost of creativity.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "By the mid-twentieth century, Swiss design emerged as a response to the chaotic visual landscape, introducing principles of minimalism and functionality. [■] Heavily influenced by the Bauhaus movement, designers like Josef Müller-Brockmann advocated for simplicity and rationality. [■] Their grid-based approach brought order and readability to what often seemed to be overwhelming visuals. [■] Some critics argue that the rigid structure, while effective, limited expressive possibilities and emotional resonance in design. [■]",
+          "inserted_sentence": "However, this clarity sometimes came at the cost of creativity."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "The Dynamics of Hollywood’s Golden Age",
+      "id": "m11_p4",
+      "left_content": {
+        "paragraphs": [
+          "Hollywood's Golden Age, from the 1920s to the 1960s, was a transformative period in cinema history. Under the studio system, major companies like RKO controlled film production, creating an efficient assembly-line process that produced stars such as Humphrey Bogart and Katharine Hepburn. While this system ensured a steady output of films, it often limited creative freedom for directors and actors tied to restrictive contracts. Yet this very constraint led to unexpected innovation as filmmakers sought new ways to tell compelling stories within set boundaries.",
+          "A pivotal change during this era was the introduction of sound, forever altering cinematic storytelling. Silent film stars had to adapt or risk obsolescence, while new genres like musicals capitalized on sound technology's possibilities. This shift pushed directors to experiment with narrative structures, often blurring the lines between genres to captivate audiences.",
+          "The decline of the studio system began with a 1948 Supreme Court ruling that dismantled studios' monopolies over theaters. This ruling opened the door for independent filmmakers, whose diverse and unconventional stories began gaining traction in theaters. However, the legacy of the studio system's efficiency and star-making machinery still influences Hollywood's operations today."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "Which aspect of the studio system encouraged filmmakers to innovate?",
+          "options": {
+            "A": "The demand for more silent films",
+            "B": "The freedom to create experimental films",
+            "C": "The inefficiency of film production",
+            "D": "The boundaries imposed by restrictive contracts"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "The word \"compelling\" in the passage is closest in meaning to",
+          "options": {
+            "A": "modern",
+            "B": "astonishing",
+            "C": "fascinating",
+            "D": "complex"
+          },
+          "answer": "C",
+          "question_type": "highlight",
+          "special_content": "Hollywood's Golden Age, from the 1920s to the 1960s, was a transformative period in cinema history. Under the studio system, major companies like RKO controlled film production, creating an efficient assembly-line process that produced stars such as Humphrey Bogart and Katharine Hepburn. While this system ensured a steady output of films, it often limited creative freedom for directors and actors tied to restrictive contracts. Yet this very constraint led to unexpected innovation as filmmakers sought new ways to tell <mark>compelling</mark> stories within set boundaries.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Why does the author mention the introduction of sound in films?",
+          "options": {
+            "A": "To highlight a development that led to new, creative narrative techniques",
+            "B": "To emphasize the former popularity of silent films",
+            "C": "To discuss how sound renewed the careers of silent film stars",
+            "D": "To identify the event that started the decline of the studio system"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "What inference can be made about the 1948 Supreme Court ruling?",
+          "options": {
+            "A": "It led to a temporary increase in studio profits.",
+            "B": "It allowed independent films to be seen and become popular.",
+            "C": "It caused studios to develop more large-scale musical productions.",
+            "D": "It had no effect on Hollywood's operations."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "What does the passage imply about the Hollywood film industry today?",
+          "options": {
+            "A": "Modern studios have completely abandoned all practices from the Golden Age period.",
+            "B": "Contemporary films commonly use the storytelling techniques developed during the 1920s-1960s.",
+            "C": "Independent filmmakers have entirely replaced the studio system's influence on cinema.",
+            "D": "The assembly-line process of the studio system still impacts current Hollywood operations."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Space Debris: A Growing Concern",
+      "id": "m11_p5",
+      "left_content": {
+        "paragraphs": [
+          "The Kessler Syndrome, proposed by NASA scientist Donald J. Kessler in 1978, hypothesizes a cascading effect in low Earth orbit (LEO) in which collisions between satellites and debris—defunct satellites, spent rocket stages, and fragments from earlier collisions—generate more fragments, exponentially increasing the likelihood of further collisions. This feedback loop could render certain orbital regions unusable for decades. While the model is compelling, some assumptions merit scrutiny. For instance, it presumes a uniform distribution of debris and constant collision probability, yet orbital mechanics suggest that debris clusters in specific altitudes and orbital paths, potentially limiting the scope of cascading events.",
+          "Moreover, technological advancements in debris tracking and active removal may mitigate the risk more effectively than Kessler originally envisioned. Critics argue that the syndrome underestimates the resilience of orbital infrastructure and overstates the inevitability of runaway collisions. Alternative explanations for observed debris growth include a greater number of satellite launches and fragmentation from aging spacecraft, rather than a self-sustaining cascade.",
+          "Nonetheless, the Kessler Syndrome remains a valuable heuristic for space policy, emphasizing the need for international cooperation and sustainable orbital practices. Its cautionary implications are profound—especially as commercial constellations dramatically increase the number of active satellites in LEO."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage suggests that one impact of the Kessler Syndrome would be",
+          "options": {
+            "A": "an increase in NASA space research",
+            "B": "a limitation on where satellites could safely orbit",
+            "C": "a greater number of satellite launches",
+            "D": "an increased risk of debris falling to Earth"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Why does the author mention the assertion that “debris clusters in specific altitudes and orbital paths”?",
+          "options": {
+            "A": "To provide a reason for an increase in collisions between satellites and debris",
+            "B": "To illustrate a part of the feedback loop",
+            "C": "To explain an objection to the Kessler Syndrome hypothesis",
+            "D": "To emphasize the need for better debris tracking"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"resilience\" in the passage is closest in meaning to",
+          "options": {
+            "A": "strength",
+            "B": "threat",
+            "C": "knowledge",
+            "D": "supervision"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Moreover, technological advancements in debris tracking and active removal may mitigate the risk more effectively than Kessler originally envisioned. Critics argue that the syndrome underestimates the <mark>resilience</mark> of orbital infrastructure and overstates the inevitability of runaway collisions. Alternative explanations for observed debris growth include a greater number of satellite launches and fragmentation from aging spacecraft, rather than a self-sustaining cascade.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "According to the passage, some argue that the Kessler Syndrome will not occur for all of the following reasons EXCEPT:",
+          "options": {
+            "A": "Space debris may not be spread out as evenly as the theory assumes.",
+            "B": "New technology means that the removal of debris may be possible.",
+            "C": "NASA has since developed new orbital infrastructure for avoiding collisions.",
+            "D": "There may be other explanations for the observed growth in debris."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "What does “Its cautionary implications” refer to in the passage?",
+          "options": {
+            "A": "The idea that one must assess the Kessler Syndrome carefully before accepting its predictions",
+            "B": "The idea that there will be cascading collisions in LEO, making it difficult for satellites to remain intact",
+            "C": "The suggestion that international cooperation will be more difficult to achieve as space becomes more cluttered",
+            "D": "The suggestion that debris tracking and active removal may pose additional risks to satellites"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Nonetheless, the Kessler Syndrome remains a valuable heuristic for space policy, emphasizing the need for international cooperation and sustainable orbital practices. <mark>Its cautionary implications</mark> are profound—especially as commercial constellations dramatically increase the number of active satellites in LEO.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

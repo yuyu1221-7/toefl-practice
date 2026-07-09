@@ -1,0 +1,366 @@
+{
+  "set": "2026.6.24_set2",
+  "date_edition": "2026.6.24",
+  "set_name": "第37套 (6月24日B卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m37_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/02tI/1244X717/101.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "When will Mr. Taylor receive his membership card?",
+          "options": {
+            "A": "Within two business days",
+            "B": "Within three business days",
+            "C": "Within five business days",
+            "D": "Within seven business days"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "How can Mr. Taylor learn about gym promotions?",
+          "options": {
+            "A": "By downloading a mobile app",
+            "B": "By visiting a website",
+            "C": "By calling a representative",
+            "D": "By checking the mail"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a syllabus.",
+      "id": "m37_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Srqs/1182X660/102.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is indicated about ENGL 101?",
+          "options": {
+            "A": "It is open only to students majoring in English.",
+            "B": "It engages with literature from a variety of genres.",
+            "C": "It requires prior coursework in literary studies.",
+            "D": "It centers on contemporary literary works."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is indicated about the learning activities that course participants will engage in?",
+          "options": {
+            "A": "They will be conducted both online and in person.",
+            "B": "They will involve group and individual assignments.",
+            "C": "They will include attending plays and poetry readings.",
+            "D": "They will involve archival research at the library."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m37_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/OOej/1218X1227/103.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "Why was this notice posted?",
+          "options": {
+            "A": "To announce the opening of new university offices on North Avenue",
+            "B": "To provide information about construction work on North Avenue",
+            "C": "To announce the addition of new university parking garages",
+            "D": "To promote the university's enhanced North Avenue shuttle service"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "According to the advisory, the events described will temporarily affect people in all of the following ways EXCEPT:",
+          "options": {
+            "A": "They will experience increased noise.",
+            "B": "Their daily travel time will be increased.",
+            "C": "Some places to park cars will be unavailable.",
+            "D": "Some bus lines will not operate."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "According to the notice, why should students visit the university's infrastructure website?",
+          "options": {
+            "A": "To check the current status of lane closures on North Avenue",
+            "B": "To find information about parking permit refunds",
+            "C": "To request special shuttle accommodations",
+            "D": "To reserve a parking space in the Pemberton Parking Complex"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m37_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/unIi/1215X1305/104.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the notice primarily about?",
+          "options": {
+            "A": "Providing safety tips during a storm",
+            "B": "Announcing a disruption to a service",
+            "C": "Providing after-installation instructions for a new appliance",
+            "D": "Promoting a community water park opening"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What should residents do beforehand?",
+          "options": {
+            "A": "Plan for power outages",
+            "B": "Disconnect all water appliances",
+            "C": "Inspect faucets and showers for leaks",
+            "D": "Ensure enough water is stored for one day"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred about the event described in the announcement?",
+          "options": {
+            "A": "It can be postponed to a different day by calling the maintenance department.",
+            "B": "It is required for infrastructure upgrades.",
+            "C": "It will occur weekly.",
+            "D": "It is due to a natural disaster."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Demographic Dynamics",
+      "id": "m37_p5",
+      "left_content": {
+        "paragraphs": [
+          "The demographic transition model (DTM) illustrates the shifting patterns of birth and death rates as societies evolve from agrarian to industrialized economies. Initially, both rates are high, resulting in slow population growth due to limited access to healthcare and sanitation. As countries develop, death rates decline sharply with advances in medical care and improved living conditions. Yet, birth rates often remain high, spurring rapid population growth that can strain resources. This transition highlights the tension between demographic momentum and societal capability to meet the growing needs.",
+          "A further decline in birth rates eventually occurs, influenced by greater access to education and changes in cultural norms. Families begin to view fewer children as advantageous, aligning with shifts toward economic and personal aspirations. However, this stage brings its own challenges, including the potential for an aging population and workforce shortages.",
+          "Some demographers postulate a fifth stage, characterized by persistently low birth rates that might lead to population contraction. The implications of this are complex, ranging from economic innovation driven by necessity to increased strain on social institutions and intergenerational support systems. Understanding these transitions enables societies to better plan for future demographic realities, though the dynamic interplay of these factors is still unfolding."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "According to paragraph 1, what does the demographic transition model primarily demonstrate?",
+          "options": {
+            "A": "Decreasing birth rates as societies industrialize",
+            "B": "Changing rates of birth and death as economies develop",
+            "C": "Differences in healthcare access among societies",
+            "D": "Consequences of rising death rates in industrial societies"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "Which of the following can be inferred about agrarian societies?",
+          "options": {
+            "A": "They are more prosperous than industrialized societies.",
+            "B": "They are an exception to the trends proposed by the demographic transition model.",
+            "C": "They experience high birth rates and also high death rates.",
+            "D": "They suffer sharp population declines as a result of high death rates."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"aspirations\" in the passage is closest in meaning to",
+          "options": {
+            "A": "goals",
+            "B": "resources",
+            "C": "changes",
+            "D": "challenges"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Families begin to view fewer children as advantageous, aligning with shifts toward economic and personal <mark>aspirations</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Which of the following is NOT mentioned about low birth rates?",
+          "options": {
+            "A": "Sustained low birth rates result in negative population growth.",
+            "B": "Demographic changes brought about by low birth rates can lead to societal tensions.",
+            "C": "Persistently low birth rates typically lead to economic decline.",
+            "D": "Understanding demographic transitions linked to low birth rates helps societies plan for the future."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nAs societies navigate this demographic shift, proactive policies and innovations become essential to sustain economic growth and promote well-being among older adults.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "D",
+          "question_type": "insertion",
+          "special_content": "...aligning with shifts toward economic and personal aspirations. [■] However, this stage brings its own challenges, including the potential for an aging population and workforce shortages. [■]\nSome demographers postulate a fifth stage, characterized by persistently low birth rates that might lead to population contraction. [■] The implications of this are complex, ranging from economic innovation driven by necessity to increased strain on social institutions and intergenerational support systems. [■]",
+          "inserted_sentence": "As societies navigate this demographic shift, proactive policies and innovations become essential to sustain economic growth and promote well-being among older adults."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Cooperative Education",
+      "id": "m37_p6",
+      "left_content": {
+        "paragraphs": [
+          "Cooperative education (\"co-ops\") emerged in the United States in the early twentieth century, when engineering programs seeking stronger industry alignment began alternating academic terms with structured, paid work experience. Although the model was first formalized at the University of Cincinnati, its rapid adoption across institutions specializing in scientific and technical fields reflected broader recognition that technical fields required applied practice alongside theoretical coursework. Today, co-ops are most prevalent at universities with deep employer partnerships. At Northeastern University and Drexel University, most students complete co-ops (multi-month paid placements) in fields ranging from engineering to computing to design. These programs often involve multiple sequenced work terms with increasing responsibility and are integrated into degree requirements rather than treated as optional internships.",
+          "Proponents argue that co-ops cultivate professional maturity by requiring students to navigate real organizational structures, contribute to long-term projects, and build evidence-based portfolios before graduation. They also note that co-op graduates often report higher initial earnings and stronger job placement. Critics, however, contend that alternating semesters can disrupt academic continuity, extend time-to-degree, and disadvantage students who cannot relocate or afford breaks in campus employment. Despite these concerns, co-education remains a defining form of work-integrated learning, especially in fields where applied expertise is essential."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage mentions all of the following about cooperative education programs EXCEPT:",
+          "options": {
+            "A": "Engineering departments at universities were some of the first to adopt them.",
+            "B": "They are recommended for students who are experiencing difficulties in theoretical courses.",
+            "C": "They are based on the idea that practical experience is necessary in certain technical fields.",
+            "D": "They allow students to receive payment while learning."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What does the passage suggest about institutions such as Northeastern University and Drexel University?",
+          "options": {
+            "A": "They have worked closely with employers to establish comprehensive co-op programs.",
+            "B": "They prefer to admit students who have already had extensive practical experience in their chosen fields.",
+            "C": "They allow students who have completed multiple co-ops to graduate more quickly than they otherwise would.",
+            "D": "They limit co-op placements to the top students in each field."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"cultivate\" in the passage is closest in meaning to",
+          "options": {
+            "A": "precede",
+            "B": "highlight",
+            "C": "demonstrate",
+            "D": "promote"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Proponents argue that co-ops <mark>cultivate</mark> professional maturity by requiring students to navigate real organizational structures...",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "According to the passage, what is one potential drawback of co-ops?",
+          "options": {
+            "A": "Co-op students are less likely to graduate than students who do not participate in co-ops.",
+            "B": "Co-op students perfect their practical skills at the expense of their theoretical knowledge.",
+            "C": "Co-op students take longer to graduate than other students.",
+            "D": "Co-op students overextend themselves by working at both their co-op placements and their regular campus jobs."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "Which type of student is probably least likely to find cooperative education attractive?",
+          "options": {
+            "A": "A student who is most drawn to analyzing texts and doing academic research",
+            "B": "A student who is pursuing a degree in computer science",
+            "C": "A student who wants to have the best chance of finding a job after graduation",
+            "D": "A student who wants to network with professionals in their chosen field"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

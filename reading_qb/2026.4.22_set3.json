@@ -1,0 +1,368 @@
+{
+  "set": "2026.4.22_set3",
+  "date_edition": "2026.4.22",
+  "set_name": "第26套 (4月22日北美C卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m23_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/s0lm/1479X651/061.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What will Mr. Brown receive for free?",
+          "options": {
+            "A": "A bookmark",
+            "B": "A newsletter",
+            "C": "A book",
+            "D": "A catalog"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "On what basis did GoodBooks make a decision?",
+          "options": {
+            "A": "A purchasing history",
+            "B": "A limited budget",
+            "C": "A reduced inventory",
+            "D": "A completed survey"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a review.",
+      "id": "m23_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Xy7s/1863X1053/062.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is suggested about the protagonist's experience in the film?",
+          "options": {
+            "A": "He wins an award for scientific research.",
+            "B": "He stumbles upon a mystery affecting a forest's ecology.",
+            "C": "He struggles to find his way out of a forest.",
+            "D": "He encounters someone from his past."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Who is Tomás Ruiz?",
+          "options": {
+            "A": "A film director",
+            "B": "A film actor",
+            "C": "A character in a film",
+            "D": "A film critic"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a text-message chain.",
+      "id": "m23_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/g6hs/930X1056/063.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "At 12:51 p.m., what does Liam imply when he writes, \"If their menu hasn't changed, you'll be fine\"?",
+          "options": {
+            "A": "Emma should not have any difficulty reading the menu.",
+            "B": "The café has not changed its menu.",
+            "C": "Other cafés on campus have new menus.",
+            "D": "The café probably has vegetarian options."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What can be concluded about Emma's schedule for the rest of the afternoon?",
+          "options": {
+            "A": "She expects to finish classes later than Liam.",
+            "B": "She plans to spend the afternoon in the library.",
+            "C": "She will meet Liam at the science building.",
+            "D": "She wants to complete a task before lunch."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What will Liam probably do next?",
+          "options": {
+            "A": "Go to his dorm to get something he forgot",
+            "B": "Brew a fresh cup of coffee",
+            "C": "Get ready to go to the café",
+            "D": "Wait to see if Mia can join before leaving"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m23_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/GFBV/1404X1257/064.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "Where can students check out and return books during the renovation?",
+          "options": {
+            "A": "In the Frankson Library",
+            "B": "In the Meyer Student Union Building",
+            "C": "In the Main Building",
+            "D": "On the Main Quad"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What does the notice imply about the university's digital resources?",
+          "options": {
+            "A": "They can be accessed only during the temporary library's operating hours.",
+            "B": "They may compensate for reduced convenience during the renovation.",
+            "C": "They were developed specifically in response to the renovation project.",
+            "D": "They will be accessible only to students who register through the online portal."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred from the notice about the Meyer Student Union Building?",
+          "options": {
+            "A": "It is not close to the university's Main Building.",
+            "B": "It is the only campus building large enough to house library services.",
+            "C": "It is not within easy walking distance of the Main Quad.",
+            "D": "It does not normally offer study spaces for students."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Bird Migration",
+      "id": "m23_p5",
+      "left_content": {
+        "paragraphs": [
+          "Every year, millions of birds travel huge distances to wintering grounds, and then back to breeding grounds when warmer weather returns there. Bird migration evolved in response to climatic changes. During the Ice Age, when average temperatures were frigid, migrating birds had a survival advantage, and the behavior became widespread.",
+          "Migration is also linked to resource availability. Arctic terns, which undertake the longest migrations of any animal by flying from their summer breeding grounds in Earth's north polar (Arctic) regions to their wintering grounds in Earth's south polar regions, feed primarily on small fish and other small marine animals. This prey is most abundant when increased sunlight results in the increased availability of algae, the microscopic marine plantlike organisms that are food for the tiny marine animals known as zooplankton, which are in turn consumed by terns' prey.",
+          "Not all birds migrate. Rock ptarmigans also live in Arctic and sub-Arctic regions. Instead of flying to warmer climes in winter, they shelter in snow burrows and reduce activity to conserve energy. They feed on plants like birch and willow trees, which are available in their habitat year-round. The divergence between migratory and sedentary species represents different adaptations to environmental pressures."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "According to paragraph 1, why did bird migration become widespread during the Ice Age?",
+          "options": {
+            "A": "Because food resources became more abundant in northern polar regions.",
+            "B": "Because breeding grounds became warmer during the winter months.",
+            "C": "Because birds needed to find new habitats for their young.",
+            "D": "Because migrating birds had a survival advantage when temperatures were frigid."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "What is the passage explaining when it mentions that \"increased sunlight results in the increased availability of algae\"?",
+          "options": {
+            "A": "Why terns' migrations result in increased food availability for them",
+            "B": "Why some tiny marine organisms migrate for long distances",
+            "C": "Why terns depend on sunlight while traveling long distances",
+            "D": "Why terns benefit from the migration of zooplankton"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "This prey is most abundant when <mark>increased sunlight results in the increased availability of algae</mark>, the microscopic marine plantlike organisms that are food for the tiny marine animals known as zooplankton, which are in turn consumed by terns' prey.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The passage supports all of the following statements about Arctic terns EXCEPT:",
+          "options": {
+            "A": "They take different migration routes depending on resource availability.",
+            "B": "They migrate over longer distances than all other birds do.",
+            "C": "They spend much of their lives in regions around Earth's poles.",
+            "D": "They eat mostly small animals living in sea water."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the passage provide information about rock ptarmigans?",
+          "options": {
+            "A": "To emphasize the usefulness of snow burrows in their habitat",
+            "B": "To contrast their behavior to that of Arctic terns",
+            "C": "To show that birch and willow trees provide food to both migratory and sedentary birds",
+            "D": "To provide another example of migratory birds"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "The word \"shelter\" in the passage is closest in meaning to",
+          "options": {
+            "A": "move",
+            "B": "land",
+            "C": "seek food",
+            "D": "take protection"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "Instead of flying to warmer climes in winter, they <mark>shelter</mark> in snow burrows and reduce activity to conserve energy.",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Computational Chemistry in Drug Discovery",
+      "id": "m23_p6",
+      "left_content": {
+        "paragraphs": [
+          "Computational chemistry has transformed drug discovery by providing tools to model and predict molecular behavior. Traditionally, drug discovery involved labor-intensive trial and error. Now, with advanced algorithms and powerful computers, researchers can test interactions between drug candidates and biological targets via computer simulations before moving to the lab.",
+          "One major advantage of computational methods is their ability to analyze vast chemical spaces. For example, machine learning algorithms can predict the binding affinity of millions of compounds to a target protein, narrowing down candidates for testing. This speeds up the discovery process and reduces costs. In one case, researchers identified a promising compound for treating a rare disease in weeks, a task that would have taken years using traditional methods.",
+          "Moreover, computational chemistry optimizes drug properties. By simulating different modifications to a molecular structure, researchers can predict changes in a drug's efficacy and safety. Repeating and refining this process fine-tunes drug candidates to achieve optimal therapeutic profiles. For example, modifying a molecule to enhance stability in the bloodstream can prevent it from breaking down too quickly, ensuring it reaches its target.",
+          "Computational predictions must be validated experimentally, as computer models can sometimes produce false positives. Accurately simulating the human body's complex environment remains a formidable task."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage suggests that, unlike traditional drug discovery, drug discovery based on computational chemistry",
+          "options": {
+            "A": "is far less time-consuming overall",
+            "B": "is significantly more expensive to conduct",
+            "C": "eliminates the need for lab work",
+            "D": "requires a greater number of researchers"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "According to the passage, how do machine learning algorithms speed up the drug discovery process?",
+          "options": {
+            "A": "By narrowing the size of the chemical spaces that need to be analyzed",
+            "B": "By helping to eliminate compounds that are not promising for testing",
+            "C": "By increasing the number of proteins that can be targeted by compounds",
+            "D": "By providing a comprehensive list of drug candidates"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "According to the passage, what is the purpose of repeatedly simulating various modifications to a molecular structure?",
+          "options": {
+            "A": "To create new biological targets",
+            "B": "To reduce the number of simulations needed in the long run",
+            "C": "To enhance the therapeutic profiles of drug candidates",
+            "D": "To eliminate the need for experimental validation"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The word \"formidable\" in the passage is closest in meaning to",
+          "options": {
+            "A": "very challenging",
+            "B": "very exciting",
+            "C": "urgent",
+            "D": "manageable"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Accurately simulating the human body's complex environment remains a <mark>formidable</mark> task.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nDespite these advancements, challenges remain.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "A",
+          "question_type": "insertion",
+          "special_content": "Moreover, computational chemistry optimizes drug properties. By simulating different modifications to a molecular structure, researchers can predict changes in a drug's efficacy and safety. Repeating and refining this process fine-tunes drug candidates to achieve optimal therapeutic profiles. [■] For example, modifying a molecule to enhance stability in the bloodstream can prevent it from breaking down too quickly, ensuring it reaches its target. [■] Computational predictions must be validated experimentally, as computer models can sometimes produce false positives. [■] Accurately simulating the human body's complex environment remains a formidable task. [■]",
+          "inserted_sentence": "Despite these advancements, challenges remain."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

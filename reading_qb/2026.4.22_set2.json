@@ -1,0 +1,365 @@
+{
+  "set": "2026.4.22_set2",
+  "date_edition": "2026.4.22",
+  "set_name": "第25套 (4月22日北美B卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m22_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/5ykn/1596X711/057.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What will Mr. Brown receive for free?",
+          "options": {
+            "A": "A bookmark",
+            "B": "A newsletter",
+            "C": "A book",
+            "D": "A catalog"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "On what basis did GoodBooks make a decision?",
+          "options": {
+            "A": "A purchasing history",
+            "B": "A limited budget",
+            "C": "A reduced inventory",
+            "D": "A completed survey"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a course description.",
+      "id": "m22_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/GvpP/1326X564/058.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is most likely included in the Wednesday and Friday course meetings?",
+          "options": {
+            "A": "Presentations by the professor on new topics",
+            "B": "Time for students to ask questions about their homework",
+            "C": "Discussions of careers in mathematics",
+            "D": "Opportunities to connect with other math majors"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "Which student would be unable to take MATH 101?",
+          "options": {
+            "A": "One who has not completed an algebra course",
+            "B": "One who has not completed a geometry course",
+            "C": "One who is in their first year of university",
+            "D": "One who has a part-time job on weekday afternoons"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a text-message chain.",
+      "id": "m22_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/MswK/939X1064/059.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "At 12:51 p.m., what does Liam imply when he writes, \"If their menu hasn't changed, you'll be fine\"?",
+          "options": {
+            "A": "Emma should not have any difficulty reading the menu.",
+            "B": "The café has not changed its menu.",
+            "C": "Other cafés on campus have new menus.",
+            "D": "The café probably has vegetarian options."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "What can be concluded about Emma's schedule for the rest of the afternoon?",
+          "options": {
+            "A": "She expects to finish classes later than Liam.",
+            "B": "She plans to spend the afternoon in the library.",
+            "C": "She will meet Liam at the science building.",
+            "D": "She wants to complete a task before lunch."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What will Liam probably do next?",
+          "options": {
+            "A": "Go to his dorm to get something he forgot",
+            "B": "Brew a fresh cup of coffee",
+            "C": "Get ready to go to the café",
+            "D": "Wait to see if Mia can join before leaving"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m22_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/CkYn/1344X1110/060.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the main purpose of the email?",
+          "options": {
+            "A": "To confirm attendance at a lecture for academic credit",
+            "B": "To apply for a research assistant position at a policy institute",
+            "C": "To request a letter of recommendation for a job in the energy sector",
+            "D": "To arrange a conversation about an expert's professional experience"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What aspect of energy regulation is Serena interested in?",
+          "options": {
+            "A": "Its ability to solve the energy industry's problems",
+            "B": "Its relation to markets",
+            "C": "Its critique of traditional fuels",
+            "D": "Its effects on building new energy infrastructure"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What will Serena probably do if Ms. Thomas offers to call her on a Tuesday morning?",
+          "options": {
+            "A": "Remind her that she is free on Monday and Wednesday afternoons",
+            "B": "Suggest that they have the call on the weekend instead",
+            "C": "Change her own schedule and agree to a call on Tuesday",
+            "D": "Suggest that they compromise and speak on a Monday or Wednesday morning"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Social Networks and Influence",
+      "id": "m22_p5",
+      "left_content": {
+        "paragraphs": [
+          "In today's digital age, social networks play a significant role in shaping opinions and behaviors. The influence of these networks is not merely about the number of connections one might have, but about the quality and nature of those interactions. Sociologists have long been interested in how individuals within a network can influence the group's overall dynamics. This concept is sometimes referred to as social capital.",
+          "The structure of a network can determine the flow of information. An individual positioned at the intersection of various groups, known as a bridge, often plays a crucial role in disseminating information. This person can introduce new ideas and perspectives to different parts of the network, thereby influencing opinions and possibly altering behaviors. Another factor is homophily, where individuals are more likely to form connections with others who are similar to themselves in terms of opinions, values, or social status. While homophily can reinforce existing beliefs, it can also create echo chambers, limiting exposure to diverse perspectives. The presence of influential individuals, often termed opinion leaders, can amplify or mitigate the effects of network structures by means of their social skills or charisma. Sociologists aim to uncover the nuanced ways social networks shape collective behavior."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "According to the passage, social capital refers to",
+          "options": {
+            "A": "how networks shape social interactions in the digital age",
+            "B": "the number of social connections an individual has",
+            "C": "the impact that individuals have on social networks",
+            "D": "the data sociologists use to make claims about digital networks"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "What does the passage imply about homophily?",
+          "options": {
+            "A": "It ensures the dissemination of diverse ideas.",
+            "B": "It promotes similarity and continuity within groups.",
+            "C": "It emphasizes opinion leaders over network structures.",
+            "D": "It makes it unnecessary to have bridges across networks."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "Why does the author mention \"echo chambers\"?",
+          "options": {
+            "A": "To highlight the risks of networks composed of like-minded individuals",
+            "B": "To introduce the role of opinion leaders in amplifying network structures",
+            "C": "To elaborate on the role of bridges in altering behaviors",
+            "D": "To identify one advantage of networks that connect various social classes"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "While homophily can reinforce existing beliefs, it can also create <mark>echo chambers</mark>, limiting exposure to diverse perspectives.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "The word \"nuanced\" in the passage is closest in meaning to",
+          "options": {
+            "A": "many",
+            "B": "complex",
+            "C": "powerful",
+            "D": "general"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Sociologists aim to uncover the <mark>nuanced</mark> ways social networks shape collective behavior.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nHowever, spreading information is not the only way to exert influence.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "D",
+          "question_type": "insertion",
+          "special_content": "The structure of a network can determine the flow of information. [■] An individual positioned at the intersection of various groups, known as a bridge, often plays a crucial role in disseminating information. [■] This person can introduce new ideas and perspectives to different parts of the network, thereby influencing opinions and possibly altering behaviors. [■] Another factor is homophily, where individuals are more likely to form connections with others who are similar to themselves in terms of opinions, values, or social status. [■]",
+          "inserted_sentence": "However, spreading information is not the only way to exert influence."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Gravitational Physics and Its Practical Applications",
+      "id": "m22_p6",
+      "left_content": {
+        "paragraphs": [
+          "The concept of gravity has evolved over time. In the seventeenth century, Isaac Newton described gravity as a universal force acting between masses, formalized in his law of universal gravitation. This theory provided a universal, mathematical framework for understanding both terrestrial and planetary motion. However, in 1915, Albert Einstein introduced general relativity, redefining gravity as the curvature of spacetime caused by mass and energy. This shift explained phenomena Newton's model could not, such as the bending of light near massive bodies (gravitational lensing). Einstein's theory, which marked a revolution in physics, also predicted black holes and gravitational waves, phenomena later confirmed by observation.",
+          "Theoretical advances in gravitational physics have led to practical applications, such as in drug development. Proteins often form crystals that can be analyzed to determine their molecular structure. However, on Earth, gravity interferes with the uniform growth of crystals. In microgravity environments, such as those aboard the International Space Station (ISS), gravitational effects are minimized. Crystals grown in space tend to be larger, more uniform, and less flawed than those grown on Earth, enabling researchers to map the crystals' atomic structure with greater accuracy. This is crucial for rational drug design, allowing scientists to develop medications that precisely target disease-related proteins."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "The passage mentions all of the following about Newton's law of universal gravitation EXCEPT:",
+          "options": {
+            "A": "It stated that all objects pull on each other.",
+            "B": "It helped explain motion on Earth and in space.",
+            "C": "It was later replaced by another theory.",
+            "D": "It made predictions that were only confirmed later."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "Why does the author mention \"gravitational lensing\" in the passage?",
+          "options": {
+            "A": "To help explain why Einstein's theory was superior to Newton's",
+            "B": "To give an example of a prediction made by Einstein",
+            "C": "To further illustrate Newton's law of universal gravitation",
+            "D": "To contrast terrestrial and planetary motion"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "This shift explained phenomena Newton's model could not, such as the bending of light near massive bodies (<mark>gravitational lensing</mark>).",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The word \"minimized\" in the passage is closest in meaning to",
+          "options": {
+            "A": "eliminated",
+            "B": "reduced",
+            "C": "observed",
+            "D": "applied"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "In microgravity environments, such as those aboard the International Space Station (ISS), gravitational effects are <mark>minimized</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "According to the passage, why is it important for drug developers to determine the molecular structure of crystals?",
+          "options": {
+            "A": "This helps researchers understand the effects of gravity on proteins in the human body.",
+            "B": "This helps researchers create drugs that target specific proteins.",
+            "C": "This helps create more perfect crystals that can be used in industrial applications.",
+            "D": "This enables manufacturers to produce existing drugs more quickly and cheaply."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nFor instance, parts of a crystal will grow unevenly as heavier components settle, leading to distortions in its shape.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "B",
+          "question_type": "insertion",
+          "special_content": "Theoretical advances in gravitational physics have led to practical applications, such as in drug development. [■] Proteins often form crystals that can be analyzed to determine their molecular structure. [■] However, on Earth, gravity interferes with the uniform growth of crystals. [■] In microgravity environments, such as those aboard the International Space Station (ISS), gravitational effects are minimized. [■] Crystals grown in space tend to be larger, more uniform, and less flawed than those grown on Earth, enabling researchers to map the crystals' atomic structure with greater accuracy. This is crucial for rational drug design, allowing scientists to develop medications that precisely target disease-related proteins.",
+          "inserted_sentence": "For instance, parts of a crystal will grow unevenly as heavier components settle, leading to distortions in its shape."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

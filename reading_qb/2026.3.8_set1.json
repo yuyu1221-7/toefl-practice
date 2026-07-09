@@ -1,0 +1,367 @@
+{
+  "set": "2026.3.8_set1",
+  "date_edition": "2026.3.8",
+  "set_name": "第10套 (3月8日A卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m11_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/H5TB/1361X594/017.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "What is the main purpose of the notice?",
+          "options": {
+            "A": "To provide directions to a facility",
+            "B": "To announce the temporary closure of a facility",
+            "C": "To explain improvements to a facility",
+            "D": "To announce the relocation of a facility"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "What happens to events that are scheduled during the renovations?",
+          "options": {
+            "A": "They will be rescheduled for earlier dates.",
+            "B": "They will be rescheduled for later dates.",
+            "C": "They will no longer take place.",
+            "D": "They will be moved to a different location."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read some instructions related to starting a campus garden.",
+      "id": "m11_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/8jm9/1344X570/018.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "Why would someone follow these instructions?",
+          "options": {
+            "A": "To build some bedroom furniture",
+            "B": "To make a wooden picture frame",
+            "C": "To prepare a garden",
+            "D": "To paint some boards"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "In which step are the wooden boards connected?",
+          "options": {
+            "A": "Step 1",
+            "B": "Step 2",
+            "C": "Step 3",
+            "D": "Step 4"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a page from a website.",
+      "id": "m11_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/SX0j/1317X1176/019.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "What is Health Geek?",
+          "options": {
+            "A": "An online fitness class",
+            "B": "A blog for posting sleeping tips",
+            "C": "A device that goes on the wrist",
+            "D": "A health and wellness magazine"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "How is the amount of time in each sleep stage estimated?",
+          "options": {
+            "A": "By observing eye and face motions",
+            "B": "By measuring changes in body temperature",
+            "C": "By following a person's breathing patterns",
+            "D": "By monitoring heart rate and body movements"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "What percentage of time is usually spent in light sleep?",
+          "options": {
+            "A": "50 percent",
+            "B": "25 percent",
+            "C": "15 percent",
+            "D": "10 percent"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m11_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/bg4R/1374X1236/020.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the notice primarily about?",
+          "options": {
+            "A": "Providing safety tips during a storm",
+            "B": "Announcing a disruption to a service",
+            "C": "Providing after-installation instructions for a new appliance",
+            "D": "Promoting a community water park opening"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What should residents do beforehand?",
+          "options": {
+            "A": "Plan for power outages",
+            "B": "Disconnect all water appliances",
+            "C": "Inspect faucets and showers for leaks",
+            "D": "Ensure enough water is stored for one day"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred about the event described in the announcement?",
+          "options": {
+            "A": "It can be postponed to a different day by calling the maintenance department.",
+            "B": "It is required for infrastructure upgrades.",
+            "C": "It will occur weekly.",
+            "D": "It is due to a natural disaster."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Quantum Computing",
+      "id": "m11_p5",
+      "left_content": {
+        "paragraphs": [
+          "Quantum computing promises to revolutionize technology by delivering unprecedented computational power. Traditional computers store data in binary bits, representing 0 or 1. Quantum computers use qubits, which can represent 0, 1, or both simultaneously (a state called superposition). This allows quantum computers to process vast amounts of data simultaneously, solving complex problems much faster than classical computers.",
+          "Quantum computing has promising applications in cryptography—techniques for encoding and decoding messages. Current encryption (encoding) methods rely on complex algorithms that classical computers struggle to break. Quantum computers could potentially break these encryption algorithms with ease, requiring new, quantum-resistant techniques. Researchers are exploring such methods to secure data in a post-quantum world.",
+          "One challenge to fully realizing quantum computing is that qubits are highly sensitive to external disturbances. Maintaining coherence, the state needed by qubits to perform calculations, requires extremely low temperatures and isolation from environmental noise, such as magnetic or electric field fluctuations. Despite the challenges, progress is accelerating. Scientists are developing error-correcting codes and stable qubit designs to address these issues. Quantum computing holds promise for advancements in fields like medicine, finance, and artificial intelligence."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "The word \"revolutionize\" in the passage is closest in meaning to",
+          "options": {
+            "A": "simplify",
+            "B": "transform",
+            "C": "study",
+            "D": "use"
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Quantum computing promises to <mark>revolutionize</mark> technology by delivering unprecedented computational power. Traditional computers store data in binary bits, representing 0 or 1. Quantum computers use qubits, which can represent 0, 1, or both simultaneously (a state called superposition). This allows quantum computers to process vast amounts of data simultaneously, solving complex problems much faster than classical computers.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "Why does the author discuss binary bits and qubits?",
+          "options": {
+            "A": "To explain why quantum computers are more powerful than classical computers are",
+            "B": "To discuss the two ways in which quantum computers store data",
+            "C": "To emphasize the fast pace at which computing technology is advancing",
+            "D": "To explain what causes the state of superposition"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "According to the passage, new encryption techniques are needed in the post-quantum world because",
+          "options": {
+            "A": "quantum computers are less secure",
+            "B": "quantum computers store more valuable data than classical computers do",
+            "C": "quantum computers can break existing encryption",
+            "D": "quantum computers cannot process current encryption algorithms"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Why does the author mention “external disturbances”?",
+          "options": {
+            "A": "To point out that qubits can only function in certain environmental conditions",
+            "B": "To introduce a similarity between quantum computing and traditional computing",
+            "C": "To explain how quantum computing creates unwanted fluctuations in magnetic or electric fields",
+            "D": "To suggest that quantum computing can be prohibitively expensive"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nSeeing progress, companies and governments have begun to invest heavily in quantum research, aiming to unlock its potential.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "C",
+          "question_type": "insertion",
+          "special_content": "One challenge to fully realizing quantum computing is that qubits are highly sensitive to external disturbances. [■] Maintaining coherence, the state needed by qubits to perform calculations, requires extremely low temperatures and isolation from environmental noise, such as magnetic or electric field fluctuations. [■] Despite the challenges, progress is accelerating. [■] Scientists are developing error-correcting codes and stable qubit designs to address these issues. [■] Quantum computing holds promise for advancements in fields like medicine, finance, and artificial intelligence.",
+          "inserted_sentence": "Seeing progress, companies and governments have begun to invest heavily in quantum research, aiming to unlock its potential."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Generational Identity",
+      "id": "m11_p6",
+      "left_content": {
+        "paragraphs": [
+          "Some researchers studying the United States population posit that Generation Z (born roughly between 1997 and 2012) is not merely an extension of millennials (born roughly between 1981 and 1996) but a distinct cohort shaped by fundamentally different sociotechnological conditions. While millennials came of age during the rise of the Internet and social media, Gen Z has never known a world without smartphones, automated content filtering, and pervasive digital surveillance. This has led to claims that Gen Z exhibits higher digital literacy but lower trust in institutions and media than millennials do.",
+          "However, this theory faces objections. For instance, the assumption that technological immersion leads to skepticism may overlook other factors, such as economic precarity or political polarization, which also influence trust. Moreover, while some studies suggest that Gen Z is more pragmatic and financially cautious than millennials are, this could be attributed not to generational identity but to life-stage effects—young adults often exhibit similar traits regardless of cohort.",
+          "Other scholars believe that generational differences are overstated and that intragenerational diversity (e.g., socioeconomic class, race, or geography) is more significant than intergenerational contrasts. Thus, while the Gen Z vs. millennials dichotomy is useful as a cultural shorthand, its explanatory power may be limited."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "In the first paragraph, what is the relation between sentence 2 and sentence 3?",
+          "options": {
+            "A": "Sentence 2 raises a question, and sentence 3 presents a plausible answer.",
+            "B": "Sentence 2 identifies a problem, and sentence 3 proposes a solution.",
+            "C": "Sentence 2 states a fact, and sentence 3 points to a possible consequence.",
+            "D": "Sentence 2 describes an empirical discovery, and sentence 3 clarifies its context."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "The word \"precarity\" in the passage is closest in meaning to",
+          "options": {
+            "A": "insecurity",
+            "B": "status",
+            "C": "difference",
+            "D": "dependence"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "However, this theory faces objections. For instance, the assumption that technological immersion leads to skepticism may overlook other factors, such as economic <mark>precarity</mark> or political polarization, which also influence trust. Moreover, while some studies suggest that Gen Z is more pragmatic and financially cautious than millennials are, this could be attributed not to generational identity but to life-stage effects—young adults often exhibit similar traits regardless of cohort.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "According to the passage, what is one way Generation Z is believed to differ from the millennial generation?",
+          "options": {
+            "A": "Gen Z is more comfortable using social media.",
+            "B": "Gen Z is less concerned about spending money.",
+            "C": "Gen Z is more used to being constantly observed.",
+            "D": "Gen Z has lower intragenerational diversity."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "What does the passage suggest about the potential impact of \"technological immersion\" on Gen Z?",
+          "options": {
+            "A": "It is significant, but other factors are important as well.",
+            "B": "It will gradually diminish as Gen Z individuals grow older.",
+            "C": "It is less pronounced in Gen Z than in the millennial generation.",
+            "D": "It causes a lack of trust between Gen Z and earlier generations."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "The passage suggests which of the following about generational differences?",
+          "options": {
+            "A": "The societal impact of technology on generational cohorts may be difficult to measure precisely.",
+            "B": "Differences between Gen Z and millennials may be exaggerated.",
+            "C": "Gen Z and millennials themselves do not accept the dichotomy between their generations.",
+            "D": "Research is needed to explain why the belief in generational differences is so persistent."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}

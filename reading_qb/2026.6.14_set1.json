@@ -1,0 +1,367 @@
+{
+  "set": "2026.6.14_set1",
+  "date_edition": "2026.6.14",
+  "set_name": "第33套 (6月14日A卷)",
+  "passages": [
+    {
+      "passage_tag": "M1_Q21-22",
+      "type": "Lifestyle",
+      "title": "Read an email.",
+      "id": "m33_p1",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/qqeB/1248X717/085.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "21",
+          "question": "When will Mr. Taylor receive his membership card?",
+          "options": {
+            "A": "Within two business days",
+            "B": "Within three business days",
+            "C": "Within five business days",
+            "D": "Within seven business days"
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "22",
+          "question": "How can Mr. Taylor learn about gym promotions?",
+          "options": {
+            "A": "By downloading a mobile app",
+            "B": "By visiting a website",
+            "C": "By calling a representative",
+            "D": "By checking the mail"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q23-24",
+      "type": "Lifestyle",
+      "title": "Read a syllabus.",
+      "id": "m33_p2",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/3tRh/1181X660/086.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "23",
+          "question": "What is indicated about ENGL 101?",
+          "options": {
+            "A": "It is open only to students majoring in English.",
+            "B": "It engages with literature from a variety of genres.",
+            "C": "It requires prior coursework in literary studies.",
+            "D": "It centers on contemporary literary works."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "24",
+          "question": "What is indicated about the learning activities that course participants will engage in?",
+          "options": {
+            "A": "They will be conducted both online and in person.",
+            "B": "They will involve group and individual assignments.",
+            "C": "They will include attending plays and poetry readings.",
+            "D": "They will involve archival research at the library."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q25-27",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m33_p3",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/xlKL/1218X1227/087.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "25",
+          "question": "Why was this notice posted?",
+          "options": {
+            "A": "To announce the opening of new university offices on North Avenue",
+            "B": "To provide information about construction work on North Avenue",
+            "C": "To announce the addition of new university parking garages",
+            "D": "To promote the university's enhanced North Avenue shuttle service"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "26",
+          "question": "According to the advisory, the events described will temporarily affect people in all of the following ways EXCEPT:",
+          "options": {
+            "A": "They will experience increased noise.",
+            "B": "Their daily travel time will be increased.",
+            "C": "Some places to park cars will be unavailable.",
+            "D": "Some bus lines will not operate."
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "27",
+          "question": "According to the notice, why should students visit the university's infrastructure website?",
+          "options": {
+            "A": "To check the current status of lane closures on North Avenue",
+            "B": "To find information about parking permit refunds",
+            "C": "To request special shuttle accommodations",
+            "D": "To reserve a parking space in the Pemberton Parking Complex"
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q28-30",
+      "type": "Lifestyle",
+      "title": "Read a notice.",
+      "id": "m33_p4",
+      "left_content": {
+        "image": "https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260708/Vsgl/1218X1311/088.png/webp"
+      },
+      "questions": [
+        {
+          "question_number": "28",
+          "question": "What is the notice primarily about?",
+          "options": {
+            "A": "Providing safety tips during a storm",
+            "B": "Announcing a disruption to a service",
+            "C": "Providing after-installation instructions for a new appliance",
+            "D": "Promoting a community water park opening"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "29",
+          "question": "What should residents do beforehand?",
+          "options": {
+            "A": "Plan for power outages",
+            "B": "Disconnect all water appliances",
+            "C": "Inspect faucets and showers for leaks",
+            "D": "Ensure enough water is stored for one day"
+          },
+          "answer": "D",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "30",
+          "question": "What can be inferred about the event described in the announcement?",
+          "options": {
+            "A": "It can be postponed to a different day by calling the maintenance department.",
+            "B": "It is required for infrastructure upgrades.",
+            "C": "It will occur weekly.",
+            "D": "It is due to a natural disaster."
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M1_Q31-35",
+      "type": "Academic",
+      "title": "Demographic Dynamics",
+      "id": "m33_p5",
+      "left_content": {
+        "paragraphs": [
+          "The demographic transition model (DTM) illustrates the shifting patterns of birth and death rates as societies evolve from agrarian to industrialized economies. Initially, both rates are high, resulting in slow population growth due to limited access to healthcare and sanitation. As countries develop, death rates decline sharply with advances in medical care and improved living conditions. Yet, birth rates often remain high, spurring rapid population growth that can strain resources. This transition highlights the tension between demographic momentum and societal capability to meet the growing needs.",
+          "A further decline in birth rates eventually occurs, influenced by greater access to education and changes in cultural norms. Families begin to view fewer children as advantageous, aligning with shifts toward economic and personal aspirations. However, this stage brings its own challenges, including the potential for an aging population and workforce shortages.",
+          "Some demographers postulate a fifth stage, characterized by persistently low birth rates that might lead to population contraction. The implications of this are complex, ranging from economic innovation driven by necessity to increased strain on social institutions and intergenerational support systems. Understanding these transitions enables societies to better plan for future demographic realities, though the dynamic interplay of these factors is still unfolding."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "31",
+          "question": "According to paragraph 1, what does the demographic transition model primarily demonstrate?",
+          "options": {
+            "A": "Decreasing birth rates as societies industrialize",
+            "B": "Changing rates of birth and death as economies develop",
+            "C": "Differences in healthcare access among societies",
+            "D": "Consequences of rising death rates in industrial societies"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "32",
+          "question": "Which of the following can be inferred about agrarian societies?",
+          "options": {
+            "A": "They are more prosperous than industrialized societies.",
+            "B": "They are an exception to the trends proposed by the demographic transition model.",
+            "C": "They experience high birth rates and also high death rates.",
+            "D": "They suffer sharp population declines as a result of high death rates."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "33",
+          "question": "The word \"aspirations\" in the passage is closest in meaning to",
+          "options": {
+            "A": "goals",
+            "B": "resources",
+            "C": "changes",
+            "D": "challenges"
+          },
+          "answer": "A",
+          "question_type": "highlight",
+          "special_content": "Families begin to view fewer children as advantageous, aligning with shifts toward economic and personal <mark>aspirations</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "34",
+          "question": "Which of the following is NOT mentioned about low birth rates?",
+          "options": {
+            "A": "Sustained low birth rates result in negative population growth.",
+            "B": "Demographic changes brought about by low birth rates can lead to societal tensions.",
+            "C": "Persistently low birth rates typically lead to economic decline.",
+            "D": "Understanding demographic transitions linked to low birth rates helps societies plan for the future."
+          },
+          "answer": "C",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "35",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nAs societies navigate this demographic shift, proactive policies and innovations become essential to sustain economic growth and promote well-being among older adults.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "D",
+          "question_type": "insertion",
+          "special_content": "...aligning with shifts toward economic and personal aspirations. [■] However, this stage brings its own challenges, including the potential for an aging population and workforce shortages. [■]\nSome demographers postulate a fifth stage, characterized by persistently low birth rates that might lead to population contraction. [■] The implications of this are complex, ranging from economic innovation driven by necessity to increased strain on social institutions and intergenerational support systems. [■]",
+          "inserted_sentence": "As societies navigate this demographic shift, proactive policies and innovations become essential to sustain economic growth and promote well-being among older adults."
+        }
+      ],
+      "paper_type": "M1"
+    },
+    {
+      "passage_tag": "M2_Q11-15",
+      "type": "Academic",
+      "title": "Diagnostic Tools: Current Challenges and Innovations",
+      "id": "m33_p6",
+      "left_content": {
+        "paragraphs": [
+          "Diagnostic methodologies in clinical laboratory sciences are undergoing significant shifts. Traditional methods, such as blood tests and imaging techniques, have been standard for decades. However, emerging technologies like liquid biopsies (highly specialized forms of blood testing) and wearable devices are reshaping diagnostics by offering the potential for earlier and more continuous disease detection, though their complexity demands careful evaluation.",
+          "Tumors release cells and DNA fragments into the bloodstream, which liquid biopsies can detect through a simple blood draw—eliminating the need for surgical tissue sampling while still enabling the monitoring of tumor progression and genetic mutations. Yet, this innovative technique has drawbacks such as false positives, which can lead to unnecessary medical interventions. Meanwhile, wearable devices provide continuous monitoring of vital signs, supplying real-time data to clinicians. The integration of such devices into healthcare systems introduces challenges related to managing vast amounts of patient data and ensuring the reliability of the collected information.",
+          "The potential of these technologies is undeniable, but they are not without hurdles. Liquid biopsies and wearable devices illustrate the intersection of innovation and practicality in diagnostics. As they evolve, they present opportunities to redefine disease management, although rigorous validation is essential for clinical integration."
+        ]
+      },
+      "questions": [
+        {
+          "question_number": "11",
+          "question": "What can be inferred about emerging diagnostic methodologies?",
+          "options": {
+            "A": "They may be more effective at detecting diseases early than traditional methods.",
+            "B": "They have already become standard practice in certain parts of the world.",
+            "C": "Their complexities are comparable to those of traditional methods.",
+            "D": "Their use for continuous disease detection eliminates the need for clinical oversight."
+          },
+          "answer": "A",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "12",
+          "question": "What problem associated with liquid biopsies is mentioned in the passage?",
+          "options": {
+            "A": "They are very costly to perform.",
+            "B": "They can lead to unnecessary medical treatments.",
+            "C": "The biopsies must be supplemented by surgical tissue sampling.",
+            "D": "The results of the biopsies take a long time to process."
+          },
+          "answer": "B",
+          "question_type": "highlight",
+          "special_content": "Yet, this innovative technique has drawbacks such as false positives, which can lead to <mark>unnecessary medical interventions</mark>.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "13",
+          "question": "The passage suggests that wearable devices",
+          "options": {
+            "A": "will not likely be adopted by healthcare systems",
+            "B": "produce large amounts of data to be monitored and stored",
+            "C": "are uncomfortable and therefore unpopular with patients",
+            "D": "have consistently yielded reliable information for clinicians"
+          },
+          "answer": "B",
+          "question_type": "standard",
+          "special_content": "",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "14",
+          "question": "The word \"rigorous\" in the passage is closest in meaning to",
+          "options": {
+            "A": "general",
+            "B": "preliminary",
+            "C": "rapid",
+            "D": "thorough"
+          },
+          "answer": "D",
+          "question_type": "highlight",
+          "special_content": "As they evolve, they present opportunities to redefine disease management, although <mark>rigorous</mark> validation is essential for clinical integration.",
+          "inserted_sentence": ""
+        },
+        {
+          "question_number": "15",
+          "question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nThey are less expensive and less invasive for the patient than surgical biopsies.\n\nWhere would the sentence best fit? Select a location [■] to add the sentence to the passage.",
+          "options": {
+            "A": "Location 1",
+            "B": "Location 2",
+            "C": "Location 3",
+            "D": "Location 4"
+          },
+          "answer": "B",
+          "question_type": "insertion",
+          "special_content": "[■] Tumors release cells and DNA fragments into the bloodstream, which liquid biopsies can detect through a simple blood draw—eliminating the need for surgical tissue sampling while still enabling the monitoring of tumor progression and genetic mutations. [■] Yet, this innovative technique has drawbacks such as false positives, which can lead to unnecessary medical interventions. [■] Meanwhile, wearable devices... [■]",
+          "inserted_sentence": "They are less expensive and less invasive for the patient than surgical biopsies."
+        }
+      ],
+      "paper_type": "M2"
+    }
+  ]
+}
