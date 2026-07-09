@@ -748,6 +748,13 @@
         </symbol>
     </svg>
 
+    <!-- 全屏加载动画 -->
+    <div id="full-page-loader" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(255,255,255,0.9); z-index:9999; justify-content:center; align-items:center; flex-direction:column;">
+        <div style="border: 6px solid #f3f3f3; border-top: 6px solid #2b6668; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;"></div>
+        <div id="full-page-loading-text" style="margin-top:20px; color:#2b6668; font-size:18px; font-weight:bold;">Loading Test Data...</div>
+        <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
+    </div>
+
     <!-- Dashboard 覆盖层 -->
     <div id="upload-overlay">
         <div class="dashboard-container">
@@ -798,11 +805,15 @@
 
     <div class="app-container" style="display:none;" id="app-main">
         <div class="header">
-            <div class="header-left"></div>
+            <div class="header-left">
+                <button id="btn-home-page" onclick="location.reload()" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.4); color:white; padding:4px 12px; border-radius:4px; cursor:not-allowed; font-size:13px; font-weight:bold; transition:all 0.2s; opacity:0.5;" disabled>&larr; Home Page</button>
+            </div>
             <div class="header-right" id="header-buttons"></div>
         </div>
         <div class="sub-header">
-            <div class="sub-header-left"><span id="section-title">Reading</span> <span id="section-info"></span></div>
+            <div class="sub-header-left">
+                <span id="section-title">Reading</span> <span id="section-info"></span>
+            </div>
             <div class="sub-header-right" id="timer-container">
                 <span id="timer-display" class="timer-text">--:--</span>
                 <div class="timer-toggle" id="btn-view-answers" style="display:none; color:#1a73e8; margin-right: 15px;"
@@ -824,6 +835,13 @@
     </div>
 
     <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            alert('CRITICAL JS ERROR: ' + message + '\nLine: ' + lineno + '\nColumn: ' + colno + '\nStack: ' + (error ? error.stack : ''));
+            const errDiv = document.createElement('div');
+            errDiv.style.cssText = 'position:fixed; top:10px; left:10px; z-index:999999; background:red; color:white; padding:20px; font-size:16px; border:2px solid black; max-width:90vw; word-wrap:break-word; max-height:80vh; overflow:auto;';
+            errDiv.innerText = 'JS CRASH: ' + message + '\nLine: ' + lineno + '\n\n' + (error ? error.stack : '');
+            document.body.appendChild(errDiv);
+        };
         const MD_URLS = [
             "./source.md",
             "https://cdn.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/source.md",
@@ -836,6 +854,7 @@
         let mdDataStore = [];
         let usedMdPassages = new Set();
         let testData = [];
+        let preloadedJson = {}; // Background cache for JSON tests
         let rawTestJson = null; // Store the original raw JSON
         let currentTestFilename = "Local Upload"; // Store the filename
         let currentIndex = 0;
@@ -869,27 +888,49 @@
         async function fetchQuestionBank() {
             const qbList = document.getElementById('qb-list');
             try {
-                const response = await fetch('./title.txt');
+                // Now fetching title.txt directly from github pages
+                const response = await fetch('https://yuyu1221-7.github.io/toefl-practice/reading_qb/title.txt');
                 if (!response.ok) throw new Error("Failed to fetch title.txt");
                 const text = await response.text();
-
+                
                 const lines = text.split('\n').map(l => l.trim()).filter(l => l.endsWith('.json'));
                 qbFiles = lines.map(filename => ({
-                    name: filename,
-                    download_url: `https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/reading_qb/${filename}`
+                    filename: filename, // e.g. 2026.6.27_set1.json
+                    name: filename.replace('.json', ''), // e.g. 2026.6.27_set1
+                    download_url: `https://yuyu1221-7.github.io/toefl-practice/reading_qb/${filename}`
                 }));
-
+                
                 renderQbList(qbFiles);
+                
+                // Preload all tests in the background to make clicking instant
+                qbFiles.forEach(f => {
+                    fetch(f.download_url).then(r => r.json()).then(j => {
+                        preloadedJson[f.filename] = j;
+                    }).catch(e => console.log("Preload failed for", f.filename));
+                });
             } catch (e) {
-                qbList.innerHTML = `<div style="text-align:center; color:red; padding:40px 0;">Failed to load Question Bank. Check your network or make sure title.txt exists.</div>`;
+                qbList.innerHTML = `<div style="text-align:center; color:red; padding:40px 0;">Failed to load Question Bank. Check your network.</div>`;
             }
         }
 
         function renderQbList(files) {
             const qbList = document.getElementById('qb-list');
             qbList.innerHTML = '';
+            
+            // Add summary counter
+            if (qbFiles.length > 0) {
+                const summary = document.createElement('div');
+                summary.style.cssText = "font-size:13px; color:#666; margin-bottom:10px; font-weight:bold;";
+                if (files.length === qbFiles.length) {
+                    summary.innerText = `Total available tests: ${qbFiles.length}`;
+                } else {
+                    summary.innerText = `Showing ${files.length} of ${qbFiles.length} tests`;
+                }
+                qbList.appendChild(summary);
+            }
+
             if (files.length === 0) {
-                qbList.innerHTML = `<div style="text-align:center; color:#666; padding:40px 0;">No matching files found.</div>`;
+                qbList.innerHTML += `<div style="text-align:center; color:#666; padding:40px 0;">No matching files found.</div>`;
                 return;
             }
             files.forEach(f => {
@@ -898,11 +939,12 @@
                 item.innerHTML = `
             <div>
                 <div class="qb-item-title">${f.name}</div>
-                <div class="qb-item-subtitle">GitHub Source</div>
+                <div class="qb-item-subtitle">GitHub Pages Source</div>
             </div>
             <div style="color:#2b6668; font-weight:bold;">&rarr; Start</div>
         `;
-                item.addEventListener('click', () => loadTestFromUrl(f.download_url, f.name));
+                // loadTestFromUrl must still take the correct filename with .json so History works properly
+                item.addEventListener('click', () => loadTestFromUrl(f.download_url, f.filename));
                 qbList.appendChild(item);
             });
         }
@@ -919,8 +961,16 @@
         });
 
         async function loadTestFromUrl(originalUrl, filename) {
-            document.getElementById('loading-text').style.display = 'block';
-            document.getElementById('loading-text').innerText = 'Downloading test...';
+            document.getElementById('full-page-loader').style.display = 'flex';
+            document.getElementById('full-page-loading-text').innerText = 'Starting test...';
+
+            if (preloadedJson[filename]) {
+                currentTestFilename = filename;
+                await handleJson(preloadedJson[filename]);
+                return;
+            }
+
+            document.getElementById('full-page-loading-text').innerText = 'Downloading test...';
 
             const urlsToTry = [
                 `https://cdn.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/reading_qb/${filename}`,
@@ -943,7 +993,7 @@
 
             if (!json) {
                 alert("Error loading test from GitHub. Please check your network connection.");
-                document.getElementById('loading-text').style.display = 'none';
+                document.getElementById('full-page-loader').style.display = 'none';
                 return;
             }
 
@@ -952,7 +1002,7 @@
                 await handleJson(json);
             } catch (e) {
                 alert("Error initializing test: " + e.message);
-                document.getElementById('loading-text').style.display = 'none';
+                document.getElementById('full-page-loader').style.display = 'none';
             }
         }
 
@@ -964,27 +1014,35 @@
             // Calculate total score dynamically
             let ogScore = 0, ogTotal = 0, fullScore = 0, fullTotal = 0;
             testData.forEach(item => {
-                if (!item.isExperimental && (item.type === 'make_a_choice' || item.type === 'free_response' || item.type === 'fill-in-blanks' || item.type === 'sentence-selection' || item.type === 'insert-text' || item.type === 'highlight')) {
+                if (!item.isExperimental && (item.type === 'make_a_choice' || item.type === 'free_response' || item.type === 'fill-in-blanks' || item.type === 'sentence-selection' || item.type === 'insert-text' || item.type === 'highlight' || item.type === 'multiple-choice-text' || item.type === 'multiple-choice-image')) {
                     let maxP = item.type === 'fill-in-blanks' ? 2 : 1;
                     let earnedP = item.answer === item.correctAnswer ? 1 : 0;
                     if (item.type === 'fill-in-blanks') {
                         earnedP = 0;
                         if (item.answers && item.answers.length > 0) {
-                            let correctCount = item.blanksData.filter((d, i) => item.answers[i] && item.answers[i].toLowerCase() === d.ans.toLowerCase()).length;
-                            if (correctCount === item.blanksData.length) earnedP = 2;
+                            const blanksData = [];
+                            item.content.replace(/([a-zA-Z0-9\-\']*)\[([^\]]+)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => {
+                                blanksData.push(ans); return '';
+                            });
+                            let correctCount = blanksData.filter((ans, i) => item.answers[i] && item.answers[i].toLowerCase() === ans.toLowerCase()).length;
+                            if (correctCount === blanksData.length) earnedP = 2;
                             else if (correctCount > 0) earnedP = 1;
                         }
                     }
                     ogTotal += maxP; ogScore += earnedP;
                     fullTotal += maxP; fullScore += earnedP;
-                } else if (item.isExperimental && (item.type === 'make_a_choice' || item.type === 'free_response' || item.type === 'fill-in-blanks' || item.type === 'sentence-selection' || item.type === 'insert-text' || item.type === 'highlight')) {
+                } else if (item.isExperimental && (item.type === 'make_a_choice' || item.type === 'free_response' || item.type === 'fill-in-blanks' || item.type === 'sentence-selection' || item.type === 'insert-text' || item.type === 'highlight' || item.type === 'multiple-choice-text' || item.type === 'multiple-choice-image')) {
                     let maxP = item.type === 'fill-in-blanks' ? 2 : 1;
                     let earnedP = item.answer === item.correctAnswer ? 1 : 0;
                     if (item.type === 'fill-in-blanks') {
                         earnedP = 0;
                         if (item.answers && item.answers.length > 0) {
-                            let correctCount = item.blanksData.filter((d, i) => item.answers[i] && item.answers[i].toLowerCase() === d.ans.toLowerCase()).length;
-                            if (correctCount === item.blanksData.length) earnedP = 2;
+                            const blanksData = [];
+                            item.content.replace(/([a-zA-Z0-9\-\']*)\[([^\]]+)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => {
+                                blanksData.push(ans); return '';
+                            });
+                            let correctCount = blanksData.filter((ans, i) => item.answers[i] && item.answers[i].toLowerCase() === ans.toLowerCase()).length;
+                            if (correctCount === blanksData.length) earnedP = 2;
                             else if (correctCount > 0) earnedP = 1;
                         }
                     }
@@ -1010,7 +1068,13 @@
                 }))
             };
 
-            let history = JSON.parse(localStorage.getItem('toeflHistory') || '[]');
+            let history = [];
+            try {
+                history = JSON.parse(localStorage.getItem('toeflHistory') || '[]');
+                if (!Array.isArray(history)) history = [];
+            } catch(e) {
+                history = [];
+            }
             // Delete any old record with the same filename to avoid duplicates if re-taken
             history = history.filter(h => h.filename !== currentTestFilename);
             history.unshift(historyRecord);
@@ -1029,7 +1093,13 @@
 
         function loadHistory() {
             const list = document.getElementById('history-list');
-            let history = JSON.parse(localStorage.getItem('toeflHistory') || '[]');
+            let history = [];
+            try {
+                history = JSON.parse(localStorage.getItem('toeflHistory') || '[]');
+                if (!Array.isArray(history)) history = [];
+            } catch(e) {
+                history = [];
+            }
             list.innerHTML = '';
             if (history.length === 0) {
                 list.innerHTML = `<div style="text-align:center; color:#666; padding:40px 0;">No history found. Complete a test first!</div>`;
@@ -1234,7 +1304,8 @@
             const file = files[0];
             if (!file.name.endsWith('.json')) { alert('Please upload a JSON file.'); return; }
 
-            document.getElementById('loading-text').style.display = 'block';
+            document.getElementById('full-page-loader').style.display = 'flex';
+            document.getElementById('full-page-loading-text').innerText = 'Loading File...';
 
             const reader = new FileReader();
             reader.onload = async function (e) {
@@ -1245,7 +1316,7 @@
                 } catch (err) {
                     console.error(err);
                     alert("Error parsing JSON file: " + err.message + "\n" + err.stack);
-                    document.getElementById('loading-text').style.display = 'none';
+                    document.getElementById('full-page-loader').style.display = 'none';
                 }
             };
             reader.readAsText(file);
@@ -1276,6 +1347,7 @@
                 currentIndex = testData.length - 1;
 
                 uploadOverlay.classList.add('hidden');
+                document.getElementById('full-page-loader').style.display = 'none';
                 appMain.style.display = 'flex';
                 renderCurrentScreen();
             }
@@ -1641,12 +1713,12 @@
                 });
             }
 
-            // Preload images
-            let imagesToPreload = [];
-            json.passages.forEach(p => {
-                if (p.left_content && p.left_content.image) imagesToPreload.push(p.left_content.image);
-            });
+            // Preload all images from the entire JSON data
+            const jsonStr = JSON.stringify(json);
+            const imageRegex = /https?:\/\/[^\s"']+\.(?:png|jpg|jpeg|gif|webp|svg)/gi;
+            let imagesToPreload = jsonStr.match(imageRegex) || [];
             imagesToPreload = [...new Set(imagesToPreload)];
+            
             imagesToPreload.forEach(src => {
                 const img = new Image();
                 img.src = src;
@@ -1657,6 +1729,7 @@
 
         function startTest() {
             uploadOverlay.classList.add('hidden');
+            document.getElementById('full-page-loader').style.display = 'none';
             appMain.style.display = 'flex';
             currentIndex = 0;
             currentModule = 1;
@@ -1685,6 +1758,21 @@
 
             const firstIndexOfCurrentModule = testData.findIndex(q => q.module === currentModule);
             const disableBack = (currentIndex === firstIndexOfCurrentModule);
+
+            const btnHome = document.getElementById('btn-home-page');
+            if (btnHome) {
+                if (isResult || isAnswerReviewMode) {
+                    btnHome.disabled = false;
+                    btnHome.style.display = 'block';
+                    btnHome.style.opacity = '1';
+                    btnHome.style.cursor = 'pointer';
+                } else {
+                    btnHome.disabled = true;
+                    btnHome.style.display = 'none';
+                    btnHome.style.opacity = '0.5';
+                    btnHome.style.cursor = 'not-allowed';
+                }
+            }
 
             let html = `
         <div class="volume-wrapper">
@@ -1772,16 +1860,19 @@
                 const btnBack = document.getElementById('btn-back');
                 if (btnBack) btnBack.addEventListener('click', () => { if (!disableBack && currentIndex > 0) { currentIndex--; renderCurrentScreen(); } });
 
-                document.getElementById('btn-next').addEventListener('click', () => {
-                    if (currentIndex < testData.length - 1) {
-                        currentIndex++;
-                        if (testData[currentIndex].module !== currentModule && testData[currentIndex].module === 2) {
-                            timeRemaining = 9 * 60; // 9 minutes for M2
+                const btnNext = document.getElementById('btn-next');
+                if (btnNext) {
+                    btnNext.addEventListener('click', () => {
+                        if (currentIndex < testData.length - 1) {
+                            currentIndex++;
+                            if (testData[currentIndex].module !== currentModule && testData[currentIndex].module === 2) {
+                                timeRemaining = 9 * 60; // 9 minutes for M2
+                            }
+                            currentModule = testData[currentIndex].module;
+                            renderCurrentScreen();
                         }
-                        currentModule = testData[currentIndex].module;
-                        renderCurrentScreen();
-                    }
-                });
+                    });
+                }
             }
         }
 
@@ -1804,7 +1895,7 @@
             }
 
             const timerContainer = document.getElementById('timer-container');
-            if (data.type === 'intro-screen' || data.type === 'end-screen' || data.type === 'result-screen') {
+            if (data.type === 'intro-screen' || data.type === 'end-screen' || data.type === 'result-screen' || isAnswerReviewMode || isReviewMode) {
                 timerContainer.style.visibility = 'hidden';
                 isTimerRunning = false;
             } else {
@@ -1894,35 +1985,35 @@
                     }
                 }, 100);
 
+                function updateState(el) {
+                    if (el.value.trim() === '') { el.classList.add('is-empty'); el.classList.remove('is-filled'); }
+                    else { el.classList.remove('is-empty'); el.classList.add('is-filled'); }
+                }
+
+                function adjustWidth(el) {
+                    if (el.value.trim() !== '' && document.activeElement !== el) {
+                        const span = document.createElement('span');
+                        span.style.fontFamily = 'inherit';
+                        span.style.fontSize = '16px';
+                        span.style.visibility = 'hidden';
+                        span.style.whiteSpace = 'pre';
+                        span.style.position = 'absolute';
+                        span.textContent = el.value;
+                        document.body.appendChild(span);
+                        el.style.width = span.getBoundingClientRect().width + 'px';
+                        document.body.removeChild(span);
+                        el.style.fontFamily = 'inherit';
+                        el.style.letterSpacing = 'normal';
+                        el.style.fontSize = '16px';
+                    } else {
+                        el.style.width = `calc(${el.getAttribute('maxlength')} * 1.3ch)`;
+                        el.style.fontFamily = 'Consolas, monospace';
+                        el.style.letterSpacing = '0.3ch';
+                        el.style.fontSize = '16px';
+                    }
+                }
+
                 inputs.forEach((input, i) => {
-                    function updateState(el) {
-                        if (el.value.trim() === '') { el.classList.add('is-empty'); el.classList.remove('is-filled'); }
-                        else { el.classList.remove('is-empty'); el.classList.add('is-filled'); }
-                    }
-
-                    function adjustWidth(el) {
-                        if (el.value.trim() !== '' && document.activeElement !== el) {
-                            const span = document.createElement('span');
-                            span.style.fontFamily = 'inherit';
-                            span.style.fontSize = '16px';
-                            span.style.visibility = 'hidden';
-                            span.style.whiteSpace = 'pre';
-                            span.style.position = 'absolute';
-                            span.textContent = el.value;
-                            document.body.appendChild(span);
-                            el.style.width = span.getBoundingClientRect().width + 'px';
-                            document.body.removeChild(span);
-                            el.style.fontFamily = 'inherit';
-                            el.style.letterSpacing = 'normal';
-                            el.style.fontSize = '16px';
-                        } else {
-                            el.style.width = `calc(${el.getAttribute('maxlength')} * 1.3ch)`;
-                            el.style.fontFamily = 'Consolas, monospace';
-                            el.style.letterSpacing = '0.3ch';
-                            el.style.fontSize = '16px';
-                        }
-                    }
-
                     input.addEventListener('focus', function () { adjustWidth(this); });
                     input.addEventListener('blur', function () { updateState(this); adjustWidth(this); });
 
