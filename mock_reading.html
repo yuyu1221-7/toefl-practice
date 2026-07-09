@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TOEFL Mock Test - Full Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #a0a0a0;
+            color: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+
+        ::selection {
+            background-color: #cce2e2;
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 7px;
+            border: 3px solid white;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+
+        .app-container {
+            width: 90vw;
+            max-width: 1200px;
+            height: 88vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 拖拽上传与题库面板 */
+        #upload-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(240, 244, 248, 1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s;
+        }
+
+        #upload-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .dashboard-container {
+            width: 90vw;
+            max-width: 1200px;
+            height: 80vh;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+        }
+
+        .dashboard-left {
+            flex: 2;
+            border-right: 1px solid #eaeaea;
+            display: flex;
+            flex-direction: column;
+            background: #fafafa;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            border-bottom: 1px solid #eaeaea;
+            background: #fff;
+            flex-shrink: 0;
+        }
+
+        .dash-tab {
+            flex: 1;
+            padding: 18px 0;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        .dash-tab:hover {
+            background: #f9f9f9;
+        }
+
+        .dash-tab.active {
+            color: #2b6668;
+            border-bottom-color: #2b6668;
+        }
+
+        .dash-content {
+            flex: 1;
+            padding: 25px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .dash-content.active {
+            display: flex;
+        }
+
+        .qb-list,
+        .history-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-right: 5px;
+        }
+
+        .qb-item,
+        .history-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qb-item:hover,
+        .history-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: #2b6668;
+        }
+
+        .qb-item-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .qb-item-subtitle {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .dashboard-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            padding: 40px;
+        }
+
+        .upload-box {
+            border: 3px dashed #2b6668;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+            background: #f9f9f9;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .upload-box:hover {
+            background: #f0f8f8;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2b6668;
+            color: white;
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            z-index: 10;
+            flex-shrink: 0;
+        }
+
+        .header-left {
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            height: 42px;
+            padding: 0 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #2b6668;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background-color: #f0f0f0;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        /* Sub-header */
+        .sub-header {
+            background-color: white;
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            border-bottom: 1px solid #000;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .sub-header-left {
+            color: #333;
+            display: flex;
+            gap: 8px;
+        }
+
+        .sub-header-left span:first-child {
+            font-weight: bold;
+        }
+
+        .sub-header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #2b6668;
+            visibility: hidden;
+        }
+
+        .timer-text {
+            color: #000;
+            font-weight: normal;
+            font-size: 15px;
+        }
+
+        .timer-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+            color: #2b6668;
+        }
+
+        .icons-hide-timer {
+            height: 20px;
+            width: 20px;
+            fill: currentColor;
+        }
+
+        /* Content */
+        .content-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: white;
+        }
+
+        .question-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 25px;
+            flex-shrink: 0;
+        }
+
+        .split-layout {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            gap: 40px;
+            padding: 0 10px;
+        }
+
+        .left-pane {
+            flex: 1;
+            padding: 30px 10px 80px 30px;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .right-pane {
+            flex: 1;
+            padding: 30px 30px 80px 10px;
+            overflow-y: auto;
+            font-size: 18px;
+            background: #fff;
+        }
+
+        .single-layout {
+            flex: 1;
+            padding: 40px 60px 80px 60px;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .review-layout {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 35px 40px;
+            height: 100%;
+        }
+
+        .review-instruction {
+            flex-shrink: 0;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .review-table-container {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+        }
+
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .review-table th {
+            background-color: #2b6668;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border-right: 1px solid #2a5a5d;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-clip: padding-box;
+            box-shadow: 0 1px 0 #2a5a5d;
+        }
+
+        .review-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            border-right: 1px solid #eee;
+            cursor: pointer;
+        }
+
+        .review-table tr:hover td {
+            background-color: #f0f8f8;
+        }
+
+        .review-table tr.selected td {
+            background-color: #d9e8e8;
+        }
+
+        .status-answered {
+            background-color: #e8f4f4;
+        }
+
+        .status-not-seen {
+            color: #999;
+        }
+
+        .vocab-highlight,
+        .inserted-text {
+            background-color: #2b6668;
+            color: #ffffff;
+            padding: 2px 0;
+            font-weight: bold;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* 音量面板包装器 */
+        .volume-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 音量面板 */
+        .volume-popover {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 24px 15px 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            z-index: 100;
+            width: 220px;
+            color: #333;
+        }
+
+        .volume-popover.active {
+            display: flex;
+        }
+
+        .volume-close {
+            position: absolute;
+            top: 2px;
+            right: 8px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .volume-close:hover {
+            color: #333;
+        }
+
+        .volume-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+            gap: 3px;
+        }
+
+        .volume-bar {
+            flex: 1;
+            background-color: #d3d3d3;
+            border-radius: 2px;
+        }
+
+        .volume-bar.active {
+            background-color: #2b6668;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, #2b6668 50%, #d3d3d3 50%);
+            outline: none;
+            margin-top: 5px;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2b6668;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .vocab-highlight,
+        .inserted-text {
+            background-color: #2b6668;
+            color: #ffffff;
+            padding: 2px 0;
+            font-weight: bold;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* 填空题输入框 */
+        .fill-blank-input {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            background-image: none;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            background-size: 100% 2px;
+            outline: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            color: inherit;
+            letter-spacing: normal;
+            vertical-align: baseline;
+            transition: background-color 0.12s ease;
+            box-sizing: content-box;
+            text-indent: 0.1ch;
+        }
+
+        .fill-blank-input:hover {
+            background-color: #dcdcdc !important;
+        }
+
+        .fill-blank-input.is-empty {
+            background-color: #dcdcdc;
+            background-image: repeating-linear-gradient(90deg, transparent 0, transparent 0.1ch, #000 0.1ch, #000 1.1ch, transparent 1.1ch, transparent 1.3ch);
+            min-width: 1ch;
+        }
+
+        .fill-blank-input.is-filled {
+            background-color: transparent;
+            background-image: none;
+            color: inherit;
+        }
+
+        .fill-blank-input.is-filled:focus,
+        .fill-blank-input.is-empty:focus {
+            background-color: #dcdcdc !important;
+            background-image: repeating-linear-gradient(90deg,
+                    transparent 0,
+                    transparent 0.1ch,
+                    #000 0.1ch,
+                    #000 1.1ch,
+                    transparent 1.1ch,
+                    transparent 1.3ch) !important;
+            color: inherit !important;
+        }
+
+        .passage-fill-text {
+            font-size: 1rem;
+            line-height: 2;
+            color: #1e293b;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-left: -10px;
+            margin-right: -10px;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .option-radio {
+            width: 20px;
+            height: 20px;
+            accent-color: #2b6668;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .insert-square {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #4a7c7e;
+            margin: 0 4px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .insert-square:hover {
+            background-color: #2b6668;
+        }
+
+        /* 句子选择题高亮逻辑 */
+        .selectable-sentence {
+            cursor: pointer;
+            transition: background-color 0.1s;
+            border-radius: 2px;
+        }
+
+        .selectable-sentence:not(.inserted-text):hover {
+            background-color: #e0e0e0;
+        }
+
+        .intro-table {
+            width: 100%;
+            max-width: 650px;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 20px;
+            border: 2px solid #3b2f2f;
+            font-size: 15px;
+        }
+
+        .intro-table th {
+            background-color: #6ed3c3;
+            border: 1px solid #3b2f2f;
+            padding: 10px 15px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .intro-table td {
+            border: 1px solid #3b2f2f;
+            padding: 10px 15px;
+            background-color: #fff;
+        }
+
+        .transition-page {
+            max-width: 650px;
+            height: 100%;
+            overflow-y: auto;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: left;
+        }
+
+        .transition-page h2 {
+            font-weight: normal;
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .transition-page hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .transition-page p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .icon {
+            fill: currentColor;
+            width: 18px;
+            height: 18px;
+        }
+
+        .result-correct {
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        .result-incorrect {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .result-summary {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <svg style="display: none;">
+        <symbol id="icons-hide-timer" viewBox="0 0 29 26">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20.3454 5.83175C18.5135 4.9499 16.5183 4.35014 14.5002 4.35014C11.5394 4.35014 8.6279 5.64004 6.21015 7.21874C2.69048 9.51581 0.231252 12.3891 0.231252 12.3891C-0.0770839 12.7493 -0.0770839 13.2788 0.231252 13.6389C0.231252 13.6389 2.69042 16.5122 6.21015 18.8093C6.43132 18.9537 6.65658 19.0962 6.88681 19.2348L2.24576 23.8564C1.86773 24.2318 1.86773 24.8423 2.24576 25.2176C2.62271 25.5941 3.23573 25.5941 3.61267 25.2176L8.65458 20.1964C10.4865 21.0782 12.4817 21.678 14.4998 21.678C17.4606 21.678 20.3721 20.3881 22.7898 18.8094C26.3095 16.5123 28.7687 13.639 28.7687 13.639C29.0771 13.2788 29.0771 12.7494 28.7687 12.3892C28.7687 12.3892 26.3096 9.51589 22.7898 7.21882C22.5687 7.07442 22.3434 6.93196 22.1132 6.79336L26.7831 2.14274C27.1603 1.76734 27.1603 1.15709 26.7831 0.781705C26.4062 0.406098 25.7934 0.406098 25.4164 0.781705L20.3454 5.83175ZM18.5357 10.3562C19.0393 11.1148 19.3333 12.0235 19.3333 12.9997C19.3333 15.6489 17.1738 17.7986 14.5144 17.7986C13.5333 17.7986 12.6208 17.5068 11.86 17.0043L18.5357 10.3562ZM17.1688 8.99498L10.4928 15.6434C9.98835 14.8857 9.69531 13.977 9.69531 12.9999C9.69531 10.3515 11.8539 8.20104 14.5141 8.20104C15.4944 8.20104 16.4069 8.4937 17.1686 8.99526L17.1688 8.99498Z"
+                fill="currentColor"></path>
+        </symbol>
+        <symbol id="icons-show-timer" viewBox="0 0 29 17">
+            <path
+                d="M28.544 7.91434C24.4512 2.7579 19.5989 0 14.4999 0C9.40097 0 4.54834 2.75785 0.455923 7.91434L0 8.5L0.455712 9.08566C4.54867 14.2421 9.40076 17 14.5003 17C19.5998 17 24.4519 14.2706 28.5443 9.11426L29 8.5286L28.544 7.91434ZM14.4999 14.1665C12.9889 14.1665 11.5397 13.5695 10.4712 12.5068C9.40276 11.444 8.80246 10.0028 8.80246 8.49989C8.80246 6.997 9.4027 5.55569 10.4712 4.49302C11.5397 3.43034 12.9889 2.8333 14.4999 2.8333C16.011 2.8333 17.4602 3.43029 18.5287 4.49302C19.5971 5.55575 20.1974 6.997 20.1974 8.49989C20.1974 10.0028 19.5972 11.4441 18.5287 12.5068C17.4601 13.5694 16.011 14.1665 14.4999 14.1665Z"
+                fill="currentColor"></path>
+        </symbol>
+    </svg>
+
+    <!-- Dashboard 覆盖层 -->
+    <div id="upload-overlay">
+        <div class="dashboard-container">
+            <!-- Left Side: GitHub Question Bank / History -->
+            <div class="dashboard-left">
+                <div class="dashboard-tabs">
+                    <button class="dash-tab active" id="tab-qb" onclick="switchDashTab('qb')">Question Bank</button>
+                    <button class="dash-tab" id="tab-history" onclick="switchDashTab('history')">Local History</button>
+                </div>
+
+                <div class="dash-content active" id="content-qb">
+                    <div style="margin-bottom: 15px; position: relative;">
+                        <input type="text" id="qb-search" placeholder="Search test name..."
+                            style="width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px; outline: none;">
+                    </div>
+                    <div id="qb-list" class="qb-list">
+                        <div style="text-align: center; color: #666; padding: 40px 0;">Loading Question Bank from
+                            GitHub...</div>
+                    </div>
+                </div>
+
+                <div class="dash-content" id="content-history">
+                    <div id="history-list" class="history-list">
+                        <div style="text-align: center; color: #666; padding: 40px 0;">No history found. Complete a test
+                            first!</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Local Upload -->
+            <div class="dashboard-right">
+                <div class="upload-box" id="drop-zone">
+                    <svg style="width:64px;height:64px;color:#2b6668;margin-bottom:20px;" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h2 style="color:#2b6668;margin-bottom:10px;">Local JSON Upload</h2>
+                    <p style="color:#666;">Drag & Drop or Click Here</p>
+                    <input type="file" id="file-input" style="display:none" accept=".json">
+                    <div id="loading-text" style="display:none; margin-top: 20px; color: #2b6668; font-weight: bold;">
+                        Loading MD Data...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container" style="display:none;" id="app-main">
+        <div class="header">
+            <div class="header-left"></div>
+            <div class="header-right" id="header-buttons"></div>
+        </div>
+        <div class="sub-header">
+            <div class="sub-header-left"><span id="section-title">Reading</span> <span id="section-info"></span></div>
+            <div class="sub-header-right" id="timer-container">
+                <span id="timer-display" class="timer-text">--:--</span>
+                <div class="timer-toggle" id="btn-view-answers" style="display:none; color:#1a73e8; margin-right: 15px;"
+                    onclick="isAnswerReviewMode=true; currentIndex=0; renderCurrentScreen();">
+                    <svg class="icons-hide-timer" aria-hidden="true" style="fill:#1a73e8;">
+                        <use xlink:href="#icons-show-timer"></use>
+                    </svg>
+                    <span>View Answers</span>
+                </div>
+                <div class="timer-toggle" id="btn-hide-time">
+                    <svg class="icons-hide-timer" id="eye-icon" aria-hidden="true">
+                        <use xlink:href="#icons-hide-timer"></use>
+                    </svg>
+                    <span id="hide-time-text">Hide Time</span>
+                </div>
+            </div>
+        </div>
+        <div class="content-box" id="content-box"></div>
+    </div>
+
+    <script>
+        const MD_URLS = [
+            "./source.md",
+            "https://cdn.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/source.md",
+            "https://ghproxy.net/https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md",
+            "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/source.md"
+        ];
+
+        const GITHUB_QB_API = "https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/reading_qb";
+
+        let mdDataStore = [];
+        let usedMdPassages = new Set();
+        let testData = [];
+        let rawTestJson = null; // Store the original raw JSON
+        let currentTestFilename = "Local Upload"; // Store the filename
+        let currentIndex = 0;
+        let currentModule = 1;
+        let timeRemaining = 0;
+        let timerInterval;
+        let isTimerRunning = false;
+        let isTimeHidden = false;
+        let isReviewMode = false;
+        let isAnswerReviewMode = false;
+        let answersRevealed = false;
+        let selectedReviewIndex = null;
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        // --- Dashboard Logic ---
+        let qbFiles = [];
+
+        function switchDashTab(tab) {
+            document.getElementById('tab-qb').classList.remove('active');
+            document.getElementById('tab-history').classList.remove('active');
+            document.getElementById('content-qb').classList.remove('active');
+            document.getElementById('content-history').classList.remove('active');
+
+            document.getElementById('tab-' + tab).classList.add('active');
+            document.getElementById('content-' + tab).classList.add('active');
+
+            if (tab === 'history') loadHistory();
+        }
+
+        async function fetchQuestionBank() {
+            const qbList = document.getElementById('qb-list');
+            try {
+                const response = await fetch('./title.txt');
+                if (!response.ok) throw new Error("Failed to fetch title.txt");
+                const text = await response.text();
+
+                const lines = text.split('\n').map(l => l.trim()).filter(l => l.endsWith('.json'));
+                qbFiles = lines.map(filename => ({
+                    name: filename,
+                    download_url: `https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/reading_qb/${filename}`
+                }));
+
+                renderQbList(qbFiles);
+            } catch (e) {
+                qbList.innerHTML = `<div style="text-align:center; color:red; padding:40px 0;">Failed to load Question Bank. Check your network or make sure title.txt exists.</div>`;
+            }
+        }
+
+        function renderQbList(files) {
+            const qbList = document.getElementById('qb-list');
+            qbList.innerHTML = '';
+            if (files.length === 0) {
+                qbList.innerHTML = `<div style="text-align:center; color:#666; padding:40px 0;">No matching files found.</div>`;
+                return;
+            }
+            files.forEach(f => {
+                const item = document.createElement('div');
+                item.className = 'qb-item';
+                item.innerHTML = `
+            <div>
+                <div class="qb-item-title">${f.name}</div>
+                <div class="qb-item-subtitle">GitHub Source</div>
+            </div>
+            <div style="color:#2b6668; font-weight:bold;">&rarr; Start</div>
+        `;
+                item.addEventListener('click', () => loadTestFromUrl(f.download_url, f.name));
+                qbList.appendChild(item);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchQuestionBank();
+            const searchInput = document.getElementById('qb-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    renderQbList(qbFiles.filter(f => f.name.toLowerCase().includes(query)));
+                });
+            }
+        });
+
+        async function loadTestFromUrl(originalUrl, filename) {
+            document.getElementById('loading-text').style.display = 'block';
+            document.getElementById('loading-text').innerText = 'Downloading test...';
+
+            const urlsToTry = [
+                `https://cdn.jsdelivr.net/gh/yuyu1221-7/toefl-practice@main/reading_qb/${filename}`,
+                `https://ghproxy.net/https://raw.githubusercontent.com/yuyu1221-7/toefl-practice/main/reading_qb/${filename}`,
+                originalUrl
+            ];
+
+            let json = null;
+            for (const url of urlsToTry) {
+                try {
+                    const res = await fetch(url);
+                    if (res.ok) {
+                        json = await res.json();
+                        break;
+                    }
+                } catch (e) {
+                    console.log("Failed fetching from:", url);
+                }
+            }
+
+            if (!json) {
+                alert("Error loading test from GitHub. Please check your network connection.");
+                document.getElementById('loading-text').style.display = 'none';
+                return;
+            }
+
+            try {
+                currentTestFilename = filename;
+                await handleJson(json);
+            } catch (e) {
+                alert("Error initializing test: " + e.message);
+                document.getElementById('loading-text').style.display = 'none';
+            }
+        }
+
+        // --- History Logic ---
+        function saveHistory() {
+            // Only save if we actually have a test and raw Json
+            if (!rawTestJson || testData.length === 0) return;
+
+            // Calculate total score dynamically
+            let ogScore = 0, ogTotal = 0, fullScore = 0, fullTotal = 0;
+            testData.forEach(item => {
+                if (!item.isExperimental && (item.type === 'make_a_choice' || item.type === 'free_response' || item.type === 'fill-in-blanks' || item.type === 'sentence-selection' || item.type === 'insert-text' || item.type === 'highlight')) {
+                    let maxP = item.type === 'fill-in-blanks' ? 2 : 1;
+                    let earnedP = item.answer === item.correctAnswer ? 1 : 0;
+                    if (item.type === 'fill-in-blanks') {
+                        earnedP = 0;
+                        if (item.answers && item.answers.length > 0) {
+                            let correctCount = item.blanksData.filter((d, i) => item.answers[i] && item.answers[i].toLowerCase() === d.ans.toLowerCase()).length;
+                            if (correctCount === item.blanksData.length) earnedP = 2;
+                            else if (correctCount > 0) earnedP = 1;
+                        }
+                    }
+                    ogTotal += maxP; ogScore += earnedP;
+                    fullTotal += maxP; fullScore += earnedP;
+                } else if (item.isExperimental && (item.type === 'make_a_choice' || item.type === 'free_response' || item.type === 'fill-in-blanks' || item.type === 'sentence-selection' || item.type === 'insert-text' || item.type === 'highlight')) {
+                    let maxP = item.type === 'fill-in-blanks' ? 2 : 1;
+                    let earnedP = item.answer === item.correctAnswer ? 1 : 0;
+                    if (item.type === 'fill-in-blanks') {
+                        earnedP = 0;
+                        if (item.answers && item.answers.length > 0) {
+                            let correctCount = item.blanksData.filter((d, i) => item.answers[i] && item.answers[i].toLowerCase() === d.ans.toLowerCase()).length;
+                            if (correctCount === item.blanksData.length) earnedP = 2;
+                            else if (correctCount > 0) earnedP = 1;
+                        }
+                    }
+                    fullTotal += maxP; fullScore += earnedP;
+                }
+            });
+
+            let pointsLost = fullTotal - fullScore;
+            let scaledFullScoreTo35 = Math.max(0, 35 - pointsLost);
+
+            const historyRecord = {
+                id: Date.now(),
+                date: new Date().toLocaleString(),
+                filename: currentTestFilename,
+                ogScore: `${ogScore} / ${ogTotal}`,
+                fullScore: `${scaledFullScoreTo35} / 35`,
+                rawJson: rawTestJson,
+                userAnswers: testData.map(item => ({
+                    id: item.id,
+                    answer: item.answer,
+                    answers: item.answers,
+                    status: item.status
+                }))
+            };
+
+            let history = JSON.parse(localStorage.getItem('toeflHistory') || '[]');
+            // Delete any old record with the same filename to avoid duplicates if re-taken
+            history = history.filter(h => h.filename !== currentTestFilename);
+            history.unshift(historyRecord);
+
+            // Keep only last 50 tests to avoid blowing up localStorage
+            if (history.length > 50) history = history.slice(0, 50);
+
+            try {
+                localStorage.setItem('toeflHistory', JSON.stringify(history));
+            } catch (e) {
+                console.log("Local storage full, clearing history.");
+                localStorage.clear();
+                localStorage.setItem('toeflHistory', JSON.stringify([historyRecord]));
+            }
+        }
+
+        function loadHistory() {
+            const list = document.getElementById('history-list');
+            let history = JSON.parse(localStorage.getItem('toeflHistory') || '[]');
+            list.innerHTML = '';
+            if (history.length === 0) {
+                list.innerHTML = `<div style="text-align:center; color:#666; padding:40px 0;">No history found. Complete a test first!</div>`;
+                return;
+            }
+            history.forEach(h => {
+                const item = document.createElement('div');
+                item.className = 'history-item';
+                item.innerHTML = `
+            <div>
+                <div class="qb-item-title">${h.filename}</div>
+                <div class="qb-item-subtitle">${h.date} &nbsp;|&nbsp; Full Score: <strong style="color:#f59e0b">${h.fullScore}</strong></div>
+            </div>
+            <div style="color:#2b6668; font-weight:bold;">Review &rarr;</div>
+        `;
+                item.addEventListener('click', async () => {
+                    currentTestFilename = h.filename;
+                    rawTestJson = h.rawJson;
+                    await handleJson(h.rawJson, true, h.userAnswers);
+                });
+                list.appendChild(item);
+            });
+        }
+
+
+        // Elements
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const uploadOverlay = document.getElementById('upload-overlay');
+        const appMain = document.getElementById('app-main');
+        const loadingText = document.getElementById('loading-text');
+
+        async function fetchMdData() {
+            let mdText = null;
+            for (const url of MD_URLS) {
+                try {
+                    const res = await fetch(url, { cache: 'no-cache' });
+                    if (res.ok) {
+                        mdText = await res.text();
+                        break;
+                    }
+                } catch (e) {
+                    console.log("Failed fetching from:", url);
+                }
+            }
+            if (!mdText) {
+                alert("Failed to load Fill-in-blanks source data.");
+                return [];
+            }
+            return parseMarkdownEngine(mdText);
+        }
+
+        function parseMarkdownEngine(mdText) {
+            const cleanedText = mdText.replace(/[（(]\s*注[:：][^）)]*[）)]/g, '');
+            let formattedText = cleanedText.replace(/(正确答案[:：])/g, '\n$1').replace(/(补全版本[:：])/g, '\n$1');
+            const lines = formattedText.split('\n').map(l => l.trim());
+
+            let rawEntries = [];
+            let currentDate = '未知日期'; let currentRawPassage = ''; let currentCompletedText = ''; let state = 'PASSAGE';
+
+            const pushEntry = () => {
+                if (currentCompletedText) rawEntries.push({ date: currentDate, text: currentCompletedText, raw: currentRawPassage });
+                else if (currentRawPassage && currentRawPassage.includes('[')) rawEntries.push({ date: currentDate, text: currentRawPassage, raw: currentRawPassage });
+                currentRawPassage = ''; currentCompletedText = ''; state = 'PASSAGE';
+            };
+
+            const dateHeaderRegex = /^(?:202\d\.\d+\.\d+[A-Za-z]?(?:-(?:202\d\.)?(?:\d+\.)?\d+[A-Za-z]?)?|202\d\.\d+(?:\.?)未知)$/;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                if (line.startsWith('___') || line.startsWith('新一篇')) { pushEntry(); currentDate = '未知日期'; continue; }
+                if (dateHeaderRegex.test(line)) { pushEntry(); currentDate = line; continue; }
+
+                const isNewPassageHeader = /^(?:第[一二三四五六七八九十]+[篇段]\s*)/.test(line);
+                if (isNewPassageHeader && state !== 'PASSAGE') pushEntry();
+                else if (isNewPassageHeader && state === 'PASSAGE' && (currentRawPassage || currentCompletedText)) pushEntry();
+
+                const passageMatch = line.match(/^(?:第[一二三四五六七八九十]+[篇段]\s*)?(.*)/);
+                if (line.match(/^正确答案[:：]/)) {
+                    const ansLine = line.replace(/^正确答案[:：]/, '').trim();
+                    const ansRegex = /第\d+[题空]?[:：]\s*([a-zA-Z\-\']+)/g;
+                    let answers = []; let match;
+                    while ((match = ansRegex.exec(ansLine)) !== null) answers.push(match[1]);
+                    if (answers.length === 0) answers = ansLine.split(/[,，]/).map(s => s.replace(/[^a-zA-Z\-\']/g, '').trim()).filter(s => s);
+
+                    let resultText = ""; let cursor = 0;
+                    const validCombinedWords = new Set(['population', 'populations', 'advanced', 'techniques', 'societies', 'environmental', 'characteristics', 'development', 'significant', 'traditional', 'innovation', 'ecosystems', 'skills', 'loss', 'food', 'fish', 'eras', 'use', 'history', 'creations', 'studying', 'social', 'ideas', 'interacted', 'contributed', 'describes', 'plays', 'key', 'slows', 'like', 'back', 'led', 'units', 'ties', 'simple', 'facilitated', 'hunting', 'gathering', 'placement', 'stones', 'collaborative', 'indicating', 'societal', 'coordinate', 'extraordinary', 'understood', 'emotional', 'psychological', 'utilizing', 'moods', 'emphasis', 'evoke', 'barriers', 'block', 'winds', 'keeping', 'warm', 'result', 'amount', 'sunlight', 'hits', 'parts', 'earth', 'creating', 'influence', 'emerged', 'ornate', 'balanced', 'focus', 'reason', 'order', 'flutes', 'rhythms', 'contemporary', 'beats', 'evolved', 'cultural', 'times', 'elite', 'families', 'held', 'majority', 'power', 'limited', 'transfer', 'technologies', 'scholars', 'access', 'artworks', 'offer', 'lives', 'beliefs', 'prehistoric', 'plants', 'progressed', 'axes', 'change', 'move', 'carve', 'valleys', 'leaving', 'blue', 'declined', 'illegal', 'abroad', 'private', 'pots', 'shaped', 'hand', 'heated', 'producing', 'longer', 'complex', 'traditions', 'political', 'economic', 'experienced', 'changes', 'male', 'establishes', 'large', 'spanning', 'square', 'regularly', 'look', 'together', 'jigsaw', 'shift', 'earthquakes', 'formation', 'mountains', 'volcanic', 'scientists', 'temperature', 'impact', 'migrations', 'rituals', 'hibernation', 'hormone', 'increase', 'spring', 'examine', 'planets', 'galaxies', 'observations', 'models', 'describe', 'events', 'widely', 'idea', 'modern', 'around', 'consists', 'tiny', 'usually', 'small', 'associated', 'space', 'frequency', 'missions', 'reusable', 'known', 'voyages', 'ocean', 'meticulously', 'coastlines', 'collected', 'product', 'expensive', 'conversely', 'excess', 'remains', 'advantageous', 'adapt', 'diversity', 'include', 'ways', 'people', 'signals', 'store', 'retrieve', 'memory', 'language', 'produced', 'incidents', 'factors', 'catastrophic', 'helps', 'inspire', 'ancient', 'paintings', 'elaborate', 'architecture', 'visual', 'encompass', 'aspects', 'including', 'acquisition', 'common', 'artists', 'create', 'several', 'process', 'time', 'beneath', 'years', 'researchers', 'shells', 'long', 'adapted', 'feeding', 'played', 'crucial', 'vegetation', 'fuels', 'production', 'accumulation', 'greenhouse', 'shifts', 'culture', 'employed', 'improvisation', 'challenged', 'musical', 'allowing', 'appears', 'rain', 'underground', 'sewage', 'water', 'developed', 'awareness', 'connection', 'poor', 'illness', 'spread', 'construction', 'remarkable', 'pioneered', 'significantly', 'transportation', 'provide', 'place', 'multiple', 'expression', 'historical', 'evaluating', 'identifying', 'coherent', 'based', 'evidence', 'logical', 'enhances', 'thinking', 'mental', 'identity', 'experience', 'discipline', 'perceive', 'philosophy', 'birth', 'begin', 'sounds', 'patterns', 'speech', 'words', 'facilities', 'replicate', 'habitats', 'visitors', 'learn', 'marine', 'often', 'considered', 'greatest', 'european', 'narrative', 'approaches', 'systematically', 'information', 'make', 'cooking', 'particularly', 'made', 'nutrients', 'easier', 'warmth', 'colder', 'discover', 'submerged', 'ability', 'fundamental', 'enables', 'resources', 'exhibits', 'designed', 'tell', 'provides', 'support', 'life', 'equipped', 'collect', 'socially', 'lyrics', 'genre', 'addresses', 'peace', 'spiritual', 'deeply', 'investigations', 'natural', 'biomolecules', 'escape', 'causes', 'environments', 'manage', 'periods', 'community', 'allows', 'feedback', 'peers', 'experiment', 'enriching', 'artistic', 'sun', 'needed', 'called', 'mechanisms', 'cognitive', 'aiming', 'understand', 'stores', 'retrieves', 'consciousness', 'state', 'organisms', 'lived', 'ago', 'window', 'structures', 'better', 'interact', 'function', 'example', 'system', 'blood', 'desert', 'travel', 'camels', 'wheels', 'sit', 'riders', 'push', 'thousands', 'eggs', 'keep', 'colony', 'worker', 'busy', 'nectar', 'pollen', 'dominated', 'governing', 'providing', 'service', 'exerted', 'daily', 'losses', 'species', 'eruptions', 'impacts', 'climate', 'humans', 'enters', 'incoming', 'gets', 'becomes', 'travels', 'powerful', 'dimming', 'star', 'planet', 'front', 'green', 'found', 'captures', 'energy', 'fuel', 'chemical', 'oxygen', 'byproduct', 'crafted', 'machines', 'factories', 'engine', 'protect', 'against', 'legs', 'away', 'communal', 'activity', 'uncover', 'work', 'sites', 'unearthing', 'functionally', 'suffered', 'habitat', 'effects', 'pollution', 'attempted', 'investigate', 'areas', 'respond', 'types', 'explain', 'vibrant', 'marked', 'renewed', 'literature', 'sensors', 'cameras', 'reach', 'produce', 'compounds', 'forming', 'foundation', 'artificial', 'technique', 'originated', 'exemplified', 'strong', 'contrast', 'style', 'drama', 'selective', 'clock', 'convey', 'predict', 'behavior', 'knowledge', 'glassmakers', 'everyday', 'bottles', 'decorative', 'making', 'available', 'carried', 'colonies', 'skeletons', 'concept', 'democracy', 'individuals', 'businesses', 'governments', 'choices', 'resource', 'affect', 'stability', 'orbiting', 'surfaces', 'oceans', 'underneath', 'form', 'contributions', 'positions', 'predictions', 'illumination', 'guide', 'specific', 'gender', 'sophisticated', 'substances', 'give', 'reveals', 'interactions', 'light', 'absorb', 'wavelengths', 'reflect', 'tools', 'stone', 'animal', 'landscapes', 'ensuring', 'upward', 'buildings', 'eventually', 'skyscrapers', 'defined', 'skylines', 'gases', 'nitrogen', 'amounts', 'acts', 'protective', 'solar', 'fosters', 'dynamic', 'among', 'creativity', 'preconceived', 'telescope', 'captured', 'photograph', 'discovered', 'named', 'orbits', 'young', 'mass', 'groups', 'typically', 'related', 'built', 'range', 'invertebrates', 'specifically', 'trends', 'temperatures', 'wind', 'precipitation', 'define', 'conditions', 'region', 'hunting', 'planting', 'different', 'same', 'across', 'seasons', 'improves', 'health', 'diversifying', 'communities', 'clothing', 'shelter', 'practices', 'involving', 'efforts', 'drive', 'practice', 'sustained', 'millennia', 'employ', 'land', 'overall', 'productivity', 'fostering', 'interdependence', 'excessive', 'model', 'expose', 'risks', 'derived', 'various', 'synthetic', 'materials']);
+                    const protectedWords = new Set(['a', 'i', 'in', 'on', 'at', 'to', 'is', 'it', 'of', 'or', 'as', 'be', 'by', 'do', 'go', 'he', 'me', 'my', 'no', 'so', 'up', 'us', 'we', 'an', 'the', 'and', 'but', 'for', 'not', 'you', 'all', 'any', 'are', 'can', 'did', 'get', 'had', 'has', 'her', 'him', 'his', 'how', 'let', 'may', 'new', 'now', 'off', 'old', 'one', 'out', 'put', 'run', 'saw', 'say', 'see', 'she', 'too', 'two', 'use', 'was', 'way', 'who', 'why', 'yes', 'yet', 'this', 'that', 'these', 'those', 'they', 'them', 'their', 'there', 'here', 'where', 'when', 'what', 'which', 'whom', 'whose', 'have', 'does', 'will', 'would', 'shall', 'should', 'could', 'might', 'must', 'am', 'were', 'been', 'being', 'from', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'under', 'over', 'again', 'further', 'then', 'once', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'nor', 'only', 'own', 'same', 'than', 'very', 'just', 'don']);
+
+                    for (let j = 0; j < answers.length; j++) {
+                        const ans = answers[j];
+
+                        // 1. 寻找下划线空位 (贪婪匹配：吃掉前缀后所有的空格和下划线)
+                        const underscoreRegex = /([a-zA-Z]+)(?:\s*_+)+/g;
+                        underscoreRegex.lastIndex = cursor;
+                        const underscoreMatch = underscoreRegex.exec(currentRawPassage);
+
+                        // 2. 寻找“裸奔”字母空位
+                        const nakedRegex = /\b([a-zA-Z]{1,5})\b/g;
+                        nakedRegex.lastIndex = cursor;
+                        let validNakedMatch = null;
+                        let nakedMatch;
+                        while ((nakedMatch = nakedRegex.exec(currentRawPassage)) !== null) {
+                            const originalPrefix = nakedMatch[1];
+                            const prefixStr = originalPrefix.toLowerCase();
+
+                            // 🛡️ 核心防御：大小写豁免权
+                            if (protectedWords.has(prefixStr) && originalPrefix === prefixStr) continue;
+
+                            const potentialWord = prefixStr + ans.toLowerCase();
+                            if (validCombinedWords.has(potentialWord)) {
+                                validNakedMatch = nakedMatch;
+                                break;
+                            }
+                        }
+
+                        // 3. 决定使用哪个匹配结果 (同源优先原则)
+                        let bestMatch = null;
+                        if (underscoreMatch && validNakedMatch) {
+                            const underPrefix = underscoreMatch[1].toLowerCase();
+                            const nakedPrefix = validNakedMatch[1].toLowerCase();
+
+                            if (underPrefix === nakedPrefix) {
+                                bestMatch = underscoreMatch;
+                            } else {
+                                if (underscoreMatch.index - validNakedMatch.index > 40) {
+                                    bestMatch = validNakedMatch;
+                                } else {
+                                    bestMatch = underscoreMatch;
+                                }
+                            }
+                        } else if (underscoreMatch) {
+                            bestMatch = underscoreMatch;
+                        } else if (validNakedMatch) {
+                            bestMatch = validNakedMatch;
+                        }
+
+                        if (!bestMatch) break;
+
+                        const prefix = bestMatch[1];
+                        const matchStart = bestMatch.index;
+                        const matchEnd = matchStart + bestMatch[0].length;
+
+                        resultText += currentRawPassage.substring(cursor, matchStart);
+
+                        // 4. 标点强力吸附 (Trim Right)
+                        let postPunct = "";
+                        let tempEnd = matchEnd;
+                        while (tempEnd < currentRawPassage.length) {
+                            const char = currentRawPassage[tempEnd];
+                            if (char === ' ') {
+                                tempEnd++; // 吃掉多余空格
+                            } else if (/^[.,:;!?'"\])]/.test(char)) {
+                                postPunct += char; // 吸附标点
+                                tempEnd++;
+                            } else {
+                                break;
+                            }
+                        }
+
+                        resultText += `${prefix}[${ans}]${postPunct}`;
+
+                        // 5. 强制词边界隔离 (Force Space)
+                        if (tempEnd < currentRawPassage.length) {
+                            const nextChar = currentRawPassage[tempEnd];
+                            if (/^[a-zA-Z]$/.test(nextChar)) {
+                                resultText += " ";
+                            }
+                        }
+
+                        cursor = tempEnd;
+                    }
+                    resultText += currentRawPassage.substring(cursor);
+                    currentCompletedText = resultText;
+                    pushEntry(); continue;
+                }
+
+                if (line.match(/^补全版本[:：]/)) { state = 'COMPLETED'; const compLine = line.replace(/^补全版本[:：]/, '').trim(); if (compLine) currentCompletedText = compLine; continue; }
+
+                if (state === 'PASSAGE') {
+                    if (line === '') { if (currentRawPassage && !currentRawPassage.endsWith('<br><br>')) currentRawPassage += currentRawPassage.endsWith('<br>') ? '<br>' : '<br><br>'; }
+                    else { const txt = isNewPassageHeader ? passageMatch[1] : line; if (txt) currentRawPassage += (currentRawPassage && !currentRawPassage.endsWith('<br>') && !currentRawPassage.endsWith('<br><br>') ? '<br>' : '') + txt; }
+                } else if (state === 'COMPLETED') {
+                    if (line === '') { if (currentCompletedText && !currentCompletedText.endsWith('<br><br>')) currentCompletedText += currentCompletedText.endsWith('<br>') ? '<br>' : '<br><br>'; }
+                    else { currentCompletedText += (currentCompletedText && !currentCompletedText.endsWith('<br>') && !currentCompletedText.endsWith('<br><br>') ? '<br>' : '') + line; }
+                }
+            }
+            pushEntry();
+
+            return rawEntries.filter(entry => entry.text && entry.text.includes('['));
+        }
+
+        // Drop & File Load Logic
+        dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.background = '#e0f0f0'; });
+        dropZone.addEventListener('dragleave', (e) => { e.preventDefault(); dropZone.style.background = '#f9f9f9'; });
+        dropZone.addEventListener('drop', (e) => { e.preventDefault(); dropZone.style.background = '#f9f9f9'; handleFiles(e.dataTransfer.files); });
+        dropZone.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+        async function handleFiles(files) {
+            if (files.length === 0) return;
+            const file = files[0];
+            if (!file.name.endsWith('.json')) { alert('Please upload a JSON file.'); return; }
+
+            document.getElementById('loading-text').style.display = 'block';
+
+            const reader = new FileReader();
+            reader.onload = async function (e) {
+                try {
+                    const json = JSON.parse(e.target.result);
+                    currentTestFilename = "Local Upload - " + file.name;
+                    await handleJson(json);
+                } catch (err) {
+                    console.error(err);
+                    alert("Error parsing JSON file: " + err.message + "\n" + err.stack);
+                    document.getElementById('loading-text').style.display = 'none';
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        async function handleJson(json, isHistoryRestore = false, historyAnswers = null) {
+            if (mdDataStore.length === 0) {
+                mdDataStore = await fetchMdData();
+            }
+            rawTestJson = json;
+
+            buildTestData(json);
+
+            if (isHistoryRestore && historyAnswers) {
+                // Restore answers
+                historyAnswers.forEach(ha => {
+                    let item = testData.find(d => d.id === ha.id);
+                    if (item) {
+                        item.answer = ha.answer;
+                        item.answers = ha.answers;
+                        item.status = ha.status;
+                    }
+                });
+
+                // Jump directly to result screen
+                isAnswerReviewMode = false;
+                isReviewMode = false;
+                currentIndex = testData.length - 1;
+
+                uploadOverlay.classList.add('hidden');
+                appMain.style.display = 'flex';
+                renderCurrentScreen();
+            }
+        }
+
+        function getFillInBlanks(dateEdition, count) {
+            // Determine target dates
+            let targetDates = [];
+            if (dateEdition && dateEdition.includes('未知')) {
+                const monthPrefix = dateEdition.split('未知')[0];
+                targetDates = Object.keys(mdDataStore).filter(d => d.startsWith(monthPrefix));
+            } else if (dateEdition) {
+                targetDates = [dateEdition];
+            }
+
+            let candidates = [];
+            targetDates.forEach(d => {
+                if (mdDataStore[d]) candidates = candidates.concat(mdDataStore[d]);
+            });
+
+            if (candidates.length === 0) {
+                // Fallback to any random passage
+                Object.keys(mdDataStore).forEach(d => candidates = candidates.concat(mdDataStore[d]));
+            }
+
+            if (candidates.length === 0) return [];
+
+            let selected = [];
+            let attempts = 0;
+            while (selected.length < count && attempts < 1000) {
+                attempts++;
+                const randIdx = Math.floor(Math.random() * candidates.length);
+                const p = candidates[randIdx];
+                const hash = p.text.substring(0, 50); // simple hash
+                if (!usedMdPassages.has(hash)) {
+                    usedMdPassages.add(hash);
+                    selected.push(p.text);
+                }
+            }
+
+            return selected;
+        }
+
+        function buildTestData(json) {
+            testData = [];
+            usedMdPassages.clear();
+            let qIdCounter = 1;
+            let totalM1Questions = 35; // default placeholder
+            let totalM2Questions = 15; // default placeholder
+
+            // Check paper composition (prioritize passage_tag over paper_type)
+            let m1Passages = json.passages.filter(p => {
+                if (p.passage_tag && (p.passage_tag.includes('M1') || p.passage_tag.includes('M2'))) return p.passage_tag.includes('M1');
+                return p.paper_type && p.paper_type.includes('M1');
+            });
+            let m2Passages = json.passages.filter(p => {
+                if (p.passage_tag && (p.passage_tag.includes('M1') || p.passage_tag.includes('M2'))) return p.passage_tag.includes('M2');
+                return p.paper_type && p.paper_type.includes('M2');
+            });
+
+            // Enforce M2 Strict Rule: M2 MUST contain exactly ONE Academic passage and nothing else.
+            // If tags assigned multiple Academic passages to M2, keep only the last one.
+            // If tags assigned zero Academic passages to M2, pick the last Academic passage from the entire test.
+            let m2AcademicPassages = m2Passages.filter(p => p.type === 'Academic');
+            let chosenM2Passage = null;
+
+            if (m2AcademicPassages.length >= 1) {
+                chosenM2Passage = m2AcademicPassages[m2AcademicPassages.length - 1];
+            } else {
+                for (let i = json.passages.length - 1; i >= 0; i--) {
+                    if (json.passages[i].type === 'Academic') {
+                        chosenM2Passage = json.passages[i];
+                        break;
+                    }
+                }
+            }
+
+            if (chosenM2Passage) {
+                m2Passages = [chosenM2Passage];
+                m1Passages = json.passages.filter(p => p !== chosenM2Passage);
+            }
+
+            const m1AcademicCount = m1Passages.filter(p => p.type === 'Academic').length;
+            timeRemaining = m1AcademicCount >= 2 ? (20 * 60 + 30) : (18 * 60);
+
+            const m1Fibs = getFillInBlanks(json.date_edition, 2);
+            const m2Fibs = getFillInBlanks(json.date_edition, 1);
+
+            // OG Score Experimental logic (M1 only)
+            const expFibIdx = Math.random() < 0.5 ? 0 : 1;
+            let expPassageTitle = null;
+            if (m1AcademicCount >= 2) {
+                const academicPassages = m1Passages.filter(p => p.type === 'Academic');
+                expPassageTitle = academicPassages[Math.floor(Math.random() * academicPassages.length)].title;
+            } else {
+                const dailyPassages = m1Passages.filter(p => p.type !== 'Academic');
+                if (dailyPassages.length > 0) {
+                    expPassageTitle = dailyPassages[Math.floor(Math.random() * dailyPassages.length)].title;
+                }
+            }
+
+            let m1Total = m1Fibs.filter(x => x).length * 10;
+            let m2Total = m2Fibs.filter(x => x).length * 10;
+            m1Passages.forEach(p => m1Total += (p.questions ? p.questions.length : 0));
+            m2Passages.forEach(p => m2Total += (p.questions ? p.questions.length : 0));
+
+            // --- M1 Building ---
+            testData.push({
+                id: 'start-m1', module: 1, type: 'intro-screen', range: '', title: 'Reading Section', content: `
+        <div class="transition-page">
+            <h2>Reading Section</h2><hr>
+            <p style="margin-bottom: 20px;">In the Reading section, you will answer questions to demonstrate how well you understand academic and non-academic texts in English.</p>
+            <table class="intro-table"><thead><tr><th style="width:30%;">Type of Task</th><th>Description</th></tr></thead><tbody><tr><td>Complete the Words</td><td>Fill in the missing letters in a paragraph.</td></tr><tr><td>Read in Daily Life</td><td>Answer questions about everyday reading material.</td></tr><tr><td>Read an Academic Passage</td><td>Answer questions about academic passages.</td></tr></tbody></table>
+        </div>`, status: 'Not Seen', description: 'Reading Section Intro'
+            });
+
+            // M1 Fill-in-blanks
+            if (m1Fibs[0]) testData.push({ id: qIdCounter++, displayNum: '1~10', module: 1, type: 'fill-in-blanks', range: `Questions 1-10 of ${m1Total}`, title: 'Fill in the missing letters in the paragraph.', content: m1Fibs[0], answers: null, status: 'Not Seen', description: 'Fill in the missing letters in the paragraph.', isExperimental: expFibIdx === 0 });
+            if (m1Fibs[1]) testData.push({ id: qIdCounter++, displayNum: '11~20', module: 1, type: 'fill-in-blanks', range: `Questions 11-20 of ${m1Total}`, title: 'Fill in the missing letters in the paragraph.', content: m1Fibs[1], answers: null, status: 'Not Seen', description: 'Fill in the missing letters in the paragraph.', isExperimental: expFibIdx === 1 });
+
+            // Process passages
+            m1Passages.forEach(p => processPassage(p, 1));
+
+            testData.push({
+                id: 'end-m1', module: 1, type: 'end-screen', range: '', title: 'End of Module 1', content: `
+        <div class="transition-page"><h2>End of Module 1</h2><hr><p>Select <strong>Next</strong> to continue to Module 2.</p></div>`, status: 'Not Seen', description: 'End of Module 1'
+            });
+
+            // --- M2 Building ---
+            testData.push({
+                id: 'start-m2', module: 2, type: 'end-screen', range: '', title: 'Module 2', content: `
+        <div class="transition-page"><h2>Module 2</h2><hr><p>In an actual test, the clock will show you how much time you have to complete Module 2.</p></div>`, status: 'Not Seen', description: 'Module 2 Start'
+            });
+
+            // M2 Fill-in-blanks (if applicable based on user request "M2它是有填词题的，有Q1~10")
+            if (m2Fibs[0]) testData.push({ id: qIdCounter++, displayNum: '1-10', module: 2, type: 'fill-in-blanks', range: `Questions 1-10 of ${m2Total}`, title: 'Fill in the missing letters in the paragraph.', content: m2Fibs[0], answers: null, status: 'Not Seen', description: 'Fill in the missing letters in the paragraph.', isExperimental: false });
+
+            m2Passages.forEach(p => processPassage(p, 2));
+
+            testData.push({
+                id: 'end-test', module: 2, type: 'end-screen', range: '', title: 'End of Reading Section', content: `
+        <div class="transition-page"><h2>End of Reading Section</h2><hr><p>Thank you for completing the reading section. Click Next to see your results.</p></div>`, status: 'Not Seen', description: 'End of Reading Section'
+            });
+
+            testData.push({ id: 'results', module: 3, type: 'result-screen', range: '', title: 'Results', content: '', status: 'Seen', description: 'Results' });
+
+            function processPassage(p, module) {
+                const isExp = (p.title === expPassageTitle && module === 1);
+                let passageHtml = '';
+                if (p.type === 'Lifestyle') {
+                    passageHtml = `<img src="${p.left_content.image}" style="max-width:100%; border: 1px solid #ccc;">`;
+                } else {
+                    passageHtml = p.left_content.paragraphs.map(para => `<p style="margin-bottom:15px;">${para}</p>`).join('');
+                }
+
+                p.questions.forEach((q, idx) => {
+                    let qType = 'multiple-choice-text';
+                    if (p.type === 'Lifestyle') qType = 'multiple-choice-image';
+
+                    let currentPassageHtml = passageHtml;
+                    let isSentenceSelection = q.question_type === 'make_a_choice' || q.question_type === 'free_response' || (q.question && q.question.includes('Select the sentence to make a choice'));
+                    if (p.type !== 'Lifestyle' && q.special_content && (q.question_type === 'highlight' || q.question_type === 'insertion' || isSentenceSelection)) {
+                        if (q.question_type === 'insertion') qType = 'insert-text';
+                        if (isSentenceSelection) qType = 'sentence-selection';
+
+                        let fullText = p.left_content.paragraphs.join('\n\n');
+                        let rawSpecial = q.special_content.replace(/<\/?mark>/gi, '').replace(/\[■\]/g, '').trim();
+                        let regexPattern = rawSpecial.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace(/\s+/g, '\\s+');
+
+                        let match = null;
+                        try {
+                            match = fullText.match(new RegExp(regexPattern));
+                        } catch (e) { }
+
+                        if (match) {
+                            let originalStr = match[0];
+                            let injectedStr = "";
+                            let origIdx = 0;
+
+                            function flushWhitespace(allowNewline = true) {
+                                while (origIdx < originalStr.length) {
+                                    let c = originalStr[origIdx];
+                                    if (!allowNewline && (c === '\n' || c === '\r')) break;
+                                    if (/\s/.test(c)) {
+                                        injectedStr += c;
+                                        origIdx++;
+                                    } else {
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (q.question_type === 'insertion') {
+                                let squareCount = 0;
+                                for (let i = 0; i < q.special_content.length; i++) {
+                                    if (q.special_content.substr(i, 3) === '[■]') {
+                                        flushWhitespace(false);
+                                        squareCount++;
+                                        injectedStr += `<span class="insert-square" data-pos="${String.fromCharCode(64 + squareCount)}"></span>`;
+                                        i += 2;
+                                    } else {
+                                        let char = q.special_content[i];
+                                        if (!/\s/.test(char) && char.trim() !== '') {
+                                            flushWhitespace(true);
+                                            while (origIdx < originalStr.length && originalStr[origIdx] !== char) {
+                                                injectedStr += originalStr[origIdx];
+                                                origIdx++;
+                                            }
+                                            if (origIdx < originalStr.length) {
+                                                injectedStr += originalStr[origIdx];
+                                                origIdx++;
+                                            }
+                                        }
+                                    }
+                                }
+                            } else if (q.question_type === 'highlight') {
+                                for (let i = 0; i < q.special_content.length; i++) {
+                                    if (q.special_content.substr(i, 6).toLowerCase() === '<mark>') {
+                                        flushWhitespace();
+                                        injectedStr += `<span class="vocab-highlight">`;
+                                        i += 5;
+                                    } else if (q.special_content.substr(i, 7).toLowerCase() === '</mark>') {
+                                        injectedStr += `</span>`;
+                                        i += 6;
+                                    } else {
+                                        let char = q.special_content[i];
+                                        if (!/\s/.test(char) && char.trim() !== '') {
+                                            flushWhitespace();
+                                            while (origIdx < originalStr.length && originalStr[origIdx] !== char) {
+                                                injectedStr += originalStr[origIdx];
+                                                origIdx++;
+                                            }
+                                            if (origIdx < originalStr.length) {
+                                                injectedStr += originalStr[origIdx];
+                                                origIdx++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            while (origIdx < originalStr.length) {
+                                injectedStr += originalStr[origIdx];
+                                origIdx++;
+                            }
+
+                            let replacedText = fullText.substring(0, match.index) + injectedStr + fullText.substring(match.index + match[0].length);
+                            currentPassageHtml = replacedText.split(/\n+/).filter(x => x.trim().length > 0).map(x => `<p style="margin-bottom:15px;">${x}</p>`).join('');
+                        } else {
+                            let cleanSpecial = q.special_content.replace(/<\/?mark>/gi, '').replace(/\[■\]/g, '').replace(/\s+/g, ' ').trim();
+                            let bestMatchIdx = -1;
+                            let maxScore = -10000;
+
+                            p.left_content.paragraphs.forEach((para, idx) => {
+                                let cleanPara = para.replace(/\s+/g, ' ').trim();
+                                let score = 0;
+                                if (cleanPara.includes(cleanSpecial) || cleanSpecial.includes(cleanPara)) {
+                                    score = 1000;
+                                } else {
+                                    if (cleanPara.substring(0, 20) === cleanSpecial.substring(0, 20)) score += 100;
+                                    if (cleanPara.slice(-20) === cleanSpecial.slice(-20)) score += 100;
+                                    score -= Math.abs(cleanPara.length - cleanSpecial.length);
+                                }
+                                if (score > maxScore) {
+                                    maxScore = score;
+                                    bestMatchIdx = idx;
+                                }
+                            });
+
+                            currentPassageHtml = p.left_content.paragraphs.map((para, idx) => {
+                                if (idx === bestMatchIdx) {
+                                    if (q.question_type === 'highlight') {
+                                        if (cleanSpecial.length < para.length * 0.8) {
+                                            let rawText = q.special_content.replace(/<\/?mark>/gi, '');
+                                            let rep = q.special_content.replace(/<mark>(\s*)/gi, '$1<span class="vocab-highlight">').replace(/(\s*)<\/mark>/gi, '</span>$1');
+                                            let res = para.replace(rawText, rep);
+                                            return `<p style="margin-bottom:15px;">${res === para ? rep : res}</p>`;
+                                        }
+                                        return `<p style="margin-bottom:15px;">${q.special_content.replace(/<mark>(\s*)/gi, '$1<span class="vocab-highlight">').replace(/(\s*)<\/mark>/gi, '</span>$1')}</p>`;
+                                    } else if (isSentenceSelection) {
+                                        let sentences = para.match(/[^.!?]+[.!?]+(?:\s|$)/g) || [para];
+                                        let formattedSpecial = sentences.map((sent, i) => {
+                                            if (sent.trim() === (q.answer || '').trim()) q._resolvedAnswerIdx = i;
+                                            return `<span class="selectable-sentence" data-idx="${i}">${sent}</span>`;
+                                        }).join('');
+                                        return `<p style="margin-bottom:15px;">${formattedSpecial}</p>`;
+                                    } else {
+                                        let formattedSpecial = q.special_content.replace(/\[■\]/g, (match, offset, str) => {
+                                            const count = (str.substring(0, offset).match(/\[■\]/g) || []).length + 1;
+                                            return `<span class="insert-square" data-pos="${String.fromCharCode(64 + count)}"></span>`;
+                                        });
+                                        if (cleanSpecial.length < para.length * 0.8) {
+                                            let rawText = q.special_content.replace(/\[■\]/g, '');
+                                            let res = para.replace(rawText, formattedSpecial);
+                                            return `<p style="margin-bottom:15px;">${res === para ? formattedSpecial : res}</p>`;
+                                        }
+                                        return `<p style="margin-bottom:15px;">${formattedSpecial}</p>`;
+                                    }
+                                }
+                                return `<p style="margin-bottom:15px;">${para}</p>`;
+                            }).join('');
+                        }
+                    }
+
+                    let optKeys = Object.keys(q.options || {});
+                    let optionsArr = optKeys.map(k => q.options[k]);
+                    let ansIdx = optKeys.indexOf(q.answer);
+
+                    let isMultiple = q.question_number && String(q.question_number).includes('-');
+                    let questionItem = {
+                        id: qIdCounter++,
+                        displayNum: q.id || q.question_number,
+                        module: module,
+                        type: qType,
+                        range: `${isMultiple ? 'Questions' : 'Question'} ${q.question_number || ''} of ${module === 1 ? m1Total : m2Total}`,
+                        title: p.title,
+                        passage: currentPassageHtml,
+                        imageHtml: qType === 'multiple-choice-image' ? passageHtml : null,
+                        question: q.question_type === 'insertion' ?
+                            `There are four locations [<span class="insert-square" style="cursor:default"></span>] in the passage that indicate where the following sentence could be added.<br><br><b>${q.inserted_sentence}</b><br><br>Where would the sentence best fit? Select a location to add the sentence to the passage.` :
+                            q.question,
+                        options: optionsArr,
+                        answer: null, // user answer
+                        correctAnswer: qType === 'insert-text' ? q.answer : ansIdx, // 'A', 'B', etc. or 0, 1, 2...
+                        insertSentence: q.inserted_sentence,
+                        status: 'Not Seen',
+                        description: q.question,
+                        isExperimental: isExp
+                    };
+
+                    if (isSentenceSelection) {
+                        questionItem.type = 'sentence-selection';
+                        let isAnswerNumeric = !isNaN(parseInt(q.answer)) && String(q.answer).trim() !== '';
+                        if (!q.special_content) {
+                            let targetParaIdx = -1;
+                            let qAnsClean = (q.answer || '').trim();
+                            if (!isAnswerNumeric) {
+                                p.left_content.paragraphs.forEach((para, idx) => {
+                                    if (para.includes(qAnsClean)) targetParaIdx = idx;
+                                });
+                            }
+
+                            let sentIdxCounter = 0;
+                            let correctSentIdx = null;
+                            questionItem.passage = p.left_content.paragraphs.map((para, idx) => {
+                                if (targetParaIdx !== -1 && idx !== targetParaIdx) {
+                                    return `<p style="margin-bottom:15px;">${para}</p>`;
+                                }
+                                let sentences = para.match(/[^.!?]+[.!?]+(?:\s|$)/g) || [para];
+                                let formattedSpecial = sentences.map(sent => {
+                                    let sClean = sent.trim();
+                                    if (sClean === qAnsClean && correctSentIdx === null) correctSentIdx = sentIdxCounter;
+                                    return `<span class="selectable-sentence" data-idx="${sentIdxCounter++}">${sent}</span>`;
+                                }).join('');
+                                return `<p style="margin-bottom:15px;">${formattedSpecial}</p>`;
+                            }).join('');
+                            questionItem.correctAnswer = isAnswerNumeric ? parseInt(q.answer) : correctSentIdx;
+                        } else {
+                            questionItem.correctAnswer = isAnswerNumeric ? parseInt(q.answer) : q._resolvedAnswerIdx;
+                        }
+                    }
+
+                    testData.push(questionItem);
+                });
+            }
+
+            // Preload images
+            let imagesToPreload = [];
+            json.passages.forEach(p => {
+                if (p.left_content && p.left_content.image) imagesToPreload.push(p.left_content.image);
+            });
+            imagesToPreload = [...new Set(imagesToPreload)];
+            imagesToPreload.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+
+            startTest();
+        }
+
+        function startTest() {
+            uploadOverlay.classList.add('hidden');
+            appMain.style.display = 'flex';
+            currentIndex = 0;
+            currentModule = 1;
+            timerInterval = setInterval(updateTimer, 1000);
+            renderCurrentScreen();
+        }
+
+        function playBeep(volumeLevel) {
+            if (!audioCtx) audioCtx = new AudioContext();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
+            gainNode.gain.setValueAtTime((volumeLevel / 100) * 0.5, audioCtx.currentTime);
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.1);
+        }
+
+        function renderHeaderButtons() {
+            const data = testData[currentIndex];
+            const isIntro = data.type === 'intro-screen';
+            const isResult = data.type === 'result-screen';
+
+            const firstIndexOfCurrentModule = testData.findIndex(q => q.module === currentModule);
+            const disableBack = (currentIndex === firstIndexOfCurrentModule);
+
+            let html = `
+        <div class="volume-wrapper">
+            <button class="btn" id="btn-volume">
+                Volume <svg class="icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
+            <div class="volume-popover" id="volume-panel">
+                <button class="volume-close" id="volume-close">&times;</button>
+                <div class="volume-bars" id="volume-bars"></div>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="50">
+            </div>
+        </div>
+    `;
+
+            if (isAnswerReviewMode) {
+                html += `<button class="btn" id="btn-toggle-answer">${answersRevealed ? 'Hide Answer <svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>' : 'Show Answer <svg class="icon" viewBox="0 0 24 24"><path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/></svg>'}</button>`;
+                html += `<button class="btn btn-primary" id="btn-back-to-results" style="background-color: #1a73e8; color: white; border: none;">Back to Results <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>`;
+            } else if (isReviewMode) {
+                html += `
+            <button class="btn" id="btn-go-to-question" ${selectedReviewIndex === null ? 'disabled' : ''} style="${selectedReviewIndex !== null ? 'background-color: #316b6e; color: white; border: 1px solid white;' : 'opacity: 0.5;'}">Go to Question</button>
+            <button class="btn btn-primary" id="btn-return">Return <svg class="icon" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+        `;
+            } else if (isIntro) {
+                html += `<button class="btn btn-primary" id="btn-next">Begin <svg class="icon" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>`;
+            } else if (isResult) {
+                // No extra buttons on result screen
+            } else {
+                if (data.id !== 'start-m2') {
+                    html += `<button class="btn" id="btn-review">Review <svg class="icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>`;
+                    html += `<button class="btn" id="btn-back" ${disableBack ? 'disabled' : ''}><svg class="icon" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> Back</button>`;
+                }
+                html += `<button class="btn btn-primary" id="btn-next">Next <svg class="icon" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>`;
+            }
+            document.getElementById('header-buttons').innerHTML = html;
+
+            // Volume bindings
+            const btnVolume = document.getElementById('btn-volume');
+            const volumePanel = document.getElementById('volume-panel');
+            const volumeSlider = document.getElementById('volume-slider');
+            const volumeBars = document.getElementById('volume-bars');
+
+            let barsHtml = '';
+            for (let i = 1; i <= 20; i++) barsHtml += `<div class="volume-bar" id="vbar-${i}" style="height: ${20 + (i / 20) * 80}%"></div>`;
+            volumeBars.innerHTML = barsHtml;
+
+            function updateVolumeVisuals() {
+                let val = volumeSlider.value;
+                let activeCount = Math.ceil((val / 100) * 20);
+                for (let i = 1; i <= 20; i++) {
+                    let bar = document.getElementById('vbar-' + i);
+                    if (i <= activeCount) bar.classList.add('active');
+                    else bar.classList.remove('active');
+                }
+                volumeSlider.style.background = `linear-gradient(to right, #2b6668 ${val}%, #d3d3d3 ${val}%)`;
+            }
+
+            volumeSlider.addEventListener('input', updateVolumeVisuals);
+            volumeSlider.addEventListener('change', () => playBeep(volumeSlider.value));
+            updateVolumeVisuals();
+
+            btnVolume.addEventListener('click', (e) => { e.stopPropagation(); volumePanel.classList.toggle('active'); });
+            document.getElementById('volume-close').addEventListener('click', (e) => { e.stopPropagation(); volumePanel.classList.remove('active'); });
+            document.addEventListener('click', (e) => { if (!volumePanel.contains(e.target) && !btnVolume.contains(e.target)) volumePanel.classList.remove('active'); });
+
+            // Other bindings
+            if (isAnswerReviewMode) {
+                document.getElementById('btn-toggle-answer').addEventListener('click', () => {
+                    answersRevealed = !answersRevealed;
+                    renderCurrentScreen(true);
+                });
+                document.getElementById('btn-back-to-results').addEventListener('click', () => {
+                    isAnswerReviewMode = false;
+                    currentIndex = testData.length - 1; // Return to the results screen
+                    renderCurrentScreen();
+                });
+            } else if (isReviewMode) {
+                document.getElementById('btn-go-to-question').addEventListener('click', () => {
+                    if (selectedReviewIndex !== null) { isReviewMode = false; currentIndex = selectedReviewIndex; renderCurrentScreen(); }
+                });
+                document.getElementById('btn-return').addEventListener('click', () => { isReviewMode = false; renderCurrentScreen(); });
+            } else if (!isResult) {
+                const btnReview = document.getElementById('btn-review');
+                if (btnReview) btnReview.addEventListener('click', () => { isReviewMode = true; selectedReviewIndex = null; renderCurrentScreen(); });
+
+                const btnBack = document.getElementById('btn-back');
+                if (btnBack) btnBack.addEventListener('click', () => { if (!disableBack && currentIndex > 0) { currentIndex--; renderCurrentScreen(); } });
+
+                document.getElementById('btn-next').addEventListener('click', () => {
+                    if (currentIndex < testData.length - 1) {
+                        currentIndex++;
+                        if (testData[currentIndex].module !== currentModule && testData[currentIndex].module === 2) {
+                            timeRemaining = 9 * 60; // 9 minutes for M2
+                        }
+                        currentModule = testData[currentIndex].module;
+                        renderCurrentScreen();
+                    }
+                });
+            }
+        }
+
+        function renderCurrentScreen(preserveScroll = false) {
+            let lastLeftScroll = 0, lastRightScroll = 0;
+            if (preserveScroll) {
+                const lp = document.querySelector('.left-pane'), rp = document.querySelector('.right-pane');
+                if (lp) lastLeftScroll = lp.scrollTop;
+                if (rp) lastRightScroll = rp.scrollTop;
+            }
+
+            renderHeaderButtons();
+
+            if (isReviewMode) return renderReviewScreen();
+
+            const data = testData[currentIndex];
+
+            if (data.status === 'Not Seen' && data.type !== 'end-screen' && data.type !== 'intro-screen' && data.type !== 'result-screen') {
+                data.status = 'Not Answered';
+            }
+
+            const timerContainer = document.getElementById('timer-container');
+            if (data.type === 'intro-screen' || data.type === 'end-screen' || data.type === 'result-screen') {
+                timerContainer.style.visibility = 'hidden';
+                isTimerRunning = false;
+            } else {
+                timerContainer.style.visibility = 'visible';
+                isTimerRunning = true;
+            }
+
+            document.getElementById('section-info').textContent = data.range ? `| ${data.range}` : '';
+            const contentBox = document.getElementById('content-box');
+            contentBox.innerHTML = '';
+
+            if (data.type === 'intro-screen' || data.type === 'end-screen') {
+                const container = document.createElement('div');
+                container.className = 'single-layout';
+                container.innerHTML = data.content;
+                contentBox.appendChild(container);
+                return;
+            }
+
+            if (data.type === 'result-screen') {
+                renderResultScreen(contentBox);
+                return;
+            }
+
+            if (data.title) {
+                const titleEl = document.createElement('div');
+                titleEl.className = 'question-title';
+                titleEl.innerHTML = data.title;
+                contentBox.appendChild(titleEl);
+            }
+
+            if (data.type === 'fill-in-blanks') {
+                const container = document.createElement('div');
+                container.className = 'single-layout';
+
+                const blanksData = [];
+                let tempText = data.content;
+                tempText = tempText.replace(/([a-zA-Z0-9\-\']*)\[([^\]]+)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => {
+                    blanksData.push({ prefix, ans, suffix });
+                    return `\u200B__BLANK_${blanksData.length - 1}__\u200B`;
+                });
+
+                if (!data.answers) data.answers = new Array(blanksData.length).fill('');
+
+                tempText = tempText.replace(/([(\["']?)\u200B__BLANK_(\d+)__\u200B([.,;:!?')\]]*)/g, (match, prePunct, idx, postPunct) => {
+                    const d = blanksData[parseInt(idx)];
+                    const ansLen = d.ans.length;
+                    const inputWidth = `calc(${ansLen} * 1.3ch)`;
+                    let html = `<span class="inline-fill-wrap" style="display:inline-block;white-space:nowrap;">`;
+                    if (prePunct) html += prePunct;
+                    html += d.prefix || '';
+                    const savedVal = (data.answers && data.answers[parseInt(idx)]) ? data.answers[parseInt(idx)].replace(/"/g, '&quot;') : '';
+                    const initClass = savedVal ? 'fill-blank-input is-filled' : 'fill-blank-input is-empty';
+
+                    if (isAnswerReviewMode && answersRevealed) {
+                        let isCorr = savedVal.toLowerCase() === d.ans.toLowerCase();
+                        if (savedVal === '') {
+                            html += `<input type="text" maxlength="${ansLen}" value="${d.ans}" class="fill-blank-input is-filled" style="width:${inputWidth}; color: #888; font-weight: bold;" readonly />`;
+                        } else if (isCorr) {
+                            html += `<input type="text" maxlength="${ansLen}" value="${savedVal}" class="${initClass}" style="width:${inputWidth}; color: #34a853; font-weight: bold;" readonly />`;
+                        } else {
+                            html += `<input type="text" maxlength="${ansLen}" value="${savedVal}" class="${initClass}" style="width:${inputWidth}; color: #ea4335; font-weight: bold; text-decoration: line-through;" readonly />`;
+                            html += `<span style="color: #34a853; font-weight: bold; margin-left: 5px;">${d.ans}</span>`;
+                        }
+                    } else if (isAnswerReviewMode && !answersRevealed) {
+                        html += `<input type="text" maxlength="${ansLen}" value="${savedVal}" class="${initClass}" style="width:${inputWidth};" readonly />`;
+                    } else {
+                        html += `<input type="text" maxlength="${ansLen}" data-answer="${d.ans}" data-idx="${idx}" value="${savedVal}" class="${initClass}" style="width:${inputWidth}" autocomplete="off" spellcheck="false" />`;
+                    }
+
+                    if (d.suffix) html += d.suffix;
+                    if (postPunct) html += postPunct;
+                    html += `</span>`;
+                    return html;
+                });
+
+                const passageEl = document.createElement('div');
+                passageEl.className = 'passage-fill-text';
+                passageEl.innerHTML = tempText;
+                container.appendChild(passageEl);
+                contentBox.appendChild(container);
+
+                const inputs = container.querySelectorAll('.fill-blank-input');
+                setTimeout(() => {
+                    if (!isAnswerReviewMode && !isReviewMode && inputs.length > 0) {
+                        inputs[0].focus();
+                    }
+                }, 100);
+
+                inputs.forEach((input, i) => {
+                    function updateState(el) {
+                        if (el.value.trim() === '') { el.classList.add('is-empty'); el.classList.remove('is-filled'); }
+                        else { el.classList.remove('is-empty'); el.classList.add('is-filled'); }
+                    }
+
+                    function adjustWidth(el) {
+                        if (el.value.trim() !== '' && document.activeElement !== el) {
+                            const span = document.createElement('span');
+                            span.style.fontFamily = 'inherit';
+                            span.style.fontSize = '16px';
+                            span.style.visibility = 'hidden';
+                            span.style.whiteSpace = 'pre';
+                            span.style.position = 'absolute';
+                            span.textContent = el.value;
+                            document.body.appendChild(span);
+                            el.style.width = span.getBoundingClientRect().width + 'px';
+                            document.body.removeChild(span);
+                            el.style.fontFamily = 'inherit';
+                            el.style.letterSpacing = 'normal';
+                            el.style.fontSize = '16px';
+                        } else {
+                            el.style.width = `calc(${el.getAttribute('maxlength')} * 1.3ch)`;
+                            el.style.fontFamily = 'Consolas, monospace';
+                            el.style.letterSpacing = '0.3ch';
+                            el.style.fontSize = '16px';
+                        }
+                    }
+
+                    input.addEventListener('focus', function () { adjustWidth(this); });
+                    input.addEventListener('blur', function () { updateState(this); adjustWidth(this); });
+
+                    input.addEventListener('input', function () {
+                        const curPos = this.selectionStart;
+                        const filtered = this.value.replace(/[^a-zA-Z]/g, '');
+                        if (filtered !== this.value) {
+                            this.value = filtered;
+                            const newPos = Math.max(0, curPos - 1);
+                            this.setSelectionRange(newPos, newPos);
+                        }
+                        const idx = parseInt(this.getAttribute('data-idx'));
+                        data.answers[idx] = this.value;
+                        updateState(this);
+
+                        const allFilled = Array.from(inputs).every(inp => inp.value.trim() !== '');
+                        data.status = allFilled ? 'Answered' : 'Not Answered';
+                        if (this.value.length === parseInt(this.getAttribute('maxlength')) && i + 1 < inputs.length) inputs[i + 1].focus();
+                    });
+
+                    updateState(input);
+                    adjustWidth(input);
+                });
+
+                if (isAnswerReviewMode) {
+                    inputs.forEach(input => adjustWidth(input));
+                }
+            }
+            else if (data.type === 'multiple-choice-image' || data.type === 'multiple-choice-text') {
+                const splitLayout = document.createElement('div');
+                splitLayout.className = 'split-layout';
+
+                const leftPane = document.createElement('div'); leftPane.className = 'left-pane';
+                leftPane.innerHTML = data.type === 'multiple-choice-image' ? data.imageHtml : data.passage;
+
+                const rightPane = document.createElement('div'); rightPane.className = 'right-pane';
+                const qText = document.createElement('div'); qText.style.fontWeight = 'bold'; qText.style.marginBottom = '20px'; qText.innerHTML = data.question;
+                rightPane.appendChild(qText);
+
+                data.options.forEach((opt, idx) => {
+                    const label = document.createElement('label'); label.className = 'option-label';
+                    const radio = document.createElement('input'); radio.type = 'radio'; radio.name = 'question_' + data.id; radio.className = 'option-radio'; radio.value = idx;
+                    if (data.answer === idx) radio.checked = true;
+
+                    if (isAnswerReviewMode && answersRevealed) {
+                        radio.disabled = true;
+                        if (idx === data.correctAnswer) {
+                            label.style.backgroundColor = '#e6f4ea';
+                            label.style.borderColor = '#34a853';
+                        } else if (idx === data.answer && data.answer !== data.correctAnswer) {
+                            label.style.backgroundColor = '#fce8e6';
+                            label.style.borderColor = '#ea4335';
+                        }
+                    } else if (isAnswerReviewMode && !answersRevealed) {
+                        radio.disabled = true;
+                    } else {
+                        radio.addEventListener('change', () => { data.answer = idx; data.status = 'Answered'; });
+                    }
+
+                    const span = document.createElement('span'); span.textContent = opt;
+                    label.appendChild(radio); label.appendChild(span); rightPane.appendChild(label);
+                });
+
+                splitLayout.appendChild(leftPane); splitLayout.appendChild(rightPane); contentBox.appendChild(splitLayout);
+            }
+            else if (data.type === 'insert-text') {
+                const splitLayout = document.createElement('div'); splitLayout.className = 'split-layout';
+                const leftPane = document.createElement('div'); leftPane.className = 'left-pane'; leftPane.innerHTML = data.passage;
+                const rightPane = document.createElement('div'); rightPane.className = 'right-pane'; rightPane.innerHTML = data.question;
+                splitLayout.appendChild(leftPane); splitLayout.appendChild(rightPane); contentBox.appendChild(splitLayout);
+
+                const squares = leftPane.querySelectorAll('.insert-square');
+                squares.forEach(sq => {
+                    if (isAnswerReviewMode && answersRevealed) {
+                        if (sq.getAttribute('data-pos') === data.correctAnswer) {
+                            sq.outerHTML = `<span class="inserted-text" style="background:rgba(52, 168, 83, 0.15); border:2px solid #34a853; color:#1e293b; padding: 2px 4px; border-radius: 4px;"> ${data.insertSentence} </span>`;
+                        } else if (sq.getAttribute('data-pos') === data.answer && data.answer !== data.correctAnswer) {
+                            sq.outerHTML = `<span class="inserted-text" style="background:rgba(234, 67, 53, 0.15); border:2px solid #ea4335; color:#1e293b; text-decoration:line-through; padding: 2px 4px; border-radius: 4px;"> ${data.insertSentence} </span>`;
+                        }
+                    } else if (isAnswerReviewMode && !answersRevealed) {
+                        if (data.answer === sq.getAttribute('data-pos')) {
+                            sq.outerHTML = `<span class="inserted-text"> ${data.insertSentence} </span>`;
+                        }
+                    } else {
+                        if (data.answer === sq.getAttribute('data-pos')) sq.outerHTML = `<span class="inserted-text"> ${data.insertSentence} </span>`;
+                        else sq.addEventListener('click', (e) => { data.answer = e.target.getAttribute('data-pos'); data.status = 'Answered'; renderCurrentScreen(true); });
+                    }
+                });
+            }
+            else if (data.type === 'sentence-selection') {
+                const splitLayout = document.createElement('div'); splitLayout.className = 'split-layout';
+                const leftPane = document.createElement('div'); leftPane.className = 'left-pane'; leftPane.innerHTML = data.passage;
+                const rightPane = document.createElement('div'); rightPane.className = 'right-pane'; rightPane.innerHTML = `<div style="font-weight:bold;">${data.question}</div>`;
+                splitLayout.appendChild(leftPane); splitLayout.appendChild(rightPane); contentBox.appendChild(splitLayout);
+
+                const sentences = leftPane.querySelectorAll('.selectable-sentence');
+                sentences.forEach(sent => {
+                    if (data.answer === sent.getAttribute('data-idx')) sent.className = 'selectable-sentence inserted-text';
+
+                    if (isAnswerReviewMode && answersRevealed) {
+                        // Determine correctAnswer index
+                        let corrIdx = data.correctAnswer !== undefined ? String(data.correctAnswer) : null;
+                        if (sent.getAttribute('data-idx') === corrIdx) {
+                            sent.style.backgroundColor = 'rgba(52, 168, 83, 0.15)';
+                            sent.style.border = '2px solid #34a853';
+                            sent.style.color = '#1e293b';
+                        } else if (sent.getAttribute('data-idx') === data.answer && data.answer !== corrIdx) {
+                            sent.style.backgroundColor = 'rgba(234, 67, 53, 0.15)';
+                            sent.style.border = '2px solid #ea4335';
+                            sent.style.color = '#1e293b';
+                        }
+                    } else if (isAnswerReviewMode && !answersRevealed) {
+                        // do nothing extra for color
+                    } else {
+                        sent.addEventListener('click', (e) => {
+                            data.answer = e.currentTarget.getAttribute('data-idx'); data.status = 'Answered';
+                            sentences.forEach(s => s.className = 'selectable-sentence');
+                            e.currentTarget.className = 'selectable-sentence inserted-text';
+                        });
+                    }
+                });
+            }
+
+            if (preserveScroll) {
+                const lp = document.querySelector('.left-pane'), rp = document.querySelector('.right-pane');
+                if (lp) lp.scrollTop = lastLeftScroll; if (rp) rp.scrollTop = lastRightScroll;
+            }
+        }
+
+        function renderReviewScreen() {
+            document.getElementById('section-info').textContent = `| Review`;
+            const contentBox = document.getElementById('content-box');
+            contentBox.innerHTML = '';
+
+            const container = document.createElement('div'); container.className = 'review-layout';
+            const instruction = document.createElement('div'); instruction.className = 'review-instruction';
+            instruction.innerHTML = 'To review a specific question from the list, click on the question to highlight it, then click on Go to Question at the top of the screen.';
+            container.appendChild(instruction);
+
+            const tableContainer = document.createElement('div'); tableContainer.className = 'review-table-container';
+            const table = document.createElement('table'); table.className = 'review-table';
+            const thead = document.createElement('thead'); thead.innerHTML = `<tr><th style="width:10%; text-align:center;">Number</th><th style="width:70%;">Description</th><th style="width:20%; text-align:center;">Status</th></tr>`;
+            table.appendChild(thead);
+
+            const tbody = document.createElement('tbody');
+            let displayNum = 1;
+
+            testData.forEach((item, idx) => {
+                if (item.module !== currentModule || item.type === 'end-screen' || item.type === 'intro-screen' || item.type === 'result-screen') return;
+                const tr = document.createElement('tr');
+                if (item.status === 'Answered') tr.classList.add('status-answered');
+                if (item.status === 'Not Seen') tr.classList.add('status-not-seen');
+                if (selectedReviewIndex === idx) tr.classList.add('selected');
+
+                let disp = item.displayNum || displayNum;
+                if (!item.displayNum) displayNum++;
+                tr.innerHTML = `<td style="text-align:center;">${disp}</td><td>${item.description}</td><td style="text-align:center;">${item.status}</td>`;
+                tr.addEventListener('click', () => { selectedReviewIndex = idx; renderHeaderButtons(); Array.from(tbody.children).forEach(child => child.classList.remove('selected')); tr.classList.add('selected'); });
+                tr.addEventListener('dblclick', () => { isReviewMode = false; currentIndex = idx; renderCurrentScreen(); });
+                tbody.appendChild(tr);
+            });
+
+            table.appendChild(tbody); tableContainer.appendChild(table); container.appendChild(tableContainer); contentBox.appendChild(container);
+        }
+
+        function renderResultScreen(contentBox) {
+            saveHistory();
+            let html = `<div class="transition-page" style="max-width: 900px; padding-bottom: 50px;">
+        <h2>Score Report</h2><hr>`;
+
+            // 1. Calculate Scores
+            let m1Questions = [];
+            let m2Questions = [];
+
+            let m1OgScore = 0; let m1OgTotal = 0;
+            let m2OgScore = 0; let m2OgTotal = 0;
+
+            let ogRawTotal = 0;
+            let fullRawScore = 0;
+            let fullRawTotal = 0;
+
+            testData.forEach((item, idx) => {
+                if (item.type === 'intro-screen' || item.type === 'end-screen' || item.type === 'result-screen') return;
+
+                let qRecord = {
+                    index: idx,
+                    description: item.displayNum || item.description,
+                    userAnsStr: 'Not Answered',
+                    correctAnsStr: 'N/A',
+                    pointsEarned: 0,
+                    maxPoints: 1,
+                    isExperimental: item.isExperimental || false
+                };
+
+                if (item.type === 'fill-in-blanks') {
+                    const blanksData = [];
+                    item.content.replace(/([a-zA-Z0-9\-\']*)\[([^\]]+)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => {
+                        blanksData.push(ans); return '';
+                    });
+                    qRecord.maxPoints = blanksData.length;
+                    const uAnsArr = item.answers || [];
+
+                    let correctCount = 0;
+                    for (let i = 0; i < blanksData.length; i++) {
+                        if (uAnsArr[i] && uAnsArr[i].toLowerCase() === blanksData[i].toLowerCase()) {
+                            correctCount++;
+                        }
+                    }
+                    qRecord.pointsEarned = correctCount;
+                    qRecord.userAnsStr = uAnsArr.map(x => x ? x : '_').join(', ');
+                    qRecord.correctAnsStr = blanksData.join(', ');
+                } else {
+                    if (item.type === 'multiple-choice-text' || item.type === 'multiple-choice-image') {
+                        if (item.answer !== null) qRecord.userAnsStr = String.fromCharCode(65 + item.answer);
+                        if (item.correctAnswer !== null && item.correctAnswer !== -1) qRecord.correctAnsStr = String.fromCharCode(65 + item.correctAnswer);
+                        if (item.answer === item.correctAnswer) qRecord.pointsEarned = 1;
+                    } else if (item.type === 'insert-text') {
+                        qRecord.userAnsStr = item.answer || 'None';
+                        qRecord.correctAnsStr = item.correctAnswer;
+                        if (item.answer === item.correctAnswer) qRecord.pointsEarned = 1;
+                    } else if (item.type === 'sentence-selection') {
+                        qRecord.userAnsStr = item.answer !== null ? `Sentence ${parseInt(item.answer) + 1}` : 'None';
+                        qRecord.correctAnsStr = item.correctAnswer !== undefined ? `Sentence ${parseInt(item.correctAnswer) + 1}` : 'N/A';
+                        if (item.answer == item.correctAnswer) qRecord.pointsEarned = 1;
+                    }
+                }
+
+                fullRawTotal += qRecord.maxPoints;
+                fullRawScore += qRecord.pointsEarned;
+
+                if (item.module === 1) {
+                    m1Questions.push(qRecord);
+                    if (!qRecord.isExperimental) {
+                        m1OgScore += qRecord.pointsEarned;
+                        m1OgTotal += qRecord.maxPoints;
+                        ogRawTotal += qRecord.maxPoints;
+                    }
+                } else {
+                    m2Questions.push(qRecord);
+                    if (!qRecord.isExperimental) {
+                        m2OgScore += qRecord.pointsEarned;
+                        m2OgTotal += qRecord.maxPoints;
+                        ogRawTotal += qRecord.maxPoints;
+                    }
+                }
+            });
+
+            let ogTotalScore = m1OgScore + m2OgScore;
+
+            function getScaleScoreAndCEFR(rawPoints) {
+                if (rawPoints >= 34) return { scale: '6', cefr: 'C2' };
+                if (rawPoints >= 32) return { scale: '5.5', cefr: 'C1' };
+                if (rawPoints >= 28) return { scale: '5', cefr: 'C1' };
+                if (rawPoints >= 25) return { scale: '4.5', cefr: 'B2' };
+                if (rawPoints >= 18) return { scale: '4', cefr: 'B2' };
+                if (rawPoints >= 12) return { scale: '3.5', cefr: 'B1' };
+                if (rawPoints >= 8) return { scale: '3', cefr: 'B1' };
+                if (rawPoints === 7) return { scale: '2.5', cefr: 'A2' };
+                if (rawPoints === 6) return { scale: '2', cefr: 'A2' };
+                return { scale: '1', cefr: 'A1' };
+            }
+
+            let scaledOgScoreTo35 = ogRawTotal > 0 ? Math.round((ogTotalScore / ogRawTotal) * 35) : 0;
+
+            let pointsLost = fullRawTotal - fullRawScore;
+            let scaledFullScoreTo35 = Math.max(0, 35 - pointsLost);
+
+            let ogCEFR = getScaleScoreAndCEFR(scaledOgScoreTo35);
+            let fullCEFR = getScaleScoreAndCEFR(scaledFullScoreTo35);
+
+            html += `<div style="display:flex; flex-direction:column; gap: 20px; margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <div style="display:flex; justify-content:space-around; gap: 20px; flex-wrap: wrap;">
+            <div style="text-align:center; min-width: 200px;">
+                <div style="font-size:2em; font-weight:bold; color:#1a73e8;">${ogCEFR.scale} <span style="font-size:0.5em; color:#666;">/ 6</span></div>
+                <div style="font-weight:bold;">Estimated Scale Score <span style="color:#666; font-size:0.8em;">(CEFR: ${ogCEFR.cefr})</span></div>
+                <div style="color:#666; font-size:0.9em;">(OG Version)</div>
+            </div>
+            <div style="text-align:center; min-width: 200px;">
+                <div style="font-size:2em; font-weight:bold; color:#34a853;">${ogTotalScore} <span style="font-size:0.5em; color:#666;">/ ${ogRawTotal}</span></div>
+                <div style="font-weight:bold;">Scored Raw Points</div>
+                <div style="color:#666; font-size:0.9em;">(OG Version)</div>
+            </div>
+        </div>
+        <div style="height:1px; background:#ddd; margin: 10px 0;"></div>
+        <div style="display:flex; justify-content:space-around; gap: 20px; flex-wrap: wrap;">
+            <div style="text-align:center; min-width: 200px;">
+                <div style="font-size:2em; font-weight:bold; color:#ea4335;">${fullCEFR.scale} <span style="font-size:0.5em; color:#666;">/ 6</span></div>
+                <div style="font-weight:bold;">Estimated Scale Score <span style="color:#666; font-size:0.8em;">(CEFR: ${fullCEFR.cefr})</span></div>
+                <div style="color:#666; font-size:0.9em;">(Full Version)</div>
+            </div>
+            <div style="text-align:center; min-width: 200px;">
+                <div style="font-size:2em; font-weight:bold; color:#f59e0b;">${scaledFullScoreTo35} <span style="font-size:0.5em; color:#666;">/ 35</span></div>
+                <div style="font-weight:bold;">Total Raw Points</div>
+                <div style="color:#666; font-size:0.9em;">(Full Version)</div>
+            </div>
+        </div>
+    </div>`;
+
+            html += `<div style="text-align:center; margin-bottom: 20px;">
+        <p style="font-size: 0.9em; color:#555;"><em>Note: The OG Scoring algorithm automatically excludes the experimental passages/questions from the final score. The "Total Raw Points" evaluates your performance on all items.</em></p>
+    </div>`;
+
+            // Render Table Helper
+            function renderTable(title, qs, isOgVersion, score, total) {
+                let tHtml = `<div style="flex: 1;">
+            <h4 style="background:#e8f0fe; padding:10px; border-radius:4px 4px 0 0; margin:0; text-align:center;">${title}</h4>
+            <table class="intro-table" style="width:100%; border-top:none;">
+            <thead><tr><th>Question</th><th>Correct Answer</th><th>Your Raw Points</th></tr></thead>
+            <tbody>`;
+
+                qs.forEach(q => {
+                    let isExp = isOgVersion && q.isExperimental;
+                    let ptsStr = isExp ? `<span style="color:#888;">0 (unscored)</span>` : `${q.pointsEarned} / ${q.maxPoints}`;
+                    let isCorrect = q.pointsEarned === q.maxPoints;
+                    let bgColor = isExp ? '#fcfcfc' : (isCorrect ? '#f0fdf4' : '#fef2f2');
+                    tHtml += `<tr style="cursor:pointer; background:${bgColor};" onclick="isAnswerReviewMode=true; answersRevealed=true; currentIndex=${q.index}; renderCurrentScreen();">
+                <td style="text-align:center;">${q.description}</td>
+                <td style="text-align:center;">${q.correctAnsStr}</td>
+                <td style="text-align:center; font-weight:bold;">${ptsStr}</td>
+            </tr>`;
+                });
+
+                tHtml += `<tr style="background:#f1f3f4; font-weight:bold;">
+            <td colspan="2" style="text-align:right;">Module Total:</td>
+            <td style="text-align:center; color:#1a73e8;">${score} / ${total}</td>
+        </tr>`;
+
+                tHtml += `</tbody></table></div>`;
+                return tHtml;
+            }
+
+            html += `<h3 style="margin-top: 20px; font-size: 1.2em; color: #2b6668;">OG Version (Excludes Experimental)</h3>`;
+            html += `<div style="display:flex; gap: 20px;">`;
+            html += renderTable('Module 1', m1Questions, true, m1OgScore, m1OgTotal);
+            html += renderTable('Module 2', m2Questions, true, m2OgScore, m2OgTotal);
+            html += `</div>`;
+
+            let m1FullScore = m1Questions.reduce((a, b) => a + b.pointsEarned, 0);
+            let m1FullTotal = m1Questions.reduce((a, b) => a + b.maxPoints, 0);
+            let m2FullScore = m2Questions.reduce((a, b) => a + b.pointsEarned, 0);
+            let m2FullTotal = m2Questions.reduce((a, b) => a + b.maxPoints, 0);
+
+            html += `<h3 style="margin-top: 40px; font-size: 1.2em; color: #ea4335;">Full Version (Includes All Questions)</h3>`;
+            html += `<div style="display:flex; gap: 20px;">`;
+            html += renderTable('Module 1', m1Questions, false, m1FullScore, m1FullTotal);
+            html += renderTable('Module 2', m2Questions, false, m2FullScore, m2FullTotal);
+            html += `</div>`;
+            html += `<div style="text-align:center; font-weight:bold; font-size:1.2em; padding:15px; margin-top:20px; background:#e8f0fe; border-radius:4px; color:#1a73e8;">
+        Module 1 Total (out of 20) + Module 2 Total (out of 15) = Reading Total (out of 35)
+    </div>`;
+
+            html += `</div>`;
+            contentBox.innerHTML = html;
+        }
+
+        function updateTimer() {
+            if (!isTimerRunning || timeRemaining <= 0) return;
+            timeRemaining--;
+            if (!isTimeHidden) {
+                const m = Math.floor(timeRemaining / 60).toString().padStart(2, '0');
+                const s = (timeRemaining % 60).toString().padStart(2, '0');
+                document.getElementById('timer-display').textContent = `${m}:${s}`;
+            }
+        }
+
+        document.getElementById('btn-hide-time').addEventListener('click', () => {
+            isTimeHidden = !isTimeHidden;
+            const timerDisplay = document.getElementById('timer-display');
+            const hideTimeText = document.getElementById('hide-time-text');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (isTimeHidden) {
+                timerDisplay.style.visibility = 'hidden';
+                hideTimeText.textContent = 'Show Time';
+                eyeIcon.innerHTML = `<use xlink:href="#icons-show-timer"></use>`;
+            } else {
+                timerDisplay.style.visibility = 'visible';
+                hideTimeText.textContent = 'Hide Time';
+                eyeIcon.innerHTML = `<use xlink:href="#icons-hide-timer"></use>`;
+                const m = Math.floor(timeRemaining / 60).toString().padStart(2, '0');
+                const s = (timeRemaining % 60).toString().padStart(2, '0');
+                timerDisplay.textContent = `${m}:${s}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
