@@ -127,11 +127,11 @@ stu2_content: Increasing the minimum wage can lead to job losses and higher cost
 2026.4.26
 第一套
 prof: Dr. Diaz
-question: We've been discussing the use of virtual reality(VR)in education. VR creates 3-dimensional, computer-simulated environments that people can interact with using electronic equipment such as goggles. Some educators argue that while VR technology can have some benefits, it can also have drawbacks. Do you think VR is a valuable tool in education? Why or why not?
+question: We've been discussing the use of virtual reality (VR) in education. VR creates 3-dimensional, computer-simulated environments that people can interact with using electronic equipment such as goggles. Some educators argue that while VR technology can have some benefits, it can also have drawbacks. Do you think VR is a valuable tool in education? Why or why not?
 stu1: Kelly
-stu1_content: I believe VR devices can be very helpful in education. They give students the chance to use modern tools and explore new ideas in an active way.Instead of only reading about a topic, students can experience it directly. This strong sense of immersion may increase motivation and participation.
-stu2: null
-stu2_content: I do not think VR should be widely used in schools yet. The technology is still very expensive, and many schools cannot afford the equipment or maintenance. This could make educational inequality worse. Traditional teaching methods are much cheaper, and they can still be very effective when teachers use them well
+stu1_content: VR is a valuable tool in education because it gives learners a chance to interact directly with concepts and tools. Instead of just reading about a topic, learners can have highly engaging experiences that enhance understanding and retention. Although it is expensive, investing in VR can be beneficial in the long run.
+stu2: Paul
+stu2_content: VR technology is not practical for widespread use in education due to its high cost. Many schools cannot afford it, which would lead to inequality in access. Even schools that can afford basic forms of VR do not have enough money for the most advanced and educationally valuable kinds of VR. Traditional teaching methods are more affordable and still effective.
 
 第二套
 prof: Dr. Gupta
