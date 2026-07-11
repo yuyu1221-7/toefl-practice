@@ -44,6 +44,9 @@
         body {
             -webkit-text-size-adjust: 100%;
             touch-action: manipulation;
+            height: 100dvh;
+            /* iOS Safari fallback */
+            height: -webkit-fill-available;
         }
 
         .view-hidden {
@@ -88,6 +91,9 @@
             background-position: 0 95%;
             background-repeat: no-repeat;
             text-align: left;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-weight: 600;
+            letter-spacing: 0.3ch;
             padding: 0;
             font-weight: 700;
             color: #2563eb;
@@ -142,7 +148,7 @@
 
         @media (max-width: 1024px) {
             .passage-text {
-                font-size: 19px !important;
+                font-size: 20px !important;
                 line-height: 1.9;
                 text-align: left;
             }
@@ -212,9 +218,27 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener('input', function (e) {
+            if (e.target && e.target.classList.contains('fill-blank-input')) {
+                // Force English letters only
+                e.target.value = e.target.value.replace(/[^a-zA-Z0-9\-'\ ]/g, '');
+            }
+        });
+        // Fix iOS Safari keyboard dismissal bug where touch targets are misaligned
+        document.addEventListener('focusout', function (e) {
+            if (e.target && e.target.tagName === 'INPUT') {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
+        });
+    </script>
 </head>
 
-<body class="h-screen flex flex-col overflow-hidden relative selection:bg-blue-200">
+<body class="h-[100dvh] flex flex-col overflow-hidden relative selection:bg-blue-200"
+    style="height: 100dvh; height: -webkit-fill-available;">
 
     <!-- 全局顶部导航 -->
     <header
@@ -954,7 +978,7 @@
 
                 <!-- 底部操作栏 -->
                 <div
-                    class="bg-white border-t border-slate-200 p-4 px-8 flex items-center justify-between shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)] shrink-0 z-10">
+                    class="bg-white border-t border-slate-200 p-3 sm:p-4 px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)] shrink-0 z-10">
                     <div id="feedback-msg"
                         class="text-[1.05rem] font-semibold flex-1 tracking-wide text-center sm:text-left w-full sm:w-auto">
                     </div>
@@ -2951,7 +2975,7 @@
             // --- 🌟 核心升级：连同前后的标点符号一起捕获并包裹 ---
             tempText = tempText.replace(/([(\["']?)\u200B__BLANK_(\d+)__\u200B([.,:;!?'")\]]*)/g, (match, prePunct, idx, postPunct) => {
                 const data = blanksData[idx];
-                const inputWidth = `calc(${data.len} * 1.3ch - 0.1ch)`;
+                const inputWidth = `calc(${data.len} * 1.3ch)`;
                 const highlightClass = data.isSearchTarget ? 'answer-highlighted' : '';
 
                 let resultHtml = `<span class="inline-block whitespace-nowrap">`;
@@ -2971,7 +2995,7 @@
                 }
                 const safeValue = savedValue.replace(/"/g, '&quot;');
                 const isReadonly = (workspaceState.mode === 'review_mock') ? 'readonly' : '';
-                resultHtml += `<input type="text" maxlength="${data.len}" data-answer="${data.ans}" value="${safeValue}" class="fill-blank-input ${highlightClass}" style="width: ${inputWidth}" autocomplete="off" spellcheck="false" ${isReadonly} />`;
+                resultHtml += `<input type="text" maxlength="${data.len}" data-answer="${data.ans}" value="${safeValue}" class="fill-blank-input ${highlightClass}" style="width: ${inputWidth}" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" ${isReadonly} />`;
 
                 // 4. 放入单词后缀
                 if (data.suffix) resultHtml += data.suffix;
@@ -3279,208 +3303,307 @@
                 .blank-word { display: inline-flex; align-items: baseline; margin: 0 4px; }
                 .blank-char { display: inline-block; padding: 0 4px; color: transparent; border-bottom: 2px solid #333; margin: 0 2px; font-family: monospace; }
                 .punct { display: inline-block; margin: 0 1px; color: #000; font-weight: bold; }
-            </style></head><body><h1>Custom TOEFL Practice Paper</h1>`;
+            </style>
+    <script>
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.classList.contains('fill-blank-input')) {
+                // Force English letters only
+                e.target.value = e.target.value.replace(/[^a-zA-Z0-9\-'\ ]/g, '');
+            }
+        });
+        // Fix iOS Safari keyboard dismissal bug where touch targets are misaligned
+        document.addEventListener('focusout', function(e) {
+            if (e.target && e.target.tagName === 'INPUT') {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
+        });
+    </script>
+    </head>
 
-            let aHtmlContent = `
-            <!DOCTYPE html><html lang="en"><head>
+    <body>
+        <h1>Custom TOEFL Practice Paper</h1>`;
 
-<meta charset="UTF-8"><title>Answer Key - TOEFL Paper</title>
+        let aHtmlContent = `
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+
+            <meta charset="UTF-8">
+            <title>Answer Key - TOEFL Paper</title>
             <style>
-                body { font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 40px; line-height: 2.0; color: #111; font-size: 16px; background-color: #fff; } 
-                h1 { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 40px; font-size: 2em; text-transform: uppercase;} 
-                .ans-group { margin-bottom: 40px; }
-                .ans-title { font-size: 1.3em; font-weight: bold; margin-bottom: 15px; background: #f0f0f0; padding: 10px; border-radius: 5px; }
-                .ans-list { columns: 2; -webkit-columns: 2; list-style-type: decimal; padding-left: 20px; font-family: monospace; font-size: 1.2em; }
-                .ans-list li { padding-bottom: 8px; font-weight: bold; color: #0056b3; }
-            </style></head><body><h1>Answer Key</h1>`;
+                body {
+                    font-family: 'Helvetica Neue', Arial, sans-serif;
+                    max-width: 700px;
+                    margin: 0 auto;
+                    padding: 40px;
+                    line-height: 2.0;
+                    color: #111;
+                    font-size: 16px;
+                    background-color: #fff;
+                }
+
+                h1 {
+                    text-align: center;
+                    border-bottom: 2px solid #000;
+                    padding-bottom: 15px;
+                    margin-bottom: 40px;
+                    font-size: 2em;
+                    text-transform: uppercase;
+                }
+
+                .ans-group {
+                    margin-bottom: 40px;
+                }
+
+                .ans-title {
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    background: #f0f0f0;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+
+                .ans-list {
+                    columns: 2;
+                    -webkit-columns: 2;
+                    list-style-type: decimal;
+                    padding-left: 20px;
+                    font-family: monospace;
+                    font-size: 1.2em;
+                }
+
+                .ans-list li {
+                    padding-bottom: 8px;
+                    font-weight: bold;
+                    color: #0056b3;
+                }
+            </style>
+            <script>
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.classList.contains('fill-blank-input')) {
+                // Force English letters only
+                e.target.value = e.target.value.replace(/[^a-zA-Z0-9\-'\ ]/g, '');
+            }
+        });
+        // Fix iOS Safari keyboard dismissal bug where touch targets are misaligned
+        document.addEventListener('focusout', function(e) {
+            if (e.target && e.target.tagName === 'INPUT') {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
+        });
+            </script>
+        </head>
+
+        <body>
+            <h1>Answer Key</h1>`;
 
             let qIndex = 1;
             idsArray.forEach(id => {
-                const q = globalQuestions.find(x => x.id === id);
-                let paperText = q.text; let ansArray = [];
+            const q = globalQuestions.find(x => x.id === id);
+            let paperText = q.text; let ansArray = [];
 
-                paperText = paperText.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix) => {
-                    ansArray.push(ans);
-                    let htmlSlots = '';
-                    for (let char of ans) {
-                        if (/[a-zA-Z0-9]/.test(char)) { htmlSlots += `<span class="blank-char">_</span>`; }
-                        else { htmlSlots += `<span class="punct">${char}</span>`; }
-                    }
-                    return `${prefix}<span class="blank-word">${htmlSlots}</span>${suffix}`;
-                });
-
-                qHtmlContent += `<div class="passage"><div class="passage-title">Passage ${qIndex}: ${q.titleEn} (${q.titleZh})</div><div style="font-size: 1.1em;">${paperText}</div></div>`;
-                aHtmlContent += `<div class="ans-group"><div class="ans-title">Passage ${qIndex}: ${q.titleEn}</div><ol class="ans-list">`;
-                ansArray.forEach(ans => aHtmlContent += `<li>${ans}</li>`);
-                aHtmlContent += `</ol></div>`;
-
-                qIndex++;
+            paperText = paperText.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, (match, prefix, ans, suffix)
+            => {
+            ansArray.push(ans);
+            let htmlSlots = '';
+            for (let char of ans) {
+            if (/[a-zA-Z0-9]/.test(char)) { htmlSlots += `<span class="blank-char">_</span>`; }
+            else { htmlSlots += `<span class="punct">${char}</span>`; }
+            }
+            return `${prefix}<span class="blank-word">${htmlSlots}</span>${suffix}`;
             });
-            qHtmlContent += `</body></html>`;
-            aHtmlContent += `</body></html>`;
 
-            triggerDownload(qHtmlContent, `TOEFL_Paper_Questions_${new Date().getTime()}.html`, 'text/html');
+            qHtmlContent += `<div class="passage">
+                <div class="passage-title">Passage ${qIndex}: ${q.titleEn} (${q.titleZh})</div>
+                <div style="font-size: 1.1em;">${paperText}</div>
+            </div>`;
+            aHtmlContent += `<div class="ans-group">
+                <div class="ans-title">Passage ${qIndex}: ${q.titleEn}</div>
+                <ol class="ans-list">`;
+                    ansArray.forEach(ans => aHtmlContent += `<li>${ans}</li>`);
+                    aHtmlContent += `</ol>
+            </div>`;
 
-            setTimeout(() => {
-                triggerDownload(aHtmlContent, `TOEFL_Paper_Answers_${new Date().getTime()}.html`, 'text/html');
-            }, 800);
+            qIndex++;
+            });
+            qHtmlContent += `
+        </body>
+
+        </html>`;
+        aHtmlContent += `
+    </body>
+
+</html>`;
+
+triggerDownload(qHtmlContent, `TOEFL_Paper_Questions_${new Date().getTime()}.html`, 'text/html');
+
+setTimeout(() => {
+triggerDownload(aHtmlContent, `TOEFL_Paper_Answers_${new Date().getTime()}.html`, 'text/html');
+}, 800);
+}
+
+function triggerDownload(content, filename, type) {
+const blob = new Blob([content], { type: type + ';charset=utf-8' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a'); a.href = url; a.download = filename;
+document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+showToast("文件已生成并下载！");
+}
+
+// ================ 考情大盘 (Chart.js) ================
+document.getElementById('stats-range-filter').addEventListener('change', renderStatsDashboard);
+document.getElementById('stats-date-search').addEventListener('input', renderStatsDashboard);
+
+function renderStatsDashboard() {
+const timeFilter = document.getElementById('stats-range-filter').value;
+const searchDateStr = document.getElementById('stats-date-search').value.trim().toLowerCase();
+
+let validDatesToConsider = globalDates.filter(d => d !== '未知日期');
+
+if (timeFilter !== 'all') {
+const currentYear = 2026;
+const currentMonth = 6;
+validDatesToConsider = validDatesToConsider.filter(d => {
+const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
+let y, m;
+if (unknownMonthMatch) {
+y = parseInt(unknownMonthMatch[1]);
+m = parseInt(unknownMonthMatch[2]);
+} else {
+let processStr = d;
+if (d.includes('-')) {
+const parts = d.split('-');
+processStr = parts[1].includes('.') ? parts[1] : parts[0].match(/(\d+\.\d+)/)[1] + '.' + parts[1];
+}
+const pts = processStr.split('.');
+y = parseInt(pts[0]);
+m = parseInt(pts[1]);
+}
+if (timeFilter === '2026') return y === 2026;
+const monthsDiff = (currentYear - y) * 12 + (currentMonth - m);
+if (timeFilter === 'last6m') return monthsDiff >= 0 && monthsDiff <= 6; if (timeFilter==='last12m' ) return monthsDiff>=
+    0 && monthsDiff <= 12; return true; }); } if (searchDateStr) { validDatesToConsider=validDatesToConsider.filter(d=>
+        d.toLowerCase().includes(searchDateStr));
         }
 
-        function triggerDownload(content, filename, type) {
-            const blob = new Blob([content], { type: type + ';charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a'); a.href = url; a.download = filename;
-            document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-            showToast("文件已生成并下载！");
+        const filteredQuestions = globalQuestions.filter(q => q.dates.some(d => validDatesToConsider.includes(d)));
+
+        document.getElementById('stat-total-q').textContent = filteredQuestions.length;
+        document.getElementById('stat-latest-date').textContent = validDatesToConsider.length > 0 ?
+        validDatesToConsider[0] : '---';
+        let freqSum = 0; filteredQuestions.forEach(q => freqSum += q.frequency);
+        document.getElementById('stat-total-freq').textContent = freqSum;
+
+        if (typeof Chart !== 'undefined') {
+        renderPieChart(filteredQuestions);
+        renderBarChart(validDatesToConsider, filteredQuestions);
         }
 
-        // ================ 考情大盘 (Chart.js) ================
-        document.getElementById('stats-range-filter').addEventListener('change', renderStatsDashboard);
-        document.getElementById('stats-date-search').addEventListener('input', renderStatsDashboard);
+        const singleSelect = document.getElementById('stat-single-select');
+        if (singleSelect.options.length === 1) {
+        const sortedQs = [...globalQuestions].sort((a, b) => b.frequency - a.frequency);
+        sortedQs.forEach(q => {
+        singleSelect.innerHTML += `<option value="${q.id}">[频次:${q.frequency}] ${q.titleZh} (${q.titleEn})</option>`;
+        });
 
-        function renderStatsDashboard() {
-            const timeFilter = document.getElementById('stats-range-filter').value;
-            const searchDateStr = document.getElementById('stats-date-search').value.trim().toLowerCase();
+        singleSelect.addEventListener('change', function () {
+        const resDiv = document.getElementById('stat-single-result');
+        if (!this.value) { resDiv.classList.add('hidden'); return; }
 
-            let validDatesToConsider = globalDates.filter(d => d !== '未知日期');
+        const q = globalQuestions.find(x => x.id == this.value);
+        resDiv.classList.remove('hidden');
+        document.getElementById('single-freq').textContent = q.frequency;
 
-            if (timeFilter !== 'all') {
-                const currentYear = 2026;
-                const currentMonth = 6;
-                validDatesToConsider = validDatesToConsider.filter(d => {
-                    const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
-                    let y, m;
-                    if (unknownMonthMatch) {
-                        y = parseInt(unknownMonthMatch[1]);
-                        m = parseInt(unknownMonthMatch[2]);
-                    } else {
-                        let processStr = d;
-                        if (d.includes('-')) {
-                            const parts = d.split('-');
-                            processStr = parts[1].includes('.') ? parts[1] : parts[0].match(/(\d+\.\d+)/)[1] + '.' + parts[1];
-                        }
-                        const pts = processStr.split('.');
-                        y = parseInt(pts[0]);
-                        m = parseInt(pts[1]);
-                    }
-                    if (timeFilter === '2026') return y === 2026;
-                    const monthsDiff = (currentYear - y) * 12 + (currentMonth - m);
-                    if (timeFilter === 'last6m') return monthsDiff >= 0 && monthsDiff <= 6;
-                    if (timeFilter === 'last12m') return monthsDiff >= 0 && monthsDiff <= 12;
-                    return true;
-                });
-            }
+        const validDates = q.dates.filter(d => d !== '未知日期').sort((a, b) => parseDateStr(a) - parseDateStr(b));
+        if (validDates.length > 0) {
+        document.getElementById('single-span').textContent = `${validDates[0]} 至今`;
+        } else {
+        document.getElementById('single-span').textContent = '仅未知日期';
+        }
 
-            if (searchDateStr) {
-                validDatesToConsider = validDatesToConsider.filter(d => d.toLowerCase().includes(searchDateStr));
-            }
-
-            const filteredQuestions = globalQuestions.filter(q => q.dates.some(d => validDatesToConsider.includes(d)));
-
-            document.getElementById('stat-total-q').textContent = filteredQuestions.length;
-            document.getElementById('stat-latest-date').textContent = validDatesToConsider.length > 0 ? validDatesToConsider[0] : '---';
-            let freqSum = 0; filteredQuestions.forEach(q => freqSum += q.frequency);
-            document.getElementById('stat-total-freq').textContent = freqSum;
-
-            if (typeof Chart !== 'undefined') {
-                renderPieChart(filteredQuestions);
-                renderBarChart(validDatesToConsider, filteredQuestions);
-            }
-
-            const singleSelect = document.getElementById('stat-single-select');
-            if (singleSelect.options.length === 1) {
-                const sortedQs = [...globalQuestions].sort((a, b) => b.frequency - a.frequency);
-                sortedQs.forEach(q => {
-                    singleSelect.innerHTML += `<option value="${q.id}">[频次:${q.frequency}] ${q.titleZh} (${q.titleEn})</option>`;
-                });
-
-                singleSelect.addEventListener('change', function () {
-                    const resDiv = document.getElementById('stat-single-result');
-                    if (!this.value) { resDiv.classList.add('hidden'); return; }
-
-                    const q = globalQuestions.find(x => x.id == this.value);
-                    resDiv.classList.remove('hidden');
-                    document.getElementById('single-freq').textContent = q.frequency;
-
-                    const validDates = q.dates.filter(d => d !== '未知日期').sort((a, b) => parseDateStr(a) - parseDateStr(b));
-                    if (validDates.length > 0) {
-                        document.getElementById('single-span').textContent = `${validDates[0]} 至今`;
-                    } else {
-                        document.getElementById('single-span').textContent = '仅未知日期';
-                    }
-
-                    document.getElementById('single-dates-list').innerHTML = q.dates.map(d =>
-                        `<span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold border border-blue-200">${d}</span>`
-                    ).join('');
-                });
-            }
+        document.getElementById('single-dates-list').innerHTML = q.dates.map(d =>
+        `<span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold border border-blue-200">${d}</span>`
+        ).join('');
+        });
+        }
         }
 
         let pieChartInstance = null;
         let barChartInstance = null;
 
         function renderPieChart(filteredQuestions) {
-            const ctx = document.getElementById('chart-topic-pie');
-            if (!ctx) return;
+        const ctx = document.getElementById('chart-topic-pie');
+        if (!ctx) return;
 
-            let catCounts = {};
-            filteredQuestions.forEach(q => { catCounts[q.cat] = (catCounts[q.cat] || 0) + 1; });
-            const labels = Object.keys(catCounts);
-            const data = Object.values(catCounts);
+        let catCounts = {};
+        filteredQuestions.forEach(q => { catCounts[q.cat] = (catCounts[q.cat] || 0) + 1; });
+        const labels = Object.keys(catCounts);
+        const data = Object.values(catCounts);
 
-            if (pieChartInstance) pieChartInstance.destroy();
-            pieChartInstance = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: labels,
-                    datasets: [{ data: data, backgroundColor: ['#10b981', '#f59e0b', '#3b82f6', '#8b5cf6', '#64748b'], borderWidth: 0 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-            });
+        if (pieChartInstance) pieChartInstance.destroy();
+        pieChartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+        labels: labels,
+        datasets: [{ data: data, backgroundColor: ['#10b981', '#f59e0b', '#3b82f6', '#8b5cf6', '#64748b'], borderWidth:
+        0 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
         }
 
         function renderBarChart(validDates, filteredQuestions) {
-            const ctx = document.getElementById('chart-month-bar');
-            if (!ctx) return;
+        const ctx = document.getElementById('chart-month-bar');
+        if (!ctx) return;
 
-            let monthCounts = {};
-            validDates.forEach(d => {
-                const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
-                let y = '', m = '';
-                if (unknownMonthMatch) {
-                    y = unknownMonthMatch[1];
-                    m = unknownMonthMatch[2];
-                } else {
-                    let processStr = d;
-                    if (d.includes('-')) {
-                        const parts = d.split('-');
-                        processStr = parts[1].includes('.') ? parts[1] : parts[0].match(/(\d+\.\d+)/)[1] + '.' + parts[1];
-                    }
-                    const pts = processStr.split('.');
-                    y = pts[0];
-                    m = pts[1];
-                }
-                const monthKey = `${y}.${m}`;
-                monthCounts[monthKey] = (monthCounts[monthKey] || 0) + filteredQuestions.filter(q => q.dates.includes(d)).length;
-            });
+        let monthCounts = {};
+        validDates.forEach(d => {
+        const unknownMonthMatch = d.match(/(\d+)\.(\d+)(?:\.?)未知/);
+        let y = '', m = '';
+        if (unknownMonthMatch) {
+        y = unknownMonthMatch[1];
+        m = unknownMonthMatch[2];
+        } else {
+        let processStr = d;
+        if (d.includes('-')) {
+        const parts = d.split('-');
+        processStr = parts[1].includes('.') ? parts[1] : parts[0].match(/(\d+\.\d+)/)[1] + '.' + parts[1];
+        }
+        const pts = processStr.split('.');
+        y = pts[0];
+        m = pts[1];
+        }
+        const monthKey = `${y}.${m}`;
+        monthCounts[monthKey] = (monthCounts[monthKey] || 0) + filteredQuestions.filter(q =>
+        q.dates.includes(d)).length;
+        });
 
-            const sortedMonths = Object.keys(monthCounts).sort((a, b) => {
-                const ptsA = a.split('.');
-                const ptsB = b.split('.');
-                return (parseInt(ptsA[0]) * 100 + parseInt(ptsA[1])) - (parseInt(ptsB[0]) * 100 + parseInt(ptsB[1]));
-            }).slice(-12);
+        const sortedMonths = Object.keys(monthCounts).sort((a, b) => {
+        const ptsA = a.split('.');
+        const ptsB = b.split('.');
+        return (parseInt(ptsA[0]) * 100 + parseInt(ptsA[1])) - (parseInt(ptsB[0]) * 100 + parseInt(ptsB[1]));
+        }).slice(-12);
 
-            const data = sortedMonths.map(m => monthCounts[m]);
+        const data = sortedMonths.map(m => monthCounts[m]);
 
-            if (barChartInstance) barChartInstance.destroy();
-            barChartInstance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: sortedMonths,
-                    datasets: [{ label: '真题考点频率', data: data, backgroundColor: '#3b82f6', borderRadius: 4 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid: { display: false } }, x: { grid: { display: false } } } }
-            });
+        if (barChartInstance) barChartInstance.destroy();
+        barChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+        labels: sortedMonths,
+        datasets: [{ label: '真题考点频率', data: data, backgroundColor: '#3b82f6', borderRadius: 4 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid: { display:
+        false } }, x: { grid: { display: false } } } }
+        });
         }
 
         // ============================================================================
@@ -3490,384 +3613,553 @@
 
         // 正则安全转义函数
         function escapeRegExp(string) {
-            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
         window.generateVocabTranslations = async function () {
-            const apiKey = safeStorage.getItem('toefl_api_key');
-            if (!apiKey) return showToast("请先设置 Gemini API Key", "error");
+        const apiKey = safeStorage.getItem('toefl_api_key');
+        if (!apiKey) return showToast("请先设置 Gemini API Key", "error");
 
-            const loadingArea = document.getElementById('vocab-loading-area');
-            const loadingText = document.getElementById('vocab-loading-text');
-            const tbody = document.getElementById('vocab-table-body');
+        const loadingArea = document.getElementById('vocab-loading-area');
+        const loadingText = document.getElementById('vocab-loading-text');
+        const tbody = document.getElementById('vocab-table-body');
 
-            if (loadingArea) loadingArea.classList.remove('hidden');
-            if (loadingText) loadingText.textContent = "正在智能识别并合并词根...";
+        if (loadingArea) loadingArea.classList.remove('hidden');
+        if (loadingText) loadingText.textContent = "正在智能识别并合并词根...";
 
-            // 1. 获取原始词汇
-            let rawVocab = {};
-            globalQuestions.forEach(q => {
-                const completedText = q.text.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g, "$1$2$3").replace(/<br>/g, ' ');
-                const sentences = completedText.match(/[^.!?]+[.!?]+/g) || [completedText];
-                const matches = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)];
+        // 1. 获取原始词汇
+        let rawVocab = {};
+        globalQuestions.forEach(q => {
+        const completedText = q.text.replace(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g,
+        "$1$2$3").replace(/<br>/g, ' ');
+        const sentences = completedText.match(/[^.!?]+[.!?]+/g) || [completedText];
+        const matches = [...q.text.matchAll(/([a-zA-Z0-9\-\']*)\[(.*?)\]([a-zA-Z0-9\-\']*)/g)];
 
-                matches.forEach(m => {
-                    const rawPrefix = m[1];
-                    const ans = m[2];
-                    const rawSuffix = m[3];
+        matches.forEach(m => {
+        const rawPrefix = m[1];
+        const ans = m[2];
+        const rawSuffix = m[3];
 
-                    const fullWord = (rawPrefix + ans + rawSuffix).toLowerCase();
-                    const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
-                    const prefixLen = cleanPrefix.length;
+        const fullWord = (rawPrefix + ans + rawSuffix).toLowerCase();
+        const cleanPrefix = rawPrefix.replace(/[^a-zA-Z]/g, '');
+        const prefixLen = cleanPrefix.length;
 
-                    let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord)) || completedText.substring(0, 200) + "...";
-                    targetSentence = targetSentence.trim();
+        let targetSentence = sentences.find(s => s.toLowerCase().includes(fullWord)) || completedText.substring(0, 200)
+        + "...";
+        targetSentence = targetSentence.trim();
 
-                    if (!rawVocab[fullWord]) {
-                        rawVocab[fullWord] = {
-                            word: fullWord,
-                            prefixLen: prefixLen,
-                            count: 0,
-                            sentences: new Set()
-                        };
-                    }
-                    rawVocab[fullWord].count++;
-                    rawVocab[fullWord].sentences.add(targetSentence);
-                });
-            });
+        if (!rawVocab[fullWord]) {
+        rawVocab[fullWord] = {
+        word: fullWord,
+        prefixLen: prefixLen,
+        count: 0,
+        sentences: new Set()
+        };
+        }
+        rawVocab[fullWord].count++;
+        rawVocab[fullWord].sentences.add(targetSentence);
+        });
+        });
 
-            // 2. 预处理与分批 (改为单纯按照 80 词分批，后续根据 Lemma 合并)
-            let sortedWords = Object.keys(rawVocab).sort();
-            let batches = [];
-            for (let i = 0; i < sortedWords.length; i += 80) {
-                batches.push(sortedWords.slice(i, i + 80));
-            }
-
-            let globalLemmas = {}; // lemma -> { forms: Set, translation: "" }
+        // 2. 预处理与分批 (改为单纯按照 80 词分批，后续根据 Lemma 合并)
+        let sortedWords = Object.keys(rawVocab).sort();
+        let batches = [];
+        for (let i = 0; i < sortedWords.length; i +=80) { batches.push(sortedWords.slice(i, i + 80)); } let
+            globalLemmas={}; // lemma -> { forms: Set, translation: "" }
             vocabDataList = [];
 
             // 3. AI 翻译
             const basePrompt = `你是一个权威、专业且细致的托福阅读专家。请分析以下阅读文章中挖空的单词。
             要求：
-            1. 提取词根/原形（Lemma）：为每一个单词提取它的绝对原形。例如 is/was/are 的 lemma 都是 "be"；requires 的 lemma 是 "require"；areas 的 lemma 是 "area"；children 的 lemma 是 "child"。系统后续会根据这个 lemma 自动合并同类项！
+            1. 提取词根/原形（Lemma）：为每一个单词提取它的绝对原形。例如 is/was/are 的 lemma 都是 "be"；requires 的 lemma 是 "require"；areas 的 lemma 是
+            "area"；children 的 lemma 是 "child"。系统后续会根据这个 lemma 自动合并同类项！
             2. 语境翻译：为每一个词提供最精准的中文翻译，必须结合给出的句子语境，分别列出词性。
 
             严格返回 JSON 数组格式，格式如下：
             [
-              {
-                "word": "requires",
-                "lemma": "require",
-                "translation": "v. 需要；要求"
-              }
+            {
+            "word": "requires",
+            "lemma": "require",
+            "translation": "v. 需要；要求"
+            }
             ]
 
             数据：\n`;
 
-            for (let i = 0; i < batches.length; i++) {
-                let batchData = [];
-                batches[i].forEach(w => {
-                    let sents = Array.from(rawVocab[w].sentences).slice(0, 3);
-                    batchData.push({ word: w, sentences: sents });
+            for (let i = 0; i < batches.length; i++) { let batchData=[]; batches[i].forEach(w=> {
+                let sents = Array.from(rawVocab[w].sentences).slice(0, 3);
+                batchData.push({ word: w, sentences: sents });
                 });
 
                 let currentTokens = APIRateLimiter.estimateTokens(basePrompt + JSON.stringify(batchData));
                 let success = false;
                 let retryCount = 0;
 
-                while (!success && retryCount < 3) {
-                    const limitStatus = APIRateLimiter.checkLimits(currentTokens);
-                    if (limitStatus === 'RPD') {
-                        alert("?? 您的 API 已达到每天的请求上限，请明天再试。");
-                        if (loadingArea) loadingArea.classList.add('hidden');
-                        renderVocabTable();
-                        return;
-                    }
-                    if (limitStatus === 'RPM' || limitStatus === 'TPM') {
-                        const waitSecs = APIRateLimiter.getWaitTime() + 1;
-                        if (loadingText) loadingText.textContent = `触发限流，等待 ${waitSecs} 秒...`;
-                        await new Promise(r => setTimeout(r, waitSecs * 1000));
-                        continue;
+                while (!success && retryCount < 3) { const limitStatus=APIRateLimiter.checkLimits(currentTokens); if
+                    (limitStatus==='RPD' ) { alert("?? 您的 API 已达到每天的请求上限，请明天再试。"); if (loadingArea)
+                    loadingArea.classList.add('hidden'); renderVocabTable(); return; } if (limitStatus==='RPM' ||
+                    limitStatus==='TPM' ) { const waitSecs=APIRateLimiter.getWaitTime() + 1; if (loadingText)
+                    loadingText.textContent=`触发限流，等待 ${waitSecs} 秒...`; await new Promise(r=> setTimeout(r, waitSecs *
+                    1000));
+                    continue;
                     }
 
-                    if (loadingText) loadingText.textContent = `正在让 Gemini 智能合并第 ${i + 1} 批词汇 (共 ${batches.length} 批)...`;
+                    if (loadingText) loadingText.textContent = `正在让 Gemini 智能合并第 ${i + 1} 批词汇 (共 ${batches.length}
+                    批)...`;
 
                     try {
-                        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-                        APIRateLimiter.addRecord(currentTokens);
+                    const url =
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
+                    APIRateLimiter.addRecord(currentTokens);
 
-                        const res = await fetch(url, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                contents: [{ parts: [{ text: basePrompt + JSON.stringify(batchData) }] }],
-                                generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
-                            })
-                        });
+                    const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                    contents: [{ parts: [{ text: basePrompt + JSON.stringify(batchData) }] }],
+                    generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
+                    })
+                    });
 
-                        if (!res.ok) {
-                            if (res.status === 429) {
-                                const backoff = Math.pow(2, retryCount) * 5000;
-                                if (loadingText) loadingText.textContent = `触发 429 限流，退避休眠 ${backoff / 1000} 秒...`;
-                                await new Promise(r => setTimeout(r, backoff));
-                                retryCount++;
-                                continue;
-                            }
-                            throw new Error(`API 报错 ${res.status}`);
-                        }
+                    if (!res.ok) {
+                    if (res.status === 429) {
+                    const backoff = Math.pow(2, retryCount) * 5000;
+                    if (loadingText) loadingText.textContent = `触发 429 限流，退避休眠 ${backoff / 1000} 秒...`;
+                    await new Promise(r => setTimeout(r, backoff));
+                    retryCount++;
+                    continue;
+                    }
+                    throw new Error(`API 报错 ${res.status}`);
+                    }
 
-                        const json = await res.json();
-                        let rawText = json.candidates[0].content.parts[0].text.replace(/```json/gi, '').replace(/```/g, '').trim();
-                        const resultArr = JSON.parse(rawText);
+                    const json = await res.json();
+                    let rawText = json.candidates[0].content.parts[0].text.replace(/```json/gi, '').replace(/```/g,
+                    '').trim();
+                    const resultArr = JSON.parse(rawText);
 
-                        resultArr.forEach(item => {
-                            let w = item.word;
-                            let lemma = item.lemma || w;
-                            if (rawVocab[w]) {
-                                if (!globalLemmas[lemma]) {
-                                    globalLemmas[lemma] = {
-                                        forms: new Set(),
-                                        translation: item.translation
-                                    };
-                                }
-                                globalLemmas[lemma].forms.add(w);
-                            }
-                        });
-                        success = true;
+                    resultArr.forEach(item => {
+                    let w = item.word;
+                    let lemma = item.lemma || w;
+                    if (rawVocab[w]) {
+                    if (!globalLemmas[lemma]) {
+                    globalLemmas[lemma] = {
+                    forms: new Set(),
+                    translation: item.translation
+                    };
+                    }
+                    globalLemmas[lemma].forms.add(w);
+                    }
+                    });
+                    success = true;
 
                     } catch (e) {
-                        console.error("翻译失败:", e);
-                        retryCount++;
-                        await new Promise(r => setTimeout(r, 2000));
+                    console.error("翻译失败:", e);
+                    retryCount++;
+                    await new Promise(r => setTimeout(r, 2000));
                     }
-                }
+                    }
 
-                if (!success) {
+                    if (!success) {
                     batchData.forEach(item => {
-                        let w = item.word;
-                        if (!globalLemmas[w]) { globalLemmas[w] = { forms: new Set(), translation: "" }; }
-                        globalLemmas[w].forms.add(w);
+                    let w = item.word;
+                    if (!globalLemmas[w]) { globalLemmas[w] = { forms: new Set(), translation: "" }; }
+                    globalLemmas[w].forms.add(w);
                     });
-                }
+                    }
 
-                if (i < batches.length - 1) await new Promise(r => setTimeout(r, 1500));
-            }
+                    if (i < batches.length - 1) await new Promise(r=> setTimeout(r, 1500));
+                        }
 
-            // 全局合并
-            Object.keys(globalLemmas).forEach(lemma => {
-                let item = globalLemmas[lemma];
-                let mergedCount = 0;
-                let mergedSentences = new Set();
-                let validForms = [];
-                let formPrefixLens = {};
-                item.forms.forEach(w => {
-                    validForms.push(w);
-                    mergedCount += rawVocab[w].count;
-                    rawVocab[w].sentences.forEach(s => mergedSentences.add(s));
-                    formPrefixLens[w] = rawVocab[w].prefixLen;
-                });
-                if (validForms.length > 0) {
-                    let selectedSentences = Array.from(mergedSentences).slice(0, 3);
-                    vocabDataList.push({
+                        // 全局合并
+                        Object.keys(globalLemmas).forEach(lemma => {
+                        let item = globalLemmas[lemma];
+                        let mergedCount = 0;
+                        let mergedSentences = new Set();
+                        let validForms = [];
+                        let formPrefixLens = {};
+                        item.forms.forEach(w => {
+                        validForms.push(w);
+                        mergedCount += rawVocab[w].count;
+                        rawVocab[w].sentences.forEach(s => mergedSentences.add(s));
+                        formPrefixLens[w] = rawVocab[w].prefixLen;
+                        });
+                        if (validForms.length > 0) {
+                        let selectedSentences = Array.from(mergedSentences).slice(0, 3);
+                        vocabDataList.push({
                         forms: validForms,
                         formPrefixLens: formPrefixLens,
                         count: mergedCount,
                         sentences: selectedSentences,
                         translation: item.translation
-                    });
-                }
-            });
-            vocabDataList.sort((a, b) => b.count - a.count);
+                        });
+                        }
+                        });
+                        vocabDataList.sort((a, b) => b.count - a.count);
 
-            if (loadingArea) loadingArea.classList.add('hidden');
-            showToast("词表提取翻译完成！");
-            renderVocabTable();
-        };
+                        if (loadingArea) loadingArea.classList.add('hidden');
+                        showToast("词表提取翻译完成！");
+                        renderVocabTable();
+                        };
 
-        window.renderVocabTable = function () {
-            const tbody = document.getElementById('vocab-table-body');
-            if (!tbody) return;
-            tbody.innerHTML = '';
+                        window.renderVocabTable = function () {
+                        const tbody = document.getElementById('vocab-table-body');
+                        if (!tbody) return;
+                        tbody.innerHTML = '';
 
-            vocabDataList.forEach((item, index) => {
-                let formsHtml = item.forms.map(f => {
-                    let pfxLen = item.formPrefixLens[f] || 0;
-                    let pfx = f.substring(0, pfxLen);
-                    let rest = f.substring(pfxLen);
-                    return `<span class="text-base"><b class="text-slate-900">${pfx}</b><span class="text-slate-500">${rest}</span></span>`;
-                }).join('<br>');
+                        vocabDataList.forEach((item, index) => {
+                        let formsHtml = item.forms.map(f => {
+                        let pfxLen = item.formPrefixLens[f] || 0;
+                        let pfx = f.substring(0, pfxLen);
+                        let rest = f.substring(pfxLen);
+                        return `<span class="text-base"><b class="text-slate-900">${pfx}</b><span
+                                class="text-slate-500">${rest}</span></span>`;
+                        }).join('<br>');
 
-                // 🌟 网页端：去掉虚线和多余空格，直接使用 <br> 换行
-                let sentsHtml = item.sentences.map((s, i) => {
-                    let highlighted = s;
-                    if (item.forms.length > 0) {
+                        // 🌟 网页端：去掉虚线和多余空格，直接使用 <br> 换行
+                        let sentsHtml = item.sentences.map((s, i) => {
+                        let highlighted = s;
+                        if (item.forms.length > 0) {
                         const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
                         const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
-                        highlighted = highlighted.replace(regex, `<b class="text-blue-700 bg-blue-50 px-1 rounded">$1</b>`);
-                    }
-                    return `${i + 1}. ${highlighted}`;
-                }).join('<br>');
-
-                tbody.innerHTML += `
-                    <tr class="hover:bg-slate-50 transition-colors">
-                        <td class="p-4 border-b border-slate-100 text-center font-bold text-slate-400">${index + 1}</td>
-                        <td class="p-4 border-b border-slate-100 font-mono tracking-wide">${formsHtml}</td>
-                        <td class="p-4 border-b border-slate-100 text-center"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold text-xs">${item.count}</span></td>
-                        <td class="p-4 border-b border-slate-100 font-bold text-emerald-700 leading-relaxed">${item.translation || '-'}</td>
-                        <td class="p-4 border-b border-slate-100 text-sm leading-relaxed">${sentsHtml}</td>
-                    </tr>
-                `;
-            });
-        };
-
-        window.exportVocab = function (type) {
-            if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
-            const dateStr = new Date().toISOString().slice(0, 10);
-
-            // 🌟 完美 Excel 导出 (保留加粗、自动换行)
-            if (type === 'excel') {
-                let excelTable = `<table><thead><tr><th>排名</th><th>答案原词</th><th>频次</th><th>权威释义</th><th>真题例句</th></tr></thead><tbody>`;
-
-                vocabDataList.forEach((item, idx) => {
-                    let formsHtml = item.forms.map(f => {
-                        let pfxLen = item.formPrefixLens[f] || 0;
-                        let pfx = f.substring(0, pfxLen);
-                        let rest = f.substring(pfxLen);
-                        return `<b>${pfx}</b>${rest}`;
-                    }).join('<br>');
-
-                    let sentsHtml = item.sentences.map((s, i) => {
-                        let highlighted = s;
-                        if (item.forms.length > 0) {
-                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
-                            const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
-                            highlighted = highlighted.replace(regex, `<b>$1</b>`);
+                        highlighted = highlighted.replace(regex, `<b
+                            class="text-blue-700 bg-blue-50 px-1 rounded">$1</b>`);
                         }
                         return `${i + 1}. ${highlighted}`;
-                    }).join('<br>');
+                        }).join('<br>');
 
-                    excelTable += `<tr><td>${idx + 1}</td><td>${formsHtml}</td><td>${item.count}</td><td>${item.translation || '-'}</td><td>${sentsHtml}</td></tr>`;
-                });
-                excelTable += `</tbody></table></div>`;
+                        tbody.innerHTML += `
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 border-b border-slate-100 text-center font-bold text-slate-400">${index + 1}
+                            </td>
+                            <td class="p-4 border-b border-slate-100 font-mono tracking-wide">${formsHtml}</td>
+                            <td class="p-4 border-b border-slate-100 text-center"><span
+                                    class="bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold text-xs">${item.count}</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100 font-bold text-emerald-700 leading-relaxed">
+                                ${item.translation || '-'}</td>
+                            <td class="p-4 border-b border-slate-100 text-sm leading-relaxed">${sentsHtml}</td>
+                        </tr>
+                        `;
+                        });
+                        };
 
-                const excelHtml = `
-                    <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
-                    <head>
+                        window.exportVocab = function (type) {
+                        if (vocabDataList.length === 0) return showToast("请先点击提取并翻译词表！", "error");
+                        const dateStr = new Date().toISOString().slice(0, 10);
+
+                        // 🌟 完美 Excel 导出 (保留加粗、自动换行)
+                        if (type === 'excel') {
+                        let excelTable = `<table>
+                            <thead>
+                                <tr>
+                                    <th>排名</th>
+                                    <th>答案原词</th>
+                                    <th>频次</th>
+                                    <th>权威释义</th>
+                                    <th>真题例句</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+
+                                vocabDataList.forEach((item, idx) => {
+                                let formsHtml = item.forms.map(f => {
+                                let pfxLen = item.formPrefixLens[f] || 0;
+                                let pfx = f.substring(0, pfxLen);
+                                let rest = f.substring(pfxLen);
+                                return `<b>${pfx}</b>${rest}`;
+                                }).join('<br>');
+
+                                let sentsHtml = item.sentences.map((s, i) => {
+                                let highlighted = s;
+                                if (item.forms.length > 0) {
+                                const sortedForms = [...item.forms].sort((a, b) => b.length -
+                                a.length).map(escapeRegExp);
+                                const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
+                                highlighted = highlighted.replace(regex, `<b>$1</b>`);
+                                }
+                                return `${i + 1}. ${highlighted}`;
+                                }).join('<br>');
+
+                                excelTable += `<tr>
+                                    <td>${idx + 1}</td>
+                                    <td>${formsHtml}</td>
+                                    <td>${item.count}</td>
+                                    <td>${item.translation || '-'}</td>
+                                    <td>${sentsHtml}</td>
+                                </tr>`;
+                                });
+                                excelTable += `</tbody>
+                        </table>
+                        </div>`;
+
+                        const excelHtml = `
+                        <html xmlns:o="urn:schemas-microsoft-com:office:office"
+                            xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+
+                        <head>
 
 
 
-                        <meta charset="utf-8">
-                        <!--[if gte mso 9]>
+                            <meta charset="utf-8">
+                            <!--[if gte mso 9]>
                         <xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>高频词表</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml>
                         <![endif]-->
-                        <style>
-                            table { border-collapse: collapse; width: 100%; }
-                            th, td { border: 1px solid black; vertical-align: top; font-size: 12px; padding: 8px; }
-                            th { background-color: #f0f0f0; font-weight: bold; text-align: left; }
-                            th:nth-child(1) { width: 60px; }
-                            th:nth-child(2) { width: 150px; }
-                            th:nth-child(3) { width: 60px; }
-                            th:nth-child(4) { width: 300px; }
-                            th:nth-child(5) { width: 800px; }
-                            br { mso-data-placement: same-cell; } /* 强制单元格内换行 */
-                        </style>
-                    </head>
-                    <body>${excelTable}</body>
-                    </html>
-                `;
+                            <style>
+                                table {
+                                    border-collapse: collapse;
+                                    width: 100%;
+                                }
 
-                const blob = new Blob(['\uFEFF' + excelHtml], { type: 'application/vnd.ms-excel;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `TOEFL_Vocab_Perfect_${dateStr}.xls`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                showToast("Excel 导出成功！");
+                                th,
+                                td {
+                                    border: 1px solid black;
+                                    vertical-align: top;
+                                    font-size: 12px;
+                                    padding: 8px;
+                                }
+
+                                th {
+                                    background-color: #f0f0f0;
+                                    font-weight: bold;
+                                    text-align: left;
+                                }
+
+                                th:nth-child(1) {
+                                    width: 60px;
+                                }
+
+                                th:nth-child(2) {
+                                    width: 150px;
+                                }
+
+                                th:nth-child(3) {
+                                    width: 60px;
+                                }
+
+                                th:nth-child(4) {
+                                    width: 300px;
+                                }
+
+                                th:nth-child(5) {
+                                    width: 800px;
+                                }
+
+                                br {
+                                    mso-data-placement: same-cell;
+                                }
+
+                                /* 强制单元格内换行 */
+                            </style>
+                            <script>
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.classList.contains('fill-blank-input')) {
+                // Force English letters only
+                e.target.value = e.target.value.replace(/[^a-zA-Z0-9\-'\ ]/g, '');
             }
-            // 🌟 完美 HTML 导出 (横向打印、纯净黑白)
-            else if (type === 'html') {
-                let htmlContent = `
-                <!DOCTYPE html><html lang="zh-CN"><head>
+        });
+        // Fix iOS Safari keyboard dismissal bug where touch targets are misaligned
+        document.addEventListener('focusout', function(e) {
+            if (e.target && e.target.tagName === 'INPUT') {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
+        });
+                            </script>
+                        </head>
 
+                        <body>${excelTable}</body>
 
-<meta charset="UTF-8"><title>TOEFL 真题高频词表</title>
-                <style>
-                    @page { size: A4 landscape; margin: 15mm; }
-                    body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6; font-size: 12px; }
-                    h1 { text-align: center; font-size: 24px; margin-bottom: 20px; }
-                    table { width: 100%; border-collapse: collapse; }
-                    th, td { border: 1px solid #000; padding: 8px; vertical-align: top; word-wrap: break-word; }
-                    th { background-color: #f0f0f0; font-weight: bold; text-align: left; }
-                    .col-rank { width: 5%; text-align: center; }
-                    .col-word { width: 15%; font-family: monospace; font-size: 14px; }
-                    .col-freq { width: 5%; text-align: center; }
-                    .col-trans { width: 20%; font-weight: bold; }
-                    .col-sent { width: 55%; }
-                    b { font-weight: bold; }
-                </style></head><body>
-                <h1>TOEFL 填词 - 真题高频答案词表</h1>
-                <table>
-                    <thead><tr>
-                        <th class="col-rank">排名</th><th class="col-word">答案原词</th>
-                        <th class="col-freq">频次</th><th class="col-trans">权威释义</th><th class="col-sent">真题例句</th>
-                    </tr></thead><tbody>`;
+                        </html>
+                        `;
 
-                vocabDataList.forEach((item, idx) => {
-                    let formsHtml = item.forms.map(f => {
-                        let pfxLen = item.formPrefixLens[f] || 0;
-                        let pfx = f.substring(0, pfxLen);
-                        let rest = f.substring(pfxLen);
-                        return `<b>${pfx}</b>${rest}`;
-                    }).join('<br>');
-
-                    let sents = item.sentences.map((s, i) => {
-                        let highlighted = s;
-                        if (item.forms.length > 0) {
-                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
-                            const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
-                            highlighted = highlighted.replace(regex, `<b>$1</b>`);
+                        const blob = new Blob(['\uFEFF' + excelHtml], { type: 'application/vnd.ms-excel;charset=utf-8'
+                        });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `TOEFL_Vocab_Perfect_${dateStr}.xls`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        showToast("Excel 导出成功！");
                         }
-                        return `${i + 1}. ${highlighted}`;
-                    }).join('<br>');
+                        // 🌟 完美 HTML 导出 (横向打印、纯净黑白)
+                        else if (type === 'html') {
+                        let htmlContent = `
+                        <!DOCTYPE html>
+                        <html lang="zh-CN">
 
-                    htmlContent += `<tr>
-                        <td class="col-rank">${idx + 1}</td><td class="col-word">${formsHtml}</td>
-                        <td class="col-freq">${item.count}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
-                    </tr>`;
-                });
-                htmlContent += `</tbody></table></div></body></html>`;
-                triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
+                        <head>
+
+
+                            <meta charset="UTF-8">
+                            <title>TOEFL 真题高频词表</title>
+                            <style>
+                                @page {
+                                    size: A4 landscape;
+                                    margin: 15mm;
+                                }
+
+                                body {
+                                    font-family: 'Helvetica Neue', Arial, sans-serif;
+                                    color: #333;
+                                    line-height: 1.6;
+                                    font-size: 12px;
+                                }
+
+                                h1 {
+                                    text-align: center;
+                                    font-size: 24px;
+                                    margin-bottom: 20px;
+                                }
+
+                                table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
+
+                                th,
+                                td {
+                                    border: 1px solid #000;
+                                    padding: 8px;
+                                    vertical-align: top;
+                                    word-wrap: break-word;
+                                }
+
+                                th {
+                                    background-color: #f0f0f0;
+                                    font-weight: bold;
+                                    text-align: left;
+                                }
+
+                                .col-rank {
+                                    width: 5%;
+                                    text-align: center;
+                                }
+
+                                .col-word {
+                                    width: 15%;
+                                    font-family: monospace;
+                                    font-size: 14px;
+                                }
+
+                                .col-freq {
+                                    width: 5%;
+                                    text-align: center;
+                                }
+
+                                .col-trans {
+                                    width: 20%;
+                                    font-weight: bold;
+                                }
+
+                                .col-sent {
+                                    width: 55%;
+                                }
+
+                                b {
+                                    font-weight: bold;
+                                }
+                            </style>
+                            <script>
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.classList.contains('fill-blank-input')) {
+                // Force English letters only
+                e.target.value = e.target.value.replace(/[^a-zA-Z0-9\-'\ ]/g, '');
             }
-            // Markdown 导出
-            else if (type === 'md') {
-                let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 频次 | 权威释义 | 真题例句 |\n|---|---|---|---|---|\n`;
-                vocabDataList.forEach((item, idx) => {
-                    let formsText = item.forms.map(f => {
+        });
+        // Fix iOS Safari keyboard dismissal bug where touch targets are misaligned
+        document.addEventListener('focusout', function(e) {
+            if (e.target && e.target.tagName === 'INPUT') {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
+        });
+                            </script>
+                        </head>
+
+                        <body>
+                            <h1>TOEFL 填词 - 真题高频答案词表</h1>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="col-rank">排名</th>
+                                        <th class="col-word">答案原词</th>
+                                        <th class="col-freq">频次</th>
+                                        <th class="col-trans">权威释义</th>
+                                        <th class="col-sent">真题例句</th>
+                                    </tr>
+                                </thead>
+                                <tbody>`;
+
+                                    vocabDataList.forEach((item, idx) => {
+                                    let formsHtml = item.forms.map(f => {
+                                    let pfxLen = item.formPrefixLens[f] || 0;
+                                    let pfx = f.substring(0, pfxLen);
+                                    let rest = f.substring(pfxLen);
+                                    return `<b>${pfx}</b>${rest}`;
+                                    }).join('<br>');
+
+                                    let sents = item.sentences.map((s, i) => {
+                                    let highlighted = s;
+                                    if (item.forms.length > 0) {
+                                    const sortedForms = [...item.forms].sort((a, b) => b.length -
+                                    a.length).map(escapeRegExp);
+                                    const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
+                                    highlighted = highlighted.replace(regex, `<b>$1</b>`);
+                                    }
+                                    return `${i + 1}. ${highlighted}`;
+                                    }).join('<br>');
+
+                                    htmlContent += `<tr>
+                                        <td class="col-rank">${idx + 1}</td>
+                                        <td class="col-word">${formsHtml}</td>
+                                        <td class="col-freq">${item.count}</td>
+                                        <td class="col-trans">${item.translation}</td>
+                                        <td class="col-sent">${sents}</td>
+                                    </tr>`;
+                                    });
+                                    htmlContent += `</tbody>
+                            </table>
+                            </div>
+                        </body>
+
+                        </html>`;
+                        triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
+                        }
+                        // Markdown 导出
+                        else if (type === 'md') {
+                        let mdContent = `# TOEFL 真题高频答案词表\n\n| 排名 | 答案原词 | 频次 | 权威释义 | 真题例句 |\n|---|---|---|---|---|\n`;
+                        vocabDataList.forEach((item, idx) => {
+                        let formsText = item.forms.map(f => {
                         let pfxLen = item.formPrefixLens[f] || 0;
                         let pfx = f.substring(0, pfxLen);
                         let rest = f.substring(pfxLen);
                         return `**${pfx}**${rest}`;
-                    }).join('<br>');
+                        }).join('<br>');
 
-                    let sents = item.sentences.map((s, i) => {
+                        let sents = item.sentences.map((s, i) => {
                         let highlighted = s;
                         if (item.forms.length > 0) {
-                            const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
-                            const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
-                            highlighted = highlighted.replace(regex, `**$1**`);
+                        const sortedForms = [...item.forms].sort((a, b) => b.length - a.length).map(escapeRegExp);
+                        const regex = new RegExp(`\\b(${sortedForms.join('|')})\\b`, 'gi');
+                        highlighted = highlighted.replace(regex, `**$1**`);
                         }
                         return `${i + 1}. ${highlighted}`;
-                    }).join('<br><br>');
+                        }).join('<br><br>');
 
-                    mdContent += `| ${idx + 1} | ${formsText} | ${item.count} | ${item.translation} | ${sents} |\n`;
-                });
-                triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
-            }
-        };
-        // ============================================================================
-    </script>
-</body>
+                        mdContent += `| ${idx + 1} | ${formsText} | ${item.count} | ${item.translation} | ${sents} |\n`;
+                        });
+                        triggerDownload(mdContent, `TOEFL_Vocab_${dateStr}.md`, 'text/markdown');
+                        }
+                        };
+                        // ============================================================================
+                        </script>
+                        </body>
 
-</html>
+                        </html>
