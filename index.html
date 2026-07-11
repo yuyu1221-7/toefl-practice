@@ -212,7 +212,7 @@
 
     <!-- 全局顶部导航 -->
     <header
-        class="bg-white/90 backdrop-blur-md border-b border-slate-200 z-50 h-16 shrink-0 flex items-center justify-between px-6 transition-all shadow-sm"
+        class="bg-white/90 backdrop-blur-md border-b border-slate-200 z-50 h-16 shrink-0 flex items-center justify-between px-4 md:px-6 transition-all shadow-sm"
         id="global-header">
         <div class="flex items-center gap-4">
             <div id="nav-controls" class="view-hidden flex items-center gap-2 border-r border-slate-200 pr-4 mr-2">
@@ -278,7 +278,7 @@
         <div id="settings-modal"
             class="hidden fixed inset-0 z-[400] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity">
             <div
-                class="bg-white rounded-2xl shadow-2xl w-full max-w-md flex flex-col overflow-hidden transform transition-all">
+                class="bg-white rounded-2xl shadow-2xl w-full max-w-md w-full mx-auto flex flex-col overflow-hidden transform transition-all">
                 <div class="p-5 border-b border-slate-200 flex justify-between items-center bg-slate-50">
                     <h3 class="font-black text-xl text-slate-800">⚙️ 系统设置</h3>
                     <button onclick="closeSettings()" class="text-slate-400 hover:text-red-500 transition-colors"><svg
@@ -335,7 +335,7 @@
                         </button>
                     </div>
                     <div id="preview-content"
-                        class="p-6 md:p-8 overflow-y-auto text-slate-700 leading-loose text-lg text-justify bg-white">
+                        class="p-6 md:p-6 md:p-8 overflow-y-auto text-slate-700 leading-loose text-lg text-justify bg-white">
                     </div>
                 </div>
             </div>
@@ -379,17 +379,17 @@
             </div>
 
             <!-- VIEW 0: 导入/加载页 (全新选择界面) -->
-            <div id="view-upload" class="absolute inset-0 z-[100] bg-white flex items-center justify-center p-8">
+            <div id="view-upload" class="absolute inset-0 z-[100] bg-white flex items-center justify-center p-6 md:p-8">
                 <div class="max-w-3xl w-full text-center">
                     <div
                         class="w-20 h-20 bg-blue-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg rotate-3">
-                        <span class="text-4xl font-black">T</span>
+                        <span class="text-3xl md:text-4xl font-black">T</span>
                     </div>
-                    <h1 class="text-4xl font-black text-slate-900 mb-3 tracking-tight">欢迎使用 TOEFL 填词系统</h1>
+                    <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">欢迎使用 TOEFL 填词系统</h1>
                     <p class="text-slate-500 mb-4 text-lg">请选择题库数据的加载方式</p>
 
                     <div
-                        class="mb-10 bg-slate-50 border border-slate-200 rounded-2xl p-4 inline-block text-left w-full md:w-[600px] shadow-sm">
+                        class="mb-10 bg-slate-50 border border-slate-200 rounded-2xl p-4 inline-block text-left w-full md:w-full max-w-[600px] shadow-sm">
                         <label class="block text-sm font-bold text-slate-700 mb-2">? 做题记录本地保存方式 (建议开启)</label>
                         <select id="upload-persist-mode"
                             class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-sm text-slate-700 font-bold shadow-sm"
@@ -450,12 +450,12 @@
 
             <!-- VIEW 1: 首页大厅 -->
             <div id="view-dashboard"
-                class="view-hidden absolute inset-0 overflow-y-auto p-6 md:p-10 lg:p-12 bg-[#f8fafc]">
-                <div class="max-w-[1400px] mx-auto">
-                    <h2 class="text-3xl font-black text-slate-800 mb-8">选择学习模式</h2>
+                class="view-hidden absolute inset-0 overflow-y-auto p-4 sm:p-6 md:p-10 lg:p-12 bg-[#f8fafc]">
+                <div class="max-w-[1400px] w-full mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-8">选择学习模式</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="dash-card bg-[#dcfce7] rounded-3xl p-8 cursor-pointer flex flex-col justify-between min-h-[280px] relative overflow-hidden group border border-green-200 shadow-sm"
+                        <div class="dash-card bg-[#dcfce7] rounded-3xl p-6 md:p-8 cursor-pointer flex flex-col justify-between min-h-[280px] relative overflow-hidden group border border-green-200 shadow-sm"
                             onclick="navTo('view-practice-hub')">
                             <div
                                 class="absolute -right-10 -top-10 w-48 h-48 bg-white/30 rounded-full blur-2xl group-hover:scale-110 transition-transform">
@@ -468,7 +468,7 @@
                                             d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
                                         </path>
                                     </svg></div>
-                                <h3 class="text-4xl font-black text-green-900 mb-2">练习模式</h3>
+                                <h3 class="text-3xl md:text-4xl font-black text-green-900 mb-2">练习模式</h3>
                                 <p class="text-green-800/80 font-medium">Practice Hub</p>
                             </div>
                             <div class="flex justify-between items-end relative z-10">
@@ -484,7 +484,7 @@
                             </div>
                         </div>
 
-                        <div class="dash-card bg-[#ede9fe] rounded-3xl p-8 cursor-pointer flex flex-col justify-between min-h-[280px] relative overflow-hidden group border border-purple-200 shadow-sm"
+                        <div class="dash-card bg-[#ede9fe] rounded-3xl p-6 md:p-8 cursor-pointer flex flex-col justify-between min-h-[280px] relative overflow-hidden group border border-purple-200 shadow-sm"
                             onclick="navTo('view-setup-mock')">
                             <div
                                 class="absolute -right-10 -top-10 w-48 h-48 bg-white/30 rounded-full blur-2xl group-hover:scale-110 transition-transform">
@@ -497,7 +497,7 @@
                                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg></div>
                                 <div class="flex items-center gap-3 mb-2">
-                                    <h3 class="text-4xl font-black text-purple-900">英语模考</h3>
+                                    <h3 class="text-3xl md:text-4xl font-black text-purple-900">英语模考</h3>
                                     <span
                                         class="bg-purple-600 text-white text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-wide shadow-sm">Pro</span>
                                 </div>
@@ -517,7 +517,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="dash-card bg-[#fef08a] rounded-2xl p-6 cursor-pointer group border border-yellow-200 shadow-sm relative overflow-hidden"
                             onclick="navTo('view-paper-builder')">
                             <div class="flex items-center gap-4 mb-4">
@@ -590,15 +590,15 @@
 
             <!-- VIEW 2.0: 练习模式 HUB -->
             <div id="view-practice-hub"
-                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-6 md:p-10 lg:p-14">
+                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-4 sm:p-6 md:p-10 lg:p-14">
                 <div class="max-w-5xl mx-auto">
                     <div class="text-center mb-12">
-                        <h2 class="text-4xl font-black text-slate-900 mb-3 tracking-tight">练习模式库</h2>
+                        <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">练习模式库</h2>
                         <p class="text-slate-500 text-lg">选择最适合你当前阶段的复习维度</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="dash-card bg-white border border-slate-200 rounded-3xl p-8 cursor-pointer group text-center shadow-sm"
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="dash-card bg-white border border-slate-200 rounded-3xl p-6 md:p-8 cursor-pointer group text-center shadow-sm"
                             onclick="navTo('view-practice-calendar')">
                             <div
                                 class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
@@ -615,7 +615,7 @@
                                 →</span>
                         </div>
 
-                        <div class="dash-card bg-white border border-slate-200 rounded-3xl p-8 cursor-pointer group text-center shadow-sm"
+                        <div class="dash-card bg-white border border-slate-200 rounded-3xl p-6 md:p-8 cursor-pointer group text-center shadow-sm"
                             onclick="navTo('view-practice-topic')">
                             <div
                                 class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
@@ -632,7 +632,7 @@
                                 →</span>
                         </div>
 
-                        <div class="dash-card bg-white border border-slate-200 rounded-3xl p-8 cursor-pointer group text-center shadow-sm"
+                        <div class="dash-card bg-white border border-slate-200 rounded-3xl p-6 md:p-8 cursor-pointer group text-center shadow-sm"
                             onclick="startUniquePractice()">
                             <div
                                 class="w-20 h-20 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
@@ -654,11 +654,11 @@
 
             <!-- VIEW 2.1: 练习模式 - 日历视图 -->
             <div id="view-practice-calendar"
-                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-6 md:p-10 lg:p-14">
+                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-4 sm:p-6 md:p-10 lg:p-14">
                 <div class="max-w-5xl mx-auto">
                     <div class="mb-10 flex justify-between items-end">
                         <div>
-                            <h2 class="text-3xl font-black text-slate-900 tracking-tight">按考试日期练习</h2>
+                            <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">按考试日期练习</h2>
                             <p class="text-slate-500 mt-2">选择年月筛选，点击具体日期开练。</p>
                         </div>
                         <div class="flex gap-3">
@@ -678,10 +678,10 @@
 
             <!-- VIEW 2.2: 练习模式 - 学科分类 -->
             <div id="view-practice-topic"
-                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-6 md:p-10 lg:p-14">
+                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-4 sm:p-6 md:p-10 lg:p-14">
                 <div class="max-w-5xl mx-auto">
                     <div class="mb-10">
-                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">按学科题材练习</h2>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">按学科题材练习</h2>
                         <p class="text-slate-500 mt-2">选择你感兴趣或薄弱的题材领域</p>
                     </div>
                     <div id="topic-categories-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8"></div>
@@ -692,7 +692,7 @@
             <div id="view-search" class="view-hidden absolute inset-0 overflow-y-auto bg-white flex flex-col">
                 <div class="w-full max-w-4xl mx-auto mt-16 px-6">
                     <div class="text-center mb-8">
-                        <h2 class="text-4xl font-black text-slate-900 mb-2">搜索题目</h2>
+                        <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-2">搜索题目</h2>
                     </div>
                     <div
                         class="relative bg-white border border-slate-300 rounded-2xl shadow-md focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/20 transition-all flex items-center p-2 mb-8">
@@ -750,7 +750,7 @@
                             <p class="text-purple-800/70 text-sm font-medium">包含 3 篇阅读，采用正向秒表计时，还原考场高压</p>
                         </div>
                     </div>
-                    <div class="p-8 space-y-6">
+                    <div class="p-6 md:p-8 space-y-6">
                         <div>
                             <label class="block text-sm font-bold text-slate-700 mb-2">组卷策略</label>
                             <select id="setup-mock-strategy"
@@ -779,11 +779,11 @@
 
             <!-- VIEW 5: 历史与收藏 -->
             <div id="view-history-collections"
-                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-6 md:p-10 lg:p-12">
+                class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-4 sm:p-6 md:p-10 lg:p-12">
                 <div class="max-w-5xl mx-auto">
                     <div class="flex justify-between items-end mb-10">
                         <div>
-                            <h2 class="text-3xl font-black text-slate-900 tracking-tight">合集与做题记录</h2>
+                            <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">合集与做题记录</h2>
                             <p class="text-slate-500 mt-2 font-medium">Collections & Session History</p>
                         </div>
                         <div class="flex gap-3 bg-slate-200/50 p-1.5 rounded-xl border border-slate-200">
@@ -796,7 +796,7 @@
                     </div>
 
                     <!-- 历史区 -->
-                    <div id="history-panel" class="bg-white border border-slate-200 rounded-2xl shadow-sm p-8">
+                    <div id="history-panel" class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8">
                         <div class="flex justify-between items-center mb-6 border-b border-slate-100 pb-4">
                             <h3 class="text-lg font-bold text-slate-800">本次做题历史 (Session Records)</h3>
                             <button onclick="exportAllHistory()"
@@ -808,7 +808,7 @@
 
                     <!-- 收藏列表区 -->
                     <div id="collections-panel"
-                        class="hidden bg-white border border-slate-200 rounded-2xl shadow-sm p-8">
+                        class="hidden bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8">
                         <div class="flex justify-between items-center mb-6 border-b border-slate-100 pb-4">
                             <h3 class="text-lg font-bold text-slate-800">标星收藏列表</h3>
                         </div>
@@ -896,7 +896,7 @@
                         🔍 模考复盘模式 (Reviewing Mock Exam) - 仅供查看对比，点击右下方 Redo 可重新挑战
                     </div>
 
-                    <div class="flex-1 overflow-y-auto p-6 md:p-10 lg:p-14" id="practice-container">
+                    <div class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-10 lg:p-14" id="practice-container">
                         <div class="w-full max-w-4xl mx-auto h-full">
                             <div class="mb-6 pb-6 border-b border-slate-100 flex justify-between items-start">
                                 <div>
@@ -906,7 +906,7 @@
                                     </div>
 
                                     <h2 id="passage-title"
-                                        class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                                        class="text-3xl lg:text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
                                     </h2>
                                     <div class="flex items-center gap-3 text-sm font-semibold text-slate-600">
                                         <span id="passage-cat"
@@ -1011,11 +1011,11 @@
             </div>
 
             <!-- VIEW 8: 考情大盘 -->
-            <div id="view-stats" class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-6 md:p-10 lg:p-12">
+            <div id="view-stats" class="view-hidden absolute inset-0 overflow-y-auto bg-slate-50 p-4 sm:p-6 md:p-10 lg:p-12">
                 <div class="max-w-6xl mx-auto">
                     <div class="mb-10 flex justify-between items-end flex-wrap gap-4">
                         <div>
-                            <h2 class="text-3xl font-black text-slate-900 tracking-tight">考情大盘分析</h2>
+                            <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">考情大盘分析</h2>
                             <p class="text-slate-500 mt-2 font-medium">Analytics & Topic Distributions</p>
                         </div>
                         <div class="flex gap-4">
@@ -1039,33 +1039,33 @@
                         </button>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
                         <div
                             class="bg-white p-6 border border-slate-200 rounded-2xl shadow-sm flex flex-col justify-center text-center">
                             <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">筛选题库独立篇目数</p>
-                            <h3 class="text-5xl font-black text-slate-800" id="stat-total-q">0</h3>
+                            <h3 class="text-4xl md:text-5xl font-black text-slate-800" id="stat-total-q">0</h3>
                         </div>
                         <div
                             class="bg-white p-6 border border-slate-200 rounded-2xl shadow-sm flex flex-col justify-center text-center">
                             <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">实考频次总计</p>
-                            <h3 class="text-5xl font-black text-blue-600" id="stat-total-freq">0</h3>
+                            <h3 class="text-4xl md:text-5xl font-black text-blue-600" id="stat-total-freq">0</h3>
                         </div>
                         <div
                             class="bg-white p-6 border border-slate-200 rounded-2xl shadow-sm flex flex-col justify-center text-center">
                             <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">最新收录考点日</p>
-                            <h3 class="text-3xl font-black text-emerald-600 mt-2" id="stat-latest-date">---</h3>
+                            <h3 class="text-2xl md:text-3xl font-black text-emerald-600 mt-2" id="stat-latest-date">---</h3>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                         <div
-                            class="bg-white p-8 border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center">
+                            class="bg-white p-6 md:p-8 border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center">
                             <h3 class="text-lg font-extrabold text-slate-800 mb-6 self-start">筛选范围内学科题材占比</h3>
                             <div class="relative w-full max-w-[300px] aspect-square">
                                 <canvas id="chart-topic-pie"></canvas>
                             </div>
                         </div>
-                        <div class="bg-white p-8 border border-slate-200 rounded-2xl shadow-sm flex flex-col">
+                        <div class="bg-white p-6 md:p-8 border border-slate-200 rounded-2xl shadow-sm flex flex-col">
                             <h3 class="text-lg font-extrabold text-slate-800 mb-6">真题收录频率走势</h3>
                             <div class="relative w-full h-full min-h-[250px]">
                                 <canvas id="chart-month-bar"></canvas>
@@ -1074,7 +1074,7 @@
                     </div>
 
                     <!-- 单篇考情深挖 -->
-                    <div class="bg-white p-8 border border-slate-200 rounded-2xl shadow-sm mb-10">
+                    <div class="bg-white p-6 md:p-8 border border-slate-200 rounded-2xl shadow-sm mb-10">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                             <div>
                                 <h3 class="text-xl font-extrabold text-slate-800">单篇考情深挖</h3>
@@ -1087,10 +1087,10 @@
                         </div>
 
                         <div id="stat-single-result"
-                            class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100">
                             <div>
                                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">该题总考频</p>
-                                <h4 class="text-3xl font-black text-blue-600" id="single-freq">0</h4>
+                                <h4 class="text-2xl md:text-3xl font-black text-blue-600" id="single-freq">0</h4>
                             </div>
                             <div>
                                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">首次与最近考查</p>
@@ -1104,7 +1104,7 @@
                     </div>
 
                     <!-- 真题高频答案词表 -->
-                    <div class="bg-white p-8 border border-slate-200 rounded-2xl shadow-sm mb-10 mt-8">
+                    <div class="bg-white p-6 md:p-8 border border-slate-200 rounded-2xl shadow-sm mb-10 mt-8">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                             <div>
                                 <h3 class="text-xl font-extrabold text-slate-800 flex items-center gap-2">
@@ -1146,22 +1146,22 @@
                         </div>
 
                         <div class="overflow-x-auto rounded-xl border border-slate-200">
-                            <table class="w-full text-left border-collapse">
+                            <div class="overflow-x-auto w-full"><table class="w-full text-left border-collapse min-w-full max-w-[600px]">
                                 <thead>
                                     <tr class="bg-slate-50 text-slate-600 text-sm uppercase tracking-wider">
                                         <th class="p-4 border-b border-slate-200 font-black w-16 text-center">排名</th>
                                         <th class="p-4 border-b border-slate-200 font-black w-32">答案原词</th>
                                         <th class="p-4 border-b border-slate-200 font-black w-20 text-center">频次</th>
                                         <th class="p-4 border-b border-slate-200 font-black w-48">权威释义</th>
-                                        <th class="p-4 border-b border-slate-200 font-black min-w-[300px]">真题例句</th>
+                                        <th class="p-4 border-b border-slate-200 font-black min-w-[200px] md:min-w-[300px]">真题例句</th>
                                     </tr>
                                 </thead>
                                 <tbody id="vocab-table-body" class="divide-y divide-slate-100 text-sm">
                                     <tr>
-                                        <td colspan="5" class="p-8 text-center text-slate-400">点击上方按钮生成词表</td>
+                                        <td colspan="5" class="p-6 md:p-8 text-center text-slate-400">点击上方按钮生成词表</td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table></div>
                         </div>
                     </div>
                 </div>
@@ -3727,7 +3727,7 @@
 
                         excelTable += `<tr><td>${idx + 1}</td><td>${formsHtml}</td><td>${item.count}</td><td>${item.translation || '-'}</td><td>${sentsHtml}</td></tr>`;
                     });
-                    excelTable += `</tbody></table>`;
+                    excelTable += `</tbody></table></div>`;
 
                     const excelHtml = `
                     <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
@@ -3817,7 +3817,7 @@
                         <td class="col-freq">${item.count}</td><td class="col-trans">${item.translation}</td><td class="col-sent">${sents}</td>
                     </tr>`;
                     });
-                    htmlContent += `</tbody></table></body></html>`;
+                    htmlContent += `</tbody></table></div></body></html>`;
                     triggerDownload(htmlContent, `TOEFL_Vocab_Printable_${dateStr}.html`, 'text/html');
                 }
                 // Markdown 导出
