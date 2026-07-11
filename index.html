@@ -3983,6 +3983,23 @@
                     setTimeout(() => { btn._touchFired = false; }, 600);
                 }
             }, { passive: true });
+
+            // 🌟 强力输入流过滤：只允许输入纯英文大小写和数字，拒绝任何中文输入、空格、单引号和特殊字符
+            document.body.addEventListener('input', function (e) {
+                if (e.target && e.target.classList.contains('fill-blank-input')) {
+                    // 过滤非字母数字字符 (例如空格、单引号等)
+                    e.target.value = e.target.value.replace(/[^a-zA-Z0-9]/g, '');
+                }
+            });
+
+            // 🌟 强力中文输入确认纠错：防范中文输入法空格确认等情况
+            document.body.addEventListener('compositionend', function (e) {
+                if (e.target && e.target.classList.contains('fill-blank-input')) {
+                    setTimeout(() => {
+                        e.target.value = e.target.value.replace(/[^a-zA-Z0-9]/g, '');
+                    }, 50);
+                }
+            });
         });
 
         // ===== MOBILE: 键盘收起时恢复底部栏可点击性 =====
