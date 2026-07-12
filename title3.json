@@ -1,0 +1,961 @@
+[
+    {
+        "key": "138114",
+        "type": "Academic",
+        "en": "Decision-Making in Groups",
+        "zh": "群体决策",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "151672",
+        "type": "Academic",
+        "en": "Urban Resilience",
+        "zh": "城市韧性",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "162529",
+        "type": "Academic",
+        "en": "Whale Strandings",
+        "zh": "鲸鱼搁浅",
+        "cat": "生命科学"
+    },
+    {
+        "key": "171506",
+        "type": "Academic",
+        "en": "Feedback Systems and Their Unintended Effects",
+        "zh": "反馈系统及其非预期效应",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "189025",
+        "type": "Academic",
+        "en": "Polarized Light's Surprising Applications",
+        "zh": "偏振光的惊人应用",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "197626",
+        "type": "Academic",
+        "en": "Sleep and Memory",
+        "zh": "睡眠与记忆",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "209536",
+        "type": "Academic",
+        "en": "The Dynamics of Hollywood’s Golden Age",
+        "zh": "好莱坞黄金时代的动态",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "237416",
+        "type": "Lifestyle",
+        "en": "Read a label.",
+        "zh": "阅读商品标签",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "244412",
+        "type": "Lifestyle",
+        "en": "Read a text-message chain.",
+        "zh": "阅读短信聊天记录",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "403040",
+        "type": "Lifestyle",
+        "en": "Read a social media post.",
+        "zh": "阅读社交媒体帖子",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "699420",
+        "type": "Academic",
+        "en": "Smart Textiles",
+        "zh": "智能纺织品",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "827612",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "872006",
+        "type": "Lifestyle",
+        "en": "Read a poster.",
+        "zh": "阅读校园海报",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "903546",
+        "type": "Lifestyle",
+        "en": "Read a review.",
+        "zh": "阅读书评/影评",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "949496",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "391ECA",
+        "type": "Lifestyle",
+        "en": "Read an advertisement.",
+        "zh": "阅读宣传广告",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "19912E",
+        "type": "Lifestyle",
+        "en": "Read a label.",
+        "zh": "阅读商品标签",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "FC8A78",
+        "type": "Lifestyle",
+        "en": "Read a social media post.",
+        "zh": "阅读社交媒体帖子",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "EFA3E2",
+        "type": "Lifestyle",
+        "en": "Read a receipt.",
+        "zh": "阅读结账收据",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "E52EAD",
+        "type": "Academic",
+        "en": "The Flynn Effect",
+        "zh": "弗林效应",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "312F8B",
+        "type": "Academic",
+        "en": "Coral Reef Restoration",
+        "zh": "珊瑚礁修复",
+        "cat": "生命科学"
+    },
+    {
+        "key": "1283EC",
+        "type": "Lifestyle",
+        "en": "Read an e-mail.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "D8C151",
+        "type": "Lifestyle",
+        "en": "Read a sign.",
+        "zh": "阅读指示标牌",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "10E122",
+        "type": "Academic",
+        "en": "Noise Control in Urban Areas",
+        "zh": "城市噪音控制",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "231E6F",
+        "type": "Academic",
+        "en": "Stoicism in Ancient Philosophy",
+        "zh": "古代哲学中的斯多葛主义",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "2FF56A",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "7490E0",
+        "type": "Academic",
+        "en": "Engineering Earth's Climate",
+        "zh": "工程化地球气候",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "2AC097",
+        "type": "Academic",
+        "en": "Harmonic Analysis: Unveiling the Hidden Structures",
+        "zh": "调和分析：揭示隐藏结构",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "9BB4A9",
+        "type": "Academic",
+        "en": "Bird Migration",
+        "zh": "鸟类迁徙",
+        "cat": "生命科学"
+    },
+    {
+        "key": "5D6D7B",
+        "type": "Lifestyle",
+        "en": "Read a social media post.",
+        "zh": "阅读社交媒体帖子",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "10D003",
+        "type": "Lifestyle",
+        "en": "Read some instructions related to starting a campus garden.",
+        "zh": "阅读校园花园创办指南",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "E56D61",
+        "type": "Lifestyle",
+        "en": "Read the following notice.",
+        "zh": "阅读通知说明",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "11CFD0",
+        "type": "Academic",
+        "en": "The Mysteries of Opal",
+        "zh": "欧泊石的奥秘",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "EE02B5",
+        "type": "Academic",
+        "en": "The Shifting Art of Playwriting",
+        "zh": "剧作艺术的变迁",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "28DB41",
+        "type": "Lifestyle",
+        "en": "Read a book blurb.",
+        "zh": "阅读新书简介",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "40471F",
+        "type": "Lifestyle",
+        "en": "Read an article.",
+        "zh": "阅读报刊文章",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "8AECCB",
+        "type": "Academic",
+        "en": "Artificial Photosynthesis",
+        "zh": "人工光合作用",
+        "cat": "生命科学"
+    },
+    {
+        "key": "28B65D",
+        "type": "Academic",
+        "en": "Twin Stars",
+        "zh": "联星",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "5DAD3A",
+        "type": "Academic",
+        "en": "The Role of AI in Diagnosing Diseases",
+        "zh": "AI在疾病诊断中的作用",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "A1C331",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "1FE68F",
+        "type": "Academic",
+        "en": "Libertarianism and Personal Freedom",
+        "zh": "自由意志主义与个人自由",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "43D6AD",
+        "type": "Academic",
+        "en": "Quantum Dots",
+        "zh": "量子点",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "27996F",
+        "type": "Lifestyle",
+        "en": "Read a webpage.",
+        "zh": "阅读网络网页",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "12B8D0",
+        "type": "Lifestyle",
+        "en": "Read a page from a website.",
+        "zh": "阅读网页内容",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "F16467",
+        "type": "Academic",
+        "en": "The Art of Conducting",
+        "zh": "指挥的艺术",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "A6A84B",
+        "type": "Lifestyle",
+        "en": "Read a course description.",
+        "zh": "阅读课程选课描述",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "19F43C",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "F099A6",
+        "type": "Academic",
+        "en": "The Power of Music Therapy",
+        "zh": "音乐疗法的力量",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "7A367F",
+        "type": "Academic",
+        "en": "Quantum Computing",
+        "zh": "量子计算",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "98FBB3",
+        "type": "Academic",
+        "en": "Microseisms: The Earth's Subtle Vibrations",
+        "zh": "微震：地球的微妙振动",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "B5D86E",
+        "type": "Lifestyle",
+        "en": "Read a sign.",
+        "zh": "阅读指示标牌",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "2B7C09",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "96ACBF",
+        "type": "Academic",
+        "en": "The Impact of Climate Change on Coral Reefs",
+        "zh": "气候变化对珊瑚礁的影响",
+        "cat": "生命科学"
+    },
+    {
+        "key": "C4DC64",
+        "type": "Academic",
+        "en": "Approximation Theory",
+        "zh": "逼近理论",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "34998E",
+        "type": "Lifestyle",
+        "en": "Read a social media post.",
+        "zh": "阅读社交媒体帖子",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "AB692A",
+        "type": "Academic",
+        "en": "Medieval European Philosophy",
+        "zh": "中世纪欧洲哲学",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "A351D3",
+        "type": "Lifestyle",
+        "en": "Read a receipt.",
+        "zh": "阅读结账收据",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "699D41",
+        "type": "Lifestyle",
+        "en": "Read a sign.",
+        "zh": "阅读指示标牌",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "A27CBC",
+        "type": "Lifestyle",
+        "en": "Read an article in a student magazine.",
+        "zh": "阅读学生杂志文章",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "6FEAF0",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "1B2E9B",
+        "type": "Academic",
+        "en": "Developmental Systems Theory",
+        "zh": "发展系统理论",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "152EB1",
+        "type": "Lifestyle",
+        "en": "Read a webpage.",
+        "zh": "阅读网络网页",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "11F38E",
+        "type": "Academic",
+        "en": "Cybernetic Prosthetics",
+        "zh": "控制论假肢",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "D3108E",
+        "type": "Academic",
+        "en": "Creative Waste Transformation",
+        "zh": "创造性垃圾转化",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "C882A9",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "14A016",
+        "type": "Lifestyle",
+        "en": "Read an advertisement.",
+        "zh": "阅读宣传广告",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "233B93",
+        "type": "Academic",
+        "en": "Plant Communication",
+        "zh": "植物间的沟通",
+        "cat": "生命科学"
+    },
+    {
+        "key": "A33CCF",
+        "type": "Academic",
+        "en": "The Power of Placebos",
+        "zh": "安慰剂的力量",
+        "cat": "生命科学"
+    },
+    {
+        "key": "3A5EDD",
+        "type": "Lifestyle",
+        "en": "Read an advertisement.",
+        "zh": "阅读宣传广告",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "3410CA",
+        "type": "Lifestyle",
+        "en": "Read a review.",
+        "zh": "阅读书评/影评",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "1F58D0",
+        "type": "Academic",
+        "en": "Genetically Modified Foods",
+        "zh": "转基因食品",
+        "cat": "生命科学"
+    },
+    {
+        "key": "6BE14B",
+        "type": "Lifestyle",
+        "en": "Read an agenda.",
+        "zh": "阅读会议日程",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "125E42",
+        "type": "Lifestyle",
+        "en": "Read a schedule.",
+        "zh": "阅读时间日程表",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "9EE78D",
+        "type": "Lifestyle",
+        "en": "Read a text chain.",
+        "zh": "阅读短信聊天记录",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "CC93A5",
+        "type": "Lifestyle",
+        "en": "Read an article.",
+        "zh": "阅读报刊文章",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "90F0F4",
+        "type": "Academic",
+        "en": "Veganism in the United States",
+        "zh": "美国的纯素食主义",
+        "cat": "生命科学"
+    },
+    {
+        "key": "30C3C6",
+        "type": "Academic",
+        "en": "Person-Centered Therapy: A Shift in Focus",
+        "zh": "以人为中心的疗法：焦点的转变",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "5DBE2C",
+        "type": "Academic",
+        "en": "Generational Identity",
+        "zh": "世代身份认同",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "127A99",
+        "type": "Lifestyle",
+        "en": "Read an excerpt from a syllabus.",
+        "zh": "阅读教学大纲节选",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "180F92",
+        "type": "Academic",
+        "en": "A Unique Advantage of Spicy Cuisine",
+        "zh": "辛辣美食的独特优势",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "151AAD",
+        "type": "Academic",
+        "en": "Biochemical Systems Theory: Challenges and Implications",
+        "zh": "生物化学系统理论：挑战与启示",
+        "cat": "生命科学"
+    },
+    {
+        "key": "14AC4E",
+        "type": "Lifestyle",
+        "en": "Read a social media post.",
+        "zh": "阅读社交媒体帖子",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "48DE69",
+        "type": "Academic",
+        "en": "Evolutionary Trends in Graphic Design",
+        "zh": "平面设计的演变趋势",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "A94533",
+        "type": "Academic",
+        "en": "Space Debris: A Growing Concern",
+        "zh": "空间碎片：日益严重的问题",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "185E60",
+        "type": "Lifestyle",
+        "en": "Read an advertisement.",
+        "zh": "阅读宣传广告",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "6F848E",
+        "type": "Academic",
+        "en": "Data Visualization in Action",
+        "zh": "数据可视化的实践应用",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "9878E1",
+        "type": "Academic",
+        "en": "Parallel Algorithms: From Challenges to Opportunities",
+        "zh": "并行算法：从挑战到机遇",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "5980F2",
+        "type": "Academic",
+        "en": "Theater Lighting Innovations",
+        "zh": "剧院照明创新",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "4479C0",
+        "type": "Lifestyle",
+        "en": "Read a form.",
+        "zh": "阅读申请表格",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "3BA552",
+        "type": "Lifestyle",
+        "en": "Read an article.",
+        "zh": "阅读报刊文章",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "8FCA7D",
+        "type": "Academic",
+        "en": "Video Evidence in U.S. Courts",
+        "zh": "美国法庭中的视频证据",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "19F342",
+        "type": "Lifestyle",
+        "en": "Read a course description.",
+        "zh": "阅读课程选课描述",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "5CC552",
+        "type": "Academic",
+        "en": "Social Networks and Influence",
+        "zh": "社交网络与影响力",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "43C00E",
+        "type": "Academic",
+        "en": "Gravitational Physics and Its Practical Applications",
+        "zh": "引力物理及其实际应用",
+        "cat": "天文与地球"
+    },
+    {
+        "key": "2D9734",
+        "type": "Lifestyle",
+        "en": "Read a review.",
+        "zh": "阅读书评/影评",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "122FC7",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "359EFF",
+        "type": "Academic",
+        "en": "Computational Chemistry in Drug Discovery",
+        "zh": "药物研发中的计算化学",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "383BD1",
+        "type": "Lifestyle",
+        "en": "Read a poster.",
+        "zh": "阅读校园海报",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "1420F4",
+        "type": "Lifestyle",
+        "en": "Read some instructions.",
+        "zh": "阅读操作指引",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "17E7B2",
+        "type": "Lifestyle",
+        "en": "Read a text-message chain.",
+        "zh": "阅读短信聊天记录",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "D8D6CD",
+        "type": "Lifestyle",
+        "en": "Read a social media post",
+        "zh": "阅读社交媒体帖子",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "102AAE",
+        "type": "Academic",
+        "en": "Free Will and Determinism",
+        "zh": "自由意志与决定论",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "8EA62A",
+        "type": "Academic",
+        "en": "Biofertilizer Dynamics in Agrochemistry",
+        "zh": "农业化学中的生物肥料动态",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "DDEF5D",
+        "type": "Lifestyle",
+        "en": "Read an advertisement.",
+        "zh": "阅读宣传广告",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "1A35E4",
+        "type": "Lifestyle",
+        "en": "Read an online discussion.",
+        "zh": "阅读在线讨论板块",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "8FC9FC",
+        "type": "Academic",
+        "en": "Carthage's Trade Network",
+        "zh": "迦太基的贸易网络",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "124B92",
+        "type": "Academic",
+        "en": "The Benefits of Music Education",
+        "zh": "音乐教育的好处",
+        "cat": "艺术与文化"
+    },
+    {
+        "key": "415F77",
+        "type": "Lifestyle",
+        "en": "Read a review.",
+        "zh": "阅读书评/影评",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "E801FF",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "C9DE9D",
+        "type": "Academic",
+        "en": "Hidden Structures in Discrete Geometry",
+        "zh": "离散几何中的隐藏结构",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "1DC34A",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "6D6F0D",
+        "type": "Lifestyle",
+        "en": "Read a webpage.",
+        "zh": "阅读网络网页",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "BB6FD4",
+        "type": "Academic",
+        "en": "Circadian Rhythm Disruption",
+        "zh": "昼夜节律紊乱",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "40EBBD",
+        "type": "Lifestyle",
+        "en": "Read a course description.",
+        "zh": "阅读课程选课描述",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "36BC5C",
+        "type": "Lifestyle",
+        "en": "Read a course description.",
+        "zh": "阅读课程选课描述",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "F34518",
+        "type": "Academic",
+        "en": "Data Science and the Buildings of Tomorrow",
+        "zh": "数据科学与未来建筑",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "DD35AC",
+        "type": "Academic",
+        "en": "Linguistic Structural Diversity",
+        "zh": "语言结构多样性",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "1C224C",
+        "type": "Lifestyle",
+        "en": "Read an article.",
+        "zh": "阅读报刊文章",
+        "cat": "评介/文章/网页/其他"
+    },
+    {
+        "key": "FDEE3F",
+        "type": "Lifestyle",
+        "en": "Read some instructions.",
+        "zh": "阅读操作指引",
+        "cat": "标签/收据/表格"
+    },
+    {
+        "key": "47DDCD",
+        "type": "Lifestyle",
+        "en": "Read a course syllabus.",
+        "zh": "阅读课程大纲",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "CEA291",
+        "type": "Academic",
+        "en": "The Great Smog of London",
+        "zh": "伦敦大雾霾事件",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "FB2540",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "53A0D1",
+        "type": "Lifestyle",
+        "en": "Read a syllabus.",
+        "zh": "阅读教学大纲",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "7FFD7B",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "310D3D",
+        "type": "Academic",
+        "en": "Demographic Dynamics",
+        "zh": "人口动态变化",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "21E4B0",
+        "type": "Academic",
+        "en": "Diagnostic Tools: Current Challenges and Innovations",
+        "zh": "诊断工具：当前的挑战与创新",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "24EAE1",
+        "type": "Lifestyle",
+        "en": "Read a course description.",
+        "zh": "阅读课程选课描述",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "1B87AD",
+        "type": "Lifestyle",
+        "en": "Read a flyer.",
+        "zh": "阅读宣传传单",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "610B52",
+        "type": "Academic",
+        "en": "The Ascent of the Italian Lute Song",
+        "zh": "意大利琉特琴歌曲的崛起",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "1D0A64",
+        "type": "Academic",
+        "en": "Ancient Air in Glaciers",
+        "zh": "冰川中的古老空气",
+        "cat": "历史与人类学"
+    },
+    {
+        "key": "4857E3",
+        "type": "Lifestyle",
+        "en": "Read a notice.",
+        "zh": "阅读校园通知",
+        "cat": "校园通告/课程日程"
+    },
+    {
+        "key": "EEC912",
+        "type": "Academic",
+        "en": "The Getty Kouros",
+        "zh": "盖蒂青年雕像",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "133B06",
+        "type": "Academic",
+        "en": "Cooperative Education",
+        "zh": "合作教育",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "B8CB0A",
+        "type": "Lifestyle",
+        "en": "Read an email.",
+        "zh": "阅读电子邮件",
+        "cat": "社交/邮件/聊天"
+    },
+    {
+        "key": "12C523",
+        "type": "Lifestyle",
+        "en": "Read a travel flyer.",
+        "zh": "阅读旅游传单",
+        "cat": "广告/海报/传单"
+    },
+    {
+        "key": "15D44A",
+        "type": "Academic",
+        "en": "Science of Bridges",
+        "zh": "桥梁科学",
+        "cat": "综合与其他"
+    },
+    {
+        "key": "CE55E0",
+        "type": "Academic",
+        "en": "The Effects of Class Size",
+        "zh": "班级规模的影响",
+        "cat": "综合与其他"
+    }
+]
