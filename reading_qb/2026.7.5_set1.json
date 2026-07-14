@@ -1,0 +1,367 @@
+{
+"set": "2026.7.5_set1",
+"date_edition": "2026.7.5",
+"set_name": "第1套 (7月5日A卷)",
+"passages": [
+{
+"passage_tag": "M1_Q21-22",
+"type": "Lifestyle",
+"title": "Read a label.",
+"id": "m1_p1",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/dSk4/855X783/028.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/dSk4/855X783/028.png/webp)"
+},
+"questions": [
+{
+"question_number": "21",
+"question": "How many items are in one case?",
+"options": {
+"A": "1",
+"B": "12",
+"C": "150",
+"D": "1,000"
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "22",
+"question": "What is the brand name of the product?",
+"options": {
+"A": "Ella",
+"B": "Natural",
+"C": "Lagos",
+"D": "Mainland"
+},
+"answer": "A",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q23-24",
+"type": "Lifestyle",
+"title": "Read an excerpt from a syllabus.",
+"id": "m1_p2",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/b3a7/1278X486/021.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/b3a7/1278X486/021.png/webp)"
+},
+"questions": [
+{
+"question_number": "23",
+"question": "What is the most likely subject of the course?",
+"options": {
+"A": "Biology",
+"B": "Calculus",
+"C": "Physics",
+"D": "Sociology"
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "24",
+"question": "What is NOT mentioned as an assessment method?",
+"options": {
+"A": "Weekly exercises",
+"B": "Lab reports",
+"C": "Tests",
+"D": "Essays"
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q25-27",
+"type": "Lifestyle",
+"title": "Read the following notice.",
+"id": "m1_p3",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/OuBn/1527X2177/011.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/OuBn/1527X2177/011.png/webp)"
+},
+"questions": [
+{
+"question_number": "25",
+"question": "Peter has no experience with spreadsheets and cannot attend class on Wednesdays. He should enroll in",
+"options": {
+"A": "Section A",
+"B": "Section B",
+"C": "Section C",
+"D": "Section D"
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "26",
+"question": "What does Michelle need before enrolling in Section D?",
+"options": {
+"A": "Experience creating new spreadsheet formulas",
+"B": "A research position that requires creating formulas",
+"C": "Training in how to present complex data",
+"D": "Previous experience using spreadsheets"
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "27",
+"question": "Beth has worked with formulas for years and is ready to learn advanced data skills. She should enroll in",
+"options": {
+"A": "Section A, B, or C",
+"B": "Section D or E",
+"C": "Section F",
+"D": "Section G"
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q28-30",
+"type": "Lifestyle",
+"title": "Read an agenda.",
+"id": "m1_p4",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/Vb8e/1026X1092/image.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/Vb8e/1026X1092/image.png/webp)"
+},
+"questions": [
+{
+"question_number": "28",
+"question": "What is the general aim of the Study Abroad Expo?",
+"options": {
+"A": "To evaluate emerging risks in a variety of sectors in the field of global education",
+"B": "To facilitate a deep understanding of opportunities for international learning",
+"C": "To highlight the historical significance of student exchange programs",
+"D": "To promote the sale of travel-related merchandise intended for students"
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "29",
+"question": "What is suggested about the Sustainable Study Abroad panel?",
+"options": {
+"A": "It will mainly address the costs of studying abroad for students.",
+"B": "It will show the need to integrate eco-friendly practices into study abroad programs.",
+"C": "It will examine the impact of studying abroad on student environmental consciousness.",
+"D": "It will primarily focus on the legal aspects of participating in study abroad programs."
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "30",
+"question": "Which of the following aspects of study abroad programs might Dr. Kim's keynote speech address?",
+"options": {
+"A": "The possible influence of emerging technologies",
+"B": "Existing patterns of participation in study abroad programs",
+"C": "The allure of traditional study abroad destinations",
+"D": "The benefits of current study abroad program policies"
+},
+"answer": "A",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q31-35",
+"type": "Academic",
+"title": "Free Will and Determinism",
+"id": "m1_p5",
+"left_content": {
+"paragraphs": [
+"The debate over free will asks whether our decisions come from independent thought or are shaped by factors beyond our control. Although we may feel like we choose freely, influences such as genetics, upbringing, and unconscious habits suggest our freedom may be limited. The key question is whether these influences simply guide our choices or actually determine them. If they determine them, then our sense of control may be more of a story we tell ourselves after the fact than something that drives our actions.",
+"Some philosophers maintain that even within a causally determined world, we can still act freely—so long as our choices reflect our own reasoning and desires. Yet this view raises questions about whether those desires are truly ours or merely the result of prior conditions. Others push further, suggesting that even our capacity to reflect on our actions is shaped by forces beyond our control, leaving little room for genuine autonomy. These tensions are not just theoretical; they shape how we think about responsibility in law, education, and relationships. If the assumption that someone might have acted differently begins to unravel, then our notions of accountability may need to be reimagined."
+]
+},
+"questions": [
+{
+"question_number": "31",
+"question": "Why does the author mention genetics and upbringing in paragraph 1?",
+"options": {
+"A": "To name the factors that contribute to the unconscious habits people form",
+"B": "To list factors we may be unaware of that shape our decision-making",
+"C": "To argue that some people have more freedom to act than others do",
+"D": "To note two factors that contribute to the formation of people's personalities"
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "32",
+"question": "What does the author suggest may be true of \"our sense of control\" over our choices?",
+"options": {
+"A": "It can drive our actions if we train ourselves to think independently.",
+"B": "It helps us develop narratives that shape our choices.",
+"C": "It is the product of unconscious habits.",
+"D": "It is nothing more than an illusion."
+},
+"answer": "D",
+"question_type": "highlight",
+"special_content": "If they determine them, then our sense of control may be more of a story we tell ourselves after the fact than something that drives our actions.",
+"inserted_sentence": ""
+},
+{
+"question_number": "33",
+"question": "In the second paragraph, what is the relationship between sentence 1 and sentence 2?",
+"options": {
+"A": "Sentence 1 presents an argument, and sentence 2 restates it in simpler terms.",
+"B": "Sentence 1 makes a claim, and sentence 2 supports it with evidence.",
+"C": "Sentence 1 presents an idea, and sentence 2 challenges an assumption behind the idea.",
+"D": "Sentence 1 introduces a viewpoint, and sentence 2 considers its implications."
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "34",
+"question": "The word \"unravel\" in the passage is closest in meaning to",
+"options": {
+"A": "fall apart",
+"B": "gather strength",
+"C": "form",
+"D": "evolve"
+},
+"answer": "A",
+"question_type": "highlight",
+"special_content": "If the assumption that someone might have acted differently begins to unravel, then our notions of accountability may need to be reimagined.",
+"inserted_sentence": ""
+},
+{
+"question_number": "35",
+"question": "According to the author, why is it important to consider questions about the meaning of free will?",
+"options": {
+"A": "Ideas about free will affect how we hold each other responsible for our actions.",
+"B": "Free will is an important part of what it means to be a modern human being.",
+"C": "The debate over free will and determinism is one of the fundamental questions of our time.",
+"D": "Without genuine autonomy, there is little value in institutions such as law and education."
+},
+"answer": "A",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M2_Q11-15",
+"type": "Academic",
+"title": "Theater Lighting Innovations",
+"id": "m1_p6",
+"left_content": {
+"paragraphs": [
+"Theater lighting has evolved significantly over the centuries. Initially reliant on sunlight, performances were limited to daylight hours. Candles and oil lamps enabled evening shows but posed fire risks and offered limited control over illumination.",
+"The introduction of gas lighting in the nineteenth century provided safer lighting that was brighter and more consistent. This advancement improved visibility on stage and allowed for more expressive acting. Lights that illuminated actors from below and the sides helped direct audience attention.",
+"The emergence of electric lighting in the late nineteenth century was transformative. Designers began using gels and filters to create a wide range of colors of varying intensity. These and other innovations, including focused spotlights and dimming systems, fundamentally reshaped the visual and emotional stage landscape. For example, the angled light beams and shadows in Toller’s 1919 play Transformation evoked the chaos and psychological unrest of post-war Germany.",
+"Today’s theaters leverage LED technology for energy efficiency and versatility, as it offers rapid color changes and programmable effects to create varied settings. Designers must now carefully balance technological prowess with artistic intent, ensuring that lighting supports rather than distracts from the narrative. Moreover, as lighting systems become increasingly complex, collaboration between lighting designers, directors, and technicians has become essential."
+]
+},
+"questions": [
+{
+"question_number": "11",
+"question": "Which of the following is the most accurate description of the passage's organization?",
+"options": {
+"A": "An introduction followed by a summary of the disadvantages of older theater lighting systems",
+"B": "A discussion of the theory of theater lighting followed by paragraphs detailing the different effects it can achieve",
+"C": "An introduction followed by a series of paragraphs on successive developments in theater lighting",
+"D": "A discussion of different theaters followed by a description of lighting technologies that complement each building"
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "12",
+"question": "According to the passage, gas lighting was an improvement on candles and oil lamps in all of the following ways EXCEPT:",
+"options": {
+"A": "It was less likely to cause fires.",
+"B": "It produced a more constant light.",
+"C": "It could be directed at individual actors.",
+"D": "It produced a softer light."
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "13",
+"question": "The word \"fundamentally\" in the passage is closest in meaning to",
+"options": {
+"A": "simply",
+"B": "thoroughly",
+"C": "surprisingly",
+"D": "permanently"
+},
+"answer": "B",
+"question_type": "highlight",
+"special_content": "These and other innovations, including focused spotlights and dimming systems, fundamentally reshaped the visual and emotional stage landscape.",
+"inserted_sentence": ""
+},
+{
+"question_number": "14",
+"question": "Why does the author discuss Transformation?",
+"options": {
+"A": "To illustrate how skillful lighting can communicate a mood to the audience",
+"B": "To provide an example of a play that could have benefited from LED technology",
+"C": "To explain why electric lighting was not as powerful for creating moods as gas lighting",
+"D": "To argue that some plays relied too heavily on lighting effects"
+},
+"answer": "A",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "15",
+"question": "What does the passage imply about modern lighting technology?",
+"options": {
+"A": "It can sometimes shift the focus from the play to the lighting.",
+"B": "It requires directors who are skilled in computer programming.",
+"C": "Theaters must now allocate more money to technicians and less to actors.",
+"D": "Theaters must be redesigned to incorporate new lighting technology."
+},
+"answer": "A",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M2"
+}
+]
+}

@@ -1,0 +1,366 @@
+{
+"set": "2026.7.10_set1",
+"date_edition": "2026.7.10",
+"set_name": "第1套 (7月10日卷)",
+"passages": [
+{
+"passage_tag": "M1_Q21-22",
+"type": "Lifestyle",
+"title": "Read an advertisement.",
+"id": "m1_p1",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/BCBk/1119X1008/image.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/BCBk/1119X1008/image.png/webp)"
+},
+"questions": [
+{
+"question_number": "21",
+"question": "What problem is the program mainly designed to help students with?",
+"options": {
+"A": "Choosing which college math courses to take",
+"B": "Understanding difficult math topics through extra support",
+"C": "Preparing for careers that require advanced mathematics",
+"D": "Meeting graduation requirements more quickly"
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "22",
+"question": "What can be inferred about the sessions that are offered?",
+"options": {
+"A": "They are open to first-year students only.",
+"B": "They will be held throughout the year.",
+"C": "They take place every day.",
+"D": "They can be attended by a limited number of students."
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q23-24",
+"type": "Lifestyle",
+"title": "Read an advertisement.",
+"id": "m1_p2",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/e06q/864X1083/image.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/e06q/864X1083/image.png/webp)"
+},
+"questions": [
+{
+"question_number": "23",
+"question": "A successful applicant must meet all of the following criteria EXCEPT",
+"options": {
+"A": "know American Sign Language",
+"B": "be available on Wednesday afternoons",
+"C": "be a student council member",
+"D": "study full-time"
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "24",
+"question": "According to the advertisement, what must a student do to apply?",
+"options": {
+"A": "Interpret a short conversation",
+"B": "Send in two references",
+"C": "Attend the next student council meeting",
+"D": "Contact the department that posted the job."
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q25-27",
+"type": "Lifestyle",
+"title": "Read a newspaper article.",
+"id": "m1_p3",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/4koH/905X999/image.png/webp](https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/4koH/905X999/image.png/webp)"
+},
+"questions": [
+{
+"question_number": "25",
+"question": "According to the article, what is one goal of the new housing program?",
+"options": {
+"A": "To reduce the cost of dormitory maintenance",
+"B": "To create a feeling of connection among students",
+"C": "To support the local residential construction economy",
+"D": "To convince international students to live on campus"
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "26",
+"question": "Which initiative involves collaboration with outside organizations?",
+"options": {
+"A": "Renovated residential buildings",
+"B": "Expanded employment opportunities",
+"C": "Improved tutoring services",
+"D": "Enhanced volunteering programs"
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "27",
+"question": "According to the article, what impact are the initiatives expected to have on students?",
+"options": {
+"A": "They will not be affected.",
+"B": "They will provide less feedback.",
+"C": "Their satisfaction will increase.",
+"D": "They will get priority course registration."
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M1_Q28-30",
+"type": "Lifestyle",
+"title": "Read a course syllabus.",
+"id": "m1_p4",
+"left_content": {
+"image": "[https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/rpxe/1004X1005/image.png/webp](https://www.google.com/search?q=https://img.pagehost.cn/autoupload/QJ7p-s1WNkxecofvMmbqoifNcKcqEnRmcljopnyJoMs/20260715/rpxe/1004X1005/image.png/webp)"
+},
+"questions": [
+{
+"question_number": "28",
+"question": "What is indicated about the skills students will develop from taking the CULN 310 course?",
+"options": {
+"A": "They will gain expertise in general culinary management techniques.",
+"B": "They will become proficient in the use of a technically complex cooking technique.",
+"C": "They will learn to critique historical culinary trends as restaurant critics.",
+"D": "They will become experts in the practical applications of plant-based ingredients."
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "29",
+"question": "What is indicated about the eligibility criteria for enrolling in CULN 310?",
+"options": {
+"A": "Enrollment is open to all students with an interest in gastronomic science.",
+"B": "Admission requires an advanced understanding of the sous vide technique.",
+"C": "Candidates must have completed two introductory courses in the department.",
+"D": "Students are required to possess prior work experience in an industrial kitchen."
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "30",
+"question": "Which aspect of sous vide does the syllabus suggest will be a significant component of the course?",
+"options": {
+"A": "The financial implications of sous vide in restaurant operations",
+"B": "The cultural influences on the evolution of sous vide",
+"C": "The technological development of sous vide techniques over time",
+"D": "The ethical considerations of using sous vide techniques"
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M1"
+},
+{
+"passage_tag": "M2_Q31-35",
+"type": "Academic",
+"title": "Advancements in Renewable Energy Engineering",
+"id": "m1_p5",
+"left_content": {
+"paragraphs": [
+"Photovoltaic (PV) cells that convert sunlight into electricity are one innovative solution to harness renewable energy. When sunlight hits the PV cell, it is absorbed by a semiconductor material, usually silicon. The energy from the light knocks electrons loose from atoms, creating a flow of electric current. This current is then captured and can be used to power electrical devices. A common misconception is that, at night, PV cells store energy like a battery. In fact, they convert sunlight into electricity in real time; to store energy, a separate energy storage system, like a battery, is required. Researchers are also developing what are called moonlight solar panels, which can generate electricity at night, during rain, and under overcast skies. They make renewable energy a more viable option in diverse environments.",
+"Floating wind farms are another interesting innovation. Mounted on buoyant platforms tethered to the ocean floor, they can be deployed far from land, where wind speeds are often stronger and more consistent than those on land. Underwater cables transmit electricity they generate back to shore. While challenges such as maintenance and initial costs persist, the long-term benefits are substantial."
+]
+},
+"questions": [
+{
+"question_number": "31",
+"question": "According to the passage, what does NOT occur inside PV cells?",
+"options": {
+"A": "Silicon or another material absorbs sunlight.",
+"B": "Electrons become less tightly bound to atoms.",
+"C": "A flow of electric current is captured.",
+"D": "Electricity is stored in a battery."
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "32",
+"question": "What does the author indicate about moonlight solar panels?",
+"options": {
+"A": "They are more efficient and cost-effective than traditional PV cells.",
+"B": "They can function in low-light conditions.",
+"C": "They can be used to store energy over a long period of time.",
+"D": "They do not convert energy in real time."
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "33",
+"question": "The word \"viable\" in the passage is closest in meaning to",
+"options": {
+"A": "practical",
+"B": "predictable",
+"C": "valuable",
+"D": "adaptable"
+},
+"answer": "A",
+"question_type": "highlight",
+"special_content": "They make renewable energy a more viable option in diverse environments.",
+"inserted_sentence": ""
+},
+{
+"question_number": "34",
+"question": "The passage suggests that, compared to traditional wind farms, what is an advantage of floating wind farms?",
+"options": {
+"A": "They harness wind energy in larger amounts and more consistently.",
+"B": "They are easier to install and maintain.",
+"C": "They use underwater cables, which are more cost-effective than cables installed on land.",
+"D": "They last for a longer time."
+},
+"answer": "A",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "35",
+"question": "There are four locations [■] in the passage that indicate where the following sentence could be added.\n\nHow do they work?\n\nWhere would the sentence best fit? Select a location [■] to add the sentence in the passage.",
+"options": {
+"A": "Location 1",
+"B": "Location 2",
+"C": "Location 3",
+"D": "Location 4"
+},
+"answer": "B",
+"question_type": "insertion",
+"special_content": "[■] Photovoltaic (PV) cells that convert sunlight into electricity are one innovative solution to harness renewable energy. [■] When sunlight hits the PV cell, it is absorbed by a semiconductor material, usually silicon. The energy from the light knocks electrons loose from atoms, creating a flow of electric current. This current is then captured and can be used to power electrical devices. A common misconception is that, at night, PV cells store energy like a battery. [■] In fact, they convert sunlight into electricity in real time; to store energy, a separate energy storage system, like a battery, is required. [■] Researchers are also developing what are called moonlight solar panels, which can generate electricity at night, during rain, and under overcast skies. They make renewable energy a more viable option in diverse environments.",
+"inserted_sentence": "How do they work?"
+}
+],
+"paper_type": "M2"
+},
+{
+"passage_tag": "M2_Q11-15",
+"type": "Academic",
+"title": "The Benefits of Music Education",
+"id": "m1_p6",
+"left_content": {
+"paragraphs": [
+"In the United States, music education has been consistently linked to enhanced cognitive development. Studies such as those by the National Association for Music Education (NAfME) and research published in Frontiers in Psychology have shown that children who study music often demonstrate improvements in memory, language acquisition, and spatial-temporal reasoning. These cognitive gains are attributed to the discipline and structured practice inherent in learning music, which strengthens neural pathways associated with attention and processing.",
+"Beyond cognition, music education contributes meaningfully to social development. Participation in an ensemble—a group of musicians performing together—requires active collaboration, listening, and nonverbal communication, fostering empathy and cooperative behavior. This group dynamic differs from traditional classroom settings and can support the development of interpersonal skills. Moreover, music provides a safe space for emotional exploration. Students engage with complex emotions, both their own and those conveyed by others, through the expressive nature of music itself. This experience can enhance emotional intelligence and serve as a constructive outlet for stress.",
+"Despite these documented benefits, music programs in U.S. schools are often viewed as nonessential compared to core academic subjects and thus vulnerable to budget cuts. This reduction may disproportionately affect students who could benefit most from music's holistic contributions, potentially limiting their cognitive, social, and emotional growth."
+]
+},
+"questions": [
+{
+"question_number": "11",
+"question": "Why does the author mention \"neural pathways associated with attention and processing\"?",
+"options": {
+"A": "To explain one way in which music might improve certain mental skills",
+"B": "To highlight the parts of the brain used when listening to music",
+"C": "To contradict the results of a study in Frontiers in Psychology",
+"D": "To suggest that music education has little effect on cognitive development"
+},
+"answer": "A",
+"question_type": "highlight",
+"special_content": "These cognitive gains are attributed to the discipline and structured practice inherent in learning music, which strengthens neural pathways associated with attention and processing.",
+"inserted_sentence": ""
+},
+{
+"question_number": "12",
+"question": "Based on the discussion in the passage, what type of musical activity would be least likely to support social development?",
+"options": {
+"A": "Playing in an orchestra",
+"B": "Singing in a choir",
+"C": "Calming oneself with peaceful music",
+"D": "Being a band member"
+},
+"answer": "C",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "13",
+"question": "According to the passage, music education promotes social development in all of the following ways EXCEPT",
+"options": {
+"A": "by developing listening skills",
+"B": "by teaching students to communicate non-verbally",
+"C": "by encouraging cooperative behavior",
+"D": "by setting high standards for performance quality"
+},
+"answer": "D",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "14",
+"question": "What does the passage suggest about music education in the United States?",
+"options": {
+"A": "It is acknowledged to be a necessary part of the school curriculum.",
+"B": "It is at greater risk of losing its funding than other school subjects are.",
+"C": "Some parents fear that time and money spent on music programs will limit their children's academic growth.",
+"D": "Some parents want to see further studies done on the benefits of music education."
+},
+"answer": "B",
+"question_type": "standard",
+"special_content": "",
+"inserted_sentence": ""
+},
+{
+"question_number": "15",
+"question": "The word \"holistic\" in the passage is closest in meaning to",
+"options": {
+"A": "documented",
+"B": "celebrated",
+"C": "comprehensive",
+"D": "well-known"
+},
+"answer": "C",
+"question_type": "highlight",
+"special_content": "This reduction may disproportionately affect students who could benefit most from music's holistic contributions, potentially limiting their cognitive, social, and emotional growth.",
+"inserted_sentence": ""
+}
+],
+"paper_type": "M2"
+}
+]
+}
