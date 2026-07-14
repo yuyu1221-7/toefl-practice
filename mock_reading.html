@@ -1121,6 +1121,12 @@
                     <input type="password" id="settings-api-key" placeholder="AIzaSy..."
                         class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-slate-400 font-mono text-sm">
                 </div>
+                <div id="title3-export-panel" class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <p class="text-sm font-bold text-slate-700 mb-1">阅读标题索引</p>
+                    <p class="text-xs text-slate-500 mb-3">无论是否配置 API，都可导出包含旧题与本次新题的完整 title3.json。</p>
+                    <button id="btn-download-title3" type="button" onclick="downloadLatestTitle3()"
+                        class="w-full px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm transition-all">下载最新 title3.json</button>
+                </div>
             </div>
             <div class="p-6 border-t border-slate-100 flex justify-end gap-2 bg-slate-50">
                 <button onclick="toggleSettingsModal(false)"
@@ -1219,6 +1225,7 @@
         let viewHistoryStack = ['upload'];
         let activeTab = 'topic';
         let dictionary = {};
+        let loadedTitle3List = [];
 
         // Workspace 做题状态 (完全照搬 mock_reading.html)
         let testData = [];
@@ -1268,6 +1275,29 @@
             }
 
             initFileImport();
+
+            // Keep the official-style timer toggle functional even when the
+            // surrounding page disables context menus and text selection.
+            const timerToggle = document.getElementById('btn-hide-time');
+            if (timerToggle) {
+                timerToggle.setAttribute('role', 'button');
+                timerToggle.setAttribute('tabindex', '0');
+                const toggleTimeVisibility = () => {
+                    isTimeHidden = !isTimeHidden;
+                    const display = document.getElementById('timer-display');
+                    const label = document.getElementById('hide-time-text');
+                    if (display) display.style.visibility = isTimeHidden ? 'hidden' : 'visible';
+                    if (label) label.textContent = isTimeHidden ? 'Show Time' : 'Hide Time';
+                    timerToggle.setAttribute('aria-pressed', String(isTimeHidden));
+                };
+                timerToggle.addEventListener('click', toggleTimeVisibility);
+                timerToggle.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleTimeVisibility();
+                    }
+                });
+            }
         };
 
         // 全局预加载图片链接
@@ -1314,6 +1344,8 @@
             else SafeLocalStorage.removeItem("toefl_gemini_key");
             showToast("设置保存成功！");
             toggleSettingsModal(false);
+            // 再次载入会保留题源日期，并仅对 title3.json 中缺失的文章调用 API。
+            if (geminiKey) setTimeout(() => window.location.reload(), 250);
         }
 
         // ==========================================
@@ -1512,6 +1544,7 @@
                 console.error("获取 title3.json 失败: ", e);
                 showToast("获取云端 title3.json 失败，使用本地备用匹配", "warning");
             }
+            loadedTitle3List = Array.isArray(title3List) ? title3List.filter(entry => entry && entry.key) : [];
 
             const title3Map = {};
             title3List.forEach(entry => {
@@ -1533,12 +1566,6 @@
                 if (res.json.passages) {
                     res.json.passages.forEach(p => {
                         const hash = computeReadingHash(p);
-
-                        // Filter: only import if listed in title3.json (if loaded successfully)
-                        if (title3List.length > 0) {
-                            const entry = title3Map[hash.toLowerCase()];
-                            if (!entry) return; // Skip
-                        }
 
                         fileHasValidPassage = true;
 
@@ -1613,8 +1640,17 @@
                             passage.titleZh = getLifestyleDefaultTranslation(pObj.title);
                             passage.cat = getLifestyleDefaultCategory(pObj.title);
                         }
+                        missingAIExtract.push(passage);
                     }
                 }
+
+                dictionary[passage.hashKey] = {
+                    key: passage.hashKey,
+                    type: passage.type || "Unknown",
+                    en: passage.titleEn || passage.title || "Untitled",
+                    zh: passage.titleZh || passage.titleEn || passage.title || "未命名题目",
+                    cat: passage.cat || (passage.type === "Academic" ? "综合与其他" : "评介/文章/网页/其他")
+                };
 
                 globalPassages.push(passage);
             }
@@ -1625,7 +1661,43 @@
             }
         }
 
-        // 调用 Gemini 3.5 Flash-Lite 进行主题提取 (直接参照 tc.html 429 500 退避重写)
+        function buildLatestTitle3Index() {
+            const merged = new Map();
+            loadedTitle3List.forEach(entry => {
+                if (entry && entry.key) merged.set(String(entry.key).toLowerCase(), { ...entry });
+            });
+            globalPassages.forEach(passage => {
+                if (!passage || !passage.hashKey) return;
+                merged.set(String(passage.hashKey).toLowerCase(), {
+                    key: passage.hashKey,
+                    type: passage.type || "Unknown",
+                    en: passage.titleEn || passage.title || "Untitled",
+                    zh: passage.titleZh || passage.titleEn || passage.title || "未命名题目",
+                    cat: passage.cat || (passage.type === "Academic" ? "综合与其他" : "评介/文章/网页/其他")
+                });
+            });
+            return Array.from(merged.values());
+        }
+
+        function downloadLatestTitle3() {
+            const rows = buildLatestTitle3Index();
+            if (rows.length === 0) {
+                showToast("请先载入或导入阅读 JSON，再下载 title3.json", "warning");
+                return;
+            }
+            const blob = new Blob([JSON.stringify(rows, null, 2)], { type: "application/json;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "title3.json";
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+            showToast(`已导出完整 title3.json（${rows.length} 篇）`, "success");
+        }
+
+        // 调用 Gemini 3.1 Flash-Lite 进行主题提取（参照 tc.html 的 429/5xx 退避策略）
         async function runAITranslation(passages, apiKey) {
             document.getElementById('loading-title').textContent = "AI 正在提取主题...";
             const batchSize = 8;
@@ -1655,9 +1727,9 @@ Input: `;
 
                 while (!success && retryCount < 4) {
                     try {
-                        document.getElementById('ai-loading-text').textContent = `调用 Gemini 3.5 Flash-Lite 抽取中 (第 ${Math.floor(i / batchSize) + 1} 批)...`;
+                        document.getElementById('ai-loading-text').textContent = `调用 Gemini 3.1 Flash-Lite 抽取中 (第 ${Math.floor(i / batchSize) + 1} 批)...`;
 
-                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`, {
+                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({
@@ -2436,6 +2508,25 @@ Input: `;
                 }
 
                 p.questions.forEach((q) => {
+                    // Vocabulary questions are sometimes entered manually or by AI without
+                    // question_type="highlight". Infer the quoted word and highlight its
+                    // first real occurrence in the passage so future data omissions are safe.
+                    if (p.type !== 'Lifestyle' && q.question_type !== 'highlight') {
+                        const vocabMatch = String(q.question || '').match(/\b(?:word|phrase)\s+["“]([^"”]+)["”]/i);
+                        if (vocabMatch) {
+                            const target = vocabMatch[1].trim();
+                            const escaped = target.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                            const targetRegex = new RegExp(`\\b${escaped}\\b`, 'i');
+                            const paragraphIndex = p.left_content.paragraphs.findIndex(para => targetRegex.test(para));
+                            if (paragraphIndex >= 0) {
+                                q.question_type = 'highlight';
+                                q.special_content = p.left_content.paragraphs[paragraphIndex].replace(
+                                    targetRegex,
+                                    matched => `<mark>${matched}</mark>`
+                                );
+                            }
+                        }
+                    }
                     let qType = 'multiple-choice-text';
                     if (p.type === 'Lifestyle') qType = 'multiple-choice-image';
 
@@ -3026,7 +3117,7 @@ Input: `;
                     if (showAnswer) {
                         let isCorr = savedVal.toLowerCase() === d.ans.toLowerCase();
                         if (savedVal === '') {
-                            html += `<input type="text" maxlength="${ansLen}" value="${d.ans}" class="fill-blank-input is-filled" style="width:${inputWidth}; color: #888; font-weight: bold;" readonly />`;
+                            html += `<input type="text" maxlength="${ansLen}" value="${d.ans}" class="fill-blank-input is-filled" style="width:${inputWidth}; color: #34a853; font-weight: bold;" readonly />`;
                         } else if (isCorr) {
                             html += `<input type="text" maxlength="${ansLen}" value="${savedVal}" class="${initClass}" style="width:${inputWidth}; color: #34a853; font-weight: bold;" readonly />`;
                         } else {
@@ -3707,7 +3798,7 @@ Input: `;
         }
 
         // ==========================================
-        // 17. 检索逻辑 (Gemini 3.5 API 开关)
+        // 17. 检索逻辑（Gemini 3.1 Flash-Lite API 开关）
         // ==========================================
         let _searchScope = 'all';
         function setSearchScope(scope, btn) {
@@ -3754,14 +3845,14 @@ Input: `;
                     alert("请先在设置中配置 Gemini API Key，已自动切回本地检索。");
                 } else {
                     document.getElementById('loading-title').textContent = "AI 语义匹配中...";
-                    document.getElementById('ai-loading-text').textContent = "正在调用 Gemini 3.5 分析语义关联，请稍候...";
+                    document.getElementById('ai-loading-text').textContent = "正在调用 Gemini 3.1 Flash-Lite 分析语义关联，请稍候...";
                     document.getElementById('ai-loading').classList.remove('hidden');
 
                     try {
                         const summaries = pool.map(p => ({ id: p.hashKey, title: p.titleEn, category: p.cat }));
                         const prompt = `You are a semantical search engine. Given the user search query: "${rawQuery}", and a list of TOEFL passages: ${JSON.stringify(summaries)}. Return ONLY a JSON array of matching passage IDs that are semantically related. Return an empty array [] if nothing relates. Do not return markdown blocks, just return a raw JSON list.`;
 
-                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`, {
+                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({
@@ -4192,11 +4283,12 @@ Input: `;
                         if (underscoreMatch && validNakedMatch) {
                             const underPrefix = underscoreMatch[1].toLowerCase();
                             const nakedPrefix = validNakedMatch[1].toLowerCase();
-                            if (underPrefix === nakedPrefix) bestMatch = underscoreMatch;
-                            else {
-                                if (underscoreMatch.index - validNakedMatch.index > 40) bestMatch = validNakedMatch;
-                                else bestMatch = underscoreMatch;
-                            }
+                            // Answers are sequential. Always consume the earliest valid marker;
+                            // otherwise a later underscore can steal the current answer and shift
+                            // every following blank, even when both prefixes happen to match.
+                            bestMatch = validNakedMatch.index < underscoreMatch.index
+                                ? validNakedMatch
+                                : underscoreMatch;
                         } else if (underscoreMatch) bestMatch = underscoreMatch;
                         else if (validNakedMatch) bestMatch = validNakedMatch;
 
