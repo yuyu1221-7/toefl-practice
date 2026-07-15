@@ -134,6 +134,13 @@
         }
         .pool-option:hover { background-color: #e5e7eb; }
         .pool-option.dragging { opacity: 0.3; }
+        .pool-option.used {
+            color: #9ca3af;
+            background-color: #f3f4f6;
+            cursor: not-allowed;
+            opacity: 0.72;
+        }
+        .pool-option.used:hover { background-color: #f3f4f6; }
 
         .review-table-container {
             width: 100%;
@@ -287,19 +294,54 @@
         const tail = q.sen2Str.substring(lastIndex);
         if (tail) q.structure.push({ type: 'static', text: tail });
 
-        q.correctAnswers = {};
+        // 关键改动：如果空位数大于选项数，安全降级，补齐虚拟选项，并做标记
         const blanks = q.structure.filter(s => s.type === 'blank');
+        q.isDegraded = false;
+        if (blanks.length > q.options.length) {
+            q.isDegraded = true;
+            q.degradeReason = `空位数(${blanks.length})多于选项数(${q.options.length})`;
+            const diff = blanks.length - q.options.length;
+            for (let d = 0; d < diff; d++) {
+                q.options.push({
+                    id: 'opt_placeholder_' + d,
+                    text: `[缺失选项${d + 1}]`
+                });
+            }
+        }
+
+        q.correctAnswers = {};
         const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
         const target = normalize(q.ans);
         
         let found = false, used = new Set(), currentFill = [];
         function solve(index) {
             if(found) return;
+
+            // 强力剪枝：检查当前已拼接部分是否是 target 的前缀
+            let tempBuilt = '';
+            let fillIndex = 0;
+            for (let i = 0; i < q.structure.length; i++) {
+                const s = q.structure[i];
+                if (s.type === 'static') {
+                    tempBuilt += s.text;
+                } else {
+                    const blankIndex = parseInt(s.id.substring(1), 10);
+                    if (blankIndex < index) {
+                        tempBuilt += currentFill[blankIndex].text;
+                    } else {
+                        break;
+                    }
+                }
+            }
+            if (!target.startsWith(normalize(tempBuilt))) {
+                return; // 强力剪枝！
+            }
+
             if(index === blanks.length) {
-                let built = '', fillIndex = 0;
+                let built = '', fIdx = 0;
                 q.structure.forEach(s => {
                     if(s.type === 'static') built += s.text;
-                    else built += currentFill[fillIndex++].text;
+                    else built += currentFill[fIdx++].text;
                 });
                 if(normalize(built) === target) {
                     found = true;
@@ -624,6 +666,7 @@
     function handleOptionClick(optId) {
         if(state.testFinished) return;
         const q = state.questions[state.currentQIndex];
+        if(Object.values(state.answers[q.id]).includes(optId)) return;
         const emptySlot = q.structure.find(s => s.type === 'blank' && !state.answers[q.id][s.id]);
         if(emptySlot) {
             state.answers[q.id][emptySlot.id] = optId;
@@ -950,7 +993,7 @@
         `;
     }
 
-    // 修复 2：模考日历去掉"卷"字
+    // 修复 2：模考日历支持月份降序排列和完整日期显示
     function renderMockCalendar() {
         let monthsObj = {};
         moduleNames.forEach(m => {
@@ -960,18 +1003,37 @@
                 let mon = parts[1];
                 let dStr = parts[2];
                 let dNum = dStr.match(/\d+/)[0]; 
+                let dayNum = parseInt(dNum, 10);
                 
-                // 智能提取后缀字母 (如 A, B, C)，不加“卷”字
+                // 提取字母后缀
                 let letterMatch = dStr.match(/[A-Za-z]+/);
-                let letter = letterMatch ? ' ' + letterMatch[0].toUpperCase() : '';
+                let suffix = letterMatch ? letterMatch[0].toUpperCase() : '';
                 
                 let mKey = `${y}年${mon}月`;
                 if(!monthsObj[mKey]) monthsObj[mKey] = [];
                 let count = fullDatabase.filter(q => q.moduleId === m).length;
                 
-                // 组装显示文本，例如 "1日 B"
-                monthsObj[mKey].push({ id: m, day: dNum + '日' + letter, count: count });
+                // 组装显示文本，例如 "2.1A"
+                let displayDate = `${mon}.${dayNum}${suffix}`;
+                
+                monthsObj[mKey].push({ 
+                    id: m, 
+                    display: displayDate, 
+                    dayNum: dayNum, 
+                    suffix: suffix, 
+                    count: count 
+                });
             }
+        });
+
+        // 1. 月份按降序排列 (6月 -> 5月 -> 4月 ...)
+        const sortedMKeys = Object.keys(monthsObj).sort((a, b) => {
+            let ma = a.match(/(\d+)年(\d+)月/);
+            let mb = b.match(/(\d+)年(\d+)月/);
+            let ya = parseInt(ma[1], 10), mona = parseInt(ma[2], 10);
+            let yb = parseInt(mb[1], 10), monb = parseInt(mb[2], 10);
+            if (ya !== yb) return yb - ya;
+            return monb - mona;
         });
 
         let html = `
@@ -986,17 +1048,23 @@
                     </div>
         `;
         
-        for(let month in monthsObj) {
+        sortedMKeys.forEach(month => {
+            // 2. 内部日期按天数和字母后缀升序排列
+            monthsObj[month].sort((a, b) => {
+                if (a.dayNum !== b.dayNum) return a.dayNum - b.dayNum;
+                return a.suffix.localeCompare(b.suffix);
+            });
+
             html += `<div class="calendar-month">${month}</div><div class="calendar-grid">`;
             monthsObj[month].forEach(mod => {
                 let qCountText = mod.count === 10 ? '10题完整版' : `共 ${mod.count} 题`;
                 html += `<div class="calendar-card" onclick="startMock('${mod.id}')">
-                            <div class="cal-day text-slate-800 font-extrabold text-md">${mod.day}</div>
+                            <div class="cal-day text-slate-800 font-extrabold text-md">${mod.display}</div>
                             <div class="cal-count text-emerald-600 font-semibold">${qCountText}</div>
                          </div>`;
             });
             html += `</div>`;
-        }
+        });
         
         html += `</div></div>`;
         return html;
@@ -1108,18 +1176,27 @@
         });
 
         const usedOptIds = Object.values(answers);
-        const availOpts = q.options.filter(o => !usedOptIds.includes(o.id));
-        
         let poolHtml = '';
-        availOpts.forEach(opt => {
-            poolHtml += `<div class="pool-option" draggable="${!state.testFinished}" onclick="handleOptionClick('${opt.id}')" ondragstart="onDragStart(event, '${opt.id}')" ondragend="onDragEnd(event)">${opt.text}</div>`;
+        q.options.forEach(opt => {
+            const isUsed = usedOptIds.includes(opt.id);
+            poolHtml += `<div class="pool-option${isUsed ? ' used' : ''}" aria-disabled="${isUsed}" draggable="${!state.testFinished && !isUsed}" onclick="${isUsed ? '' : `handleOptionClick('${opt.id}')`}" ${isUsed ? '' : `ondragstart="onDragStart(event, '${opt.id}')" ondragend="onDragEnd(event)"`}>${opt.text}</div>`;
         });
 
         return `
             <div class="app-container shadow-xl">
                 ${renderTopBar()}
                 <div class="question-area flex-1">
-                    <h2 style="font-size: 26px; font-weight: bold; margin-bottom: 70px; color:#111">Make an appropriate sentence.</h2>
+                    <h2 style="font-size: 26px; font-weight: bold; margin-bottom: 50px; color:#111">Make an appropriate sentence.</h2>
+                    
+                    ${q.isDegraded ? `
+                        <div class="mb-8 px-6 py-4 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-[14.5px] font-semibold flex items-center gap-3 w-full max-w-[900px] shadow-sm shrink-0">
+                            <svg class="w-5.5 h-5.5 text-amber-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <div>
+                                <span class="font-bold">题目降级提示：</span>
+                                原始数据中空位数(${q.structure.filter(s => s.type === 'blank').length}个)大于选项数(${q.options.filter(o => !o.id.startsWith('opt_placeholder')).length}个)，系统已自动补齐缺失词卡。
+                            </div>
+                        </div>
+                    ` : ''}
                     
                     <div style="width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 50px;">
                         <div style="display: flex; align-items: center; gap: 30px;">
